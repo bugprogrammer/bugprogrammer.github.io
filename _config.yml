@@ -1,0 +1,165 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: Bugprogrammer的博客
+subtitle: 技术宅的日常
+description: 致力于打造一个纯净，友好的技术类分享博客。
+keywords: Linux,macOS,Hackintosh,Android,Windows,OpenWrt,C++,Java,PHP,Python
+author: Bugprogrammer
+language: zh-CN
+timezone:
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://www.bugprogrammer.me
+#url: https://bugprogrammer.github.io
+#url: https://bugprogrammer.coding.me
+root: /
+permalink: :year/:month/:day/:urlname.html
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: true
+  tab_replace:
+
+  
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+  
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: next
+#theme: matery
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: 
+    github: git@github.com:bugprogrammer/bugprogrammer.github.io.git
+    coding: git@git.coding.net:bugprogrammer/bugprogrammer.git
+    ggc: git@38.106.21.158:bugprogrammer/hexo.git
+    gitee: git@gitee.com:bugprogrammer/bugprogrammer.github.io.git 
+
+  branch: master
+  
+search:
+  path: search.xml
+  field: post
+  #format: html
+  #limit: 10000
+
+# RSS订阅
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+
+# live2d
+live2d:
+  enable: false
+  scriptFrom: local
+  model:
+    #use: live2d-widget-model-koharu
+    use: live2d-widget-model-hijiki
+  display:
+    position: right
+    width: 100
+    height: 200
+  mobile:
+    show: false
+
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: false
+  total_time: false
+
+# hexo-neat
+# 博文压缩
+neat_enable: false
+# 压缩html
+neat_html:
+  enable: false
+  exclude:
+# 压缩css  
+neat_css:
+  enable: false
+  exclude:
+    - '**/*.min.css'
+# leancloud安全
+leancloud_counter_security:
+  enable_sync: true
+  app_id: ldbTiI5R3Sxz9SCC2Iu5Nws5-gzGzoHsz
+  app_key: Q6sIJP3zClCA8hIVUeYk3fCo
+  username: 87811991@163.com # Will be asked while deploying if is left blank
+  password: WBX8781199wbx # Recommmended to be left blank. Will be asked while deploying if is left blank
+# 压缩js
+neat_js:
+  enable: false
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '**/*.min.js'
+    - '**/jquery.fancybox.pack.js'
+    - '**/index.js'
+    - '**/love.js'
+
+lazyload:
+  enable: true
+  onlypost: false
+  # className: #可选 e.g. .J-lazyload-img
+  loadingImg: /images/loading.jpg
