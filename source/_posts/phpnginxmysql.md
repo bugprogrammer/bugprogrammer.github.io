@@ -186,7 +186,7 @@ server {
 </html>
 ```
 #### 启动php-fpm
->```
+```
 service php-fpm start
 ```
 >启动Nginx(见Nginx相关操作)并在浏览器输入域名或ip测试，如下及成功。
@@ -316,7 +316,7 @@ wget https://get.acme.sh
 ```
 ./certbot-auto certonly  -d *.bugprogrammer.tk -d bugprogrammer.tk --manual --preferred-challenges dns --server https://acme-v02.api.letsencrypt.org/directory
 ```
-![](/images/005YMNDBly1g0raor0tq6j31nm0wqqbh.jpg)
+    ![](/images/005YMNDBly1g0raor0tq6j31nm0wqqbh.jpg)
 
 * ***至关重要的步骤，***按如下图操作，在域名DNS设置处添加***TXT***类型解析，如下图即为：***name:_acmechallenge
 value:UYgQnnncMwZ9Z_Ja1mtkbTmayZP_5IDQcXgWIWlyY8w。***

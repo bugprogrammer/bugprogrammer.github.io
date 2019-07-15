@@ -11,7 +11,7 @@ date: 2019-05-29 00:21:00
 ---
 
 # OpenCore简介
-OpenCore是由***<font color=#A52A2A >vit9696</font>***等8位大佬开发的全新黑苹果引导工具。用于在PC上启动macOS操作系统。博主用了一天时间已经成功启动博主电脑上的macOS，现在做简单分享。<!--more-->
+OpenCore是由**<font color=#A52A2A >vit9696</font>**等8位大佬开发的全新黑苹果引导工具。用于在PC上启动macOS操作系统。博主用了一天时间已经成功启动博主电脑上的macOS，现在做简单分享。<!--more-->
 
 # OpenCore编译
 * APP Store安装Xcode。
@@ -19,14 +19,14 @@ OpenCore是由***<font color=#A52A2A >vit9696</font>***等8位大佬开发的全
 ```
 xcode-select --install
 ```
-* 在如下链接里下载编译脚本***<font color=#A52A2A >buildopencore，</font>***感谢pcbeta网友***<font color=#A52A2A >云朵有点甜</font>***编写脚本。
+* 在如下链接里下载编译脚本**<font color=#A52A2A >buildopencore，</font>**感谢pcbeta网友**<font color=#A52A2A >云朵有点甜</font>**编写脚本。
 http://bbs.pcbeta.com/viewthread-1814957-1-1.html
 * 解压并执行脚本,如图。编译后桌面生成OpenCore文件夹。
 ```
 chmod u+x ./buildopencore
 ./buildopencore
 ```
-    ![](/images/opencore-1.png)![](/images/opencore-2.png)![](/images/opencore-3.png)***<font color=#A52A2A >注意：Docs文件夹里有官方文档以及plist文件示例。</font>***
+    ![](/images/opencore-1.png)![](/images/opencore-2.png)![](/images/opencore-3.png)**<font color=#A52A2A >注意：Docs文件夹里有官方文档以及plist文件示例。</font>**
     
 # OpenCore使用简要教程
 ## 文件夹结构(虚线框内的不是必须项目，视需求而定)

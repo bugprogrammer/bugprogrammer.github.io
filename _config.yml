@@ -86,8 +86,7 @@ deploy:
   repo: 
     github: git@github.com:bugprogrammer/bugprogrammer.github.io.git
     coding: git@git.coding.net:bugprogrammer/bugprogrammer.git
-    ggc: git@38.106.21.158:bugprogrammer/hexo.git
-    gitee: git@gitee.com:bugprogrammer/bugprogrammer.github.io.git 
+    ggc: git@38.106.21.158:bugprogrammer/hexo.git 
 
   branch: master
   
@@ -129,16 +128,7 @@ symbols_count_time:
 
 # hexo-neat
 # 博文压缩
-neat_enable: false
-# 压缩html
-neat_html:
-  enable: false
-  exclude:
-# 压缩css  
-neat_css:
-  enable: false
-  exclude:
-    - '**/*.min.css'
+
 # leancloud安全
 leancloud_counter_security:
   enable_sync: true
@@ -146,20 +136,8 @@ leancloud_counter_security:
   app_key: Q6sIJP3zClCA8hIVUeYk3fCo
   username: 87811991@163.com # Will be asked while deploying if is left blank
   password: WBX8781199wbx # Recommmended to be left blank. Will be asked while deploying if is left blank
-# 压缩js
-neat_js:
-  enable: false
-  mangle: true
-  output:
-  compress:
-  exclude:
-    - '**/*.min.js'
-    - '**/jquery.fancybox.pack.js'
-    - '**/index.js'
-    - '**/love.js'
+
 
 lazyload:
   enable: true
-  onlypost: false
-  # className: #可选 e.g. .J-lazyload-img
-  loadingImg: /images/loading.jpg
+  #thumbPath: /images/thumb
