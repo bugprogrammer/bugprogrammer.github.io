@@ -1,5 +1,5 @@
 ---
-title: 'macOS下编译VoodooI2C教程'
+title: 'macOS下编译VoodooI2C教程(2019最新更新)'
 tags:
   - macOS
   - VoodooI2C
@@ -24,47 +24,14 @@ xcode-select --install
 macOS自带。
 
 ### 同步VoodooI2C源码
->由于VoodooI2C不同模块分属于不同仓库，所以要分多次同步源码。
-
-#### VoodooI2C主项目
-终端输入如下命令，完成后桌面会生成VoodooI2C文件夹。
+>由于VoodooI2C不同模块分属于不同仓库，所以我们用以下命令一次性克隆VoodooI2C及其所有子模块。
 ```
-cd ~/Desktop 
-git clone https://github.com/alexandred/VoodooI2C.git
+cd ~/Desktop
+git clone --recursive https://github.com/alexandred/VoodooI2C
 ```
-#### VoodooGPIO部分
->我们打开桌面上的VoodooI2C文件夹，进入Dependencies->VoodooGPIO，会发现里面是空的，所以要同步VoodooGPIO部分源码。
-
-终端输入如下命令，完成后Dependencies->VoodooGPIO下会生成相应文件，如图。
-```
-cd ~/Desktop/VoodooI2C/Dependencies 
-git clone https://github.com/coolstar/VoodooGPIO.git
-```
-![](/images/0b6a7d1fb590fa78b90a5da64b8b4422d772cbaf.jpg)
-
-#### VoodooI2CELAN VoodooI2CFTE VoodooI2CHID VoodooI2CSynaptics VoodooI2CUPDDEngine五部分
-
->我们打开桌面上的VoodooI2C文件夹，进入VoodooI2C Satellites，会发现里面的里面的5个文件夹都是空的。所以要同步这5部分源码。
-
-终端输入如下命令，完成后VoodooI2C Satellites里的5个文件夹下会生成相应文件，如图。
-```
-cd ~/Desktop/VoodooI2C/VoodooI2C\ Satellites
-git clone https://github.com/kprinssu/VoodooI2CELAN.git
-git clone https://github.com/prizraksarvar/VoodooI2CFTE.git
-git clone https://github.com/alexandred/VoodooI2CHID.git
-git clone https://github.com/alexandred/VoodooI2CSynaptics.git
-git clone https://github.com/blankmac/VoodooI2CUPDDEngine.git
-```
-![](/images/efea67887d106bd7cdb07f8632b4aa2775ccf461.jpg)
-![](/images/076fe240f8ae0f7ae139516cb424daa673402ad0.jpg)
-![](/images/136dfd624f23fc9558399c2838d33972f284114d.jpg)
-![](/images/a43b9ac9832f2de321afd09c1bed16c76db98f72.jpg)
-![](/images/70cf449f26192ac698ec34a825d1a10eae85d51c.jpg)
-
-至此，源码同步完成，桌面上的VoodooI2C文件夹就是完整的VoodooI2C源码。
-
+![](/images/VoodooI2C.png)
 ### 编译源码(这一节讲编译流程，相关错误解决方案在下一节)
-* 用xcode打开源码文件夹根目录的VoodooI2C.xcworkspace文件.
+* 用xcode打开桌面上的源码文件夹根目录的VoodooI2C.xcworkspace文件.
 * 点击xcode左侧所有的Update to recommended settings警告，弹出框按提示操作，如图。
 ![](/images/f9e31b416d4e0e3aae2713e4179f96db06b06ccb.jpg)
 * 点击Product->Archive，正常情况下会编译成功，弹框提示输出路径，选择并输出即可,如图。
@@ -77,4 +44,4 @@ git clone https://github.com/blankmac/VoodooI2CUPDDEngine.git
 
 ### 常见错误解决方案(语言叙述有难度，请看视频)
 #### 视频教程
-{% dplayer "url=https://download.bugprogrammer.me/I2C.mov" "loop=yes" "theme=#FADFA3" "autoplay=false" %}
+{% dplayer "url=https://downloads.bugprogrammer.me/VoodooI2C.mov" "loop=yes" "theme=#FADFA3" "autoplay=false" %}

@@ -86,7 +86,7 @@ deploy:
   repo: 
     github: git@github.com:bugprogrammer/bugprogrammer.github.io.git
     coding: git@git.coding.net:bugprogrammer/bugprogrammer.git
-    ggc: git@38.106.21.158:bugprogrammer/hexo.git 
+    ggc: git@bugprogrammer.me:bugprogrammer/hexo.git 
 
   branch: master
   
@@ -132,11 +132,14 @@ symbols_count_time:
 # leancloud安全
 leancloud_counter_security:
   enable_sync: true
-  app_id: ldbTiI5R3Sxz9SCC2Iu5Nws5-gzGzoHsz
-  app_key: Q6sIJP3zClCA8hIVUeYk3fCo
-  username: 87811991@163.com # Will be asked while deploying if is left blank
+  #app_id: ldbTiI5R3Sxz9SCC2Iu5Nws5-gzGzoHsz
+  #app_key: Q6sIJP3zClCA8hIVUeYk3fCo
+  #username: 87811991@163.com # Will be asked while deploying if is left blank
+  #password: WBX8781199wbx # Recommmended to be left blank. Will be asked while deploying if is left blank
+  app_id: TDMWGYpPBmRgBd7OhDT9Lm9z-MdYXbMMI
+  app_key: MMuPCT3GEQvs3VGXNmaOs3TK
+  username: a951426440@gmail.com # Will be asked while deploying if is left blank
   password: WBX8781199wbx # Recommmended to be left blank. Will be asked while deploying if is left blank
-
 
 lazyload:
   enable: true
