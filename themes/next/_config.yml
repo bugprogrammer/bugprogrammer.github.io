@@ -547,10 +547,10 @@ changyan:
 # More info available at https://valine.js.org
 valine:
   enable: true # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
-  appid: ldbTiI5R3Sxz9SCC2Iu5Nws5-gzGzoHsz # your leancloud application appid
-  appkey: Q6sIJP3zClCA8hIVUeYk3fCo # your leancloud application appkey
-  #appid: TDMWGYpPBmRgBd7OhDT9Lm9z-MdYXbMMI
-  #appkey: MMuPCT3GEQvs3VGXNmaOs3TK
+  #appid: ldbTiI5R3Sxz9SCC2Iu5Nws5-gzGzoHsz # your leancloud application appid
+  #appkey: Q6sIJP3zClCA8hIVUeYk3fCo # your leancloud application appkey
+  appid: TDMWGYpPBmRgBd7OhDT9Lm9z-MdYXbMMI
+  appkey: MMuPCT3GEQvs3VGXNmaOs3TK
   notify: false # mail notifier, See: https://github.com/xCss/Valine/wiki
   verify: false # Verification code
   placeholder: 希望各位访客评论时写一下昵称，方便博主区分，谢谢。 # comment box placeholder
@@ -695,10 +695,10 @@ rating:
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
   enable: true
-  app_id: ldbTiI5R3Sxz9SCC2Iu5Nws5-gzGzoHsz
-  app_key: Q6sIJP3zClCA8hIVUeYk3fCo
-  #app_id: TDMWGYpPBmRgBd7OhDT9Lm9z-MdYXbMMI
-  #app_key: MMuPCT3GEQvs3VGXNmaOs3TK
+  #app_id: ldbTiI5R3Sxz9SCC2Iu5Nws5-gzGzoHsz
+  #app_key: Q6sIJP3zClCA8hIVUeYk3fCo
+  app_id: TDMWGYpPBmRgBd7OhDT9Lm9z-MdYXbMMI
+  app_key: MMuPCT3GEQvs3VGXNmaOs3TK
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
   # If you don't care about security in leancloud counter and just want to use it directly
   # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
