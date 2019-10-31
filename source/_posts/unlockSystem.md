@@ -7,6 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2019-07-13 20:21:00
+updated: 2019-07-15 20:21:00
 ---
 
 >macOS 10.15的一个显著变化就是Apple锁定了系统分区，导致L/E以及S/L/E无法拷贝文件。Kext Utility无法重建缓存。也间接影响了HomeBrew的使用，下面教大家如何解锁系统分区。<!--more-->

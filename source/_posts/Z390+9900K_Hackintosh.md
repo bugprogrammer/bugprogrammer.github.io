@@ -9,6 +9,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2018-11-05 23:42:00
+updated: 2018-12-24 23:42:00
 ---
 
 ## 前言

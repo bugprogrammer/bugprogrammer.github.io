@@ -8,6 +8,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2019-07-06 02:49:00
+updated: 2019-07-06 02:49:00
 ---
 
 # 相关理论

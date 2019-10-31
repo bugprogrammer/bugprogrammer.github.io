@@ -8,6 +8,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2018-09-01 21:12:00
+updated: 2018-09-01 21:12:00
 ---
 
 >朋友购买了ThinkPad S1 2018版本，配置为i5-8250U+uhd620+8g ram+256g 联想定制ssd(NVME)+1080P屏幕。安装黑苹果大体顺利，现将大概过程分享，供同机型的朋友借鉴。<!--more-->

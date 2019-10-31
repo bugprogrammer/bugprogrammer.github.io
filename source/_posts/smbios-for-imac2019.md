@@ -8,6 +8,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2019-04-03 21:15:00
+updated: 2019-04-07 21:15:00
 ---
 
 > Apple在近期发布了iMac 2019版本，最高可配i9+vega48，无T2芯片(美滋滋)，目前Clover Configurator尚未更新关于iMac 2019的smbios信息，本教程教大家如何使用macserial获取iMac 2019机型信息。

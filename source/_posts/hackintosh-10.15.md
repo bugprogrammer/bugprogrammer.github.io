@@ -9,6 +9,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2019-06-04 08:40:00
+updated: 2019-09-24 08:40:00
 ---
 
 Apple的WWDC2019已经结束，为我们带来了macOS 10.15、MacPro等出色产品。博主连夜测试了10.15在PC机上的运行情况，现在梳理如下(持续更新)。<!--more-->
@@ -64,3 +65,7 @@ https://www.bugprogrammer.me/2019/05/23/github-hackintosh.html
 ## 2019-06-07更新
 截至目前，基于最新源码编译的AirportBrcmFixup 2.0.2版本已经可用。原作者Changelog如图。
 ![](/images/10.15-9.png)
+
+## 2019-09-24更新
+10.15下想要让蓝牙更稳定推荐使用 headkaze修改编译的OS-X-BrcmPatchRAM，GitHub地址如下：https://github.com/headkaze/OS-X-BrcmPatchRAM/releases
+![](/images/10.15-10.png)

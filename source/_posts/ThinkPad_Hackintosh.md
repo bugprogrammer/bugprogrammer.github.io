@@ -8,6 +8,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2018-07-28 16:10:00
+updated: 2018-07-28 16:10:00
 ---
 
 >朋友购买了ThinkPad S1 2017版本，配置为i5-7200U+hd620+8g ram+256g intel ssd(NVME)+1080P屏幕。安装黑苹果大体顺利，现将大概过程分享，供同机型的朋友借鉴。<!--more-->

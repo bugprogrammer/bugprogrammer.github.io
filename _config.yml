@@ -54,7 +54,7 @@ highlight:
 index_generator:
   path: ''
   per_page: 10
-  order_by: -date
+  order_by: -updated
   
 # Category & Tag
 default_category: uncategorized
@@ -76,7 +76,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: icarus
 #theme: matery
 
 # Deployment
@@ -128,18 +128,6 @@ symbols_count_time:
 
 # hexo-neat
 # 博文压缩
-
-# leancloud安全
-leancloud_counter_security:
-  enable_sync: true
-  #app_id: ldbTiI5R3Sxz9SCC2Iu5Nws5-gzGzoHsz
-  #app_key: Q6sIJP3zClCA8hIVUeYk3fCo
-  #username: 87811991@163.com # Will be asked while deploying if is left blank
-  #password: WBX8781199wbx # Recommmended to be left blank. Will be asked while deploying if is left blank
-  app_id: TDMWGYpPBmRgBd7OhDT9Lm9z-MdYXbMMI
-  app_key: MMuPCT3GEQvs3VGXNmaOs3TK
-  username: a951426440@gmail.com # Will be asked while deploying if is left blank
-  password: WBX8781199wbx # Recommmended to be left blank. Will be asked while deploying if is left blank
 
 lazyload:
   enable: true

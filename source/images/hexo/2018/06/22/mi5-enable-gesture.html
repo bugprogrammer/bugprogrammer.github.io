@@ -1,0 +1,612 @@
+<!DOCTYPE html><html lang="zh"><head><script src="/js/src/click.js"></script>
+
+
+    <meta charset="utf-8">
+
+<meta name="generator" content="Hexo 3.9.0">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<title>mi5开启全面屏手势教程(非原创，转自一个已经被miui论坛删除又幸运的被Chrome缓存下来的帖子) - Bugprogrammer的博客</title>
+
+
+    <meta name="description" content="MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看">
+<meta name="keywords" content="mi5,miui,Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mi5开启全面屏手势教程(非原创，转自一个已经被miui论坛删除又幸运的被Chrome缓存下来的帖子)">
+<meta property="og:url" content="https://www.bugprogrammer.me/2018/06/22/mi5-enable-gesture.html">
+<meta property="og:site_name" content="Bugprogrammer的博客">
+<meta property="og:description" content="MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.bugprogrammer.me/images/og_image.png">
+<meta property="og:updated_time" content="2018-06-22T14:48:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mi5开启全面屏手势教程(非原创，转自一个已经被miui论坛删除又幸运的被Chrome缓存下来的帖子)">
+<meta name="twitter:description" content="MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看">
+<meta name="twitter:image" content="https://www.bugprogrammer.me/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/my.jpeg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/my.jpeg" alt="mi5开启全面屏手势教程(非原创，转自一个已经被miui论坛删除又幸运的被Chrome缓存下来的帖子)" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">主页</a>
+                
+                <a class="navbar-item" href="/archives">归档</a>
+                
+                <a class="navbar-item" href="/categories">分类</a>
+                
+                <a class="navbar-item" href="/tags">标签</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/bugprogrammer">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-06-22T14:48:00.000Z"><i class="far fa-calendar-alt"> </i>2018-06-22</time>
+                
+                
+                <div class="level-item">
+                <i class="far fa-folder-open has-text-grey"></i> 
+                <a class="has-link-grey -link" href="/categories/Android/">Android</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock"></i> 
+                    
+                    
+                    5 分钟 读完 (大约 784 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                mi5开启全面屏手势教程(非原创，转自一个已经被miui论坛删除又幸运的被Chrome缓存下来的帖子)
+            
+        </h1>
+
+        
+            
+                
+                
+                    <div style="text-align:center;color: #ccc;font-size:14px;border:1px dashed #ccc">本博文最后更新于467天前(2018-06-22),其中的信息可能已经有所发展或者不再适用于现阶段。</div>
+                
+
+            
+
+        
+
+        <div class="content">
+            <h3 id="MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看"><a href="#MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看" class="headerlink" title="MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看"></a>MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看</h3><a id="more"></a>
+
+<blockquote>
+<p>我把我开启全面屏的过程写了一下，由于在过程中看到其他帖子写的太随便，不够详细，所以来写一个详细一些的，方便mi5用户体验全面屏手势，话说真的很好用啊，那些说不用root用第三方软件实现的手势不管是从美观程度和可用性都没原厂的好啊，刷完自己体会吧。</p>
+</blockquote>
+<h3 id="适用对象"><a href="#适用对象" class="headerlink" title="适用对象"></a>适用对象</h3><ul>
+<li>已经获取root权限的mi5</li>
+<li>已是开发版系统，并且在授权管理开启了root授权</li>
+<li>稳定版用户，自行升级到开发版开启root权限，或者用其他办法获取root授权</li>
+</ul>
+<h3 id="简要流程"><a href="#简要流程" class="headerlink" title="简要流程"></a>简要流程</h3><ul>
+<li>获取完整root权限</li>
+<li>安装rec，挂载system分区</li>
+<li>使用re文件管理器找到/system/build.prop文件，在文件尾部加入qemu.hw.mainkeys=0</li>
+<li>重启手机，即可在设置中找到全面屏选项</li>
+</ul>
+<h3 id="详细流程"><a href="#详细流程" class="headerlink" title="详细流程"></a>详细流程</h3><blockquote>
+<p>默认使用win10系统，已安装mi5的驱动。</p>
+</blockquote>
+<h4 id="获取完整root权限"><a href="#获取完整root权限" class="headerlink" title="获取完整root权限"></a>获取完整root权限</h4><ul>
+<li>手机开启usb调试模式</li>
+<li><a href="https://www.miui.com/forum.php?mod=attachment&aid=MjIzNzU2ODl8YjIwMjgyNGJlNjI1OGQxZTY3OGFhZmNhOTUyOTI2MzR8MTUyOTY1Njg5NA%3D%3D&request=yes&_f=.rar" target="_blank" rel="noopener">下载一键破译分区工具</a></li>
+<li>解压下载的文件，运行.bat文件，如图<br><img src="/images/005YMNDBly1g0racrzmmlj307003ogli.jpg" alt><br><img src="/images/005YMNDBly1g0racylveqj30i2081aas.jpg" alt></li>
+</ul>
+<h4 id="安装rec，挂载system分区"><a href="#安装rec，挂载system分区" class="headerlink" title="安装rec，挂载system分区"></a>安装rec，挂载system分区</h4><ul>
+<li><a href="https://www.miui.com/forum.php?mod=attachment&aid=MjIzNzYwNDd8Yjg4YjdlOWNmYjQ4OWI0NmJmZWFlMTFmMzc4NmMwODJ8MTUyOTY1Njg5NA%3D%3D&request=yes&_f=.apk" target="_blank" rel="noopener">下载twrp.apk</a></li>
+<li>手机安装下载的app（此app需要root权限，如果是开发版小米的root权限管理，去设置给他权限，其他root管理软件到对应的管理权限的地方，给它权限）</li>
+<li>打开安装的app<ul>
+<li>选择TWRP FLASH</li>
+<li>选择Select Device 找到 Xiaomi Mi 5 – gemini 并选择它</li>
+<li>选最新的.img文件（例如xian在是：twrp-3.2.1-1-gemini.img） </li>
+<li>他会提示是否要下载，点击okay</li>
+<li>下载好了之后点击FLASH TO RECOVERY按钮</li>
+<li>成功的话会提示：Flash completed Successfully!</li>
+<li>失败的话，多半是root权限问题，检查一下是否给了这个软件root权限</li>
+</ul>
+</li>
+<li>按住音量上键并重启手机，直到手机出现twrp的logo时放开音量上键 进入rec</li>
+<li>点击挂载，选择system分区，返回，重启手机</li>
+</ul>
+<h4 id="使用re管理器修改文件（此软件需要root权限）"><a href="#使用re管理器修改文件（此软件需要root权限）" class="headerlink" title="使用re管理器修改文件（此软件需要root权限）"></a>使用re管理器修改文件（此软件需要root权限）</h4><ul>
+<li>下载一个re管理器，找到/system/build.prop这个文件（是文件不是文件夹）</li>
+<li>以文本方式编辑，在文件最后加上 qemu.hw.mainkeys=0，保存</li>
+<li>以文本方式查看一下它，看是否保存成功</li>
+<li>如果失败多半是root权限或者挂载分区有问题，回到前面的步骤重试</li>
+<li>如果保存成功，只需重启手机即可在设置中找到全面屏选项<br><div class="progress-images" style="width:574px"><div class="progress-images--placeholder" style="padding-bottom: 161.14982578397212%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/005YMNDBly1g0rad71il1j30fy0ppq3m.jpg" data-thumb="/images/thumb/4500b025ce7e0d3e4ee8de0f79a2587a.jpg"></div></li>
+</ul>
+<h4 id="如果想关掉全面屏，只需将-system-build-prop-文件中的-qemu-hw-mainkeys-0-删去，重启即可"><a href="#如果想关掉全面屏，只需将-system-build-prop-文件中的-qemu-hw-mainkeys-0-删去，重启即可" class="headerlink" title="如果想关掉全面屏，只需将/system/build.prop 文件中的 qemu.hw.mainkeys=0 删去，重启即可"></a>如果想关掉全面屏，只需将/system/build.prop 文件中的 qemu.hw.mainkeys=0 删去，重启即可</h4><blockquote>
+<p>写的尽量详细了，如在过程中有问题，可以回复</p>
+</blockquote>
+
+        </div>
+        
+
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center;">
+            <a class="gallery-item" href="/images/tim.jpg"><img id="wechat_subscriber_qcode" src="/images/tim.jpg" style="width: 200px; max-width: 100%;"></a>
+            <div>扫一扫添加QQ好友</div>
+        </div>
+
+        <ul class="post-copyright">
+        <li><strong>QQ群列表:</strong></li>
+        <li><a href="http://shang.qq.com/wpa/qunwpa?idkey=860990e11014839268b97278613c5b16d3569e4ef42561eeab25b5457064cd87" target="_blank">Hackintosh极客俱乐部</a>   414114950</li>
+        </ul>
+
+        <ul class="post-copyright">
+        <li><strong>本文标题：</strong><a href="https://www.bugprogrammer.me/2018/06/22/mi5-enable-gesture.html">mi5开启全面屏手势教程(非原创，转自一个已经被miui论坛删除又幸运的被Chrome缓存下来的帖子)</a></li>
+        <li><strong>本文作者：</strong><a href="https://www.bugprogrammer.me">Bugprogrammer</a></li>
+        <li><strong>本文链接：</strong><a href="https://www.bugprogrammer.me/2018/06/22/mi5-enable-gesture.html">https://www.bugprogrammer.me/2018/06/22/mi5-enable-gesture.html</a></li>
+        <li><strong>发布时间：</strong>2018-06-22</li>
+        <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+        </li>
+        </ul>
+    
+        
+        <hr style="height:1px;margin:1rem 0">
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i> 
+                    <a class="has-link-grey -link" href="/tags/Android/">Android</a>, <a class="has-link-grey -link" href="/tags/mi5/">mi5</a>, <a class="has-link-grey -link" href="/tags/miui/">miui</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="social-share" data-disabled="facebook,twitter,google,diandian,linkedin,tencent"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/alipay.jpg" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechatpay.jpg" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/06/29/Build_Clover.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">macOS下编译Clover教程</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/05/27/reset-password-for-windows-10.html">
+                <span class="level-item">Windows 10下忘记密码的解决方案(本地账户，微软账户通杀)</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '228efd9c1e98867fc0ae',
+        clientSecret: '95f75ffd8504aed575db82baadd6c8152d824d66',
+        id: '4a97fe5e9a513e957744df12a4077aad',
+        repo: 'bugprogrammer.github.io',
+        owner: 'bugprogrammer',
+        admin: "bugprogrammer",
+        createIssueManually: false,
+        distractionFreeMode: false
+    })
+    gitalk.render('comment-container')
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+    
+        
+    
+        
+<div class="card widget column-left is-sticky" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看">
+        <span class="has-mr-6">1</span>
+        <span>MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看</span>
+        </a></li><li>
+        <a class="is-flex" href="#适用对象">
+        <span class="has-mr-6">2</span>
+        <span>适用对象</span>
+        </a></li><li>
+        <a class="is-flex" href="#简要流程">
+        <span class="has-mr-6">3</span>
+        <span>简要流程</span>
+        </a></li><li>
+        <a class="is-flex" href="#详细流程">
+        <span class="has-mr-6">4</span>
+        <span>详细流程</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#获取完整root权限">
+        <span class="has-mr-6">4.1</span>
+        <span>获取完整root权限</span>
+        </a></li><li>
+        <a class="is-flex" href="#安装rec，挂载system分区">
+        <span class="has-mr-6">4.2</span>
+        <span>安装rec，挂载system分区</span>
+        </a></li><li>
+        <a class="is-flex" href="#使用re管理器修改文件（此软件需要root权限）">
+        <span class="has-mr-6">4.3</span>
+        <span>使用re管理器修改文件（此软件需要root权限）</span>
+        </a></li><li>
+        <a class="is-flex" href="#如果想关掉全面屏，只需将-system-build-prop-文件中的-qemu-hw-mainkeys-0-删去，重启即可">
+        <span class="has-mr-6">4.4</span>
+        <span>如果想关掉全面屏，只需将/system/build.prop 文件中的 qemu.hw.mainkeys=0 删去，重启即可</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+    
+        
+    
+        
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/my.jpeg" alt="mi5开启全面屏手势教程(非原创，转自一个已经被miui论坛删除又幸运的被Chrome缓存下来的帖子)" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                © 2018-2019 Bugprogrammer 
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                本站访问量<span id="busuanzi_value_site_pv"></span>次
+                </span>
+                <span id="busuanzi_container_site_uv">
+                |  您是第<span id="busuanzi_value_site_uv"></span>位小伙伴
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+                <span id="sitetime">载入天数...</span>
+                <script language="javascript">
+                    function siteTime(){
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth()+1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+                    year - 作为date对象的年份，为4位年份值
+                    month - 0-11之间的整数，做为date对象的月份
+                    day - 1-31之间的整数，做为date对象的天数
+                    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+                    minutes - 0-59之间的整数，做为date对象的分钟数
+                    seconds - 0-59之间的整数，做为date对象的秒数
+                    microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+                    var t1 = Date.UTC(2018,05,27,15,00,00); //北京时间2018-2-13 00:00:00
+                    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+                    var diff = t2-t1;
+                    var diffYears = Math.floor(diff/years);
+                    var diffDays = Math.floor((diff/days)-diffYears*365);
+                    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+                    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+                    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+                    document.getElementById("sitetime").innerHTML=" <br />博客已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+                }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+                siteTime();
+                </script>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+<script src="/js/animation.js"></script>
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+    
+    
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+    
+    
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+
+<script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html>

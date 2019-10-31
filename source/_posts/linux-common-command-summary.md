@@ -8,6 +8,7 @@ id: 1
 categories:
   - Linux
 date: 2018-05-06 21:19:30
+updated: 2018-05-06 21:19:30
 ---
 
 由于最近一直在使用Linux操作系统，经常要使用一些Linux命令,所以总结一下Linux中的常用命令<!--more-->：

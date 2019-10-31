@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Bugprogrammer的博客</title>
+  
+  <subtitle>技术宅的日常</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://www.bugprogrammer.me/"/>
+  <updated>2019-10-03T04:24:00.000Z</updated>
+  <id>https://www.bugprogrammer.me/</id>
+  
+  <author>
+    <name>Bugprogrammer</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>博主魔改版Whatevergreen解析，还你正常核显频率(1.2g)</title>
+    <link href="https://www.bugprogrammer.me/2019/10/03/fix-igpu-with-weg.html"/>
+    <id>https://www.bugprogrammer.me/2019/10/03/fix-igpu-with-weg.html</id>
+    <published>2019-10-03T04:24:00.000Z</published>
+    <updated>2019-10-03T04:24:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;这篇文章是给台式机用户看的，高度依赖Whatevergreen缓冲帧补丁的小伙伴请绕行。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+      <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+      <category term="macOS Catalina 10.15" scheme="https://www.bugprogrammer.me/tags/macOS-Catalina-10-15/"/>
+    
+      <category term="OpenCore" scheme="https://www.bugprogrammer.me/tags/OpenCore/"/>
+    
+      <category term="weg" scheme="https://www.bugprogrammer.me/tags/weg/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>本站全新改版完成</title>
+    <link href="https://www.bugprogrammer.me/2019/09/23/aboutupdateend.html"/>
+    <id>https://www.bugprogrammer.me/2019/09/23/aboutupdateend.html</id>
+    <published>2019-09-22T16:47:00.000Z</published>
+    <updated>2019-09-23T16:47:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;本站全新改版变化如下&quot;&gt;&lt;a href=&quot;#本站全新改版变化如下&quot; class=&quot;headerlink&quot; title=&quot;本站全新改版变化如下&quot;&gt;&lt;/a&gt;本站全新改版变化如下&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="other" scheme="https://www.bugprogrammer.me/categories/other/"/>
+    
+    
+      <category term="other" scheme="https://www.bugprogrammer.me/tags/other/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于本站维护改版的公告</title>
+    <link href="https://www.bugprogrammer.me/2019/09/19/aboutupdate.html"/>
+    <id>https://www.bugprogrammer.me/2019/09/19/aboutupdate.html</id>
+    <published>2019-09-18T16:47:00.000Z</published>
+    <updated>2019-09-23T16:47:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;近期博主发现本站存在严重的用户体验缺陷-阐述如下&quot;&gt;&lt;a href=&quot;#近期博主发现本站存在严重的用户体验缺陷-阐述如下&quot; class=&quot;headerlink&quot; title=&quot;近期博主发现本站存在严重的用户体验缺陷,阐述如下&quot;&gt;&lt;/a&gt;近期博主发现本站存在严重的用户体验缺陷,阐述如下&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="other" scheme="https://www.bugprogrammer.me/categories/other/"/>
+    
+    
+      <category term="other" scheme="https://www.bugprogrammer.me/tags/other/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一加7 Pro Android Q root教程</title>
+    <link href="https://www.bugprogrammer.me/2019/08/18/root-for-oneplus7pro-androidQ.html"/>
+    <id>https://www.bugprogrammer.me/2019/08/18/root-for-oneplus7pro-androidQ.html</id>
+    <published>2019-08-18T14:21:00.000Z</published>
+    <updated>2019-08-18T14:21:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;博主近日把自己的一加7 Pro升级到了Android Q beta，发现暂时无法刷入twrp-recovery，也就意味着root有一点点的麻烦，今天博主发布个人测试可行的root方案。博主是在Mac下操作，Windows以及Linux同理。&lt;/p&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="https://www.bugprogrammer.me/categories/Android/"/>
+    
+    
+      <category term="Android Q" scheme="https://www.bugprogrammer.me/tags/Android-Q/"/>
+    
+      <category term="OnePlus 7 Pro" scheme="https://www.bugprogrammer.me/tags/OnePlus-7-Pro/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>教你制作macOS+Ubuntu+WindowsPE超级启动盘(仅支持UEFI)</title>
+    <link href="https://www.bugprogrammer.me/2019/07/26/make-super-usb.html"/>
+    <id>https://www.bugprogrammer.me/2019/07/26/make-super-usb.html</id>
+    <published>2019-07-26T08:25:00.000Z</published>
+    <updated>2019-07-30T08:25:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;对于多系统用户，有没有觉得每一个系统一个U盘很麻烦而且浪费U盘，本文会教你如何制作macOS+Ubuntu+WindowsPE多系统启动盘。注意：建议使用博主分享的PE，其他PE文件结构或许不同，不确定能否成功。&lt;/p&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+      <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解锁macOS10.15的系统分区</title>
+    <link href="https://www.bugprogrammer.me/2019/07/13/unlockSystem.html"/>
+    <id>https://www.bugprogrammer.me/2019/07/13/unlockSystem.html</id>
+    <published>2019-07-13T12:21:00.000Z</published>
+    <updated>2019-07-15T12:21:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;macOS 10.15的一个显著变化就是Apple锁定了系统分区，导致L/E以及S/L/E无法拷贝文件。Kext Utility无法重建缓存。也间接影响了HomeBrew的使用，下面教大家如何解锁系统分区。&lt;/p&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+      <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>什么？这辣鸡BIOS竟然不能关闭Secure Boot？教你在开启Secure Boot的情况下安装macOS</title>
+    <link href="https://www.bugprogrammer.me/2019/07/06/clover-with-secure-boot.html"/>
+    <id>https://www.bugprogrammer.me/2019/07/06/clover-with-secure-boot.html</id>
+    <published>2019-07-05T18:49:00.000Z</published>
+    <updated>2019-07-05T18:49:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;相关理论&quot;&gt;&lt;a href=&quot;#相关理论&quot; class=&quot;headerlink&quot; title=&quot;相关理论&quot;&gt;&lt;/a&gt;相关理论&lt;/h1&gt;&lt;h2 id=&quot;BIOS&quot;&gt;&lt;a href=&quot;#BIOS&quot; class=&quot;headerlink&quot; title=&quot;BIOS&quot;&gt;&lt;/a&gt;BIOS&lt;/h2&gt;&lt;p&gt;BIOS是英文”Basic Input Output System”的缩略语，直译过来后中文名称就是”基本输入输出系统”。其实，它是一组固化到计算机内主板上一个ROM芯片上的程序，它保存着计算机最重要的基本输入输出的程序、系统设置信息、开机后自检程序和系统自启动程序。 其主要功能是为计算机提供最底层的、最直接的硬件设置和控制。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+      <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+      <category term="Secure Boot" scheme="https://www.bugprogrammer.me/tags/Secure-Boot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于leancloud域名停止解析导致本站评论系统报废的公告</title>
+    <link href="https://www.bugprogrammer.me/2019/06/21/about-leancloud.html"/>
+    <id>https://www.bugprogrammer.me/2019/06/21/about-leancloud.html</id>
+    <published>2019-06-21T12:10:00.000Z</published>
+    <updated>2019-06-21T12:10:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;从昨天开始，leancloud域名在多地停止解析，导致其部分服务不可用。本站目前评论系统暂时报废。博主会第一时间寻找替代方案。不排除评论数据丢失的可能。抱歉！抱歉！抱歉！&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="other" scheme="https://www.bugprogrammer.me/categories/other/"/>
+    
+    
+      <category term="other" scheme="https://www.bugprogrammer.me/tags/other/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>macOS Catalina 10.15关于sidecar功能的说明</title>
+    <link href="https://www.bugprogrammer.me/2019/06/13/about-sidecar.html"/>
+    <id>https://www.bugprogrammer.me/2019/06/13/about-sidecar.html</id>
+    <published>2019-06-12T16:47:00.000Z</published>
+    <updated>2019-06-14T16:47:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;macOS 10.15的一个重磅功能是sidecar。就是用iPad作为mac的扩展屏，博主测试了一下，挺好用的。但是在Hackintosh下，并不是随意就能启用sidecar。以下附上博主的启用sidecar教程。&lt;/p&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+      <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+      <category term="macOS Catalina 10.15" scheme="https://www.bugprogrammer.me/tags/macOS-Catalina-10-15/"/>
+    
+      <category term="sidecar" scheme="https://www.bugprogrammer.me/tags/sidecar/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>macOS Catalina 10.15目前情况(持续更新)</title>
+    <link href="https://www.bugprogrammer.me/2019/06/04/hackintosh-10.15.html"/>
+    <id>https://www.bugprogrammer.me/2019/06/04/hackintosh-10.15.html</id>
+    <published>2019-06-04T00:40:00.000Z</published>
+    <updated>2019-09-24T00:40:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Apple的WWDC2019已经结束，为我们带来了macOS 10.15、MacPro等出色产品。博主连夜测试了10.15在PC机上的运行情况，现在梳理如下(持续更新)。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+      <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+      <category term="macOS Catalina 10.15" scheme="https://www.bugprogrammer.me/tags/macOS-Catalina-10-15/"/>
+    
+      <category term="OpenCore" scheme="https://www.bugprogrammer.me/tags/OpenCore/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OpenCore黑苹果方案以及ASRock Z390 Phantom Gaming-ITX/ac+i9-9900K OpenCore配置文件分享</title>
+    <link href="https://www.bugprogrammer.me/2019/05/29/opencore-hackintosh.html"/>
+    <id>https://www.bugprogrammer.me/2019/05/29/opencore-hackintosh.html</id>
+    <published>2019-05-28T16:21:00.000Z</published>
+    <updated>2019-05-28T16:21:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;OpenCore简介&quot;&gt;&lt;a href=&quot;#OpenCore简介&quot; class=&quot;headerlink&quot; title=&quot;OpenCore简介&quot;&gt;&lt;/a&gt;OpenCore简介&lt;/h1&gt;&lt;p&gt;OpenCore是由&lt;strong&gt;&lt;font color=&quot;#A52A2A&quot;&gt;vit9696&lt;/font&gt;&lt;/strong&gt;等8位大佬开发的全新黑苹果引导工具。用于在PC上启动macOS操作系统。博主用了一天时间已经成功启动博主电脑上的macOS，现在做简单分享。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+      <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+      <category term="OpenCore" scheme="https://www.bugprogrammer.me/tags/OpenCore/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博主github Hackintosh仓库公开以及使用方法</title>
+    <link href="https://www.bugprogrammer.me/2019/05/23/github-hackintosh.html"/>
+    <id>https://www.bugprogrammer.me/2019/05/23/github-hackintosh.html</id>
+    <published>2019-05-23T05:50:00.000Z</published>
+    <updated>2019-05-23T05:50:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;为了方便大家安装macOS，博主将测试过的机型的Clover文件整理并发布至github，地址为&lt;strong&gt;&lt;a href=&quot;https://github.com/bugprogrammer/hackintosh&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/bugprogrammer/hackintosh&lt;/a&gt;&lt;/strong&gt; &lt;strong&gt;&lt;font color=&quot;#A52A2A&quot;&gt;注意:仓库中所有机型都是博主亲自安装并测试过的机型。&lt;/font&gt;&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+      <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于博客评论数据丢失的公告</title>
+    <link href="https://www.bugprogrammer.me/2019/05/22/about-blog-lost.html"/>
+    <id>https://www.bugprogrammer.me/2019/05/22/about-blog-lost.html</id>
+    <published>2019-05-22T14:02:00.000Z</published>
+    <updated>2019-05-22T14:02:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;本博客&lt;strong&gt;&lt;em&gt;&lt;a href=&quot;https://www.bugprogrammer.me&quot;&gt;https://www.bugprogrammer.me&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="other" scheme="https://www.bugprogrammer.me/categories/other/"/>
+    
+    
+      <category term="other" scheme="https://www.bugprogrammer.me/tags/other/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>macOS 10.14.6 beta下填充PCI列表的简要教程</title>
+    <link href="https://www.bugprogrammer.me/2019/05/21/pci-list-for-hackintosh.html"/>
+    <id>https://www.bugprogrammer.me/2019/05/21/pci-list-for-hackintosh.html</id>
+    <published>2019-05-20T17:01:00.000Z</published>
+    <updated>2019-05-20T17:01:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;不知各位爱好者是否发现了一些朋友的黑苹果系统中,关于本机里的pci列表下有详细的设备信息。以前实现这个比较麻烦，需要ssdt。现在已经有简便方案。&lt;/p&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+      <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于博客迁移以及改版完成的公告</title>
+    <link href="https://www.bugprogrammer.me/2019/05/17/about-blog-end.html"/>
+    <id>https://www.bugprogrammer.me/2019/05/17/about-blog-end.html</id>
+    <published>2019-05-16T16:45:00.000Z</published>
+    <updated>2019-05-16T16:45:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本博客&lt;strong&gt;&lt;em&gt;&lt;a href=&quot;https://www.bugprogrammer.me&quot;&gt;https://www.bugprogrammer.me&lt;/a&gt;&lt;/em&gt;&lt;/strong&gt; 已经正式迁移并改版完成，现在访问速度已经显著提升，并且国内和国外实现分流。即日起博客恢复更新(注意:云南访客可能需要特殊技术访问)。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="other" scheme="https://www.bugprogrammer.me/categories/other/"/>
+    
+    
+      <category term="other" scheme="https://www.bugprogrammer.me/tags/other/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于博客迁移的公告</title>
+    <link href="https://www.bugprogrammer.me/2019/04/29/about-blog.html"/>
+    <id>https://www.bugprogrammer.me/2019/04/29/about-blog.html</id>
+    <published>2019-04-29T09:46:00.000Z</published>
+    <updated>2019-04-29T09:46:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;由于博主将图片恢复后，对访问速度不满意，所以近期打算迁移服务器，可能有短暂时间无法访问，请谅解，谢谢！&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="other" scheme="https://www.bugprogrammer.me/categories/other/"/>
+    
+    
+      <category term="other" scheme="https://www.bugprogrammer.me/tags/other/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于博客图片恢复的公告</title>
+    <link href="https://www.bugprogrammer.me/2019/04/28/about-picture-restart.html"/>
+    <id>https://www.bugprogrammer.me/2019/04/28/about-picture-restart.html</id>
+    <published>2019-04-27T19:10:00.000Z</published>
+    <updated>2019-04-27T19:10:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;本博客图片已经恢复，由于时间仓促，或有遗漏，如果各位访客发现图片缺失，请联系博主，谢谢！&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="other" scheme="https://www.bugprogrammer.me/categories/other/"/>
+    
+    
+      <category term="other" scheme="https://www.bugprogrammer.me/tags/other/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于新浪图床开始限制外链的公告</title>
+    <link href="https://www.bugprogrammer.me/2019/04/27/about-picture.html"/>
+    <id>https://www.bugprogrammer.me/2019/04/27/about-picture.html</id>
+    <published>2019-04-26T16:09:00.000Z</published>
+    <updated>2019-04-26T16:09:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;由于博主最近比较忙，所以对博客的维护不太及时，抱歉。今天博主发现新浪图床开始限制外链访问，导致本博客图片暂时无法显示。博主会以最快速度恢复。感谢各位访客对本博客的支持！&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="other" scheme="https://www.bugprogrammer.me/categories/other/"/>
+    
+    
+      <category term="other" scheme="https://www.bugprogrammer.me/tags/other/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用macserial获取iMac 2019机型信息</title>
+    <link href="https://www.bugprogrammer.me/2019/04/03/smbios-for-imac2019.html"/>
+    <id>https://www.bugprogrammer.me/2019/04/03/smbios-for-imac2019.html</id>
+    <published>2019-04-03T13:15:00.000Z</published>
+    <updated>2019-04-07T13:15:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Apple在近期发布了iMac 2019版本，最高可配i9+vega48，无T2芯片(美滋滋)，目前Clover Configurator尚未更新关于iMac 2019的smbios信息，本教程教大家如何使用macserial获取iMac 2019机型信息。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+      <category term="macOS" scheme="https://www.bugprogrammer.me/tags/macOS/"/>
+    
+      <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于macOS 10.14.4 18E2034镜像的说明</title>
+    <link href="https://www.bugprogrammer.me/2019/03/27/about-macos-10.14.4-18E2034.html"/>
+    <id>https://www.bugprogrammer.me/2019/03/27/about-macos-10.14.4-18E2034.html</id>
+    <published>2019-03-27T07:01:00.000Z</published>
+    <updated>2019-03-27T07:01:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;macOS 10.14.4 18E2034是一个特供镜像，博主猜测是iMac 2019的预装镜像(参测而已，因为经测试发现9900K型号仍然不识别，所以。。。)&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+      <category term="macOS" scheme="https://www.bugprogrammer.me/tags/macOS/"/>
+    
+      <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+  </entry>
+  
+</feed>

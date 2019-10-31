@@ -8,6 +8,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2019-05-29 00:21:00
+updated: 2019-05-29 00:21:00
 ---
 
 # OpenCore简介

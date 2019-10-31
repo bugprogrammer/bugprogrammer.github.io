@@ -1,0 +1,621 @@
+<!DOCTYPE html><html lang="zh"><head><script src="/js/src/click.js"></script>
+
+
+    <meta charset="utf-8">
+
+<meta name="generator" content="Hexo 3.9.0">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<title>使用macserial获取iMac 2019机型信息 - Bugprogrammer的博客</title>
+
+
+    <meta name="description" content="Apple在近期发布了iMac 2019版本，最高可配i9+vega48，无T2芯片(美滋滋)，目前Clover Configurator尚未更新关于iMac 2019的smbios信息，本教程教大家如何使用macserial获取iMac 2019机型信息。">
+<meta name="keywords" content="macOS,Hackintosh">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用macserial获取iMac 2019机型信息">
+<meta property="og:url" content="https://www.bugprogrammer.me/2019/04/03/smbios-for-imac2019.html">
+<meta property="og:site_name" content="Bugprogrammer的博客">
+<meta property="og:description" content="Apple在近期发布了iMac 2019版本，最高可配i9+vega48，无T2芯片(美滋滋)，目前Clover Configurator尚未更新关于iMac 2019的smbios信息，本教程教大家如何使用macserial获取iMac 2019机型信息。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.bugprogrammer.me/images/og_image.png">
+<meta property="og:updated_time" content="2019-04-07T13:15:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用macserial获取iMac 2019机型信息">
+<meta name="twitter:description" content="Apple在近期发布了iMac 2019版本，最高可配i9+vega48，无T2芯片(美滋滋)，目前Clover Configurator尚未更新关于iMac 2019的smbios信息，本教程教大家如何使用macserial获取iMac 2019机型信息。">
+<meta name="twitter:image" content="https://www.bugprogrammer.me/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/my.jpeg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/my.jpeg" alt="使用macserial获取iMac 2019机型信息" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">主页</a>
+                
+                <a class="navbar-item" href="/archives">归档</a>
+                
+                <a class="navbar-item" href="/categories">分类</a>
+                
+                <a class="navbar-item" href="/tags">标签</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/bugprogrammer">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-03T13:15:00.000Z"><i class="far fa-calendar-alt"> </i>2019-04-03</time>
+                
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2019-04-07T13:15:00.000Z"><i class="far fa-calendar-check"> </i>2019-04-07</time>
+                
+                
+                <div class="level-item">
+                <i class="far fa-folder-open has-text-grey"></i> 
+                <a class="has-link-grey -link" href="/categories/Hackintosh/">Hackintosh</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock"></i> 
+                    
+                    
+                    3 分钟 读完 (大约 410 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                使用macserial获取iMac 2019机型信息
+            
+        </h1>
+
+        
+            
+                
+                
+                    <div style="text-align:center;color: #ccc;font-size:14px;border:1px dashed #ccc">本博文最后更新于178天前(2019-04-07),其中的信息可能已经有所发展或者不再适用于现阶段。</div>
+                
+
+            
+
+        
+
+        <div class="content">
+            <blockquote>
+<p>Apple在近期发布了iMac 2019版本，最高可配i9+vega48，无T2芯片(美滋滋)，目前Clover Configurator尚未更新关于iMac 2019的smbios信息，本教程教大家如何使用macserial获取iMac 2019机型信息。</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="获取macserial软件"><a href="#获取macserial软件" class="headerlink" title="获取macserial软件"></a>获取macserial软件</h3><blockquote>
+<p>macserial是github上的<font color="#A52A2A"><strong>acidanthera</strong></font>大佬开发，其release版本尚未添加iMac 2019信息，故需要编译安装。经过博主测试，需要修改build.tool脚本才能成功编译，故博主已将原项目<font color="#A52A2A"><strong>fork</strong></font>，并修改build.tool脚本，使其能正常编译。</p>
+</blockquote>
+<blockquote>
+<p>原项目地址:<a href="https://github.com/acidanthera/macserial" target="_blank" rel="noopener">https://github.com/acidanthera/macserial</a></p>
+</blockquote>
+<blockquote>
+<p>博主fork地址:<a href="https://github.com/bugprogrammer/macserial" target="_blank" rel="noopener">https://github.com/bugprogrammer/macserial</a></p>
+</blockquote>
+<h4 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h4><h5 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a>Xcode</h5><ul>
+<li>App Store下载Xcode</li>
+<li>终端输入如下命令并按提示安装<figure class="highlight ada hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcode-<span class="hljs-keyword">select</span> <span class="hljs-comment">--install</span></span><br></pre></td></tr></tbody></table></figure>
+
+</li>
+</ul>
+<h4 id="获取macserial源码"><a href="#获取macserial源码" class="headerlink" title="获取macserial源码"></a>获取macserial源码</h4><p>终端下输入如下命令即可</p>
+<figure class="highlight jboss-cli hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">cd</span> ~<span class="hljs-string">/Desktop</span></span><br><span class="line">git clone https:<span class="hljs-string">//github.com/bugprogrammer/macserial.git</span></span><br><span class="line"><span class="hljs-keyword">cd</span> macserial</span><br></pre></td></tr></tbody></table></figure>
+
+<p></p><div class="progress-images" style="width:2150px"><div class="progress-images--placeholder" style="padding-bottom: 55.53488372093023%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/ce1c2f16f103e8ba764ec2c731370177bc99aab1.jpg" data-thumb="/images/thumb/99360c17d49678476046643a034f5b4a.jpg"></div><p></p>
+<h4 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h4><p>终端下输入如下命令即可，成功后会打开生成文件目录。</p>
+<figure class="highlight jboss-cli hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-string">./build.tool</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p></p><div class="progress-images" style="width:2146px"><div class="progress-images--placeholder" style="padding-bottom: 57.315936626281456%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/f2f100fad5fc616b32ea4c7a596379b3dbbcae9d.jpg" data-thumb="/images/thumb/a2975a0b3c9c712d4dd6ae5fa8c9a76c.jpg"></div><p></p>
+<h3 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h3><h4 id="获取帮助"><a href="#获取帮助" class="headerlink" title="获取帮助"></a>获取帮助</h4><figure class="highlight armasm hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">bin/macserial64 </span>-h</span><br></pre></td></tr></tbody></table></figure>
+
+<p></p><div class="progress-images" style="width:2150px"><div class="progress-images--placeholder" style="padding-bottom: 57.674418604651166%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/4ee5818801c68268aa98ad5c21dd7b808124c2e7.jpg" data-thumb="/images/thumb/4c74f02b1085b6a785f437352183464d.jpg"></div><p></p>
+<h4 id="查看支持的所有机型"><a href="#查看支持的所有机型" class="headerlink" title="查看支持的所有机型"></a>查看支持的所有机型</h4><figure class="highlight ada hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/macserial64 <span class="hljs-comment">--list</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p></p><div class="progress-images" style="width:2150px"><div class="progress-images--placeholder" style="padding-bottom: 57.674418604651166%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/2485bc9325d68c7209721bff27f35e0283549b27.jpg" data-thumb="/images/thumb/78ff0c273510e249851f2946217c92b1.jpg"></div><br><div class="progress-images" style="width:2150px"><div class="progress-images--placeholder" style="padding-bottom: 57.674418604651166%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/dc354eafcda927a3095934b78989dd4128f04b1c.jpg" data-thumb="/images/thumb/b1edf98e2dbe9b90733597e2ef6aa0a3.jpg"></div><p></p>
+<h3 id="获取iMac-2019机型信息-以iMac-19-1为例"><a href="#获取iMac-2019机型信息-以iMac-19-1为例" class="headerlink" title="获取iMac 2019机型信息(以iMac 19,1为例)"></a>获取iMac 2019机型信息(以iMac 19,1为例)</h3><h4 id="获取Serial-Number以及Board-Serial-Number"><a href="#获取Serial-Number以及Board-Serial-Number" class="headerlink" title="获取Serial Number以及Board Serial Number"></a>获取Serial Number以及Board Serial Number</h4><figure class="highlight ada hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/macserial64 <span class="hljs-comment">--model iMac19,1</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p></p><div class="progress-images" style="width:3568px"><div class="progress-images--placeholder" style="padding-bottom: 37.94843049327354%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/ace46b89621b91d46e0236ca9547315eaae38e7b.jpg" data-thumb="/images/thumb/ea0275b2973ee0bf5349ea3233bf376f.jpg"></div><p></p>
+<h4 id="通过源码获取其他信息"><a href="#通过源码获取其他信息" class="headerlink" title="通过源码获取其他信息"></a>通过源码获取其他信息</h4><figure class="highlight lsl hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -n '<span class="hljs-number">424</span>,<span class="hljs-number">429</span>p' src/modelinfo.h</span><br></pre></td></tr></tbody></table></figure>
+
+<p></p><div class="progress-images" style="width:2444px"><div class="progress-images--placeholder" style="padding-bottom: 77.98690671031096%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/5c207d8538d1a6a7ee6f5000500dbf718b845aab.jpg" data-thumb="/images/thumb/8d096171f486b86fb44e06974ba23b56.jpg"></div><p></p>
+<h3 id="最终成品"><a href="#最终成品" class="headerlink" title="最终成品"></a>最终成品</h3><p></p><div class="progress-images" style="width:1172px"><div class="progress-images--placeholder" style="padding-bottom: 60.23890784982935%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/ce8b62d1cf5cc748a11a21b86cd234e48e5d5aa3.png" data-thumb="/images/thumb/52d2c8ba6e548b9e5b30cd88c3726427.png"></div><p></p>
+
+        </div>
+        
+
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center;">
+            <a class="gallery-item" href="/images/tim.jpg"><img id="wechat_subscriber_qcode" src="/images/tim.jpg" style="width: 200px; max-width: 100%;"></a>
+            <div>扫一扫添加QQ好友</div>
+        </div>
+
+        <ul class="post-copyright">
+        <li><strong>QQ群列表:</strong></li>
+        <li><a href="http://shang.qq.com/wpa/qunwpa?idkey=860990e11014839268b97278613c5b16d3569e4ef42561eeab25b5457064cd87" target="_blank">Hackintosh极客俱乐部</a>   414114950</li>
+        </ul>
+
+        <ul class="post-copyright">
+        <li><strong>本文标题：</strong><a href="https://www.bugprogrammer.me/2019/04/03/smbios-for-imac2019.html">使用macserial获取iMac 2019机型信息</a></li>
+        <li><strong>本文作者：</strong><a href="https://www.bugprogrammer.me">Bugprogrammer</a></li>
+        <li><strong>本文链接：</strong><a href="https://www.bugprogrammer.me/2019/04/03/smbios-for-imac2019.html">https://www.bugprogrammer.me/2019/04/03/smbios-for-imac2019.html</a></li>
+        <li><strong>发布时间：</strong>2019-04-03</li>
+        <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+        </li>
+        </ul>
+    
+        
+        <hr style="height:1px;margin:1rem 0">
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i> 
+                    <a class="has-link-grey -link" href="/tags/Hackintosh/">Hackintosh</a>, <a class="has-link-grey -link" href="/tags/macOS/">macOS</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="social-share" data-disabled="facebook,twitter,google,diandian,linkedin,tencent"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/alipay.jpg" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechatpay.jpg" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/04/27/about-picture.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">关于新浪图床开始限制外链的公告</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/03/27/about-macos-10.14.4-18E2034.html">
+                <span class="level-item">关于macOS 10.14.4 18E2034镜像的说明</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '228efd9c1e98867fc0ae',
+        clientSecret: '95f75ffd8504aed575db82baadd6c8152d824d66',
+        id: 'c30baffca62d5bc4e2ecebf2b8a89ead',
+        repo: 'bugprogrammer.github.io',
+        owner: 'bugprogrammer',
+        admin: "bugprogrammer",
+        createIssueManually: false,
+        distractionFreeMode: false
+    })
+    gitalk.render('comment-container')
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+    
+        
+    
+        
+<div class="card widget column-left is-sticky" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#获取macserial软件">
+        <span class="has-mr-6">1</span>
+        <span>获取macserial软件</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#环境准备">
+        <span class="has-mr-6">1.1</span>
+        <span>环境准备</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Xcode">
+        <span class="has-mr-6">1.1.1</span>
+        <span>Xcode</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#获取macserial源码">
+        <span class="has-mr-6">1.2</span>
+        <span>获取macserial源码</span>
+        </a></li><li>
+        <a class="is-flex" href="#编译">
+        <span class="has-mr-6">1.3</span>
+        <span>编译</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#简单使用">
+        <span class="has-mr-6">2</span>
+        <span>简单使用</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#获取帮助">
+        <span class="has-mr-6">2.1</span>
+        <span>获取帮助</span>
+        </a></li><li>
+        <a class="is-flex" href="#查看支持的所有机型">
+        <span class="has-mr-6">2.2</span>
+        <span>查看支持的所有机型</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#获取iMac-2019机型信息-以iMac-19-1为例">
+        <span class="has-mr-6">3</span>
+        <span>获取iMac 2019机型信息(以iMac 19,1为例)</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#获取Serial-Number以及Board-Serial-Number">
+        <span class="has-mr-6">3.1</span>
+        <span>获取Serial Number以及Board Serial Number</span>
+        </a></li><li>
+        <a class="is-flex" href="#通过源码获取其他信息">
+        <span class="has-mr-6">3.2</span>
+        <span>通过源码获取其他信息</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#最终成品">
+        <span class="has-mr-6">4</span>
+        <span>最终成品</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+    
+        
+    
+        
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/my.jpeg" alt="使用macserial获取iMac 2019机型信息" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                © 2018-2019 Bugprogrammer 
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                本站访问量<span id="busuanzi_value_site_pv"></span>次
+                </span>
+                <span id="busuanzi_container_site_uv">
+                |  您是第<span id="busuanzi_value_site_uv"></span>位小伙伴
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+                <span id="sitetime">载入天数...</span>
+                <script language="javascript">
+                    function siteTime(){
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth()+1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+                    year - 作为date对象的年份，为4位年份值
+                    month - 0-11之间的整数，做为date对象的月份
+                    day - 1-31之间的整数，做为date对象的天数
+                    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+                    minutes - 0-59之间的整数，做为date对象的分钟数
+                    seconds - 0-59之间的整数，做为date对象的秒数
+                    microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+                    var t1 = Date.UTC(2018,05,27,15,00,00); //北京时间2018-2-13 00:00:00
+                    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+                    var diff = t2-t1;
+                    var diffYears = Math.floor(diff/years);
+                    var diffDays = Math.floor((diff/days)-diffYears*365);
+                    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+                    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+                    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+                    document.getElementById("sitetime").innerHTML=" <br />博客已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+                }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+                siteTime();
+                </script>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+<script src="/js/animation.js"></script>
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+    
+    
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+    
+    
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+
+<script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html>

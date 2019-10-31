@@ -1,0 +1,744 @@
+<!DOCTYPE html><html lang="zh"><head><script src="/js/src/click.js"></script>
+
+
+    <meta charset="utf-8">
+
+<meta name="generator" content="Hexo 3.9.0">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<title>Hackintosh for ASRock Z390 Phantom Gaming-ITX/ac+i9-9900K相关问题解决方案 - Bugprogrammer的博客</title>
+
+
+    <meta name="description" content="前言 你没看错，的确是Z390+9900K黑苹果，博主第一时间海淘测试(价钱不说了),大概率国内首发Z390+9900K黑苹果常见问题解决方案。">
+<meta name="keywords" content="macOS,acrock z390,i9-9900K">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hackintosh for ASRock Z390 Phantom Gaming-ITX/ac+i9-9900K相关问题解决方案">
+<meta property="og:url" content="https://www.bugprogrammer.me/2018/11/05/Z390+9900K_Hackintosh.html">
+<meta property="og:site_name" content="Bugprogrammer的博客">
+<meta property="og:description" content="前言 你没看错，的确是Z390+9900K黑苹果，博主第一时间海淘测试(价钱不说了),大概率国内首发Z390+9900K黑苹果常见问题解决方案。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.bugprogrammer.me/images/og_image.png">
+<meta property="og:updated_time" content="2018-12-24T15:42:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hackintosh for ASRock Z390 Phantom Gaming-ITX/ac+i9-9900K相关问题解决方案">
+<meta name="twitter:description" content="前言 你没看错，的确是Z390+9900K黑苹果，博主第一时间海淘测试(价钱不说了),大概率国内首发Z390+9900K黑苹果常见问题解决方案。">
+<meta name="twitter:image" content="https://www.bugprogrammer.me/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/my.jpeg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/my.jpeg" alt="Hackintosh for ASRock Z390 Phantom Gaming-ITX/ac+i9-9900K相关问题解决方案" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">主页</a>
+                
+                <a class="navbar-item" href="/archives">归档</a>
+                
+                <a class="navbar-item" href="/categories">分类</a>
+                
+                <a class="navbar-item" href="/tags">标签</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/bugprogrammer">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-11-05T15:42:00.000Z"><i class="far fa-calendar-alt"> </i>2018-11-05</time>
+                
+                <time class="level-item has-text-grey is-hidden-mobile" datetime="2018-12-24T15:42:00.000Z"><i class="far fa-calendar-check"> </i>2018-12-24</time>
+                
+                
+                <div class="level-item">
+                <i class="far fa-folder-open has-text-grey"></i> 
+                <a class="has-link-grey -link" href="/categories/Hackintosh/">Hackintosh</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    <i class="far fa-clock"></i> 
+                    
+                    
+                    12 分钟 读完 (大约 1726 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Hackintosh for ASRock Z390 Phantom Gaming-ITX/ac+i9-9900K相关问题解决方案
+            
+        </h1>
+
+        
+            
+                
+                
+                    <div style="text-align:center;color: #ccc;font-size:14px;border:1px dashed #ccc">本博文最后更新于282天前(2018-12-24),其中的信息可能已经有所发展或者不再适用于现阶段。</div>
+                
+
+            
+
+        
+
+        <div class="content">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>你没看错，的确是Z390+9900K黑苹果，博主第一时间海淘测试(价钱不说了),大概率国内首发Z390+9900K黑苹果常见问题解决方案。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="关机变重启以及睡眠变重启-还没进入睡眠状态就重启"><a href="#关机变重启以及睡眠变重启-还没进入睡眠状态就重启" class="headerlink" title="关机变重启以及睡眠变重启(还没进入睡眠状态就重启)"></a>关机变重启以及睡眠变重启(还没进入睡眠状态就重启)</h3><h4 id="问题成因"><a href="#问题成因" class="headerlink" title="问题成因"></a>问题成因</h4><blockquote>
+<p>由于Apple并没有推出搭载Z390芯片组的产品，所以macOS现有版本不能原生支持Z390的nvram。</p>
+</blockquote>
+<h4 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h4><blockquote>
+<p>软件模拟nvram</p>
+</blockquote>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ul>
+<li>按照教程<a href="https://www.bugprogrammer.me/2018/06/29/Build_Clover.html">https://www.bugprogrammer.me/2018/06/29/Build_Clover.html</a> 编译最新版本Clover并安装到系统根目录，安装时务必勾选EmuVariableUefi-64.efi以及RC scripts补丁，如下图。<br><div class="progress-images" style="width:1240px"><div class="progress-images--placeholder" style="padding-bottom: 70.64516129032258%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/bcd6ee3a667abb6122e6e0f2949780f24239ff9c.jpg" data-thumb="/images/thumb/c40c27f542b685e09c79c542f47fabbc.jpg"></div><br><div class="progress-images" style="width:1240px"><div class="progress-images--placeholder" style="padding-bottom: 70.64516129032258%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/4815b4ff57c6a9c13e0f241338e2efe20a873e89.jpg" data-thumb="/images/thumb/8a32286bc5bffa4a3ed38ab00f88ab41.jpg"></div></li>
+<li>将cloverx64.efi拷贝到EFI分区下的EFI/CLOVER路径下并覆盖，将EmuVariableUefi-64.efi拷贝到EFI分区下的EFI/CLOVER/drivers64UEFI路径下。</li>
+<li>使用Clover Configurator挂载EFI分区并打开config.plist文件，找到Boot->Arguments并勾选<font color="#A52A2A"><strong>slide=0</strong></font>选项，如图。<br><div class="progress-images" style="width:2440px"><div class="progress-images--placeholder" style="padding-bottom: 55.73770491803279%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/6dbccfd2934608daf91c88c82fe855fe784b3cb5.jpg" data-thumb="/images/thumb/b0c036f7fcdbd59aa72022af127a18ab.jpg"></div></li>
+<li>重启电脑并观察EFI分区下有没有生成nvram.plist文件，如果有，恭喜你成功了，愉快的睡眠，关机吧！！！<br><div class="progress-images" style="width:1540px"><div class="progress-images--placeholder" style="padding-bottom: 56.62337662337662%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/bf3550f928cc2f9c09b4fc7070df84263589c525.jpg" data-thumb="/images/thumb/c294da418247c004f523bb9600df6004.jpg"></div></li>
+</ul>
+<h3 id="睡眠正常，唤醒时重启"><a href="#睡眠正常，唤醒时重启" class="headerlink" title="睡眠正常，唤醒时重启"></a>睡眠正常，唤醒时重启</h3><h4 id="问题成因-1"><a href="#问题成因-1" class="headerlink" title="问题成因"></a>问题成因</h4><blockquote>
+<p>主板xmp选项影响，内存频率影响。</p>
+</blockquote>
+<h4 id="解决思路-1"><a href="#解决思路-1" class="headerlink" title="解决思路"></a>解决思路</h4><blockquote>
+<p>主板BIOS调节</p>
+</blockquote>
+<h4 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h4><ul>
+<li>关闭BIOS中的xmp选项</li>
+</ul>
+<h4 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h4><ul>
+<li>开启BIOS中的xmp选项，手动调节频率，从高往低调节。比如博主的3600内存条，开启xmp选项，然后从3600调节到3400再调节到3200终于正常。<br><div class="progress-images" style="width:1172px"><div class="progress-images--placeholder" style="padding-bottom: 60.23890784982935%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/38f6aec51417d2b04576b9abe8e904082f29350d.jpg" data-thumb="/images/thumb/9109dcef21b4fe04acc6777efcdedbc8.jpg"></div></li>
+</ul>
+<h3 id="声卡无法驱动"><a href="#声卡无法驱动" class="headerlink" title="声卡无法驱动"></a>声卡无法驱动</h3><h4 id="原因排查-通过AppleALC的debug版本进行排查"><a href="#原因排查-通过AppleALC的debug版本进行排查" class="headerlink" title="原因排查(通过AppleALC的debug版本进行排查)"></a>原因排查(通过AppleALC的debug版本进行排查)</h4><ul>
+<li><p>将EFI/CLOVER/kexts/Other下的Lilu.kext以及AppleALC.kext替换成debug版本。</p>
+</li>
+<li><p>使用Clover Configurator打开EFI/CLOVER下的config.plist，在boot标签里加入-alcdbg参数，如图。<br></p><div class="progress-images" style="width:2440px"><div class="progress-images--placeholder" style="padding-bottom: 55.73770491803279%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/bb6d9bc06e1eb89f5ea6c707c7d39faa8ac2b3ec.jpg" data-thumb="/images/thumb/94d26bb44aa9329ed2faeaedd8567801.jpg"></div><p></p>
+</li>
+<li><p>重启电脑。</p>
+</li>
+<li><p>终端输入如下命令,并观察输出日志。</p>
+<figure class="highlight excel hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">log</span> show --predicate 'process == <span class="hljs-string">"kernel"</span> <span class="hljs-built_in">AND</span> (eventMessage CONTAINS <span class="hljs-string">"AppleALC"</span> <span class="hljs-built_in">OR</span> eventMessage CONTAINS <span class="hljs-string">"Lilu"</span>)' --style syslog --source</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>博主电脑报出如下错误，说明声卡的codec revision不被AppleALC支持，至此声卡无法驱动原因排查完毕。<br></p><div class="progress-images" style="width:1746px"><div class="progress-images--placeholder" style="padding-bottom: 55.55555555555556%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/4cef17af216f23a89f170a13c6e9f733afc8662f.jpg" data-thumb="/images/thumb/d373f1dbe9e9f7f2cf373e7a09e68861.jpg"></div><p></p>
+</li>
+</ul>
+<h4 id="解决方案一-Voodoohda方案"><a href="#解决方案一-Voodoohda方案" class="headerlink" title="解决方案一(Voodoohda方案)"></a>解决方案一(Voodoohda方案)</h4><p>下载Voodoohda.kext放入EFI/CLOVER/Other下即可(会有爆音，不建议采用此方法)。<br><a href="https://sourceforge.net/projects/voodoohda/files/VoodooHDA-2.8.8.pkg.zip/download" target="_blank" rel="noopener">https://sourceforge.net/projects/voodoohda/files/VoodooHDA-2.8.8.pkg.zip/download</a></p>
+<h4 id="解决方案二-cloveralc方案"><a href="#解决方案二-cloveralc方案" class="headerlink" title="解决方案二(cloveralc方案)"></a>解决方案二(cloveralc方案)</h4><ul>
+<li><p>下载cloveralc脚本备用。</p>
+<figure class="highlight crmsh hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="hljs-keyword">clone</span> <span class="hljs-title">https</span>://github.com/toleda/audio_CloverALC.git</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>下载FakePCIID备用。<br><a href="https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/" target="_blank" rel="noopener">https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/</a></p>
+</li>
+<li><p>在macOS High Sierra 10.13.6的镜像里找到原版的AppleHDA.kext备用。</p>
+</li>
+<li><p>将FakePCIID.kext以及FakePCIID_Intel_HDMI_Audio.kext放入EFI/CLOVER/kexts/Other下。</p>
+</li>
+<li><p>将10.13.6的AppleHDA替换到10.14的System/Library/Extensions下并用kext Utility工具重建缓存(10.14专属步骤，10.13.6用户跳过)。</p>
+</li>
+<li><p>打开下载的cloveralc脚本，文件名为audio_cloverALC-130.sh，在下图位置加入如下代码(10.14专属步骤，10.13.6用户跳过)。<br></p><div class="progress-images" style="width:1280px"><div class="progress-images--placeholder" style="padding-bottom: 78.4375%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/70dadbce56ef011d83c82ff33b079b76590faff6.jpg" data-thumb="/images/thumb/1094b359966c24895dbae63140365d6a.jpg"></div><p></p>
+</li>
+<li><p>使用Clover Congifurator注入音频id，博主声卡id为1。<br></p><div class="progress-images" style="width:1710px"><div class="progress-images--placeholder" style="padding-bottom: 33.099415204678365%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/26262cd97b32e9f3975e92cb6d5cfd8751ee1fc8.jpg" data-thumb="/images/thumb/85923dfef507422af1bde1a3c9894af1.jpg"></div><br><div class="progress-images" style="width:2440px"><div class="progress-images--placeholder" style="padding-bottom: 55.73770491803279%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/95bb5d05a4647695006c3ecce1ed54ac805ff67f.jpg" data-thumb="/images/thumb/ba7b2fb2630c52c1932b10792517480c.jpg"></div><p></p>
+</li>
+<li><p>确定以上操作无误后，重启电脑。</p>
+</li>
+<li><p>挂载EFI分区，执行audio_cloverALC-130.sh脚本，按脚本要求执行，脚本运行完成后使用kext Utility工具重建缓存后重启电脑。<br></p><div class="progress-images" style="width:2150px"><div class="progress-images--placeholder" style="padding-bottom: 57.674418604651166%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/8d8ac20f0c6831edc44c24c8cf2c7f9674dd646c.jpg" data-thumb="/images/thumb/0a8a14d083e947a11a88f5da7378c6e0.jpg"></div><p></p>
+</li>
+<li><p>愉快的使用声卡吧！！！</p>
+</li>
+</ul>
+<h4 id="解决方案三-AppleALC方案，博主认为最佳方案，推荐"><a href="#解决方案三-AppleALC方案，博主认为最佳方案，推荐" class="headerlink" title="解决方案三(AppleALC方案，博主认为最佳方案，推荐)"></a>解决方案三(AppleALC方案，博主认为最佳方案，推荐)</h4><ul>
+<li><p>macOS商店下载安装Xcode。</p>
+</li>
+<li><p>下载AppleALC源码。</p>
+<figure class="highlight crmsh hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="hljs-keyword">clone</span> <span class="hljs-title">https</span>://github.com/acidanthera/AppleALC.git</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>下载Lilu.kext的debug版本，并拷贝到AppleALC源码文件夹。<br><a href="https://github.com/acidanthera/Lilu/releases" target="_blank" rel="noopener">https://github.com/acidanthera/Lilu/releases</a><br></p><div class="progress-images" style="width:1540px"><div class="progress-images--placeholder" style="padding-bottom: 56.62337662337662%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/5af8451dbb09aa96fcd3e0a19d621e7d5f6358fd.jpg" data-thumb="/images/thumb/5992f6d23accb95369dd63f0e4861688.jpg"></div><p></p>
+</li>
+<li><p>打开IORegistryExplorer工具，搜索HDA，找到IOHDACodecRevisionID值，如图即为0x100101，转成10进制为1048833。<br></p><div class="progress-images" style="width:2208px"><div class="progress-images--placeholder" style="padding-bottom: 64.31159420289855%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/8c4b32a8f1c52d2042862c30a18402e8543bea48.jpg" data-thumb="/images/thumb/e598e409aebd25b2de6cb8f37867fcd3.jpg"></div><p></p>
+</li>
+<li><p>打开AppleALC源码文件夹下的Resources文件夹，删掉其他声卡型号的文件夹，只保留当前主板的声卡型号文件夹，即保留alc1220文件夹。<br></p><div class="progress-images" style="width:1540px"><div class="progress-images--placeholder" style="padding-bottom: 56.62337662337662%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/4c625d128f744047375a9258316d9b2c91d988f3.jpg" data-thumb="/images/thumb/6b8103afa6123aae7018b60ee61a4436.jpg"></div><p></p>
+</li>
+<li><p>打开PinConfigs.kext的info.plist，删除其他声卡信息，只保留当前主板的声卡信息，即alc1220。<br></p><div class="progress-images" style="width:1954px"><div class="progress-images--placeholder" style="padding-bottom: 74.20675537359263%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/5116d7b08b15be2b52486a9000fff0d635779f1d.jpg" data-thumb="/images/thumb/8f83fd0d4fa056b541211b612825cd5d.jpg"></div><p></p>
+</li>
+<li><p>进入ALC1220文件夹，打开info.plist，修改Revisions值为之前IORegistryExplorer查到的IOHDACodecRevision值的10进制数，即1048833。<br></p><div class="progress-images" style="width:1954px"><div class="progress-images--placeholder" style="padding-bottom: 74.20675537359263%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/a0ec8957c76bfcae2efd370694d34b97607c9ce8.jpg" data-thumb="/images/thumb/bf14598446a24345e762bcf08bf459bb.jpg"></div><p></p>
+</li>
+<li><p>Xcode打开AppleALC.xcodeproj，编译生成AppleALC.kext，编译教程请Google。本教程主要教授修改思路。</p>
+</li>
+<li><p>将修改的AppleALC.kext放到EFI/CLOVER/kexts/Other下，Kext Utility重建缓存，重启电脑。</p>
+</li>
+<li><p>愉快的使用声卡吧！！！</p>
+</li>
+</ul>
+<h2 id="2018-11-27更新"><a href="#2018-11-27更新" class="headerlink" title="2018-11-27更新"></a>2018-11-27更新</h2><h3 id="睡眠正常，唤醒变重启"><a href="#睡眠正常，唤醒变重启" class="headerlink" title="睡眠正常，唤醒变重启"></a>睡眠正常，唤醒变重启</h3><h4 id="新版解决方案"><a href="#新版解决方案" class="headerlink" title="新版解决方案"></a>新版解决方案</h4><p>更新最新版本BIOS即可，新版本BIOS解决了这个问题，已经无需调整XMP。目前最新版版本号为1.29，什么？更新完进不去了？卡引导？往下看！！！</p>
+<h3 id="更新BIOS后无法进入系统-目前华擎主板中招，解决方案仅限华擎"><a href="#更新BIOS后无法进入系统-目前华擎主板中招，解决方案仅限华擎" class="headerlink" title="更新BIOS后无法进入系统(目前华擎主板中招，解决方案仅限华擎)"></a>更新BIOS后无法进入系统(目前华擎主板中招，解决方案仅限华擎)</h3><h4 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h4><ul>
+<li><p>降级回老版本BIOS，目的是可以进入系统。</p>
+</li>
+<li><p>使用Clover Configurator挂载EFI分区并打开config.plist文件。在ACPI->Patches下添加以下补丁即可。如图。</p>
+<figure class="highlight armasm hljs"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-symbol">Comment</span>: Fix <span class="hljs-keyword">AsRock </span>Z390 <span class="hljs-keyword">BIOS </span>DSDT Device(RTC) <span class="hljs-keyword">bug</span></span><br><span class="line"><span class="hljs-keyword">Find: </span>A00A9353 <span class="hljs-number">54415301</span></span><br><span class="line"><span class="hljs-symbol">Replace</span>: A00A910A FF0BFFFF</span><br></pre></td></tr></tbody></table></figure>
+
+<p></p><div class="progress-images" style="width:2440px"><div class="progress-images--placeholder" style="padding-bottom: 55.73770491803279%;"></div><img src="/js/lazyload-plugin/loading.svg" alt class="progress-images--original" data-original="/images/b41603cdf0f9c80d869d8ac478cdd65a092cf648.jpg" data-thumb="/images/thumb/eb49a3f1a6c19c9aa5368951f21ea89e.jpg"></div><p></p>
+</li>
+<li><p>放心升级新版本BIOS吧，畅通无阻！！！</p>
+</li>
+</ul>
+<h3 id="10-14-1和10-14-2-USB-3-0降速为480Mbps"><a href="#10-14-1和10-14-2-USB-3-0降速为480Mbps" class="headerlink" title="10.14.1和10.14.2 USB 3.0降速为480Mbps"></a>10.14.1和10.14.2 USB 3.0降速为480Mbps</h3><h4 id="原因排查"><a href="#原因排查" class="headerlink" title="原因排查"></a>原因排查</h4><p>将usb3.0设备插入usb3.0接口，下载并打开FBPatcher，我们发现所有接口都是HSxx，并没有SSxx，所以usb3.0降速为480Mbps。</p>
+<h4 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案"></a>解决方案</h4><ul>
+<li>划出一个小分区安装10.14.0并搞定usb驱动(10.14.0 usb也不正常的不在本文讨论范围内,本文仅讨论10.14.0 usb正常但是升级到10.14.1 usb降速的情况)</li>
+<li>按照<font color="#A52A2A"><strong>@黑果小兵</strong></font>的教程 <strong><a href="https://blog.daliansky.net/Intel-FB-Patcher-tutorial-and-insertion-pose.html" target="_blank" rel="noopener">https://blog.daliansky.net/Intel-FB-Patcher-tutorial-and-insertion-pose.html</a></strong> 定制usbports.kext(感谢<font color="#A52A2A"><strong>黑果小兵</strong></font>提供教程,另外注意要在<font color="#A52A2A"><strong>10.14.0</strong></font>下定制,至关重要)。</li>
+<li>进入10.14.1或10.14.2，你会发现usb满血复活。</li>
+</ul>
+<h2 id="2018-12-24更新"><a href="#2018-12-24更新" class="headerlink" title="2018-12-24更新"></a>2018-12-24更新</h2><h3 id="声卡驱动"><a href="#声卡驱动" class="headerlink" title="声卡驱动"></a>声卡驱动</h3><p>AppleALC官方已经更新了1.3.4版本，直接使用即可，已经无需修改revisionid再自行编译了。下载地址如下：<br><a href="https://github.com/acidanthera/AppleALC/releases" target="_blank" rel="noopener">https://github.com/acidanthera/AppleALC/releases</a></p>
+
+        </div>
+        
+
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center;">
+            <a class="gallery-item" href="/images/tim.jpg"><img id="wechat_subscriber_qcode" src="/images/tim.jpg" style="width: 200px; max-width: 100%;"></a>
+            <div>扫一扫添加QQ好友</div>
+        </div>
+
+        <ul class="post-copyright">
+        <li><strong>QQ群列表:</strong></li>
+        <li><a href="http://shang.qq.com/wpa/qunwpa?idkey=860990e11014839268b97278613c5b16d3569e4ef42561eeab25b5457064cd87" target="_blank">Hackintosh极客俱乐部</a>   414114950</li>
+        </ul>
+
+        <ul class="post-copyright">
+        <li><strong>本文标题：</strong><a href="https://www.bugprogrammer.me/2018/11/05/Z390+9900K_Hackintosh.html">Hackintosh for ASRock Z390 Phantom Gaming-ITX/ac+i9-9900K相关问题解决方案</a></li>
+        <li><strong>本文作者：</strong><a href="https://www.bugprogrammer.me">Bugprogrammer</a></li>
+        <li><strong>本文链接：</strong><a href="https://www.bugprogrammer.me/2018/11/05/Z390+9900K_Hackintosh.html">https://www.bugprogrammer.me/2018/11/05/Z390+9900K_Hackintosh.html</a></li>
+        <li><strong>发布时间：</strong>2018-11-05</li>
+        <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+        </li>
+        </ul>
+    
+        
+        <hr style="height:1px;margin:1rem 0">
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <i class="fas fa-tags has-text-grey"></i> 
+                    <a class="has-link-grey -link" href="/tags/acrock-z390/">acrock z390</a>, <a class="has-link-grey -link" href="/tags/i9-9900K/">i9-9900K</a>, <a class="has-link-grey -link" href="/tags/macOS/">macOS</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="social-share" data-disabled="facebook,twitter,google,diandian,linkedin,tencent"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/alipay.jpg" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechatpay.jpg" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/12/01/Build_VoodooI2C.html">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">macOS下编译VoodooI2C教程(2019最新更新)</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/09/01/Linux_Kernel_Build.html">
+                <span class="level-item">Linux内核简介及编译教程</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '228efd9c1e98867fc0ae',
+        clientSecret: '95f75ffd8504aed575db82baadd6c8152d824d66',
+        id: '772389ff6b1561bc6761733edaf7d03d',
+        repo: 'bugprogrammer.github.io',
+        owner: 'bugprogrammer',
+        admin: "bugprogrammer",
+        createIssueManually: false,
+        distractionFreeMode: false
+    })
+    gitalk.render('comment-container')
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+    
+        
+    
+        
+<div class="card widget column-left is-sticky" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                目录
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#前言">
+        <span class="has-mr-6">1</span>
+        <span>前言</span>
+        </a></li><li>
+        <a class="is-flex" href="#常见问题">
+        <span class="has-mr-6">2</span>
+        <span>常见问题</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#关机变重启以及睡眠变重启-还没进入睡眠状态就重启">
+        <span class="has-mr-6">2.1</span>
+        <span>关机变重启以及睡眠变重启(还没进入睡眠状态就重启)</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#问题成因">
+        <span class="has-mr-6">2.1.1</span>
+        <span>问题成因</span>
+        </a></li><li>
+        <a class="is-flex" href="#解决思路">
+        <span class="has-mr-6">2.1.2</span>
+        <span>解决思路</span>
+        </a></li><li>
+        <a class="is-flex" href="#解决方案">
+        <span class="has-mr-6">2.1.3</span>
+        <span>解决方案</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#睡眠正常，唤醒时重启">
+        <span class="has-mr-6">2.2</span>
+        <span>睡眠正常，唤醒时重启</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#问题成因-1">
+        <span class="has-mr-6">2.2.1</span>
+        <span>问题成因</span>
+        </a></li><li>
+        <a class="is-flex" href="#解决思路-1">
+        <span class="has-mr-6">2.2.2</span>
+        <span>解决思路</span>
+        </a></li><li>
+        <a class="is-flex" href="#解决方案一">
+        <span class="has-mr-6">2.2.3</span>
+        <span>解决方案一</span>
+        </a></li><li>
+        <a class="is-flex" href="#解决方案二">
+        <span class="has-mr-6">2.2.4</span>
+        <span>解决方案二</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#声卡无法驱动">
+        <span class="has-mr-6">2.3</span>
+        <span>声卡无法驱动</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#原因排查-通过AppleALC的debug版本进行排查">
+        <span class="has-mr-6">2.3.1</span>
+        <span>原因排查(通过AppleALC的debug版本进行排查)</span>
+        </a></li><li>
+        <a class="is-flex" href="#解决方案一-Voodoohda方案">
+        <span class="has-mr-6">2.3.2</span>
+        <span>解决方案一(Voodoohda方案)</span>
+        </a></li><li>
+        <a class="is-flex" href="#解决方案二-cloveralc方案">
+        <span class="has-mr-6">2.3.3</span>
+        <span>解决方案二(cloveralc方案)</span>
+        </a></li><li>
+        <a class="is-flex" href="#解决方案三-AppleALC方案，博主认为最佳方案，推荐">
+        <span class="has-mr-6">2.3.4</span>
+        <span>解决方案三(AppleALC方案，博主认为最佳方案，推荐)</span>
+        </a></li></ul></li></ul></li><li>
+        <a class="is-flex" href="#2018-11-27更新">
+        <span class="has-mr-6">3</span>
+        <span>2018-11-27更新</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#睡眠正常，唤醒变重启">
+        <span class="has-mr-6">3.1</span>
+        <span>睡眠正常，唤醒变重启</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#新版解决方案">
+        <span class="has-mr-6">3.1.1</span>
+        <span>新版解决方案</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#更新BIOS后无法进入系统-目前华擎主板中招，解决方案仅限华擎">
+        <span class="has-mr-6">3.2</span>
+        <span>更新BIOS后无法进入系统(目前华擎主板中招，解决方案仅限华擎)</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#解决方案-1">
+        <span class="has-mr-6">3.2.1</span>
+        <span>解决方案</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#10-14-1和10-14-2-USB-3-0降速为480Mbps">
+        <span class="has-mr-6">3.3</span>
+        <span>10.14.1和10.14.2 USB 3.0降速为480Mbps</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#原因排查">
+        <span class="has-mr-6">3.3.1</span>
+        <span>原因排查</span>
+        </a></li><li>
+        <a class="is-flex" href="#解决方案-2">
+        <span class="has-mr-6">3.3.2</span>
+        <span>解决方案</span>
+        </a></li></ul></li></ul></li><li>
+        <a class="is-flex" href="#2018-12-24更新">
+        <span class="has-mr-6">4</span>
+        <span>2018-12-24更新</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#声卡驱动">
+        <span class="has-mr-6">4.1</span>
+        <span>声卡驱动</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+    
+        
+    
+        
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/my.jpeg" alt="Hackintosh for ASRock Z390 Phantom Gaming-ITX/ac+i9-9900K相关问题解决方案" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                © 2018-2019 Bugprogrammer 
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                本站访问量<span id="busuanzi_value_site_pv"></span>次
+                </span>
+                <span id="busuanzi_container_site_uv">
+                |  您是第<span id="busuanzi_value_site_uv"></span>位小伙伴
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+                <span id="sitetime">载入天数...</span>
+                <script language="javascript">
+                    function siteTime(){
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth()+1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+                    year - 作为date对象的年份，为4位年份值
+                    month - 0-11之间的整数，做为date对象的月份
+                    day - 1-31之间的整数，做为date对象的天数
+                    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+                    minutes - 0-59之间的整数，做为date对象的分钟数
+                    seconds - 0-59之间的整数，做为date对象的秒数
+                    microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+                    var t1 = Date.UTC(2018,05,27,15,00,00); //北京时间2018-2-13 00:00:00
+                    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+                    var diff = t2-t1;
+                    var diffYears = Math.floor(diff/years);
+                    var diffDays = Math.floor((diff/days)-diffYears*365);
+                    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+                    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+                    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+                    document.getElementById("sitetime").innerHTML=" <br />博客已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+                }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+                siteTime();
+                </script>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+<script>
+var IcarusThemeSettings = {
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+    
+    
+<script src="/js/animation.js"></script>
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+    
+    
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+    
+    
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+
+<script type="text/javascript" charset="utf-8" src="/js/lazyload-plugin/lazyload.intersectionObserver.min.js"></script></body></html>
