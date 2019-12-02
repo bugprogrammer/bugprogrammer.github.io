@@ -52,7 +52,7 @@
         </h1>
 
         <% if (!(index && post.excerpt)) { %>
-            <% if (typeof(moment) === 'function') { %>
+            
                 <%
                     var diffDays = moment().diff(moment(page.updated), 'day');
                     var obsoleteWarningArr = get_config('obsoletewarning.text').split(":");
@@ -61,7 +61,7 @@
                     <div style="text-align:center;color: #ccc;font-size:14px;border:1px dashed #ccc"><%- obsoleteWarningArr[0] %><%= diffDays %><%- obsoleteWarningArr[1] %><%= date(page.updated) %><%- obsoleteWarningArr[2] %></div>
                 <% } %>
 
-            <% } %>
+            
 
         <% } %>
 

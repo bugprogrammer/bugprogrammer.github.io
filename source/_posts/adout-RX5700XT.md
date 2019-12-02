@@ -96,4 +96,8 @@ sudo cp -f ~/Desktop/fix\ 5700/* /Volumes/Recovery/9D839C6C-F3C0-45A0-9DCF-36CFD
 ### 关于更新时画面错乱
 因为更新是自动化过程，所以无需修复，只需要等待Apple更新修复bug即可。保留这个bug有助于我们第一时间得知Apple何时修复了画面错位的bug。所以本文对此不做讲解，本文主要解决全新安装以及Recovery环境的画面错位问题。
 
+# 2019-11-09更新
+macOS Catalina 10.15.2 beta1 19C32e已发布，彻底解决了Installer以及Recovery环境屏幕错乱的问题。但是博主尚未找到下载完整镜像方案，所以上传10.15.2的fix 5700.zip(BaseSystem.dmg以及BaseSystem.chunklist),小伙伴们可以按上文方法重制10.15.1镜像解决全新安装屏幕错乱问题。
+https://pan.baidu.com/s/1jadKyXjg47NGZtP2MMzhJA
+
 # <font color=#A52A2A >未完待续。。。</font>
