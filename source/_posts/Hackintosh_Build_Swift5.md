@@ -7,7 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2020-01-16 22:27:00
-updated: 2020-01-21 21:00:00
+updated: 2020-02-04 00:11:00
 ---
 
 > 之前博主开发的HackintoshBuild.sh脚本使用过程有些繁琐，故使用swift5重新开发GUI版本，部分代码(GUI)参考Pavo-IM大佬的ocbuilder项目，感谢Pavo-IM大佬。本项目可以看作HackintoshBuild.sh的进化版本。<!--more-->
@@ -58,3 +58,10 @@ xcode-select --install
 * 新增解锁10.15.x read-only
 * 新增重建缓存功能
 * 新增开启未知来源安装软件
+
+# 2020-02-04更新
+## v1.2版本更新
+### 感谢Arabaku(群友某莔)帮助解决部分bug
+* 新增EFI分区挂载功能并显示当前引导分区
+* 新增NVRAM信息读取功能
+* 新增更换登录壁纸功能(可用来解决系统更新后，自定义桌面壁纸和登录壁纸不同步问题)
