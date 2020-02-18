@@ -7,7 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2020-01-16 22:27:00
-updated: 2020-02-14 01:53:00
+updated: 2020-02-18 20:15:00
 ---
 
 > 之前博主开发的HackintoshBuild.sh脚本使用过程有些繁琐，故使用swift5重新开发GUI版本，部分代码(GUI)参考Pavo-IM大佬的ocbuilder项目，感谢Pavo-IM大佬。本项目可以看作HackintoshBuild.sh的进化版本。<!--more-->
@@ -73,11 +73,13 @@ xcode-select --install
 * 新增http代理记忆
 * 新增时光机器满速运行以及还原默认功能
 
-# 2020-02-14更新
+# 2020-02-18更新
 ## v1.4版本更新
 * 编译模块以及EFI获取模块新增日志存储
 * EFI分区挂载模块新增磁盘名称显示以及刷新分区列表
 * nvram读取模块新增刷新keys
-* 新增系统详情功能,获取kexts,aml,efi文件情况,读取详细信息
+* 新增系统详情功能,获取kexts,aml,efi文件情况,读取详细信息,获取本地Clover,OC版本号
 * 新增白苹果ioreg信息读取
 * 1.4版本起，支持自动检测更新
+* UI适配(感谢Arabaku)
+* 新增捐赠模块(全凭自愿)
