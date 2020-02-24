@@ -7,7 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2020-01-16 22:27:00
-updated: 2020-02-18 20:15:00
+updated: 2020-02-24 15:46:00
 ---
 
 > 之前博主开发的HackintoshBuild.sh脚本使用过程有些繁琐，故使用swift5重新开发GUI版本，部分代码(GUI)参考Pavo-IM大佬的ocbuilder项目，感谢Pavo-IM大佬。本项目可以看作HackintoshBuild.sh的进化版本。<!--more-->
@@ -83,3 +83,8 @@ xcode-select --install
 * 1.4版本起，支持自动检测更新
 * UI适配(感谢Arabaku)
 * 新增捐赠模块(全凭自愿)
+
+# 2020-02-24更新
+## v1.5版本更新
+* UI继续优化，禁用全屏模式以及缩放
+* bug清理
