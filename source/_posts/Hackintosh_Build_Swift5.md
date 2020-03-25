@@ -7,7 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2020-01-16 22:27:00
-updated: 2020-02-24 15:46:00
+updated: 2020-03-20 01:31:00
 ---
 
 > 之前博主开发的HackintoshBuild.sh脚本使用过程有些繁琐，故使用swift5重新开发GUI版本，部分代码(GUI)参考Pavo-IM大佬的ocbuilder项目，感谢Pavo-IM大佬。本项目可以看作HackintoshBuild.sh的进化版本。<!--more-->
@@ -88,3 +88,17 @@ xcode-select --install
 ## v1.5版本更新
 * UI继续优化，禁用全屏模式以及缩放
 * bug清理
+
+# 2020-03-20更新
+## v1.6版本更新
+### 编译模块
+> 新增全选，新增初始环境判断，增强兼容性，修复低版本Xcode无法编译
+### EFI获取模块
+> 新增全选
+### EFI挂载
+> 全功能重构，新增Clover环境下，判断当前引导分区
+### 新增关于本机，获取本机信息
+### 新增Kexts下载
+### 新增路径空格以及写权限判断
+### 修复部分Clover用户闪退
+注意：App一定要安装在应用程序文件夹
