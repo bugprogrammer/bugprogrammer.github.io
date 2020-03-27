@@ -7,7 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2020-01-16 22:27:00
-updated: 2020-03-20 01:31:00
+updated: 2020-03-27 22:45:00
 ---
 
 > 之前博主开发的HackintoshBuild.sh脚本使用过程有些繁琐，故使用swift5重新开发GUI版本，部分代码(GUI)参考Pavo-IM大佬的ocbuilder项目，感谢Pavo-IM大佬。本项目可以看作HackintoshBuild.sh的进化版本。<!--more-->
@@ -102,3 +102,9 @@ xcode-select --install
 ### 新增路径空格以及写权限判断
 ### 修复部分Clover用户闪退
 注意：App一定要安装在应用程序文件夹
+
+# 2020-03-27更新
+## v1.7版本更新
+* 修复nvram模块随机闪退
+* nvram模块重构，新增values高亮格式化
+* 适配系统亮色/暗色切换(无需退出软件)
