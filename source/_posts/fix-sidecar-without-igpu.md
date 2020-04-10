@@ -9,6 +9,7 @@ categories:
   - Hackintosh
 date: 2019-11-24 15:36:00
 updated: 2019-11-24 15:36:00
+toc: true
 ---
 
 >之前<font color=#A52A2A >@fang2018</font>发布了一个相关教程，地址如下:<font color=#A52A2A >https://fangf.cc/2019/10/14/noneigpusidecar/</font>, 现在随着Whatevergreen的更新，之前的方法已经不再适用。现在发布新教程。

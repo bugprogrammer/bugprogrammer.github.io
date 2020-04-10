@@ -9,6 +9,7 @@ categories:
   - Hackintosh
 date: 2018-06-29 12:53:00
 updated: 2018-06-29 12:53:00
+toc: true
 ---
 
 >随着macOS 10.14公测版本的发布，黑苹果用户对Clover新版本的需求提高，想要最新版本的Clover最直接的方法就是源码编译，方便快捷，教程如下。<!--more-->

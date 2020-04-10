@@ -9,6 +9,7 @@ categories:
   - Android
 date: 2019-08-18 22:21:00
 updated: 2019-08-18 22:21:00
+toc: true
 ---
 
 > 博主近日把自己的一加7 Pro升级到了Android Q beta，发现暂时无法刷入twrp-recovery，也就意味着root有一点点的麻烦，今天博主发布个人测试可行的root方案。博主是在Mac下操作，Windows以及Linux同理。<!--more-->

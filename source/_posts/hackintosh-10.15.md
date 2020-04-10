@@ -10,6 +10,7 @@ categories:
   - Hackintosh
 date: 2019-06-04 08:40:00
 updated: 2019-09-24 08:40:00
+toc: true
 ---
 
 Apple的WWDC2019已经结束，为我们带来了macOS 10.15、MacPro等出色产品。博主连夜测试了10.15在PC机上的运行情况，现在梳理如下(持续更新)。<!--more-->

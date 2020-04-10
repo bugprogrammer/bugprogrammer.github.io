@@ -10,6 +10,7 @@ categories:
   - Hackintosh
 date: 2019-06-13 00:47:00
 updated: 2019-06-15 00:47:00
+toc: true
 ---
 
 > macOS 10.15的一个重磅功能是sidecar。就是用iPad作为mac的扩展屏，博主测试了一下，挺好用的。但是在Hackintosh下，并不是随意就能启用sidecar。以下附上博主的启用sidecar教程。<!--more-->

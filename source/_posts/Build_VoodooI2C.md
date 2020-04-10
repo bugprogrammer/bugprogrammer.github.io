@@ -9,6 +9,7 @@ categories:
   - Hackintosh
 date: 2018-12-01 14:29:00
 updated: 2019-08-29 14:29:00
+toc: true
 ---
 
 >自从macOS Mojave 10.14发布以来，VoodooI2C在博主的笔记本上就一直闹毛病。最新的release版本2.1.4在10.14下已经可用，睡眠唤醒后也正常，但是有一个bug很让博主头痛，那就是长时间使用笔记本可能会突然出现内核恐慌而死机或重启。查了下github上的issum，不止博主一人遇到。尝试编译新提交的VoodooI2C源码，测试了一天，成功解决博主笔记本的问题。由于VoodooI2C和其他kext(比如Lilu及其插件)相比，编译难度稍大，故而现在发布VoodooI2C编译教程，供朋友们参考。<!--more-->

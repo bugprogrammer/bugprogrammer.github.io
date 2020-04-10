@@ -10,6 +10,7 @@ categories:
   - Android
 date: 2018-06-22 22:48:00
 updated: 2018-06-22 22:48:00
+toc: true
 ---
 ### MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看
 <!--more-->

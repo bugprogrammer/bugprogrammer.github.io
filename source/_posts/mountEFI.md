@@ -8,6 +8,7 @@ categories:
   - Hackintosh
 date: 2019-12-03 19:00:00
 updated: 2019-12-03 19:00:00
+toc: true
 ---
 
 >博主使用OC已经有一段时间，最近发现一个不爽点。OC配置本身不需要各种GUI工具，但是，每次挂载EFI都要打开类似Clover Configurator的工具挂载EFI，比较麻烦，所以博主分享一种点击即挂载并打开EFI分区的方案。<!--more-->

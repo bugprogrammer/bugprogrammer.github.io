@@ -11,6 +11,7 @@ categories:
   - Hackintosh
 date: 2020-03-24 19:58:00
 updated: 2020-03-24 19:58:00
+toc: true
 ---
 
 > Whatevergreen原作者更新了1.3.8版本，开始支持GuC Firmware载入，实现核显满血运行(部分主板不支持),效果完全等同于魔改版本，故魔改停更。现发布原版Whatevergreen实现核显满血教程。<!--more-->

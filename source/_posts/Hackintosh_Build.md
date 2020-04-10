@@ -8,6 +8,7 @@ categories:
   - Hackintosh
 date: 2019-12-21 00:42:00
 updated: 2019-12-21 00:42:00
+toc: true
 ---
 
 >鉴于很多小伙伴问我如何编译Hackintosh Bootloader以及kexts，今奉上博主的编译脚本。<!--more-->

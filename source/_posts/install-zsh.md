@@ -9,6 +9,7 @@ categories:
   - Hackintosh
 date: 2018-05-11 19:25:00
 updated: 2018-05-11 19:25:00
+toc: true
 ---
 
 最近在使用Hackintosh，发现macOS自带的shell并不好用，所以安装了被誉为终极shell的zsh，方法整理如下：<!--more--> 

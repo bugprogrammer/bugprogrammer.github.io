@@ -9,6 +9,7 @@ categories:
   - Hackintosh
 date: 2019-01-29 22:09:00
 updated: 2019-01-29 22:09:00
+toc: true
 ---
 
 >朋友的asus-n550jv笔记本，配置为i7-4700HQ+hd4600+gt750M(已屏蔽)+8g ram+256g ssd(sata)+1T hdd+1080P屏幕。安装黑苹果大体顺利，现将大概过程分享，供同机型的朋友借鉴。<!--more-->

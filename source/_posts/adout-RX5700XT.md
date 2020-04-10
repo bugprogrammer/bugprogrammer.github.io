@@ -9,6 +9,7 @@ categories:
   - Hackintosh
 date: 2019-11-2 23:02:00
 updated: 2019-11-2 23:02:00
+toc: true
 ---
 
 >AMD Navi显卡在macOS Catalina 10.15.1 beta2中已经正式免驱，博主购入测试，现公布新显卡的驱动方法以及bug解决方案。<!--more-->

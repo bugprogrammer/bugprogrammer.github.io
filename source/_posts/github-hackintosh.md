@@ -8,6 +8,7 @@ categories:
   - Hackintosh
 date: 2019-05-23 13:50:00
 updated: 2019-05-23 13:50:00
+toc: true
 ---
 
 为了方便大家安装macOS，博主将测试过的机型的Clover文件整理并发布至github，地址为**https://github.com/bugprogrammer/hackintosh** **<font color=#A52A2A >注意:仓库中所有机型都是博主亲自安装并测试过的机型。**</font><!--more-->

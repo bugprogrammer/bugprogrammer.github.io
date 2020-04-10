@@ -11,6 +11,7 @@ categories:
   - Hackintosh
 date: 2020-04-04 17:23:00
 updated: 2020-04-04 17:23:00
+toc: true
 ---
 
 >博主为了方便使用Linux一直是以grub作为主引导器(grub->OC)，最近OC解决了Linux引导问题，所以换回OC作为主引导器。摸索了一下，实现了原生NVRAM+BootCamp双系统切换。<!--more-->

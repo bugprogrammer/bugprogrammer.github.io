@@ -9,6 +9,7 @@ categories:
   - Linux
 date: 2019-03-17 23:52:00
 updated: 2019-03-17 23:52:00
+toc: true
 ---
 
 > 一直以来，Linux作为开发机比较给力，但是常用软件(如QQ、微信等)的缺乏使Linux在桌面端一直不火，用户量低于Windows以及macOS，今天分享一个Ubuntu下安装常用软件的方法。

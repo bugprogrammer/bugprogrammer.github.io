@@ -76,7 +76,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: icarus
+theme: amazing
 #theme: matery
 
 # Deployment
@@ -130,5 +130,5 @@ symbols_count_time:
 # 博文压缩
 
 lazyload:
-  enable: true
+  enable: false
   #thumbPath: /images/thumb

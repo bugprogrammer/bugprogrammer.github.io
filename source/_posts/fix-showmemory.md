@@ -8,6 +8,7 @@ categories:
   - Hackintosh
 date: 2019-12-04 22:51:00
 updated: 2019-12-04 22:51:00
+toc: true
 ---
 
 >最近的OpenCore版本出现了一个bug，关于本机处不显示内存，博主研究了一下，现在发布解决方案。<!--more-->

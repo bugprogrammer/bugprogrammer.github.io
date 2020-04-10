@@ -11,6 +11,7 @@ categories:
   - Hackintosh
 date: 2020-04-03 16:05:00
 updated: 2020-04-03 16:05:00
+toc: true
 ---
 
 >自从OpenCore推出以来，一直存在一个bug，在较新主板上引导Linux会失败，无法加载内核，现在已经可以解决。<!--more-->
