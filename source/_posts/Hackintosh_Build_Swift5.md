@@ -7,7 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2020-01-16 22:27:00
-updated: 2020-04-11 22:45:00
+updated: 2020-04-20 16:00:00
 toc: true
 ---
 
@@ -116,3 +116,8 @@ xcode-select --install
 * 提升nvram xml格式兼容性
 * 新增PCI设备信息
 * 新增显卡性能优化(感谢xjn提供数据)
+
+# 2020-04-20更新
+## v1.9版本更新
+* 更新mtoc版本以适配最新OpenCore
+* 新增镜像下载模块(官方服务器)
