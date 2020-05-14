@@ -7,7 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2020-01-16 22:27:00
-updated: 2020-04-20 16:00:00
+updated: 2020-05-15 00:17:00
 toc: true
 ---
 
@@ -121,3 +121,10 @@ xcode-select --install
 ## v1.9版本更新
 * 更新mtoc版本以适配最新OpenCore
 * 新增镜像下载模块(官方服务器)
+
+# 2020-05-15更新
+## v2.0版本更新
+* 重构PCI信息列表(基于pci.ids)
+* 新增序列号生成
+* 新增OpenCore版本一览(ChangeLog以及配置模板)
+* 新增文件差异对比
