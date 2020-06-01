@@ -127,7 +127,7 @@ donate:
         # Donation entry name
         type: wechat
         # Qrcode image URL
-        qrcode: '/images/wechatpay'
+        qrcode: '/images/wechatpay.jpg'
 #    -
 #    -
 #        type: patreon
