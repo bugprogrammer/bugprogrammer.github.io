@@ -7,7 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2020-01-16 22:27:00
-updated: 2020-05-15 00:17:00
+updated: 2020-06-05 22:05:00
 toc: true
 ---
 
@@ -128,3 +128,9 @@ xcode-select --install
 * 新增序列号生成
 * 新增OpenCore版本一览(ChangeLog以及配置模板)
 * 新增文件差异对比
+
+# 2020-06-05更新
+## v2.1版本更新
+* 适配最新OpenCore编译
+* 添加Z490 ELITE EFI
+* 更新pci.ids

@@ -7,7 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2020-05-27 16:30:00
-updated: 2020-06-02 01:20:00
+updated: 2020-06-04 09:40:00
 toc: true
 ---
 
@@ -166,3 +166,119 @@ chmod +x cpu-name.sh
 ```
 ![](/images/Z490-17.png)
 
+# 2020-06-04更新
+
+## ACPI error(_TZ.TZ10._STA)
+> 这个是技嘉主板通病。TZ10是一个温控模块，_STA方法是操作系统检查，如果找不到匹配操作系统(Darwin)就会出错。SSDT中定义如下。
+
+```
+Method (_STA, 0, NotSerialized)  // _STA: Status
+{
+    If (\_OSI ("Windows 2001"))
+    {
+        Store (0x04, Local0)
+    }
+
+    If (\_OSI ("Windows 2001.1"))
+    {
+        Store (0x05, Local0)
+    }
+
+    If (\_OSI ("FreeBSD"))
+    {
+        Store (0x06, Local0)
+    }
+
+    If (\_OSI ("HP-UX"))
+    {
+        Store (0x07, Local0)
+    }
+
+    If (\_OSI ("OpenVMS"))
+    {
+        Store (0x08, Local0)
+    }
+
+    If (\_OSI ("Windows 2001 SP1"))
+    {
+        Store (0x09, Local0)
+    }
+
+    If (\_OSI ("Windows 2001 SP2"))
+    {
+        Store (0x0A, Local0)
+    }
+
+    If (\_OSI ("Windows 2001 SP3"))
+    {
+        Store (0x0B, Local0)
+    }
+
+    If (\_OSI ("Windows 2006"))
+    {
+        Store (0x0C, Local0)
+    }
+
+    If (\_OSI ("Windows 2006 SP1"))
+    {
+        Store (0x0D, Local0)
+    }
+
+    If (\_OSI ("Windows 2009"))
+    {
+        Store (0x0E, Local0)
+    }
+
+    If (\_OSI ("Windows 2012"))
+    {
+        Store (0x0F, Local0)
+    }
+
+    If (\_OSI ("Windows 2013"))
+    {
+        Store (0x10, Local0)
+    }
+
+    If (\_OSI ("Windows 2015"))
+    {
+        Store (0x11, Local0)
+    }
+
+    If (\_OSI ("Windows 2016"))
+    {
+        Store (0x12, Local0)
+    }
+
+    If (\_OSI ("Windows 2017"))
+    {
+        Store (0x13, Local0)
+    }
+
+    If (\_OSI ("Windows 2017.2"))
+    {
+        Store (0x14, Local0)
+    }
+
+    If (\_OSI ("Windows 2018"))
+    {
+        Store (0x15, Local0)
+    }
+
+    If (\_OSI ("Windows 2018.2"))
+    {
+        Store (0x16, Local0)
+    }
+
+    If (LLessEqual (Local0, 0x0E))
+    {
+        Store (One, \GSA1.ZRD2)
+    }
+
+    Return (0x0B)
+}
+```
+### 解决方案
+* OC config.plist中做如下配置
+![](/images/Z490-18.png)
+* 加入如下SSDT并在config.plist中启用
+<a href="https://downloads.bugprogrammer.me/SSDT/SSDT-OC-XOSI.aml">SSDT-OC-XOSI.aml</a>
