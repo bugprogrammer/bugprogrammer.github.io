@@ -7,7 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2020-05-27 16:30:00
-updated: 2020-06-04 09:40:00
+updated: 2020-06-11 01:30:00
 toc: true
 ---
 
@@ -282,3 +282,17 @@ Method (_STA, 0, NotSerialized)  // _STA: Status
 ![](/images/Z490-18.png)
 * 加入如下SSDT并在config.plist中启用
 <a href="https://downloads.bugprogrammer.me/SSDT/SSDT-OC-XOSI.aml">SSDT-OC-XOSI.aml</a>
+
+# 2020-06-07更新
+
+## 修复技嘉Hackintosh启动随机出现内存错误
+* config.plist中做以下修改
+> Booter->Quirks->DevirtualiseMmio->YES
+  Booter->Quirks->ProtectUefiServices->NO
+  NVRAM->Add->7C436110-AB2A-4BBB-A880-FE41995C9F82->slide=1(添加)
+
+* 加入如下.efi文件并在config.plist中启用
+<a href="https://downloads.bugprogrammer.me/efidriver/MemoryAllocation.efi">MemoryAllocation.efi</a>
+
+# 2020-06-11更新
+更新10.15.6要把之前的CPUID仿冒加回来。。。
