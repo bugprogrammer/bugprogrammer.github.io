@@ -7,7 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2020-05-27 16:30:00
-updated: 2020-06-11 01:30:00
+updated: 2020-06-12 15:00:00
 toc: true
 ---
 
@@ -296,3 +296,12 @@ Method (_STA, 0, NotSerialized)  // _STA: Status
 
 # 2020-06-11更新
 更新10.15.6要把之前的CPUID仿冒加回来。。。
+
+# 2020-06-12更新
+
+## RTL8125 2.5G(10.15可用，10.14未测试)
+使用以下kext即可
+<a href="https://downloads.bugprogrammer.me/Kexts/LucyRTL8125Ethernet.kext.zip">LucyRTL8125Ethernet.kext</a>
+编译自 https://github.com/derBrumbaer/LucyRTL8125Ethernet， 感谢derBrumbaer以及Mieze。
+![](/images/Z490-19.png)
+![](/images/Z490-20.png)
