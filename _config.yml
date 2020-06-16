@@ -76,8 +76,8 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: amazing
-#theme: matery
+#theme: amazing
+theme: butterfly
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

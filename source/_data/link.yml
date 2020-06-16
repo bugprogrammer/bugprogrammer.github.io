@@ -1,0 +1,40 @@
+class:
+  class_name: 友情链接
+  link_list:
+    1:
+      name: 九方格设计
+      link: https://www.c4dlx.com
+      avatar: /images/logo-lx.png
+      descr: 设计师大佬
+
+    2:
+      name: 黑果小兵部落阁
+      link: https://blog.daliansky.net
+      avatar: /images/logo-daliansky.png
+      descr: 年过半百的技术大牛
+
+    3:
+      name: 脑洞杂货铺
+      link: https://smalbox.top
+      avatar: /images/logo-smalbox.png
+      descr: 程序员中的设计师，设计师中的程序员
+
+    4:
+      name: 深圳房大叔
+      link: https://fangf.cc
+      avatar: /images/logo-fang.png
+      descr: 技术宅
+
+    5:
+      name: xjn's blog
+      link: https://blog.xjn819.com
+      avatar: /images/logo-xjn.png
+      descr: 土豪技术宅
+
+    6:
+      name: Sukka's Blog
+      link: https://blog.skk.moe
+      avatar: /images/logo-sukka.svg
+      descr: 大牛
+    
+

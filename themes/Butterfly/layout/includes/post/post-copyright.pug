@@ -1,0 +1,31 @@
+div(style='text-align:center;color: #ccc;font-size:14px;')
+  | -------------&#x672C;&#x6587;&#x7ED3;&#x675F;
+  i.fa.fa-paw
+  | &#x611F;&#x8C22;&#x60A8;&#x7684;&#x9605;&#x8BFB;-------------
+
+.post-copyright
+    .post-copyright__author
+      span.post-copyright-meta= _p('博主QQ号') + ": "
+      span.post-copyright-meta= _p('951426440')
+
+.post-copyright
+  .post-copyright__author
+    span.post-copyright-meta= _p('QQ群列表') + ": "
+  .post-copyright__author
+    span.post-copyright-meta
+      a(href=`https://shang.qq.com/wpa/qunwpa?idkey=860990e11014839268b97278613c5b16d3569e4ef42561eeab25b5457064cd87`) #[='Hackintosh极客俱乐部']
+    span.post-copyright-meta= _p('414114950')
+      
+if (theme.post_copyright && theme.post_copyright.enable && page.copyright != false)
+  .post-copyright
+    .post-copyright__author
+      span.post-copyright-meta= _p('post.copyright.author') + ": "
+      span.post-copyright-info
+        a(href=`https://github.com/bugprogrammer`) #[=config.author]
+    .post-copyright__type
+      span.post-copyright-meta= _p('post.copyright.link') + ": "
+      span.post-copyright-info
+        a(href=url_for(page.permalink))= theme.post_copyright.decode ? decodeURI(page.permalink) : page.permalink
+    .post-copyright__notice
+      span.post-copyright-meta= _p('post.copyright.copyright_notice') + ": "
+      span.post-copyright-info!= _p('post.copyright.copyright_content', theme.post_copyright.license_url, theme.post_copyright.license, config.url, config.title)
