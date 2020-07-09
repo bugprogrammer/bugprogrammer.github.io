@@ -36,5 +36,11 @@ class:
       link: https://blog.skk.moe
       avatar: /images/logo-sukka.svg
       descr: 大牛
+
+    7:
+      name: 某莔の异次元空间
+      link: https://fix.moe
+      avatar: /images/logo-fix.png
+      descr: IOS开发
     
 
