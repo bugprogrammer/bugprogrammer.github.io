@@ -7,7 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2020-07-09 00:54:00
-updated: 2020-07-09 17:46:00
+updated: 2020-07-12 01:20:00
 toc: true
 ---
 
@@ -36,10 +36,10 @@ https://github.com/bugprogrammer/HackintoshBuild/releases/tag/2.1
 
 # 2020-07-09更新
 ## Recovery进入
-用ApfsDriverLoader.efi代替掉OpenCore内置的apfs方案即可，如图
-![](/images/bigsur-4.png)
-![](/images/bigsur-5.png)
 
-<a href="https://downloads.bugprogrammer.me/efidriver/ApfsDriverLoader.efi">ApfsDriverLoader.efi</a>
+* 关闭核显或设置id为0x12345678
+* 按照如图设置即可
+![](/images/bigsur-4.png)
+
 
 
