@@ -7,7 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2020-05-27 16:30:00
-updated: 2020-06-12 15:00:00
+updated: 2020-07-14 15:00:00
 toc: true
 ---
 
@@ -305,3 +305,9 @@ Method (_STA, 0, NotSerialized)  // _STA: Status
 编译自 https://github.com/derBrumbaer/LucyRTL8125Ethernet， 感谢derBrumbaer以及Mieze。
 ![](/images/Z490-19.png)
 ![](/images/Z490-20.png)
+
+# 2020-07-14更新
+## 声卡
+> 据博主测试，最新的AppleALC(1.5.1)已经支持400系列，故此可以删除FakePCIID.kext以及FakePCIID_Intel_HDMI_Audio.kext, config中删除声卡的device-id，直接使用最新的AppleALC即可。
+
+<a href="https://downloads.bugprogrammer.me/Kexts/AppleALC.kext.zip">AppleALC.kext.zip</a>
