@@ -7,7 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2020-07-09 00:54:00
-updated: 2020-07-12 01:20:00
+updated: 2020-07-18 16:47:00
 toc: true
 ---
 
@@ -40,6 +40,11 @@ https://github.com/bugprogrammer/HackintoshBuild/releases/tag/2.1
 * 关闭核显或设置id为0x12345678
 * 按照如图设置即可
 ![](/images/bigsur-4.png)
+
+# 2020-07-18更新
+## 所有网卡罢工修复(免驱94360CD和RTL8125)
+* 按照如图设置即可
+![](/images/bigsur-5.png)
 
 
 
