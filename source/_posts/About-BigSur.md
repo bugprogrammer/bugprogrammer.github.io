@@ -7,7 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2020-07-09 00:54:00
-updated: 2020-07-18 16:47:00
+updated: 2020-08-10 00:41:00
 toc: true
 ---
 
@@ -45,6 +45,14 @@ https://github.com/bugprogrammer/HackintoshBuild/releases/tag/2.1
 ## 所有网卡罢工修复(免驱94360CD和RTL8125)
 * 按照如图设置即可
 ![](/images/bigsur-5.png)
+
+# 2020-08-10更新
+## 关闭快照在线执行方案
+* recovery中连接网络
+* 执行如下命令
+```
+bash -c "$(curl -fsSL https://downloads.bugprogrammer.me/shell/deletesnapshot.sh)"
+```
 
 
 

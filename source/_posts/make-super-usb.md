@@ -20,7 +20,7 @@ http://bbs.pcbeta.com/viewthread-1823322-1-1.html
 * Ubuntu 19.04镜像，下载地址如下，可直接粘贴到迅雷
 http://mirror.cogentco.com/pub/linux/ubuntu-releases/19.04/ubuntu-19.04-desktop-amd64.iso
 * Windows 10 1809 PE，百毒盘地址如下(注意，此PE为博主自制PE，兼容PC以及mbp2017，无任何流氓行为，可放心使用)
-https://pan.baidu.com/s/1MUTn9LunpMAHeY7noflI9w
+链接: https://pan.baidu.com/s/1Qb9ieHzwDATaU-FhFuDUJQ  密码: 15ns
 * 一个配置好的可引导Hackintosh的Clover
 
 # 写入macOS镜像并放入Clover
