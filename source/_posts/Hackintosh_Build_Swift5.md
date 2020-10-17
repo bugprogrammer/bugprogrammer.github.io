@@ -7,7 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2020-01-16 22:27:00
-updated: 2020-09-07 02:41:00
+updated: 2020-10-18 06:58:00
 toc: true
 ---
 
@@ -153,3 +153,8 @@ xcode-select --install
 * Kexts下载模块重构，新增进度显示
 * PCI信息模块新增应用内更新pci.ids数据库
 * 序列号生成模块新增应用内更新SMBIOS数据库
+
+# 2020-10-18更新
+## v3.1版本更新
+* 适配MacKernelSDK，修复编译功能以及每日构建功能
+* 编译模块新增VoodooI2C、VoodooPS2以及RTL8125

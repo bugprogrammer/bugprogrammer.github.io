@@ -543,7 +543,8 @@ aside:
     description:
   card_announcement:
     enable: true
-    content: 发现严重bug，连夜升级blog，新版本已经上线。改版后访问有bug的请清除浏览器缓存。
+    content: 1、HackinPlugins已经恢复正常，适配MacKernelSDK 
+             2、HackintoshBuild v3.1已经发布
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
