@@ -544,7 +544,7 @@ aside:
   card_announcement:
     enable: true
     content: 1、HackinPlugins已经恢复正常，适配MacKernelSDK 
-             2、HackintoshBuild v3.1已经发布
+             2、HackintoshBuild v3.2已经发布
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all

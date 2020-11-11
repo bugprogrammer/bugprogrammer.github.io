@@ -7,7 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2020-01-16 22:27:00
-updated: 2020-10-18 06:58:00
+updated: 2020-11-11 22:30:00
 toc: true
 ---
 
@@ -158,3 +158,7 @@ xcode-select --install
 ## v3.1版本更新
 * 适配MacKernelSDK，修复编译功能以及每日构建功能
 * 编译模块新增VoodooI2C、VoodooPS2以及RTL8125
+
+# 2020-11-11更新
+## v3.2版本更新
+* 适配macOS Big Sur RC2镜像下载
