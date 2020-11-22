@@ -7,7 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2020-01-16 22:27:00
-updated: 2020-11-11 22:30:00
+updated: 2020-11-22 22:30:00
 toc: true
 ---
 
@@ -162,3 +162,8 @@ xcode-select --install
 # 2020-11-11更新
 ## v3.2版本更新
 * 适配macOS Big Sur RC2镜像下载
+
+# 2020-11-22更新
+## v3.3版本更新
+* 适配macOS Big Sur 11.1 beta镜像下载
+* 更换图标(感谢群友Cotton绘制图标)
