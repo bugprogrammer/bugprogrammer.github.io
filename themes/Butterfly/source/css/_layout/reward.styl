@@ -1,20 +1,20 @@
 .post-reward
-  margin: 75px auto 0
+  position: relative
+  margin-top: 4rem
   width: 100%
   text-align: center
 
   .reward-button
-    position: relative
-    z-index: 1
     display: inline-block
-    width: 100px
-    background: $light-blue
-    color: $button-color
-    text-align: center
-    line-height: 36px
+    padding: .2rem 1.2rem
+    background: var(--btn-bg)
+    color: var(--btn-color)
     cursor: pointer
+    transition: all .4s
 
     &:hover
+      box-shadow: inset 9em 0 0 0 var(--btn-hover-color)
+
       .reward-main
         display: block
 
@@ -22,19 +22,17 @@
       position: absolute
       bottom: 40px
       left: 0
+      z-index: 100
       display: none
-      margin: 0
       padding: 0 0 15px
       width: 100%
-      transition: all .6s
 
       .reward-all
         display: inline-block
-        margin: 0 0 0 -110px
-        padding: 20px 10px 8px
-        width: 320px
+        margin: 0
+        padding: 1rem .5rem
         border-radius: 4px
-        background: $reward-pop-up-bg
+        background: var(--reward-pop)
 
         &:before
           position: absolute
@@ -52,7 +50,7 @@
           margin: 0 auto
           width: 0
           height: 0
-          border-top: 13px solid $reward-pop-up-bg
+          border-top: 13px solid var(--reward-pop)
           border-right: 13px solid transparent
           border-left: 13px solid transparent
           content: ''
@@ -61,14 +59,13 @@
           display: inline-block
           padding: 0 8px
           list-style-type: none
+          vertical-align: top
 
           img
-            position: relative
-            max-width: 130px
             width: 130px
-            border-radius: 3px
+            height: 130px
 
-          .post-qr-code__desc
-            margin: -5px 0
+          .post-qr-code-desc
+            padding-top: .4rem
+            width: 130px
             color: $reward-pop-up-color
-            text-align: center

@@ -1,11 +1,16 @@
 .post-reward
-  a.reward-button.button--primary.button--animated 
-    i.fa.fa-qrcode
+  .reward-button
+    i.fas.fa-qrcode
     = ' ' + _p('donate')
     .reward-main
       ul.reward-all
         each item in theme.reward.QR_code
+          - var clickTo = (item.itemlist||item).link ? (item.itemlist||item).link : (item.itemlist||item).img
           li.reward-item
-            img.post-qr-code__img(src=url_for((item.itemlist||item).img) alt=(item.itemlist||item).text)
-            .post-qr-code__desc=(item.itemlist||item).text
+            a(href=clickTo target='_blank')
+              if theme.lazyload.enable
+                img.post-qr-code-img(data-lazy-src=url_for((item.itemlist||item).img) alt=(item.itemlist||item).text)
+              else
+                img.post-qr-code-img(src=url_for((item.itemlist||item).img) alt=(item.itemlist||item).text)
+            .post-qr-code-desc=(item.itemlist||item).text
 

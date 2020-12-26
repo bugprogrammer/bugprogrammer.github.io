@@ -7,7 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2020-01-16 22:27:00
-updated: 2020-11-22 22:30:00
+updated: 2020-12-25 18:00:00
 toc: true
 ---
 
@@ -167,3 +167,10 @@ xcode-select --install
 ## v3.3版本更新
 * 适配macOS Big Sur 11.1 beta镜像下载
 * 更换图标(感谢群友Cotton绘制图标)
+
+# 2020-12-25更新
+## v4.0版本更新
+* 适配Apple Silicon Macs
+* 新增"本机app适配Apple Silicon情况"模块
+* 按照硬件架构区分可用功能
+* UI适配Big Sur风格

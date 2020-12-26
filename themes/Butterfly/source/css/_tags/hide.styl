@@ -1,21 +1,20 @@
 // tag-hide
 .hide-inline,
 .hide-block
-  & > a.hide-button
-    position: relative
-    z-index: 1
+  & > .hide-button
     display: inline-block
-    padding: 0 1rem
+    padding: .3rem 1rem
     background: $tag-hide-bg
-    color: $white !important
-    text-align: center
-    cursor: pointer
-
-    &:hover
-      text-decoration: none !important
+    color: var(--white)
 
     &.open
       display: none
+
+      & + div
+        display: block
+
+      & + span
+        display: inline
 
   & > .hide-content
     display: none
@@ -37,7 +36,7 @@
   & > .hide-button
     padding: .3rem .5rem
     background: $tag-hide-toggle-bg
-    color: $font-color
+    color: #1F2D3D
     cursor: pointer
 
     & > i
@@ -47,6 +46,9 @@
     &.open
       i
         transform: rotate(90deg)
+
+      & + div
+        display: block
 
   & > .hide-content
     display: none
