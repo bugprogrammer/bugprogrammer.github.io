@@ -85,7 +85,7 @@ theme: butterfly
 deploy:
   type: git
   repo: 
-    #github: git@github.com:bugprogrammer/bugprogrammer.github.io.git
+    github: git@github.com:bugprogrammer/bugprogrammer.github.io.git
     #coding: git@git.coding.net:bugprogrammer/bugprogrammer.git
     ggc: git@bugprogrammer.me:bugprogrammer/hexo.git 
 
