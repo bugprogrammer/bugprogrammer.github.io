@@ -83,37 +83,6 @@
       </tags>
   </entry>
   <entry>
-    <title>macOS下编译VoodooI2C教程(2019最新更新)</title>
-    <url>/2018/12/01/Build_VoodooI2C.html</url>
-    <content><![CDATA[<blockquote>
-<p>自从macOS Mojave 10.14发布以来，VoodooI2C在博主的笔记本上就一直闹毛病。最新的release版本2.1.4在10.14下已经可用，睡眠唤醒后也正常，但是有一个bug很让博主头痛，那就是长时间使用笔记本可能会突然出现内核恐慌而死机或重启。查了下github上的issum，不止博主一人遇到。尝试编译新提交的VoodooI2C源码，测试了一天，成功解决博主笔记本的问题。由于VoodooI2C和其他kext(比如Lilu及其插件)相比，编译难度稍大，故而现在发布VoodooI2C编译教程，供朋友们参考。<a id="more"></a></p>
-</blockquote>
-<h3 id="安装相关环境"><a href="#安装相关环境" class="headerlink" title="安装相关环境"></a>安装相关环境</h3><h4 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a>Xcode</h4><ul>
-<li>Mac App Store商店安装Xcode。</li>
-<li>终端下输入如下命令并按提示安装。<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
-<h4 id="git"><a href="#git" class="headerlink" title="git"></a>git</h4>macOS自带。</li>
-</ul>
-<h3 id="同步VoodooI2C源码"><a href="#同步VoodooI2C源码" class="headerlink" title="同步VoodooI2C源码"></a>同步VoodooI2C源码</h3><blockquote>
-<p>由于VoodooI2C不同模块分属于不同仓库，所以我们用以下命令一次性克隆VoodooI2C及其所有子模块。</p>
-</blockquote>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cd ~/Desktop</span><br><span class="line">git clone --recursive https:<span class="regexp">//gi</span>thub.com<span class="regexp">/alexandred/</span>VoodooI2C</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/VoodooI2C.png"></p>
-<h3 id="编译源码-这一节讲编译流程，相关错误解决方案在下一节"><a href="#编译源码-这一节讲编译流程，相关错误解决方案在下一节" class="headerlink" title="编译源码(这一节讲编译流程，相关错误解决方案在下一节)"></a>编译源码(这一节讲编译流程，相关错误解决方案在下一节)</h3><ul>
-<li>用xcode打开桌面上的源码文件夹根目录的VoodooI2C.xcworkspace文件.</li>
-<li>点击xcode左侧所有的Update to recommended settings警告，弹出框按提示操作，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/f9e31b416d4e0e3aae2713e4179f96db06b06ccb.jpg"></li>
-<li>点击Product-&gt;Archive，正常情况下会编译成功，弹框提示输出路径，选择并输出即可,如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/9cedcbc68b08583136ff1b3516e64da0d3ac853f.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/dcbee1d5a094c5c8b4d45f71e75665ea47162abc.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/6e92d382389ce86b6eb2970de040093a928ee566.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/f1c31149e6af98479134e71c7741de7069956ff0.jpg"></li>
-</ul>
-<p><font color=#A52A2A ><strong>（什么？出错了？往下看！！！）</strong></font></p>
-<h3 id="常见错误解决方案-语言叙述有难度，请看视频"><a href="#常见错误解决方案-语言叙述有难度，请看视频" class="headerlink" title="常见错误解决方案(语言叙述有难度，请看视频)"></a>常见错误解决方案(语言叙述有难度，请看视频)</h3><h4 id="视频教程"><a href="#视频教程" class="headerlink" title="视频教程"></a>视频教程</h4><div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"theme":"#FADFA3","loop":true,"video":{"url":"https://downloads.bugprogrammer.me/VoodooI2C.mkv"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>macOS</tag>
-        <tag>VoodooI2C</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博主的Hackintosh全家桶定时编译上线GitHub</title>
     <url>/2020/09/07/HackintoshPlugins.html</url>
     <content><![CDATA[<blockquote>
@@ -297,74 +266,34 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux内核简介及编译教程</title>
-    <url>/2018/09/01/Linux_Kernel_Build.html</url>
+    <title>macOS下编译VoodooI2C教程(2019最新更新)</title>
+    <url>/2018/12/01/Build_VoodooI2C.html</url>
     <content><![CDATA[<blockquote>
-<p>博主去年双11购入AMD Vega显卡(为了黑苹果免驱以及硬解)，发现Linux下无法驱动Vega显卡，4K显示器分辨率被锁定为1920x2160的奇葩分辨率，无法接受。于是Google了一下发现当时的内核(Linux 4.12)并不支持AMD Vega显卡，于是打算编译内核升级到最新版本，毕竟Linux的舒适使用对博主十分重要。现在分享一下Linux Kernel的编译教程。<a id="more"></a><br><br /><b>注意：由于时间久远，博主的Linux已经升级Ubuntu 18.04，自带内核版本为Linux 4.15，所以演示平台为Ubuntu 18.04，编译的内核版本为Linux 4.18.5。另外，本文中部分图片来源网络。因为经典体系架构图现画比较麻烦。</b></p>
+<p>自从macOS Mojave 10.14发布以来，VoodooI2C在博主的笔记本上就一直闹毛病。最新的release版本2.1.4在10.14下已经可用，睡眠唤醒后也正常，但是有一个bug很让博主头痛，那就是长时间使用笔记本可能会突然出现内核恐慌而死机或重启。查了下github上的issum，不止博主一人遇到。尝试编译新提交的VoodooI2C源码，测试了一天，成功解决博主笔记本的问题。由于VoodooI2C和其他kext(比如Lilu及其插件)相比，编译难度稍大，故而现在发布VoodooI2C编译教程，供朋友们参考。<a id="more"></a></p>
 </blockquote>
-<h3 id="Linux内核简介"><a href="#Linux内核简介" class="headerlink" title="Linux内核简介"></a>Linux内核简介</h3><h4 id="Linux-Kernel-Map"><a href="#Linux-Kernel-Map" class="headerlink" title="Linux Kernel Map"></a>Linux Kernel Map</h4><p><img src= "/images/loading.gif" data-lazy-src="/images/6b49439752bdd908e832187bbbfe555dcd56864e.jpg"></p>
-<h4 id="Linux-系统体系结构"><a href="#Linux-系统体系结构" class="headerlink" title="Linux 系统体系结构"></a>Linux 系统体系结构</h4><p>如下图所示，Linux体系结构，从大的方面可以分为用户空间(User Space)和内核空间(Kernel Space)两部分。</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/299f340bcfb4ac1703fdb841e613bcaf57862165.jpg"></p>
-<ul>
-<li>用户空间中包含了C库，用户的应用程序。在某些体系结构图中还包含了shell，当然shell脚本也是Linux体系中不可缺少的一部分。</li>
-<li>内核空间包括硬件平台、平台依赖代码、内核、系统调用接口。</li>
-<li>在任何一个现代操作系统中，都是分层的。为什么需要分层呢？<blockquote>
-<p>从程序员的角度分析，将linux底层和应用分开，做应用的做应用，做底层的做底层，各干各的。经济学的基本原理是，分工产生效率。<br /><br>从安全性的角度分析，是为了保护内核。现代CPU通常都实现了不同的工作模式。<br><br />以ARM为例：ARM实现了7种工作模式，不同模式下CPU可以执行的指令或者访问的寄存器不同：(1)用户模式 usr (2)系统模式 sys(3)管理模式 svc(4)快速中断 fiq(5)外部中断 irq(6)数据访问终止 abt(7)未定义指令异常。如果任何一个上层应用都可以调用寄存器，那样肯定是无法稳定执行的。而且因为出现了这个问题，出现了一个新的学科“现代操作系统”，如果大家感兴趣可以看一下“现代操作系统”相关文章或者书籍。<br /><br>以X86为例：X86实现了4个不同级别的权限，Ring0—Ring3 ;Ring0下可以执行特权指令，可以访问IO设备；Ring3则有很多的限制。如果分析一下Android的，这方面做的更加“丧心病狂”，Android所有的APK应用程序，都是在Java虚拟机上面运行，应用程序更加远离底层。<br /><br>另外，用户空间和内核空间是程序执行的两种不同状态，我们可以通过“系统调用”和“硬件中断”来完成用户空间到内核空间的转移。</p>
+<h3 id="安装相关环境"><a href="#安装相关环境" class="headerlink" title="安装相关环境"></a>安装相关环境</h3><h4 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a>Xcode</h4><ul>
+<li>Mac App Store商店安装Xcode。</li>
+<li>终端下输入如下命令并按提示安装。<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
+<h4 id="git"><a href="#git" class="headerlink" title="git"></a>git</h4>macOS自带。</li>
+</ul>
+<h3 id="同步VoodooI2C源码"><a href="#同步VoodooI2C源码" class="headerlink" title="同步VoodooI2C源码"></a>同步VoodooI2C源码</h3><blockquote>
+<p>由于VoodooI2C不同模块分属于不同仓库，所以我们用以下命令一次性克隆VoodooI2C及其所有子模块。</p>
 </blockquote>
-</li>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cd ~/Desktop</span><br><span class="line">git clone --recursive https:<span class="regexp">//gi</span>thub.com<span class="regexp">/alexandred/</span>VoodooI2C</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/VoodooI2C.png"></p>
+<h3 id="编译源码-这一节讲编译流程，相关错误解决方案在下一节"><a href="#编译源码-这一节讲编译流程，相关错误解决方案在下一节" class="headerlink" title="编译源码(这一节讲编译流程，相关错误解决方案在下一节)"></a>编译源码(这一节讲编译流程，相关错误解决方案在下一节)</h3><ul>
+<li>用xcode打开桌面上的源码文件夹根目录的VoodooI2C.xcworkspace文件.</li>
+<li>点击xcode左侧所有的Update to recommended settings警告，弹出框按提示操作，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/f9e31b416d4e0e3aae2713e4179f96db06b06ccb.jpg"></li>
+<li>点击Product-&gt;Archive，正常情况下会编译成功，弹框提示输出路径，选择并输出即可,如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/9cedcbc68b08583136ff1b3516e64da0d3ac853f.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/dcbee1d5a094c5c8b4d45f71e75665ea47162abc.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/6e92d382389ce86b6eb2970de040093a928ee566.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/f1c31149e6af98479134e71c7741de7069956ff0.jpg"></li>
 </ul>
-<h4 id="Linux-Kernel体系结构"><a href="#Linux-Kernel体系结构" class="headerlink" title="Linux Kernel体系结构"></a>Linux Kernel体系结构</h4><p>如下图所示，是Linux内核结构图。</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/97909a09aa119314a15a18235b9eb288ba7ad448.jpg"></p>
-<h5 id="SCI层（System-Call-Interface）"><a href="#SCI层（System-Call-Interface）" class="headerlink" title="SCI层（System Call Interface）"></a>SCI层（System Call Interface）</h5><p>这一层是给应用用户空间提供一套标准的系统调用函数来访问Linux。前面分析Linux体系结构的时候，介绍过任何一类现代操作系统都不会允许上层应用直接访问底层，在Linux中，内核提供了一套标准接口，上层应用就可以通过这一套标准接口来访问底层。</p>
-<h5 id="PM（Procees-Management）"><a href="#PM（Procees-Management）" class="headerlink" title="PM（Procees Management）"></a>PM（Procees Management）</h5><p>这一部分包括具体创建进程（fork、exec）,停止进程（kill、exit）,并控制他们之间的通信（signal等）。还包括进程调度，控制活动进程如何共享CPU。这一部分是Linux已经做好的，在写驱动的时候，只需要调用对应的函数即可实现这些功能，例如创建进程、进程通信等等。</p>
-<h5 id="MM（Memory-Management）"><a href="#MM（Memory-Management）" class="headerlink" title="MM（Memory Management）"></a>MM（Memory Management）</h5><p>内存管理的主要作用是控制多个进程安全的共享内存区域。</p>
-<h5 id="VFS（Virtual-File-Systems）"><a href="#VFS（Virtual-File-Systems）" class="headerlink" title="VFS（Virtual File Systems）"></a>VFS（Virtual File Systems）</h5><p>虚拟文件系统，隐藏各种文件系统的具体细节，为文件操作提供统一的接口。在Linux中“一切皆文件”，这些文件就是通过VFS来实现的。Linux提供了一个大的通用模型，使这个模型包含了所有文件系统功能的集合。如下图所示，是一个虚拟文件系统的结构图。</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/5a07b3a364feae45f4bd211f19d963e1977eff58.jpg"></p>
-<h5 id="DD（Device-Drivers）"><a href="#DD（Device-Drivers）" class="headerlink" title="DD（Device Drivers）"></a>DD（Device Drivers）</h5><p>设备驱动，Linux驱动一般分为网络设备、块设备、字符设备、杂项设备，需要我们编写的只有字符设备，杂项设备是不容易归类的一种驱动，杂项设备和字符设备有很多重合的地方。</p>
-<h5 id="PD（Physical-Devices）"><a href="#PD（Physical-Devices）" class="headerlink" title="PD（Physical Devices）"></a>PD（Physical Devices）</h5><p>这一部分提供丰富的网络协议支持。</p>
-<h3 id="Linux-Kernel源码"><a href="#Linux-Kernel源码" class="headerlink" title="Linux Kernel源码"></a>Linux Kernel源码</h3><h4 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h4><p><b><a href="http://www.kernel.org/">www.kernel.org</a></b></p>
-<h4 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h4><ul>
-<li>arch：根据cpu体系结构不同而分的代码</li>
-<li>block：部分块设备驱动程序</li>
-<li>crypto：加密，压缩，CRC校验算法</li>
-<li>documentation：内核文档</li>
-<li>drivers：设备驱动程序</li>
-<li>fs(虚拟文件系统vfs):文件系统</li>
-<li>include：内核所需的头文件，(与平台无关的头文件在include/linux中)</li>
-<li>lib：库文件代码(与平台相关的)</li>
-<li>mm：实现内存管理，与硬件体系结构无关的(与硬件体系结构相关的在arch中)</li>
-<li>net：网络协议的代码</li>
-<li>samples：一些内核编程的范例</li>
-<li>scripts：配置内核的脚本</li>
-<li>security：SElinux的模块</li>
-<li>sound：音频设备的驱动程序</li>
-<li>usr：cpio命令实现，用于制作根文件系统的命令(文件系统与内核放到一块的命令)</li>
-<li>virt：内核虚拟机</li>
-</ul>
-<h3 id="Linux-Kernel编译"><a href="#Linux-Kernel编译" class="headerlink" title="Linux Kernel编译"></a>Linux Kernel编译</h3><h4 id="下载Linux-Kernel源码并拷贝到-usr-src目录"><a href="#下载Linux-Kernel源码并拷贝到-usr-src目录" class="headerlink" title="下载Linux Kernel源码并拷贝到/usr/src目录"></a>下载Linux Kernel源码并拷贝到/usr/src目录</h4><p>输入如下命令即可</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">wget https:<span class="regexp">//</span>cdn.kernel.org<span class="regexp">/pub/</span>linux<span class="regexp">/kernel/</span>v4.x<span class="regexp">/linux-4.18.5.tar.xz &amp;&amp; cp -f linux-4.18.5.tar.xz /u</span>sr/src</span><br></pre></td></tr></table></figure>
-<h4 id="解压Linux-Kernel"><a href="#解压Linux-Kernel" class="headerlink" title="解压Linux Kernel"></a>解压Linux Kernel</h4><p>输入如下命令即可</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">cd</span> /usr/src &amp;&amp; tar -xvf linux-<span class="number">4</span>.<span class="number">18</span>.<span class="number">5</span>.tar.xz &amp;&amp; cd linux-<span class="number">4</span>.<span class="number">18</span>.<span class="number">5</span></span><br></pre></td></tr></table></figure>
-<h4 id="Ubuntu-18-04下，要执行以下命令安装软件包"><a href="#Ubuntu-18-04下，要执行以下命令安装软件包" class="headerlink" title="Ubuntu 18.04下，要执行以下命令安装软件包"></a>Ubuntu 18.04下，要执行以下命令安装软件包</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">sudo apt <span class="keyword">install</span> fortune</span><br></pre></td></tr></table></figure>
-<h4 id="配置编译参数"><a href="#配置编译参数" class="headerlink" title="配置编译参数"></a>配置编译参数</h4><p>执行以下命令，会弹出一个带有GUI的配置界面，一般情况下默认参数就好，光标移动到Save保存即可，如图：</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">make menuconfig</span></span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/bc6c5ce369b72802e5c97d5a38ef3b2b50ad6455.jpg"></p>
-<h4 id="编译内核"><a href="#编译内核" class="headerlink" title="编译内核"></a>编译内核</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">make</span> -j<span class="number">12</span></span><br></pre></td></tr></table></figure>
-<p><b>注意：-j参数后面加本机CPU线程数可以加快编译速度，博主的8700K是6核心12线程，所以-j12。</b></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/39a28f2943c8062679567b03687c28c54354b5c9.jpg"></p>
-<h4 id="安装内核"><a href="#安装内核" class="headerlink" title="安装内核"></a>安装内核</h4><figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line"><span class="built_in">make</span> modules_install</span><br><span class="line"><span class="built_in">make</span> install</span><br></pre></td></tr></table></figure>
-<h4 id="更新grub引导"><a href="#更新grub引导" class="headerlink" title="更新grub引导"></a>更新grub引导</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">update</span>-grub<span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p>至此升级内核成功，重启电脑。</p>
-<h4 id="确认升级是否成功"><a href="#确认升级是否成功" class="headerlink" title="确认升级是否成功"></a>确认升级是否成功</h4><p>重启后，执行如下命令查看内核版本，和编译版本相同即为成功</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">uname -r</span></span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/7de8222416d47ef89b548125c35e3b5f3238508f.jpg"></p>
-]]></content>
+<p><font color=#A52A2A ><strong>（什么？出错了？往下看！！！）</strong></font></p>
+<h3 id="常见错误解决方案-语言叙述有难度，请看视频"><a href="#常见错误解决方案-语言叙述有难度，请看视频" class="headerlink" title="常见错误解决方案(语言叙述有难度，请看视频)"></a>常见错误解决方案(语言叙述有难度，请看视频)</h3><h4 id="视频教程"><a href="#视频教程" class="headerlink" title="视频教程"></a>视频教程</h4><div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"theme":"#FADFA3","loop":true,"video":{"url":"https://downloads.bugprogrammer.me/VoodooI2C.mkv"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>]]></content>
       <categories>
-        <category>Linux</category>
+        <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>Linux_Kernel</tag>
-        <tag>Ubuntu</tag>
+        <tag>macOS</tag>
+        <tag>VoodooI2C</tag>
       </tags>
   </entry>
   <entry>
@@ -518,6 +447,77 @@
       </categories>
       <tags>
         <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux内核简介及编译教程</title>
+    <url>/2018/09/01/Linux_Kernel_Build.html</url>
+    <content><![CDATA[<blockquote>
+<p>博主去年双11购入AMD Vega显卡(为了黑苹果免驱以及硬解)，发现Linux下无法驱动Vega显卡，4K显示器分辨率被锁定为1920x2160的奇葩分辨率，无法接受。于是Google了一下发现当时的内核(Linux 4.12)并不支持AMD Vega显卡，于是打算编译内核升级到最新版本，毕竟Linux的舒适使用对博主十分重要。现在分享一下Linux Kernel的编译教程。<a id="more"></a><br><br /><b>注意：由于时间久远，博主的Linux已经升级Ubuntu 18.04，自带内核版本为Linux 4.15，所以演示平台为Ubuntu 18.04，编译的内核版本为Linux 4.18.5。另外，本文中部分图片来源网络。因为经典体系架构图现画比较麻烦。</b></p>
+</blockquote>
+<h3 id="Linux内核简介"><a href="#Linux内核简介" class="headerlink" title="Linux内核简介"></a>Linux内核简介</h3><h4 id="Linux-Kernel-Map"><a href="#Linux-Kernel-Map" class="headerlink" title="Linux Kernel Map"></a>Linux Kernel Map</h4><p><img src= "/images/loading.gif" data-lazy-src="/images/6b49439752bdd908e832187bbbfe555dcd56864e.jpg"></p>
+<h4 id="Linux-系统体系结构"><a href="#Linux-系统体系结构" class="headerlink" title="Linux 系统体系结构"></a>Linux 系统体系结构</h4><p>如下图所示，Linux体系结构，从大的方面可以分为用户空间(User Space)和内核空间(Kernel Space)两部分。</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/299f340bcfb4ac1703fdb841e613bcaf57862165.jpg"></p>
+<ul>
+<li>用户空间中包含了C库，用户的应用程序。在某些体系结构图中还包含了shell，当然shell脚本也是Linux体系中不可缺少的一部分。</li>
+<li>内核空间包括硬件平台、平台依赖代码、内核、系统调用接口。</li>
+<li>在任何一个现代操作系统中，都是分层的。为什么需要分层呢？<blockquote>
+<p>从程序员的角度分析，将linux底层和应用分开，做应用的做应用，做底层的做底层，各干各的。经济学的基本原理是，分工产生效率。<br /><br>从安全性的角度分析，是为了保护内核。现代CPU通常都实现了不同的工作模式。<br><br />以ARM为例：ARM实现了7种工作模式，不同模式下CPU可以执行的指令或者访问的寄存器不同：(1)用户模式 usr (2)系统模式 sys(3)管理模式 svc(4)快速中断 fiq(5)外部中断 irq(6)数据访问终止 abt(7)未定义指令异常。如果任何一个上层应用都可以调用寄存器，那样肯定是无法稳定执行的。而且因为出现了这个问题，出现了一个新的学科“现代操作系统”，如果大家感兴趣可以看一下“现代操作系统”相关文章或者书籍。<br /><br>以X86为例：X86实现了4个不同级别的权限，Ring0—Ring3 ;Ring0下可以执行特权指令，可以访问IO设备；Ring3则有很多的限制。如果分析一下Android的，这方面做的更加“丧心病狂”，Android所有的APK应用程序，都是在Java虚拟机上面运行，应用程序更加远离底层。<br /><br>另外，用户空间和内核空间是程序执行的两种不同状态，我们可以通过“系统调用”和“硬件中断”来完成用户空间到内核空间的转移。</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="Linux-Kernel体系结构"><a href="#Linux-Kernel体系结构" class="headerlink" title="Linux Kernel体系结构"></a>Linux Kernel体系结构</h4><p>如下图所示，是Linux内核结构图。</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/97909a09aa119314a15a18235b9eb288ba7ad448.jpg"></p>
+<h5 id="SCI层（System-Call-Interface）"><a href="#SCI层（System-Call-Interface）" class="headerlink" title="SCI层（System Call Interface）"></a>SCI层（System Call Interface）</h5><p>这一层是给应用用户空间提供一套标准的系统调用函数来访问Linux。前面分析Linux体系结构的时候，介绍过任何一类现代操作系统都不会允许上层应用直接访问底层，在Linux中，内核提供了一套标准接口，上层应用就可以通过这一套标准接口来访问底层。</p>
+<h5 id="PM（Procees-Management）"><a href="#PM（Procees-Management）" class="headerlink" title="PM（Procees Management）"></a>PM（Procees Management）</h5><p>这一部分包括具体创建进程（fork、exec）,停止进程（kill、exit）,并控制他们之间的通信（signal等）。还包括进程调度，控制活动进程如何共享CPU。这一部分是Linux已经做好的，在写驱动的时候，只需要调用对应的函数即可实现这些功能，例如创建进程、进程通信等等。</p>
+<h5 id="MM（Memory-Management）"><a href="#MM（Memory-Management）" class="headerlink" title="MM（Memory Management）"></a>MM（Memory Management）</h5><p>内存管理的主要作用是控制多个进程安全的共享内存区域。</p>
+<h5 id="VFS（Virtual-File-Systems）"><a href="#VFS（Virtual-File-Systems）" class="headerlink" title="VFS（Virtual File Systems）"></a>VFS（Virtual File Systems）</h5><p>虚拟文件系统，隐藏各种文件系统的具体细节，为文件操作提供统一的接口。在Linux中“一切皆文件”，这些文件就是通过VFS来实现的。Linux提供了一个大的通用模型，使这个模型包含了所有文件系统功能的集合。如下图所示，是一个虚拟文件系统的结构图。</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/5a07b3a364feae45f4bd211f19d963e1977eff58.jpg"></p>
+<h5 id="DD（Device-Drivers）"><a href="#DD（Device-Drivers）" class="headerlink" title="DD（Device Drivers）"></a>DD（Device Drivers）</h5><p>设备驱动，Linux驱动一般分为网络设备、块设备、字符设备、杂项设备，需要我们编写的只有字符设备，杂项设备是不容易归类的一种驱动，杂项设备和字符设备有很多重合的地方。</p>
+<h5 id="PD（Physical-Devices）"><a href="#PD（Physical-Devices）" class="headerlink" title="PD（Physical Devices）"></a>PD（Physical Devices）</h5><p>这一部分提供丰富的网络协议支持。</p>
+<h3 id="Linux-Kernel源码"><a href="#Linux-Kernel源码" class="headerlink" title="Linux Kernel源码"></a>Linux Kernel源码</h3><h4 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h4><p><b><a href="http://www.kernel.org/">www.kernel.org</a></b></p>
+<h4 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h4><ul>
+<li>arch：根据cpu体系结构不同而分的代码</li>
+<li>block：部分块设备驱动程序</li>
+<li>crypto：加密，压缩，CRC校验算法</li>
+<li>documentation：内核文档</li>
+<li>drivers：设备驱动程序</li>
+<li>fs(虚拟文件系统vfs):文件系统</li>
+<li>include：内核所需的头文件，(与平台无关的头文件在include/linux中)</li>
+<li>lib：库文件代码(与平台相关的)</li>
+<li>mm：实现内存管理，与硬件体系结构无关的(与硬件体系结构相关的在arch中)</li>
+<li>net：网络协议的代码</li>
+<li>samples：一些内核编程的范例</li>
+<li>scripts：配置内核的脚本</li>
+<li>security：SElinux的模块</li>
+<li>sound：音频设备的驱动程序</li>
+<li>usr：cpio命令实现，用于制作根文件系统的命令(文件系统与内核放到一块的命令)</li>
+<li>virt：内核虚拟机</li>
+</ul>
+<h3 id="Linux-Kernel编译"><a href="#Linux-Kernel编译" class="headerlink" title="Linux Kernel编译"></a>Linux Kernel编译</h3><h4 id="下载Linux-Kernel源码并拷贝到-usr-src目录"><a href="#下载Linux-Kernel源码并拷贝到-usr-src目录" class="headerlink" title="下载Linux Kernel源码并拷贝到/usr/src目录"></a>下载Linux Kernel源码并拷贝到/usr/src目录</h4><p>输入如下命令即可</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">wget https:<span class="regexp">//</span>cdn.kernel.org<span class="regexp">/pub/</span>linux<span class="regexp">/kernel/</span>v4.x<span class="regexp">/linux-4.18.5.tar.xz &amp;&amp; cp -f linux-4.18.5.tar.xz /u</span>sr/src</span><br></pre></td></tr></table></figure>
+<h4 id="解压Linux-Kernel"><a href="#解压Linux-Kernel" class="headerlink" title="解压Linux Kernel"></a>解压Linux Kernel</h4><p>输入如下命令即可</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">cd</span> /usr/src &amp;&amp; tar -xvf linux-<span class="number">4</span>.<span class="number">18</span>.<span class="number">5</span>.tar.xz &amp;&amp; cd linux-<span class="number">4</span>.<span class="number">18</span>.<span class="number">5</span></span><br></pre></td></tr></table></figure>
+<h4 id="Ubuntu-18-04下，要执行以下命令安装软件包"><a href="#Ubuntu-18-04下，要执行以下命令安装软件包" class="headerlink" title="Ubuntu 18.04下，要执行以下命令安装软件包"></a>Ubuntu 18.04下，要执行以下命令安装软件包</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">sudo apt <span class="keyword">install</span> fortune</span><br></pre></td></tr></table></figure>
+<h4 id="配置编译参数"><a href="#配置编译参数" class="headerlink" title="配置编译参数"></a>配置编译参数</h4><p>执行以下命令，会弹出一个带有GUI的配置界面，一般情况下默认参数就好，光标移动到Save保存即可，如图：</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">make menuconfig</span></span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/bc6c5ce369b72802e5c97d5a38ef3b2b50ad6455.jpg"></p>
+<h4 id="编译内核"><a href="#编译内核" class="headerlink" title="编译内核"></a>编译内核</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">make</span> -j<span class="number">12</span></span><br></pre></td></tr></table></figure>
+<p><b>注意：-j参数后面加本机CPU线程数可以加快编译速度，博主的8700K是6核心12线程，所以-j12。</b></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/39a28f2943c8062679567b03687c28c54354b5c9.jpg"></p>
+<h4 id="安装内核"><a href="#安装内核" class="headerlink" title="安装内核"></a>安装内核</h4><figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line"><span class="built_in">make</span> modules_install</span><br><span class="line"><span class="built_in">make</span> install</span><br></pre></td></tr></table></figure>
+<h4 id="更新grub引导"><a href="#更新grub引导" class="headerlink" title="更新grub引导"></a>更新grub引导</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">update</span>-grub<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>至此升级内核成功，重启电脑。</p>
+<h4 id="确认升级是否成功"><a href="#确认升级是否成功" class="headerlink" title="确认升级是否成功"></a>确认升级是否成功</h4><p>重启后，执行如下命令查看内核版本，和编译版本相同即为成功</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">uname -r</span></span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/7de8222416d47ef89b548125c35e3b5f3238508f.jpg"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux_Kernel</tag>
+        <tag>Ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -777,6 +777,32 @@
       </tags>
   </entry>
   <entry>
+    <title>macOS Catalina 10.15关于sidecar功能的说明</title>
+    <url>/2019/06/13/about-sidecar.html</url>
+    <content><![CDATA[<blockquote>
+<p>macOS 10.15的一个重磅功能是sidecar。就是用iPad作为mac的扩展屏，博主测试了一下，挺好用的。但是在Hackintosh下，并不是随意就能启用sidecar。以下附上博主的启用sidecar教程。<a id="more"></a></p>
+</blockquote>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>目前无核显PC尚未遇到成功案例，可能是黑苹果的bug，也可能是macOS 10.15 beta1的bug。</p>
+<h2 id="博主PC配置"><a href="#博主PC配置" class="headerlink" title="博主PC配置"></a>博主PC配置</h2><p>Z390+9900K+Vega56</p>
+<h2 id="启用sidecar教程"><a href="#启用sidecar教程" class="headerlink" title="启用sidecar教程"></a>启用sidecar教程</h2><ul>
+<li>BIOS中设置主显卡为独显(PCIE)并且设置DVMT为128M，以便独显、核显并存。</li>
+<li>修改SMBIOS为iMac 19,1。<br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-1.png"></li>
+<li>勾选Inject intel。</li>
+<li>设置FakeID-&gt;IntelGFX为0x3e988086，ig-platform-id为0x3e980003(核显作为加速卡)。也可以设置FakeID-&gt;IntelGFX为0x3e928086，ig-platform-id为0x3e920003，博主测试均通过。<br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-3.png"></li>
+<li>重启电脑测试sidecar。</li>
+</ul>
+<h2 id="至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。"><a href="#至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。" class="headerlink" title="至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。"></a>至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-4.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-5.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-6.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-7.png"></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>macOS Catalina 10.15</tag>
+        <tag>sidecar</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于RX5700XT的驱动方法以及bug解决方案</title>
     <url>/2019/11/02/about-RX5700XT.html</url>
     <content><![CDATA[<blockquote>
@@ -848,71 +874,6 @@
       </tags>
   </entry>
   <entry>
-    <title>macOS Catalina 10.15关于sidecar功能的说明</title>
-    <url>/2019/06/13/about-sidecar.html</url>
-    <content><![CDATA[<blockquote>
-<p>macOS 10.15的一个重磅功能是sidecar。就是用iPad作为mac的扩展屏，博主测试了一下，挺好用的。但是在Hackintosh下，并不是随意就能启用sidecar。以下附上博主的启用sidecar教程。<a id="more"></a></p>
-</blockquote>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>目前无核显PC尚未遇到成功案例，可能是黑苹果的bug，也可能是macOS 10.15 beta1的bug。</p>
-<h2 id="博主PC配置"><a href="#博主PC配置" class="headerlink" title="博主PC配置"></a>博主PC配置</h2><p>Z390+9900K+Vega56</p>
-<h2 id="启用sidecar教程"><a href="#启用sidecar教程" class="headerlink" title="启用sidecar教程"></a>启用sidecar教程</h2><ul>
-<li>BIOS中设置主显卡为独显(PCIE)并且设置DVMT为128M，以便独显、核显并存。</li>
-<li>修改SMBIOS为iMac 19,1。<br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-1.png"></li>
-<li>勾选Inject intel。</li>
-<li>设置FakeID-&gt;IntelGFX为0x3e988086，ig-platform-id为0x3e980003(核显作为加速卡)。也可以设置FakeID-&gt;IntelGFX为0x3e928086，ig-platform-id为0x3e920003，博主测试均通过。<br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-3.png"></li>
-<li>重启电脑测试sidecar。</li>
-</ul>
-<h2 id="至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。"><a href="#至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。" class="headerlink" title="至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。"></a>至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-4.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-5.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-6.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-7.png"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>macOS Catalina 10.15</tag>
-        <tag>sidecar</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>什么？这辣鸡BIOS竟然不能关闭Secure Boot？教你在开启Secure Boot的情况下安装macOS</title>
-    <url>/2019/07/06/clover-with-secure-boot.html</url>
-    <content><![CDATA[<h1 id="相关理论"><a href="#相关理论" class="headerlink" title="相关理论"></a>相关理论</h1><h2 id="BIOS"><a href="#BIOS" class="headerlink" title="BIOS"></a>BIOS</h2><p>BIOS是英文”Basic Input Output System”的缩略语，直译过来后中文名称就是”基本输入输出系统”。其实，它是一组固化到计算机内主板上一个ROM芯片上的程序，它保存着计算机最重要的基本输入输出的程序、系统设置信息、开机后自检程序和系统自启动程序。 其主要功能是为计算机提供最底层的、最直接的硬件设置和控制。<a id="more"></a></p>
-<h2 id="UEFI"><a href="#UEFI" class="headerlink" title="UEFI"></a>UEFI</h2><p>UEFI，全称“统一的可扩展固件接口”(Unified Extensible Firmware Interface)， 是一种详细描述全新类型接口的标准。这种接口用于操作系统自动从预启动的操作环境，加载到一种操作系统上，从而使开机程序化繁为简，节省时间。</p>
-<h2 id="Secure-Boot"><a href="#Secure-Boot" class="headerlink" title="Secure Boot"></a>Secure Boot</h2><p>Secure Boot只是UEFI的一个部分。两者的关系是局部与整体的关系。Secure Boot的目的，是防止恶意软件侵入。它的做法就是采用密钥。UEFI规定，主板出厂的时候，可以内置一些可靠的公钥。然后，任何想要在这块主板上加载的操作系统或者硬件驱动程序，都必须通过这些公钥的认证。也就是说，这些软件必须用对应的私钥签署过，否则主板拒绝加载。由于恶意软件不可能通过认证，因此就没有办法感染Boot。</p>
-<h1 id="在开启Secure-Boot的情况下使用Clover启动macOS以及其他操作系统-如Linux"><a href="#在开启Secure-Boot的情况下使用Clover启动macOS以及其他操作系统-如Linux" class="headerlink" title="在开启Secure Boot的情况下使用Clover启动macOS以及其他操作系统(如Linux)"></a>在开启Secure Boot的情况下使用Clover启动macOS以及其他操作系统(如Linux)</h1><h2 id="准备工作-Windows下操作"><a href="#准备工作-Windows下操作" class="headerlink" title="准备工作(Windows下操作)"></a>准备工作(Windows下操作)</h2><ul>
-<li><p>下载并解压Super-UEFIinSecureBoot-Disk(感谢ValdikSS开发工具)。<br><a href="https://github.com/ValdikSS/Super-UEFIinSecureBoot-Disk/releases/download/3/Super-UEFIinSecureBoot-Disk_minimal_v3.zip">https://github.com/ValdikSS/Super-UEFIinSecureBoot-Disk/releases/download/3/Super-UEFIinSecureBoot-Disk_minimal_v3.zip</a></p>
-</li>
-<li><p>下载etcher<br><a href="https://github.com/balena-io/etcher/releases/download/v1.5.51/balenaEtcher-Portable-1.5.51.exe">https://github.com/balena-io/etcher/releases/download/v1.5.51/balenaEtcher-Portable-1.5.51.exe</a></p>
-</li>
-<li><p>准备一个U盘并备份文件，用etcher将Super-UEFIinSecureBoot-Disk写入U盘。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-1.png"></p>
-</li>
-</ul>
-<h2 id="实现教程"><a href="#实现教程" class="headerlink" title="实现教程"></a>实现教程</h2><blockquote>
-<p>现在请在BIOS中开启Secure Boot选项并且重启进入Windows操作。</p>
-</blockquote>
-<h3 id="注册证书"><a href="#注册证书" class="headerlink" title="注册证书"></a>注册证书</h3><p>使用做好的U盘启动电脑，按照图示完成证书注册。(出现黑色的grub2界面表示注册成功)<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-2.png"></p>
-<h3 id="集成Clover"><a href="#集成Clover" class="headerlink" title="集成Clover"></a>集成Clover</h3><ul>
-<li><p>将CLOVER文件夹拷贝到U盘的EFI文件夹下，与BOOT以及grub文件夹同级。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-3.png"></p>
-</li>
-<li><p>打开Clover文件夹将Cloverx64.efi文件重命名为grubx64_real.efi。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-4.png"></p>
-</li>
-<li><p>打开BOOT文件夹备份grubx64_real.efi文件，并将Clover文件夹下的grubx64_real.efi文件拷贝到BOOT文件夹下。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-5.png"></p>
-</li>
-<li><p>重启电脑，并用U盘引导。</p>
-</li>
-</ul>
-<h1 id="是时候看看成果了！"><a href="#是时候看看成果了！" class="headerlink" title="是时候看看成果了！"></a>是时候看看成果了！</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-6.png"></p>
-<h1 id="最后别忘了将USB的引导移到硬盘中。"><a href="#最后别忘了将USB的引导移到硬盘中。" class="headerlink" title="最后别忘了将USB的引导移到硬盘中。"></a>最后别忘了将USB的引导移到硬盘中。</h1><h1 id="关于后续更新Clover的问题"><a href="#关于后续更新Clover的问题" class="headerlink" title="关于后续更新Clover的问题"></a>关于后续更新Clover的问题</h1><p>下载新版本的Clover，将cloverx64.efi重命名为grubx64_real.efi并覆盖EFI中Clover文件夹与BOOT文件夹中的同名文件。</p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>Secure Boot</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ASRock Z390 Phantom Gaming-ITX使用BootCamp切换双系统注意事项</title>
     <url>/2020/04/04/bootcamp-about-z390.html</url>
     <content><![CDATA[<blockquote>
@@ -957,6 +918,45 @@
         <tag>macOS Catalina 10.15</tag>
         <tag>OpenCore</tag>
         <tag>BootCamp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么？这辣鸡BIOS竟然不能关闭Secure Boot？教你在开启Secure Boot的情况下安装macOS</title>
+    <url>/2019/07/06/clover-with-secure-boot.html</url>
+    <content><![CDATA[<h1 id="相关理论"><a href="#相关理论" class="headerlink" title="相关理论"></a>相关理论</h1><h2 id="BIOS"><a href="#BIOS" class="headerlink" title="BIOS"></a>BIOS</h2><p>BIOS是英文”Basic Input Output System”的缩略语，直译过来后中文名称就是”基本输入输出系统”。其实，它是一组固化到计算机内主板上一个ROM芯片上的程序，它保存着计算机最重要的基本输入输出的程序、系统设置信息、开机后自检程序和系统自启动程序。 其主要功能是为计算机提供最底层的、最直接的硬件设置和控制。<a id="more"></a></p>
+<h2 id="UEFI"><a href="#UEFI" class="headerlink" title="UEFI"></a>UEFI</h2><p>UEFI，全称“统一的可扩展固件接口”(Unified Extensible Firmware Interface)， 是一种详细描述全新类型接口的标准。这种接口用于操作系统自动从预启动的操作环境，加载到一种操作系统上，从而使开机程序化繁为简，节省时间。</p>
+<h2 id="Secure-Boot"><a href="#Secure-Boot" class="headerlink" title="Secure Boot"></a>Secure Boot</h2><p>Secure Boot只是UEFI的一个部分。两者的关系是局部与整体的关系。Secure Boot的目的，是防止恶意软件侵入。它的做法就是采用密钥。UEFI规定，主板出厂的时候，可以内置一些可靠的公钥。然后，任何想要在这块主板上加载的操作系统或者硬件驱动程序，都必须通过这些公钥的认证。也就是说，这些软件必须用对应的私钥签署过，否则主板拒绝加载。由于恶意软件不可能通过认证，因此就没有办法感染Boot。</p>
+<h1 id="在开启Secure-Boot的情况下使用Clover启动macOS以及其他操作系统-如Linux"><a href="#在开启Secure-Boot的情况下使用Clover启动macOS以及其他操作系统-如Linux" class="headerlink" title="在开启Secure Boot的情况下使用Clover启动macOS以及其他操作系统(如Linux)"></a>在开启Secure Boot的情况下使用Clover启动macOS以及其他操作系统(如Linux)</h1><h2 id="准备工作-Windows下操作"><a href="#准备工作-Windows下操作" class="headerlink" title="准备工作(Windows下操作)"></a>准备工作(Windows下操作)</h2><ul>
+<li><p>下载并解压Super-UEFIinSecureBoot-Disk(感谢ValdikSS开发工具)。<br><a href="https://github.com/ValdikSS/Super-UEFIinSecureBoot-Disk/releases/download/3/Super-UEFIinSecureBoot-Disk_minimal_v3.zip">https://github.com/ValdikSS/Super-UEFIinSecureBoot-Disk/releases/download/3/Super-UEFIinSecureBoot-Disk_minimal_v3.zip</a></p>
+</li>
+<li><p>下载etcher<br><a href="https://github.com/balena-io/etcher/releases/download/v1.5.51/balenaEtcher-Portable-1.5.51.exe">https://github.com/balena-io/etcher/releases/download/v1.5.51/balenaEtcher-Portable-1.5.51.exe</a></p>
+</li>
+<li><p>准备一个U盘并备份文件，用etcher将Super-UEFIinSecureBoot-Disk写入U盘。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-1.png"></p>
+</li>
+</ul>
+<h2 id="实现教程"><a href="#实现教程" class="headerlink" title="实现教程"></a>实现教程</h2><blockquote>
+<p>现在请在BIOS中开启Secure Boot选项并且重启进入Windows操作。</p>
+</blockquote>
+<h3 id="注册证书"><a href="#注册证书" class="headerlink" title="注册证书"></a>注册证书</h3><p>使用做好的U盘启动电脑，按照图示完成证书注册。(出现黑色的grub2界面表示注册成功)<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-2.png"></p>
+<h3 id="集成Clover"><a href="#集成Clover" class="headerlink" title="集成Clover"></a>集成Clover</h3><ul>
+<li><p>将CLOVER文件夹拷贝到U盘的EFI文件夹下，与BOOT以及grub文件夹同级。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-3.png"></p>
+</li>
+<li><p>打开Clover文件夹将Cloverx64.efi文件重命名为grubx64_real.efi。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-4.png"></p>
+</li>
+<li><p>打开BOOT文件夹备份grubx64_real.efi文件，并将Clover文件夹下的grubx64_real.efi文件拷贝到BOOT文件夹下。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-5.png"></p>
+</li>
+<li><p>重启电脑，并用U盘引导。</p>
+</li>
+</ul>
+<h1 id="是时候看看成果了！"><a href="#是时候看看成果了！" class="headerlink" title="是时候看看成果了！"></a>是时候看看成果了！</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-6.png"></p>
+<h1 id="最后别忘了将USB的引导移到硬盘中。"><a href="#最后别忘了将USB的引导移到硬盘中。" class="headerlink" title="最后别忘了将USB的引导移到硬盘中。"></a>最后别忘了将USB的引导移到硬盘中。</h1><h1 id="关于后续更新Clover的问题"><a href="#关于后续更新Clover的问题" class="headerlink" title="关于后续更新Clover的问题"></a>关于后续更新Clover的问题</h1><p>下载新版本的Clover，将cloverx64.efi重命名为grubx64_real.efi并覆盖EFI中Clover文件夹与BOOT文件夹中的同名文件。</p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>Secure Boot</tag>
       </tags>
   </entry>
   <entry>
@@ -1182,32 +1182,6 @@
       </tags>
   </entry>
   <entry>
-    <title>博主github Hackintosh仓库公开以及使用方法</title>
-    <url>/2019/05/23/github-hackintosh.html</url>
-    <content><![CDATA[<p>为了方便大家安装macOS，博主将测试过的机型的Clover文件整理并发布至github，地址为<strong><a href="https://github.com/bugprogrammer/hackintosh">https://github.com/bugprogrammer/hackintosh</a></strong> <strong><font color=#A52A2A >注意:仓库中所有机型都是博主亲自安装并测试过的机型。</strong></font><a id="more"></a></p>
-<blockquote>
-<p>由于部分用户认为git操作较为麻烦，需要学习。所以博主提供了自动化脚本方案，几乎自动获取Clover。脚本支持Windows、macOS、Ubuntu。</p>
-</blockquote>
-<h2 id="脚本使用方法"><a href="#脚本使用方法" class="headerlink" title="脚本使用方法"></a>脚本使用方法</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><ul>
-<li>点击如下链接下载git。<br><a href="https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe">https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe</a></li>
-<li>按默认设置安装即可。</li>
-</ul>
-<h4 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h4><p>打开git-bash <strong><font color=#A52A2A >(注意一定要用git-bash)，执行如下命令即可</font></strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h3><p>终端输入如下命令即可 <strong><font color=#A52A2A >(注意脚本中绿字提示)</font></strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h3><p>终端输入如下命令即可</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<h2 id="脚本使用截图-以macOS为例"><a href="#脚本使用截图-以macOS为例" class="headerlink" title="脚本使用截图(以macOS为例)"></a>脚本使用截图(以macOS为例)</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-3.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-4.png"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ASUS N550JV Hackintosh记录+教程+完整EFI分享</title>
     <url>/2019/01/29/hackintosh-for-asus-n550jv.html</url>
     <content><![CDATA[<blockquote>
@@ -1321,40 +1295,66 @@
       </tags>
   </entry>
   <entry>
-    <title>教你制作macOS+Ubuntu+WindowsPE超级启动盘(仅支持UEFI)</title>
-    <url>/2019/07/26/make-super-usb.html</url>
-    <content><![CDATA[<blockquote>
-<p>对于多系统用户，有没有觉得每一个系统一个U盘很麻烦而且浪费U盘，本文会教你如何制作macOS+Ubuntu+WindowsPE多系统启动盘。注意：建议使用博主分享的PE，其他PE文件结构或许不同，不确定能否成功。<a id="more"></a></p>
+    <title>博主github Hackintosh仓库公开以及使用方法</title>
+    <url>/2019/05/23/github-hackintosh.html</url>
+    <content><![CDATA[<p>为了方便大家安装macOS，博主将测试过的机型的Clover文件整理并发布至github，地址为<strong><a href="https://github.com/bugprogrammer/hackintosh">https://github.com/bugprogrammer/hackintosh</a></strong> <strong><font color=#A52A2A >注意:仓库中所有机型都是博主亲自安装并测试过的机型。</strong></font><a id="more"></a></p>
+<blockquote>
+<p>由于部分用户认为git操作较为麻烦，需要学习。所以博主提供了自动化脚本方案，几乎自动获取Clover。脚本支持Windows、macOS、Ubuntu。</p>
 </blockquote>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
-<li>USB 3.0U盘(不可小于16g，博主的是闪迪64gU盘)</li>
-<li>macOS 10.15 beta4原版镜像，进入如下网址，内有下载分享<br><a href="http://bbs.pcbeta.com/viewthread-1823322-1-1.html">http://bbs.pcbeta.com/viewthread-1823322-1-1.html</a></li>
-<li>Ubuntu 19.04镜像，下载地址如下，可直接粘贴到迅雷<br><a href="http://mirror.cogentco.com/pub/linux/ubuntu-releases/19.04/ubuntu-19.04-desktop-amd64.iso">http://mirror.cogentco.com/pub/linux/ubuntu-releases/19.04/ubuntu-19.04-desktop-amd64.iso</a></li>
-<li>Windows 10 1809 PE，百毒盘地址如下(注意，此PE为博主自制PE，兼容PC以及mbp2017，无任何流氓行为，可放心使用)<br>链接: <a href="https://pan.baidu.com/s/1Qb9ieHzwDATaU-FhFuDUJQ">https://pan.baidu.com/s/1Qb9ieHzwDATaU-FhFuDUJQ</a>  密码: 15ns</li>
-<li>一个配置好的可引导Hackintosh的Clover</li>
+<h2 id="脚本使用方法"><a href="#脚本使用方法" class="headerlink" title="脚本使用方法"></a>脚本使用方法</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><ul>
+<li>点击如下链接下载git。<br><a href="https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe">https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe</a></li>
+<li>按默认设置安装即可。</li>
 </ul>
-<h1 id="写入macOS镜像并放入Clover"><a href="#写入macOS镜像并放入Clover" class="headerlink" title="写入macOS镜像并放入Clover"></a>写入macOS镜像并放入Clover</h1><h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><p>将U盘格式化成为Hfs格式，卷标为mac，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-1.png"></p>
-<h2 id="将Install-macOS-Catalina-Beta-app拷贝到Application下"><a href="#将Install-macOS-Catalina-Beta-app拷贝到Application下" class="headerlink" title="将Install macOS Catalina Beta.app拷贝到Application下"></a>将Install macOS Catalina Beta.app拷贝到Application下</h2><h2 id="终端输入如下命令写入镜像"><a href="#终端输入如下命令写入镜像" class="headerlink" title="终端输入如下命令写入镜像"></a>终端输入如下命令写入镜像</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/Applications/</span>Install\ macOS\ Catalina\ Beta.app<span class="regexp">/Contents/</span>Resources<span class="regexp">/createinstallmedia --volume /</span>Volumes<span class="regexp">/mac --applicationpath /</span>Applications/Install\ macOS\ Catalina\ Beta.app</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/superusb-2.png"></p>
-<h2 id="挂载U盘EFI分区，将Clover拷贝进去"><a href="#挂载U盘EFI分区，将Clover拷贝进去" class="headerlink" title="挂载U盘EFI分区，将Clover拷贝进去"></a>挂载U盘EFI分区，将Clover拷贝进去</h2><h1 id="为Ubuntu以及Windows-PE准备分区"><a href="#为Ubuntu以及Windows-PE准备分区" class="headerlink" title="为Ubuntu以及Windows PE准备分区"></a>为Ubuntu以及Windows PE准备分区</h1><ul>
-<li>打开磁盘工具，添加分区，格式为HFs，名称为other。将分区Install macOS Catalina Beta的大小修改为8G，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-3.png"></li>
-<li>进入Windows打开diskgenius，删掉那个最大的HFs分区。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-4.png"></li>
-<li>在空闲区域添加三个Fat32格式的分区，名称分别为Ubuntu，WinPE，Data。其中Ubuntu大小为4G，WinPE大小为3G，Data为剩余空间。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-5.png"></li>
-</ul>
-<h1 id="拷贝Ubuntu以及WinPE的文件"><a href="#拷贝Ubuntu以及WinPE的文件" class="headerlink" title="拷贝Ubuntu以及WinPE的文件"></a>拷贝Ubuntu以及WinPE的文件</h1><p>将Ubuntu以及WinPE的镜像解压，直接把镜像根目录所有文件拷贝到对应分区。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-6.png"></p>
-<h1 id="引导设置"><a href="#引导设置" class="headerlink" title="引导设置"></a>引导设置</h1><h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><ul>
-<li>在U盘EFI分区新建grub文件夹，和CLOVER文件夹同级。</li>
-<li>打开Ubuntu分区，将boot/grub文件夹下的grub.cfg文件以及EFI/BOOT文件夹下的Bootx64.efi和grubx64.efi两个文件拷贝到刚刚新建的grub文件夹下。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-7.png"></li>
-</ul>
-<h2 id="WinPE"><a href="#WinPE" class="headerlink" title="WinPE"></a>WinPE</h2><p>打开WinPE分区，将efi/microsoft/boot文件夹下的cdboot.efi文件重命名为cdboot-bak.efi，并将efi/boot文件夹下的bootx64.efi文件拷贝到efi/microsoft/boot文件夹下。并重命名为cdboot.efi。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-8.png"></p>
-<h1 id="至此，你的macOS-Ubuntu-WinPE超级启动盘制作完成。"><a href="#至此，你的macOS-Ubuntu-WinPE超级启动盘制作完成。" class="headerlink" title="至此，你的macOS+Ubuntu+WinPE超级启动盘制作完成。"></a>至此，你的macOS+Ubuntu+WinPE超级启动盘制作完成。</h1><h1 id="成品"><a href="#成品" class="headerlink" title="成品"></a>成品</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/superusb-9.png"></p>
-<h1 id="2019-7-30更新"><a href="#2019-7-30更新" class="headerlink" title="2019-7-30更新"></a>2019-7-30更新</h1><h2 id="重要注意事项"><a href="#重要注意事项" class="headerlink" title="重要注意事项"></a>重要注意事项</h2><p><strong><font color=#A52A2A >如果要把这个启动盘用于白苹果，记得挂载U盘EFI分区，将Boot-&gt;Bootx64.efi文件以及Clover-&gt;Cloverx64.efi文件的后缀(.efi)去掉，这样做的目的是干掉U盘的Clover启动项。以防止白苹果误进入Clover，这很重要，白苹果使用Clover会彻底黑屏变砖。白苹果可以按option键选择进入macOS安装盘、Ubuntu安装盘或WinPE启动盘，如果以后安装黑苹果，完全可以再把文件名改回来或者使用本地硬盘中的Clover引导启动盘。</font></strong></p>
+<h4 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h4><p>打开git-bash <strong><font color=#A52A2A >(注意一定要用git-bash)，执行如下命令即可</font></strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h3><p>终端输入如下命令即可 <strong><font color=#A52A2A >(注意脚本中绿字提示)</font></strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h3><p>终端输入如下命令即可</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="脚本使用截图-以macOS为例"><a href="#脚本使用截图-以macOS为例" class="headerlink" title="脚本使用截图(以macOS为例)"></a>脚本使用截图(以macOS为例)</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-3.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-4.png"></p>
 ]]></content>
       <categories>
         <category>Hackintosh</category>
       </categories>
       <tags>
         <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>macOS High Sierra 10.13.4下Z370主板USB相关解决方案</title>
+    <url>/2018/05/09/macos-high-sierra-10-13-4-z370-motherboard-usb-related-solutions.html</url>
+    <content><![CDATA[<blockquote>
+<p>有些使用z370主板安装macOS的朋友可能遇到USB方面的问题，一些朋友的表现为部分USB失灵，还有一部分可能遇到usb3.0设备插在 3.0接口处不识别，今天放上本人的解决方案<a id="more"></a>。</p>
+</blockquote>
+<h3 id="在clover加入以下补丁并重启测试USB情况查看USB是否完整识别，3-0设备插在usb3-0上是否可用。"><a href="#在clover加入以下补丁并重启测试USB情况查看USB是否完整识别，3-0设备插在usb3-0上是否可用。" class="headerlink" title="在clover加入以下补丁并重启测试USB情况查看USB是否完整识别，3.0设备插在usb3.0上是否可用。"></a>在clover加入以下补丁并重启测试USB情况查看USB是否完整识别，3.0设备插在usb3.0上是否可用。</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ra9pmr9mj30sg01fwen.jpg"></p>
+<h3 id="添加补丁后遇到USB3-0移动硬盘插在usb3-0接口上识别为内置硬盘-桌面不显示黄盘-的解决方案："><a href="#添加补丁后遇到USB3-0移动硬盘插在usb3-0接口上识别为内置硬盘-桌面不显示黄盘-的解决方案：" class="headerlink" title="添加补丁后遇到USB3.0移动硬盘插在usb3.0接口上识别为内置硬盘(桌面不显示黄盘)的解决方案："></a>添加补丁后遇到USB3.0移动硬盘插在usb3.0接口上识别为内置硬盘(桌面不显示黄盘)的解决方案：</h3><p>下载最新版<a href="https://bitbucket.org/RehabMan/os-x-usb-inject-all/downloads/RehabMan-USBInjectAll-2018-0420.zip">usbinjectall.kext</a>,并解压拷贝到efi/clover/kexts/other下。</p>
+<h3 id="usb引起睡眠之后瞬间唤醒的解决方案-按照步骤2添加usbinjectall-kext后有概率遇到-此解决方案包括但不限于以上情况-："><a href="#usb引起睡眠之后瞬间唤醒的解决方案-按照步骤2添加usbinjectall-kext后有概率遇到-此解决方案包括但不限于以上情况-：" class="headerlink" title="usb引起睡眠之后瞬间唤醒的解决方案(按照步骤2添加usbinjectall.kext后有概率遇到,此解决方案包括但不限于以上情况)："></a>usb引起睡眠之后瞬间唤醒的解决方案(按照步骤2添加usbinjectall.kext后有概率遇到,此解决方案包括但不限于以上情况)：</h3><h4 id="方案1-DSDT打补丁-："><a href="#方案1-DSDT打补丁-：" class="headerlink" title="方案1(DSDT打补丁)："></a>方案1(DSDT打补丁)：</h4><p>特点：无需排查导致bug的具体usb口是哪个。同时会使usb唤醒失效，无法用键鼠唤醒，故不推荐！！！</p>
+<ul>
+<li>下载<a href="https://bitbucket.org/RehabMan/acpica/downloads/iasl.zip">iasl</a>用来反编译dsdt,把iasl编译器拷贝到/usr/bin目录,方便调用。</li>
+<li>下载<a href="https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads/RehabMan-MaciASL-2018-0507.zip">MaciASL</a>，我提供的版本自带RehabMan dsdt补丁库。</li>
+<li>提取DSDT：开机clover引导界面处按F4自动提取，路径EFI/Clover/ACPI/origin下。把DSDT.aml拷贝到桌面。</li>
+<li>反编译DSDT：终端输入cd ~/Desktop进入桌面目录，再输入iasl -da -dl *.aml反编译DSDT，成功后会在桌面生成DSDT.dsl 文件。</li>
+<li>给DSDT打补丁：用MaciASL打开DSDT.dsl,点击patch，在左侧补丁栏选择USB3 _PRW 0x6D Skylake(instant wake),再点击 Apply完成，如图： <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ra9y5srvj30sg0dbwgu.jpg"></li>
+<li>编译、排错、保存：打完补丁后点击Complie编译，如果有错请暂时依照网络资源排错。关于DSDT排错，本人后续会详细更新， 敬请期待！排错完成后点击File-&gt;Save As保存DSDT，格式为ACPI Machine Language Binary(aml)。</li>
+<li>将dsdt拷贝到efi/clover/acpi/patched下并重启生效。</li>
+</ul>
+<h4 id="方案2-修改usbinjectall-kext"><a href="#方案2-修改usbinjectall-kext" class="headerlink" title="方案2(修改usbinjectall.kext)"></a>方案2(修改usbinjectall.kext)</h4><p>特点：需要排查导致bug的具体usb接口，但不会导致usb唤醒失效，可以用键鼠唤醒，故强烈推荐。</p>
+<ul>
+<li>排查引起bug的USB：一般为蓝牙或摄像头等特殊接口。可以拔掉相应排线重启测试，若拔掉后不再瞬间唤醒，则接口确定，比如 本人的是连接蓝牙排线的usb所导致。</li>
+<li>Windows下进入设备管理器，确定usb设备id，如图则为8086_a2af。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raapm4ahj30j707jmyl.jpg"></li>
+<li>确定导致bug的usb编号：下载并打开<a href="https://us.softpedia-secure-download.com/dl/cd6af705d256e781d022b220f14acd38/5af2e088/400138300/mac/System-Utilities/IORegistryExplorer.zip">IORegistryExplorer</a>,找到XHC分支，在XHC分支中找到导致bug的usb所连接的设备(比如我 的是蓝牙)，此设备对应的HS号即为所需编号，如图则为HS10(注意HS10下面的BCM20702A0就是我的蓝牙，也就是说HS10导致的睡眠 瞬间唤醒)： <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raay9umlj30sg0g07ax.jpg"></li>
+<li>将usbinjectall.kext拷贝到桌面，并下载<a href="https://www.fatcatsoftware.com/plisteditpro/PlistEditPro.zip">PlistEdit Pro</a>。</li>
+<li>修改usbinjectall.kext：右击usbinjectall.kext，用PlistEdit Pro打开info.plist。找到IOKitPersonalities-&gt; ConfigurationData-&gt;Configuration分支，在下面选择自己usb的id(Windows下找的那个，我的是8086_a2af)分支，进入后打开 ports可以看到一堆HS编号，打开自己的HS编号(步骤3找到的那个，我的是HS10)，将UsbConnector属性值改成255(255为特殊端口) 并保存，如图： <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rabd1qt4j30sg0mz13x.jpg"></li>
+<li>将修改好的usbinjectall.kext拷贝到efi/clover/kexts/other下重建缓存并重启。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>usb</tag>
+        <tag>z370</tag>
       </tags>
   </entry>
   <entry>
@@ -1494,6 +1494,155 @@
         <tag>mi5</tag>
         <tag>miui</tag>
         <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>最简单的挂载EFI分区方案</title>
+    <url>/2019/12/03/mountEFI.html</url>
+    <content><![CDATA[<blockquote>
+<p>博主使用OC已经有一段时间，最近发现一个不爽点。OC配置本身不需要各种GUI工具，但是，每次挂载EFI都要打开类似Clover Configurator的工具挂载EFI，比较麻烦，所以博主分享一种点击即挂载并打开EFI分区的方案。<a id="more"></a></p>
+</blockquote>
+<h1 id="获取EFI分区的UUID"><a href="#获取EFI分区的UUID" class="headerlink" title="获取EFI分区的UUID"></a>获取EFI分区的UUID</h1><ul>
+<li>用Clover Configurator看一下负责引导的EFI分区的分区号，比如博主的是<font color=#A52A2A >disk0s1</font>。(详细过程略，相信大家都懂)</li>
+<li>输入以下命令获取UUID。<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sudo</span> diskutil <span class="literal">info</span> disk0s1 | grep <span class="string">&#x27;Partition UUID&#x27;</span></span><br></pre></td></tr></table></figure>
+  <img src= "/images/loading.gif" data-lazy-src="/images/mountEFI.png"></li>
+</ul>
+<h1 id="准备应用程序"><a href="#准备应用程序" class="headerlink" title="准备应用程序"></a>准备应用程序</h1><ul>
+<li><p>打开系统自带的自动操作程序，依次点击应用程序-&gt;选取-&gt;运行shell脚本。<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-3.png"></p>
+</li>
+<li><p>将以下脚本粘贴进去</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">mountEFI=$(<span class="built_in">echo</span> <span class="string">&#x27;你的密码&#x27;</span> | sudo -S diskutil info 你的UUID | grep <span class="string">&#x27;Device Node&#x27;</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;你的密码&#x27;</span> | sudo -S diskutil mount <span class="string">&#x27;/&#x27;</span><span class="variable">$&#123;mountEFI#*/&#125;</span></span><br><span class="line">open /Volumes/EFI/EFI/OC</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/mountEFI-1.png"></p>
+</li>
+<li><p>保存成app<br><img src= "/images/loading.gif" data-lazy-src="/images/mountEFI-2.png"></p>
+</li>
+</ul>
+<blockquote>
+<p>至此，您已经成功制作EFI挂载工具，以后只要点击就可以直接挂载并打开！</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenCore黑苹果方案以及ASRock Z390 Phantom Gaming-ITX/ac+i9-9900K OpenCore配置文件分享</title>
+    <url>/2019/05/29/opencore-hackintosh.html</url>
+    <content><![CDATA[<h1 id="OpenCore简介"><a href="#OpenCore简介" class="headerlink" title="OpenCore简介"></a>OpenCore简介</h1><p>OpenCore是由**<font color=#A52A2A >vit9696</font>**等8位大佬开发的全新黑苹果引导工具。用于在PC上启动macOS操作系统。博主用了一天时间已经成功启动博主电脑上的macOS，现在做简单分享。<a id="more"></a></p>
+<h1 id="OpenCore编译"><a href="#OpenCore编译" class="headerlink" title="OpenCore编译"></a>OpenCore编译</h1><ul>
+<li>APP Store安装Xcode。</li>
+<li>终端执行如下命令，并点击最右侧的同意按钮安装命令行工具。<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure></li>
+<li>在如下链接里下载编译脚本**<font color=#A52A2A >buildopencore，</font><strong>感谢pcbeta网友</strong><font color=#A52A2A >云朵有点甜</font>**编写脚本。<br><a href="http://bbs.pcbeta.com/viewthread-1814957-1-1.html">http://bbs.pcbeta.com/viewthread-1814957-1-1.html</a></li>
+<li>解压并执行脚本,如图。编译后桌面生成OpenCore文件夹。<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line">chmod u+x <span class="string">./buildopencore</span></span><br><span class="line"><span class="string">./buildopencore</span></span><br></pre></td></tr></table></figure>
+  <img src= "/images/loading.gif" data-lazy-src="/images/opencore-1.png"><img src= "/images/loading.gif" data-lazy-src="/images/opencore-2.png"><img src= "/images/loading.gif" data-lazy-src="/images/opencore-3.png"><strong><font color=#A52A2A >注意：Docs文件夹里有官方文档以及plist文件示例。</font></strong></li>
+</ul>
+<h1 id="OpenCore使用简要教程"><a href="#OpenCore使用简要教程" class="headerlink" title="OpenCore使用简要教程"></a>OpenCore使用简要教程</h1><h2 id="文件夹结构-虚线框内的不是必须项目，视需求而定"><a href="#文件夹结构-虚线框内的不是必须项目，视需求而定" class="headerlink" title="文件夹结构(虚线框内的不是必须项目，视需求而定)"></a>文件夹结构(虚线框内的不是必须项目，视需求而定)</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/opencore-4.png"></p>
+<h2 id="config-plist文件解析-只介绍博主用到的"><a href="#config-plist文件解析-只介绍博主用到的" class="headerlink" title="config.plist文件解析(只介绍博主用到的)"></a>config.plist文件解析(只介绍博主用到的)</h2><h3 id="ACPI"><a href="#ACPI" class="headerlink" title="ACPI"></a>ACPI</h3><h4 id="Add"><a href="#Add" class="headerlink" title="Add"></a>Add</h4><p>添加aml文件，比如DSDT.aml。</p>
+<h4 id="Block"><a href="#Block" class="headerlink" title="Block"></a>Block</h4><p>相当于Clover中的Drop Tables。用于屏蔽一些OEM Tables。如Drop DMAR。</p>
+<h4 id="Patch"><a href="#Patch" class="headerlink" title="Patch"></a>Patch</h4><p>相当于Clover中的DSDT部件更名，例如：change HDAS to HDEF。</p>
+<h4 id="ACPI部分整体图解"><a href="#ACPI部分整体图解" class="headerlink" title="ACPI部分整体图解"></a>ACPI部分整体图解</h4><p><img src= "/images/loading.gif" data-lazy-src="/images/opencore-5.png"></p>
+<h3 id="DeviceProperties"><a href="#DeviceProperties" class="headerlink" title="DeviceProperties"></a>DeviceProperties</h3><h4 id="Add-1"><a href="#Add-1" class="headerlink" title="Add"></a>Add</h4><p>用于注入设备属性，比如声卡layout-id，核显帧补丁等。相当于Clover的Devices-&gt;Properties。<br><img src= "/images/loading.gif" data-lazy-src="/images/opencore-6.png"></p>
+<h3 id="kernel"><a href="#kernel" class="headerlink" title="kernel"></a>kernel</h3><h4 id="Add-2"><a href="#Add-2" class="headerlink" title="Add"></a>Add</h4><p>用于注入kext路径。</p>
+<h4 id="Patch-1"><a href="#Patch-1" class="headerlink" title="Patch"></a>Patch</h4><p>相当于Clover的KextsToPatch</p>
+<h4 id="Kernel部分整体图解"><a href="#Kernel部分整体图解" class="headerlink" title="Kernel部分整体图解"></a>Kernel部分整体图解</h4><p><img src= "/images/loading.gif" data-lazy-src="/images/opencore-7.png"></p>
+<h3 id="NVRAM-由于博主表达能力欠佳，这一部分请参考官方文档"><a href="#NVRAM-由于博主表达能力欠佳，这一部分请参考官方文档" class="headerlink" title="NVRAM(由于博主表达能力欠佳，这一部分请参考官方文档)"></a>NVRAM(由于博主表达能力欠佳，这一部分请参考官方文档)</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/opencore-8.png"></p>
+<h3 id="PlatformInfo"><a href="#PlatformInfo" class="headerlink" title="PlatformInfo"></a>PlatformInfo</h3><p>相当于Clover中的SMBIOS，使用OpenCore Configurator注入即可。<br><img src= "/images/loading.gif" data-lazy-src="/images/opencore-9.png"></p>
+<h3 id="UEFI"><a href="#UEFI" class="headerlink" title="UEFI"></a>UEFI</h3><h4 id="Drivers"><a href="#Drivers" class="headerlink" title="Drivers"></a>Drivers</h4><p>用于注入用于启动的驱动信息，例如ApfsDriverLoader.efi等。<br><img src= "/images/loading.gif" data-lazy-src="/images/opencore-10.png"></p>
+<h1 id="使用OpenCore引导博主电脑简要说明"><a href="#使用OpenCore引导博主电脑简要说明" class="headerlink" title="使用OpenCore引导博主电脑简要说明"></a>使用OpenCore引导博主电脑简要说明</h1><h2 id="博主电脑配置信息"><a href="#博主电脑配置信息" class="headerlink" title="博主电脑配置信息"></a>博主电脑配置信息</h2><p>ASRock Z390 Phantom Gaming-ITX/ac+i9-9900K+Vega56</p>
+<h2 id="目前完美程度"><a href="#目前完美程度" class="headerlink" title="目前完美程度"></a>目前完美程度</h2><p>以太网卡+声卡+独显+核显+wifi+蓝牙+USB正常。睡眠唤醒正常。关机正常。原生电源以及AGPM正常，硬解正常。雷电只能当typec使用。</p>
+<h2 id="OC文件夹结构"><a href="#OC文件夹结构" class="headerlink" title="OC文件夹结构"></a>OC文件夹结构</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/opencore-11.png"></p>
+<h2 id="SMBIOS"><a href="#SMBIOS" class="headerlink" title="SMBIOS"></a>SMBIOS</h2><p>iMac Pro 2017</p>
+<h2 id="以太网卡、wifi、蓝牙、独显、USB"><a href="#以太网卡、wifi、蓝牙、独显、USB" class="headerlink" title="以太网卡、wifi、蓝牙、独显、USB"></a>以太网卡、wifi、蓝牙、独显、USB</h2><p>同Clover。</p>
+<h2 id="声卡"><a href="#声卡" class="headerlink" title="声卡"></a>声卡</h2><ul>
+<li>Lilu、AppleALC拷到L/E下。</li>
+<li>DeviceProperties下注入声卡layout-id。</li>
+<li>重建缓存。<br><img src= "/images/loading.gif" data-lazy-src="/images/opencore-12.png"></li>
+</ul>
+<h2 id="核显"><a href="#核显" class="headerlink" title="核显"></a>核显</h2><p>DeviceProperties下注入核显信息。<br><img src= "/images/loading.gif" data-lazy-src="/images/opencore-13.png"></p>
+<h2 id="原生电源"><a href="#原生电源" class="headerlink" title="原生电源"></a>原生电源</h2><p>加入SSDT-XCPM-SBpr00.aml即可加载两个X86(博主会分享OC配置文件)。</p>
+<h2 id="AGPM"><a href="#AGPM" class="headerlink" title="AGPM"></a>AGPM</h2><p>同Clover。</p>
+<h2 id="关机变重启以及睡眠变重启解决方案"><a href="#关机变重启以及睡眠变重启解决方案" class="headerlink" title="关机变重启以及睡眠变重启解决方案"></a>关机变重启以及睡眠变重启解决方案</h2><p>使用OsxAptioFix2Drv-free2000.efi替换其他启动文件即可。</p>
+<h1 id="博主电脑OpenCore配置文件分享"><a href="#博主电脑OpenCore配置文件分享" class="headerlink" title="博主电脑OpenCore配置文件分享"></a>博主电脑OpenCore配置文件分享</h1><p>博主已将OC文件推送至博主的Hackintosh仓库，详情以及用法见如下链接。<br><a href="https://www.bugprogrammer.me/2019/05/23/github-hackintosh.html">https://www.bugprogrammer.me/2019/05/23/github-hackintosh.html</a></p>
+<h1 id="2019-05-31更新"><a href="#2019-05-31更新" class="headerlink" title="2019-05-31更新"></a>2019-05-31更新</h1><h2 id="一个小发现"><a href="#一个小发现" class="headerlink" title="一个小发现"></a>一个小发现</h2><p>OpenCore可以直接正确识别9代CPU型号，比如我的9900K显示为3.6 GHz Intel Core i9(Clover默认显示为i7)。</p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>OpenCore</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>教你制作macOS+Ubuntu+WindowsPE超级启动盘(仅支持UEFI)</title>
+    <url>/2019/07/26/make-super-usb.html</url>
+    <content><![CDATA[<blockquote>
+<p>对于多系统用户，有没有觉得每一个系统一个U盘很麻烦而且浪费U盘，本文会教你如何制作macOS+Ubuntu+WindowsPE多系统启动盘。注意：建议使用博主分享的PE，其他PE文件结构或许不同，不确定能否成功。<a id="more"></a></p>
+</blockquote>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
+<li>USB 3.0U盘(不可小于16g，博主的是闪迪64gU盘)</li>
+<li>macOS 10.15 beta4原版镜像，进入如下网址，内有下载分享<br><a href="http://bbs.pcbeta.com/viewthread-1823322-1-1.html">http://bbs.pcbeta.com/viewthread-1823322-1-1.html</a></li>
+<li>Ubuntu 19.04镜像，下载地址如下，可直接粘贴到迅雷<br><a href="http://mirror.cogentco.com/pub/linux/ubuntu-releases/19.04/ubuntu-19.04-desktop-amd64.iso">http://mirror.cogentco.com/pub/linux/ubuntu-releases/19.04/ubuntu-19.04-desktop-amd64.iso</a></li>
+<li>Windows 10 1809 PE，百毒盘地址如下(注意，此PE为博主自制PE，兼容PC以及mbp2017，无任何流氓行为，可放心使用)<br>链接: <a href="https://pan.baidu.com/s/1Qb9ieHzwDATaU-FhFuDUJQ">https://pan.baidu.com/s/1Qb9ieHzwDATaU-FhFuDUJQ</a>  密码: 15ns</li>
+<li>一个配置好的可引导Hackintosh的Clover</li>
+</ul>
+<h1 id="写入macOS镜像并放入Clover"><a href="#写入macOS镜像并放入Clover" class="headerlink" title="写入macOS镜像并放入Clover"></a>写入macOS镜像并放入Clover</h1><h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><p>将U盘格式化成为Hfs格式，卷标为mac，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-1.png"></p>
+<h2 id="将Install-macOS-Catalina-Beta-app拷贝到Application下"><a href="#将Install-macOS-Catalina-Beta-app拷贝到Application下" class="headerlink" title="将Install macOS Catalina Beta.app拷贝到Application下"></a>将Install macOS Catalina Beta.app拷贝到Application下</h2><h2 id="终端输入如下命令写入镜像"><a href="#终端输入如下命令写入镜像" class="headerlink" title="终端输入如下命令写入镜像"></a>终端输入如下命令写入镜像</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/Applications/</span>Install\ macOS\ Catalina\ Beta.app<span class="regexp">/Contents/</span>Resources<span class="regexp">/createinstallmedia --volume /</span>Volumes<span class="regexp">/mac --applicationpath /</span>Applications/Install\ macOS\ Catalina\ Beta.app</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/superusb-2.png"></p>
+<h2 id="挂载U盘EFI分区，将Clover拷贝进去"><a href="#挂载U盘EFI分区，将Clover拷贝进去" class="headerlink" title="挂载U盘EFI分区，将Clover拷贝进去"></a>挂载U盘EFI分区，将Clover拷贝进去</h2><h1 id="为Ubuntu以及Windows-PE准备分区"><a href="#为Ubuntu以及Windows-PE准备分区" class="headerlink" title="为Ubuntu以及Windows PE准备分区"></a>为Ubuntu以及Windows PE准备分区</h1><ul>
+<li>打开磁盘工具，添加分区，格式为HFs，名称为other。将分区Install macOS Catalina Beta的大小修改为8G，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-3.png"></li>
+<li>进入Windows打开diskgenius，删掉那个最大的HFs分区。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-4.png"></li>
+<li>在空闲区域添加三个Fat32格式的分区，名称分别为Ubuntu，WinPE，Data。其中Ubuntu大小为4G，WinPE大小为3G，Data为剩余空间。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-5.png"></li>
+</ul>
+<h1 id="拷贝Ubuntu以及WinPE的文件"><a href="#拷贝Ubuntu以及WinPE的文件" class="headerlink" title="拷贝Ubuntu以及WinPE的文件"></a>拷贝Ubuntu以及WinPE的文件</h1><p>将Ubuntu以及WinPE的镜像解压，直接把镜像根目录所有文件拷贝到对应分区。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-6.png"></p>
+<h1 id="引导设置"><a href="#引导设置" class="headerlink" title="引导设置"></a>引导设置</h1><h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><ul>
+<li>在U盘EFI分区新建grub文件夹，和CLOVER文件夹同级。</li>
+<li>打开Ubuntu分区，将boot/grub文件夹下的grub.cfg文件以及EFI/BOOT文件夹下的Bootx64.efi和grubx64.efi两个文件拷贝到刚刚新建的grub文件夹下。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-7.png"></li>
+</ul>
+<h2 id="WinPE"><a href="#WinPE" class="headerlink" title="WinPE"></a>WinPE</h2><p>打开WinPE分区，将efi/microsoft/boot文件夹下的cdboot.efi文件重命名为cdboot-bak.efi，并将efi/boot文件夹下的bootx64.efi文件拷贝到efi/microsoft/boot文件夹下。并重命名为cdboot.efi。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-8.png"></p>
+<h1 id="至此，你的macOS-Ubuntu-WinPE超级启动盘制作完成。"><a href="#至此，你的macOS-Ubuntu-WinPE超级启动盘制作完成。" class="headerlink" title="至此，你的macOS+Ubuntu+WinPE超级启动盘制作完成。"></a>至此，你的macOS+Ubuntu+WinPE超级启动盘制作完成。</h1><h1 id="成品"><a href="#成品" class="headerlink" title="成品"></a>成品</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/superusb-9.png"></p>
+<h1 id="2019-7-30更新"><a href="#2019-7-30更新" class="headerlink" title="2019-7-30更新"></a>2019-7-30更新</h1><h2 id="重要注意事项"><a href="#重要注意事项" class="headerlink" title="重要注意事项"></a>重要注意事项</h2><p><strong><font color=#A52A2A >如果要把这个启动盘用于白苹果，记得挂载U盘EFI分区，将Boot-&gt;Bootx64.efi文件以及Clover-&gt;Cloverx64.efi文件的后缀(.efi)去掉，这样做的目的是干掉U盘的Clover启动项。以防止白苹果误进入Clover，这很重要，白苹果使用Clover会彻底黑屏变砖。白苹果可以按option键选择进入macOS安装盘、Ubuntu安装盘或WinPE启动盘，如果以后安装黑苹果，完全可以再把文件名改回来或者使用本地硬盘中的Clover引导启动盘。</font></strong></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>macOS 10.14.6 beta下填充PCI列表的简要教程</title>
+    <url>/2019/05/21/pci-list-for-hackintosh.html</url>
+    <content><![CDATA[<blockquote>
+<p>不知各位爱好者是否发现了一些朋友的黑苹果系统中,关于本机里的pci列表下有详细的设备信息。以前实现这个比较麻烦，需要ssdt。现在已经有简便方案。<a id="more"></a></p>
+</blockquote>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>目前白苹果上并没有显示PCI列表，所以，各位是否实现全靠自愿。</p>
+<h3 id="所需软件"><a href="#所需软件" class="headerlink" title="所需软件"></a>所需软件</h3><ul>
+<li><a href='http://headsoft.com.au/download/mac/Hackintool.zip'>Hackintool</a></li>
+<li>Clover Configurator</li>
+</ul>
+<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
+<li>打开Clover Configurator，依次点击<font color=#A52A2A ><strong><em>Boot.log-&gt;Generate log-&gt;Save boot.log to desktop</em></strong></font>，如图。生成在桌面的文件名称为bootlog.txt。<br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-1.png"></li>
+</ul>
+<h4 id="下面以NVME-SSD-SM961为例进行讲解"><a href="#下面以NVME-SSD-SM961为例进行讲解" class="headerlink" title="下面以NVME SSD SM961为例进行讲解"></a>下面以NVME SSD SM961为例进行讲解</h4><ul>
+<li>打开Hackintool，记住SM961的设备id，如图即为0xA804。<br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-2.png"></li>
+<li>打开之前保存的bootlog.txt文件，搜索A804，我们会发现这一行数据中有一个形如xx:xx.xx的字符串，这个就是pciaddr,记下它，稍后会用到。如图：pciaddr为<font color=#A52A2A ><strong><em>04:00.00</em></strong></font><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-3.png"></li>
+<li>使用Clover Configurator打开config.plist,依次点击Devices-&gt;Arbitrary,按图示填写数据即可显示PCI列表。<font color=#A52A2A ><strong><em>注意：PciAddr一栏填写刚才查询出来的pciaddr，即</em></strong>04:00.00*<strong>,Comment一栏随便填。右侧属性栏中的Key值至少有两个参数**<em>AAPL,slot-name</em></strong>以及*<strong>model**<em>，Value随便填，Value Type选STRING</em></strong>。</font><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-4.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-5.png"></li>
+</ul>
+<h3 id="一个特殊情况-声卡"><a href="#一个特殊情况-声卡" class="headerlink" title="一个特殊情况(声卡)"></a>一个特殊情况(声卡)</h3><p>由于我们在注入声卡属性时会覆盖layout-id，导致声卡无声。所以如果要注入声卡属性，要在clover下做如下设置。</p>
+<ul>
+<li><font color=#A52A2A ><strong><em>Devices-&gt;Audio-&gt;inject-&gt;No</em></strong><font></li>
+<li><font color=#A52A2A ><strong><em>Boot-&gt;alcid=layout-id</em></strong><font><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-6.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-7.png"></li>
+</ul>
+<h3 id="至此，您已经成功显示PCI列表"><a href="#至此，您已经成功显示PCI列表" class="headerlink" title="至此，您已经成功显示PCI列表"></a>至此，您已经成功显示PCI列表</h3>]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -1679,101 +1828,6 @@
       </tags>
   </entry>
   <entry>
-    <title>macOS 10.14.6 beta下填充PCI列表的简要教程</title>
-    <url>/2019/05/21/pci-list-for-hackintosh.html</url>
-    <content><![CDATA[<blockquote>
-<p>不知各位爱好者是否发现了一些朋友的黑苹果系统中,关于本机里的pci列表下有详细的设备信息。以前实现这个比较麻烦，需要ssdt。现在已经有简便方案。<a id="more"></a></p>
-</blockquote>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>目前白苹果上并没有显示PCI列表，所以，各位是否实现全靠自愿。</p>
-<h3 id="所需软件"><a href="#所需软件" class="headerlink" title="所需软件"></a>所需软件</h3><ul>
-<li><a href='http://headsoft.com.au/download/mac/Hackintool.zip'>Hackintool</a></li>
-<li>Clover Configurator</li>
-</ul>
-<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
-<li>打开Clover Configurator，依次点击<font color=#A52A2A ><strong><em>Boot.log-&gt;Generate log-&gt;Save boot.log to desktop</em></strong></font>，如图。生成在桌面的文件名称为bootlog.txt。<br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-1.png"></li>
-</ul>
-<h4 id="下面以NVME-SSD-SM961为例进行讲解"><a href="#下面以NVME-SSD-SM961为例进行讲解" class="headerlink" title="下面以NVME SSD SM961为例进行讲解"></a>下面以NVME SSD SM961为例进行讲解</h4><ul>
-<li>打开Hackintool，记住SM961的设备id，如图即为0xA804。<br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-2.png"></li>
-<li>打开之前保存的bootlog.txt文件，搜索A804，我们会发现这一行数据中有一个形如xx:xx.xx的字符串，这个就是pciaddr,记下它，稍后会用到。如图：pciaddr为<font color=#A52A2A ><strong><em>04:00.00</em></strong></font><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-3.png"></li>
-<li>使用Clover Configurator打开config.plist,依次点击Devices-&gt;Arbitrary,按图示填写数据即可显示PCI列表。<font color=#A52A2A ><strong><em>注意：PciAddr一栏填写刚才查询出来的pciaddr，即</em></strong>04:00.00*<strong>,Comment一栏随便填。右侧属性栏中的Key值至少有两个参数**<em>AAPL,slot-name</em></strong>以及*<strong>model**<em>，Value随便填，Value Type选STRING</em></strong>。</font><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-4.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-5.png"></li>
-</ul>
-<h3 id="一个特殊情况-声卡"><a href="#一个特殊情况-声卡" class="headerlink" title="一个特殊情况(声卡)"></a>一个特殊情况(声卡)</h3><p>由于我们在注入声卡属性时会覆盖layout-id，导致声卡无声。所以如果要注入声卡属性，要在clover下做如下设置。</p>
-<ul>
-<li><font color=#A52A2A ><strong><em>Devices-&gt;Audio-&gt;inject-&gt;No</em></strong><font></li>
-<li><font color=#A52A2A ><strong><em>Boot-&gt;alcid=layout-id</em></strong><font><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-6.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-7.png"></li>
-</ul>
-<h3 id="至此，您已经成功显示PCI列表"><a href="#至此，您已经成功显示PCI列表" class="headerlink" title="至此，您已经成功显示PCI列表"></a>至此，您已经成功显示PCI列表</h3>]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>最简单的挂载EFI分区方案</title>
-    <url>/2019/12/03/mountEFI.html</url>
-    <content><![CDATA[<blockquote>
-<p>博主使用OC已经有一段时间，最近发现一个不爽点。OC配置本身不需要各种GUI工具，但是，每次挂载EFI都要打开类似Clover Configurator的工具挂载EFI，比较麻烦，所以博主分享一种点击即挂载并打开EFI分区的方案。<a id="more"></a></p>
-</blockquote>
-<h1 id="获取EFI分区的UUID"><a href="#获取EFI分区的UUID" class="headerlink" title="获取EFI分区的UUID"></a>获取EFI分区的UUID</h1><ul>
-<li>用Clover Configurator看一下负责引导的EFI分区的分区号，比如博主的是<font color=#A52A2A >disk0s1</font>。(详细过程略，相信大家都懂)</li>
-<li>输入以下命令获取UUID。<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sudo</span> diskutil <span class="literal">info</span> disk0s1 | grep <span class="string">&#x27;Partition UUID&#x27;</span></span><br></pre></td></tr></table></figure>
-  <img src= "/images/loading.gif" data-lazy-src="/images/mountEFI.png"></li>
-</ul>
-<h1 id="准备应用程序"><a href="#准备应用程序" class="headerlink" title="准备应用程序"></a>准备应用程序</h1><ul>
-<li><p>打开系统自带的自动操作程序，依次点击应用程序-&gt;选取-&gt;运行shell脚本。<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-3.png"></p>
-</li>
-<li><p>将以下脚本粘贴进去</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">mountEFI=$(<span class="built_in">echo</span> <span class="string">&#x27;你的密码&#x27;</span> | sudo -S diskutil info 你的UUID | grep <span class="string">&#x27;Device Node&#x27;</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;你的密码&#x27;</span> | sudo -S diskutil mount <span class="string">&#x27;/&#x27;</span><span class="variable">$&#123;mountEFI#*/&#125;</span></span><br><span class="line">open /Volumes/EFI/EFI/OC</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/mountEFI-1.png"></p>
-</li>
-<li><p>保存成app<br><img src= "/images/loading.gif" data-lazy-src="/images/mountEFI-2.png"></p>
-</li>
-</ul>
-<blockquote>
-<p>至此，您已经成功制作EFI挂载工具，以后只要点击就可以直接挂载并打开！</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows 10下忘记密码的解决方案(本地账户，微软账户通杀)</title>
-    <url>/2018/05/27/reset-password-for-windows-10.html</url>
-    <content><![CDATA[<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><blockquote>
-<p>我们知道Windows下连按5次shift会弹出粘滞键，他的程序名称是sethc.exe。经测试在Windows登录界面处输入密码之前按5次shift键也可以启动sethc.exe。所以只要把cmd.exe重命名为sethc.exe就可以在登录之前打开cmd以便我们为所欲为。<a id="more"></a></p>
-</blockquote>
-<h3 id="PE破解密码的缺陷"><a href="#PE破解密码的缺陷" class="headerlink" title="PE破解密码的缺陷"></a>PE破解密码的缺陷</h3><p>如果电脑安装了双Windows系统，如win7+win10，pe破解可能失效。</p>
-<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
-<li>准备好windows 10安装U盘。</li>
-<li>U盘启动，点击下一步-&gt;修复计算机-&gt;疑难解答-&gt;命令提示符(一定要在安装盘下进入，系统下直接进入高级模式会要求输入密码)，如图<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raufjiqgj30sg0lcq30.jpg"><br>如出现下图则说明你不是通过安装盘进入的高级模式。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rauu65rxj30sg0lcwes.jpg"></li>
-<li>导航进入系统盘符，注意不一定是C盘，用dir命令查看盘符下的文件已确定是不是系统盘。如</span><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">C</span>:</span><br><span class="line"><span class="attribute">cd</span> Windows/System<span class="number">32</span></span><br></pre></td></tr></table></figure></li>
-<li>输入以下命令将cmd重命名，3、4步骤如图</span><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">ren</span> <span class="selector-tag">sethc</span><span class="selector-class">.exe</span> <span class="selector-tag">AAA</span><span class="selector-class">.exe</span></span><br><span class="line"><span class="selector-tag">ren</span> <span class="selector-tag">cmd</span><span class="selector-class">.exe</span> <span class="selector-tag">sethc</span><span class="selector-class">.exe</span></span><br></pre></td></tr></table></figure>
-<img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rav9bi0fj30sg0lcjrp.jpg"></li>
-<li>重启到登录界面按5次shift进入命令提示符(此时窗口名称为sethc.exe)</li>
-<li>输入如下命令启用Windows内置的Administrator用户，并重置Administrator的密码。如果之前用的是微软账户就可以不重置密码，默认无密码。<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> /active:yes </span><br><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> 新密码</span><br></pre></td></tr></table></figure>
-<img src= "/images/loading.gif" data-lazy-src="/images/Snipaste_2018-05-27_21-41-45.png"></li>
-<li>用Administrator登录系统，将之前忘记密码的用户修改密码，如果是微软账户就上官网重置密码。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ravn4bmhj30ia0h613m.jpg"></li>
-<li>进入原用户测试。</li>
-<li>进入文件资源管理器，将Windows/System32下的sethc.exe重命名为cmd.exe，AAA.exe重命名为sethc.exe。</li>
-<li>如果想禁用Administrator请执行以下命令。<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> /active:no</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Windows Desktop</category>
-      </categories>
-      <tags>
-        <tag>cmd</tag>
-        <tag>sethc</tag>
-        <tag>Windows10</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>小米6第三方Project Treble实现</title>
     <url>/2018/05/08/project-treble-for-xiaomi-mi6-unofficial.html</url>
     <content><![CDATA[<h3 id="关于Project-Treble"><a href="#关于Project-Treble" class="headerlink" title="关于Project Treble"></a>关于Project Treble</h3><blockquote>
@@ -1843,51 +1897,34 @@
       </tags>
   </entry>
   <entry>
-    <title>OpenCore黑苹果方案以及ASRock Z390 Phantom Gaming-ITX/ac+i9-9900K OpenCore配置文件分享</title>
-    <url>/2019/05/29/opencore-hackintosh.html</url>
-    <content><![CDATA[<h1 id="OpenCore简介"><a href="#OpenCore简介" class="headerlink" title="OpenCore简介"></a>OpenCore简介</h1><p>OpenCore是由**<font color=#A52A2A >vit9696</font>**等8位大佬开发的全新黑苹果引导工具。用于在PC上启动macOS操作系统。博主用了一天时间已经成功启动博主电脑上的macOS，现在做简单分享。<a id="more"></a></p>
-<h1 id="OpenCore编译"><a href="#OpenCore编译" class="headerlink" title="OpenCore编译"></a>OpenCore编译</h1><ul>
-<li>APP Store安装Xcode。</li>
-<li>终端执行如下命令，并点击最右侧的同意按钮安装命令行工具。<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure></li>
-<li>在如下链接里下载编译脚本**<font color=#A52A2A >buildopencore，</font><strong>感谢pcbeta网友</strong><font color=#A52A2A >云朵有点甜</font>**编写脚本。<br><a href="http://bbs.pcbeta.com/viewthread-1814957-1-1.html">http://bbs.pcbeta.com/viewthread-1814957-1-1.html</a></li>
-<li>解压并执行脚本,如图。编译后桌面生成OpenCore文件夹。<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line">chmod u+x <span class="string">./buildopencore</span></span><br><span class="line"><span class="string">./buildopencore</span></span><br></pre></td></tr></table></figure>
-  <img src= "/images/loading.gif" data-lazy-src="/images/opencore-1.png"><img src= "/images/loading.gif" data-lazy-src="/images/opencore-2.png"><img src= "/images/loading.gif" data-lazy-src="/images/opencore-3.png"><strong><font color=#A52A2A >注意：Docs文件夹里有官方文档以及plist文件示例。</font></strong></li>
+    <title>Windows 10下忘记密码的解决方案(本地账户，微软账户通杀)</title>
+    <url>/2018/05/27/reset-password-for-windows-10.html</url>
+    <content><![CDATA[<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><blockquote>
+<p>我们知道Windows下连按5次shift会弹出粘滞键，他的程序名称是sethc.exe。经测试在Windows登录界面处输入密码之前按5次shift键也可以启动sethc.exe。所以只要把cmd.exe重命名为sethc.exe就可以在登录之前打开cmd以便我们为所欲为。<a id="more"></a></p>
+</blockquote>
+<h3 id="PE破解密码的缺陷"><a href="#PE破解密码的缺陷" class="headerlink" title="PE破解密码的缺陷"></a>PE破解密码的缺陷</h3><p>如果电脑安装了双Windows系统，如win7+win10，pe破解可能失效。</p>
+<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
+<li>准备好windows 10安装U盘。</li>
+<li>U盘启动，点击下一步-&gt;修复计算机-&gt;疑难解答-&gt;命令提示符(一定要在安装盘下进入，系统下直接进入高级模式会要求输入密码)，如图<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raufjiqgj30sg0lcq30.jpg"><br>如出现下图则说明你不是通过安装盘进入的高级模式。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rauu65rxj30sg0lcwes.jpg"></li>
+<li>导航进入系统盘符，注意不一定是C盘，用dir命令查看盘符下的文件已确定是不是系统盘。如</span><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">C</span>:</span><br><span class="line"><span class="attribute">cd</span> Windows/System<span class="number">32</span></span><br></pre></td></tr></table></figure></li>
+<li>输入以下命令将cmd重命名，3、4步骤如图</span><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">ren</span> <span class="selector-tag">sethc</span><span class="selector-class">.exe</span> <span class="selector-tag">AAA</span><span class="selector-class">.exe</span></span><br><span class="line"><span class="selector-tag">ren</span> <span class="selector-tag">cmd</span><span class="selector-class">.exe</span> <span class="selector-tag">sethc</span><span class="selector-class">.exe</span></span><br></pre></td></tr></table></figure>
+<img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rav9bi0fj30sg0lcjrp.jpg"></li>
+<li>重启到登录界面按5次shift进入命令提示符(此时窗口名称为sethc.exe)</li>
+<li>输入如下命令启用Windows内置的Administrator用户，并重置Administrator的密码。如果之前用的是微软账户就可以不重置密码，默认无密码。<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> /active:yes </span><br><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> 新密码</span><br></pre></td></tr></table></figure>
+<img src= "/images/loading.gif" data-lazy-src="/images/Snipaste_2018-05-27_21-41-45.png"></li>
+<li>用Administrator登录系统，将之前忘记密码的用户修改密码，如果是微软账户就上官网重置密码。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ravn4bmhj30ia0h613m.jpg"></li>
+<li>进入原用户测试。</li>
+<li>进入文件资源管理器，将Windows/System32下的sethc.exe重命名为cmd.exe，AAA.exe重命名为sethc.exe。</li>
+<li>如果想禁用Administrator请执行以下命令。<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> /active:no</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h1 id="OpenCore使用简要教程"><a href="#OpenCore使用简要教程" class="headerlink" title="OpenCore使用简要教程"></a>OpenCore使用简要教程</h1><h2 id="文件夹结构-虚线框内的不是必须项目，视需求而定"><a href="#文件夹结构-虚线框内的不是必须项目，视需求而定" class="headerlink" title="文件夹结构(虚线框内的不是必须项目，视需求而定)"></a>文件夹结构(虚线框内的不是必须项目，视需求而定)</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/opencore-4.png"></p>
-<h2 id="config-plist文件解析-只介绍博主用到的"><a href="#config-plist文件解析-只介绍博主用到的" class="headerlink" title="config.plist文件解析(只介绍博主用到的)"></a>config.plist文件解析(只介绍博主用到的)</h2><h3 id="ACPI"><a href="#ACPI" class="headerlink" title="ACPI"></a>ACPI</h3><h4 id="Add"><a href="#Add" class="headerlink" title="Add"></a>Add</h4><p>添加aml文件，比如DSDT.aml。</p>
-<h4 id="Block"><a href="#Block" class="headerlink" title="Block"></a>Block</h4><p>相当于Clover中的Drop Tables。用于屏蔽一些OEM Tables。如Drop DMAR。</p>
-<h4 id="Patch"><a href="#Patch" class="headerlink" title="Patch"></a>Patch</h4><p>相当于Clover中的DSDT部件更名，例如：change HDAS to HDEF。</p>
-<h4 id="ACPI部分整体图解"><a href="#ACPI部分整体图解" class="headerlink" title="ACPI部分整体图解"></a>ACPI部分整体图解</h4><p><img src= "/images/loading.gif" data-lazy-src="/images/opencore-5.png"></p>
-<h3 id="DeviceProperties"><a href="#DeviceProperties" class="headerlink" title="DeviceProperties"></a>DeviceProperties</h3><h4 id="Add-1"><a href="#Add-1" class="headerlink" title="Add"></a>Add</h4><p>用于注入设备属性，比如声卡layout-id，核显帧补丁等。相当于Clover的Devices-&gt;Properties。<br><img src= "/images/loading.gif" data-lazy-src="/images/opencore-6.png"></p>
-<h3 id="kernel"><a href="#kernel" class="headerlink" title="kernel"></a>kernel</h3><h4 id="Add-2"><a href="#Add-2" class="headerlink" title="Add"></a>Add</h4><p>用于注入kext路径。</p>
-<h4 id="Patch-1"><a href="#Patch-1" class="headerlink" title="Patch"></a>Patch</h4><p>相当于Clover的KextsToPatch</p>
-<h4 id="Kernel部分整体图解"><a href="#Kernel部分整体图解" class="headerlink" title="Kernel部分整体图解"></a>Kernel部分整体图解</h4><p><img src= "/images/loading.gif" data-lazy-src="/images/opencore-7.png"></p>
-<h3 id="NVRAM-由于博主表达能力欠佳，这一部分请参考官方文档"><a href="#NVRAM-由于博主表达能力欠佳，这一部分请参考官方文档" class="headerlink" title="NVRAM(由于博主表达能力欠佳，这一部分请参考官方文档)"></a>NVRAM(由于博主表达能力欠佳，这一部分请参考官方文档)</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/opencore-8.png"></p>
-<h3 id="PlatformInfo"><a href="#PlatformInfo" class="headerlink" title="PlatformInfo"></a>PlatformInfo</h3><p>相当于Clover中的SMBIOS，使用OpenCore Configurator注入即可。<br><img src= "/images/loading.gif" data-lazy-src="/images/opencore-9.png"></p>
-<h3 id="UEFI"><a href="#UEFI" class="headerlink" title="UEFI"></a>UEFI</h3><h4 id="Drivers"><a href="#Drivers" class="headerlink" title="Drivers"></a>Drivers</h4><p>用于注入用于启动的驱动信息，例如ApfsDriverLoader.efi等。<br><img src= "/images/loading.gif" data-lazy-src="/images/opencore-10.png"></p>
-<h1 id="使用OpenCore引导博主电脑简要说明"><a href="#使用OpenCore引导博主电脑简要说明" class="headerlink" title="使用OpenCore引导博主电脑简要说明"></a>使用OpenCore引导博主电脑简要说明</h1><h2 id="博主电脑配置信息"><a href="#博主电脑配置信息" class="headerlink" title="博主电脑配置信息"></a>博主电脑配置信息</h2><p>ASRock Z390 Phantom Gaming-ITX/ac+i9-9900K+Vega56</p>
-<h2 id="目前完美程度"><a href="#目前完美程度" class="headerlink" title="目前完美程度"></a>目前完美程度</h2><p>以太网卡+声卡+独显+核显+wifi+蓝牙+USB正常。睡眠唤醒正常。关机正常。原生电源以及AGPM正常，硬解正常。雷电只能当typec使用。</p>
-<h2 id="OC文件夹结构"><a href="#OC文件夹结构" class="headerlink" title="OC文件夹结构"></a>OC文件夹结构</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/opencore-11.png"></p>
-<h2 id="SMBIOS"><a href="#SMBIOS" class="headerlink" title="SMBIOS"></a>SMBIOS</h2><p>iMac Pro 2017</p>
-<h2 id="以太网卡、wifi、蓝牙、独显、USB"><a href="#以太网卡、wifi、蓝牙、独显、USB" class="headerlink" title="以太网卡、wifi、蓝牙、独显、USB"></a>以太网卡、wifi、蓝牙、独显、USB</h2><p>同Clover。</p>
-<h2 id="声卡"><a href="#声卡" class="headerlink" title="声卡"></a>声卡</h2><ul>
-<li>Lilu、AppleALC拷到L/E下。</li>
-<li>DeviceProperties下注入声卡layout-id。</li>
-<li>重建缓存。<br><img src= "/images/loading.gif" data-lazy-src="/images/opencore-12.png"></li>
-</ul>
-<h2 id="核显"><a href="#核显" class="headerlink" title="核显"></a>核显</h2><p>DeviceProperties下注入核显信息。<br><img src= "/images/loading.gif" data-lazy-src="/images/opencore-13.png"></p>
-<h2 id="原生电源"><a href="#原生电源" class="headerlink" title="原生电源"></a>原生电源</h2><p>加入SSDT-XCPM-SBpr00.aml即可加载两个X86(博主会分享OC配置文件)。</p>
-<h2 id="AGPM"><a href="#AGPM" class="headerlink" title="AGPM"></a>AGPM</h2><p>同Clover。</p>
-<h2 id="关机变重启以及睡眠变重启解决方案"><a href="#关机变重启以及睡眠变重启解决方案" class="headerlink" title="关机变重启以及睡眠变重启解决方案"></a>关机变重启以及睡眠变重启解决方案</h2><p>使用OsxAptioFix2Drv-free2000.efi替换其他启动文件即可。</p>
-<h1 id="博主电脑OpenCore配置文件分享"><a href="#博主电脑OpenCore配置文件分享" class="headerlink" title="博主电脑OpenCore配置文件分享"></a>博主电脑OpenCore配置文件分享</h1><p>博主已将OC文件推送至博主的Hackintosh仓库，详情以及用法见如下链接。<br><a href="https://www.bugprogrammer.me/2019/05/23/github-hackintosh.html">https://www.bugprogrammer.me/2019/05/23/github-hackintosh.html</a></p>
-<h1 id="2019-05-31更新"><a href="#2019-05-31更新" class="headerlink" title="2019-05-31更新"></a>2019-05-31更新</h1><h2 id="一个小发现"><a href="#一个小发现" class="headerlink" title="一个小发现"></a>一个小发现</h2><p>OpenCore可以直接正确识别9代CPU型号，比如我的9900K显示为3.6 GHz Intel Core i9(Clover默认显示为i7)。</p>
 ]]></content>
       <categories>
-        <category>Hackintosh</category>
+        <category>Windows Desktop</category>
       </categories>
       <tags>
-        <tag>Hackintosh</tag>
-        <tag>OpenCore</tag>
+        <tag>cmd</tag>
+        <tag>sethc</tag>
+        <tag>Windows10</tag>
       </tags>
   </entry>
   <entry>
@@ -1955,40 +1992,31 @@
       </tags>
   </entry>
   <entry>
-    <title>macOS High Sierra 10.13.4下Z370主板USB相关解决方案</title>
-    <url>/2018/05/09/macos-high-sierra-10-13-4-z370-motherboard-usb-related-solutions.html</url>
+    <title>解锁macOS10.15的系统分区</title>
+    <url>/2019/07/13/unlockSystem.html</url>
     <content><![CDATA[<blockquote>
-<p>有些使用z370主板安装macOS的朋友可能遇到USB方面的问题，一些朋友的表现为部分USB失灵，还有一部分可能遇到usb3.0设备插在 3.0接口处不识别，今天放上本人的解决方案<a id="more"></a>。</p>
+<p>macOS 10.15的一个显著变化就是Apple锁定了系统分区，导致L/E以及S/L/E无法拷贝文件。Kext Utility无法重建缓存。也间接影响了HomeBrew的使用，下面教大家如何解锁系统分区。<a id="more"></a></p>
 </blockquote>
-<h3 id="在clover加入以下补丁并重启测试USB情况查看USB是否完整识别，3-0设备插在usb3-0上是否可用。"><a href="#在clover加入以下补丁并重启测试USB情况查看USB是否完整识别，3-0设备插在usb3-0上是否可用。" class="headerlink" title="在clover加入以下补丁并重启测试USB情况查看USB是否完整识别，3.0设备插在usb3.0上是否可用。"></a>在clover加入以下补丁并重启测试USB情况查看USB是否完整识别，3.0设备插在usb3.0上是否可用。</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ra9pmr9mj30sg01fwen.jpg"></p>
-<h3 id="添加补丁后遇到USB3-0移动硬盘插在usb3-0接口上识别为内置硬盘-桌面不显示黄盘-的解决方案："><a href="#添加补丁后遇到USB3-0移动硬盘插在usb3-0接口上识别为内置硬盘-桌面不显示黄盘-的解决方案：" class="headerlink" title="添加补丁后遇到USB3.0移动硬盘插在usb3.0接口上识别为内置硬盘(桌面不显示黄盘)的解决方案："></a>添加补丁后遇到USB3.0移动硬盘插在usb3.0接口上识别为内置硬盘(桌面不显示黄盘)的解决方案：</h3><p>下载最新版<a href="https://bitbucket.org/RehabMan/os-x-usb-inject-all/downloads/RehabMan-USBInjectAll-2018-0420.zip">usbinjectall.kext</a>,并解压拷贝到efi/clover/kexts/other下。</p>
-<h3 id="usb引起睡眠之后瞬间唤醒的解决方案-按照步骤2添加usbinjectall-kext后有概率遇到-此解决方案包括但不限于以上情况-："><a href="#usb引起睡眠之后瞬间唤醒的解决方案-按照步骤2添加usbinjectall-kext后有概率遇到-此解决方案包括但不限于以上情况-：" class="headerlink" title="usb引起睡眠之后瞬间唤醒的解决方案(按照步骤2添加usbinjectall.kext后有概率遇到,此解决方案包括但不限于以上情况)："></a>usb引起睡眠之后瞬间唤醒的解决方案(按照步骤2添加usbinjectall.kext后有概率遇到,此解决方案包括但不限于以上情况)：</h3><h4 id="方案1-DSDT打补丁-："><a href="#方案1-DSDT打补丁-：" class="headerlink" title="方案1(DSDT打补丁)："></a>方案1(DSDT打补丁)：</h4><p>特点：无需排查导致bug的具体usb口是哪个。同时会使usb唤醒失效，无法用键鼠唤醒，故不推荐！！！</p>
-<ul>
-<li>下载<a href="https://bitbucket.org/RehabMan/acpica/downloads/iasl.zip">iasl</a>用来反编译dsdt,把iasl编译器拷贝到/usr/bin目录,方便调用。</li>
-<li>下载<a href="https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads/RehabMan-MaciASL-2018-0507.zip">MaciASL</a>，我提供的版本自带RehabMan dsdt补丁库。</li>
-<li>提取DSDT：开机clover引导界面处按F4自动提取，路径EFI/Clover/ACPI/origin下。把DSDT.aml拷贝到桌面。</li>
-<li>反编译DSDT：终端输入cd ~/Desktop进入桌面目录，再输入iasl -da -dl *.aml反编译DSDT，成功后会在桌面生成DSDT.dsl 文件。</li>
-<li>给DSDT打补丁：用MaciASL打开DSDT.dsl,点击patch，在左侧补丁栏选择USB3 _PRW 0x6D Skylake(instant wake),再点击 Apply完成，如图： <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ra9y5srvj30sg0dbwgu.jpg"></li>
-<li>编译、排错、保存：打完补丁后点击Complie编译，如果有错请暂时依照网络资源排错。关于DSDT排错，本人后续会详细更新， 敬请期待！排错完成后点击File-&gt;Save As保存DSDT，格式为ACPI Machine Language Binary(aml)。</li>
-<li>将dsdt拷贝到efi/clover/acpi/patched下并重启生效。</li>
+<h1 id="准备应用程序"><a href="#准备应用程序" class="headerlink" title="准备应用程序"></a>准备应用程序</h1><ul>
+<li><p>打开系统自带的自动操作程序，依次点击应用程序-&gt;选取-&gt;运行shell脚本。<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-3.png"></p>
+</li>
+<li><p>将以下脚本粘贴进去</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;你的电脑密码&#x27;</span>|sudo -S mount -uw / &amp;&amp; killall Finder</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/unlock-4.png"></p>
+</li>
+<li><p>保存成app<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-5.png"></p>
+</li>
 </ul>
-<h4 id="方案2-修改usbinjectall-kext"><a href="#方案2-修改usbinjectall-kext" class="headerlink" title="方案2(修改usbinjectall.kext)"></a>方案2(修改usbinjectall.kext)</h4><p>特点：需要排查导致bug的具体usb接口，但不会导致usb唤醒失效，可以用键鼠唤醒，故强烈推荐。</p>
-<ul>
-<li>排查引起bug的USB：一般为蓝牙或摄像头等特殊接口。可以拔掉相应排线重启测试，若拔掉后不再瞬间唤醒，则接口确定，比如 本人的是连接蓝牙排线的usb所导致。</li>
-<li>Windows下进入设备管理器，确定usb设备id，如图则为8086_a2af。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raapm4ahj30j707jmyl.jpg"></li>
-<li>确定导致bug的usb编号：下载并打开<a href="https://us.softpedia-secure-download.com/dl/cd6af705d256e781d022b220f14acd38/5af2e088/400138300/mac/System-Utilities/IORegistryExplorer.zip">IORegistryExplorer</a>,找到XHC分支，在XHC分支中找到导致bug的usb所连接的设备(比如我 的是蓝牙)，此设备对应的HS号即为所需编号，如图则为HS10(注意HS10下面的BCM20702A0就是我的蓝牙，也就是说HS10导致的睡眠 瞬间唤醒)： <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raay9umlj30sg0g07ax.jpg"></li>
-<li>将usbinjectall.kext拷贝到桌面，并下载<a href="https://www.fatcatsoftware.com/plisteditpro/PlistEditPro.zip">PlistEdit Pro</a>。</li>
-<li>修改usbinjectall.kext：右击usbinjectall.kext，用PlistEdit Pro打开info.plist。找到IOKitPersonalities-&gt; ConfigurationData-&gt;Configuration分支，在下面选择自己usb的id(Windows下找的那个，我的是8086_a2af)分支，进入后打开 ports可以看到一堆HS编号，打开自己的HS编号(步骤3找到的那个，我的是HS10)，将UsbConnector属性值改成255(255为特殊端口) 并保存，如图： <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rabd1qt4j30sg0mz13x.jpg"></li>
-<li>将修改好的usbinjectall.kext拷贝到efi/clover/kexts/other下重建缓存并重启。</li>
-</ul>
+<h1 id="添加开机自启"><a href="#添加开机自启" class="headerlink" title="添加开机自启"></a>添加开机自启</h1><p>打开偏好设置-&gt;用户与群组-&gt;登录项，将unlockSystem.app添加到启动项，并点击隐藏。<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-6.png"></p>
+<blockquote>
+<p>至此，您已经成功解锁系统分区，可以尝试SLE/LE写入以及重建缓存操作了，博主亲测成功哦！</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>Hackintosh</category>
       </categories>
       <tags>
         <tag>Hackintosh</tag>
-        <tag>usb</tag>
-        <tag>z370</tag>
       </tags>
   </entry>
   <entry>
@@ -2035,34 +2063,6 @@
       <tags>
         <tag>Hackintosh</tag>
         <tag>macOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解锁macOS10.15的系统分区</title>
-    <url>/2019/07/13/unlockSystem.html</url>
-    <content><![CDATA[<blockquote>
-<p>macOS 10.15的一个显著变化就是Apple锁定了系统分区，导致L/E以及S/L/E无法拷贝文件。Kext Utility无法重建缓存。也间接影响了HomeBrew的使用，下面教大家如何解锁系统分区。<a id="more"></a></p>
-</blockquote>
-<h1 id="准备应用程序"><a href="#准备应用程序" class="headerlink" title="准备应用程序"></a>准备应用程序</h1><ul>
-<li><p>打开系统自带的自动操作程序，依次点击应用程序-&gt;选取-&gt;运行shell脚本。<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-3.png"></p>
-</li>
-<li><p>将以下脚本粘贴进去</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;你的电脑密码&#x27;</span>|sudo -S mount -uw / &amp;&amp; killall Finder</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/unlock-4.png"></p>
-</li>
-<li><p>保存成app<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-5.png"></p>
-</li>
-</ul>
-<h1 id="添加开机自启"><a href="#添加开机自启" class="headerlink" title="添加开机自启"></a>添加开机自启</h1><p>打开偏好设置-&gt;用户与群组-&gt;登录项，将unlockSystem.app添加到启动项，并点击隐藏。<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-6.png"></p>
-<blockquote>
-<p>至此，您已经成功解锁系统分区，可以尝试SLE/LE写入以及重建缓存操作了，博主亲测成功哦！</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
       </tags>
   </entry>
   <entry>
