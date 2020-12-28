@@ -9,6 +9,13 @@
   </url>
   
   <url>
+    <loc>https://www.bugprogrammer.me/link/index.html</loc>
+    
+    <lastmod>2020-12-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.bugprogrammer.me/schedule/index.html</loc>
     
     <lastmod>2020-12-24</lastmod>
@@ -23,13 +30,6 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/link/index.html</loc>
-    
-    <lastmod>2020-12-24</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.bugprogrammer.me/friends/index.html</loc>
     
     <lastmod>2020-12-24</lastmod>
@@ -37,14 +37,14 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/categories/index.html</loc>
+    <loc>https://www.bugprogrammer.me/about/index.html</loc>
     
     <lastmod>2020-12-24</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/about/index.html</loc>
+    <loc>https://www.bugprogrammer.me/categories/index.html</loc>
     
     <lastmod>2020-12-24</lastmod>
     
@@ -347,6 +347,13 @@
 
   
   <url>
+    <loc>https://www.bugprogrammer.me/tags/Hackintosh/</loc>
+    <lastmod>2020-12-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.bugprogrammer.me/tags/macOS/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
@@ -368,14 +375,21 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/Hackintosh/</loc>
+    <loc>https://www.bugprogrammer.me/tags/Linux-Kernel/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2017/</loc>
+    <loc>https://www.bugprogrammer.me/tags/Ubuntu/</loc>
+    <lastmod>2020-12-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2018/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -396,21 +410,7 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/Linux-Kernel/</loc>
-    <lastmod>2020-12-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/Ubuntu/</loc>
-    <lastmod>2020-12-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/RX5700/</loc>
+    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2017/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -431,7 +431,7 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/Secure-Boot/</loc>
+    <loc>https://www.bugprogrammer.me/tags/RX5700/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -466,7 +466,7 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2018/</loc>
+    <loc>https://www.bugprogrammer.me/tags/Secure-Boot/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -487,6 +487,13 @@
   </url>
   
   <url>
+    <loc>https://www.bugprogrammer.me/tags/ASUS-N550JV/</loc>
+    <lastmod>2020-12-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.bugprogrammer.me/tags/usb/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
@@ -495,13 +502,6 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/z370/</loc>
-    <lastmod>2020-12-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/ASUS-N550JV/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -543,34 +543,6 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/Project-Treble/</loc>
-    <lastmod>2020-12-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/cmd/</loc>
-    <lastmod>2020-12-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/sethc/</loc>
-    <lastmod>2020-12-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/Windows10/</loc>
-    <lastmod>2020-12-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.bugprogrammer.me/tags/Centos/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
@@ -600,6 +572,34 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/SSL/</loc>
+    <lastmod>2020-12-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/Project-Treble/</loc>
+    <lastmod>2020-12-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/cmd/</loc>
+    <lastmod>2020-12-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/sethc/</loc>
+    <lastmod>2020-12-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/Windows10/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
