@@ -37,14 +37,14 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/about/index.html</loc>
+    <loc>https://www.bugprogrammer.me/categories/index.html</loc>
     
     <lastmod>2020-12-24</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/categories/index.html</loc>
+    <loc>https://www.bugprogrammer.me/about/index.html</loc>
     
     <lastmod>2020-12-24</lastmod>
     
@@ -361,13 +361,6 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/VoodooI2C/</loc>
-    <lastmod>2020-12-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.bugprogrammer.me/tags/Clover/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
@@ -375,14 +368,7 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2017/</loc>
-    <lastmod>2020-12-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2018/</loc>
+    <loc>https://www.bugprogrammer.me/tags/VoodooI2C/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -403,6 +389,20 @@
   </url>
   
   <url>
+    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2017/</loc>
+    <lastmod>2020-12-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2018/</loc>
+    <lastmod>2020-12-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.bugprogrammer.me/tags/acrock-z390/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
@@ -411,13 +411,6 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/i9-9900K/</loc>
-    <lastmod>2020-12-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/RX5700/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -438,7 +431,7 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/Secure-Boot/</loc>
+    <loc>https://www.bugprogrammer.me/tags/RX5700/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -446,6 +439,20 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/OpenCore/</loc>
+    <lastmod>2020-12-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/BootCamp/</loc>
+    <lastmod>2020-12-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/Secure-Boot/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -466,7 +473,7 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/BootCamp/</loc>
+    <loc>https://www.bugprogrammer.me/tags/ASUS-N550JV/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -495,13 +502,6 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/z370/</loc>
-    <lastmod>2020-12-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/ASUS-N550JV/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -543,27 +543,6 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/cmd/</loc>
-    <lastmod>2020-12-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/sethc/</loc>
-    <lastmod>2020-12-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/Windows10/</loc>
-    <lastmod>2020-12-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.bugprogrammer.me/tags/Centos/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
@@ -599,6 +578,34 @@
   </url>
   
   <url>
+    <loc>https://www.bugprogrammer.me/tags/Project-Treble/</loc>
+    <lastmod>2020-12-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/cmd/</loc>
+    <lastmod>2020-12-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/sethc/</loc>
+    <lastmod>2020-12-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/Windows10/</loc>
+    <lastmod>2020-12-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.bugprogrammer.me/tags/Android-Q/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
@@ -607,13 +614,6 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/OnePlus-7-Pro/</loc>
-    <lastmod>2020-12-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/Project-Treble/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -685,14 +685,14 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/categories/Windows-Desktop/</loc>
+    <loc>https://www.bugprogrammer.me/categories/Android-Rom/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/categories/Android-Rom/</loc>
+    <loc>https://www.bugprogrammer.me/categories/Windows-Desktop/</loc>
     <lastmod>2020-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
