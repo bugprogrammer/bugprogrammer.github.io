@@ -89,58 +89,142 @@
       </tags>
   </entry>
   <entry>
-    <title>关于macOS Big Sur Hackintosh简要说明</title>
-    <url>/2020/07/09/about-BigSur.html</url>
+    <title>博主的Hackintosh Bootloader以及kexts编译程序GUI(Swift5)版本发布</title>
+    <url>/2020/01/16/Hackintosh_Build_Swift.html</url>
     <content><![CDATA[<blockquote>
-<p>博主很忙，昨晚才详细测试macOS Big Sur Hackintosh相关情况(全新直接安装)，本文会一直更新到正式版本发布。<a id="more"></a></p>
+<p>之前博主开发的HackintoshBuild.sh脚本使用过程有些繁琐，故使用swift5重新开发GUI版本，部分代码(GUI)参考Pavo-IM大佬的ocbuilder项目，感谢Pavo-IM大佬。本项目可以看作HackintoshBuild.sh的进化版本。<a id="more"></a></p>
 </blockquote>
-<h1 id="OpenCore配置"><a href="#OpenCore配置" class="headerlink" title="OpenCore配置"></a>OpenCore配置</h1><blockquote>
-<p>在这里，博主只讲解和Catalina不同的地方</p>
+<h1 id="开源地址"><a href="#开源地址" class="headerlink" title="开源地址"></a>开源地址</h1><p><a href="https://github.com/bugprogrammer/HackintoshBuild">https://github.com/bugprogrammer/HackintoshBuild</a></p>
+<h1 id="使用前提"><a href="#使用前提" class="headerlink" title="使用前提"></a>使用前提</h1><ul>
+<li>安装Xcode</li>
+<li>安装命令行工具<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
+<h1 id="使用截图"><a href="#使用截图" class="headerlink" title="使用截图"></a>使用截图</h1><img src= "/images/loading.gif" data-lazy-src="/images/buildswift-1.png"></li>
+</ul>
+<h1 id="目前功能"><a href="#目前功能" class="headerlink" title="目前功能"></a>目前功能</h1><h2 id="v1-0"><a href="#v1-0" class="headerlink" title="v1.0"></a>v1.0</h2><ul>
+<li>基础编译功能</li>
+<li>选择存储路径</li>
+</ul>
+<h1 id="后续打算"><a href="#后续打算" class="headerlink" title="后续打算"></a>后续打算</h1><ul>
+<li>发展成为Hackintosh综合工具</li>
+</ul>
+<h1 id="未来版本目前预计功能"><a href="#未来版本目前预计功能" class="headerlink" title="未来版本目前预计功能"></a>未来版本目前预计功能</h1><ul>
+<li>GUI一键获取博主维护的Hackintosh EFI仓库</li>
+<li>支持版本自动更新</li>
+<li>支持过时设备驱动一键安装(比如HD3000,感谢@黑果小兵提供HD3000驱动方案)</li>
+<li>支持DW1820A一键驱动(感谢@黑果小兵提供dw1820a驱动方法以及脚本)</li>
+<li>一键导入@xjn的显卡优化数据(感谢@xjn提供优化数据)</li>
+<li>一键解锁10.15 read-only以及重建缓存</li>
+</ul>
+<h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><ul>
+<li>本项目完全开源并且唯一托管平台为GitHub</li>
+<li>博主很忙，更新不快，谢绝催更，感谢！！！</li>
+<li>新功能需求请在评论区留言</li>
+</ul>
+<h1 id="2020-01-21更新"><a href="#2020-01-21更新" class="headerlink" title="2020-01-21更新"></a>2020-01-21更新</h1><h2 id="v1-1版本更新"><a href="#v1-1版本更新" class="headerlink" title="v1.1版本更新"></a>v1.1版本更新</h2><h3 id="此版本由Bugprogrammer以及Arabaku合作完成"><a href="#此版本由Bugprogrammer以及Arabaku合作完成" class="headerlink" title="此版本由Bugprogrammer以及Arabaku合作完成"></a>此版本由Bugprogrammer以及Arabaku合作完成</h3><ul>
+<li>最低支持macOS版本为10.13</li>
+<li>新增窗口管理</li>
+<li>新增检查更新</li>
+<li>新增HTTP代理设置</li>
+<li>新增保存上次存储路径</li>
+<li>新增bugprogrammer维护的常见机型EFI列表获取</li>
+<li>新增解锁10.15.x read-only</li>
+<li>新增重建缓存功能</li>
+<li>新增开启未知来源安装软件</li>
+</ul>
+<h1 id="2020-02-04更新"><a href="#2020-02-04更新" class="headerlink" title="2020-02-04更新"></a>2020-02-04更新</h1><h2 id="v1-2版本更新"><a href="#v1-2版本更新" class="headerlink" title="v1.2版本更新"></a>v1.2版本更新</h2><h3 id="感谢Arabaku-群友某莔-帮助解决部分bug"><a href="#感谢Arabaku-群友某莔-帮助解决部分bug" class="headerlink" title="感谢Arabaku(群友某莔)帮助解决部分bug"></a>感谢Arabaku(群友某莔)帮助解决部分bug</h3><ul>
+<li>新增EFI分区挂载功能并显示当前引导分区</li>
+<li>新增NVRAM信息读取功能</li>
+<li>新增更换登录壁纸功能(可用来解决系统更新后，自定义桌面壁纸和登录壁纸不同步问题)</li>
+</ul>
+<h1 id="2020-02-08更新"><a href="#2020-02-08更新" class="headerlink" title="2020-02-08更新"></a>2020-02-08更新</h1><h2 id="v1-3版本更新"><a href="#v1-3版本更新" class="headerlink" title="v1.3版本更新"></a>v1.3版本更新</h2><h3 id="感谢Arabaku的付出帮助"><a href="#感谢Arabaku的付出帮助" class="headerlink" title="感谢Arabaku的付出帮助"></a>感谢Arabaku的付出帮助</h3><ul>
+<li>登录壁纸替换适配10.15.4 beta版本</li>
+<li>新增http代理记忆</li>
+<li>新增时光机器满速运行以及还原默认功能</li>
+</ul>
+<h1 id="2020-02-18更新"><a href="#2020-02-18更新" class="headerlink" title="2020-02-18更新"></a>2020-02-18更新</h1><h2 id="v1-4版本更新"><a href="#v1-4版本更新" class="headerlink" title="v1.4版本更新"></a>v1.4版本更新</h2><ul>
+<li>编译模块以及EFI获取模块新增日志存储</li>
+<li>EFI分区挂载模块新增磁盘名称显示以及刷新分区列表</li>
+<li>nvram读取模块新增刷新keys</li>
+<li>新增系统详情功能,获取kexts,aml,efi文件情况,读取详细信息,获取本地Clover,OC版本号</li>
+<li>新增白苹果ioreg信息读取</li>
+<li>1.4版本起，支持自动检测更新</li>
+<li>UI适配(感谢Arabaku)</li>
+<li>新增捐赠模块(全凭自愿)</li>
+</ul>
+<h1 id="2020-02-24更新"><a href="#2020-02-24更新" class="headerlink" title="2020-02-24更新"></a>2020-02-24更新</h1><h2 id="v1-5版本更新"><a href="#v1-5版本更新" class="headerlink" title="v1.5版本更新"></a>v1.5版本更新</h2><ul>
+<li>UI继续优化，禁用全屏模式以及缩放</li>
+<li>bug清理</li>
+</ul>
+<h1 id="2020-03-20更新"><a href="#2020-03-20更新" class="headerlink" title="2020-03-20更新"></a>2020-03-20更新</h1><h2 id="v1-6版本更新"><a href="#v1-6版本更新" class="headerlink" title="v1.6版本更新"></a>v1.6版本更新</h2><h3 id="编译模块"><a href="#编译模块" class="headerlink" title="编译模块"></a>编译模块</h3><blockquote>
+<p>新增全选，新增初始环境判断，增强兼容性，修复低版本Xcode无法编译</p>
 </blockquote>
-<ul>
-<li>OpenCore以及Lilu及其插件更新到最新版本(源码编译)，请自行编译(每个人需要的kext不同，博主提供无意义)。可以使用以下工具编译<br><a href="https://github.com/bugprogrammer/HackintoshBuild/releases/tag/2.1">https://github.com/bugprogrammer/HackintoshBuild/releases/tag/2.1</a></li>
-<li>boot-args加入vsmcgen=1参数<br><img src= "/images/loading.gif" data-lazy-src="/images/bigsur-1.png"></li>
-<li>csr-active-config设置为E70B0000<br><img src= "/images/loading.gif" data-lazy-src="/images/bigsur-2.png"></li>
-<li>booter-fileset-basesystem以及booter-fileset-kernel相关项目全部删除</li>
-<li>禁用核显或者id设置0x12345678</li>
-</ul>
-<blockquote>
-<p>至此,您已经可以愉快的安装Big Sur，但是安装完成后Recovery无法进入，博主暂未解决。。。</p>
+<h3 id="EFI获取模块"><a href="#EFI获取模块" class="headerlink" title="EFI获取模块"></a>EFI获取模块</h3><blockquote>
+<p>新增全选</p>
 </blockquote>
-<h1 id="删除快照，重获权限"><a href="#删除快照，重获权限" class="headerlink" title="删除快照，重获权限"></a>删除快照，重获权限</h1><p>博主按照pcbeta网友licheng的思路编写了一个脚本，可以很简单的删除快照，请在USB安装环境中的终端执行。中途要输入分区名(如Macintosh HD)和挂载点(如disk0s2)<br><a href="https://downloads.bugprogrammer.me/shell/deletesnapshot.sh">deletesnapshot.sh</a><br><img src= "/images/loading.gif" data-lazy-src="/images/bigsur-3.png"></p>
-<h1 id="未完待续。。。"><a href="#未完待续。。。" class="headerlink" title="未完待续。。。"></a>未完待续。。。</h1><h1 id="2020-07-09更新"><a href="#2020-07-09更新" class="headerlink" title="2020-07-09更新"></a>2020-07-09更新</h1><h2 id="Recovery进入"><a href="#Recovery进入" class="headerlink" title="Recovery进入"></a>Recovery进入</h2><ul>
-<li>关闭核显或设置id为0x12345678</li>
-<li>按照如图设置即可<br><img src= "/images/loading.gif" data-lazy-src="/images/bigsur-4.png"></li>
-</ul>
-<h1 id="2020-07-18更新"><a href="#2020-07-18更新" class="headerlink" title="2020-07-18更新"></a>2020-07-18更新</h1><h2 id="所有网卡罢工修复-免驱94360CD和RTL8125"><a href="#所有网卡罢工修复-免驱94360CD和RTL8125" class="headerlink" title="所有网卡罢工修复(免驱94360CD和RTL8125)"></a>所有网卡罢工修复(免驱94360CD和RTL8125)</h2><ul>
-<li>按照如图设置即可<br><img src= "/images/loading.gif" data-lazy-src="/images/bigsur-5.png"></li>
-</ul>
-<h1 id="2020-08-10更新"><a href="#2020-08-10更新" class="headerlink" title="2020-08-10更新"></a>2020-08-10更新</h1><h2 id="关闭快照在线执行方案"><a href="#关闭快照在线执行方案" class="headerlink" title="关闭快照在线执行方案"></a>关闭快照在线执行方案</h2><ul>
-<li>recovery中连接网络</li>
-<li>执行如下命令<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://downloads.bugprogrammer.me/shell/deletesnapshot.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博主的Hackintosh Bootloader以及kexts编译脚本分享</title>
-    <url>/2019/12/21/Hackintosh_Build.html</url>
-    <content><![CDATA[<blockquote>
-<p>鉴于很多小伙伴问我如何编译Hackintosh Bootloader以及kexts，今奉上博主的编译脚本。<a id="more"></a></p>
+<h3 id="EFI挂载"><a href="#EFI挂载" class="headerlink" title="EFI挂载"></a>EFI挂载</h3><blockquote>
+<p>全功能重构，新增Clover环境下，判断当前引导分区</p>
 </blockquote>
-<h1 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h1><h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul>
-<li>App Store安装Xcode11</li>
-<li>输入以下命令并按提示安装命令行工具<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
-<h2 id="脚本使用"><a href="#脚本使用" class="headerlink" title="脚本使用"></a>脚本使用</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/Hackintosh_build.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<h1 id="使用截图"><a href="#使用截图" class="headerlink" title="使用截图"></a>使用截图</h1><img src= "/images/loading.gif" data-lazy-src="/images/build-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/build-2.png"></li>
+<h3 id="新增关于本机，获取本机信息"><a href="#新增关于本机，获取本机信息" class="headerlink" title="新增关于本机，获取本机信息"></a>新增关于本机，获取本机信息</h3><h3 id="新增Kexts下载"><a href="#新增Kexts下载" class="headerlink" title="新增Kexts下载"></a>新增Kexts下载</h3><h3 id="新增路径空格以及写权限判断"><a href="#新增路径空格以及写权限判断" class="headerlink" title="新增路径空格以及写权限判断"></a>新增路径空格以及写权限判断</h3><h3 id="修复部分Clover用户闪退"><a href="#修复部分Clover用户闪退" class="headerlink" title="修复部分Clover用户闪退"></a>修复部分Clover用户闪退</h3><p>注意：App一定要安装在应用程序文件夹</p>
+<h1 id="2020-03-27更新"><a href="#2020-03-27更新" class="headerlink" title="2020-03-27更新"></a>2020-03-27更新</h1><h2 id="v1-7版本更新"><a href="#v1-7版本更新" class="headerlink" title="v1.7版本更新"></a>v1.7版本更新</h2><ul>
+<li>修复nvram模块随机闪退</li>
+<li>nvram模块重构，新增values高亮格式化</li>
+<li>适配系统亮色/暗色切换(无需退出软件)</li>
+</ul>
+<h1 id="2020-04-11更新"><a href="#2020-04-11更新" class="headerlink" title="2020-04-11更新"></a>2020-04-11更新</h1><h2 id="v1-8版本更新"><a href="#v1-8版本更新" class="headerlink" title="v1.8版本更新"></a>v1.8版本更新</h2><ul>
+<li>适配最新OC编译</li>
+<li>提升nvram xml格式兼容性</li>
+<li>新增PCI设备信息</li>
+<li>新增显卡性能优化(感谢xjn提供数据)</li>
+</ul>
+<h1 id="2020-04-20更新"><a href="#2020-04-20更新" class="headerlink" title="2020-04-20更新"></a>2020-04-20更新</h1><h2 id="v1-9版本更新"><a href="#v1-9版本更新" class="headerlink" title="v1.9版本更新"></a>v1.9版本更新</h2><ul>
+<li>更新mtoc版本以适配最新OpenCore</li>
+<li>新增镜像下载模块(官方服务器)</li>
+</ul>
+<h1 id="2020-05-15更新"><a href="#2020-05-15更新" class="headerlink" title="2020-05-15更新"></a>2020-05-15更新</h1><h2 id="v2-0版本更新"><a href="#v2-0版本更新" class="headerlink" title="v2.0版本更新"></a>v2.0版本更新</h2><ul>
+<li>重构PCI信息列表(基于pci.ids)</li>
+<li>新增序列号生成</li>
+<li>新增OpenCore版本一览(ChangeLog以及配置模板)</li>
+<li>新增文件差异对比</li>
+</ul>
+<h1 id="2020-06-05更新"><a href="#2020-06-05更新" class="headerlink" title="2020-06-05更新"></a>2020-06-05更新</h1><h2 id="v2-1版本更新"><a href="#v2-1版本更新" class="headerlink" title="v2.1版本更新"></a>v2.1版本更新</h2><ul>
+<li>适配最新OpenCore编译</li>
+<li>添加Z490 ELITE EFI</li>
+<li>更新pci.ids</li>
+</ul>
+<h1 id="2020-09-07更新"><a href="#2020-09-07更新" class="headerlink" title="2020-09-07更新"></a>2020-09-07更新</h1><h2 id="v3-0版本更新"><a href="#v3-0版本更新" class="headerlink" title="v3.0版本更新"></a>v3.0版本更新</h2><ul>
+<li>支持 AMD CPUs</li>
+<li>优化编译流程，修复找不到 xcodebuild 导致编译失败</li>
+<li>修复 EFI 分区挂载在某些情况下显示错误</li>
+<li>编译模块以及EFI获取模块新增log路径存储</li>
+<li>编译模块新增环境详细校验</li>
+<li>更换锁屏壁纸模块改用拖拽方案</li>
+<li>镜像下载模块重构，显示下载进度，增强容错</li>
+<li>文件对比模块重构(需要安装xcode)</li>
+<li>新增Kexts下载模块</li>
+<li>新增每日构建下载模块(利用azure pipeline每8小时自动编译Hackintosh全家桶)</li>
+<li>新增快照检测</li>
+<li>显卡优化更改为kext方案</li>
+<li>Big Sur下禁用AppleIntelInfo功能</li>
+<li>Kexts下载模块重构，新增进度显示</li>
+<li>PCI信息模块新增应用内更新pci.ids数据库</li>
+<li>序列号生成模块新增应用内更新SMBIOS数据库</li>
+</ul>
+<h1 id="2020-10-18更新"><a href="#2020-10-18更新" class="headerlink" title="2020-10-18更新"></a>2020-10-18更新</h1><h2 id="v3-1版本更新"><a href="#v3-1版本更新" class="headerlink" title="v3.1版本更新"></a>v3.1版本更新</h2><ul>
+<li>适配MacKernelSDK，修复编译功能以及每日构建功能</li>
+<li>编译模块新增VoodooI2C、VoodooPS2以及RTL8125</li>
+</ul>
+<h1 id="2020-11-11更新"><a href="#2020-11-11更新" class="headerlink" title="2020-11-11更新"></a>2020-11-11更新</h1><h2 id="v3-2版本更新"><a href="#v3-2版本更新" class="headerlink" title="v3.2版本更新"></a>v3.2版本更新</h2><ul>
+<li>适配macOS Big Sur RC2镜像下载</li>
+</ul>
+<h1 id="2020-11-22更新"><a href="#2020-11-22更新" class="headerlink" title="2020-11-22更新"></a>2020-11-22更新</h1><h2 id="v3-3版本更新"><a href="#v3-3版本更新" class="headerlink" title="v3.3版本更新"></a>v3.3版本更新</h2><ul>
+<li>适配macOS Big Sur 11.1 beta镜像下载</li>
+<li>更换图标(感谢群友Cotton绘制图标)</li>
+</ul>
+<h1 id="2020-12-25更新"><a href="#2020-12-25更新" class="headerlink" title="2020-12-25更新"></a>2020-12-25更新</h1><h2 id="v4-0版本更新"><a href="#v4-0版本更新" class="headerlink" title="v4.0版本更新"></a>v4.0版本更新</h2><ul>
+<li>适配Apple Silicon Macs</li>
+<li>新增”本机app适配Apple Silicon情况”模块</li>
+<li>按照硬件架构区分可用功能</li>
+<li>UI适配Big Sur风格</li>
 </ul>
 ]]></content>
       <categories>
@@ -304,142 +388,16 @@
       </tags>
   </entry>
   <entry>
-    <title>博主的Hackintosh Bootloader以及kexts编译程序GUI(Swift5)版本发布</title>
-    <url>/2020/01/16/Hackintosh_Build_Swift.html</url>
+    <title>博主的Hackintosh Bootloader以及kexts编译脚本分享</title>
+    <url>/2019/12/21/Hackintosh_Build.html</url>
     <content><![CDATA[<blockquote>
-<p>之前博主开发的HackintoshBuild.sh脚本使用过程有些繁琐，故使用swift5重新开发GUI版本，部分代码(GUI)参考Pavo-IM大佬的ocbuilder项目，感谢Pavo-IM大佬。本项目可以看作HackintoshBuild.sh的进化版本。<a id="more"></a></p>
+<p>鉴于很多小伙伴问我如何编译Hackintosh Bootloader以及kexts，今奉上博主的编译脚本。<a id="more"></a></p>
 </blockquote>
-<h1 id="开源地址"><a href="#开源地址" class="headerlink" title="开源地址"></a>开源地址</h1><p><a href="https://github.com/bugprogrammer/HackintoshBuild">https://github.com/bugprogrammer/HackintoshBuild</a></p>
-<h1 id="使用前提"><a href="#使用前提" class="headerlink" title="使用前提"></a>使用前提</h1><ul>
-<li>安装Xcode</li>
-<li>安装命令行工具<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
-<h1 id="使用截图"><a href="#使用截图" class="headerlink" title="使用截图"></a>使用截图</h1><img src= "/images/loading.gif" data-lazy-src="/images/buildswift-1.png"></li>
-</ul>
-<h1 id="目前功能"><a href="#目前功能" class="headerlink" title="目前功能"></a>目前功能</h1><h2 id="v1-0"><a href="#v1-0" class="headerlink" title="v1.0"></a>v1.0</h2><ul>
-<li>基础编译功能</li>
-<li>选择存储路径</li>
-</ul>
-<h1 id="后续打算"><a href="#后续打算" class="headerlink" title="后续打算"></a>后续打算</h1><ul>
-<li>发展成为Hackintosh综合工具</li>
-</ul>
-<h1 id="未来版本目前预计功能"><a href="#未来版本目前预计功能" class="headerlink" title="未来版本目前预计功能"></a>未来版本目前预计功能</h1><ul>
-<li>GUI一键获取博主维护的Hackintosh EFI仓库</li>
-<li>支持版本自动更新</li>
-<li>支持过时设备驱动一键安装(比如HD3000,感谢@黑果小兵提供HD3000驱动方案)</li>
-<li>支持DW1820A一键驱动(感谢@黑果小兵提供dw1820a驱动方法以及脚本)</li>
-<li>一键导入@xjn的显卡优化数据(感谢@xjn提供优化数据)</li>
-<li>一键解锁10.15 read-only以及重建缓存</li>
-</ul>
-<h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><ul>
-<li>本项目完全开源并且唯一托管平台为GitHub</li>
-<li>博主很忙，更新不快，谢绝催更，感谢！！！</li>
-<li>新功能需求请在评论区留言</li>
-</ul>
-<h1 id="2020-01-21更新"><a href="#2020-01-21更新" class="headerlink" title="2020-01-21更新"></a>2020-01-21更新</h1><h2 id="v1-1版本更新"><a href="#v1-1版本更新" class="headerlink" title="v1.1版本更新"></a>v1.1版本更新</h2><h3 id="此版本由Bugprogrammer以及Arabaku合作完成"><a href="#此版本由Bugprogrammer以及Arabaku合作完成" class="headerlink" title="此版本由Bugprogrammer以及Arabaku合作完成"></a>此版本由Bugprogrammer以及Arabaku合作完成</h3><ul>
-<li>最低支持macOS版本为10.13</li>
-<li>新增窗口管理</li>
-<li>新增检查更新</li>
-<li>新增HTTP代理设置</li>
-<li>新增保存上次存储路径</li>
-<li>新增bugprogrammer维护的常见机型EFI列表获取</li>
-<li>新增解锁10.15.x read-only</li>
-<li>新增重建缓存功能</li>
-<li>新增开启未知来源安装软件</li>
-</ul>
-<h1 id="2020-02-04更新"><a href="#2020-02-04更新" class="headerlink" title="2020-02-04更新"></a>2020-02-04更新</h1><h2 id="v1-2版本更新"><a href="#v1-2版本更新" class="headerlink" title="v1.2版本更新"></a>v1.2版本更新</h2><h3 id="感谢Arabaku-群友某莔-帮助解决部分bug"><a href="#感谢Arabaku-群友某莔-帮助解决部分bug" class="headerlink" title="感谢Arabaku(群友某莔)帮助解决部分bug"></a>感谢Arabaku(群友某莔)帮助解决部分bug</h3><ul>
-<li>新增EFI分区挂载功能并显示当前引导分区</li>
-<li>新增NVRAM信息读取功能</li>
-<li>新增更换登录壁纸功能(可用来解决系统更新后，自定义桌面壁纸和登录壁纸不同步问题)</li>
-</ul>
-<h1 id="2020-02-08更新"><a href="#2020-02-08更新" class="headerlink" title="2020-02-08更新"></a>2020-02-08更新</h1><h2 id="v1-3版本更新"><a href="#v1-3版本更新" class="headerlink" title="v1.3版本更新"></a>v1.3版本更新</h2><h3 id="感谢Arabaku的付出帮助"><a href="#感谢Arabaku的付出帮助" class="headerlink" title="感谢Arabaku的付出帮助"></a>感谢Arabaku的付出帮助</h3><ul>
-<li>登录壁纸替换适配10.15.4 beta版本</li>
-<li>新增http代理记忆</li>
-<li>新增时光机器满速运行以及还原默认功能</li>
-</ul>
-<h1 id="2020-02-18更新"><a href="#2020-02-18更新" class="headerlink" title="2020-02-18更新"></a>2020-02-18更新</h1><h2 id="v1-4版本更新"><a href="#v1-4版本更新" class="headerlink" title="v1.4版本更新"></a>v1.4版本更新</h2><ul>
-<li>编译模块以及EFI获取模块新增日志存储</li>
-<li>EFI分区挂载模块新增磁盘名称显示以及刷新分区列表</li>
-<li>nvram读取模块新增刷新keys</li>
-<li>新增系统详情功能,获取kexts,aml,efi文件情况,读取详细信息,获取本地Clover,OC版本号</li>
-<li>新增白苹果ioreg信息读取</li>
-<li>1.4版本起，支持自动检测更新</li>
-<li>UI适配(感谢Arabaku)</li>
-<li>新增捐赠模块(全凭自愿)</li>
-</ul>
-<h1 id="2020-02-24更新"><a href="#2020-02-24更新" class="headerlink" title="2020-02-24更新"></a>2020-02-24更新</h1><h2 id="v1-5版本更新"><a href="#v1-5版本更新" class="headerlink" title="v1.5版本更新"></a>v1.5版本更新</h2><ul>
-<li>UI继续优化，禁用全屏模式以及缩放</li>
-<li>bug清理</li>
-</ul>
-<h1 id="2020-03-20更新"><a href="#2020-03-20更新" class="headerlink" title="2020-03-20更新"></a>2020-03-20更新</h1><h2 id="v1-6版本更新"><a href="#v1-6版本更新" class="headerlink" title="v1.6版本更新"></a>v1.6版本更新</h2><h3 id="编译模块"><a href="#编译模块" class="headerlink" title="编译模块"></a>编译模块</h3><blockquote>
-<p>新增全选，新增初始环境判断，增强兼容性，修复低版本Xcode无法编译</p>
-</blockquote>
-<h3 id="EFI获取模块"><a href="#EFI获取模块" class="headerlink" title="EFI获取模块"></a>EFI获取模块</h3><blockquote>
-<p>新增全选</p>
-</blockquote>
-<h3 id="EFI挂载"><a href="#EFI挂载" class="headerlink" title="EFI挂载"></a>EFI挂载</h3><blockquote>
-<p>全功能重构，新增Clover环境下，判断当前引导分区</p>
-</blockquote>
-<h3 id="新增关于本机，获取本机信息"><a href="#新增关于本机，获取本机信息" class="headerlink" title="新增关于本机，获取本机信息"></a>新增关于本机，获取本机信息</h3><h3 id="新增Kexts下载"><a href="#新增Kexts下载" class="headerlink" title="新增Kexts下载"></a>新增Kexts下载</h3><h3 id="新增路径空格以及写权限判断"><a href="#新增路径空格以及写权限判断" class="headerlink" title="新增路径空格以及写权限判断"></a>新增路径空格以及写权限判断</h3><h3 id="修复部分Clover用户闪退"><a href="#修复部分Clover用户闪退" class="headerlink" title="修复部分Clover用户闪退"></a>修复部分Clover用户闪退</h3><p>注意：App一定要安装在应用程序文件夹</p>
-<h1 id="2020-03-27更新"><a href="#2020-03-27更新" class="headerlink" title="2020-03-27更新"></a>2020-03-27更新</h1><h2 id="v1-7版本更新"><a href="#v1-7版本更新" class="headerlink" title="v1.7版本更新"></a>v1.7版本更新</h2><ul>
-<li>修复nvram模块随机闪退</li>
-<li>nvram模块重构，新增values高亮格式化</li>
-<li>适配系统亮色/暗色切换(无需退出软件)</li>
-</ul>
-<h1 id="2020-04-11更新"><a href="#2020-04-11更新" class="headerlink" title="2020-04-11更新"></a>2020-04-11更新</h1><h2 id="v1-8版本更新"><a href="#v1-8版本更新" class="headerlink" title="v1.8版本更新"></a>v1.8版本更新</h2><ul>
-<li>适配最新OC编译</li>
-<li>提升nvram xml格式兼容性</li>
-<li>新增PCI设备信息</li>
-<li>新增显卡性能优化(感谢xjn提供数据)</li>
-</ul>
-<h1 id="2020-04-20更新"><a href="#2020-04-20更新" class="headerlink" title="2020-04-20更新"></a>2020-04-20更新</h1><h2 id="v1-9版本更新"><a href="#v1-9版本更新" class="headerlink" title="v1.9版本更新"></a>v1.9版本更新</h2><ul>
-<li>更新mtoc版本以适配最新OpenCore</li>
-<li>新增镜像下载模块(官方服务器)</li>
-</ul>
-<h1 id="2020-05-15更新"><a href="#2020-05-15更新" class="headerlink" title="2020-05-15更新"></a>2020-05-15更新</h1><h2 id="v2-0版本更新"><a href="#v2-0版本更新" class="headerlink" title="v2.0版本更新"></a>v2.0版本更新</h2><ul>
-<li>重构PCI信息列表(基于pci.ids)</li>
-<li>新增序列号生成</li>
-<li>新增OpenCore版本一览(ChangeLog以及配置模板)</li>
-<li>新增文件差异对比</li>
-</ul>
-<h1 id="2020-06-05更新"><a href="#2020-06-05更新" class="headerlink" title="2020-06-05更新"></a>2020-06-05更新</h1><h2 id="v2-1版本更新"><a href="#v2-1版本更新" class="headerlink" title="v2.1版本更新"></a>v2.1版本更新</h2><ul>
-<li>适配最新OpenCore编译</li>
-<li>添加Z490 ELITE EFI</li>
-<li>更新pci.ids</li>
-</ul>
-<h1 id="2020-09-07更新"><a href="#2020-09-07更新" class="headerlink" title="2020-09-07更新"></a>2020-09-07更新</h1><h2 id="v3-0版本更新"><a href="#v3-0版本更新" class="headerlink" title="v3.0版本更新"></a>v3.0版本更新</h2><ul>
-<li>支持 AMD CPUs</li>
-<li>优化编译流程，修复找不到 xcodebuild 导致编译失败</li>
-<li>修复 EFI 分区挂载在某些情况下显示错误</li>
-<li>编译模块以及EFI获取模块新增log路径存储</li>
-<li>编译模块新增环境详细校验</li>
-<li>更换锁屏壁纸模块改用拖拽方案</li>
-<li>镜像下载模块重构，显示下载进度，增强容错</li>
-<li>文件对比模块重构(需要安装xcode)</li>
-<li>新增Kexts下载模块</li>
-<li>新增每日构建下载模块(利用azure pipeline每8小时自动编译Hackintosh全家桶)</li>
-<li>新增快照检测</li>
-<li>显卡优化更改为kext方案</li>
-<li>Big Sur下禁用AppleIntelInfo功能</li>
-<li>Kexts下载模块重构，新增进度显示</li>
-<li>PCI信息模块新增应用内更新pci.ids数据库</li>
-<li>序列号生成模块新增应用内更新SMBIOS数据库</li>
-</ul>
-<h1 id="2020-10-18更新"><a href="#2020-10-18更新" class="headerlink" title="2020-10-18更新"></a>2020-10-18更新</h1><h2 id="v3-1版本更新"><a href="#v3-1版本更新" class="headerlink" title="v3.1版本更新"></a>v3.1版本更新</h2><ul>
-<li>适配MacKernelSDK，修复编译功能以及每日构建功能</li>
-<li>编译模块新增VoodooI2C、VoodooPS2以及RTL8125</li>
-</ul>
-<h1 id="2020-11-11更新"><a href="#2020-11-11更新" class="headerlink" title="2020-11-11更新"></a>2020-11-11更新</h1><h2 id="v3-2版本更新"><a href="#v3-2版本更新" class="headerlink" title="v3.2版本更新"></a>v3.2版本更新</h2><ul>
-<li>适配macOS Big Sur RC2镜像下载</li>
-</ul>
-<h1 id="2020-11-22更新"><a href="#2020-11-22更新" class="headerlink" title="2020-11-22更新"></a>2020-11-22更新</h1><h2 id="v3-3版本更新"><a href="#v3-3版本更新" class="headerlink" title="v3.3版本更新"></a>v3.3版本更新</h2><ul>
-<li>适配macOS Big Sur 11.1 beta镜像下载</li>
-<li>更换图标(感谢群友Cotton绘制图标)</li>
-</ul>
-<h1 id="2020-12-25更新"><a href="#2020-12-25更新" class="headerlink" title="2020-12-25更新"></a>2020-12-25更新</h1><h2 id="v4-0版本更新"><a href="#v4-0版本更新" class="headerlink" title="v4.0版本更新"></a>v4.0版本更新</h2><ul>
-<li>适配Apple Silicon Macs</li>
-<li>新增”本机app适配Apple Silicon情况”模块</li>
-<li>按照硬件架构区分可用功能</li>
-<li>UI适配Big Sur风格</li>
+<h1 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h1><h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul>
+<li>App Store安装Xcode11</li>
+<li>输入以下命令并按提示安装命令行工具<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
+<h2 id="脚本使用"><a href="#脚本使用" class="headerlink" title="脚本使用"></a>脚本使用</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/Hackintosh_build.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<h1 id="使用截图"><a href="#使用截图" class="headerlink" title="使用截图"></a>使用截图</h1><img src= "/images/loading.gif" data-lazy-src="/images/build-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/build-2.png"></li>
 </ul>
 ]]></content>
       <categories>
@@ -518,6 +476,48 @@
       <tags>
         <tag>Linux_Kernel</tag>
         <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于macOS Big Sur Hackintosh简要说明</title>
+    <url>/2020/07/09/about-BigSur.html</url>
+    <content><![CDATA[<blockquote>
+<p>博主很忙，昨晚才详细测试macOS Big Sur Hackintosh相关情况(全新直接安装)，本文会一直更新到正式版本发布。<a id="more"></a></p>
+</blockquote>
+<h1 id="OpenCore配置"><a href="#OpenCore配置" class="headerlink" title="OpenCore配置"></a>OpenCore配置</h1><blockquote>
+<p>在这里，博主只讲解和Catalina不同的地方</p>
+</blockquote>
+<ul>
+<li>OpenCore以及Lilu及其插件更新到最新版本(源码编译)，请自行编译(每个人需要的kext不同，博主提供无意义)。可以使用以下工具编译<br><a href="https://github.com/bugprogrammer/HackintoshBuild/releases/tag/2.1">https://github.com/bugprogrammer/HackintoshBuild/releases/tag/2.1</a></li>
+<li>boot-args加入vsmcgen=1参数<br><img src= "/images/loading.gif" data-lazy-src="/images/bigsur-1.png"></li>
+<li>csr-active-config设置为E70B0000<br><img src= "/images/loading.gif" data-lazy-src="/images/bigsur-2.png"></li>
+<li>booter-fileset-basesystem以及booter-fileset-kernel相关项目全部删除</li>
+<li>禁用核显或者id设置0x12345678</li>
+</ul>
+<blockquote>
+<p>至此,您已经可以愉快的安装Big Sur，但是安装完成后Recovery无法进入，博主暂未解决。。。</p>
+</blockquote>
+<h1 id="删除快照，重获权限"><a href="#删除快照，重获权限" class="headerlink" title="删除快照，重获权限"></a>删除快照，重获权限</h1><p>博主按照pcbeta网友licheng的思路编写了一个脚本，可以很简单的删除快照，请在USB安装环境中的终端执行。中途要输入分区名(如Macintosh HD)和挂载点(如disk0s2)<br><a href="https://downloads.bugprogrammer.me/shell/deletesnapshot.sh">deletesnapshot.sh</a><br><img src= "/images/loading.gif" data-lazy-src="/images/bigsur-3.png"></p>
+<h1 id="未完待续。。。"><a href="#未完待续。。。" class="headerlink" title="未完待续。。。"></a>未完待续。。。</h1><h1 id="2020-07-09更新"><a href="#2020-07-09更新" class="headerlink" title="2020-07-09更新"></a>2020-07-09更新</h1><h2 id="Recovery进入"><a href="#Recovery进入" class="headerlink" title="Recovery进入"></a>Recovery进入</h2><ul>
+<li>关闭核显或设置id为0x12345678</li>
+<li>按照如图设置即可<br><img src= "/images/loading.gif" data-lazy-src="/images/bigsur-4.png"></li>
+</ul>
+<h1 id="2020-07-18更新"><a href="#2020-07-18更新" class="headerlink" title="2020-07-18更新"></a>2020-07-18更新</h1><h2 id="所有网卡罢工修复-免驱94360CD和RTL8125"><a href="#所有网卡罢工修复-免驱94360CD和RTL8125" class="headerlink" title="所有网卡罢工修复(免驱94360CD和RTL8125)"></a>所有网卡罢工修复(免驱94360CD和RTL8125)</h2><ul>
+<li>按照如图设置即可<br><img src= "/images/loading.gif" data-lazy-src="/images/bigsur-5.png"></li>
+</ul>
+<h1 id="2020-08-10更新"><a href="#2020-08-10更新" class="headerlink" title="2020-08-10更新"></a>2020-08-10更新</h1><h2 id="关闭快照在线执行方案"><a href="#关闭快照在线执行方案" class="headerlink" title="关闭快照在线执行方案"></a>关闭快照在线执行方案</h2><ul>
+<li>recovery中连接网络</li>
+<li>执行如下命令<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://downloads.bugprogrammer.me/shell/deletesnapshot.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -711,6 +711,40 @@
       </tags>
   </entry>
   <entry>
+    <title>关于DRM视频播放以及sidecar和DRM共存的解决方案</title>
+    <url>/2019/12/11/about-DRM.html</url>
+    <content><![CDATA[<blockquote>
+<p>macOS Catalina 10.15发布后，不少小伙伴发现DRM视频播放出现bug。表现为Apple TV+无法播放，Netflix无法用Safari浏览器播放(macOS下只有Safari可以播放Netflix 1080P)。博主研究测试，得以<font color=#A52A2A >部分</font>解决。现发布播放DRM视频以及sidecar和DRM共存的解决方案。<a id="more"></a></p>
+</blockquote>
+<h1 id="目前支持Hackintosh-DRM的独显-核显DRM不可用"><a href="#目前支持Hackintosh-DRM的独显-核显DRM不可用" class="headerlink" title="目前支持Hackintosh DRM的独显(核显DRM不可用)"></a>目前支持Hackintosh DRM的独显(核显DRM不可用)</h1><p>Vega 56、Vega 64、VII、RX 5700、RX 5700 XT。可以使用完整DRM(Apple TV+/Safari Netflix/Amazon Prime)。RX5xx可以使用Apple TV+，Safari Netflix以及Amazon Prime不可用。<font color=#A52A2A >本文前提是使用以上显卡的任意一款</font></p>
+<h1 id="播放DRM视频的解决方案"><a href="#播放DRM视频的解决方案" class="headerlink" title="播放DRM视频的解决方案"></a>播放DRM视频的解决方案</h1><h2 id="无核显用户"><a href="#无核显用户" class="headerlink" title="无核显用户"></a>无核显用户</h2><p>无核显用户只需要把smbios设置为iMac Pro 1,1即可。</p>
+<h2 id="有核显用户"><a href="#有核显用户" class="headerlink" title="有核显用户"></a>有核显用户</h2><ul>
+<li>Lilu使用v1.4.1版本(<a href="https://github.com/acidanthera/Lilu)%EF%BC%8C">https://github.com/acidanthera/Lilu)，</a> 目前需要手动编译。</li>
+<li>Whatevergreen使用v1.3.6版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)，目前需要手动编译。</li>
+<li>boot-args加入shikigva=80。</li>
+<li>重启。</li>
+</ul>
+<h1 id="sidecar和DRM共存的解决方案"><a href="#sidecar和DRM共存的解决方案" class="headerlink" title="sidecar和DRM共存的解决方案"></a>sidecar和DRM共存的解决方案</h1><blockquote>
+<p>前提：intel酷睿 6、7、8、9代带有核显的CPU+目前支持Hackintosh DRM的独显(上文有写)。本文以<font color=#A52A2A >9900K+5700XT</font>为例。</p>
+</blockquote>
+<ul>
+<li>BIOS开启核显并设置DVMT为128M，主显卡为独显。</li>
+<li>SMBIOS设置为iMac 19,1。</li>
+<li>注入如下缓冲帧信息。<br>  <img src= "/images/loading.gif" data-lazy-src="/images/DRM-1.png"></li>
+<li>Lilu使用v1.4.1版本(<a href="https://github.com/acidanthera/Lilu)%EF%BC%8C%E7%9B%AE%E5%89%8D%E9%9C%80%E8%A6%81%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91%E3%80%82">https://github.com/acidanthera/Lilu)，目前需要手动编译。</a></li>
+<li>Whatevergreen使用v1.3.6版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)，目前需要手动编译。</li>
+<li>boot-args加入shikigva=80。</li>
+<li>重启。</li>
+</ul>
+<h1 id="至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。"><a href="#至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。" class="headerlink" title="至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。"></a><font color=#A52A2A >至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。</font></h1>]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于macOS 10.14.4 18E2034镜像的说明</title>
     <url>/2019/03/27/about-macos-10.14.4-18E2034.html</url>
     <content><![CDATA[<blockquote>
@@ -743,37 +777,29 @@
       </tags>
   </entry>
   <entry>
-    <title>关于DRM视频播放以及sidecar和DRM共存的解决方案</title>
-    <url>/2019/12/11/about-DRM.html</url>
+    <title>macOS Catalina 10.15关于sidecar功能的说明</title>
+    <url>/2019/06/13/about-sidecar.html</url>
     <content><![CDATA[<blockquote>
-<p>macOS Catalina 10.15发布后，不少小伙伴发现DRM视频播放出现bug。表现为Apple TV+无法播放，Netflix无法用Safari浏览器播放(macOS下只有Safari可以播放Netflix 1080P)。博主研究测试，得以<font color=#A52A2A >部分</font>解决。现发布播放DRM视频以及sidecar和DRM共存的解决方案。<a id="more"></a></p>
+<p>macOS 10.15的一个重磅功能是sidecar。就是用iPad作为mac的扩展屏，博主测试了一下，挺好用的。但是在Hackintosh下，并不是随意就能启用sidecar。以下附上博主的启用sidecar教程。<a id="more"></a></p>
 </blockquote>
-<h1 id="目前支持Hackintosh-DRM的独显-核显DRM不可用"><a href="#目前支持Hackintosh-DRM的独显-核显DRM不可用" class="headerlink" title="目前支持Hackintosh DRM的独显(核显DRM不可用)"></a>目前支持Hackintosh DRM的独显(核显DRM不可用)</h1><p>Vega 56、Vega 64、VII、RX 5700、RX 5700 XT。可以使用完整DRM(Apple TV+/Safari Netflix/Amazon Prime)。RX5xx可以使用Apple TV+，Safari Netflix以及Amazon Prime不可用。<font color=#A52A2A >本文前提是使用以上显卡的任意一款</font></p>
-<h1 id="播放DRM视频的解决方案"><a href="#播放DRM视频的解决方案" class="headerlink" title="播放DRM视频的解决方案"></a>播放DRM视频的解决方案</h1><h2 id="无核显用户"><a href="#无核显用户" class="headerlink" title="无核显用户"></a>无核显用户</h2><p>无核显用户只需要把smbios设置为iMac Pro 1,1即可。</p>
-<h2 id="有核显用户"><a href="#有核显用户" class="headerlink" title="有核显用户"></a>有核显用户</h2><ul>
-<li>Lilu使用v1.4.1版本(<a href="https://github.com/acidanthera/Lilu)%EF%BC%8C">https://github.com/acidanthera/Lilu)，</a> 目前需要手动编译。</li>
-<li>Whatevergreen使用v1.3.6版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)，目前需要手动编译。</li>
-<li>boot-args加入shikigva=80。</li>
-<li>重启。</li>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>目前无核显PC尚未遇到成功案例，可能是黑苹果的bug，也可能是macOS 10.15 beta1的bug。</p>
+<h2 id="博主PC配置"><a href="#博主PC配置" class="headerlink" title="博主PC配置"></a>博主PC配置</h2><p>Z390+9900K+Vega56</p>
+<h2 id="启用sidecar教程"><a href="#启用sidecar教程" class="headerlink" title="启用sidecar教程"></a>启用sidecar教程</h2><ul>
+<li>BIOS中设置主显卡为独显(PCIE)并且设置DVMT为128M，以便独显、核显并存。</li>
+<li>修改SMBIOS为iMac 19,1。<br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-1.png"></li>
+<li>勾选Inject intel。</li>
+<li>设置FakeID-&gt;IntelGFX为0x3e988086，ig-platform-id为0x3e980003(核显作为加速卡)。也可以设置FakeID-&gt;IntelGFX为0x3e928086，ig-platform-id为0x3e920003，博主测试均通过。<br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-3.png"></li>
+<li>重启电脑测试sidecar。</li>
 </ul>
-<h1 id="sidecar和DRM共存的解决方案"><a href="#sidecar和DRM共存的解决方案" class="headerlink" title="sidecar和DRM共存的解决方案"></a>sidecar和DRM共存的解决方案</h1><blockquote>
-<p>前提：intel酷睿 6、7、8、9代带有核显的CPU+目前支持Hackintosh DRM的独显(上文有写)。本文以<font color=#A52A2A >9900K+5700XT</font>为例。</p>
-</blockquote>
-<ul>
-<li>BIOS开启核显并设置DVMT为128M，主显卡为独显。</li>
-<li>SMBIOS设置为iMac 19,1。</li>
-<li>注入如下缓冲帧信息。<br>  <img src= "/images/loading.gif" data-lazy-src="/images/DRM-1.png"></li>
-<li>Lilu使用v1.4.1版本(<a href="https://github.com/acidanthera/Lilu)%EF%BC%8C%E7%9B%AE%E5%89%8D%E9%9C%80%E8%A6%81%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91%E3%80%82">https://github.com/acidanthera/Lilu)，目前需要手动编译。</a></li>
-<li>Whatevergreen使用v1.3.6版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)，目前需要手动编译。</li>
-<li>boot-args加入shikigva=80。</li>
-<li>重启。</li>
-</ul>
-<h1 id="至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。"><a href="#至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。" class="headerlink" title="至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。"></a><font color=#A52A2A >至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。</font></h1>]]></content>
+<h2 id="至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。"><a href="#至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。" class="headerlink" title="至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。"></a>至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-4.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-5.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-6.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-7.png"></p>
+]]></content>
       <categories>
         <category>Hackintosh</category>
       </categories>
       <tags>
         <tag>Hackintosh</tag>
+        <tag>macOS Catalina 10.15</tag>
+        <tag>sidecar</tag>
       </tags>
   </entry>
   <entry>
@@ -845,32 +871,6 @@
       <tags>
         <tag>Hackintosh</tag>
         <tag>RX5700</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>macOS Catalina 10.15关于sidecar功能的说明</title>
-    <url>/2019/06/13/about-sidecar.html</url>
-    <content><![CDATA[<blockquote>
-<p>macOS 10.15的一个重磅功能是sidecar。就是用iPad作为mac的扩展屏，博主测试了一下，挺好用的。但是在Hackintosh下，并不是随意就能启用sidecar。以下附上博主的启用sidecar教程。<a id="more"></a></p>
-</blockquote>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>目前无核显PC尚未遇到成功案例，可能是黑苹果的bug，也可能是macOS 10.15 beta1的bug。</p>
-<h2 id="博主PC配置"><a href="#博主PC配置" class="headerlink" title="博主PC配置"></a>博主PC配置</h2><p>Z390+9900K+Vega56</p>
-<h2 id="启用sidecar教程"><a href="#启用sidecar教程" class="headerlink" title="启用sidecar教程"></a>启用sidecar教程</h2><ul>
-<li>BIOS中设置主显卡为独显(PCIE)并且设置DVMT为128M，以便独显、核显并存。</li>
-<li>修改SMBIOS为iMac 19,1。<br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-1.png"></li>
-<li>勾选Inject intel。</li>
-<li>设置FakeID-&gt;IntelGFX为0x3e988086，ig-platform-id为0x3e980003(核显作为加速卡)。也可以设置FakeID-&gt;IntelGFX为0x3e928086，ig-platform-id为0x3e920003，博主测试均通过。<br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-3.png"></li>
-<li>重启电脑测试sidecar。</li>
-</ul>
-<h2 id="至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。"><a href="#至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。" class="headerlink" title="至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。"></a>至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-4.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-5.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-6.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-7.png"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>macOS Catalina 10.15</tag>
-        <tag>sidecar</tag>
       </tags>
   </entry>
   <entry>
@@ -1016,6 +1016,48 @@
       </tags>
   </entry>
   <entry>
+    <title>博主魔改版Whatevergreen解析，还你正常核显频率(1.2g)</title>
+    <url>/2019/10/03/fix-igpu-with-weg.html</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这篇文章是给台式机用户看的，高度依赖Whatevergreen缓冲帧补丁的小伙伴请绕行。<a id="more"></a></p>
+<h1 id="事件起因"><a href="#事件起因" class="headerlink" title="事件起因"></a>事件起因</h1><p>前几天细心的群友发现了一个bug，在加入Whatevergreen的情况下，核显频率会稳定在0.5g左右，远低于正常值1.2g，经排查，发现是Whatevergreen导致的问题。</p>
+<h1 id="为什么不选择删除Whatevergreen"><a href="#为什么不选择删除Whatevergreen" class="headerlink" title="为什么不选择删除Whatevergreen"></a>为什么不选择删除Whatevergreen</h1><p>博主已经测试过删掉Whatevergreen的情况，并不完美，体现如下。</p>
+<ul>
+<li><p>AGDP patch时灵时不灵<br>博主测试了加入AGDP patch解决dp花屏的方案，时灵时不灵，在系统更新，安装器，recovery等环境下100%失效，OpenCore以及Clover都已经实测，时灵时不灵。</p>
+</li>
+<li><p>核显型号名称要手动注入<br>Whatevergreen内置型号识别功能，id和型号对应，比如3E980003-&gt;Intel UHD Graphics 630。所以删掉Whatevergreen会导致核显型号显示错误，要手动注入Device-&gt;model属性。</p>
+</li>
+<li><p>重命名补丁要手动添加<br>Whatevergreen内置change GFX0 to IGPU,change PEGP to GFX0,change HECI to IMEI,change MEI to IMEI等补丁，去掉后这些要手动添加。</p>
+</li>
+</ul>
+<h1 id="博主修改的Whatevergreen改了哪些内容"><a href="#博主修改的Whatevergreen改了哪些内容" class="headerlink" title="博主修改的Whatevergreen改了哪些内容"></a>博主修改的Whatevergreen改了哪些内容</h1><ul>
+<li>删除igfx(核显)相关补丁。</li>
+<li>删除Nvidia相关补丁。</li>
+<li>删除Shiki相关功能。</li>
+<li>保留AGDP补丁。</li>
+<li>保留基础重命名补丁。</li>
+<li>保留型号对应识别功能。</li>
+<li>保留紫线移除补丁。</li>
+</ul>
+<h1 id="如何使用博主修改的Whatevergreen"><a href="#如何使用博主修改的Whatevergreen" class="headerlink" title="如何使用博主修改的Whatevergreen"></a>如何使用博主修改的Whatevergreen</h1><ul>
+<li>Bios主显卡设置成独显，DVMT 128M。</li>
+<li>移除change GFX0 to IGPU,change PEGP to GFX0,change HECI to IMEI,change MEI to IMEI等补丁。</li>
+<li>移除显卡相关的SSDT。</li>
+<li>加入Whatevergreen(Lilu要求1.3.8)。</li>
+</ul>
+<h1 id="修改版Whatevergreen-Github地址如下"><a href="#修改版Whatevergreen-Github地址如下" class="headerlink" title="修改版Whatevergreen Github地址如下"></a>修改版Whatevergreen Github地址如下</h1><p><a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a></p>
+<h1 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h1><p>如图，核显性能测试如下<br><img src= "/images/loading.gif" data-lazy-src="/images/weg.png"></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>macOS Catalina 10.15</tag>
+        <tag>OpenCore</tag>
+        <tag>weg</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>修复OpenCore 0.5.3关于本机不显示内存教程</title>
     <url>/2019/12/04/fix-showmemory.html</url>
     <content><![CDATA[<blockquote>
@@ -1075,72 +1117,6 @@
       </tags>
   </entry>
   <entry>
-    <title>无核显开启sidecar方法</title>
-    <url>/2019/11/24/fix-sidecar-without-igpu.html</url>
-    <content><![CDATA[<blockquote>
-<p>之前<font color=#A52A2A >@fang2018</font>发布了一个相关教程，地址如下:<font color=#A52A2A ><a href="https://fangf.cc/2019/10/14/noneigpusidecar/">https://fangf.cc/2019/10/14/noneigpusidecar/</a></font>, 现在随着Whatevergreen的更新，之前的方法已经不再适用。现在发布新教程。</p>
-</blockquote>
-<a id="more"></a>
-
-<h1 id="无核显开启sidecar教程"><a href="#无核显开启sidecar教程" class="headerlink" title="无核显开启sidecar教程"></a>无核显开启sidecar教程</h1><ul>
-<li>smbios设置成iMac19,1或iMac18,3(绝对不能用iMac Pro 1,1或Mac Pro 7,1)</li>
-<li>Lilu使用v1.3.9版本(<a href="https://github.com/acidanthera/Lilu">https://github.com/acidanthera/Lilu</a>)</li>
-<li>Whatevergreen使用v1.3.5版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)</li>
-<li>boot-args加入shikigva=16</li>
-<li>重启</li>
-</ul>
-<h1 id="至此，您的sidecar功能已经可用。"><a href="#至此，您的sidecar功能已经可用。" class="headerlink" title="至此，您的sidecar功能已经可用。"></a>至此，您的sidecar功能已经可用。</h1>]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>sidecar</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博主魔改版Whatevergreen解析，还你正常核显频率(1.2g)</title>
-    <url>/2019/10/03/fix-igpu-with-weg.html</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这篇文章是给台式机用户看的，高度依赖Whatevergreen缓冲帧补丁的小伙伴请绕行。<a id="more"></a></p>
-<h1 id="事件起因"><a href="#事件起因" class="headerlink" title="事件起因"></a>事件起因</h1><p>前几天细心的群友发现了一个bug，在加入Whatevergreen的情况下，核显频率会稳定在0.5g左右，远低于正常值1.2g，经排查，发现是Whatevergreen导致的问题。</p>
-<h1 id="为什么不选择删除Whatevergreen"><a href="#为什么不选择删除Whatevergreen" class="headerlink" title="为什么不选择删除Whatevergreen"></a>为什么不选择删除Whatevergreen</h1><p>博主已经测试过删掉Whatevergreen的情况，并不完美，体现如下。</p>
-<ul>
-<li><p>AGDP patch时灵时不灵<br>博主测试了加入AGDP patch解决dp花屏的方案，时灵时不灵，在系统更新，安装器，recovery等环境下100%失效，OpenCore以及Clover都已经实测，时灵时不灵。</p>
-</li>
-<li><p>核显型号名称要手动注入<br>Whatevergreen内置型号识别功能，id和型号对应，比如3E980003-&gt;Intel UHD Graphics 630。所以删掉Whatevergreen会导致核显型号显示错误，要手动注入Device-&gt;model属性。</p>
-</li>
-<li><p>重命名补丁要手动添加<br>Whatevergreen内置change GFX0 to IGPU,change PEGP to GFX0,change HECI to IMEI,change MEI to IMEI等补丁，去掉后这些要手动添加。</p>
-</li>
-</ul>
-<h1 id="博主修改的Whatevergreen改了哪些内容"><a href="#博主修改的Whatevergreen改了哪些内容" class="headerlink" title="博主修改的Whatevergreen改了哪些内容"></a>博主修改的Whatevergreen改了哪些内容</h1><ul>
-<li>删除igfx(核显)相关补丁。</li>
-<li>删除Nvidia相关补丁。</li>
-<li>删除Shiki相关功能。</li>
-<li>保留AGDP补丁。</li>
-<li>保留基础重命名补丁。</li>
-<li>保留型号对应识别功能。</li>
-<li>保留紫线移除补丁。</li>
-</ul>
-<h1 id="如何使用博主修改的Whatevergreen"><a href="#如何使用博主修改的Whatevergreen" class="headerlink" title="如何使用博主修改的Whatevergreen"></a>如何使用博主修改的Whatevergreen</h1><ul>
-<li>Bios主显卡设置成独显，DVMT 128M。</li>
-<li>移除change GFX0 to IGPU,change PEGP to GFX0,change HECI to IMEI,change MEI to IMEI等补丁。</li>
-<li>移除显卡相关的SSDT。</li>
-<li>加入Whatevergreen(Lilu要求1.3.8)。</li>
-</ul>
-<h1 id="修改版Whatevergreen-Github地址如下"><a href="#修改版Whatevergreen-Github地址如下" class="headerlink" title="修改版Whatevergreen Github地址如下"></a>修改版Whatevergreen Github地址如下</h1><p><a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a></p>
-<h1 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h1><p>如图，核显性能测试如下<br><img src= "/images/loading.gif" data-lazy-src="/images/weg.png"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>macOS Catalina 10.15</tag>
-        <tag>OpenCore</tag>
-        <tag>weg</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博主github Hackintosh仓库公开以及使用方法</title>
     <url>/2019/05/23/github-hackintosh.html</url>
     <content><![CDATA[<p>为了方便大家安装macOS，博主将测试过的机型的Clover文件整理并发布至github，地址为<strong><a href="https://github.com/bugprogrammer/hackintosh">https://github.com/bugprogrammer/hackintosh</a></strong> <strong><font color=#A52A2A >注意:仓库中所有机型都是博主亲自安装并测试过的机型。</strong></font><a id="more"></a></p>
@@ -1164,6 +1140,30 @@
       </categories>
       <tags>
         <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>无核显开启sidecar方法</title>
+    <url>/2019/11/24/fix-sidecar-without-igpu.html</url>
+    <content><![CDATA[<blockquote>
+<p>之前<font color=#A52A2A >@fang2018</font>发布了一个相关教程，地址如下:<font color=#A52A2A ><a href="https://fangf.cc/2019/10/14/noneigpusidecar/">https://fangf.cc/2019/10/14/noneigpusidecar/</a></font>, 现在随着Whatevergreen的更新，之前的方法已经不再适用。现在发布新教程。</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="无核显开启sidecar教程"><a href="#无核显开启sidecar教程" class="headerlink" title="无核显开启sidecar教程"></a>无核显开启sidecar教程</h1><ul>
+<li>smbios设置成iMac19,1或iMac18,3(绝对不能用iMac Pro 1,1或Mac Pro 7,1)</li>
+<li>Lilu使用v1.3.9版本(<a href="https://github.com/acidanthera/Lilu">https://github.com/acidanthera/Lilu</a>)</li>
+<li>Whatevergreen使用v1.3.5版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)</li>
+<li>boot-args加入shikigva=16</li>
+<li>重启</li>
+</ul>
+<h1 id="至此，您的sidecar功能已经可用。"><a href="#至此，您的sidecar功能已经可用。" class="headerlink" title="至此，您的sidecar功能已经可用。"></a>至此，您的sidecar功能已经可用。</h1>]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>sidecar</tag>
       </tags>
   </entry>
   <entry>
@@ -1205,41 +1205,6 @@
         <tag>Hackintosh</tag>
         <tag>macOS Catalina 10.15</tag>
         <tag>OpenCore</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>美化你的shell,macOS下安装zsh和neofetch教程(Unix/Linux也适用)</title>
-    <url>/2018/05/11/install-zsh.html</url>
-    <content><![CDATA[<p>最近在使用Hackintosh，发现macOS自带的shell并不好用，所以安装了被誉为终极shell的zsh，方法整理如下：<a id="more"></a> </p>
-<h3 id="确认包管理器"><a href="#确认包管理器" class="headerlink" title="确认包管理器"></a>确认包管理器</h3><blockquote>
-<p>unix以及类unix(如Linux及其发行版)下都有对应的包管理器,常见的包管理器如下：macOS下为HomeBrew，Debian/Ubuntu为apt，Fedora为yum或dnf，Centos为yum，Archlinux为pacman等。</p>
-</blockquote>
-<h3 id="macOS安装HomeBrew以及wget-其他系统用户跳过此步骤"><a href="#macOS安装HomeBrew以及wget-其他系统用户跳过此步骤" class="headerlink" title="macOS安装HomeBrew以及wget(其他系统用户跳过此步骤)"></a>macOS安装HomeBrew以及wget(其他系统用户跳过此步骤)</h3><h4 id="HomeBrew"><a href="#HomeBrew" class="headerlink" title="HomeBrew"></a>HomeBrew</h4><p>由于macOS下没有自带HomeBrew，故需要手动安装。首先安装xcode，然后终端运行如下命令即可安装HomeBrew。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ruby -e <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><ul>
-<li>更新：brew update </li>
-<li>安装软件包：brew install “PackegeName” </li>
-<li>搜索软件包：brew search “PackegeName”</li>
-<li>卸载软件包：brew remove “PackegeName” </li>
-</ul>
-<h4 id="wget："><a href="#wget：" class="headerlink" title="wget："></a>wget：</h4><figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>wget</span><br></pre></td></tr></table></figure>
-<h3 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h3><h4 id="macOS："><a href="#macOS：" class="headerlink" title="macOS："></a>macOS：</h4><figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>zsh</span><br></pre></td></tr></table></figure>
-<h4 id="Debian-Ubuntu"><a href="#Debian-Ubuntu" class="headerlink" title="Debian/Ubuntu:"></a>Debian/Ubuntu:</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">apt <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure>
-<h4 id="Fedora"><a href="#Fedora" class="headerlink" title="Fedora:"></a>Fedora:</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">dnf <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure>
-<h4 id="Centos"><a href="#Centos" class="headerlink" title="Centos:"></a>Centos:</h4><figure class="highlight sas"><table><tr><td class="code"><pre><span class="line">yum <span class="meta">update</span> <span class="variable">&amp;&amp;</span> yum install zsh</span><br></pre></td></tr></table></figure>
-<h4 id="Archlinux"><a href="#Archlinux" class="headerlink" title="Archlinux:"></a>Archlinux:</h4><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">pacman -S zsh</span></span><br></pre></td></tr></table></figure>
-<h3 id="将系统默认shell更换为zsh"><a href="#将系统默认shell更换为zsh" class="headerlink" title="将系统默认shell更换为zsh"></a>将系统默认shell更换为zsh</h3><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">chsh -s <span class="regexp">/bin/</span>zsh</span><br></pre></td></tr></table></figure>
-<h3 id="安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。"><a href="#安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。" class="headerlink" title="安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。"></a>安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。</h3><h3 id="配置zsh"><a href="#配置zsh" class="headerlink" title="配置zsh"></a>配置zsh</h3><p>使用oh-my-zsh可以很方便的配置zsh,并生成.zshrc配置文件方便修改 输入以下命令安装oh-my-zsh</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<p>安装成功后输入nano .zshrc打开.zshrc文件添加neofetch,修改ZSH_THEME=”random”，意为每次打开终端即启动neofetch，zsh主题随机，也就是每次打开终端都会改变一个主题，修改如图： <img src= "/images/loading.gif" data-lazy-src="/images/c7fd2a6d2692642c94a9a78c42f04ee4ef71b410.jpg"> 重启电脑就会看到效果。</p>
-<h3 id="用描述文件美化终端-不同系统，不同桌面环境会有所不同-需要自己摸索了，下面以macOS为例"><a href="#用描述文件美化终端-不同系统，不同桌面环境会有所不同-需要自己摸索了，下面以macOS为例" class="headerlink" title="用描述文件美化终端(不同系统，不同桌面环境会有所不同,需要自己摸索了，下面以macOS为例)"></a>用描述文件美化终端(不同系统，不同桌面环境会有所不同,需要自己摸索了，下面以macOS为例)</h3><p>打开终端，点击右键打开显示检查器，选择一个样式双击打开描述文件，按自己的喜好设置文字风格，样式，透明度，模糊程度，窗口大小等，成品图如下： <img src= "/images/loading.gif" data-lazy-src="/images/e7005ea1415345c95c83b5c0f1cbd21b124c8245.jpg"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>shell</tag>
-        <tag>zsh</tag>
       </tags>
   </entry>
   <entry>
@@ -1288,6 +1253,41 @@
       <tags>
         <tag>macOS</tag>
         <tag>ASUS N550JV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>美化你的shell,macOS下安装zsh和neofetch教程(Unix/Linux也适用)</title>
+    <url>/2018/05/11/install-zsh.html</url>
+    <content><![CDATA[<p>最近在使用Hackintosh，发现macOS自带的shell并不好用，所以安装了被誉为终极shell的zsh，方法整理如下：<a id="more"></a> </p>
+<h3 id="确认包管理器"><a href="#确认包管理器" class="headerlink" title="确认包管理器"></a>确认包管理器</h3><blockquote>
+<p>unix以及类unix(如Linux及其发行版)下都有对应的包管理器,常见的包管理器如下：macOS下为HomeBrew，Debian/Ubuntu为apt，Fedora为yum或dnf，Centos为yum，Archlinux为pacman等。</p>
+</blockquote>
+<h3 id="macOS安装HomeBrew以及wget-其他系统用户跳过此步骤"><a href="#macOS安装HomeBrew以及wget-其他系统用户跳过此步骤" class="headerlink" title="macOS安装HomeBrew以及wget(其他系统用户跳过此步骤)"></a>macOS安装HomeBrew以及wget(其他系统用户跳过此步骤)</h3><h4 id="HomeBrew"><a href="#HomeBrew" class="headerlink" title="HomeBrew"></a>HomeBrew</h4><p>由于macOS下没有自带HomeBrew，故需要手动安装。首先安装xcode，然后终端运行如下命令即可安装HomeBrew。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ruby -e <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><ul>
+<li>更新：brew update </li>
+<li>安装软件包：brew install “PackegeName” </li>
+<li>搜索软件包：brew search “PackegeName”</li>
+<li>卸载软件包：brew remove “PackegeName” </li>
+</ul>
+<h4 id="wget："><a href="#wget：" class="headerlink" title="wget："></a>wget：</h4><figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>wget</span><br></pre></td></tr></table></figure>
+<h3 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h3><h4 id="macOS："><a href="#macOS：" class="headerlink" title="macOS："></a>macOS：</h4><figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>zsh</span><br></pre></td></tr></table></figure>
+<h4 id="Debian-Ubuntu"><a href="#Debian-Ubuntu" class="headerlink" title="Debian/Ubuntu:"></a>Debian/Ubuntu:</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">apt <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure>
+<h4 id="Fedora"><a href="#Fedora" class="headerlink" title="Fedora:"></a>Fedora:</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">dnf <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure>
+<h4 id="Centos"><a href="#Centos" class="headerlink" title="Centos:"></a>Centos:</h4><figure class="highlight sas"><table><tr><td class="code"><pre><span class="line">yum <span class="meta">update</span> <span class="variable">&amp;&amp;</span> yum install zsh</span><br></pre></td></tr></table></figure>
+<h4 id="Archlinux"><a href="#Archlinux" class="headerlink" title="Archlinux:"></a>Archlinux:</h4><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">pacman -S zsh</span></span><br></pre></td></tr></table></figure>
+<h3 id="将系统默认shell更换为zsh"><a href="#将系统默认shell更换为zsh" class="headerlink" title="将系统默认shell更换为zsh"></a>将系统默认shell更换为zsh</h3><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">chsh -s <span class="regexp">/bin/</span>zsh</span><br></pre></td></tr></table></figure>
+<h3 id="安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。"><a href="#安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。" class="headerlink" title="安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。"></a>安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。</h3><h3 id="配置zsh"><a href="#配置zsh" class="headerlink" title="配置zsh"></a>配置zsh</h3><p>使用oh-my-zsh可以很方便的配置zsh,并生成.zshrc配置文件方便修改 输入以下命令安装oh-my-zsh</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<p>安装成功后输入nano .zshrc打开.zshrc文件添加neofetch,修改ZSH_THEME=”random”，意为每次打开终端即启动neofetch，zsh主题随机，也就是每次打开终端都会改变一个主题，修改如图： <img src= "/images/loading.gif" data-lazy-src="/images/c7fd2a6d2692642c94a9a78c42f04ee4ef71b410.jpg"> 重启电脑就会看到效果。</p>
+<h3 id="用描述文件美化终端-不同系统，不同桌面环境会有所不同-需要自己摸索了，下面以macOS为例"><a href="#用描述文件美化终端-不同系统，不同桌面环境会有所不同-需要自己摸索了，下面以macOS为例" class="headerlink" title="用描述文件美化终端(不同系统，不同桌面环境会有所不同,需要自己摸索了，下面以macOS为例)"></a>用描述文件美化终端(不同系统，不同桌面环境会有所不同,需要自己摸索了，下面以macOS为例)</h3><p>打开终端，点击右键打开显示检查器，选择一个样式双击打开描述文件，按自己的喜好设置文字风格，样式，透明度，模糊程度，窗口大小等，成品图如下： <img src= "/images/loading.gif" data-lazy-src="/images/e7005ea1415345c95c83b5c0f1cbd21b124c8245.jpg"></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
+        <tag>zsh</tag>
       </tags>
   </entry>
   <entry>
@@ -1355,6 +1355,43 @@
         <tag>Hackintosh</tag>
         <tag>usb</tag>
         <tag>z370</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>教你制作macOS+Ubuntu+WindowsPE超级启动盘(仅支持UEFI)</title>
+    <url>/2019/07/26/make-super-usb.html</url>
+    <content><![CDATA[<blockquote>
+<p>对于多系统用户，有没有觉得每一个系统一个U盘很麻烦而且浪费U盘，本文会教你如何制作macOS+Ubuntu+WindowsPE多系统启动盘。注意：建议使用博主分享的PE，其他PE文件结构或许不同，不确定能否成功。<a id="more"></a></p>
+</blockquote>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
+<li>USB 3.0U盘(不可小于16g，博主的是闪迪64gU盘)</li>
+<li>macOS 10.15 beta4原版镜像，进入如下网址，内有下载分享<br><a href="http://bbs.pcbeta.com/viewthread-1823322-1-1.html">http://bbs.pcbeta.com/viewthread-1823322-1-1.html</a></li>
+<li>Ubuntu 19.04镜像，下载地址如下，可直接粘贴到迅雷<br><a href="http://mirror.cogentco.com/pub/linux/ubuntu-releases/19.04/ubuntu-19.04-desktop-amd64.iso">http://mirror.cogentco.com/pub/linux/ubuntu-releases/19.04/ubuntu-19.04-desktop-amd64.iso</a></li>
+<li>Windows 10 1809 PE，百毒盘地址如下(注意，此PE为博主自制PE，兼容PC以及mbp2017，无任何流氓行为，可放心使用)<br>链接: <a href="https://pan.baidu.com/s/1Qb9ieHzwDATaU-FhFuDUJQ">https://pan.baidu.com/s/1Qb9ieHzwDATaU-FhFuDUJQ</a>  密码: 15ns</li>
+<li>一个配置好的可引导Hackintosh的Clover</li>
+</ul>
+<h1 id="写入macOS镜像并放入Clover"><a href="#写入macOS镜像并放入Clover" class="headerlink" title="写入macOS镜像并放入Clover"></a>写入macOS镜像并放入Clover</h1><h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><p>将U盘格式化成为Hfs格式，卷标为mac，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-1.png"></p>
+<h2 id="将Install-macOS-Catalina-Beta-app拷贝到Application下"><a href="#将Install-macOS-Catalina-Beta-app拷贝到Application下" class="headerlink" title="将Install macOS Catalina Beta.app拷贝到Application下"></a>将Install macOS Catalina Beta.app拷贝到Application下</h2><h2 id="终端输入如下命令写入镜像"><a href="#终端输入如下命令写入镜像" class="headerlink" title="终端输入如下命令写入镜像"></a>终端输入如下命令写入镜像</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/Applications/</span>Install\ macOS\ Catalina\ Beta.app<span class="regexp">/Contents/</span>Resources<span class="regexp">/createinstallmedia --volume /</span>Volumes<span class="regexp">/mac --applicationpath /</span>Applications/Install\ macOS\ Catalina\ Beta.app</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/superusb-2.png"></p>
+<h2 id="挂载U盘EFI分区，将Clover拷贝进去"><a href="#挂载U盘EFI分区，将Clover拷贝进去" class="headerlink" title="挂载U盘EFI分区，将Clover拷贝进去"></a>挂载U盘EFI分区，将Clover拷贝进去</h2><h1 id="为Ubuntu以及Windows-PE准备分区"><a href="#为Ubuntu以及Windows-PE准备分区" class="headerlink" title="为Ubuntu以及Windows PE准备分区"></a>为Ubuntu以及Windows PE准备分区</h1><ul>
+<li>打开磁盘工具，添加分区，格式为HFs，名称为other。将分区Install macOS Catalina Beta的大小修改为8G，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-3.png"></li>
+<li>进入Windows打开diskgenius，删掉那个最大的HFs分区。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-4.png"></li>
+<li>在空闲区域添加三个Fat32格式的分区，名称分别为Ubuntu，WinPE，Data。其中Ubuntu大小为4G，WinPE大小为3G，Data为剩余空间。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-5.png"></li>
+</ul>
+<h1 id="拷贝Ubuntu以及WinPE的文件"><a href="#拷贝Ubuntu以及WinPE的文件" class="headerlink" title="拷贝Ubuntu以及WinPE的文件"></a>拷贝Ubuntu以及WinPE的文件</h1><p>将Ubuntu以及WinPE的镜像解压，直接把镜像根目录所有文件拷贝到对应分区。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-6.png"></p>
+<h1 id="引导设置"><a href="#引导设置" class="headerlink" title="引导设置"></a>引导设置</h1><h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><ul>
+<li>在U盘EFI分区新建grub文件夹，和CLOVER文件夹同级。</li>
+<li>打开Ubuntu分区，将boot/grub文件夹下的grub.cfg文件以及EFI/BOOT文件夹下的Bootx64.efi和grubx64.efi两个文件拷贝到刚刚新建的grub文件夹下。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-7.png"></li>
+</ul>
+<h2 id="WinPE"><a href="#WinPE" class="headerlink" title="WinPE"></a>WinPE</h2><p>打开WinPE分区，将efi/microsoft/boot文件夹下的cdboot.efi文件重命名为cdboot-bak.efi，并将efi/boot文件夹下的bootx64.efi文件拷贝到efi/microsoft/boot文件夹下。并重命名为cdboot.efi。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-8.png"></p>
+<h1 id="至此，你的macOS-Ubuntu-WinPE超级启动盘制作完成。"><a href="#至此，你的macOS-Ubuntu-WinPE超级启动盘制作完成。" class="headerlink" title="至此，你的macOS+Ubuntu+WinPE超级启动盘制作完成。"></a>至此，你的macOS+Ubuntu+WinPE超级启动盘制作完成。</h1><h1 id="成品"><a href="#成品" class="headerlink" title="成品"></a>成品</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/superusb-9.png"></p>
+<h1 id="2019-7-30更新"><a href="#2019-7-30更新" class="headerlink" title="2019-7-30更新"></a>2019-7-30更新</h1><h2 id="重要注意事项"><a href="#重要注意事项" class="headerlink" title="重要注意事项"></a>重要注意事项</h2><p><strong><font color=#A52A2A >如果要把这个启动盘用于白苹果，记得挂载U盘EFI分区，将Boot-&gt;Bootx64.efi文件以及Clover-&gt;Cloverx64.efi文件的后缀(.efi)去掉，这样做的目的是干掉U盘的Clover启动项。以防止白苹果误进入Clover，这很重要，白苹果使用Clover会彻底黑屏变砖。白苹果可以按option键选择进入macOS安装盘、Ubuntu安装盘或WinPE启动盘，如果以后安装黑苹果，完全可以再把文件名改回来或者使用本地硬盘中的Clover引导启动盘。</font></strong></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -1436,43 +1473,6 @@
       </tags>
   </entry>
   <entry>
-    <title>教你制作macOS+Ubuntu+WindowsPE超级启动盘(仅支持UEFI)</title>
-    <url>/2019/07/26/make-super-usb.html</url>
-    <content><![CDATA[<blockquote>
-<p>对于多系统用户，有没有觉得每一个系统一个U盘很麻烦而且浪费U盘，本文会教你如何制作macOS+Ubuntu+WindowsPE多系统启动盘。注意：建议使用博主分享的PE，其他PE文件结构或许不同，不确定能否成功。<a id="more"></a></p>
-</blockquote>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
-<li>USB 3.0U盘(不可小于16g，博主的是闪迪64gU盘)</li>
-<li>macOS 10.15 beta4原版镜像，进入如下网址，内有下载分享<br><a href="http://bbs.pcbeta.com/viewthread-1823322-1-1.html">http://bbs.pcbeta.com/viewthread-1823322-1-1.html</a></li>
-<li>Ubuntu 19.04镜像，下载地址如下，可直接粘贴到迅雷<br><a href="http://mirror.cogentco.com/pub/linux/ubuntu-releases/19.04/ubuntu-19.04-desktop-amd64.iso">http://mirror.cogentco.com/pub/linux/ubuntu-releases/19.04/ubuntu-19.04-desktop-amd64.iso</a></li>
-<li>Windows 10 1809 PE，百毒盘地址如下(注意，此PE为博主自制PE，兼容PC以及mbp2017，无任何流氓行为，可放心使用)<br>链接: <a href="https://pan.baidu.com/s/1Qb9ieHzwDATaU-FhFuDUJQ">https://pan.baidu.com/s/1Qb9ieHzwDATaU-FhFuDUJQ</a>  密码: 15ns</li>
-<li>一个配置好的可引导Hackintosh的Clover</li>
-</ul>
-<h1 id="写入macOS镜像并放入Clover"><a href="#写入macOS镜像并放入Clover" class="headerlink" title="写入macOS镜像并放入Clover"></a>写入macOS镜像并放入Clover</h1><h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><p>将U盘格式化成为Hfs格式，卷标为mac，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-1.png"></p>
-<h2 id="将Install-macOS-Catalina-Beta-app拷贝到Application下"><a href="#将Install-macOS-Catalina-Beta-app拷贝到Application下" class="headerlink" title="将Install macOS Catalina Beta.app拷贝到Application下"></a>将Install macOS Catalina Beta.app拷贝到Application下</h2><h2 id="终端输入如下命令写入镜像"><a href="#终端输入如下命令写入镜像" class="headerlink" title="终端输入如下命令写入镜像"></a>终端输入如下命令写入镜像</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/Applications/</span>Install\ macOS\ Catalina\ Beta.app<span class="regexp">/Contents/</span>Resources<span class="regexp">/createinstallmedia --volume /</span>Volumes<span class="regexp">/mac --applicationpath /</span>Applications/Install\ macOS\ Catalina\ Beta.app</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/superusb-2.png"></p>
-<h2 id="挂载U盘EFI分区，将Clover拷贝进去"><a href="#挂载U盘EFI分区，将Clover拷贝进去" class="headerlink" title="挂载U盘EFI分区，将Clover拷贝进去"></a>挂载U盘EFI分区，将Clover拷贝进去</h2><h1 id="为Ubuntu以及Windows-PE准备分区"><a href="#为Ubuntu以及Windows-PE准备分区" class="headerlink" title="为Ubuntu以及Windows PE准备分区"></a>为Ubuntu以及Windows PE准备分区</h1><ul>
-<li>打开磁盘工具，添加分区，格式为HFs，名称为other。将分区Install macOS Catalina Beta的大小修改为8G，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-3.png"></li>
-<li>进入Windows打开diskgenius，删掉那个最大的HFs分区。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-4.png"></li>
-<li>在空闲区域添加三个Fat32格式的分区，名称分别为Ubuntu，WinPE，Data。其中Ubuntu大小为4G，WinPE大小为3G，Data为剩余空间。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-5.png"></li>
-</ul>
-<h1 id="拷贝Ubuntu以及WinPE的文件"><a href="#拷贝Ubuntu以及WinPE的文件" class="headerlink" title="拷贝Ubuntu以及WinPE的文件"></a>拷贝Ubuntu以及WinPE的文件</h1><p>将Ubuntu以及WinPE的镜像解压，直接把镜像根目录所有文件拷贝到对应分区。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-6.png"></p>
-<h1 id="引导设置"><a href="#引导设置" class="headerlink" title="引导设置"></a>引导设置</h1><h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><ul>
-<li>在U盘EFI分区新建grub文件夹，和CLOVER文件夹同级。</li>
-<li>打开Ubuntu分区，将boot/grub文件夹下的grub.cfg文件以及EFI/BOOT文件夹下的Bootx64.efi和grubx64.efi两个文件拷贝到刚刚新建的grub文件夹下。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-7.png"></li>
-</ul>
-<h2 id="WinPE"><a href="#WinPE" class="headerlink" title="WinPE"></a>WinPE</h2><p>打开WinPE分区，将efi/microsoft/boot文件夹下的cdboot.efi文件重命名为cdboot-bak.efi，并将efi/boot文件夹下的bootx64.efi文件拷贝到efi/microsoft/boot文件夹下。并重命名为cdboot.efi。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-8.png"></p>
-<h1 id="至此，你的macOS-Ubuntu-WinPE超级启动盘制作完成。"><a href="#至此，你的macOS-Ubuntu-WinPE超级启动盘制作完成。" class="headerlink" title="至此，你的macOS+Ubuntu+WinPE超级启动盘制作完成。"></a>至此，你的macOS+Ubuntu+WinPE超级启动盘制作完成。</h1><h1 id="成品"><a href="#成品" class="headerlink" title="成品"></a>成品</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/superusb-9.png"></p>
-<h1 id="2019-7-30更新"><a href="#2019-7-30更新" class="headerlink" title="2019-7-30更新"></a>2019-7-30更新</h1><h2 id="重要注意事项"><a href="#重要注意事项" class="headerlink" title="重要注意事项"></a>重要注意事项</h2><p><strong><font color=#A52A2A >如果要把这个启动盘用于白苹果，记得挂载U盘EFI分区，将Boot-&gt;Bootx64.efi文件以及Clover-&gt;Cloverx64.efi文件的后缀(.efi)去掉，这样做的目的是干掉U盘的Clover启动项。以防止白苹果误进入Clover，这很重要，白苹果使用Clover会彻底黑屏变砖。白苹果可以按option键选择进入macOS安装盘、Ubuntu安装盘或WinPE启动盘，如果以后安装黑苹果，完全可以再把文件名改回来或者使用本地硬盘中的Clover引导启动盘。</font></strong></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>mi5开启全面屏手势教程(非原创，转自一个已经被miui论坛删除又幸运的被Chrome缓存下来的帖子)</title>
     <url>/2018/06/22/mi5-enable-gesture.html</url>
     <content><![CDATA[<h3 id="MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看"><a href="#MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看" class="headerlink" title="MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看"></a>MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看</h3><a id="more"></a>
@@ -1534,6 +1534,38 @@
       </tags>
   </entry>
   <entry>
+    <title>最简单的挂载EFI分区方案</title>
+    <url>/2019/12/03/mountEFI.html</url>
+    <content><![CDATA[<blockquote>
+<p>博主使用OC已经有一段时间，最近发现一个不爽点。OC配置本身不需要各种GUI工具，但是，每次挂载EFI都要打开类似Clover Configurator的工具挂载EFI，比较麻烦，所以博主分享一种点击即挂载并打开EFI分区的方案。<a id="more"></a></p>
+</blockquote>
+<h1 id="获取EFI分区的UUID"><a href="#获取EFI分区的UUID" class="headerlink" title="获取EFI分区的UUID"></a>获取EFI分区的UUID</h1><ul>
+<li>用Clover Configurator看一下负责引导的EFI分区的分区号，比如博主的是<font color=#A52A2A >disk0s1</font>。(详细过程略，相信大家都懂)</li>
+<li>输入以下命令获取UUID。<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sudo</span> diskutil <span class="literal">info</span> disk0s1 | grep <span class="string">&#x27;Partition UUID&#x27;</span></span><br></pre></td></tr></table></figure>
+  <img src= "/images/loading.gif" data-lazy-src="/images/mountEFI.png"></li>
+</ul>
+<h1 id="准备应用程序"><a href="#准备应用程序" class="headerlink" title="准备应用程序"></a>准备应用程序</h1><ul>
+<li><p>打开系统自带的自动操作程序，依次点击应用程序-&gt;选取-&gt;运行shell脚本。<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-3.png"></p>
+</li>
+<li><p>将以下脚本粘贴进去</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">mountEFI=$(<span class="built_in">echo</span> <span class="string">&#x27;你的密码&#x27;</span> | sudo -S diskutil info 你的UUID | grep <span class="string">&#x27;Device Node&#x27;</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;你的密码&#x27;</span> | sudo -S diskutil mount <span class="string">&#x27;/&#x27;</span><span class="variable">$&#123;mountEFI#*/&#125;</span></span><br><span class="line">open /Volumes/EFI/EFI/OC</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/mountEFI-1.png"></p>
+</li>
+<li><p>保存成app<br><img src= "/images/loading.gif" data-lazy-src="/images/mountEFI-2.png"></p>
+</li>
+</ul>
+<blockquote>
+<p>至此，您已经成功制作EFI挂载工具，以后只要点击就可以直接挂载并打开！</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>OpenCore黑苹果方案以及ASRock Z390 Phantom Gaming-ITX/ac+i9-9900K OpenCore配置文件分享</title>
     <url>/2019/05/29/opencore-hackintosh.html</url>
     <content><![CDATA[<h1 id="OpenCore简介"><a href="#OpenCore简介" class="headerlink" title="OpenCore简介"></a>OpenCore简介</h1><p>OpenCore是由**<font color=#A52A2A >vit9696</font>**等8位大佬开发的全新黑苹果引导工具。用于在PC上启动macOS操作系统。博主用了一天时间已经成功启动博主电脑上的macOS，现在做简单分享。<a id="more"></a></p>
@@ -1579,38 +1611,6 @@
       <tags>
         <tag>Hackintosh</tag>
         <tag>OpenCore</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>最简单的挂载EFI分区方案</title>
-    <url>/2019/12/03/mountEFI.html</url>
-    <content><![CDATA[<blockquote>
-<p>博主使用OC已经有一段时间，最近发现一个不爽点。OC配置本身不需要各种GUI工具，但是，每次挂载EFI都要打开类似Clover Configurator的工具挂载EFI，比较麻烦，所以博主分享一种点击即挂载并打开EFI分区的方案。<a id="more"></a></p>
-</blockquote>
-<h1 id="获取EFI分区的UUID"><a href="#获取EFI分区的UUID" class="headerlink" title="获取EFI分区的UUID"></a>获取EFI分区的UUID</h1><ul>
-<li>用Clover Configurator看一下负责引导的EFI分区的分区号，比如博主的是<font color=#A52A2A >disk0s1</font>。(详细过程略，相信大家都懂)</li>
-<li>输入以下命令获取UUID。<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sudo</span> diskutil <span class="literal">info</span> disk0s1 | grep <span class="string">&#x27;Partition UUID&#x27;</span></span><br></pre></td></tr></table></figure>
-  <img src= "/images/loading.gif" data-lazy-src="/images/mountEFI.png"></li>
-</ul>
-<h1 id="准备应用程序"><a href="#准备应用程序" class="headerlink" title="准备应用程序"></a>准备应用程序</h1><ul>
-<li><p>打开系统自带的自动操作程序，依次点击应用程序-&gt;选取-&gt;运行shell脚本。<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-3.png"></p>
-</li>
-<li><p>将以下脚本粘贴进去</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">mountEFI=$(<span class="built_in">echo</span> <span class="string">&#x27;你的密码&#x27;</span> | sudo -S diskutil info 你的UUID | grep <span class="string">&#x27;Device Node&#x27;</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;你的密码&#x27;</span> | sudo -S diskutil mount <span class="string">&#x27;/&#x27;</span><span class="variable">$&#123;mountEFI#*/&#125;</span></span><br><span class="line">open /Volumes/EFI/EFI/OC</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/mountEFI-1.png"></p>
-</li>
-<li><p>保存成app<br><img src= "/images/loading.gif" data-lazy-src="/images/mountEFI-2.png"></p>
-</li>
-</ul>
-<blockquote>
-<p>至此，您已经成功制作EFI挂载工具，以后只要点击就可以直接挂载并打开！</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -1828,37 +1828,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows 10下忘记密码的解决方案(本地账户，微软账户通杀)</title>
-    <url>/2018/05/27/reset-password-for-windows-10.html</url>
-    <content><![CDATA[<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><blockquote>
-<p>我们知道Windows下连按5次shift会弹出粘滞键，他的程序名称是sethc.exe。经测试在Windows登录界面处输入密码之前按5次shift键也可以启动sethc.exe。所以只要把cmd.exe重命名为sethc.exe就可以在登录之前打开cmd以便我们为所欲为。<a id="more"></a></p>
-</blockquote>
-<h3 id="PE破解密码的缺陷"><a href="#PE破解密码的缺陷" class="headerlink" title="PE破解密码的缺陷"></a>PE破解密码的缺陷</h3><p>如果电脑安装了双Windows系统，如win7+win10，pe破解可能失效。</p>
-<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
-<li>准备好windows 10安装U盘。</li>
-<li>U盘启动，点击下一步-&gt;修复计算机-&gt;疑难解答-&gt;命令提示符(一定要在安装盘下进入，系统下直接进入高级模式会要求输入密码)，如图<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raufjiqgj30sg0lcq30.jpg"><br>如出现下图则说明你不是通过安装盘进入的高级模式。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rauu65rxj30sg0lcwes.jpg"></li>
-<li>导航进入系统盘符，注意不一定是C盘，用dir命令查看盘符下的文件已确定是不是系统盘。如</span><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">C</span>:</span><br><span class="line"><span class="attribute">cd</span> Windows/System<span class="number">32</span></span><br></pre></td></tr></table></figure></li>
-<li>输入以下命令将cmd重命名，3、4步骤如图</span><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">ren</span> <span class="selector-tag">sethc</span><span class="selector-class">.exe</span> <span class="selector-tag">AAA</span><span class="selector-class">.exe</span></span><br><span class="line"><span class="selector-tag">ren</span> <span class="selector-tag">cmd</span><span class="selector-class">.exe</span> <span class="selector-tag">sethc</span><span class="selector-class">.exe</span></span><br></pre></td></tr></table></figure>
-<img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rav9bi0fj30sg0lcjrp.jpg"></li>
-<li>重启到登录界面按5次shift进入命令提示符(此时窗口名称为sethc.exe)</li>
-<li>输入如下命令启用Windows内置的Administrator用户，并重置Administrator的密码。如果之前用的是微软账户就可以不重置密码，默认无密码。<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> /active:yes </span><br><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> 新密码</span><br></pre></td></tr></table></figure>
-<img src= "/images/loading.gif" data-lazy-src="/images/Snipaste_2018-05-27_21-41-45.png"></li>
-<li>用Administrator登录系统，将之前忘记密码的用户修改密码，如果是微软账户就上官网重置密码。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ravn4bmhj30ia0h613m.jpg"></li>
-<li>进入原用户测试。</li>
-<li>进入文件资源管理器，将Windows/System32下的sethc.exe重命名为cmd.exe，AAA.exe重命名为sethc.exe。</li>
-<li>如果想禁用Administrator请执行以下命令。<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> /active:no</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Windows Desktop</category>
-      </categories>
-      <tags>
-        <tag>cmd</tag>
-        <tag>sethc</tag>
-        <tag>Windows10</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>小米6第三方Project Treble实现</title>
     <url>/2018/05/08/project-treble-for-xiaomi-mi6-unofficial.html</url>
     <content><![CDATA[<h3 id="关于Project-Treble"><a href="#关于Project-Treble" class="headerlink" title="关于Project Treble"></a>关于Project Treble</h3><blockquote>
@@ -1925,6 +1894,37 @@
       <tags>
         <tag>Android</tag>
         <tag>Project Treble</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows 10下忘记密码的解决方案(本地账户，微软账户通杀)</title>
+    <url>/2018/05/27/reset-password-for-windows-10.html</url>
+    <content><![CDATA[<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><blockquote>
+<p>我们知道Windows下连按5次shift会弹出粘滞键，他的程序名称是sethc.exe。经测试在Windows登录界面处输入密码之前按5次shift键也可以启动sethc.exe。所以只要把cmd.exe重命名为sethc.exe就可以在登录之前打开cmd以便我们为所欲为。<a id="more"></a></p>
+</blockquote>
+<h3 id="PE破解密码的缺陷"><a href="#PE破解密码的缺陷" class="headerlink" title="PE破解密码的缺陷"></a>PE破解密码的缺陷</h3><p>如果电脑安装了双Windows系统，如win7+win10，pe破解可能失效。</p>
+<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
+<li>准备好windows 10安装U盘。</li>
+<li>U盘启动，点击下一步-&gt;修复计算机-&gt;疑难解答-&gt;命令提示符(一定要在安装盘下进入，系统下直接进入高级模式会要求输入密码)，如图<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raufjiqgj30sg0lcq30.jpg"><br>如出现下图则说明你不是通过安装盘进入的高级模式。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rauu65rxj30sg0lcwes.jpg"></li>
+<li>导航进入系统盘符，注意不一定是C盘，用dir命令查看盘符下的文件已确定是不是系统盘。如</span><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">C</span>:</span><br><span class="line"><span class="attribute">cd</span> Windows/System<span class="number">32</span></span><br></pre></td></tr></table></figure></li>
+<li>输入以下命令将cmd重命名，3、4步骤如图</span><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">ren</span> <span class="selector-tag">sethc</span><span class="selector-class">.exe</span> <span class="selector-tag">AAA</span><span class="selector-class">.exe</span></span><br><span class="line"><span class="selector-tag">ren</span> <span class="selector-tag">cmd</span><span class="selector-class">.exe</span> <span class="selector-tag">sethc</span><span class="selector-class">.exe</span></span><br></pre></td></tr></table></figure>
+<img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rav9bi0fj30sg0lcjrp.jpg"></li>
+<li>重启到登录界面按5次shift进入命令提示符(此时窗口名称为sethc.exe)</li>
+<li>输入如下命令启用Windows内置的Administrator用户，并重置Administrator的密码。如果之前用的是微软账户就可以不重置密码，默认无密码。<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> /active:yes </span><br><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> 新密码</span><br></pre></td></tr></table></figure>
+<img src= "/images/loading.gif" data-lazy-src="/images/Snipaste_2018-05-27_21-41-45.png"></li>
+<li>用Administrator登录系统，将之前忘记密码的用户修改密码，如果是微软账户就上官网重置密码。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ravn4bmhj30ia0h613m.jpg"></li>
+<li>进入原用户测试。</li>
+<li>进入文件资源管理器，将Windows/System32下的sethc.exe重命名为cmd.exe，AAA.exe重命名为sethc.exe。</li>
+<li>如果想禁用Administrator请执行以下命令。<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> /active:no</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Windows Desktop</category>
+      </categories>
+      <tags>
+        <tag>cmd</tag>
+        <tag>sethc</tag>
+        <tag>Windows10</tag>
       </tags>
   </entry>
   <entry>
