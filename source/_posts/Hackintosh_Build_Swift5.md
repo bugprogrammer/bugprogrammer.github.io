@@ -7,7 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2020-01-16 22:27:00
-updated: 2020-12-25 18:00:00
+updated: 2021-03-28 02:50:00
 toc: true
 ---
 
@@ -174,3 +174,12 @@ xcode-select --install
 * 新增"本机app适配Apple Silicon情况"模块
 * 按照硬件架构区分可用功能
 * UI适配Big Sur风格
+
+# 2021-03-07更新
+## v4.1版本更新
+* 参照开源方案 https://github.com/DigiDNA/Silicon MIT License.重构"本机app适配Apple Silicon情况"模块
+* Apple Silicon Macs关于本机不显示Board id、drm仿冒id、核显id等条目
+
+# 2021-03-28更新
+## v4.2版本更新
+* 重构 OpenCore版本一览功能，自动获取原作者仓库信息，避免OpenCore更新数据滞后

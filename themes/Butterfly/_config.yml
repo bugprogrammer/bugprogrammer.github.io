@@ -382,11 +382,11 @@ footer:
 
 # Baidu Analytics
 # https://tongji.baidu.com/web/welcome/login
-baidu_analytics:
+baidu_analytics: 
 
 # Google Analytics
 # https://analytics.google.com/analytics/web/
-google_analytics:
+google_analytics: UA-119545430-2
 
 # Tencent Analytics ID
 # https://mta.qq.com
@@ -615,7 +615,7 @@ aside:
       link: https://github.com/bugprogrammer
   card_announcement:
     enable: true
-    content: 1、HackintoshBuild v4.0已经适配Apple Silicon Macs 2、本站为了适配node 15(m1原生)已经重构，使用异常的请清除缓存
+    content: 1、本站近期更换了dns服务器 2、HackintoshBuild v4.2已经发布。
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
@@ -642,9 +642,9 @@ aside:
 # busuanzi count for PV / UV in site
 # 訪問人數
 busuanzi:
-  site_uv: false
-  site_pv: false
-  page_pv: false
+  site_uv: true
+  site_pv: true
+  page_pv: true
 
 # Time difference between publish date and now (網頁運行時間)
 # Formal: Month/Day/Year Time or Year/Month/Day Time
@@ -786,7 +786,7 @@ instantpage: false
 # https://github.com/vinta/pangu.js
 # Insert a space between Chinese character and English character (中英文之間添加空格)
 pangu:
-  enable: false
+  enable: true
   field: site # site/post
 
 # Lazyload (圖片懶加載)
