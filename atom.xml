@@ -6,7 +6,7 @@
   <link href="https://www.bugprogrammer.me/atom.xml" rel="self"/>
   
   <link href="https://www.bugprogrammer.me/"/>
-  <updated>2020-09-06T18:45:00.000Z</updated>
+  <updated>2021-04-22T16:50:00.000Z</updated>
   <id>https://www.bugprogrammer.me/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>博主自编译的开源软件用于Apple Silicon Macs(长期更新)</title>
+    <link href="https://www.bugprogrammer.me/2021/04/23/Compiling-Soft-for-AppleSilicons.html"/>
+    <id>https://www.bugprogrammer.me/2021/04/23/Compiling-Soft-for-AppleSilicons.html</id>
+    <published>2021-04-22T16:50:00.000Z</published>
+    <updated>2021-04-22T16:50:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;自从博主购入m1版本的Mac mini以来，体验惊艳。低发热，低功耗，高性能，特别是gpu性能，让我这个不需要独显的人不用为了启动台的流畅度而被迫购入独显，这些优点已经让博主把Hackintosh吃灰。由于Apple Silicon是基于ARM架构的，所以不可避免出现app生态问题。现在发布博主自编译的开源软件，以用于Apple Silicon Macs。此帖将长期更新</summary>
+    
+    
+    
+    <category term="Macintosh" scheme="https://www.bugprogrammer.me/categories/Macintosh/"/>
+    
+    <category term="Apple Silicon" scheme="https://www.bugprogrammer.me/categories/Macintosh/Apple-Silicon/"/>
+    
+    
+    <category term="Macintosh" scheme="https://www.bugprogrammer.me/tags/Macintosh/"/>
+    
+  </entry>
   
   <entry>
     <title>博主的Hackintosh全家桶定时编译上线GitHub</title>
@@ -436,29 +458,6 @@
     <category term="macOS Catalina 10.15" scheme="https://www.bugprogrammer.me/tags/macOS-Catalina-10-15/"/>
     
     <category term="sidecar" scheme="https://www.bugprogrammer.me/tags/sidecar/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>macOS Catalina 10.15目前情况(持续更新)</title>
-    <link href="https://www.bugprogrammer.me/2019/06/04/hackintosh-10.15.html"/>
-    <id>https://www.bugprogrammer.me/2019/06/04/hackintosh-10.15.html</id>
-    <published>2019-06-04T00:40:00.000Z</published>
-    <updated>2019-09-24T00:40:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Apple的WWDC2019已经结束，为我们带来了macOS 10.15、MacPro等出色产品。博主连夜测试了10.15在PC机上的运行情况，现在梳理如下(持续更新)。</summary>
-    
-    
-    
-    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
-    
-    
-    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
-    
-    <category term="macOS Catalina 10.15" scheme="https://www.bugprogrammer.me/tags/macOS-Catalina-10-15/"/>
-    
-    <category term="OpenCore" scheme="https://www.bugprogrammer.me/tags/OpenCore/"/>
     
   </entry>
   
