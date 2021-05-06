@@ -51,14 +51,14 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/categories/index.html</loc>
+    <loc>https://www.bugprogrammer.me/about/index.html</loc>
     
     <lastmod>2020-12-24</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/about/index.html</loc>
+    <loc>https://www.bugprogrammer.me/categories/index.html</loc>
     
     <lastmod>2020-12-24</lastmod>
     
@@ -361,14 +361,14 @@
 
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/Hackintosh/</loc>
+    <loc>https://www.bugprogrammer.me/tags/macOS/</loc>
     <lastmod>2021-05-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/macOS/</loc>
+    <loc>https://www.bugprogrammer.me/tags/VoodooI2C/</loc>
     <lastmod>2021-05-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -382,7 +382,7 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/VoodooI2C/</loc>
+    <loc>https://www.bugprogrammer.me/tags/Hackintosh/</loc>
     <lastmod>2021-05-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -410,14 +410,14 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2017/</loc>
+    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2018/</loc>
     <lastmod>2021-05-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2018/</loc>
+    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2017/</loc>
     <lastmod>2021-05-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -452,6 +452,13 @@
   </url>
   
   <url>
+    <loc>https://www.bugprogrammer.me/tags/RX5700/</loc>
+    <lastmod>2021-05-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.bugprogrammer.me/tags/OpenWrt/</loc>
     <lastmod>2021-05-06</lastmod>
     <changefreq>daily</changefreq>
@@ -460,13 +467,6 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/ipv6/</loc>
-    <lastmod>2021-05-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/RX5700/</loc>
     <lastmod>2021-05-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -508,6 +508,13 @@
   </url>
   
   <url>
+    <loc>https://www.bugprogrammer.me/tags/ASUS-N550JV/</loc>
+    <lastmod>2021-05-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.bugprogrammer.me/tags/shell/</loc>
     <lastmod>2021-05-06</lastmod>
     <changefreq>daily</changefreq>
@@ -516,6 +523,27 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/zsh/</loc>
+    <lastmod>2021-05-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/usb/</loc>
+    <lastmod>2021-05-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/z370/</loc>
+    <lastmod>2021-05-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/MacBook-Pro/</loc>
     <lastmod>2021-05-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -543,28 +571,21 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/ASUS-N550JV/</loc>
+    <loc>https://www.bugprogrammer.me/tags/cmd/</loc>
     <lastmod>2021-05-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/MacBook-Pro/</loc>
+    <loc>https://www.bugprogrammer.me/tags/sethc/</loc>
     <lastmod>2021-05-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/usb/</loc>
-    <lastmod>2021-05-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/z370/</loc>
+    <loc>https://www.bugprogrammer.me/tags/Windows10/</loc>
     <lastmod>2021-05-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -655,27 +676,6 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/cmd/</loc>
-    <lastmod>2021-05-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/sethc/</loc>
-    <lastmod>2021-05-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/Windows10/</loc>
-    <lastmod>2021-05-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.bugprogrammer.me/tags/linux/</loc>
     <lastmod>2021-05-06</lastmod>
     <changefreq>daily</changefreq>
@@ -727,6 +727,13 @@
   </url>
   
   <url>
+    <loc>https://www.bugprogrammer.me/categories/Windows-Desktop/</loc>
+    <lastmod>2021-05-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.bugprogrammer.me/categories/Android-Rom/</loc>
     <lastmod>2021-05-06</lastmod>
     <changefreq>daily</changefreq>
@@ -735,13 +742,6 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/categories/WEB/</loc>
-    <lastmod>2021-05-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/categories/Windows-Desktop/</loc>
     <lastmod>2021-05-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
