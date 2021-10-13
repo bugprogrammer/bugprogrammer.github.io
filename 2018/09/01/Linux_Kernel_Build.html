@@ -1,0 +1,313 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Linux内核简介及编译教程 | Bugprogrammer的博客</title><meta name="keywords" content="Linux_Kernel,Ubuntu"><meta name="author" content="Bugprogrammer"><meta name="copyright" content="Bugprogrammer"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="博主去年双11购入AMD Vega显卡(为了黑苹果免驱以及硬解)，发现Linux下无法驱动Vega显卡，4K显示器分辨率被锁定为1920x2160的奇葩分辨率，无法接受。于是Google了一下发现当时的内核(Linux 4.12)并不支持AMD Vega显卡，于是打算编译内核升级到最新版本，毕竟Linux的舒适使用对博主十分重要。现在分享一下Linux Kernel的编译教程。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux内核简介及编译教程">
+<meta property="og:url" content="https://www.bugprogrammer.me/2018/09/01/Linux_Kernel_Build.html">
+<meta property="og:site_name" content="Bugprogrammer的博客">
+<meta property="og:description" content="博主去年双11购入AMD Vega显卡(为了黑苹果免驱以及硬解)，发现Linux下无法驱动Vega显卡，4K显示器分辨率被锁定为1920x2160的奇葩分辨率，无法接受。于是Google了一下发现当时的内核(Linux 4.12)并不支持AMD Vega显卡，于是打算编译内核升级到最新版本，毕竟Linux的舒适使用对博主十分重要。现在分享一下Linux Kernel的编译教程。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.bugprogrammer.me/images/index.jpeg">
+<meta property="article:published_time" content="2018-09-01T14:20:00.000Z">
+<meta property="article:modified_time" content="2018-09-01T14:20:00.000Z">
+<meta property="article:author" content="Bugprogrammer">
+<meta property="article:tag" content="Linux_Kernel">
+<meta property="article:tag" content="Ubuntu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.bugprogrammer.me/images/index.jpeg"><link rel="shortcut icon" href="/images/my.jpg"><link rel="canonical" href="https://www.bugprogrammer.me/2018/09/01/Linux_Kernel_Build"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-119545430-2"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-119545430-2');
+</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":300,"position":"top","messagePrev":"此文章发表于","messageNext":"天以前，其内容可能已不再适用"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Bugprogrammer","link":"链接: ","source":"来源: Bugprogrammer的博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2018-09-01 22:20:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = '1'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Bugprogrammer的博客" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="/images/my.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">46</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/images/index.jpeg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Bugprogrammer的博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Linux内核简介及编译教程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2018-09-01T14:20:00.000Z" title="发表于 2018-09-01 22:20:00">2018-09-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2018-09-01T14:20:00.000Z" title="更新于 2018-09-01 22:20:00">2018-09-01</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Linux/">Linux</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>博主去年双11购入AMD Vega显卡(为了黑苹果免驱以及硬解)，发现Linux下无法驱动Vega显卡，4K显示器分辨率被锁定为1920x2160的奇葩分辨率，无法接受。于是Google了一下发现当时的内核(Linux 4.12)并不支持AMD Vega显卡，于是打算编译内核升级到最新版本，毕竟Linux的舒适使用对博主十分重要。现在分享一下Linux Kernel的编译教程。<span id="more"></span><br><br /><b>注意：由于时间久远，博主的Linux已经升级Ubuntu 18.04，自带内核版本为Linux 4.15，所以演示平台为Ubuntu 18.04，编译的内核版本为Linux 4.18.5。另外，本文中部分图片来源网络。因为经典体系架构图现画比较麻烦。</b></p>
+</blockquote>
+<h3 id="Linux内核简介"><a href="#Linux内核简介" class="headerlink" title="Linux内核简介"></a>Linux内核简介</h3><h4 id="Linux-Kernel-Map"><a href="#Linux-Kernel-Map" class="headerlink" title="Linux Kernel Map"></a>Linux Kernel Map</h4><p><img src= "/images/loading.gif" data-lazy-src="/images/6b49439752bdd908e832187bbbfe555dcd56864e.jpg"></p>
+<h4 id="Linux-系统体系结构"><a href="#Linux-系统体系结构" class="headerlink" title="Linux 系统体系结构"></a>Linux 系统体系结构</h4><p>如下图所示，Linux体系结构，从大的方面可以分为用户空间(User Space)和内核空间(Kernel Space)两部分。</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/299f340bcfb4ac1703fdb841e613bcaf57862165.jpg"></p>
+<ul>
+<li>用户空间中包含了C库，用户的应用程序。在某些体系结构图中还包含了shell，当然shell脚本也是Linux体系中不可缺少的一部分。</li>
+<li>内核空间包括硬件平台、平台依赖代码、内核、系统调用接口。</li>
+<li>在任何一个现代操作系统中，都是分层的。为什么需要分层呢？<blockquote>
+<p>从程序员的角度分析，将linux底层和应用分开，做应用的做应用，做底层的做底层，各干各的。经济学的基本原理是，分工产生效率。<br /><br>从安全性的角度分析，是为了保护内核。现代CPU通常都实现了不同的工作模式。<br><br />以ARM为例：ARM实现了7种工作模式，不同模式下CPU可以执行的指令或者访问的寄存器不同：(1)用户模式 usr (2)系统模式 sys(3)管理模式 svc(4)快速中断 fiq(5)外部中断 irq(6)数据访问终止 abt(7)未定义指令异常。如果任何一个上层应用都可以调用寄存器，那样肯定是无法稳定执行的。而且因为出现了这个问题，出现了一个新的学科“现代操作系统”，如果大家感兴趣可以看一下“现代操作系统”相关文章或者书籍。<br /><br>以X86为例：X86实现了4个不同级别的权限，Ring0—Ring3 ;Ring0下可以执行特权指令，可以访问IO设备；Ring3则有很多的限制。如果分析一下Android的，这方面做的更加“丧心病狂”，Android所有的APK应用程序，都是在Java虚拟机上面运行，应用程序更加远离底层。<br /><br>另外，用户空间和内核空间是程序执行的两种不同状态，我们可以通过“系统调用”和“硬件中断”来完成用户空间到内核空间的转移。</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="Linux-Kernel体系结构"><a href="#Linux-Kernel体系结构" class="headerlink" title="Linux Kernel体系结构"></a>Linux Kernel体系结构</h4><p>如下图所示，是Linux内核结构图。</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/97909a09aa119314a15a18235b9eb288ba7ad448.jpg"></p>
+<h5 id="SCI层（System-Call-Interface）"><a href="#SCI层（System-Call-Interface）" class="headerlink" title="SCI层（System Call Interface）"></a>SCI层（System Call Interface）</h5><p>这一层是给应用用户空间提供一套标准的系统调用函数来访问Linux。前面分析Linux体系结构的时候，介绍过任何一类现代操作系统都不会允许上层应用直接访问底层，在Linux中，内核提供了一套标准接口，上层应用就可以通过这一套标准接口来访问底层。</p>
+<h5 id="PM（Procees-Management）"><a href="#PM（Procees-Management）" class="headerlink" title="PM（Procees Management）"></a>PM（Procees Management）</h5><p>这一部分包括具体创建进程（fork、exec）,停止进程（kill、exit）,并控制他们之间的通信（signal等）。还包括进程调度，控制活动进程如何共享CPU。这一部分是Linux已经做好的，在写驱动的时候，只需要调用对应的函数即可实现这些功能，例如创建进程、进程通信等等。</p>
+<h5 id="MM（Memory-Management）"><a href="#MM（Memory-Management）" class="headerlink" title="MM（Memory Management）"></a>MM（Memory Management）</h5><p>内存管理的主要作用是控制多个进程安全的共享内存区域。</p>
+<h5 id="VFS（Virtual-File-Systems）"><a href="#VFS（Virtual-File-Systems）" class="headerlink" title="VFS（Virtual File Systems）"></a>VFS（Virtual File Systems）</h5><p>虚拟文件系统，隐藏各种文件系统的具体细节，为文件操作提供统一的接口。在Linux中“一切皆文件”，这些文件就是通过VFS来实现的。Linux提供了一个大的通用模型，使这个模型包含了所有文件系统功能的集合。如下图所示，是一个虚拟文件系统的结构图。</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/5a07b3a364feae45f4bd211f19d963e1977eff58.jpg"></p>
+<h5 id="DD（Device-Drivers）"><a href="#DD（Device-Drivers）" class="headerlink" title="DD（Device Drivers）"></a>DD（Device Drivers）</h5><p>设备驱动，Linux驱动一般分为网络设备、块设备、字符设备、杂项设备，需要我们编写的只有字符设备，杂项设备是不容易归类的一种驱动，杂项设备和字符设备有很多重合的地方。</p>
+<h5 id="PD（Physical-Devices）"><a href="#PD（Physical-Devices）" class="headerlink" title="PD（Physical Devices）"></a>PD（Physical Devices）</h5><p>这一部分提供丰富的网络协议支持。</p>
+<h3 id="Linux-Kernel源码"><a href="#Linux-Kernel源码" class="headerlink" title="Linux Kernel源码"></a>Linux Kernel源码</h3><h4 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h4><p><b><a target="_blank" rel="noopener" href="http://www.kernel.org/">www.kernel.org</a></b></p>
+<h4 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h4><ul>
+<li>arch：根据cpu体系结构不同而分的代码</li>
+<li>block：部分块设备驱动程序</li>
+<li>crypto：加密，压缩，CRC校验算法</li>
+<li>documentation：内核文档</li>
+<li>drivers：设备驱动程序</li>
+<li>fs(虚拟文件系统vfs):文件系统</li>
+<li>include：内核所需的头文件，(与平台无关的头文件在include/linux中)</li>
+<li>lib：库文件代码(与平台相关的)</li>
+<li>mm：实现内存管理，与硬件体系结构无关的(与硬件体系结构相关的在arch中)</li>
+<li>net：网络协议的代码</li>
+<li>samples：一些内核编程的范例</li>
+<li>scripts：配置内核的脚本</li>
+<li>security：SElinux的模块</li>
+<li>sound：音频设备的驱动程序</li>
+<li>usr：cpio命令实现，用于制作根文件系统的命令(文件系统与内核放到一块的命令)</li>
+<li>virt：内核虚拟机</li>
+</ul>
+<h3 id="Linux-Kernel编译"><a href="#Linux-Kernel编译" class="headerlink" title="Linux Kernel编译"></a>Linux Kernel编译</h3><h4 id="下载Linux-Kernel源码并拷贝到-usr-src目录"><a href="#下载Linux-Kernel源码并拷贝到-usr-src目录" class="headerlink" title="下载Linux Kernel源码并拷贝到/usr/src目录"></a>下载Linux Kernel源码并拷贝到/usr/src目录</h4><p>输入如下命令即可</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:<span class="regexp">//</span>cdn.kernel.org<span class="regexp">/pub/</span>linux<span class="regexp">/kernel/</span>v4.x<span class="regexp">/linux-4.18.5.tar.xz &amp;&amp; cp -f linux-4.18.5.tar.xz /u</span>sr/src</span><br></pre></td></tr></table></figure>
+<h4 id="解压Linux-Kernel"><a href="#解压Linux-Kernel" class="headerlink" title="解压Linux Kernel"></a>解压Linux Kernel</h4><p>输入如下命令即可</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">cd</span> /usr/src &amp;&amp; tar -xvf linux-<span class="number">4</span>.<span class="number">18</span>.<span class="number">5</span>.tar.xz &amp;&amp; cd linux-<span class="number">4</span>.<span class="number">18</span>.<span class="number">5</span></span><br></pre></td></tr></table></figure>
+<h4 id="Ubuntu-18-04下，要执行以下命令安装软件包"><a href="#Ubuntu-18-04下，要执行以下命令安装软件包" class="headerlink" title="Ubuntu 18.04下，要执行以下命令安装软件包"></a>Ubuntu 18.04下，要执行以下命令安装软件包</h4><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt <span class="keyword">install</span> fortune</span><br></pre></td></tr></table></figure>
+<h4 id="配置编译参数"><a href="#配置编译参数" class="headerlink" title="配置编译参数"></a>配置编译参数</h4><p>执行以下命令，会弹出一个带有GUI的配置界面，一般情况下默认参数就好，光标移动到Save保存即可，如图：</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">make menuconfig</span></span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/bc6c5ce369b72802e5c97d5a38ef3b2b50ad6455.jpg"></p>
+<h4 id="编译内核"><a href="#编译内核" class="headerlink" title="编译内核"></a>编译内核</h4><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">make</span> -j<span class="number">12</span></span><br></pre></td></tr></table></figure>
+<p><b>注意：-j参数后面加本机CPU线程数可以加快编译速度，博主的8700K是6核心12线程，所以-j12。</b></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/39a28f2943c8062679567b03687c28c54354b5c9.jpg"></p>
+<h4 id="安装内核"><a href="#安装内核" class="headerlink" title="安装内核"></a>安装内核</h4><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">make</span> modules_install</span><br><span class="line"><span class="built_in">make</span> install</span><br></pre></td></tr></table></figure>
+<h4 id="更新grub引导"><a href="#更新grub引导" class="headerlink" title="更新grub引导"></a>更新grub引导</h4><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">update</span>-grub<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>至此升级内核成功，重启电脑。</p>
+<h4 id="确认升级是否成功"><a href="#确认升级是否成功" class="headerlink" title="确认升级是否成功"></a>确认升级是否成功</h4><p>重启后，执行如下命令查看内核版本，和编译版本相同即为成功</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">uname -r</span></span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/7de8222416d47ef89b548125c35e3b5f3238508f.jpg"></p>
+</article><div style="text-align:center;color: #ccc;font-size:14px;">-------------&#x672C;&#x6587;&#x7ED3;&#x675F;<i class="fa fa-paw"></i>&#x611F;&#x8C22;&#x60A8;&#x7684;&#x9605;&#x8BFB;-------------</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">博主QQ号: </span><span class="post-copyright-meta">951426440</span></div></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">QQ群列表: </span></div><div class="post-copyright__author"><span class="post-copyright-meta"><a target="_blank" rel="noopener" href="https://shang.qq.com/wpa/qunwpa?idkey=860990e11014839268b97278613c5b16d3569e4ef42561eeab25b5457064cd87">Hackintosh极客俱乐部</a></span><span class="post-copyright-meta">   414114950</span></div></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Bugprogrammer</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.bugprogrammer.me/2018/09/01/Linux_Kernel_Build.html">https://www.bugprogrammer.me/2018/09/01/Linux_Kernel_Build.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.bugprogrammer.me" target="_blank">Bugprogrammer的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux-Kernel/">Linux_Kernel</a><a class="post-meta__tags" href="/tags/Ubuntu/">Ubuntu</a></div><div class="post_share"><div class="social-share" data-image="/images/index.jpeg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2018/11/05/Z390+9900K_Hackintosh.html"><img class="prev-cover" data-lazy-src="/images/index.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Hackintosh for ASRock Z390 Phantom Gaming-ITX/ac+i9-9900K相关问题解决方案</div></div></a></div><div class="next-post pull-right"><a href="/2018/09/01/ThinkPad_Hackintosh_2018.html"><img class="next-cover" data-lazy-src="/images/index.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">ThinkPad S1 2018 Hackintosh记录+教程+完整EFI分享</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E5%86%85%E6%A0%B8%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">Linux内核简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Linux-Kernel-Map"><span class="toc-number">1.1.</span> <span class="toc-text">Linux Kernel Map</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Linux-%E7%B3%BB%E7%BB%9F%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.</span> <span class="toc-text">Linux 系统体系结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Linux-Kernel%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">1.3.</span> <span class="toc-text">Linux Kernel体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#SCI%E5%B1%82%EF%BC%88System-Call-Interface%EF%BC%89"><span class="toc-number">1.3.1.</span> <span class="toc-text">SCI层（System Call Interface）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#PM%EF%BC%88Procees-Management%EF%BC%89"><span class="toc-number">1.3.2.</span> <span class="toc-text">PM（Procees Management）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#MM%EF%BC%88Memory-Management%EF%BC%89"><span class="toc-number">1.3.3.</span> <span class="toc-text">MM（Memory Management）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#VFS%EF%BC%88Virtual-File-Systems%EF%BC%89"><span class="toc-number">1.3.4.</span> <span class="toc-text">VFS（Virtual File Systems）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#DD%EF%BC%88Device-Drivers%EF%BC%89"><span class="toc-number">1.3.5.</span> <span class="toc-text">DD（Device Drivers）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#PD%EF%BC%88Physical-Devices%EF%BC%89"><span class="toc-number">1.3.6.</span> <span class="toc-text">PD（Physical Devices）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux-Kernel%E6%BA%90%E7%A0%81"><span class="toc-number">2.</span> <span class="toc-text">Linux Kernel源码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%98%E7%BD%91"><span class="toc-number">2.1.</span> <span class="toc-text">官网</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">2.2.</span> <span class="toc-text">目录结构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux-Kernel%E7%BC%96%E8%AF%91"><span class="toc-number">3.</span> <span class="toc-text">Linux Kernel编译</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDLinux-Kernel%E6%BA%90%E7%A0%81%E5%B9%B6%E6%8B%B7%E8%B4%9D%E5%88%B0-usr-src%E7%9B%AE%E5%BD%95"><span class="toc-number">3.1.</span> <span class="toc-text">下载Linux Kernel源码并拷贝到&#x2F;usr&#x2F;src目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%8E%8BLinux-Kernel"><span class="toc-number">3.2.</span> <span class="toc-text">解压Linux Kernel</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Ubuntu-18-04%E4%B8%8B%EF%BC%8C%E8%A6%81%E6%89%A7%E8%A1%8C%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8C%85"><span class="toc-number">3.3.</span> <span class="toc-text">Ubuntu 18.04下，要执行以下命令安装软件包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%BC%96%E8%AF%91%E5%8F%82%E6%95%B0"><span class="toc-number">3.4.</span> <span class="toc-text">配置编译参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%86%85%E6%A0%B8"><span class="toc-number">3.5.</span> <span class="toc-text">编译内核</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%86%85%E6%A0%B8"><span class="toc-number">3.6.</span> <span class="toc-text">安装内核</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0grub%E5%BC%95%E5%AF%BC"><span class="toc-number">3.7.</span> <span class="toc-text">更新grub引导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A1%AE%E8%AE%A4%E5%8D%87%E7%BA%A7%E6%98%AF%E5%90%A6%E6%88%90%E5%8A%9F"><span class="toc-number">3.8.</span> <span class="toc-text">确认升级是否成功</span></a></li></ol></li></ol></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2018 - 2021 By Bugprogrammer</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.spacingElementById('content-inner')
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.spacingElementById('content-inner')
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.17.0/js/md5.min.js"></script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk({
+      clientID: '228efd9c1e98867fc0ae',
+      clientSecret: '95f75ffd8504aed575db82baadd6c8152d824d66',
+      repo: 'bugprogrammer.github.io',
+      owner: 'bugprogrammer',
+      admin: ['bugprogrammer'],
+      id: md5(window.location.pathname.substr(1)),
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    })
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script></div></body></html>

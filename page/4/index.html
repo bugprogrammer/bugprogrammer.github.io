@@ -1,0 +1,358 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bugprogrammer的博客 - 技术宅的日常</title><meta name="keywords" content="Linux,macOS,Hackintosh,Android,Windows,OpenWrt,C++,Java,PHP,Python"><meta name="author" content="Bugprogrammer"><meta name="copyright" content="Bugprogrammer"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="致力于打造一个纯净，友好的技术类分享博客。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bugprogrammer的博客">
+<meta property="og:url" content="https://www.bugprogrammer.me/page/4/index.html">
+<meta property="og:site_name" content="Bugprogrammer的博客">
+<meta property="og:description" content="致力于打造一个纯净，友好的技术类分享博客。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.bugprogrammer.me/images/my.jpg">
+<meta property="article:author" content="Bugprogrammer">
+<meta property="article:tag" content="Linux,macOS,Hackintosh,Android,Windows,OpenWrt,C++,Java,PHP,Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.bugprogrammer.me/images/my.jpg"><link rel="shortcut icon" href="/images/my.jpg"><link rel="canonical" href="https://www.bugprogrammer.me/page/4/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-119545430-2"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-119545430-2');
+</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":300,"position":"top","messagePrev":"此文章发表于","messageNext":"天以前，其内容可能已不再适用"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Bugprogrammer","link":"链接: ","source":"来源: Bugprogrammer的博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-10-13 22:52:22'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = '1'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Bugprogrammer的博客" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="/images/my.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">46</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div></div></div></div><div id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/images/index.jpeg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Bugprogrammer的博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Bugprogrammer的博客</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="mailto:a951426440@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="tencent://message/?uin=951426440&amp;amp;Site=&amp;amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/01/29/hackintosh-for-asus-n550jv.html" title="ASUS N550JV Hackintosh记录+教程+完整EFI分享">ASUS N550JV Hackintosh记录+教程+完整EFI分享</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-01-29T14:09:00.000Z" title="发表于 2019-01-29 22:09:00">2019-01-29</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2019-01-29T14:09:00.000Z" title="更新于 2019-01-29 22:09:00">2019-01-29</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Hackintosh/">Hackintosh</a></span></div><div class="content">
+朋友的asus-n550jv笔记本，配置为i7-4700HQ+hd4600+gt750M(已屏蔽)+8g ram+256g ssd(sata)+1T hdd+1080P屏幕。安装黑苹果大体顺利，现将大概过程分享，供同机型的朋友借鉴。
+
+前言
+asus-n550jv原机自带ar9485无线网卡，驱动不完美，所以更换无线网卡为bcm94352hmb。
+完美程度：显卡+声卡+双网卡+蓝牙完美驱动，USB正常，睡眠唤醒正常，显示器内建正常，HDMI外接屏幕无条件测试，变频12档，小太阳正常，电池正常(感谢黑果小兵和宪武以及其他大牛的帮助)。键盘背光调节正常，触摸板空白。
+因为电脑是朋友的，所以截图不方便，因此本教程尽量多使用命令行方式，各位可以直接复制粘贴。一部分图片是在博主电脑截图的。
+本教程需要你有一个macOS环境，可以是虚拟机。虚拟机安装macOS百度教程很多，请自学。
+安装前要在Windows下准备好安装macOS所需分区。
+
+教程制作安装盘
+下载macOS Mojave 10.14.3镜像，博主建议在App Store下载，下载成功后会保存在Application下。
+格式化U盘 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2019/01/14/update-website-tls1.3-and-HSTS.html" title="为个人网站升级TLS 1.3以及HSTS">为个人网站升级TLS 1.3以及HSTS</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-01-14T15:11:00.000Z" title="发表于 2019-01-14 23:11:00">2019-01-14</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2019-01-14T15:11:00.000Z" title="更新于 2019-01-14 23:11:00">2019-01-14</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/WEB/">WEB</a></span></div><div class="content">理论相关TLSTLS简介SSL(Secure Sockets Layer) 安全套接层，是一种安全协议，经历了 SSL 1.0、2.0、3.0 版本后发展成了标准安全协议——TLS (Transport Layer Security) 传输层安全性协议。TLS 有 1.0 (RFC 2246)、1.1(RFC 4346)、1.2(RFC 5246)、1.3(RFC 8446) 版本。
+
+
+TLS 在实现上分为 记录层 和 握手层 两层，其中握手层又含四个子协议: 握手协议 (handshake protocol)、更改加密规范协议 (change cipher spec protocol)、应用数据协议 (application data protocol) 和警告协议 (alert protocol)。TLS模型图如下。
+TLS 1.3与TLS 1.2对比互联网工程任务组（IETF）是负责定义TLS协议的组，该协议经历了多次迭代。先前版本的TLS，TLS 1.2，在RFC 5246中定义， 并且在过去八年中已被大多数Web浏览器使用。在2018年3月21日，经过28次草案后，TLS  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2018/11/05/Z390+9900K_Hackintosh.html" title="Hackintosh for ASRock Z390 Phantom Gaming-ITX/ac+i9-9900K相关问题解决方案">Hackintosh for ASRock Z390 Phantom Gaming-ITX/ac+i9-9900K相关问题解决方案</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2018-11-05T15:42:00.000Z" title="发表于 2018-11-05 23:42:00">2018-11-05</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2018-12-24T15:42:00.000Z" title="更新于 2018-12-24 23:42:00">2018-12-24</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Hackintosh/">Hackintosh</a></span></div><div class="content">前言
+你没看错，的确是Z390+9900K黑苹果，博主第一时间海淘测试(价钱不说了),大概率国内首发Z390+9900K黑苹果常见问题解决方案。
+
+
+
+常见问题关机变重启以及睡眠变重启(还没进入睡眠状态就重启)问题成因
+由于Apple并没有推出搭载Z390芯片组的产品，所以macOS现有版本不能原生支持Z390的nvram。
+
+解决思路
+软件模拟nvram
+
+解决方案
+按照教程https://www.bugprogrammer.me/2018/06/29/Build_Clover.html 编译最新版本Clover并安装到系统根目录，安装时务必勾选EmuVariableUefi-64.efi以及RC scripts补丁，如下图。
+将cloverx64.efi拷贝到EFI分区下的EFI/CLOVER路径下并覆盖，将EmuVariableUefi-64.efi拷贝到EFI分区下的EFI/CLOVER/drivers64UEFI路径下。
+使用Clover Configurator挂载EFI分区并打开config.plist文件，找到Boot-&gt;Arguments并勾选slide=0选项 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2018/09/01/Linux_Kernel_Build.html" title="Linux内核简介及编译教程">Linux内核简介及编译教程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2018-09-01T14:20:00.000Z" title="发表于 2018-09-01 22:20:00">2018-09-01</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2018-09-01T14:20:00.000Z" title="更新于 2018-09-01 22:20:00">2018-09-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span></div><div class="content">
+博主去年双11购入AMD Vega显卡(为了黑苹果免驱以及硬解)，发现Linux下无法驱动Vega显卡，4K显示器分辨率被锁定为1920x2160的奇葩分辨率，无法接受。于是Google了一下发现当时的内核(Linux 4.12)并不支持AMD Vega显卡，于是打算编译内核升级到最新版本，毕竟Linux的舒适使用对博主十分重要。现在分享一下Linux Kernel的编译教程。注意：由于时间久远，博主的Linux已经升级Ubuntu 18.04，自带内核版本为Linux 4.15，所以演示平台为Ubuntu 18.04，编译的内核版本为Linux 4.18.5。另外，本文中部分图片来源网络。因为经典体系架构图现画比较麻烦。
+
+Linux内核简介Linux Kernel Map
+Linux 系统体系结构如下图所示，Linux体系结构，从大的方面可以分为用户空间(User Space)和内核空间(Kernel Space)两部分。
+
+
+用户空间中包含了C库，用户的应用程序。在某些体系结构图中还包含了shell，当然shell脚本也是Linux体系中不可缺少的一部分。
+内核空间包括硬件平台 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2018/09/01/ThinkPad_Hackintosh_2018.html" title="ThinkPad S1 2018 Hackintosh记录+教程+完整EFI分享">ThinkPad S1 2018 Hackintosh记录+教程+完整EFI分享</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2018-09-01T13:12:00.000Z" title="发表于 2018-09-01 21:12:00">2018-09-01</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2018-09-01T13:12:00.000Z" title="更新于 2018-09-01 21:12:00">2018-09-01</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Hackintosh/">Hackintosh</a></span></div><div class="content">
+朋友购买了ThinkPad S1 2018版本，配置为i5-8250U+uhd620+8g ram+256g 联想定制ssd(NVME)+1080P屏幕。安装黑苹果大体顺利，现将大概过程分享，供同机型的朋友借鉴。
+
+前言
+因ThinkPad S1 2018使用的是intel无线网卡，大家都知道intel无线网卡在黑苹果下目前无解，所以替换了Bcm94352z。虽然Bcm94360是免驱的，但是博主不建议笔记本用户选用，因为Bcm94360和普通的ngff无线网卡相比宽了一块，所以笔记本有概率无法安装。
+完美程度：显卡+声卡+双网卡+蓝牙完美驱动，USB正常，睡眠唤醒正常，显示器内建正常，HDMI外接屏幕正常，变频7档，小太阳正常，电池正常(感谢黑果小兵和宪武以及其他大牛的帮助)。触摸屏以及电容笔可用，但只能单点触摸。触摸板和小红点可用，但是不支持手势。
+因为电脑是朋友的，所以截图不方便，因此本教程尽量多使用命令行方式，各位可以直接复制粘贴。
+本教程需要你有一个macOS环境，可以是虚拟机。虚拟机安装macOS百度教程很多，请自学。
+安装前要在Windows下准备好安装macOS所需分 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2018/07/28/ThinkPad_Hackintosh.html" title="ThinkPad S1 2017 Hackintosh记录+教程+完整EFI分享">ThinkPad S1 2017 Hackintosh记录+教程+完整EFI分享</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2018-07-28T08:10:00.000Z" title="发表于 2018-07-28 16:10:00">2018-07-28</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2018-07-28T08:10:00.000Z" title="更新于 2018-07-28 16:10:00">2018-07-28</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Hackintosh/">Hackintosh</a></span></div><div class="content">
+朋友购买了ThinkPad S1 2017版本，配置为i5-7200U+hd620+8g ram+256g intel ssd(NVME)+1080P屏幕。安装黑苹果大体顺利，现将大概过程分享，供同机型的朋友借鉴。
+
+前言
+因ThinkPad S1 2017使用的是intel无线网卡，大家都知道intel无线网卡在黑苹果下目前无解，所以替换了Bcm94352z。虽然Bcm94360是免驱的，但是博主不建议笔记本用户选用，因为Bcm94360和普通的ngff无线网卡相比宽了一块，所以笔记本有概率无法安装。
+完美程度：显卡+声卡+双网卡+蓝牙完美驱动，USB正常，睡眠唤醒正常，显示器内建正常，HDMI外接屏幕正常，变频7档，小太阳正常，电池正常(感谢黑果小兵和宪武以及其他大牛的帮助)。触摸屏以及电容笔可用，但只能单点触摸。触摸板和小红点可用，但是不支持手势。
+因为电脑是朋友的，所以截图不方便，因此本教程尽量多使用命令行方式，各位可以直接复制粘贴。
+本教程需要你有一个macOS环境，可以是虚拟机。虚拟机安装macOS百度教程很多，请自学。
+安装前要在Windows下准备好安装macOS所需 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2018/06/29/Build_Clover.html" title="macOS下编译Clover教程">macOS下编译Clover教程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2018-06-29T04:53:00.000Z" title="发表于 2018-06-29 12:53:00">2018-06-29</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2018-06-29T04:53:00.000Z" title="更新于 2018-06-29 12:53:00">2018-06-29</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Hackintosh/">Hackintosh</a></span></div><div class="content">
+随着macOS 10.14公测版本的发布，黑苹果用户对Clover新版本的需求提高，想要最新版本的Clover最直接的方法就是源码编译，方便快捷，教程如下。
+
+安装相关环境Xcode
+Mac App Store商店安装Xcode
+终端下输入如下命令并按提示安装1xcode-select --install
+
+
+
+python
+官网下载安装即可 
+
+准备编译脚本Build_Clover.command
+输入如下命令下载编译脚本并进入相应目录1git clone https://github.com/Micky1979/Build_Clover.git &amp;&amp; cd Build_Clover
+给予执行权限1chmod u+x Build_Clover.command
+执行脚本，中途会自动下载Clover最新源码，请等待，下载源码过程以及成功进入菜单如图所示1./Build_Clover.command
+    
+
+Build_Clover.command菜单解释
+update Clover only (no building) 更新Clover源码不编译
+update Cl ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2018/06/22/mi5-enable-gesture.html" title="mi5开启全面屏手势教程(非原创，转自一个已经被miui论坛删除又幸运的被Chrome缓存下来的帖子)">mi5开启全面屏手势教程(非原创，转自一个已经被miui论坛删除又幸运的被Chrome缓存下来的帖子)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2018-06-22T14:48:00.000Z" title="发表于 2018-06-22 22:48:00">2018-06-22</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2018-06-22T14:48:00.000Z" title="更新于 2018-06-22 22:48:00">2018-06-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Android/">Android</a></span></div><div class="content">MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看
+
+
+我把我开启全面屏的过程写了一下，由于在过程中看到其他帖子写的太随便，不够详细，所以来写一个详细一些的，方便mi5用户体验全面屏手势，话说真的很好用啊，那些说不用root用第三方软件实现的手势不管是从美观程度和可用性都没原厂的好啊，刷完自己体会吧。
+
+适用对象
+已经获取root权限的mi5
+已是开发版系统，并且在授权管理开启了root授权
+稳定版用户，自行升级到开发版开启root权限，或者用其他办法获取root授权
+
+简要流程
+获取完整root权限
+安装rec，挂载system分区
+使用re文件管理器找到/system/build.prop文件，在文件尾部加入qemu.hw.mainkeys=0
+重启手机，即可在设置中找到全面屏选项
+
+详细流程
+默认使用win10系统，已安装mi5的驱动。
+
+获取完整root权限
+手机开启usb调试模式
+下载一键破译分区工具
+解压下载的文件，运行.bat文件，如图
+
+安装rec，挂载system分区
+下载twrp.apk
+手机安装下载的app（此app需要root权限，如果是开发版小米 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2018/05/27/reset-password-for-windows-10.html" title="Windows 10下忘记密码的解决方案(本地账户，微软账户通杀)">Windows 10下忘记密码的解决方案(本地账户，微软账户通杀)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2018-05-27T04:13:23.000Z" title="发表于 2018-05-27 12:13:23">2018-05-27</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2018-05-27T04:13:23.000Z" title="更新于 2018-05-27 12:13:23">2018-05-27</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Windows-Desktop/">Windows Desktop</a></span></div><div class="content">原理
+我们知道Windows下连按5次shift会弹出粘滞键，他的程序名称是sethc.exe。经测试在Windows登录界面处输入密码之前按5次shift键也可以启动sethc.exe。所以只要把cmd.exe重命名为sethc.exe就可以在登录之前打开cmd以便我们为所欲为。
+
+PE破解密码的缺陷如果电脑安装了双Windows系统，如win7+win10，pe破解可能失效。
+教程
+准备好windows 10安装U盘。
+U盘启动，点击下一步-&gt;修复计算机-&gt;疑难解答-&gt;命令提示符(一定要在安装盘下进入，系统下直接进入高级模式会要求输入密码)，如图如出现下图则说明你不是通过安装盘进入的高级模式。
+导航进入系统盘符，注意不一定是C盘，用dir命令查看盘符下的文件已确定是不是系统盘。如12C:cd Windows/System32
+输入以下命令将cmd重命名，3、4步骤如图12ren sethc.exe AAA.exeren cmd.exe sethc.exe
+
+重启到登录界面按5次shift进入命令提示符(此时窗口名称为sethc.exe)
+输入如下命令启用Windo ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2018/05/19/phpnginxmysql.html" title="PHP+Nginx+MySQL搭建网站简易教程(以Centos7为例)">PHP+Nginx+MySQL搭建网站简易教程(以Centos7为例)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2018-05-18T18:42:33.000Z" title="发表于 2018-05-19 02:42:33">2018-05-19</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2018-05-18T18:42:33.000Z" title="更新于 2018-05-19 02:42:33">2018-05-19</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span></div><div class="content">准备工作
+一台vps
+一个域名并做好域名解析(本人在godaddy 购买的),解析之后ping域名，如果返回的是vps的ip，则域名解析成功。如图：
+一个SSL证书，个人网站免费的Let’s Encrypt即可(申请过程后面讲)。
+
+安装PHP7.0及其扩展
+更新yum源1rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+安装PHP7.0(php70w-common,php70w-fpm,php70w-mysqlnd必须必须安装)1yum install php70w-common php70w-fpm php70w-opcache php70w-gd php70w-mysqlnd php70w-mbstring php70w-pecl-redis php70w-pecl-memcached php70w-devel
+版本验证1php -v
+查看显 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/3/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="/images/my.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Bugprogrammer</div><div class="author-info__description">致力于打造一个纯净，友好的技术类分享博客。</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">46</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/bugprogrammer"><i class="fab fa-github"></i><span>博主Github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:a951426440@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="tencent://message/?uin=951426440&amp;amp;Site=&amp;amp;menu=yes" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">1、本站近期更换了dns服务器 2、HackintoshBuild v4.2已经发布。</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/05/06/about-openwrt-ipv6.html" title="OpenWrt获取IPv6详细教程">OpenWrt获取IPv6详细教程</a><time datetime="2021-05-06T13:00:00.000Z" title="发表于 2021-05-06 21:00:00">2021-05-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2021/04/23/Compiling-Soft-for-AppleSilicons.html" title="博主自编译的开源软件用于Apple Silicon Macs(长期更新)">博主自编译的开源软件用于Apple Silicon Macs(长期更新)</a><time datetime="2021-04-22T16:50:00.000Z" title="发表于 2021-04-23 00:50:00">2021-04-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/09/07/HackintoshPlugins.html" title="博主的Hackintosh全家桶定时编译上线GitHub">博主的Hackintosh全家桶定时编译上线GitHub</a><time datetime="2020-09-06T18:45:00.000Z" title="发表于 2020-09-07 02:45:00">2020-09-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/07/09/about-BigSur.html" title="关于macOS Big Sur Hackintosh简要说明">关于macOS Big Sur Hackintosh简要说明</a><time datetime="2020-07-08T16:54:00.000Z" title="发表于 2020-07-09 00:54:00">2020-07-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2020/05/27/Hackintosh_for_Z490_10900K.html" title="技嘉Z490 ELITE+i9 10900K+RX 5700 XT Hackintosh构建说明">技嘉Z490 ELITE+i9 10900K+RX 5700 XT Hackintosh构建说明</a><time datetime="2020-05-27T08:30:00.000Z" title="发表于 2020-05-27 16:30:00">2020-05-27</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Android/"><span class="card-category-list-name">Android</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Android-Rom/"><span class="card-category-list-name">Android Rom</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Hackintosh/"><span class="card-category-list-name">Hackintosh</span><span class="card-category-list-count">32</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Linux/"><span class="card-category-list-name">Linux</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Macintosh/"><span class="card-category-list-name">Macintosh</span><span class="card-category-list-count">2</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Macintosh/Apple-Silicon/"><span class="card-category-list-name">Apple Silicon</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/OpenWrt/"><span class="card-category-list-name">OpenWrt</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/WEB/"><span class="card-category-list-name">WEB</span><span class="card-category-list-count">1</span></a></li>
+            <li class="card-category-list-item more is-center"><a class="card-category-list-link-more" href="/categories/">
+                <span>查看更多</span><i class="fas fa-angle-right"></i></a></li>
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/ASUS-N550JV/" style="font-size: 1.1em; color: #999">ASUS N550JV</a> <a href="/tags/Android/" style="font-size: 1.18em; color: #999ca1">Android</a> <a href="/tags/Android-Q/" style="font-size: 1.1em; color: #999">Android Q</a> <a href="/tags/BootCamp/" style="font-size: 1.1em; color: #999">BootCamp</a> <a href="/tags/Centos/" style="font-size: 1.1em; color: #999">Centos</a> <a href="/tags/Clover/" style="font-size: 1.1em; color: #999">Clover</a> <a href="/tags/Debian/" style="font-size: 1.1em; color: #999">Debian</a> <a href="/tags/HSTS/" style="font-size: 1.1em; color: #999">HSTS</a> <a href="/tags/Hackintosh/" style="font-size: 1.5em; color: #99a9bf">Hackintosh</a> <a href="/tags/Linux/" style="font-size: 1.26em; color: #999fa8">Linux</a> <a href="/tags/Linux-Kernel/" style="font-size: 1.1em; color: #999">Linux_Kernel</a> <a href="/tags/MacBook-Pro/" style="font-size: 1.1em; color: #999">MacBook Pro</a> <a href="/tags/Macintosh/" style="font-size: 1.18em; color: #999ca1">Macintosh</a> <a href="/tags/MySQL/" style="font-size: 1.1em; color: #999">MySQL</a> <a href="/tags/Nginx/" style="font-size: 1.18em; color: #999ca1">Nginx</a> <a href="/tags/OnePlus-7-Pro/" style="font-size: 1.1em; color: #999">OnePlus 7 Pro</a> <a href="/tags/OpenCore/" style="font-size: 1.34em; color: #99a3b0">OpenCore</a> <a href="/tags/OpenSSL/" style="font-size: 1.1em; color: #999">OpenSSL</a> <a href="/tags/OpenWrt/" style="font-size: 1.1em; color: #999">OpenWrt</a> <a href="/tags/PHP/" style="font-size: 1.1em; color: #999">PHP</a> <a href="/tags/Project-Treble/" style="font-size: 1.1em; color: #999">Project Treble</a> <a href="/tags/RX5700/" style="font-size: 1.1em; color: #999">RX5700</a> <a href="/tags/SSL/" style="font-size: 1.1em; color: #999">SSL</a> <a href="/tags/Secure-Boot/" style="font-size: 1.1em; color: #999">Secure Boot</a> <a href="/tags/TLS-1-3/" style="font-size: 1.1em; color: #999">TLS 1.3</a> <a href="/tags/ThinkPad-S1-2017/" style="font-size: 1.1em; color: #999">ThinkPad S1 2017</a> <a href="/tags/ThinkPad-S1-2018/" style="font-size: 1.1em; color: #999">ThinkPad S1 2018</a> <a href="/tags/Ubuntu/" style="font-size: 1.18em; color: #999ca1">Ubuntu</a> <a href="/tags/VoodooI2C/" style="font-size: 1.1em; color: #999">VoodooI2C</a> <a href="/tags/Windows10/" style="font-size: 1.1em; color: #999">Windows10</a> <a href="/tags/acrock-z390/" style="font-size: 1.1em; color: #999">acrock z390</a> <a href="/tags/cmd/" style="font-size: 1.1em; color: #999">cmd</a> <a href="/tags/i9-9900K/" style="font-size: 1.1em; color: #999">i9-9900K</a> <a href="/tags/ipv6/" style="font-size: 1.1em; color: #999">ipv6</a> <a href="/tags/linux/" style="font-size: 1.1em; color: #999">linux</a> <a href="/tags/macOS/" style="font-size: 1.42em; color: #99a6b7">macOS</a> <a href="/tags/macOS-Catalina-10-15/" style="font-size: 1.34em; color: #99a3b0">macOS Catalina 10.15</a> <a href="/tags/mi5/" style="font-size: 1.1em; color: #999">mi5</a> <a href="/tags/miui/" style="font-size: 1.1em; color: #999">miui</a> <a href="/tags/sethc/" style="font-size: 1.1em; color: #999">sethc</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">五月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/04/"><span class="card-archive-list-date">四月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/09/"><span class="card-archive-list-date">九月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/07/"><span class="card-archive-list-date">七月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/05/"><span class="card-archive-list-date">五月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/04/"><span class="card-archive-list-date">四月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/03/"><span class="card-archive-list-date">三月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/01/"><span class="card-archive-list-date">一月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item more is-center"><a class="card-archive-list-link-more" href="/archives/">
+              <span>查看更多</span><i class="fas fa-angle-right"  ></i></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">44</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2018-05-04T16:00:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">32k</div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-10-13T14:52:21.903Z"></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2018 - 2021 By Bugprogrammer</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.spacingElementById('content-inner')
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.spacingElementById('content-inner')
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script>function subtitleType () {
+  fetch('https://api.btstu.cn/yan/api.php?charset=utf-8&encode=json')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        var sub = "".length == 0 ? new Array() : "".split(',')
+        var both = sub.unshift(data.text)
+        typed = new Typed('#subtitle', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
+        })
+      } else {
+        document.getElementById('subtitle').innerHTML = data.text
+      }
+    })
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script></div></body></html>

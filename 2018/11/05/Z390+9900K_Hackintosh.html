@@ -1,0 +1,330 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hackintosh for ASRock Z390 Phantom Gaming-ITX/ac+i9-9900K相关问题解决方案 | Bugprogrammer的博客</title><meta name="keywords" content="macOS,acrock z390,i9-9900K"><meta name="author" content="Bugprogrammer"><meta name="copyright" content="Bugprogrammer"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="前言 你没看错，的确是Z390+9900K黑苹果，博主第一时间海淘测试(价钱不说了),大概率国内首发Z390+9900K黑苹果常见问题解决方案。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hackintosh for ASRock Z390 Phantom Gaming-ITX&#x2F;ac+i9-9900K相关问题解决方案">
+<meta property="og:url" content="https://www.bugprogrammer.me/2018/11/05/Z390+9900K_Hackintosh.html">
+<meta property="og:site_name" content="Bugprogrammer的博客">
+<meta property="og:description" content="前言 你没看错，的确是Z390+9900K黑苹果，博主第一时间海淘测试(价钱不说了),大概率国内首发Z390+9900K黑苹果常见问题解决方案。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.bugprogrammer.me/images/index.jpeg">
+<meta property="article:published_time" content="2018-11-05T15:42:00.000Z">
+<meta property="article:modified_time" content="2018-12-24T15:42:00.000Z">
+<meta property="article:author" content="Bugprogrammer">
+<meta property="article:tag" content="macOS">
+<meta property="article:tag" content="acrock z390">
+<meta property="article:tag" content="i9-9900K">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.bugprogrammer.me/images/index.jpeg"><link rel="shortcut icon" href="/images/my.jpg"><link rel="canonical" href="https://www.bugprogrammer.me/2018/11/05/Z390+9900K_Hackintosh"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-119545430-2"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-119545430-2');
+</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":300,"position":"top","messagePrev":"此文章发表于","messageNext":"天以前，其内容可能已不再适用"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Bugprogrammer","link":"链接: ","source":"来源: Bugprogrammer的博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2018-12-24 23:42:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = '1'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Bugprogrammer的博客" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="/images/my.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">46</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/images/index.jpeg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Bugprogrammer的博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Hackintosh for ASRock Z390 Phantom Gaming-ITX/ac+i9-9900K相关问题解决方案</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2018-11-05T15:42:00.000Z" title="发表于 2018-11-05 23:42:00">2018-11-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2018-12-24T15:42:00.000Z" title="更新于 2018-12-24 23:42:00">2018-12-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Hackintosh/">Hackintosh</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>你没看错，的确是Z390+9900K黑苹果，博主第一时间海淘测试(价钱不说了),大概率国内首发Z390+9900K黑苹果常见问题解决方案。</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="关机变重启以及睡眠变重启-还没进入睡眠状态就重启"><a href="#关机变重启以及睡眠变重启-还没进入睡眠状态就重启" class="headerlink" title="关机变重启以及睡眠变重启(还没进入睡眠状态就重启)"></a>关机变重启以及睡眠变重启(还没进入睡眠状态就重启)</h3><h4 id="问题成因"><a href="#问题成因" class="headerlink" title="问题成因"></a>问题成因</h4><blockquote>
+<p>由于Apple并没有推出搭载Z390芯片组的产品，所以macOS现有版本不能原生支持Z390的nvram。</p>
+</blockquote>
+<h4 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h4><blockquote>
+<p>软件模拟nvram</p>
+</blockquote>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ul>
+<li>按照教程<a href="https://www.bugprogrammer.me/2018/06/29/Build_Clover.html">https://www.bugprogrammer.me/2018/06/29/Build_Clover.html</a> 编译最新版本Clover并安装到系统根目录，安装时务必勾选EmuVariableUefi-64.efi以及RC scripts补丁，如下图。<br><img src= "/images/loading.gif" data-lazy-src="/images/bcd6ee3a667abb6122e6e0f2949780f24239ff9c.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/4815b4ff57c6a9c13e0f241338e2efe20a873e89.jpg"></li>
+<li>将cloverx64.efi拷贝到EFI分区下的EFI/CLOVER路径下并覆盖，将EmuVariableUefi-64.efi拷贝到EFI分区下的EFI/CLOVER/drivers64UEFI路径下。</li>
+<li>使用Clover Configurator挂载EFI分区并打开config.plist文件，找到Boot-&gt;Arguments并勾选<font color=#A52A2A ><strong>slide=0</strong></font>选项，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/6dbccfd2934608daf91c88c82fe855fe784b3cb5.jpg"></li>
+<li>重启电脑并观察EFI分区下有没有生成nvram.plist文件，如果有，恭喜你成功了，愉快的睡眠，关机吧！！！<br><img src= "/images/loading.gif" data-lazy-src="/images/bf3550f928cc2f9c09b4fc7070df84263589c525.jpg"></li>
+</ul>
+<h3 id="睡眠正常，唤醒时重启"><a href="#睡眠正常，唤醒时重启" class="headerlink" title="睡眠正常，唤醒时重启"></a>睡眠正常，唤醒时重启</h3><h4 id="问题成因-1"><a href="#问题成因-1" class="headerlink" title="问题成因"></a>问题成因</h4><blockquote>
+<p>主板xmp选项影响，内存频率影响。</p>
+</blockquote>
+<h4 id="解决思路-1"><a href="#解决思路-1" class="headerlink" title="解决思路"></a>解决思路</h4><blockquote>
+<p>主板BIOS调节</p>
+</blockquote>
+<h4 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h4><ul>
+<li>关闭BIOS中的xmp选项</li>
+</ul>
+<h4 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h4><ul>
+<li>开启BIOS中的xmp选项，手动调节频率，从高往低调节。比如博主的3600内存条，开启xmp选项，然后从3600调节到3400再调节到3200终于正常。<br><img src= "/images/loading.gif" data-lazy-src="/images/38f6aec51417d2b04576b9abe8e904082f29350d.jpg"></li>
+</ul>
+<h3 id="声卡无法驱动"><a href="#声卡无法驱动" class="headerlink" title="声卡无法驱动"></a>声卡无法驱动</h3><h4 id="原因排查-通过AppleALC的debug版本进行排查"><a href="#原因排查-通过AppleALC的debug版本进行排查" class="headerlink" title="原因排查(通过AppleALC的debug版本进行排查)"></a>原因排查(通过AppleALC的debug版本进行排查)</h4><ul>
+<li>将EFI/CLOVER/kexts/Other下的Lilu.kext以及AppleALC.kext替换成debug版本。</li>
+<li>使用Clover Configurator打开EFI/CLOVER下的config.plist，在boot标签里加入-alcdbg参数，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/bb6d9bc06e1eb89f5ea6c707c7d39faa8ac2b3ec.jpg"></li>
+<li>重启电脑。</li>
+<li>终端输入如下命令,并观察输出日志。<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">log</span> <span class="built_in">show</span> --predicate &#x27;process == <span class="string">&quot;kernel&quot;</span> AND (eventMessage CONTAINS <span class="string">&quot;AppleALC&quot;</span> OR eventMessage CONTAINS <span class="string">&quot;Lilu&quot;</span>)&#x27; --<span class="built_in">style</span> syslog --source</span><br></pre></td></tr></table></figure></li>
+<li>博主电脑报出如下错误，说明声卡的codec revision不被AppleALC支持，至此声卡无法驱动原因排查完毕。<br><img src= "/images/loading.gif" data-lazy-src="/images/4cef17af216f23a89f170a13c6e9f733afc8662f.jpg"></li>
+</ul>
+<h4 id="解决方案一-Voodoohda方案"><a href="#解决方案一-Voodoohda方案" class="headerlink" title="解决方案一(Voodoohda方案)"></a>解决方案一(Voodoohda方案)</h4><p>下载Voodoohda.kext放入EFI/CLOVER/Other下即可(会有爆音，不建议采用此方法)。<br><a target="_blank" rel="noopener" href="https://sourceforge.net/projects/voodoohda/files/VoodooHDA-2.8.8.pkg.zip/download">https://sourceforge.net/projects/voodoohda/files/VoodooHDA-2.8.8.pkg.zip/download</a></p>
+<h4 id="解决方案二-cloveralc方案"><a href="#解决方案二-cloveralc方案" class="headerlink" title="解决方案二(cloveralc方案)"></a>解决方案二(cloveralc方案)</h4><ul>
+<li>下载cloveralc脚本备用。<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/toleda/</span>audio_CloverALC.git</span><br></pre></td></tr></table></figure></li>
+<li>下载FakePCIID备用。<br><a target="_blank" rel="noopener" href="https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/">https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/</a></li>
+<li>在macOS High Sierra 10.13.6的镜像里找到原版的AppleHDA.kext备用。</li>
+<li>将FakePCIID.kext以及FakePCIID_Intel_HDMI_Audio.kext放入EFI/CLOVER/kexts/Other下。</li>
+<li>将10.13.6的AppleHDA替换到10.14的System/Library/Extensions下并用kext Utility工具重建缓存(10.14专属步骤，10.13.6用户跳过)。</li>
+<li>打开下载的cloveralc脚本，文件名为audio_cloverALC-130.sh，在下图位置加入如下代码(10.14专属步骤，10.13.6用户跳过)。<br><img src= "/images/loading.gif" data-lazy-src="/images/70dadbce56ef011d83c82ff33b079b76590faff6.jpg"></li>
+<li>使用Clover Congifurator注入音频id，博主声卡id为1。<br><img src= "/images/loading.gif" data-lazy-src="/images/26262cd97b32e9f3975e92cb6d5cfd8751ee1fc8.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/95bb5d05a4647695006c3ecce1ed54ac805ff67f.jpg"></li>
+<li>确定以上操作无误后，重启电脑。</li>
+<li>挂载EFI分区，执行audio_cloverALC-130.sh脚本，按脚本要求执行，脚本运行完成后使用kext Utility工具重建缓存后重启电脑。<br><img src= "/images/loading.gif" data-lazy-src="/images/8d8ac20f0c6831edc44c24c8cf2c7f9674dd646c.jpg"></li>
+<li>愉快的使用声卡吧！！！</li>
+</ul>
+<h4 id="解决方案三-AppleALC方案，博主认为最佳方案，推荐"><a href="#解决方案三-AppleALC方案，博主认为最佳方案，推荐" class="headerlink" title="解决方案三(AppleALC方案，博主认为最佳方案，推荐)"></a>解决方案三(AppleALC方案，博主认为最佳方案，推荐)</h4><ul>
+<li>macOS商店下载安装Xcode。</li>
+<li>下载AppleALC源码。<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/acidanthera/</span>AppleALC.git</span><br></pre></td></tr></table></figure></li>
+<li>下载Lilu.kext的debug版本，并拷贝到AppleALC源码文件夹。<br><a target="_blank" rel="noopener" href="https://github.com/acidanthera/Lilu/releases">https://github.com/acidanthera/Lilu/releases</a><br><img src= "/images/loading.gif" data-lazy-src="/images/5af8451dbb09aa96fcd3e0a19d621e7d5f6358fd.jpg"></li>
+<li>打开IORegistryExplorer工具，搜索HDA，找到IOHDACodecRevisionID值，如图即为0x100101，转成10进制为1048833。<br><img src= "/images/loading.gif" data-lazy-src="/images/8c4b32a8f1c52d2042862c30a18402e8543bea48.jpg"></li>
+<li>打开AppleALC源码文件夹下的Resources文件夹，删掉其他声卡型号的文件夹，只保留当前主板的声卡型号文件夹，即保留alc1220文件夹。<br><img src= "/images/loading.gif" data-lazy-src="/images/4c625d128f744047375a9258316d9b2c91d988f3.jpg"></li>
+<li>打开PinConfigs.kext的info.plist，删除其他声卡信息，只保留当前主板的声卡信息，即alc1220。<br><img src= "/images/loading.gif" data-lazy-src="/images/5116d7b08b15be2b52486a9000fff0d635779f1d.jpg"></li>
+<li>进入ALC1220文件夹，打开info.plist，修改Revisions值为之前IORegistryExplorer查到的IOHDACodecRevision值的10进制数，即1048833。<br><img src= "/images/loading.gif" data-lazy-src="/images/a0ec8957c76bfcae2efd370694d34b97607c9ce8.jpg"></li>
+<li>Xcode打开AppleALC.xcodeproj，编译生成AppleALC.kext，编译教程请Google。本教程主要教授修改思路。</li>
+<li>将修改的AppleALC.kext放到EFI/CLOVER/kexts/Other下，Kext Utility重建缓存，重启电脑。</li>
+<li>愉快的使用声卡吧！！！</li>
+</ul>
+<h2 id="2018-11-27更新"><a href="#2018-11-27更新" class="headerlink" title="2018-11-27更新"></a>2018-11-27更新</h2><h3 id="睡眠正常，唤醒变重启"><a href="#睡眠正常，唤醒变重启" class="headerlink" title="睡眠正常，唤醒变重启"></a>睡眠正常，唤醒变重启</h3><h4 id="新版解决方案"><a href="#新版解决方案" class="headerlink" title="新版解决方案"></a>新版解决方案</h4><p>更新最新版本BIOS即可，新版本BIOS解决了这个问题，已经无需调整XMP。目前最新版版本号为1.29，什么？更新完进不去了？卡引导？往下看！！！</p>
+<h3 id="更新BIOS后无法进入系统-目前华擎主板中招，解决方案仅限华擎"><a href="#更新BIOS后无法进入系统-目前华擎主板中招，解决方案仅限华擎" class="headerlink" title="更新BIOS后无法进入系统(目前华擎主板中招，解决方案仅限华擎)"></a>更新BIOS后无法进入系统(目前华擎主板中招，解决方案仅限华擎)</h3><h4 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h4><ul>
+<li>降级回老版本BIOS，目的是可以进入系统。</li>
+<li>使用Clover Configurator挂载EFI分区并打开config.plist文件。在ACPI-&gt;Patches下添加以下补丁即可。如图。<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Comment</span>: Fix AsRock Z<span class="number">390</span> BIOS DSDT Device(RTC) bug</span><br><span class="line"><span class="attribute">Find</span>: A<span class="number">00</span>A<span class="number">9353</span> <span class="number">54415301</span></span><br><span class="line"><span class="attribute">Replace</span>: A<span class="number">00</span>A<span class="number">910</span>A FF<span class="number">0</span>BFFFF </span><br></pre></td></tr></table></figure>
+<img src= "/images/loading.gif" data-lazy-src="/images/b41603cdf0f9c80d869d8ac478cdd65a092cf648.jpg"></li>
+<li>放心升级新版本BIOS吧，畅通无阻！！！</li>
+</ul>
+<h3 id="10-14-1和10-14-2-USB-3-0降速为480Mbps"><a href="#10-14-1和10-14-2-USB-3-0降速为480Mbps" class="headerlink" title="10.14.1和10.14.2 USB 3.0降速为480Mbps"></a>10.14.1和10.14.2 USB 3.0降速为480Mbps</h3><h4 id="原因排查"><a href="#原因排查" class="headerlink" title="原因排查"></a>原因排查</h4><p>将usb3.0设备插入usb3.0接口，下载并打开FBPatcher，我们发现所有接口都是HSxx，并没有SSxx，所以usb3.0降速为480Mbps。</p>
+<h4 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案"></a>解决方案</h4><ul>
+<li>划出一个小分区安装10.14.0并搞定usb驱动(10.14.0 usb也不正常的不在本文讨论范围内,本文仅讨论10.14.0 usb正常但是升级到10.14.1 usb降速的情况)</li>
+<li>按照<font color=#A52A2A ><strong>@黑果小兵</strong></font>的教程 <strong><a target="_blank" rel="noopener" href="https://blog.daliansky.net/Intel-FB-Patcher-tutorial-and-insertion-pose.html">https://blog.daliansky.net/Intel-FB-Patcher-tutorial-and-insertion-pose.html</a></strong> 定制usbports.kext(感谢<font color=#A52A2A ><strong>黑果小兵</font>**提供教程,另外注意要在<font color=#A52A2A >**10.14.0</strong></font>下定制,至关重要)。</li>
+<li>进入10.14.1或10.14.2，你会发现usb满血复活。</li>
+</ul>
+<h2 id="2018-12-24更新"><a href="#2018-12-24更新" class="headerlink" title="2018-12-24更新"></a>2018-12-24更新</h2><h3 id="声卡驱动"><a href="#声卡驱动" class="headerlink" title="声卡驱动"></a>声卡驱动</h3><p>AppleALC官方已经更新了1.3.4版本，直接使用即可，已经无需修改revisionid再自行编译了。下载地址如下：<br><a target="_blank" rel="noopener" href="https://github.com/acidanthera/AppleALC/releases">https://github.com/acidanthera/AppleALC/releases</a></p>
+</article><div style="text-align:center;color: #ccc;font-size:14px;">-------------&#x672C;&#x6587;&#x7ED3;&#x675F;<i class="fa fa-paw"></i>&#x611F;&#x8C22;&#x60A8;&#x7684;&#x9605;&#x8BFB;-------------</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">博主QQ号: </span><span class="post-copyright-meta">951426440</span></div></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">QQ群列表: </span></div><div class="post-copyright__author"><span class="post-copyright-meta"><a target="_blank" rel="noopener" href="https://shang.qq.com/wpa/qunwpa?idkey=860990e11014839268b97278613c5b16d3569e4ef42561eeab25b5457064cd87">Hackintosh极客俱乐部</a></span><span class="post-copyright-meta">   414114950</span></div></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Bugprogrammer</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.bugprogrammer.me/2018/11/05/Z390+9900K_Hackintosh.html">https://www.bugprogrammer.me/2018/11/05/Z390+9900K_Hackintosh.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.bugprogrammer.me" target="_blank">Bugprogrammer的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/macOS/">macOS</a><a class="post-meta__tags" href="/tags/acrock-z390/">acrock z390</a><a class="post-meta__tags" href="/tags/i9-9900K/">i9-9900K</a></div><div class="post_share"><div class="social-share" data-image="/images/index.jpeg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2018/12/01/Build_VoodooI2C.html"><img class="prev-cover" data-lazy-src="/images/index.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">macOS下编译VoodooI2C教程(2019最新更新)</div></div></a></div><div class="next-post pull-right"><a href="/2018/09/01/Linux_Kernel_Build.html"><img class="next-cover" data-lazy-src="/images/index.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Linux内核简介及编译教程</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E6%9C%BA%E5%8F%98%E9%87%8D%E5%90%AF%E4%BB%A5%E5%8F%8A%E7%9D%A1%E7%9C%A0%E5%8F%98%E9%87%8D%E5%90%AF-%E8%BF%98%E6%B2%A1%E8%BF%9B%E5%85%A5%E7%9D%A1%E7%9C%A0%E7%8A%B6%E6%80%81%E5%B0%B1%E9%87%8D%E5%90%AF"><span class="toc-number">2.1.</span> <span class="toc-text">关机变重启以及睡眠变重启(还没进入睡眠状态就重启)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E6%88%90%E5%9B%A0"><span class="toc-number">2.1.1.</span> <span class="toc-text">问题成因</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF"><span class="toc-number">2.1.2.</span> <span class="toc-text">解决思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">2.1.3.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9D%A1%E7%9C%A0%E6%AD%A3%E5%B8%B8%EF%BC%8C%E5%94%A4%E9%86%92%E6%97%B6%E9%87%8D%E5%90%AF"><span class="toc-number">2.2.</span> <span class="toc-text">睡眠正常，唤醒时重启</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E6%88%90%E5%9B%A0-1"><span class="toc-number">2.2.1.</span> <span class="toc-text">问题成因</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF-1"><span class="toc-number">2.2.2.</span> <span class="toc-text">解决思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%80"><span class="toc-number">2.2.3.</span> <span class="toc-text">解决方案一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BA%8C"><span class="toc-number">2.2.4.</span> <span class="toc-text">解决方案二</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B0%E5%8D%A1%E6%97%A0%E6%B3%95%E9%A9%B1%E5%8A%A8"><span class="toc-number">2.3.</span> <span class="toc-text">声卡无法驱动</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E5%9B%A0%E6%8E%92%E6%9F%A5-%E9%80%9A%E8%BF%87AppleALC%E7%9A%84debug%E7%89%88%E6%9C%AC%E8%BF%9B%E8%A1%8C%E6%8E%92%E6%9F%A5"><span class="toc-number">2.3.1.</span> <span class="toc-text">原因排查(通过AppleALC的debug版本进行排查)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%80-Voodoohda%E6%96%B9%E6%A1%88"><span class="toc-number">2.3.2.</span> <span class="toc-text">解决方案一(Voodoohda方案)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BA%8C-cloveralc%E6%96%B9%E6%A1%88"><span class="toc-number">2.3.3.</span> <span class="toc-text">解决方案二(cloveralc方案)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%89-AppleALC%E6%96%B9%E6%A1%88%EF%BC%8C%E5%8D%9A%E4%B8%BB%E8%AE%A4%E4%B8%BA%E6%9C%80%E4%BD%B3%E6%96%B9%E6%A1%88%EF%BC%8C%E6%8E%A8%E8%8D%90"><span class="toc-number">2.3.4.</span> <span class="toc-text">解决方案三(AppleALC方案，博主认为最佳方案，推荐)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2018-11-27%E6%9B%B4%E6%96%B0"><span class="toc-number">3.</span> <span class="toc-text">2018-11-27更新</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9D%A1%E7%9C%A0%E6%AD%A3%E5%B8%B8%EF%BC%8C%E5%94%A4%E9%86%92%E5%8F%98%E9%87%8D%E5%90%AF"><span class="toc-number">3.1.</span> <span class="toc-text">睡眠正常，唤醒变重启</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E7%89%88%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">3.1.1.</span> <span class="toc-text">新版解决方案</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0BIOS%E5%90%8E%E6%97%A0%E6%B3%95%E8%BF%9B%E5%85%A5%E7%B3%BB%E7%BB%9F-%E7%9B%AE%E5%89%8D%E5%8D%8E%E6%93%8E%E4%B8%BB%E6%9D%BF%E4%B8%AD%E6%8B%9B%EF%BC%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BB%85%E9%99%90%E5%8D%8E%E6%93%8E"><span class="toc-number">3.2.</span> <span class="toc-text">更新BIOS后无法进入系统(目前华擎主板中招，解决方案仅限华擎)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-1"><span class="toc-number">3.2.1.</span> <span class="toc-text">解决方案</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-14-1%E5%92%8C10-14-2-USB-3-0%E9%99%8D%E9%80%9F%E4%B8%BA480Mbps"><span class="toc-number">3.3.</span> <span class="toc-text">10.14.1和10.14.2 USB 3.0降速为480Mbps</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E5%9B%A0%E6%8E%92%E6%9F%A5"><span class="toc-number">3.3.1.</span> <span class="toc-text">原因排查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-2"><span class="toc-number">3.3.2.</span> <span class="toc-text">解决方案</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2018-12-24%E6%9B%B4%E6%96%B0"><span class="toc-number">4.</span> <span class="toc-text">2018-12-24更新</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B0%E5%8D%A1%E9%A9%B1%E5%8A%A8"><span class="toc-number">4.1.</span> <span class="toc-text">声卡驱动</span></a></li></ol></li></ol></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2018 - 2021 By Bugprogrammer</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.spacingElementById('content-inner')
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.spacingElementById('content-inner')
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.17.0/js/md5.min.js"></script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk({
+      clientID: '228efd9c1e98867fc0ae',
+      clientSecret: '95f75ffd8504aed575db82baadd6c8152d824d66',
+      repo: 'bugprogrammer.github.io',
+      owner: 'bugprogrammer',
+      admin: ['bugprogrammer'],
+      id: md5(window.location.pathname.substr(1)),
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    })
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script></div></body></html>

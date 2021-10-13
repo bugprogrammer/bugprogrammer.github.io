@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Macbook Pro 2017安装macOS+Windows+Ubuntu简要教程 | Bugprogrammer的博客</title><meta name="keywords" content="Macintosh,Linux,MacBook Pro"><meta name="author" content="Bugprogrammer"><meta name="copyright" content="Bugprogrammer"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="各位访客想必已经发现本站https:&#x2F;&#x2F;www.bugprogrammer.me 已经一个月没有更新了，为了本站长期稳定运行下去，博主最近在做博客改版以及cdn、图床方案的测试，本站不会断更，也感谢大半年来各位访客的支持。言归正传，博主近期购入了MacBook Pro 2017，原因很简单，博主需要retina屏幕。黑苹果笔记本无法使用独显，目前的macOS版本下，核显+4K的配合会出现动画掉帧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Macbook Pro 2017安装macOS+Windows+Ubuntu简要教程">
+<meta property="og:url" content="https://www.bugprogrammer.me/2019/03/06/mbp2017_win_mac_ubuntu.html">
+<meta property="og:site_name" content="Bugprogrammer的博客">
+<meta property="og:description" content="各位访客想必已经发现本站https:&#x2F;&#x2F;www.bugprogrammer.me 已经一个月没有更新了，为了本站长期稳定运行下去，博主最近在做博客改版以及cdn、图床方案的测试，本站不会断更，也感谢大半年来各位访客的支持。言归正传，博主近期购入了MacBook Pro 2017，原因很简单，博主需要retina屏幕。黑苹果笔记本无法使用独显，目前的macOS版本下，核显+4K的配合会出现动画掉帧">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.bugprogrammer.me/images/index.jpeg">
+<meta property="article:published_time" content="2019-03-06T15:58:00.000Z">
+<meta property="article:modified_time" content="2019-03-06T15:58:00.000Z">
+<meta property="article:author" content="Bugprogrammer">
+<meta property="article:tag" content="Macintosh">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="MacBook Pro">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.bugprogrammer.me/images/index.jpeg"><link rel="shortcut icon" href="/images/my.jpg"><link rel="canonical" href="https://www.bugprogrammer.me/2019/03/06/mbp2017_win_mac_ubuntu"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-119545430-2"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-119545430-2');
+</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":300,"position":"top","messagePrev":"此文章发表于","messageNext":"天以前，其内容可能已不再适用"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Bugprogrammer","link":"链接: ","source":"来源: Bugprogrammer的博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2019-03-06 23:58:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = '1'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Bugprogrammer的博客" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="/images/my.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">44</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">46</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/images/index.jpeg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Bugprogrammer的博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Macbook Pro 2017安装macOS+Windows+Ubuntu简要教程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-03-06T15:58:00.000Z" title="发表于 2019-03-06 23:58:00">2019-03-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2019-03-06T15:58:00.000Z" title="更新于 2019-03-06 23:58:00">2019-03-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Macintosh/">Macintosh</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>各位访客想必已经发现本站<a href="https://www.bugprogrammer.me/">https://www.bugprogrammer.me</a> 已经一个月没有更新了，为了本站长期稳定运行下去，博主最近在做博客改版以及cdn、图床方案的测试，本站不会断更，也感谢大半年来各位访客的支持。言归正传，博主近期购入了MacBook Pro 2017，原因很简单，博主需要retina屏幕。黑苹果笔记本无法使用独显，目前的macOS版本下，核显+4K的配合会出现动画掉帧现象，即使是核显版本的mbp也难以幸免，所以想要retina+独显+macOS，只能购入mbp了。</p>
+</blockquote>
+<blockquote>
+<p>博主发现mbp有一个神奇的地方，安装mac+win+linux超级麻烦，按普通pc方案，最后安装linux会出现问题，表现为安装完linux后，Windows会被破坏，无法进入(不是引导的问题，就是系统挂了！！！)，而macOS正常。博主Google了一下，发现很多教程都是老版本的mbp，区别很大。所以博主放出我自己的解决方案。</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
+<li>mbp不同于普通PC，请严格按照博主的方案进行，否则会出现意想不到的问题。</li>
+<li>mbp2018是否适用博主不敢保证，因为2018款的mac新增了一个T2芯片，有报道说T2会阻止Linux启动。</li>
+</ul>
+<h2 id="安装顺序-重中之重"><a href="#安装顺序-重中之重" class="headerlink" title="安装顺序(重中之重)"></a>安装顺序(重中之重)</h2><p><font color=#A52A2A ><strong>macOS Mojave–&gt;Ubuntu 18.04–&gt;Windows 10</strong></font></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>macOS Mojave镜像、Windows 10镜像、Ubuntu18.04镜像、Windows PE、外接键鼠。</p>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><h3 id="安装macOS-Mojave"><a href="#安装macOS-Mojave" class="headerlink" title="安装macOS Mojave"></a>安装macOS Mojave</h3><p>正常安装即可，另外新买的mbp自带macOS系统，版本过老的话直接升级就可以。</p>
+<h3 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h3><ul>
+<li>打开BootCamp(启动转换助理)，点击菜单栏上的操作，下载Windows支持软件，下载完毕后保存到U盘，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/75a0d5124f3e6e152ffb49529f4580d1199f655e.jpg"></li>
+<li>按照BootCamp的流程选择Windows 10镜像，确定Windows分区大小。</li>
+<li>分区完成后会自动重启开始安装Windows 10，请注意此处要按Option建进入macOS，不要进入Windows分区。</li>
+<li>打开macOS自带分区工具，此时我们会看到两个分区，一个macOS分区，一个BootCamp分区。点击macOS所在分区，点击+，新增分区，格式选择MS-DOS(FAT)，做为Ubuntu 18.04安装分区。<font color=#A52A2A ><strong>至此，我们拥有3个分区，分别安装macOS，Windows、Ubuntu。</strong></font></li>
+</ul>
+<h3 id="安装Ubuntu-18-04"><a href="#安装Ubuntu-18-04" class="headerlink" title="安装Ubuntu 18.04"></a>安装Ubuntu 18.04</h3><h4 id="准备工作-1"><a href="#准备工作-1" class="headerlink" title="准备工作"></a>准备工作</h4><ul>
+<li>下载Ubuntu 18.04修改版本(来自网络大神，已经集成mbp2017内置键盘，触摸板，touch bar驱动，安装方便)<br><a target="_blank" rel="noopener" href="https://goo.gl/4ddQMu">https://goo.gl/4ddQMu</a></li>
+<li>使用usbwriter将Ubuntu 18.04镜像写入U盘。</li>
+</ul>
+<h4 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h4><ul>
+<li>插入U盘，重启按住Option，选择Ubuntu 18.04安装盘，选择安装(注意：不可以选择试用，安装会出错)。</li>
+<li>分区：找到之前分配的fat32格式分区，点击-，删除分区，这样会得到一部分空闲分区。按照自己习惯将空闲分区进行分配。博主的分配方案是：efi、boot、home、/、swap。</li>
+<li>分区完成后，继续安装。</li>
+</ul>
+<blockquote>
+<p>至此，我们在开机时按住Option键即可自由切换macOS和Ubuntu。</p>
+</blockquote>
+<h4 id="安装Windows"><a href="#安装Windows" class="headerlink" title="安装Windows"></a>安装Windows</h4><blockquote>
+<p>因为我们已经自行创建了Ubuntu分区，所以已经不能使用BootCamp安装Windows 10。</p>
+</blockquote>
+<ul>
+<li><font color=#A52A2A ><strong>在macOS下将之前分配好的BootCamp分区格式化为hfs格式。(重中之重)</strong></font></li>
+<li>进入winpe，连接外接键鼠。</li>
+<li>winpe下打开分区工具，将刚才格式化为hfs格式的分区格式化为ntfs格式，供Windows 10使用。</li>
+<li>打开winntsetup工具，将Windows安装到ntfs格式分区。</li>
+</ul>
+<blockquote>
+<p>安装完成后重启发现无法进入Windows 10，请进行如下操作。</p>
+</blockquote>
+<ul>
+<li>进入Ubuntu 18.04，打开终端，输入如下命令<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo update-grub</span></span><br></pre></td></tr></table></figure></li>
+<li>重启进入Ubuntu启动项，会在grub菜单中看到Windows Boot Manager选项，回车选择，完成Windows 10安装。</li>
+<li>进入Windows 10后，安装之前下载的Windows支持软件。</li>
+</ul>
+<blockquote>
+<p>至此，三个系统已经安装完成，并且都可以启动成功。开机按住Option键，看到两个启动项。选择mac启动项进入macOS，选择Windows启动项进入grub界面，grub下有Ubuntu 18.04以及Windows Boot Manager两个选项。什么，切换系统不方便？？往下看！！！</p>
+</blockquote>
+<h3 id="安装refind，实现自动引导"><a href="#安装refind，实现自动引导" class="headerlink" title="安装refind，实现自动引导"></a>安装refind，实现自动引导</h3><ul>
+<li>下载refind并解压<br><a target="_blank" rel="noopener" href="https://sourceforge.net/projects/refind/">https://sourceforge.net/projects/refind/</a></li>
+<li>打开文件夹，执行refind-install脚本即可成功安装refind，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/8632cec3cc44f7485e92c8727ba9e3a17a7fb808.jpg"></li>
+<li>进入Windows 10，安装bootice软件。</li>
+<li>使用bootice将refind设置为第一启动项。</li>
+<li>重启即可看到refind引导界面。</li>
+<li>按delete键隐藏不需要的启动项，保留macOS、Windows、Ubuntu即可。</li>
+<li>什么？refind默认界面不好看？emmmm，那就换个主题吧！！Google大把教程！！！</li>
+</ul>
+<blockquote>
+<p>至此，MacBook Pro 2017安装macOS+Windows+Ubuntu成功！！！</p>
+</blockquote>
+</article><div style="text-align:center;color: #ccc;font-size:14px;">-------------&#x672C;&#x6587;&#x7ED3;&#x675F;<i class="fa fa-paw"></i>&#x611F;&#x8C22;&#x60A8;&#x7684;&#x9605;&#x8BFB;-------------</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">博主QQ号: </span><span class="post-copyright-meta">951426440</span></div></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">QQ群列表: </span></div><div class="post-copyright__author"><span class="post-copyright-meta"><a target="_blank" rel="noopener" href="https://shang.qq.com/wpa/qunwpa?idkey=860990e11014839268b97278613c5b16d3569e4ef42561eeab25b5457064cd87">Hackintosh极客俱乐部</a></span><span class="post-copyright-meta">   414114950</span></div></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Bugprogrammer</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.bugprogrammer.me/2019/03/06/mbp2017_win_mac_ubuntu.html">https://www.bugprogrammer.me/2019/03/06/mbp2017_win_mac_ubuntu.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.bugprogrammer.me" target="_blank">Bugprogrammer的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Macintosh/">Macintosh</a><a class="post-meta__tags" href="/tags/Linux/">Linux</a><a class="post-meta__tags" href="/tags/MacBook-Pro/">MacBook Pro</a></div><div class="post_share"><div class="social-share" data-image="/images/index.jpeg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2019/03/17/install_soft_for_linux.html"><img class="prev-cover" data-lazy-src="/images/index.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Ubuntu下利用deepin-wine安装软件简要方案</div></div></a></div><div class="next-post pull-right"><a href="/2019/01/29/hackintosh-for-asus-n550jv.html"><img class="next-cover" data-lazy-src="/images/index.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">ASUS N550JV Hackintosh记录+教程+完整EFI分享</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.</span> <span class="toc-text">注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E9%A1%BA%E5%BA%8F-%E9%87%8D%E4%B8%AD%E4%B9%8B%E9%87%8D"><span class="toc-number">2.</span> <span class="toc-text">安装顺序(重中之重)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%99%E7%A8%8B"><span class="toc-number">4.</span> <span class="toc-text">教程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85macOS-Mojave"><span class="toc-number">4.1.</span> <span class="toc-text">安装macOS Mojave</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%8C%BA"><span class="toc-number">4.2.</span> <span class="toc-text">分区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Ubuntu-18-04"><span class="toc-number">4.3.</span> <span class="toc-text">安装Ubuntu 18.04</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C-1"><span class="toc-number">4.3.1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E5%AE%89%E8%A3%85"><span class="toc-number">4.3.2.</span> <span class="toc-text">开始安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Windows"><span class="toc-number">4.3.3.</span> <span class="toc-text">安装Windows</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85refind%EF%BC%8C%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%BC%95%E5%AF%BC"><span class="toc-number">4.4.</span> <span class="toc-text">安装refind，实现自动引导</span></a></li></ol></li></ol></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2018 - 2021 By Bugprogrammer</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.spacingElementById('content-inner')
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.spacingElementById('content-inner')
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.17.0/js/md5.min.js"></script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk({
+      clientID: '228efd9c1e98867fc0ae',
+      clientSecret: '95f75ffd8504aed575db82baadd6c8152d824d66',
+      repo: 'bugprogrammer.github.io',
+      owner: 'bugprogrammer',
+      admin: ['bugprogrammer'],
+      id: md5(window.location.pathname.substr(1)),
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    })
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script></div></body></html>

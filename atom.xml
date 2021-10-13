@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Bugprogrammer的博客</title>
+  
+  <subtitle>技术宅的日常</subtitle>
+  <link href="https://www.bugprogrammer.me/atom.xml" rel="self"/>
+  
+  <link href="https://www.bugprogrammer.me/"/>
+  <updated>2021-05-06T13:00:00.000Z</updated>
+  <id>https://www.bugprogrammer.me/</id>
+  
+  <author>
+    <name>Bugprogrammer</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OpenWrt获取IPv6详细教程</title>
+    <link href="https://www.bugprogrammer.me/2021/05/06/about-openwrt-ipv6.html"/>
+    <id>https://www.bugprogrammer.me/2021/05/06/about-openwrt-ipv6.html</id>
+    <published>2021-05-06T13:00:00.000Z</published>
+    <updated>2021-05-06T13:00:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;前几天博主无意间登录光猫发现已经有了IPv6地址并且可以访问ipv6网站，但是自用的openwrt路由器却无法获取到IPv6地址，查阅资料发现大量资料已经过时，博主现在分享自己的解决方案。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1</summary>
+        
+      
+    
+    
+    
+    <category term="OpenWrt" scheme="https://www.bugprogrammer.me/categories/OpenWrt/"/>
+    
+    
+    <category term="OpenWrt" scheme="https://www.bugprogrammer.me/tags/OpenWrt/"/>
+    
+    <category term="ipv6" scheme="https://www.bugprogrammer.me/tags/ipv6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博主自编译的开源软件用于Apple Silicon Macs(长期更新)</title>
+    <link href="https://www.bugprogrammer.me/2021/04/23/Compiling-Soft-for-AppleSilicons.html"/>
+    <id>https://www.bugprogrammer.me/2021/04/23/Compiling-Soft-for-AppleSilicons.html</id>
+    <published>2021-04-22T16:50:00.000Z</published>
+    <updated>2021-04-22T16:50:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;自从博主购入m1版本的Mac mini以来，体验惊艳。低发热，低功耗，高性能，特别是gpu性能，让我这个不需要独显的人不用为了启动台的流畅度而被迫购入独显，这些优点已经让博主把Hackintosh吃灰。由于Apple Silicon是基于ARM架构的，所以不可避免出现app生态问题。现在发布博主自编译的开源软件，以用于Apple Silicon Macs。此帖将长期更新</summary>
+    
+    
+    
+    <category term="Macintosh" scheme="https://www.bugprogrammer.me/categories/Macintosh/"/>
+    
+    <category term="Apple Silicon" scheme="https://www.bugprogrammer.me/categories/Macintosh/Apple-Silicon/"/>
+    
+    
+    <category term="Macintosh" scheme="https://www.bugprogrammer.me/tags/Macintosh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博主的Hackintosh全家桶定时编译上线GitHub</title>
+    <link href="https://www.bugprogrammer.me/2020/09/07/HackintoshPlugins.html"/>
+    <id>https://www.bugprogrammer.me/2020/09/07/HackintoshPlugins.html</id>
+    <published>2020-09-06T18:45:00.000Z</published>
+    <updated>2020-09-06T18:45:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;鉴于很多小伙伴编译困难，博主用azure pipelines建立了自动编译流水线，包括OC以及常用kexts，每8小时更新一次，欢迎食用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;仓库链接&quot;&gt;&lt;a href=&quot;#仓库链接&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于macOS Big Sur Hackintosh简要说明</title>
+    <link href="https://www.bugprogrammer.me/2020/07/09/about-BigSur.html"/>
+    <id>https://www.bugprogrammer.me/2020/07/09/about-BigSur.html</id>
+    <published>2020-07-08T16:54:00.000Z</published>
+    <updated>2020-08-09T16:41:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;博主很忙，昨晚才详细测试macOS Big Sur Hackintosh相关情况(全新直接安装)，本文会一直更新到正式版本发布。</summary>
+    
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>技嘉Z490 ELITE+i9 10900K+RX 5700 XT Hackintosh构建说明</title>
+    <link href="https://www.bugprogrammer.me/2020/05/27/Hackintosh_for_Z490_10900K.html"/>
+    <id>https://www.bugprogrammer.me/2020/05/27/Hackintosh_for_Z490_10900K.html</id>
+    <published>2020-05-27T08:30:00.000Z</published>
+    <updated>2020-07-14T07:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Z490主板以及10代桌面处理器(吐槽下14nm+++++++++++++++)正式解禁开卖，博主升级电脑，购入Z490 ELITE+10900K套装(原价哦)，简单测试了下Hackintosh运行情况，现简要说明。</summary>
+    
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ASRock Z390 Phantom Gaming-ITX使用BootCamp切换双系统注意事项</title>
+    <link href="https://www.bugprogrammer.me/2020/04/04/bootcamp-about-z390.html"/>
+    <id>https://www.bugprogrammer.me/2020/04/04/bootcamp-about-z390.html</id>
+    <published>2020-04-04T09:23:00.000Z</published>
+    <updated>2020-04-04T09:23:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;博主为了方便使用Linux一直是以grub作为主引导器(grub-&amp;gt;OC)，最近OC解决了Linux引导问题，所以换回OC作为主引导器。摸索了一下，实现了原生NVRAM+BootCamp双系统切换。</summary>
+    
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+    <category term="macOS Catalina 10.15" scheme="https://www.bugprogrammer.me/tags/macOS-Catalina-10-15/"/>
+    
+    <category term="OpenCore" scheme="https://www.bugprogrammer.me/tags/OpenCore/"/>
+    
+    <category term="BootCamp" scheme="https://www.bugprogrammer.me/tags/BootCamp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>修复OpenCore在较新主板上引导Linux失败</title>
+    <link href="https://www.bugprogrammer.me/2020/04/03/fix-boot-linux-with-opencore.html"/>
+    <id>https://www.bugprogrammer.me/2020/04/03/fix-boot-linux-with-opencore.html</id>
+    <published>2020-04-03T08:05:00.000Z</published>
+    <updated>2020-04-03T08:05:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;自从OpenCore推出以来，一直存在一个bug，在较新主板上引导Linux会失败，无法加载内核，现在已经可以解决。</summary>
+    
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+    <category term="macOS Catalina 10.15" scheme="https://www.bugprogrammer.me/tags/macOS-Catalina-10-15/"/>
+    
+    <category term="OpenCore" scheme="https://www.bugprogrammer.me/tags/OpenCore/"/>
+    
+    <category term="Linux" scheme="https://www.bugprogrammer.me/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>原版Whatevergreen实现核显最高频率(部分主板不支持),魔改版本停更</title>
+    <link href="https://www.bugprogrammer.me/2020/03/24/fix-igpu-with-vit9696-weg.html"/>
+    <id>https://www.bugprogrammer.me/2020/03/24/fix-igpu-with-vit9696-weg.html</id>
+    <published>2020-03-24T11:58:00.000Z</published>
+    <updated>2020-03-24T11:58:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Whatevergreen原作者更新了1.3.8版本，开始支持GuC Firmware载入，实现核显满血运行(部分主板不支持),效果完全等同于魔改版本，故魔改停更。现发布原版Whatevergreen实现核显满血教程。</summary>
+    
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+    <category term="macOS Catalina 10.15" scheme="https://www.bugprogrammer.me/tags/macOS-Catalina-10-15/"/>
+    
+    <category term="OpenCore" scheme="https://www.bugprogrammer.me/tags/OpenCore/"/>
+    
+    <category term="weg" scheme="https://www.bugprogrammer.me/tags/weg/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博主的Hackintosh Bootloader以及kexts编译程序GUI(Swift5)版本发布</title>
+    <link href="https://www.bugprogrammer.me/2020/01/16/Hackintosh_Build_Swift.html"/>
+    <id>https://www.bugprogrammer.me/2020/01/16/Hackintosh_Build_Swift.html</id>
+    <published>2020-01-16T14:27:00.000Z</published>
+    <updated>2021-03-27T18:50:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;之前博主开发的HackintoshBuild.sh脚本使用过程有些繁琐，故使用swift5重新开发GUI版本，部分代码(GUI)参考Pavo-IM大佬的ocbuilder项目，感谢Pavo-IM大佬。本项目可以看作HackintoshBuild.sh的进化版本。</summary>
+    
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博主的Hackintosh Bootloader以及kexts编译脚本分享</title>
+    <link href="https://www.bugprogrammer.me/2019/12/21/Hackintosh_Build.html"/>
+    <id>https://www.bugprogrammer.me/2019/12/21/Hackintosh_Build.html</id>
+    <published>2019-12-20T16:42:00.000Z</published>
+    <updated>2019-12-20T16:42:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;鉴于很多小伙伴问我如何编译Hackintosh Bootloader以及kexts，今奉上博主的编译脚本。</summary>
+    
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于DRM视频播放以及sidecar和DRM共存的解决方案</title>
+    <link href="https://www.bugprogrammer.me/2019/12/11/about-DRM.html"/>
+    <id>https://www.bugprogrammer.me/2019/12/11/about-DRM.html</id>
+    <published>2019-12-11T12:16:00.000Z</published>
+    <updated>2019-12-11T12:16:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;macOS Catalina 10.15发布后，不少小伙伴发现DRM视频播放出现bug。表现为Apple TV+无法播放，Netflix无法用Safari浏览器播放(macOS下只有Safari可以播放Netflix 1080P)。博主研究测试，得以&lt;font color=#A52A2A &gt;部分&lt;/font&gt;解决。现发布播放DRM视频以及sidecar和DRM共存的解决方案。</summary>
+    
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>修复OpenCore 0.5.3关于本机不显示内存教程</title>
+    <link href="https://www.bugprogrammer.me/2019/12/04/fix-showmemory.html"/>
+    <id>https://www.bugprogrammer.me/2019/12/04/fix-showmemory.html</id>
+    <published>2019-12-04T14:51:00.000Z</published>
+    <updated>2019-12-04T14:51:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;最近的OpenCore版本出现了一个bug，关于本机处不显示内存，博主研究了一下，现在发布解决方案。</summary>
+    
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>最简单的挂载EFI分区方案</title>
+    <link href="https://www.bugprogrammer.me/2019/12/03/mountEFI.html"/>
+    <id>https://www.bugprogrammer.me/2019/12/03/mountEFI.html</id>
+    <published>2019-12-03T11:00:00.000Z</published>
+    <updated>2019-12-03T11:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;博主使用OC已经有一段时间，最近发现一个不爽点。OC配置本身不需要各种GUI工具，但是，每次挂载EFI都要打开类似Clover Configurator的工具挂载EFI，比较麻烦，所以博主分享一种点击即挂载并打开EFI分区的方案。</summary>
+    
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>无核显开启sidecar方法</title>
+    <link href="https://www.bugprogrammer.me/2019/11/24/fix-sidecar-without-igpu.html"/>
+    <id>https://www.bugprogrammer.me/2019/11/24/fix-sidecar-without-igpu.html</id>
+    <published>2019-11-24T07:36:00.000Z</published>
+    <updated>2019-11-24T07:36:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;之前&lt;font color=#A52A2A &gt;@fang2018&lt;/font&gt;发布了一个相关教程，地址如下:&lt;font color=#A52A2A &gt;&lt;a href=&quot;https://fangf.cc/2019/10/14/noneigpusidecar/&quot;&gt;https://fangf.cc/2019/10/14/noneigpusidecar/&lt;/a&gt;&lt;/font&gt;, 现在随着Whatevergreen的更新，之前的方法已经不再适用。现在发布新教程。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+    <category term="sidecar" scheme="https://www.bugprogrammer.me/tags/sidecar/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于RX5700XT的驱动方法以及bug解决方案</title>
+    <link href="https://www.bugprogrammer.me/2019/11/02/about-RX5700XT.html"/>
+    <id>https://www.bugprogrammer.me/2019/11/02/about-RX5700XT.html</id>
+    <published>2019-11-02T15:02:00.000Z</published>
+    <updated>2019-11-02T15:02:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;AMD Navi显卡在macOS Catalina 10.15.1 beta2中已经正式免驱，博主购入测试，现公布新显卡的驱动方法以及bug解决方案。</summary>
+    
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+    <category term="RX5700" scheme="https://www.bugprogrammer.me/tags/RX5700/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博主魔改版Whatevergreen解析，还你正常核显频率(1.2g)</title>
+    <link href="https://www.bugprogrammer.me/2019/10/03/fix-igpu-with-weg.html"/>
+    <id>https://www.bugprogrammer.me/2019/10/03/fix-igpu-with-weg.html</id>
+    <published>2019-10-03T04:24:00.000Z</published>
+    <updated>2019-10-03T04:24:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;这篇文章是给台式机用户看的，高度依赖Whatevergreen缓冲帧补丁的小伙伴请绕行。</summary>
+    
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+    <category term="macOS Catalina 10.15" scheme="https://www.bugprogrammer.me/tags/macOS-Catalina-10-15/"/>
+    
+    <category term="OpenCore" scheme="https://www.bugprogrammer.me/tags/OpenCore/"/>
+    
+    <category term="weg" scheme="https://www.bugprogrammer.me/tags/weg/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一加7 Pro Android Q root教程</title>
+    <link href="https://www.bugprogrammer.me/2019/08/18/root-for-oneplus7pro-androidQ.html"/>
+    <id>https://www.bugprogrammer.me/2019/08/18/root-for-oneplus7pro-androidQ.html</id>
+    <published>2019-08-18T14:21:00.000Z</published>
+    <updated>2019-08-18T14:21:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;博主近日把自己的一加7 Pro升级到了Android Q beta，发现暂时无法刷入twrp-recovery，也就意味着root有一点点的麻烦，今天博主发布个人测试可行的root方案。博主是在Mac下操作，Windows以及Linux同理。</summary>
+    
+    
+    
+    <category term="Android" scheme="https://www.bugprogrammer.me/categories/Android/"/>
+    
+    
+    <category term="Android Q" scheme="https://www.bugprogrammer.me/tags/Android-Q/"/>
+    
+    <category term="OnePlus 7 Pro" scheme="https://www.bugprogrammer.me/tags/OnePlus-7-Pro/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>教你制作macOS+Ubuntu+WindowsPE超级启动盘(仅支持UEFI)</title>
+    <link href="https://www.bugprogrammer.me/2019/07/26/make-super-usb.html"/>
+    <id>https://www.bugprogrammer.me/2019/07/26/make-super-usb.html</id>
+    <published>2019-07-26T08:25:00.000Z</published>
+    <updated>2019-07-30T08:25:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;对于多系统用户，有没有觉得每一个系统一个U盘很麻烦而且浪费U盘，本文会教你如何制作macOS+Ubuntu+WindowsPE多系统启动盘。注意：建议使用博主分享的PE，其他PE文件结构或许不同，不确定能否成功。</summary>
+    
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解锁macOS10.15的系统分区</title>
+    <link href="https://www.bugprogrammer.me/2019/07/13/unlockSystem.html"/>
+    <id>https://www.bugprogrammer.me/2019/07/13/unlockSystem.html</id>
+    <published>2019-07-13T12:21:00.000Z</published>
+    <updated>2019-07-15T12:21:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;macOS 10.15的一个显著变化就是Apple锁定了系统分区，导致L/E以及S/L/E无法拷贝文件。Kext Utility无法重建缓存。也间接影响了HomeBrew的使用，下面教大家如何解锁系统分区。</summary>
+    
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>什么？这辣鸡BIOS竟然不能关闭Secure Boot？教你在开启Secure Boot的情况下安装macOS</title>
+    <link href="https://www.bugprogrammer.me/2019/07/06/clover-with-secure-boot.html"/>
+    <id>https://www.bugprogrammer.me/2019/07/06/clover-with-secure-boot.html</id>
+    <published>2019-07-05T18:49:00.000Z</published>
+    <updated>2019-07-05T18:49:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;相关理论&quot;&gt;&lt;a href=&quot;#相关理论&quot; class=&quot;headerlink&quot; title=&quot;相关理论&quot;&gt;&lt;/a&gt;相关理论&lt;/h1&gt;&lt;h2 id=&quot;BIOS&quot;&gt;&lt;a href=&quot;#BIOS&quot; class=&quot;headerlink&quot; title=&quot;BIOS&quot;&gt;&lt;/a&gt;BIOS&lt;/h2&gt;&lt;p&gt;BIOS是英文”Basic Input Output System”的缩略语，直译过来后中文名称就是”基本输入输出系统”。其实，它是一组固化到计算机内主板上一个ROM芯片上的程序，它保存着计算机最重要的基本输入输出的程序、系统设置信息、开机后自检程序和系统自启动程序。 其主要功能是为计算机提供最底层的、最直接的硬件设置和控制。</summary>
+    
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/categories/Hackintosh/"/>
+    
+    
+    <category term="Hackintosh" scheme="https://www.bugprogrammer.me/tags/Hackintosh/"/>
+    
+    <category term="Secure Boot" scheme="https://www.bugprogrammer.me/tags/Secure-Boot/"/>
+    
+  </entry>
+  
+</feed>
