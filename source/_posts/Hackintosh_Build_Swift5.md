@@ -7,7 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2020-01-16 22:27:00
-updated: 2021-03-28 02:50:00
+updated: 2021-12-25 07:00:00
 toc: true
 ---
 
@@ -183,3 +183,13 @@ xcode-select --install
 # 2021-03-28更新
 ## v4.2版本更新
 * 重构 OpenCore版本一览功能，自动获取原作者仓库信息，避免OpenCore更新数据滞后
+
+# 2021-12-25更新
+## v5.0版本更新
+* 适配macOS 12，支持下载macOS 12镜像
+* 编译模块以及每日构建模块添加RestrictEvents.kext
+* 主菜单汉化
+* 开源以及QQ群信息移入关于HackintoshBuild菜单项，移除捐赠模块
+
+## v5.0已知bug
+* EFI分享模块条目显示不完整

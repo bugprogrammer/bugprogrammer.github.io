@@ -183,7 +183,7 @@ post_copyright:
 # Sponsor/reward
 # 打賞按鈕
 reward:
-  enable: true
+  enable: false
   QR_code:
     - itemlist:
         img: /images/wechatpay.jpg

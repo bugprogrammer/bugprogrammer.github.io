@@ -29,7 +29,7 @@ xcode-select --install
 ```
 
 ## adb
-终端下执行如下命令即可(也许需要科学上网，请自行解决)
+终端下执行如下命令即可
 ```
 cd ~/Download
 wget https://dl.google.com/android/repository/platform-tools-latest-darwin.zip
