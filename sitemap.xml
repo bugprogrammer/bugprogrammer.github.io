@@ -4,7 +4,7 @@
   <url>
     <loc>https://www.bugprogrammer.me/2020/01/16/Hackintosh_Build_Swift.html</loc>
     
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     
   </url>
   
@@ -16,14 +16,14 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/index.html</loc>
+    <loc>https://www.bugprogrammer.me/schedule/index.html</loc>
     
     <lastmod>2021-07-29</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/schedule/index.html</loc>
+    <loc>https://www.bugprogrammer.me/tags/index.html</loc>
     
     <lastmod>2021-07-29</lastmod>
     
@@ -354,330 +354,330 @@
 
   <url>
     <loc>https://www.bugprogrammer.me/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/Hackintosh/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <loc>https://www.bugprogrammer.me/tags/Macintosh/</loc>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/macOS/</loc>
-    <lastmod>2021-12-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/VoodooI2C/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/Clover/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/Macintosh/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <loc>https://www.bugprogrammer.me/tags/Hackintosh/</loc>
+    <lastmod>2021-12-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/VoodooI2C/</loc>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/Linux-Kernel/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/Ubuntu/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2017/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2018/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/acrock-z390/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/i9-9900K/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/OpenWrt/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/ipv6/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/macOS-Catalina-10-15/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/sidecar/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/RX5700/</loc>
-    <lastmod>2021-12-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/OpenCore/</loc>
-    <lastmod>2021-12-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/BootCamp/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/Secure-Boot/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/OpenCore/</loc>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/Linux/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/weg/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/shell/</loc>
-    <lastmod>2021-12-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/zsh/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <loc>https://www.bugprogrammer.me/tags/BootCamp/</loc>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/ASUS-N550JV/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/shell/</loc>
+    <lastmod>2021-12-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/zsh/</loc>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/usb/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/z370/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/linux/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/MacBook-Pro/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/mi5/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/miui/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/Android/</loc>
-    <lastmod>2021-12-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/Project-Treble/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/Centos/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/MySQL/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/Nginx/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/PHP/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/SSL/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/cmd/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/sethc/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/Windows10/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/Android-Q/</loc>
-    <lastmod>2021-12-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/OnePlus-7-Pro/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <loc>https://www.bugprogrammer.me/tags/Project-Treble/</loc>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/Debian/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/OpenSSL/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/TLS-1-3/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/HSTS/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/Android-Q/</loc>
+    <lastmod>2021-12-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/OnePlus-7-Pro/</loc>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -685,64 +685,64 @@
 
   
   <url>
-    <loc>https://www.bugprogrammer.me/categories/Hackintosh/</loc>
-    <lastmod>2021-12-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.bugprogrammer.me/categories/Macintosh/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/categories/Linux/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <loc>https://www.bugprogrammer.me/categories/Hackintosh/</loc>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/categories/Macintosh/Apple-Silicon/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/categories/Linux/</loc>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/categories/OpenWrt/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/categories/Android/</loc>
-    <lastmod>2021-12-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/categories/Android-Rom/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/categories/Windows-Desktop/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/categories/Android-Rom/</loc>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://www.bugprogrammer.me/categories/WEB/</loc>
-    <lastmod>2021-12-24</lastmod>
+    <lastmod>2021-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
