@@ -7,7 +7,7 @@ id: 65
 categories:
   - Hackintosh
 date: 2020-01-16 22:27:00
-updated: 2021-12-25 07:00:00
+updated: 2021-12-26 07:00:00
 toc: true
 ---
 
@@ -193,3 +193,10 @@ xcode-select --install
 
 ## v5.0已知bug
 * EFI分享模块条目显示不完整
+
+# 2021-12-26更新
+## v5.1版本更新
+* 修复macOS 12系统镜像下载搜索不全的问题
+
+## v5.1已知bug
+* 同v5.0
