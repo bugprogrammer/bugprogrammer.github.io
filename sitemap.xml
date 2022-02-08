@@ -16,13 +16,6 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/schedule/index.html</loc>
-    
-    <lastmod>2021-07-29</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.bugprogrammer.me/tags/index.html</loc>
     
     <lastmod>2021-07-29</lastmod>
@@ -30,7 +23,7 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/categories/index.html</loc>
+    <loc>https://www.bugprogrammer.me/schedule/index.html</loc>
     
     <lastmod>2021-07-29</lastmod>
     
@@ -45,6 +38,13 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/friends/index.html</loc>
+    
+    <lastmod>2021-07-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/categories/index.html</loc>
     
     <lastmod>2021-07-29</lastmod>
     
@@ -382,14 +382,14 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/Clover/</loc>
+    <loc>https://www.bugprogrammer.me/tags/Macintosh/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/Macintosh/</loc>
+    <loc>https://www.bugprogrammer.me/tags/Clover/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -410,7 +410,7 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2017/</loc>
+    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2018/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -431,6 +431,13 @@
   </url>
   
   <url>
+    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2017/</loc>
+    <lastmod>2022-02-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.bugprogrammer.me/tags/macOS-Catalina-10-15/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
@@ -445,14 +452,14 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2018/</loc>
+    <loc>https://www.bugprogrammer.me/tags/OpenCore/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/RX5700/</loc>
+    <loc>https://www.bugprogrammer.me/tags/BootCamp/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -473,14 +480,7 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/OpenCore/</loc>
-    <lastmod>2022-02-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/BootCamp/</loc>
+    <loc>https://www.bugprogrammer.me/tags/RX5700/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -523,41 +523,6 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/zsh/</loc>
-    <lastmod>2022-02-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/linux/</loc>
-    <lastmod>2022-02-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/MacBook-Pro/</loc>
-    <lastmod>2022-02-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/mi5/</loc>
-    <lastmod>2022-02-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/miui/</loc>
-    <lastmod>2022-02-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/Android/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -607,6 +572,27 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/SSL/</loc>
+    <lastmod>2022-02-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/linux/</loc>
+    <lastmod>2022-02-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/MacBook-Pro/</loc>
+    <lastmod>2022-02-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/Android/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -682,6 +668,20 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/mi5/</loc>
+    <lastmod>2022-02-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/miui/</loc>
+    <lastmod>2022-02-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -720,13 +720,6 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/categories/Android/</loc>
-    <lastmod>2022-02-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.bugprogrammer.me/categories/Android-Rom/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
@@ -735,6 +728,13 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/categories/Windows-Desktop/</loc>
+    <lastmod>2022-02-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/categories/Android/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

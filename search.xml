@@ -74,6 +74,44 @@
       </tags>
   </entry>
   <entry>
+    <title>博主的Hackintosh全家桶定时编译上线GitHub</title>
+    <url>/2020/09/07/HackintoshPlugins.html</url>
+    <content><![CDATA[<blockquote>
+<p>鉴于很多小伙伴编译困难，博主用azure pipelines建立了自动编译流水线，包括OC以及常用kexts，每8小时更新一次，欢迎食用</p>
+</blockquote>
+<h3 id="仓库链接"><a href="#仓库链接" class="headerlink" title="仓库链接"></a>仓库链接</h3><p><a href="https://github.com/bugprogrammer/HackinPlugins">https://github.com/bugprogrammer/HackinPlugins</a></p>
+<h3 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h3><p>直接下载或者使用HackintoshBuild中的每日构建功能</p>
+<h3 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-3.png"></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博主自编译的开源软件用于Apple Silicon Macs(长期更新)</title>
+    <url>/2021/04/23/Compiling-Soft-for-AppleSilicons.html</url>
+    <content><![CDATA[<blockquote>
+<p>自从博主购入m1版本的Mac mini以来，体验惊艳。低发热，低功耗，高性能，特别是gpu性能，让我这个不需要独显的人不用为了启动台的流畅度而被迫购入独显，这些优点已经让博主把Hackintosh吃灰。由于Apple Silicon是基于ARM架构的，所以不可避免出现app生态问题。现在发布博主自编译的开源软件，以用于Apple Silicon Macs。此帖将长期更新<a id="more"></a></p>
+</blockquote>
+<h1 id="软件列表"><a href="#软件列表" class="headerlink" title="软件列表"></a>软件列表</h1><ul>
+<li><p>FileZilla<br><a href="https://downloads.bugprogrammer.me/AppleSiliconApps/FileZilla自编译版本.zip">点击下载</a></p>
+</li>
+<li><p>Mos<br><a href="https://downloads.bugprogrammer.me/AppleSiliconApps/Mos自编译版本.zip">点击下载</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Macintosh</category>
+        <category>Apple Silicon</category>
+      </categories>
+      <tags>
+        <tag>Macintosh</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>macOS下编译Clover教程</title>
     <url>/2018/06/29/Build_Clover.html</url>
     <content><![CDATA[<blockquote>
@@ -114,14 +152,17 @@
       </tags>
   </entry>
   <entry>
-    <title>博主的Hackintosh全家桶定时编译上线GitHub</title>
-    <url>/2020/09/07/HackintoshPlugins.html</url>
+    <title>博主的Hackintosh Bootloader以及kexts编译脚本分享</title>
+    <url>/2019/12/21/Hackintosh_Build.html</url>
     <content><![CDATA[<blockquote>
-<p>鉴于很多小伙伴编译困难，博主用azure pipelines建立了自动编译流水线，包括OC以及常用kexts，每8小时更新一次，欢迎食用</p>
+<p>鉴于很多小伙伴问我如何编译Hackintosh Bootloader以及kexts，今奉上博主的编译脚本。<a id="more"></a></p>
 </blockquote>
-<h3 id="仓库链接"><a href="#仓库链接" class="headerlink" title="仓库链接"></a>仓库链接</h3><p><a href="https://github.com/bugprogrammer/HackinPlugins">https://github.com/bugprogrammer/HackinPlugins</a></p>
-<h3 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h3><p>直接下载或者使用HackintoshBuild中的每日构建功能</p>
-<h3 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-3.png"></p>
+<h1 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h1><h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul>
+<li>App Store安装Xcode11</li>
+<li>输入以下命令并按提示安装命令行工具<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
+<h2 id="脚本使用"><a href="#脚本使用" class="headerlink" title="脚本使用"></a>脚本使用</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/Hackintosh_build.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<h1 id="使用截图"><a href="#使用截图" class="headerlink" title="使用截图"></a>使用截图</h1><img src= "/images/loading.gif" data-lazy-src="/images/build-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/build-2.png"></li>
+</ul>
 ]]></content>
       <categories>
         <category>Hackintosh</category>
@@ -299,26 +340,6 @@
       </tags>
   </entry>
   <entry>
-    <title>博主的Hackintosh Bootloader以及kexts编译脚本分享</title>
-    <url>/2019/12/21/Hackintosh_Build.html</url>
-    <content><![CDATA[<blockquote>
-<p>鉴于很多小伙伴问我如何编译Hackintosh Bootloader以及kexts，今奉上博主的编译脚本。<a id="more"></a></p>
-</blockquote>
-<h1 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h1><h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul>
-<li>App Store安装Xcode11</li>
-<li>输入以下命令并按提示安装命令行工具<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
-<h2 id="脚本使用"><a href="#脚本使用" class="headerlink" title="脚本使用"></a>脚本使用</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/Hackintosh_build.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<h1 id="使用截图"><a href="#使用截图" class="headerlink" title="使用截图"></a>使用截图</h1><img src= "/images/loading.gif" data-lazy-src="/images/build-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/build-2.png"></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>技嘉Z490 ELITE+i9 10900K+RX 5700 XT Hackintosh构建说明</title>
     <url>/2020/05/27/Hackintosh_for_Z490_10900K.html</url>
     <content><![CDATA[<blockquote>
@@ -472,27 +493,6 @@
       </tags>
   </entry>
   <entry>
-    <title>博主自编译的开源软件用于Apple Silicon Macs(长期更新)</title>
-    <url>/2021/04/23/Compiling-Soft-for-AppleSilicons.html</url>
-    <content><![CDATA[<blockquote>
-<p>自从博主购入m1版本的Mac mini以来，体验惊艳。低发热，低功耗，高性能，特别是gpu性能，让我这个不需要独显的人不用为了启动台的流畅度而被迫购入独显，这些优点已经让博主把Hackintosh吃灰。由于Apple Silicon是基于ARM架构的，所以不可避免出现app生态问题。现在发布博主自编译的开源软件，以用于Apple Silicon Macs。此帖将长期更新<a id="more"></a></p>
-</blockquote>
-<h1 id="软件列表"><a href="#软件列表" class="headerlink" title="软件列表"></a>软件列表</h1><ul>
-<li><p>FileZilla<br><a href="https://downloads.bugprogrammer.me/AppleSiliconApps/FileZilla自编译版本.zip">点击下载</a></p>
-</li>
-<li><p>Mos<br><a href="https://downloads.bugprogrammer.me/AppleSiliconApps/Mos自编译版本.zip">点击下载</a></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Macintosh</category>
-        <category>Apple Silicon</category>
-      </categories>
-      <tags>
-        <tag>Macintosh</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux内核简介及编译教程</title>
     <url>/2018/09/01/Linux_Kernel_Build.html</url>
     <content><![CDATA[<blockquote>
@@ -564,13 +564,13 @@
       </tags>
   </entry>
   <entry>
-    <title>ThinkPad S1 2017 Hackintosh记录+教程+完整EFI分享</title>
-    <url>/2018/07/28/ThinkPad_Hackintosh.html</url>
+    <title>ThinkPad S1 2018 Hackintosh记录+教程+完整EFI分享</title>
+    <url>/2018/09/01/ThinkPad_Hackintosh_2018.html</url>
     <content><![CDATA[<blockquote>
-<p>朋友购买了ThinkPad S1 2017版本，配置为i5-7200U+hd620+8g ram+256g intel ssd(NVME)+1080P屏幕。安装黑苹果大体顺利，现将大概过程分享，供同机型的朋友借鉴。<a id="more"></a></p>
+<p>朋友购买了ThinkPad S1 2018版本，配置为i5-8250U+uhd620+8g ram+256g 联想定制ssd(NVME)+1080P屏幕。安装黑苹果大体顺利，现将大概过程分享，供同机型的朋友借鉴。<a id="more"></a></p>
 </blockquote>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li>因ThinkPad S1 2017使用的是intel无线网卡，大家都知道intel无线网卡在黑苹果下目前无解，所以替换了Bcm94352z。虽然Bcm94360是免驱的，但是博主不建议笔记本用户选用，因为Bcm94360和普通的ngff无线网卡相比宽了一块，所以笔记本有概率无法安装。</li>
+<li>因ThinkPad S1 2018使用的是intel无线网卡，大家都知道intel无线网卡在黑苹果下目前无解，所以替换了Bcm94352z。虽然Bcm94360是免驱的，但是博主不建议笔记本用户选用，因为Bcm94360和普通的ngff无线网卡相比宽了一块，所以笔记本有概率无法安装。</li>
 <li>完美程度：显卡+声卡+双网卡+蓝牙完美驱动，USB正常，睡眠唤醒正常，显示器内建正常，HDMI外接屏幕正常，变频7档，小太阳正常，电池正常(感谢黑果小兵和宪武以及其他大牛的帮助)。触摸屏以及电容笔可用，但只能单点触摸。触摸板和小红点可用，但是不支持手势。</li>
 <li>因为电脑是朋友的，所以截图不方便，因此本教程尽量多使用命令行方式，各位可以直接复制粘贴。</li>
 <li>本教程需要你有一个macOS环境，可以是虚拟机。虚拟机安装macOS百度教程很多，请自学。</li>
@@ -581,10 +581,10 @@
 <li>格式化U盘为Mac OS扩展日志式，U盘名称设置为mac，格式化后会生成两个分区，第一个是EFI分区，用来存放Clover引导，第二个用于写入镜像，格式化U盘如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/7eb9ec5bdd42a032dc9707bd8255427e82618323.jpg"></li>
 <li>写入镜像:终端输入如下命令并输入密码即可。<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/Applications/</span>Install\ macOS\ High\ Sierra.app<span class="regexp">/Contents/</span>Resources<span class="regexp">/createinstallmedia --volume /</span>Volumes<span class="regexp">/mac --applicationpath /</span>Applications/Install\ macOS\ High\ Sierra.app</span><br></pre></td></tr></table></figure>
 <h3 id="获取博主分享的Clover文件-保存在桌面"><a href="#获取博主分享的Clover文件-保存在桌面" class="headerlink" title="获取博主分享的Clover文件,保存在桌面"></a>获取博主分享的Clover文件,保存在桌面</h3></li>
-<li>输入如下命令即可在桌面保存hackintosh文件夹，内含Clover文件夹<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~<span class="string">/Desktop</span> &amp;&amp; git clone https:<span class="string">//github.com/bugprogrammer/hackintosh.git</span> &amp;&amp; <span class="keyword">cd</span> hackintosh &amp;&amp; git checkout ThinkPad-S1-2017 </span><br></pre></td></tr></table></figure>
-<img src= "/images/loading.gif" data-lazy-src="/images/d36b4788d3a64bcc071322e9a8dd0668cd7d7b20.jpg"></li>
+<li>输入如下命令即可在桌面保存hackintosh文件夹，内含Clover文件夹<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~<span class="string">/Desktop</span> &amp;&amp; git clone https:<span class="string">//github.com/bugprogrammer/hackintosh.git</span> &amp;&amp; <span class="keyword">cd</span> hackintosh &amp;&amp; git checkout ThinkPad-S1-2018 </span><br></pre></td></tr></table></figure>
+<img src= "/images/loading.gif" data-lazy-src="/images/13d9520b827daa228ded32453ae6b69163965369.jpg"></li>
 </ul>
-<h3 id="挂载U盘EFI分区，放入Clover引导"><a href="#挂载U盘EFI分区，放入Clover引导" class="headerlink" title="挂载U盘EFI分区，放入Clover引导"></a>挂载U盘EFI分区，放入Clover引导</h3><p>使用Clover Configurator挂载EFI分区，将博主分享的EFI拷贝进去。<br>   <img src= "/images/loading.gif" data-lazy-src="/images/deb75b00e28a324d97692897f31013241d00124f.jpg"><br>   <img src= "/images/loading.gif" data-lazy-src="/images/49f17878784bf4892e1e2be3e4af61fc5c5d9117.jpg"></p>
+<h3 id="挂载U盘EFI分区，放入Clover引导"><a href="#挂载U盘EFI分区，放入Clover引导" class="headerlink" title="挂载U盘EFI分区，放入Clover引导"></a>挂载U盘EFI分区，放入Clover引导</h3><p>使用Clover Configurator挂载EFI分区，将博主分享的EFI拷贝进去。<br>   <img src= "/images/loading.gif" data-lazy-src="/images/360ffd8a61b894b90505d9f89e798ab259461fd1.jpg"><br>   <img src= "/images/loading.gif" data-lazy-src="/images/f191d798eef6ca014e5f4f3d4df6e817c5dad4ae.jpg"></p>
 <h3 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h3><ul>
 <li>U盘启动，进入安装盘</li>
 <li>选择语言为简体中文，磁盘工具下抹盘为APFS</li>
@@ -605,13 +605,13 @@
 <h4 id="显示器内建以及开启hidpi"><a href="#显示器内建以及开启hidpi" class="headerlink" title="显示器内建以及开启hidpi"></a>显示器内建以及开启hidpi</h4><p>终端输入如下命令执行一建Hidpi脚本并按下图选择即可(感谢xzhih大牛提供脚本)，重启之后，你会发现Hidpi和内建显示器成功完成。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/master/hidpi.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
 <p>  <img src= "/images/loading.gif" data-lazy-src="/images/ee9bda948796e3d12b9ade6e3e82eab9a089a256.jpg"><br>  <img src= "/images/loading.gif" data-lazy-src="/images/d14a98efc2249b2ec0ddd1ad0215f3b8058d31e2.jpg"></p>
-<h2 id="至此，ThinkPad-S1-2017-黑苹果95完美"><a href="#至此，ThinkPad-S1-2017-黑苹果95完美" class="headerlink" title="至此，ThinkPad S1 2017 黑苹果95完美"></a>至此，ThinkPad S1 2017 黑苹果95完美</h2>]]></content>
+<h2 id="至此，ThinkPad-S1-2018-黑苹果95完美"><a href="#至此，ThinkPad-S1-2018-黑苹果95完美" class="headerlink" title="至此，ThinkPad S1 2018 黑苹果95完美"></a>至此，ThinkPad S1 2018 黑苹果95完美</h2>]]></content>
       <categories>
         <category>Hackintosh</category>
       </categories>
       <tags>
         <tag>macOS</tag>
-        <tag>ThinkPad S1 2017</tag>
+        <tag>ThinkPad S1 2018</tag>
       </tags>
   </entry>
   <entry>
@@ -703,6 +703,38 @@
       </tags>
   </entry>
   <entry>
+    <title>关于macOS 10.14.4 18E2034镜像的说明</title>
+    <url>/2019/03/27/about-macos-10.14.4-18E2034.html</url>
+    <content><![CDATA[<blockquote>
+<p>macOS 10.14.4 18E2034是一个特供镜像，博主猜测是iMac 2019的预装镜像(参测而已，因为经测试发现9900K型号仍然不识别，所以。。。)</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><h4 id="新建一个空壳镜像"><a href="#新建一个空壳镜像" class="headerlink" title="新建一个空壳镜像"></a>新建一个空壳镜像</h4><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/Applications/</span>Install\ macOS\ Mojave.app<span class="regexp">/Contents/</span>SharedSupport/</span><br></pre></td></tr></table></figure>
+<h4 id="获取镜像下载脚本"><a href="#获取镜像下载脚本" class="headerlink" title="获取镜像下载脚本"></a>获取镜像下载脚本</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">curl</span> https://www.tonymacx<span class="number">86</span>.com/attachments/createinstaller-<span class="number">10</span>-<span class="number">14</span>-<span class="number">4</span>-sb-sh-zip.<span class="number">395290</span>/ -o createInstaller-<span class="number">10</span>.<span class="number">14</span>.<span class="number">4</span>-SB.sh.zip</span><br><span class="line"><span class="attribute">unzip</span> createInstaller-<span class="number">10</span>.<span class="number">14</span>.<span class="number">4</span>-SB.sh.zip</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/e75ea7c233265be8aa47e9548df8c03ba93c6402.jpg"></p>
+<h4 id="修改脚本"><a href="#修改脚本" class="headerlink" title="修改脚本"></a>修改脚本</h4><blockquote>
+<p>由于下载可能失败,为了避免每次失败后都要重建空壳镜像，我们把脚本中的cp命令加上强制属性-f</p>
+</blockquote>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/3c35e1b7a49496a405706479ca6efab82865281b.jpg"></p>
+<h4 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h4><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">./createInstaller-<span class="number">10.14</span>.<span class="number">4</span>-<span class="module-access"><span class="module"><span class="identifier">SB</span>.</span></span>sh</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/a72f6742ed9dbd856a1872f1033e3a9b1a256f56.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/690c70a7ce3805cef14a2e66b0203bccecb7eed7.jpg"></p>
+<h3 id="博主的测试以及特供镜像的变化"><a href="#博主的测试以及特供镜像的变化" class="headerlink" title="博主的测试以及特供镜像的变化"></a>博主的测试以及特供镜像的变化</h3><ul>
+<li><font color=#A52A2A ><strong>仍然不显示9900K型号。</strong></font></li>
+<li><font color=#A52A2A ><strong>z390仍然要EmuVariableUefi-64.efi，否则睡眠、关机都变成重启。</strong></font></li>
+<li>AppleGraphicsPowerManagement.kext新增了两个机型，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/d8799656284986686c88dc71e6b0388fb7a773c3.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/9b9ed14414971bea8690c7ba3dd4b8d4ca632a85.jpg"></li>
+<li> AMDRadeonX5000GLDriver.bundle新增<font color=#A52A2A ><strong>Vega48</strong></font>和<font color=#A52A2A ><strong>Vega64X</strong></font>信息<br><img src= "/images/loading.gif" data-lazy-src="/images/e5dd1ea1e2ba4126ba28dd30334b2da8e6c245ed.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/9ac7e58ca2616f651daa617ec5defd17d1a1ab45.jpg"></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>macOS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于DRM视频播放以及sidecar和DRM共存的解决方案</title>
     <url>/2019/12/11/about-DRM.html</url>
     <content><![CDATA[<blockquote>
@@ -737,6 +769,57 @@
       </tags>
   </entry>
   <entry>
+    <title>ThinkPad S1 2017 Hackintosh记录+教程+完整EFI分享</title>
+    <url>/2018/07/28/ThinkPad_Hackintosh.html</url>
+    <content><![CDATA[<blockquote>
+<p>朋友购买了ThinkPad S1 2017版本，配置为i5-7200U+hd620+8g ram+256g intel ssd(NVME)+1080P屏幕。安装黑苹果大体顺利，现将大概过程分享，供同机型的朋友借鉴。<a id="more"></a></p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li>因ThinkPad S1 2017使用的是intel无线网卡，大家都知道intel无线网卡在黑苹果下目前无解，所以替换了Bcm94352z。虽然Bcm94360是免驱的，但是博主不建议笔记本用户选用，因为Bcm94360和普通的ngff无线网卡相比宽了一块，所以笔记本有概率无法安装。</li>
+<li>完美程度：显卡+声卡+双网卡+蓝牙完美驱动，USB正常，睡眠唤醒正常，显示器内建正常，HDMI外接屏幕正常，变频7档，小太阳正常，电池正常(感谢黑果小兵和宪武以及其他大牛的帮助)。触摸屏以及电容笔可用，但只能单点触摸。触摸板和小红点可用，但是不支持手势。</li>
+<li>因为电脑是朋友的，所以截图不方便，因此本教程尽量多使用命令行方式，各位可以直接复制粘贴。</li>
+<li>本教程需要你有一个macOS环境，可以是虚拟机。虚拟机安装macOS百度教程很多，请自学。</li>
+<li>安装前要在Windows下准备好安装macOS所需分区。</li>
+</ul>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><h3 id="制作安装盘"><a href="#制作安装盘" class="headerlink" title="制作安装盘"></a>制作安装盘</h3><ul>
+<li>下载macOS High Sierra 10.13.6镜像，博主建议在App Store下载，下载成功后会保存在Application下。</li>
+<li>格式化U盘为Mac OS扩展日志式，U盘名称设置为mac，格式化后会生成两个分区，第一个是EFI分区，用来存放Clover引导，第二个用于写入镜像，格式化U盘如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/7eb9ec5bdd42a032dc9707bd8255427e82618323.jpg"></li>
+<li>写入镜像:终端输入如下命令并输入密码即可。<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/Applications/</span>Install\ macOS\ High\ Sierra.app<span class="regexp">/Contents/</span>Resources<span class="regexp">/createinstallmedia --volume /</span>Volumes<span class="regexp">/mac --applicationpath /</span>Applications/Install\ macOS\ High\ Sierra.app</span><br></pre></td></tr></table></figure>
+<h3 id="获取博主分享的Clover文件-保存在桌面"><a href="#获取博主分享的Clover文件-保存在桌面" class="headerlink" title="获取博主分享的Clover文件,保存在桌面"></a>获取博主分享的Clover文件,保存在桌面</h3></li>
+<li>输入如下命令即可在桌面保存hackintosh文件夹，内含Clover文件夹<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~<span class="string">/Desktop</span> &amp;&amp; git clone https:<span class="string">//github.com/bugprogrammer/hackintosh.git</span> &amp;&amp; <span class="keyword">cd</span> hackintosh &amp;&amp; git checkout ThinkPad-S1-2017 </span><br></pre></td></tr></table></figure>
+<img src= "/images/loading.gif" data-lazy-src="/images/d36b4788d3a64bcc071322e9a8dd0668cd7d7b20.jpg"></li>
+</ul>
+<h3 id="挂载U盘EFI分区，放入Clover引导"><a href="#挂载U盘EFI分区，放入Clover引导" class="headerlink" title="挂载U盘EFI分区，放入Clover引导"></a>挂载U盘EFI分区，放入Clover引导</h3><p>使用Clover Configurator挂载EFI分区，将博主分享的EFI拷贝进去。<br>   <img src= "/images/loading.gif" data-lazy-src="/images/deb75b00e28a324d97692897f31013241d00124f.jpg"><br>   <img src= "/images/loading.gif" data-lazy-src="/images/49f17878784bf4892e1e2be3e4af61fc5c5d9117.jpg"></p>
+<h3 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h3><ul>
+<li>U盘启动，进入安装盘</li>
+<li>选择语言为简体中文，磁盘工具下抹盘为APFS</li>
+<li>点击安装macOS，选择刚才准备好的分区，安装系统</li>
+<li>安装系统有两个阶段，中途会重启，属于正常现象</li>
+</ul>
+<h3 id="系统完善"><a href="#系统完善" class="headerlink" title="系统完善"></a>系统完善</h3><blockquote>
+<p>因为有些操作是在系统内完成的，所以只有一个efi不可能安装完成就完美，所以进入系统后要完善系统。</p>
+</blockquote>
+<h4 id="蓝牙"><a href="#蓝牙" class="headerlink" title="蓝牙"></a>蓝牙</h4><p>挂载EFI分区，终端下输入如下命令重启即可</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/BrcmFirmwareData.kext /</span>Library/Extensions</span><br><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/BrcmPatchRAM2.kext /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure>
+<h4 id="电池"><a href="#电池" class="headerlink" title="电池"></a>电池</h4><p>挂载EFI分区，终端下输入如下命令重启即可</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/ACPIBatteryManager.kext  /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure>
+<h4 id="小太阳"><a href="#小太阳" class="headerlink" title="小太阳"></a>小太阳</h4><ul>
+<li>挂载EFI分区，终端下输入如下命令重启<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/AppleBacklightInjector.kext  /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure></li>
+<li>设置快捷键，将亮度调节快捷键修改成笔记本键盘相应键位，ThinkPad S1 2017为F5亮度增，F6亮度减。(需要外接键盘才能设置，设置完成后可以拔掉外接键盘)<br>  <img src= "/images/loading.gif" data-lazy-src="/images/a7883fe77213f7236c7b3677e631aadf5737a2ee.jpg"></li>
+</ul>
+<h4 id="显示器内建以及开启hidpi"><a href="#显示器内建以及开启hidpi" class="headerlink" title="显示器内建以及开启hidpi"></a>显示器内建以及开启hidpi</h4><p>终端输入如下命令执行一建Hidpi脚本并按下图选择即可(感谢xzhih大牛提供脚本)，重启之后，你会发现Hidpi和内建显示器成功完成。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/master/hidpi.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<p>  <img src= "/images/loading.gif" data-lazy-src="/images/ee9bda948796e3d12b9ade6e3e82eab9a089a256.jpg"><br>  <img src= "/images/loading.gif" data-lazy-src="/images/d14a98efc2249b2ec0ddd1ad0215f3b8058d31e2.jpg"></p>
+<h2 id="至此，ThinkPad-S1-2017-黑苹果95完美"><a href="#至此，ThinkPad-S1-2017-黑苹果95完美" class="headerlink" title="至此，ThinkPad S1 2017 黑苹果95完美"></a>至此，ThinkPad S1 2017 黑苹果95完美</h2>]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>macOS</tag>
+        <tag>ThinkPad S1 2017</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>macOS Catalina 10.15关于sidecar功能的说明</title>
     <url>/2019/06/13/about-sidecar.html</url>
     <content><![CDATA[<blockquote>
@@ -763,54 +846,92 @@
       </tags>
   </entry>
   <entry>
-    <title>ThinkPad S1 2018 Hackintosh记录+教程+完整EFI分享</title>
-    <url>/2018/09/01/ThinkPad_Hackintosh_2018.html</url>
+    <title>ASRock Z390 Phantom Gaming-ITX使用BootCamp切换双系统注意事项</title>
+    <url>/2020/04/04/bootcamp-about-z390.html</url>
     <content><![CDATA[<blockquote>
-<p>朋友购买了ThinkPad S1 2018版本，配置为i5-8250U+uhd620+8g ram+256g 联想定制ssd(NVME)+1080P屏幕。安装黑苹果大体顺利，现将大概过程分享，供同机型的朋友借鉴。<a id="more"></a></p>
+<p>博主为了方便使用Linux一直是以grub作为主引导器(grub-&gt;OC)，最近OC解决了Linux引导问题，所以换回OC作为主引导器。摸索了一下，实现了原生NVRAM+BootCamp双系统切换。<a id="more"></a></p>
 </blockquote>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li>因ThinkPad S1 2018使用的是intel无线网卡，大家都知道intel无线网卡在黑苹果下目前无解，所以替换了Bcm94352z。虽然Bcm94360是免驱的，但是博主不建议笔记本用户选用，因为Bcm94360和普通的ngff无线网卡相比宽了一块，所以笔记本有概率无法安装。</li>
-<li>完美程度：显卡+声卡+双网卡+蓝牙完美驱动，USB正常，睡眠唤醒正常，显示器内建正常，HDMI外接屏幕正常，变频7档，小太阳正常，电池正常(感谢黑果小兵和宪武以及其他大牛的帮助)。触摸屏以及电容笔可用，但只能单点触摸。触摸板和小红点可用，但是不支持手势。</li>
-<li>因为电脑是朋友的，所以截图不方便，因此本教程尽量多使用命令行方式，各位可以直接复制粘贴。</li>
-<li>本教程需要你有一个macOS环境，可以是虚拟机。虚拟机安装macOS百度教程很多，请自学。</li>
-<li>安装前要在Windows下准备好安装macOS所需分区。</li>
+<h1 id="实现教程"><a href="#实现教程" class="headerlink" title="实现教程"></a>实现教程</h1><h2 id="原生NVRAM"><a href="#原生NVRAM" class="headerlink" title="原生NVRAM"></a>原生NVRAM</h2><ul>
+<li><p>加入并在config.plist里启用如下SSDT<br><a href="https://downloads.bugprogrammer.me/SSDT/SSDT-PMC.aml">SSDT-PMC.aml</a></p>
+</li>
+<li><p>修改config.plist</p>
+</li>
+<li><p>NVRAM-&gt;LegacyEnable-&gt;No</p>
+</li>
+<li><p>NVRAM-&gt;LegacyOverwrite-&gt;No</p>
+</li>
+<li><p>NVRAM-&gt;WriteFlash-&gt;Yes</p>
+</li>
+<li><p>Booter-&gt;Quirks-&gt;DisableVariableWrite-&gt;No</p>
+</li>
 </ul>
-<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><h3 id="制作安装盘"><a href="#制作安装盘" class="headerlink" title="制作安装盘"></a>制作安装盘</h3><ul>
-<li>下载macOS High Sierra 10.13.6镜像，博主建议在App Store下载，下载成功后会保存在Application下。</li>
-<li>格式化U盘为Mac OS扩展日志式，U盘名称设置为mac，格式化后会生成两个分区，第一个是EFI分区，用来存放Clover引导，第二个用于写入镜像，格式化U盘如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/7eb9ec5bdd42a032dc9707bd8255427e82618323.jpg"></li>
-<li>写入镜像:终端输入如下命令并输入密码即可。<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/Applications/</span>Install\ macOS\ High\ Sierra.app<span class="regexp">/Contents/</span>Resources<span class="regexp">/createinstallmedia --volume /</span>Volumes<span class="regexp">/mac --applicationpath /</span>Applications/Install\ macOS\ High\ Sierra.app</span><br></pre></td></tr></table></figure>
-<h3 id="获取博主分享的Clover文件-保存在桌面"><a href="#获取博主分享的Clover文件-保存在桌面" class="headerlink" title="获取博主分享的Clover文件,保存在桌面"></a>获取博主分享的Clover文件,保存在桌面</h3></li>
-<li>输入如下命令即可在桌面保存hackintosh文件夹，内含Clover文件夹<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~<span class="string">/Desktop</span> &amp;&amp; git clone https:<span class="string">//github.com/bugprogrammer/hackintosh.git</span> &amp;&amp; <span class="keyword">cd</span> hackintosh &amp;&amp; git checkout ThinkPad-S1-2018 </span><br></pre></td></tr></table></figure>
-<img src= "/images/loading.gif" data-lazy-src="/images/13d9520b827daa228ded32453ae6b69163965369.jpg"></li>
+<h2 id="BootCamp切换"><a href="#BootCamp切换" class="headerlink" title="BootCamp切换"></a>BootCamp切换</h2><ul>
+<li><p>修改config.plist</p>
+</li>
+<li><p>PlatformInfo-&gt;Generic-&gt;AdviseWindows-&gt;Yes</p>
+</li>
+<li><p>UEFI-&gt;RequestBootVarRouting-&gt;Yes</p>
+</li>
+<li><p>Windows下安装BootCamp软件，重启。</p>
+</li>
+<li><p>如果D盘消失，请使用傲梅分区助理取消D盘隐藏。(<font color=#A52A2A ><strong>注意：一定要使用傲梅分区助理，博主测试其他分区工具重启后D盘会再次消失</strong></font>)</p>
+</li>
 </ul>
-<h3 id="挂载U盘EFI分区，放入Clover引导"><a href="#挂载U盘EFI分区，放入Clover引导" class="headerlink" title="挂载U盘EFI分区，放入Clover引导"></a>挂载U盘EFI分区，放入Clover引导</h3><p>使用Clover Configurator挂载EFI分区，将博主分享的EFI拷贝进去。<br>   <img src= "/images/loading.gif" data-lazy-src="/images/360ffd8a61b894b90505d9f89e798ab259461fd1.jpg"><br>   <img src= "/images/loading.gif" data-lazy-src="/images/f191d798eef6ca014e5f4f3d4df6e817c5dad4ae.jpg"></p>
-<h3 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h3><ul>
-<li>U盘启动，进入安装盘</li>
-<li>选择语言为简体中文，磁盘工具下抹盘为APFS</li>
-<li>点击安装macOS，选择刚才准备好的分区，安装系统</li>
-<li>安装系统有两个阶段，中途会重启，属于正常现象</li>
+<h2 id="隐藏OC引导界面"><a href="#隐藏OC引导界面" class="headerlink" title="隐藏OC引导界面"></a>隐藏OC引导界面</h2><ul>
+<li>修改config.plist</li>
+<li>Misc-&gt;Boot-&gt;ShowPicker-&gt;No</li>
 </ul>
-<h3 id="系统完善"><a href="#系统完善" class="headerlink" title="系统完善"></a>系统完善</h3><blockquote>
-<p>因为有些操作是在系统内完成的，所以只有一个efi不可能安装完成就完美，所以进入系统后要完善系统。</p>
-</blockquote>
-<h4 id="蓝牙"><a href="#蓝牙" class="headerlink" title="蓝牙"></a>蓝牙</h4><p>挂载EFI分区，终端下输入如下命令重启即可</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/BrcmFirmwareData.kext /</span>Library/Extensions</span><br><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/BrcmPatchRAM2.kext /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure>
-<h4 id="电池"><a href="#电池" class="headerlink" title="电池"></a>电池</h4><p>挂载EFI分区，终端下输入如下命令重启即可</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/ACPIBatteryManager.kext  /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure>
-<h4 id="小太阳"><a href="#小太阳" class="headerlink" title="小太阳"></a>小太阳</h4><ul>
-<li>挂载EFI分区，终端下输入如下命令重启<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/AppleBacklightInjector.kext  /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure></li>
-<li>设置快捷键，将亮度调节快捷键修改成笔记本键盘相应键位，ThinkPad S1 2017为F5亮度增，F6亮度减。(需要外接键盘才能设置，设置完成后可以拔掉外接键盘)<br>  <img src= "/images/loading.gif" data-lazy-src="/images/a7883fe77213f7236c7b3677e631aadf5737a2ee.jpg"></li>
-</ul>
-<h4 id="显示器内建以及开启hidpi"><a href="#显示器内建以及开启hidpi" class="headerlink" title="显示器内建以及开启hidpi"></a>显示器内建以及开启hidpi</h4><p>终端输入如下命令执行一建Hidpi脚本并按下图选择即可(感谢xzhih大牛提供脚本)，重启之后，你会发现Hidpi和内建显示器成功完成。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/master/hidpi.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<p>  <img src= "/images/loading.gif" data-lazy-src="/images/ee9bda948796e3d12b9ade6e3e82eab9a089a256.jpg"><br>  <img src= "/images/loading.gif" data-lazy-src="/images/d14a98efc2249b2ec0ddd1ad0215f3b8058d31e2.jpg"></p>
-<h2 id="至此，ThinkPad-S1-2018-黑苹果95完美"><a href="#至此，ThinkPad-S1-2018-黑苹果95完美" class="headerlink" title="至此，ThinkPad S1 2018 黑苹果95完美"></a>至此，ThinkPad S1 2018 黑苹果95完美</h2>]]></content>
+<h1 id="至此，你已经可以使用BootCamp切换双系统，体验类似白苹果。"><a href="#至此，你已经可以使用BootCamp切换双系统，体验类似白苹果。" class="headerlink" title="至此，你已经可以使用BootCamp切换双系统，体验类似白苹果。"></a>至此，你已经可以使用BootCamp切换双系统，体验类似白苹果。</h1>]]></content>
       <categories>
         <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>macOS</tag>
-        <tag>ThinkPad S1 2018</tag>
+        <tag>Hackintosh</tag>
+        <tag>macOS Catalina 10.15</tag>
+        <tag>OpenCore</tag>
+        <tag>BootCamp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenWrt获取IPv6详细教程</title>
+    <url>/2021/05/06/about-openwrt-ipv6.html</url>
+    <content><![CDATA[<blockquote>
+<p>前几天博主无意间登录光猫发现已经有了IPv6地址并且可以访问ipv6网站，但是自用的openwrt路由器却无法获取到IPv6地址，查阅资料发现大量资料已经过时，博主现在分享自己的解决方案。</p>
+</blockquote>
+<h1 id="编译支持IPv6的OpenWrt固件"><a href="#编译支持IPv6的OpenWrt固件" class="headerlink" title="编译支持IPv6的OpenWrt固件"></a>编译支持IPv6的OpenWrt固件</h1><blockquote>
+<p>博主用的是Lean的openwrt源码编译，GitHub地址如下：<a href="https://github.com/coolsnowwolf/lede%E3%80%82">https://github.com/coolsnowwolf/lede。</a> 具体编译教程原作者写得十分清楚，博主只讲关于IPv6的配置参数。</p>
+</blockquote>
+<h2 id="make-menuconfig配置-IPv6相关"><a href="#make-menuconfig配置-IPv6相关" class="headerlink" title="make menuconfig配置(IPv6相关)"></a>make menuconfig配置(IPv6相关)</h2><ul>
+<li>Extra Packages-&gt;ipv6helper选中</li>
+<li>Network-&gt;odhcp6c选中</li>
+<li>Network-&gt;odhcpd-ipv6only选中</li>
+</ul>
+<blockquote>
+<p>以上3项做完后即可按照原作者教程编译固件。</p>
+</blockquote>
+<h1 id="OpenWrt设置"><a href="#OpenWrt设置" class="headerlink" title="OpenWrt设置"></a>OpenWrt设置</h1><ul>
+<li>找到网络-&gt;DHCP/DNS-&gt;高级设置-&gt;禁止解析 IPv6 DNS 记录，把默认带的打勾去掉(没错，OpenWrt的脑残默认设置，不解析IPv6！！！)</li>
+</ul>
+<blockquote>
+<p>经过以上的编译以及设置，需要我们做的已经全部完成，正常情况下你已经可以享受IPv6了，什么？能获取到IPv6地址但不能上网？别急，往下看！！！</p>
+</blockquote>
+<h1 id="可以获取到IPv6地址但是不能上网的解决方案-重点"><a href="#可以获取到IPv6地址但是不能上网的解决方案-重点" class="headerlink" title="可以获取到IPv6地址但是不能上网的解决方案(重点)"></a>可以获取到IPv6地址但是不能上网的解决方案(重点)</h1><ul>
+<li>给运营商打电话，让客服把光猫改成桥接，要来PPPoE用户名以及密码，路由器端拨号。(没错，就这么简单)</li>
+</ul>
+<blockquote>
+<p>至此，你已经可以完美享受IPv6了。</p>
+</blockquote>
+<h1 id="放上两个IPv6的测试网站，用来测试IPv6情况"><a href="#放上两个IPv6的测试网站，用来测试IPv6情况" class="headerlink" title="放上两个IPv6的测试网站，用来测试IPv6情况"></a>放上两个IPv6的测试网站，用来测试IPv6情况</h1><ul>
+<li><a href="https://v6t.ipip.net/">https://v6t.ipip.net/</a></li>
+<li><a href="https://www.test-ipv6.com/">https://www.test-ipv6.com/</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>OpenWrt</category>
+      </categories>
+      <tags>
+        <tag>OpenWrt</tag>
+        <tag>ipv6</tag>
       </tags>
   </entry>
   <entry>
@@ -882,127 +1003,6 @@
       <tags>
         <tag>Hackintosh</tag>
         <tag>RX5700</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenWrt获取IPv6详细教程</title>
-    <url>/2021/05/06/about-openwrt-ipv6.html</url>
-    <content><![CDATA[<blockquote>
-<p>前几天博主无意间登录光猫发现已经有了IPv6地址并且可以访问ipv6网站，但是自用的openwrt路由器却无法获取到IPv6地址，查阅资料发现大量资料已经过时，博主现在分享自己的解决方案。</p>
-</blockquote>
-<h1 id="编译支持IPv6的OpenWrt固件"><a href="#编译支持IPv6的OpenWrt固件" class="headerlink" title="编译支持IPv6的OpenWrt固件"></a>编译支持IPv6的OpenWrt固件</h1><blockquote>
-<p>博主用的是Lean的openwrt源码编译，GitHub地址如下：<a href="https://github.com/coolsnowwolf/lede%E3%80%82">https://github.com/coolsnowwolf/lede。</a> 具体编译教程原作者写得十分清楚，博主只讲关于IPv6的配置参数。</p>
-</blockquote>
-<h2 id="make-menuconfig配置-IPv6相关"><a href="#make-menuconfig配置-IPv6相关" class="headerlink" title="make menuconfig配置(IPv6相关)"></a>make menuconfig配置(IPv6相关)</h2><ul>
-<li>Extra Packages-&gt;ipv6helper选中</li>
-<li>Network-&gt;odhcp6c选中</li>
-<li>Network-&gt;odhcpd-ipv6only选中</li>
-</ul>
-<blockquote>
-<p>以上3项做完后即可按照原作者教程编译固件。</p>
-</blockquote>
-<h1 id="OpenWrt设置"><a href="#OpenWrt设置" class="headerlink" title="OpenWrt设置"></a>OpenWrt设置</h1><ul>
-<li>找到网络-&gt;DHCP/DNS-&gt;高级设置-&gt;禁止解析 IPv6 DNS 记录，把默认带的打勾去掉(没错，OpenWrt的脑残默认设置，不解析IPv6！！！)</li>
-</ul>
-<blockquote>
-<p>经过以上的编译以及设置，需要我们做的已经全部完成，正常情况下你已经可以享受IPv6了，什么？能获取到IPv6地址但不能上网？别急，往下看！！！</p>
-</blockquote>
-<h1 id="可以获取到IPv6地址但是不能上网的解决方案-重点"><a href="#可以获取到IPv6地址但是不能上网的解决方案-重点" class="headerlink" title="可以获取到IPv6地址但是不能上网的解决方案(重点)"></a>可以获取到IPv6地址但是不能上网的解决方案(重点)</h1><ul>
-<li>给运营商打电话，让客服把光猫改成桥接，要来PPPoE用户名以及密码，路由器端拨号。(没错，就这么简单)</li>
-</ul>
-<blockquote>
-<p>至此，你已经可以完美享受IPv6了。</p>
-</blockquote>
-<h1 id="放上两个IPv6的测试网站，用来测试IPv6情况"><a href="#放上两个IPv6的测试网站，用来测试IPv6情况" class="headerlink" title="放上两个IPv6的测试网站，用来测试IPv6情况"></a>放上两个IPv6的测试网站，用来测试IPv6情况</h1><ul>
-<li><a href="https://v6t.ipip.net/">https://v6t.ipip.net/</a></li>
-<li><a href="https://www.test-ipv6.com/">https://www.test-ipv6.com/</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>OpenWrt</category>
-      </categories>
-      <tags>
-        <tag>OpenWrt</tag>
-        <tag>ipv6</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ASRock Z390 Phantom Gaming-ITX使用BootCamp切换双系统注意事项</title>
-    <url>/2020/04/04/bootcamp-about-z390.html</url>
-    <content><![CDATA[<blockquote>
-<p>博主为了方便使用Linux一直是以grub作为主引导器(grub-&gt;OC)，最近OC解决了Linux引导问题，所以换回OC作为主引导器。摸索了一下，实现了原生NVRAM+BootCamp双系统切换。<a id="more"></a></p>
-</blockquote>
-<h1 id="实现教程"><a href="#实现教程" class="headerlink" title="实现教程"></a>实现教程</h1><h2 id="原生NVRAM"><a href="#原生NVRAM" class="headerlink" title="原生NVRAM"></a>原生NVRAM</h2><ul>
-<li><p>加入并在config.plist里启用如下SSDT<br><a href="https://downloads.bugprogrammer.me/SSDT/SSDT-PMC.aml">SSDT-PMC.aml</a></p>
-</li>
-<li><p>修改config.plist</p>
-</li>
-<li><p>NVRAM-&gt;LegacyEnable-&gt;No</p>
-</li>
-<li><p>NVRAM-&gt;LegacyOverwrite-&gt;No</p>
-</li>
-<li><p>NVRAM-&gt;WriteFlash-&gt;Yes</p>
-</li>
-<li><p>Booter-&gt;Quirks-&gt;DisableVariableWrite-&gt;No</p>
-</li>
-</ul>
-<h2 id="BootCamp切换"><a href="#BootCamp切换" class="headerlink" title="BootCamp切换"></a>BootCamp切换</h2><ul>
-<li><p>修改config.plist</p>
-</li>
-<li><p>PlatformInfo-&gt;Generic-&gt;AdviseWindows-&gt;Yes</p>
-</li>
-<li><p>UEFI-&gt;RequestBootVarRouting-&gt;Yes</p>
-</li>
-<li><p>Windows下安装BootCamp软件，重启。</p>
-</li>
-<li><p>如果D盘消失，请使用傲梅分区助理取消D盘隐藏。(<font color=#A52A2A ><strong>注意：一定要使用傲梅分区助理，博主测试其他分区工具重启后D盘会再次消失</strong></font>)</p>
-</li>
-</ul>
-<h2 id="隐藏OC引导界面"><a href="#隐藏OC引导界面" class="headerlink" title="隐藏OC引导界面"></a>隐藏OC引导界面</h2><ul>
-<li>修改config.plist</li>
-<li>Misc-&gt;Boot-&gt;ShowPicker-&gt;No</li>
-</ul>
-<h1 id="至此，你已经可以使用BootCamp切换双系统，体验类似白苹果。"><a href="#至此，你已经可以使用BootCamp切换双系统，体验类似白苹果。" class="headerlink" title="至此，你已经可以使用BootCamp切换双系统，体验类似白苹果。"></a>至此，你已经可以使用BootCamp切换双系统，体验类似白苹果。</h1>]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>macOS Catalina 10.15</tag>
-        <tag>OpenCore</tag>
-        <tag>BootCamp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于macOS 10.14.4 18E2034镜像的说明</title>
-    <url>/2019/03/27/about-macos-10.14.4-18E2034.html</url>
-    <content><![CDATA[<blockquote>
-<p>macOS 10.14.4 18E2034是一个特供镜像，博主猜测是iMac 2019的预装镜像(参测而已，因为经测试发现9900K型号仍然不识别，所以。。。)</p>
-</blockquote>
-<a id="more"></a>
-
-<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><h4 id="新建一个空壳镜像"><a href="#新建一个空壳镜像" class="headerlink" title="新建一个空壳镜像"></a>新建一个空壳镜像</h4><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/Applications/</span>Install\ macOS\ Mojave.app<span class="regexp">/Contents/</span>SharedSupport/</span><br></pre></td></tr></table></figure>
-<h4 id="获取镜像下载脚本"><a href="#获取镜像下载脚本" class="headerlink" title="获取镜像下载脚本"></a>获取镜像下载脚本</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">curl</span> https://www.tonymacx<span class="number">86</span>.com/attachments/createinstaller-<span class="number">10</span>-<span class="number">14</span>-<span class="number">4</span>-sb-sh-zip.<span class="number">395290</span>/ -o createInstaller-<span class="number">10</span>.<span class="number">14</span>.<span class="number">4</span>-SB.sh.zip</span><br><span class="line"><span class="attribute">unzip</span> createInstaller-<span class="number">10</span>.<span class="number">14</span>.<span class="number">4</span>-SB.sh.zip</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/e75ea7c233265be8aa47e9548df8c03ba93c6402.jpg"></p>
-<h4 id="修改脚本"><a href="#修改脚本" class="headerlink" title="修改脚本"></a>修改脚本</h4><blockquote>
-<p>由于下载可能失败,为了避免每次失败后都要重建空壳镜像，我们把脚本中的cp命令加上强制属性-f</p>
-</blockquote>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/3c35e1b7a49496a405706479ca6efab82865281b.jpg"></p>
-<h4 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h4><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">./createInstaller-<span class="number">10.14</span>.<span class="number">4</span>-<span class="module-access"><span class="module"><span class="identifier">SB</span>.</span></span>sh</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/a72f6742ed9dbd856a1872f1033e3a9b1a256f56.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/690c70a7ce3805cef14a2e66b0203bccecb7eed7.jpg"></p>
-<h3 id="博主的测试以及特供镜像的变化"><a href="#博主的测试以及特供镜像的变化" class="headerlink" title="博主的测试以及特供镜像的变化"></a>博主的测试以及特供镜像的变化</h3><ul>
-<li><font color=#A52A2A ><strong>仍然不显示9900K型号。</strong></font></li>
-<li><font color=#A52A2A ><strong>z390仍然要EmuVariableUefi-64.efi，否则睡眠、关机都变成重启。</strong></font></li>
-<li>AppleGraphicsPowerManagement.kext新增了两个机型，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/d8799656284986686c88dc71e6b0388fb7a773c3.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/9b9ed14414971bea8690c7ba3dd4b8d4ca632a85.jpg"></li>
-<li> AMDRadeonX5000GLDriver.bundle新增<font color=#A52A2A ><strong>Vega48</strong></font>和<font color=#A52A2A ><strong>Vega64X</strong></font>信息<br><img src= "/images/loading.gif" data-lazy-src="/images/e5dd1ea1e2ba4126ba28dd30334b2da8e6c245ed.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/9ac7e58ca2616f651daa617ec5defd17d1a1ab45.jpg"></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>macOS</tag>
       </tags>
   </entry>
   <entry>
@@ -1101,72 +1101,6 @@
       </tags>
   </entry>
   <entry>
-    <title>无核显开启sidecar方法</title>
-    <url>/2019/11/24/fix-sidecar-without-igpu.html</url>
-    <content><![CDATA[<blockquote>
-<p>之前<font color=#A52A2A >@fang2018</font>发布了一个相关教程，地址如下:<font color=#A52A2A ><a href="https://fangf.cc/2019/10/14/noneigpusidecar/">https://fangf.cc/2019/10/14/noneigpusidecar/</a></font>, 现在随着Whatevergreen的更新，之前的方法已经不再适用。现在发布新教程。</p>
-</blockquote>
-<a id="more"></a>
-
-<h1 id="无核显开启sidecar教程"><a href="#无核显开启sidecar教程" class="headerlink" title="无核显开启sidecar教程"></a>无核显开启sidecar教程</h1><ul>
-<li>smbios设置成iMac19,1或iMac18,3(绝对不能用iMac Pro 1,1或Mac Pro 7,1)</li>
-<li>Lilu使用v1.3.9版本(<a href="https://github.com/acidanthera/Lilu">https://github.com/acidanthera/Lilu</a>)</li>
-<li>Whatevergreen使用v1.3.5版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)</li>
-<li>boot-args加入shikigva=16</li>
-<li>重启</li>
-</ul>
-<h1 id="至此，您的sidecar功能已经可用。"><a href="#至此，您的sidecar功能已经可用。" class="headerlink" title="至此，您的sidecar功能已经可用。"></a>至此，您的sidecar功能已经可用。</h1>]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>sidecar</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博主魔改版Whatevergreen解析，还你正常核显频率(1.2g)</title>
-    <url>/2019/10/03/fix-igpu-with-weg.html</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这篇文章是给台式机用户看的，高度依赖Whatevergreen缓冲帧补丁的小伙伴请绕行。<a id="more"></a></p>
-<h1 id="事件起因"><a href="#事件起因" class="headerlink" title="事件起因"></a>事件起因</h1><p>前几天细心的群友发现了一个bug，在加入Whatevergreen的情况下，核显频率会稳定在0.5g左右，远低于正常值1.2g，经排查，发现是Whatevergreen导致的问题。</p>
-<h1 id="为什么不选择删除Whatevergreen"><a href="#为什么不选择删除Whatevergreen" class="headerlink" title="为什么不选择删除Whatevergreen"></a>为什么不选择删除Whatevergreen</h1><p>博主已经测试过删掉Whatevergreen的情况，并不完美，体现如下。</p>
-<ul>
-<li><p>AGDP patch时灵时不灵<br>博主测试了加入AGDP patch解决dp花屏的方案，时灵时不灵，在系统更新，安装器，recovery等环境下100%失效，OpenCore以及Clover都已经实测，时灵时不灵。</p>
-</li>
-<li><p>核显型号名称要手动注入<br>Whatevergreen内置型号识别功能，id和型号对应，比如3E980003-&gt;Intel UHD Graphics 630。所以删掉Whatevergreen会导致核显型号显示错误，要手动注入Device-&gt;model属性。</p>
-</li>
-<li><p>重命名补丁要手动添加<br>Whatevergreen内置change GFX0 to IGPU,change PEGP to GFX0,change HECI to IMEI,change MEI to IMEI等补丁，去掉后这些要手动添加。</p>
-</li>
-</ul>
-<h1 id="博主修改的Whatevergreen改了哪些内容"><a href="#博主修改的Whatevergreen改了哪些内容" class="headerlink" title="博主修改的Whatevergreen改了哪些内容"></a>博主修改的Whatevergreen改了哪些内容</h1><ul>
-<li>删除igfx(核显)相关补丁。</li>
-<li>删除Nvidia相关补丁。</li>
-<li>删除Shiki相关功能。</li>
-<li>保留AGDP补丁。</li>
-<li>保留基础重命名补丁。</li>
-<li>保留型号对应识别功能。</li>
-<li>保留紫线移除补丁。</li>
-</ul>
-<h1 id="如何使用博主修改的Whatevergreen"><a href="#如何使用博主修改的Whatevergreen" class="headerlink" title="如何使用博主修改的Whatevergreen"></a>如何使用博主修改的Whatevergreen</h1><ul>
-<li>Bios主显卡设置成独显，DVMT 128M。</li>
-<li>移除change GFX0 to IGPU,change PEGP to GFX0,change HECI to IMEI,change MEI to IMEI等补丁。</li>
-<li>移除显卡相关的SSDT。</li>
-<li>加入Whatevergreen(Lilu要求1.3.8)。</li>
-</ul>
-<h1 id="修改版Whatevergreen-Github地址如下"><a href="#修改版Whatevergreen-Github地址如下" class="headerlink" title="修改版Whatevergreen Github地址如下"></a>修改版Whatevergreen Github地址如下</h1><p><a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a></p>
-<h1 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h1><p>如图，核显性能测试如下<br><img src= "/images/loading.gif" data-lazy-src="/images/weg.png"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>macOS Catalina 10.15</tag>
-        <tag>OpenCore</tag>
-        <tag>weg</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>修复OpenCore 0.5.3关于本机不显示内存教程</title>
     <url>/2019/12/04/fix-showmemory.html</url>
     <content><![CDATA[<blockquote>
@@ -1226,29 +1160,45 @@
       </tags>
   </entry>
   <entry>
-    <title>博主github Hackintosh仓库公开以及使用方法</title>
-    <url>/2019/05/23/github-hackintosh.html</url>
-    <content><![CDATA[<p>为了方便大家安装macOS，博主将测试过的机型的Clover文件整理并发布至github，地址为<strong><a href="https://github.com/bugprogrammer/hackintosh">https://github.com/bugprogrammer/hackintosh</a></strong> <strong><font color=#A52A2A >注意:仓库中所有机型都是博主亲自安装并测试过的机型。</strong></font><a id="more"></a></p>
-<blockquote>
-<p>由于部分用户认为git操作较为麻烦，需要学习。所以博主提供了自动化脚本方案，几乎自动获取Clover。脚本支持Windows、macOS、Ubuntu。</p>
-</blockquote>
-<h2 id="脚本使用方法"><a href="#脚本使用方法" class="headerlink" title="脚本使用方法"></a>脚本使用方法</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><ul>
-<li>点击如下链接下载git。<br><a href="https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe">https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe</a></li>
-<li>按默认设置安装即可。</li>
+    <title>博主魔改版Whatevergreen解析，还你正常核显频率(1.2g)</title>
+    <url>/2019/10/03/fix-igpu-with-weg.html</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这篇文章是给台式机用户看的，高度依赖Whatevergreen缓冲帧补丁的小伙伴请绕行。<a id="more"></a></p>
+<h1 id="事件起因"><a href="#事件起因" class="headerlink" title="事件起因"></a>事件起因</h1><p>前几天细心的群友发现了一个bug，在加入Whatevergreen的情况下，核显频率会稳定在0.5g左右，远低于正常值1.2g，经排查，发现是Whatevergreen导致的问题。</p>
+<h1 id="为什么不选择删除Whatevergreen"><a href="#为什么不选择删除Whatevergreen" class="headerlink" title="为什么不选择删除Whatevergreen"></a>为什么不选择删除Whatevergreen</h1><p>博主已经测试过删掉Whatevergreen的情况，并不完美，体现如下。</p>
+<ul>
+<li><p>AGDP patch时灵时不灵<br>博主测试了加入AGDP patch解决dp花屏的方案，时灵时不灵，在系统更新，安装器，recovery等环境下100%失效，OpenCore以及Clover都已经实测，时灵时不灵。</p>
+</li>
+<li><p>核显型号名称要手动注入<br>Whatevergreen内置型号识别功能，id和型号对应，比如3E980003-&gt;Intel UHD Graphics 630。所以删掉Whatevergreen会导致核显型号显示错误，要手动注入Device-&gt;model属性。</p>
+</li>
+<li><p>重命名补丁要手动添加<br>Whatevergreen内置change GFX0 to IGPU,change PEGP to GFX0,change HECI to IMEI,change MEI to IMEI等补丁，去掉后这些要手动添加。</p>
+</li>
 </ul>
-<h4 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h4><p>打开git-bash <strong><font color=#A52A2A >(注意一定要用git-bash)，执行如下命令即可</font></strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h3><p>终端输入如下命令即可 <strong><font color=#A52A2A >(注意脚本中绿字提示)</font></strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h3><p>终端输入如下命令即可</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<h2 id="脚本使用截图-以macOS为例"><a href="#脚本使用截图-以macOS为例" class="headerlink" title="脚本使用截图(以macOS为例)"></a>脚本使用截图(以macOS为例)</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-3.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-4.png"></p>
+<h1 id="博主修改的Whatevergreen改了哪些内容"><a href="#博主修改的Whatevergreen改了哪些内容" class="headerlink" title="博主修改的Whatevergreen改了哪些内容"></a>博主修改的Whatevergreen改了哪些内容</h1><ul>
+<li>删除igfx(核显)相关补丁。</li>
+<li>删除Nvidia相关补丁。</li>
+<li>删除Shiki相关功能。</li>
+<li>保留AGDP补丁。</li>
+<li>保留基础重命名补丁。</li>
+<li>保留型号对应识别功能。</li>
+<li>保留紫线移除补丁。</li>
+</ul>
+<h1 id="如何使用博主修改的Whatevergreen"><a href="#如何使用博主修改的Whatevergreen" class="headerlink" title="如何使用博主修改的Whatevergreen"></a>如何使用博主修改的Whatevergreen</h1><ul>
+<li>Bios主显卡设置成独显，DVMT 128M。</li>
+<li>移除change GFX0 to IGPU,change PEGP to GFX0,change HECI to IMEI,change MEI to IMEI等补丁。</li>
+<li>移除显卡相关的SSDT。</li>
+<li>加入Whatevergreen(Lilu要求1.3.8)。</li>
+</ul>
+<h1 id="修改版Whatevergreen-Github地址如下"><a href="#修改版Whatevergreen-Github地址如下" class="headerlink" title="修改版Whatevergreen Github地址如下"></a>修改版Whatevergreen Github地址如下</h1><p><a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a></p>
+<h1 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h1><p>如图，核显性能测试如下<br><img src= "/images/loading.gif" data-lazy-src="/images/weg.png"></p>
 ]]></content>
       <categories>
         <category>Hackintosh</category>
       </categories>
       <tags>
         <tag>Hackintosh</tag>
+        <tag>macOS Catalina 10.15</tag>
+        <tag>OpenCore</tag>
+        <tag>weg</tag>
       </tags>
   </entry>
   <entry>
@@ -1290,6 +1240,32 @@
         <tag>Hackintosh</tag>
         <tag>macOS Catalina 10.15</tag>
         <tag>OpenCore</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博主github Hackintosh仓库公开以及使用方法</title>
+    <url>/2019/05/23/github-hackintosh.html</url>
+    <content><![CDATA[<p>为了方便大家安装macOS，博主将测试过的机型的Clover文件整理并发布至github，地址为<strong><a href="https://github.com/bugprogrammer/hackintosh">https://github.com/bugprogrammer/hackintosh</a></strong> <strong><font color=#A52A2A >注意:仓库中所有机型都是博主亲自安装并测试过的机型。</strong></font><a id="more"></a></p>
+<blockquote>
+<p>由于部分用户认为git操作较为麻烦，需要学习。所以博主提供了自动化脚本方案，几乎自动获取Clover。脚本支持Windows、macOS、Ubuntu。</p>
+</blockquote>
+<h2 id="脚本使用方法"><a href="#脚本使用方法" class="headerlink" title="脚本使用方法"></a>脚本使用方法</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><ul>
+<li>点击如下链接下载git。<br><a href="https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe">https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe</a></li>
+<li>按默认设置安装即可。</li>
+</ul>
+<h4 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h4><p>打开git-bash <strong><font color=#A52A2A >(注意一定要用git-bash)，执行如下命令即可</font></strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h3><p>终端输入如下命令即可 <strong><font color=#A52A2A >(注意脚本中绿字提示)</font></strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h3><p>终端输入如下命令即可</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="脚本使用截图-以macOS为例"><a href="#脚本使用截图-以macOS为例" class="headerlink" title="脚本使用截图(以macOS为例)"></a>脚本使用截图(以macOS为例)</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-3.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-4.png"></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -1341,6 +1317,30 @@
       </tags>
   </entry>
   <entry>
+    <title>无核显开启sidecar方法</title>
+    <url>/2019/11/24/fix-sidecar-without-igpu.html</url>
+    <content><![CDATA[<blockquote>
+<p>之前<font color=#A52A2A >@fang2018</font>发布了一个相关教程，地址如下:<font color=#A52A2A ><a href="https://fangf.cc/2019/10/14/noneigpusidecar/">https://fangf.cc/2019/10/14/noneigpusidecar/</a></font>, 现在随着Whatevergreen的更新，之前的方法已经不再适用。现在发布新教程。</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="无核显开启sidecar教程"><a href="#无核显开启sidecar教程" class="headerlink" title="无核显开启sidecar教程"></a>无核显开启sidecar教程</h1><ul>
+<li>smbios设置成iMac19,1或iMac18,3(绝对不能用iMac Pro 1,1或Mac Pro 7,1)</li>
+<li>Lilu使用v1.3.9版本(<a href="https://github.com/acidanthera/Lilu">https://github.com/acidanthera/Lilu</a>)</li>
+<li>Whatevergreen使用v1.3.5版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)</li>
+<li>boot-args加入shikigva=16</li>
+<li>重启</li>
+</ul>
+<h1 id="至此，您的sidecar功能已经可用。"><a href="#至此，您的sidecar功能已经可用。" class="headerlink" title="至此，您的sidecar功能已经可用。"></a>至此，您的sidecar功能已经可用。</h1>]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>sidecar</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>美化你的shell,macOS下安装zsh和neofetch教程(Unix/Linux也适用)</title>
     <url>/2018/05/11/install-zsh.html</url>
     <content><![CDATA[<p>最近在使用Hackintosh，发现macOS自带的shell并不好用，所以安装了被誉为终极shell的zsh，方法整理如下：<a id="more"></a> </p>
@@ -1373,41 +1373,6 @@
       <tags>
         <tag>shell</tag>
         <tag>zsh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linux常用命令总结</title>
-    <url>/2018/05/06/linux-common-command-summary.html</url>
-    <content><![CDATA[<p>由于最近一直在使用Linux操作系统，经常要使用一些Linux命令,所以总结一下Linux中的常用命令<a id="more"></a>：</p>
-<h3 id="系统信息"><a href="#系统信息" class="headerlink" title="系统信息"></a>系统信息</h3><figure class="highlight tcl"><table><tr><td class="code"><pre><span class="line">arch 显示机器的处理器架构(<span class="number">1</span>)</span><br><span class="line">uname -m 显示机器的处理器架构(<span class="number">2</span>)</span><br><span class="line">uname -r 显示正在使用的内核版本</span><br><span class="line">dmidecode -q 显示硬件系统部件 - (SMBIOS / DMI)</span><br><span class="line">hdparm -i /dev/hda 罗列一个磁盘的架构特性</span><br><span class="line">hdparm -tT /dev/sda 在磁盘上执行测试性读取操作</span><br><span class="line">cat /<span class="keyword">proc</span>/cpuinfo 显示CPU<span class="title"> info的信息</span></span><br><span class="line"><span class="title">cat</span> /<span class="keyword">proc</span>/interrupts 显示中断</span><br><span class="line">cat /<span class="keyword">proc</span>/meminfo 校验内存使用</span><br><span class="line">cat /<span class="keyword">proc</span>/swaps 显示哪些swap被使用</span><br><span class="line">cat /<span class="keyword">proc</span>/version 显示内核的版本</span><br><span class="line">cat /<span class="keyword">proc</span>/net/dev 显示网络适配器及统计</span><br><span class="line">cat /<span class="keyword">proc</span>/mounts 显示已加载的文件系统</span><br><span class="line">lspci -tv 罗列<span class="title"> PCI</span> 设备</span><br><span class="line">lsusb -tv 显示<span class="title"> USB</span> 设备</span><br><span class="line">date 显示系统日期</span><br><span class="line">cal 2007 显示2007年的日历表</span><br><span class="line">date 041217002007.00 设置日期和时间 - 月日时分年.秒</span><br><span class="line">clock -w 将时间修改保存到<span class="title"> BIOS</span></span><br></pre></td></tr></table></figure>
-<h3 id="关机-系统的关机、重启以及登出"><a href="#关机-系统的关机、重启以及登出" class="headerlink" title="关机 (系统的关机、重启以及登出 )"></a>关机 (系统的关机、重启以及登出 )</h3><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">shutdown</span> -h now 关闭系统(<span class="number">1</span>)</span><br><span class="line"><span class="attribute">init</span> <span class="number">0</span> 关闭系统(<span class="number">2</span>)</span><br><span class="line"><span class="attribute">telinit</span> <span class="number">0</span> 关闭系统(<span class="number">3</span>)</span><br><span class="line"><span class="attribute">shutdown</span> -h hours:minutes &amp;amp; 按预定时间关闭系统</span><br><span class="line"><span class="attribute">shutdown</span> -c 取消按预定时间关闭系统</span><br><span class="line"><span class="attribute">shutdown</span> -r now 重启(<span class="number">1</span>)</span><br><span class="line"><span class="attribute">reboot</span> 重启(<span class="number">2</span>)</span><br><span class="line"><span class="attribute">logout</span> 注销</span><br></pre></td></tr></table></figure>
-<h3 id="文件和目录"><a href="#文件和目录" class="headerlink" title="文件和目录"></a>文件和目录</h3><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">cd</span> /home 进入 &#x27;/ home&#x27; 目录&#x27;</span><br><span class="line"><span class="attribute">cd</span> .. 返回上一级目录</span><br><span class="line"><span class="attribute">cd</span> ../.. 返回上两级目录</span><br><span class="line"><span class="attribute">cd</span> 进入个人的主目录</span><br><span class="line"><span class="attribute">cd</span> ~user<span class="number">1</span> 进入个人的主目录</span><br><span class="line"><span class="attribute">cd</span> - 返回上次所在的目录</span><br><span class="line"><span class="attribute">pwd</span> 显示工作路径</span><br><span class="line"><span class="attribute">ls</span> 查看目录中的文件</span><br><span class="line"><span class="attribute">ls</span> -F 查看目录中的文件</span><br><span class="line"><span class="attribute">ls</span> -l 显示文件和目录的详细资料</span><br><span class="line"><span class="attribute">ls</span> -a 显示隐藏文件</span><br><span class="line"><span class="attribute">ls</span> *[<span class="number">0</span>-<span class="number">9</span>]* 显示包含数字的文件名和目录名</span><br><span class="line"><span class="attribute">tree</span> 显示文件和目录由根目录开始的树形结构(<span class="number">1</span>)</span><br><span class="line"><span class="attribute">lstree</span> 显示文件和目录由根目录开始的树形结构(<span class="number">2</span>)</span><br><span class="line"><span class="attribute">mkdir</span> dir<span class="number">1</span> 创建一个叫做 &#x27;dir<span class="number">1</span>&#x27; 的目录&#x27;</span><br><span class="line"><span class="attribute">mkdir</span> dir<span class="number">1</span> dir<span class="number">2</span> 同时创建两个目录</span><br><span class="line"><span class="attribute">mkdir</span> -p /tmp/dir<span class="number">1</span>/dir<span class="number">2</span> 创建一个目录树</span><br><span class="line"><span class="attribute">rm</span> -f file<span class="number">1</span> 删除一个叫做 &#x27;file<span class="number">1</span>&#x27; 的文件&#x27;</span><br><span class="line"><span class="attribute">rmdir</span> dir<span class="number">1</span> 删除一个叫做 &#x27;dir<span class="number">1</span>&#x27; 的目录&#x27;</span><br><span class="line"><span class="attribute">rm</span> -rf dir<span class="number">1</span> 删除一个叫做 &#x27;dir<span class="number">1</span>&#x27; 的目录并同时删除其内容</span><br><span class="line"><span class="attribute">rm</span> -rf dir<span class="number">1</span> dir<span class="number">2</span> 同时删除两个目录及它们的内容</span><br><span class="line"><span class="attribute">mv</span> dir<span class="number">1</span> new_dir 重命名/移动 一个目录</span><br><span class="line"><span class="attribute">cp</span> file<span class="number">1</span> file<span class="number">2</span> 复制一个文件</span><br><span class="line"><span class="attribute">cp</span> dir/* . 复制一个目录下的所有文件到当前工作目录</span><br><span class="line"><span class="attribute">cp</span> -a /tmp/dir<span class="number">1</span> . 复制一个目录到当前工作目录</span><br><span class="line"><span class="attribute">cp</span> -a dir<span class="number">1</span> dir<span class="number">2</span> 复制一个目录</span><br><span class="line"><span class="attribute">ln</span> -s file<span class="number">1</span> lnk<span class="number">1</span> 创建一个指向文件或目录的软链接</span><br><span class="line"><span class="attribute">ln</span> file<span class="number">1</span> lnk<span class="number">1</span> 创建一个指向文件或目录的物理链接</span><br><span class="line"><span class="attribute">touch</span> -t <span class="number">0712250000</span> file<span class="number">1</span> 修改一个文件或目录的时间戳 - (YYMMDDhhmm)</span><br><span class="line"><span class="attribute">file</span> file<span class="number">1</span> outputs the mime type of the file as text</span><br><span class="line"><span class="attribute">iconv</span> -l 列出已知的编码</span><br><span class="line"><span class="attribute">iconv</span> -f fromEncoding -t toEncoding inputFile &amp;gt; outputFile creates a new from the given input file by assuming it is encoded in fromEncoding and converting it to toEncoding.</span><br><span class="line"><span class="attribute">find</span> . -maxdepth <span class="number">1</span> -name *.jpg -print -exec convert <span class="string">&quot;&#123;&#125;&quot;</span> -resize <span class="number">80</span>x<span class="number">60</span> <span class="string">&quot;thumbs/&#123;&#125;&quot;</span> \; batch resize files in the current directory and send them to a thumbnails directory (requires convert from Imagemagick)</span><br></pre></td></tr></table></figure>
-<h3 id="文件搜索"><a href="#文件搜索" class="headerlink" title="文件搜索"></a>文件搜索</h3><figure class="highlight sqf"><table><tr><td class="code"><pre><span class="line"><span class="built_in">find</span> / -<span class="built_in">name</span> file1 从 <span class="string">&#x27;/&#x27;</span> 开始进入根文件系统搜索文件和目录</span><br><span class="line"><span class="built_in">find</span> / -user user1 搜索属于用户 <span class="string">&#x27;user1&#x27;</span> 的文件和目录</span><br><span class="line"><span class="built_in">find</span> /home/user1 -<span class="built_in">name</span> \*.bin 在目录 <span class="string">&#x27;/ home/user1&#x27;</span> 中搜索带有<span class="string">&#x27;.bin&#x27;</span> 结尾的文件</span><br><span class="line"><span class="built_in">find</span> /usr/bin -<span class="built_in">type</span> f -atime +<span class="number">100</span> 搜索在过去<span class="number">100</span>天内未被使用过的执行文件</span><br><span class="line"><span class="built_in">find</span> /usr/bin -<span class="built_in">type</span> f -mtime -<span class="number">10</span> 搜索在<span class="number">10</span>天内被创建或者修改过的文件</span><br><span class="line"><span class="built_in">find</span> / -<span class="built_in">name</span> \*.rpm -<span class="built_in">exec</span> chmod <span class="number">755</span> <span class="string">&#x27;&#123;&#125;&#x27;</span> \; 搜索以 <span class="string">&#x27;.rpm&#x27;</span> 结尾的文件并定义其权限</span><br><span class="line"><span class="built_in">find</span> / -xdev -<span class="built_in">name</span> \*.rpm 搜索以 <span class="string">&#x27;.rpm&#x27;</span> 结尾的文件，忽略光驱、捷盘等可移动设备</span><br><span class="line">locate \*.ps 寻找以 <span class="string">&#x27;.ps&#x27;</span> 结尾的文件 - 先运行 <span class="string">&#x27;updatedb&#x27;</span> 命令</span><br><span class="line">whereis <span class="built_in">halt</span> 显示一个二进制文件、源码或man的位置</span><br><span class="line">which <span class="built_in">halt</span> 显示一个二进制文件或可执行文件的完整路径</span><br></pre></td></tr></table></figure>
-<h3 id="挂载一个文件系统"><a href="#挂载一个文件系统" class="headerlink" title="挂载一个文件系统"></a>挂载一个文件系统</h3><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mount <span class="regexp">/dev/</span>hda2 <span class="regexp">/mnt/</span>hda2 挂载一个叫做hda2的盘 - 确定目录 <span class="string">&#x27;/ mnt/hda2&#x27;</span> 已经存在</span><br><span class="line">umount <span class="regexp">/dev/</span>hda2 卸载一个叫做hda2的盘 - 先从挂载点 <span class="string">&#x27;/ mnt/hda2&#x27;</span> 退出</span><br><span class="line">fuser -km <span class="regexp">/mnt/</span>hda2 当设备繁忙时强制卸载</span><br><span class="line">umount -n <span class="regexp">/mnt/</span>hda2 运行卸载操作而不写入 <span class="regexp">/etc/m</span>tab 文件- 当文件为只读或当磁盘写满时非常有用</span><br><span class="line">mount <span class="regexp">/dev/</span>fd0 <span class="regexp">/mnt/</span>floppy 挂载一个软盘</span><br><span class="line">mount <span class="regexp">/dev/</span>cdrom <span class="regexp">/mnt/</span>cdrom 挂载一个cdrom或dvdrom</span><br><span class="line">mount <span class="regexp">/dev/</span>hdc <span class="regexp">/mnt/</span>cdr利奴性ecorder 挂载一个cdrw或dvdrom</span><br><span class="line">mount <span class="regexp">/dev/</span>hdb <span class="regexp">/mnt/</span>cdrecorder 挂载一个cdrw或dvdrom</span><br><span class="line">mount -o loop file.iso <span class="regexp">/mnt/</span>cdrom 挂载一个文件或ISO镜像文件</span><br><span class="line">mount -t vfat <span class="regexp">/dev/</span>hda5 <span class="regexp">/mnt/</span>hda5 挂载一个Windows FAT32文件系统</span><br><span class="line">mount <span class="regexp">/dev/</span>sda1 <span class="regexp">/mnt/u</span>sbdisk 挂载一个usb 捷盘或闪存设备</span><br><span class="line">mount -t smbfs -o username=user,password=pass <span class="regexp">//</span>WinClient<span class="regexp">/share /m</span>nt/share 挂载一个windows网络共享</span><br></pre></td></tr></table></figure>
-<h3 id="磁盘空间"><a href="#磁盘空间" class="headerlink" title="磁盘空间"></a>磁盘空间</h3><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">df</span> -h 显示已经挂载的分区列表</span><br><span class="line"><span class="attribute">ls</span> -lSr |more 以尺寸大小排列文件和目录</span><br><span class="line"><span class="attribute">du</span> -sh dir<span class="number">1</span> 估算目录 &#x27;dir<span class="number">1</span>&#x27; 已经使用的磁盘空间&#x27;</span><br><span class="line"><span class="attribute">du</span> -sk * | sort -rn 以容量大小为依据依次显示文件和目录的大小</span><br><span class="line"><span class="attribute">rpm</span> -q -a --qf &#x27;%<span class="number">10</span>&#123;SIZE&#125;t<span class="variable">%&#123;NAME&#125;</span>n&#x27; | sort -k<span class="number">1</span>,<span class="number">1</span>n 以大小为依据依次显示已安装的rpm包所使用的空间 (fedora, redhat类系统)</span><br><span class="line"><span class="attribute">dpkg</span>-query -W -f=&#x27;<span class="variable">$&#123;Installed-Size;10&#125;</span>t<span class="variable">$&#123;Package&#125;</span>n&#x27; | sort -k<span class="number">1</span>,<span class="number">1</span>n 以大小为依据显示已安装的deb包所使用的空间 (ubuntu, debian类系统)</span><br></pre></td></tr></table></figure>
-<h3 id="用户和群组"><a href="#用户和群组" class="headerlink" title="用户和群组"></a>用户和群组</h3><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">groupadd</span> group_name 创建一个新用户组</span><br><span class="line"><span class="attribute">groupdel</span> group_name 删除一个用户组</span><br><span class="line"><span class="attribute">groupmod</span> -n new_group_name old_group_name 重命名一个用户组</span><br><span class="line"><span class="attribute">useradd</span> -c <span class="string">&quot;Name Surname &quot;</span> -g admin -d /home/user<span class="number">1</span> -s /bin/bash user<span class="number">1</span> 创建一个属于 <span class="string">&quot;admin&quot;</span> 用户组的用户</span><br><span class="line"><span class="attribute">useradd</span> user<span class="number">1</span> 创建一个新用户</span><br><span class="line"><span class="attribute">userdel</span> -r user<span class="number">1</span> 删除一个用户 ( &#x27;-r&#x27; 排除主目录)</span><br><span class="line"><span class="attribute">usermod</span> -c <span class="string">&quot;User FTP&quot;</span> -g system -d /ftp/user<span class="number">1</span> -s /bin/nologin user<span class="number">1</span> 修改用户属性</span><br><span class="line"><span class="attribute">passwd</span> 修改口令</span><br><span class="line"><span class="attribute">passwd</span> user<span class="number">1</span> 修改一个用户的口令 (只允许root执行)</span><br><span class="line"><span class="attribute">chage</span> -E <span class="number">2005</span>-<span class="number">12</span>-<span class="number">31</span> user<span class="number">1</span> 设置用户口令的失效期限</span><br><span class="line"><span class="attribute">pwck</span> 检查 &#x27;/etc/passwd&#x27; 的文件格式和语法修正以及存在的用户</span><br><span class="line"><span class="attribute">grpck</span> 检查 &#x27;/etc/passwd&#x27; 的文件格式和语法修正以及存在的群组</span><br><span class="line"><span class="attribute">newgrp</span> group_name 登陆进一个新的群组以改变新创建文件的预设群组</span><br></pre></td></tr></table></figure>
-<h3 id="文件的权限-使用-“-”-设置权限，使用-“-“-用于取消"><a href="#文件的权限-使用-“-”-设置权限，使用-“-“-用于取消" class="headerlink" title="文件的权限 - 使用 “+” 设置权限，使用 “-“ 用于取消"></a>文件的权限 - 使用 “+” 设置权限，使用 “-“ 用于取消</h3><figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">ls -lh 显示权限</span><br><span class="line">ls /tmp | pr -T5 -W$COLUMNS 将终端划分成<span class="number">5</span>栏显示</span><br><span class="line">chmod ugo+rwx directory1 设置目录的所有人(u)、群组(g)以及其他人(o)以读（r ）、写(w)和执行(x)的权限</span><br><span class="line">chmod go-rwx directory1 删除群组(g)与其他人(o)对目录的读写执行权限</span><br><span class="line">chown user1 file1 改变一个文件的所有人属性</span><br><span class="line">chown -R user1 directory1 改变一个目录的所有人属性并同时改变改目录下所有文件的属性</span><br><span class="line">chgrp group1 file1 改变文件的群组</span><br><span class="line">chown user1:group1 file1 改变一个文件的所有人和群组属性</span><br><span class="line"><span class="keyword">find</span> / -perm -u+s 罗列一个系统中所有使用了SUID控制的文件</span><br><span class="line">chmod u+s <span class="regexp">/bin/</span>file1 设置一个二进制文件的 SUID 位 - 运行该文件的用户也被赋予和所有者同样的权限</span><br><span class="line">chmod u-s <span class="regexp">/bin/</span>file1 禁用一个二进制文件的 SUID位</span><br><span class="line">chmod g+s <span class="regexp">/home/</span><span class="keyword">public</span> 设置一个目录的SGID 位 - 类似SUID ，不过这是针对目录的</span><br><span class="line">chmod g-s <span class="regexp">/home/</span><span class="keyword">public</span> 禁用一个目录的 SGID 位</span><br><span class="line">chmod o+t <span class="regexp">/home/</span><span class="keyword">public</span> 设置一个文件的 STIKY 位 - 只允许合法所有人删除文件</span><br><span class="line">chmod o-t <span class="regexp">/home/</span><span class="keyword">public</span> 禁用一个目录的 STIKY 位</span><br></pre></td></tr></table></figure>
-<h3 id="文件的特殊属性-使用-“-”-设置权限，使用-“-“-用于取消"><a href="#文件的特殊属性-使用-“-”-设置权限，使用-“-“-用于取消" class="headerlink" title="文件的特殊属性 - 使用 “+” 设置权限，使用 “-“ 用于取消"></a>文件的特殊属性 - 使用 “+” 设置权限，使用 “-“ 用于取消</h3><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">chattr</span> +a file<span class="number">1</span> 只允许以追加方式读写文件</span><br><span class="line"><span class="attribute">chattr</span> +c file<span class="number">1</span> 允许这个文件能被内核自动压缩/解压</span><br><span class="line"><span class="attribute">chattr</span> +d file<span class="number">1</span> 在进行文件系统备份时，dump程序将忽略这个文件</span><br><span class="line"><span class="attribute">chattr</span> +i file<span class="number">1</span> 设置成不可变的文件，不能被删除、修改、重命名或者链接</span><br><span class="line"><span class="attribute">chattr</span> +s file<span class="number">1</span> 允许一个文件被安全地删除</span><br><span class="line"><span class="attribute">chattr</span> +S file<span class="number">1</span> 一旦应用程序对这个文件执行了写操作，使系统立刻把修改的结果写到磁盘</span><br><span class="line"><span class="attribute">chattr</span> +u file<span class="number">1</span> 若文件被删除，系统会允许你在以后恢复这个被删除的文件</span><br><span class="line"><span class="attribute">lsattr</span> 显示特殊的属性</span><br></pre></td></tr></table></figure>
-<h3 id="打包和压缩文件"><a href="#打包和压缩文件" class="headerlink" title="打包和压缩文件"></a>打包和压缩文件</h3><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">bunzip2</span> file<span class="number">1</span>.bz<span class="number">2</span> 解压一个叫做 &#x27;file<span class="number">1</span>.bz<span class="number">2</span>&#x27;的文件</span><br><span class="line"><span class="attribute">bzip2</span> file<span class="number">1</span> 压缩一个叫做 &#x27;file<span class="number">1</span>&#x27; 的文件</span><br><span class="line"><span class="attribute">gunzip</span> file<span class="number">1</span>.gz 解压一个叫做 &#x27;file<span class="number">1</span>.gz&#x27;的文件</span><br><span class="line"><span class="attribute">gzip</span> file<span class="number">1</span> 压缩一个叫做 &#x27;file<span class="number">1</span>&#x27;的文件</span><br><span class="line"><span class="attribute">gzip</span> -<span class="number">9</span> file<span class="number">1</span> 最大程度压缩</span><br><span class="line"><span class="attribute">rar</span> a file<span class="number">1</span>.rar test_file 创建一个叫做 &#x27;file<span class="number">1</span>.rar&#x27; 的包</span><br><span class="line"><span class="attribute">rar</span> a file<span class="number">1</span>.rar file<span class="number">1</span> file<span class="number">2</span> dir<span class="number">1</span> 同时压缩 &#x27;file<span class="number">1</span>&#x27;, &#x27;file<span class="number">2</span>&#x27; 以及目录 &#x27;dir<span class="number">1</span>&#x27;</span><br><span class="line"><span class="attribute">rar</span> x file<span class="number">1</span>.rar 解压rar包</span><br><span class="line"><span class="attribute">unrar</span> x file<span class="number">1</span>.rar 解压rar包</span><br><span class="line"><span class="attribute">tar</span> -cvf archive.tar file<span class="number">1</span> 创建一个非压缩的 tarball</span><br><span class="line"><span class="attribute">tar</span> -cvf archive.tar file<span class="number">1</span> file<span class="number">2</span> dir<span class="number">1</span> 创建一个包含了 &#x27;file<span class="number">1</span>&#x27;, &#x27;file<span class="number">2</span>&#x27; 以及 &#x27;dir<span class="number">1</span>&#x27;的档案文件</span><br><span class="line"><span class="attribute">tar</span> -tf archive.tar 显示一个包中的内容</span><br><span class="line"><span class="attribute">tar</span> -xvf archive.tar 释放一个包</span><br><span class="line"><span class="attribute">tar</span> -xvf archive.tar -C /tmp 将压缩包释放到 /tmp目录下</span><br><span class="line"><span class="attribute">tar</span> -cvfj archive.tar.bz<span class="number">2</span> dir<span class="number">1</span> 创建一个bzip<span class="number">2</span>格式的压缩包</span><br><span class="line"><span class="attribute">tar</span> -xvfj archive.tar.bz<span class="number">2</span> 解压一个bzip<span class="number">2</span>格式的压缩包</span><br><span class="line"><span class="attribute">tar</span> -cvfz archive.tar.gz dir<span class="number">1</span> 创建一个gzip格式的压缩包</span><br><span class="line"><span class="attribute">tar</span> -xvfz archive.tar.gz 解压一个gzip格式的压缩包</span><br><span class="line"><span class="attribute">zip</span> file<span class="number">1</span>.zip file<span class="number">1</span> 创建一个zip格式的压缩包</span><br><span class="line"><span class="attribute">zip</span> -r file<span class="number">1</span>.zip file<span class="number">1</span> file<span class="number">2</span> dir<span class="number">1</span> 将几个文件和目录同时压缩成一个zip格式的压缩包</span><br><span class="line"><span class="attribute">unzip</span> file<span class="number">1</span>.zip 解压一个zip格式压缩包</span><br></pre></td></tr></table></figure>
-<h3 id="RPM-包-（Fedora-Redhat及类似系统）"><a href="#RPM-包-（Fedora-Redhat及类似系统）" class="headerlink" title="RPM 包 - （Fedora, Redhat及类似系统）"></a>RPM 包 - （Fedora, Redhat及类似系统）</h3><figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">rpm -ivh <span class="keyword">package</span>.rpm 安装一个rpm包</span><br><span class="line">rpm -ivh --nodeeps <span class="keyword">package</span>.rpm 安装一个rpm包而忽略依赖关系警告</span><br><span class="line">rpm -U <span class="keyword">package</span>.rpm 更新一个rpm包但不改变其配置文件</span><br><span class="line">rpm -F <span class="keyword">package</span>.rpm 更新一个确定已经安装的rpm包</span><br><span class="line">rpm -e package_name.rpm 删除一个rpm包</span><br><span class="line">rpm -qa 显示系统中所有已经安装的rpm包</span><br><span class="line">rpm -qa | <span class="keyword">grep</span> httpd 显示所有名称中包含 <span class="string">&quot;httpd&quot;</span> 字样的rpm包</span><br><span class="line">rpm -qi package_name 获取一个已安装包的特殊信息</span><br><span class="line">rpm -qg <span class="string">&quot;System Environment/Daemons&quot;</span> 显示一个组件的rpm包</span><br><span class="line">rpm -ql package_name 显示一个已经安装的rpm包提供的文件列表</span><br><span class="line">rpm -qc package_name 显示一个已经安装的rpm包提供的配置文件列表</span><br><span class="line">rpm -q package_name --whatrequires 显示与一个rpm包存在依赖关系的列表</span><br><span class="line">rpm -q package_name --whatprovides 显示一个rpm包所占的体积</span><br><span class="line">rpm -q package_name --scripts 显示在安装/删除期间所执行的脚本l</span><br><span class="line">rpm -q package_name --changelog 显示一个rpm包的修改历史</span><br><span class="line">rpm -qf <span class="regexp">/etc/</span>httpd<span class="regexp">/conf/</span>httpd.conf 确认所给的文件由哪个rpm包所提供</span><br><span class="line">rpm -qp <span class="keyword">package</span>.rpm -l 显示由一个尚未安装的rpm包提供的文件列表</span><br><span class="line">rpm --<span class="keyword">import</span> <span class="regexp">/media/</span>cdrom/RPM-GPG-KEY 导入公钥数字证书</span><br><span class="line">rpm --checksig <span class="keyword">package</span>.rpm 确认一个rpm包的完整性</span><br><span class="line">rpm -qa gpg-pubkey 确认已安装的所有rpm包的完整性</span><br><span class="line">rpm -V package_name 检查文件尺寸、 许可、类型、所有者、群组、MD5检查以及最后修改时间</span><br><span class="line">rpm -Va 检查系统中所有已安装的rpm包- 小心使用</span><br><span class="line">rpm -Vp <span class="keyword">package</span>.rpm 确认一个rpm包还未安装</span><br><span class="line">rpm2cpio <span class="keyword">package</span>.rpm | cpio --extract --make-directories *bin* 从一个rpm包运行可执行文件</span><br><span class="line">rpm -ivh <span class="regexp">/usr/</span>src<span class="regexp">/redhat/</span>RPMS<span class="regexp">/`arch`/</span><span class="keyword">package</span>.rpm 从一个rpm源码安装一个构建好的包</span><br><span class="line">rpmbuild --rebuild package_name.src.rpm 从一个rpm源码构建一个 rpm 包</span><br></pre></td></tr></table></figure>
-<h3 id="YUM-软件包升级器-（Fedora-RedHat及类似系统）"><a href="#YUM-软件包升级器-（Fedora-RedHat及类似系统）" class="headerlink" title="YUM 软件包升级器 - （Fedora, RedHat及类似系统）"></a>YUM 软件包升级器 - （Fedora, RedHat及类似系统）</h3><figure class="highlight ceylon"><table><tr><td class="code"><pre><span class="line">yum install <span class="keyword">package</span><span class="number">_n</span>ame 下载并安装一个rpm包</span><br><span class="line">yum localinstall <span class="keyword">package</span><span class="number">_n</span>ame.rpm 将安装一个rpm包，使用你自己的软件仓库为你解决所有依赖关系</span><br><span class="line">yum update <span class="keyword">package</span><span class="number">_n</span>ame.rpm 更新当前系统中所有安装的rpm包</span><br><span class="line">yum update <span class="keyword">package</span><span class="number">_n</span>ame 更新一个rpm包</span><br><span class="line">yum remove <span class="keyword">package</span><span class="number">_n</span>ame 删除一个rpm包</span><br><span class="line">yum list 列出当前系统中安装的所有包</span><br><span class="line">yum search <span class="keyword">package</span><span class="number">_n</span>ame 在rpm仓库中搜寻软件包</span><br><span class="line">yum clean packages 清理rpm缓存删除下载的包</span><br><span class="line">yum clean headers 删除所有头文件</span><br><span class="line">yum clean all 删除所有缓存的包和头文件</span><br></pre></td></tr></table></figure>
-<h3 id="DEB-包-Debian-Ubuntu-以及类似系统"><a href="#DEB-包-Debian-Ubuntu-以及类似系统" class="headerlink" title="DEB 包 (Debian, Ubuntu 以及类似系统)"></a>DEB 包 (Debian, Ubuntu 以及类似系统)</h3><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">dpkg -i package.<span class="keyword">deb</span> 安装/更新一个 <span class="keyword">deb</span> 包</span><br><span class="line">dpkg -r package_name 从系统删除一个 <span class="keyword">deb</span> 包</span><br><span class="line">dpkg -<span class="keyword">l</span> 显示系统中所有已经安装的 <span class="keyword">deb</span> 包</span><br><span class="line">dpkg -<span class="keyword">l</span> | <span class="keyword">grep</span> httpd 显示所有名称中包含 <span class="string">&quot;httpd&quot;</span> 字样的<span class="keyword">deb</span>包</span><br><span class="line">dpkg -s package_name 获得已经安装在系统中一个特殊包的信息</span><br><span class="line">dpkg -L package_name 显示系统中已经安装的一个<span class="keyword">deb</span>包所提供的文件列表</span><br><span class="line">dpkg --contents package.<span class="keyword">deb</span> 显示尚未安装的一个包所提供的文件列表</span><br><span class="line">dpkg -S /bin/ping 确认所给的文件由哪个<span class="keyword">deb</span>包提供</span><br></pre></td></tr></table></figure>
-<h3 id="APT-软件工具-Debian-Ubuntu-以及类似系统"><a href="#APT-软件工具-Debian-Ubuntu-以及类似系统" class="headerlink" title="APT 软件工具 (Debian, Ubuntu 以及类似系统)"></a>APT 软件工具 (Debian, Ubuntu 以及类似系统)</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">apt-<span class="builtin-name">get</span> install package_name 安装/更新一个 deb 包</span><br><span class="line">apt-cdrom install package_name 从光盘安装/更新一个 deb 包</span><br><span class="line">apt-<span class="builtin-name">get</span> update 升级列表中的软件包</span><br><span class="line">apt-<span class="builtin-name">get</span><span class="built_in"> upgrade </span>升级所有已安装的软件</span><br><span class="line">apt-<span class="builtin-name">get</span> <span class="builtin-name">remove</span> package_name 从系统删除一个deb包</span><br><span class="line">apt-<span class="builtin-name">get</span> check 确认依赖的软件仓库正确</span><br><span class="line">apt-<span class="builtin-name">get</span> clean 从下载的软件包中清理缓存</span><br><span class="line">apt-cache search searched-package 返回包含所要搜索字符串的软件包名称</span><br></pre></td></tr></table></figure>
-<h3 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h3><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">cat</span> file<span class="number">1</span> 从第一个字节开始正向查看文件的内容</span><br><span class="line"><span class="attribute">tac</span> file<span class="number">1</span> 从最后一行开始反向查看一个文件的内容</span><br><span class="line"><span class="attribute">more</span> file<span class="number">1</span> 查看一个长文件的内容</span><br><span class="line"><span class="attribute">less</span> file<span class="number">1</span> 类似于 &#x27;more&#x27; 命令，但是它允许在文件中和正向操作一样的反向操作</span><br><span class="line"><span class="attribute">head</span> -<span class="number">2</span> file<span class="number">1</span> 查看一个文件的前两行</span><br><span class="line"><span class="attribute">tail</span> -<span class="number">2</span> file<span class="number">1</span> 查看一个文件的最后两行</span><br><span class="line"><span class="attribute">tail</span> -f /var/log/messages 实时查看被添加到一个文件中的内容</span><br></pre></td></tr></table></figure>
-<h3 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h3><figure class="highlight perl"><table><tr><td class="code"><pre><span class="line">cat file1 file2 ... | command &amp;<span class="keyword">lt</span>;&amp;<span class="keyword">gt</span>; file1_in.txt_or_file1_out.txt general syntax <span class="keyword">for</span> text manipulation using PIPE, STDIN <span class="keyword">and</span> STDOUT</span><br><span class="line">cat file1 | command( sed, <span class="keyword">grep</span>, awk, <span class="keyword">grep</span>, etc...) &amp;<span class="keyword">gt</span>; result.txt 合并一个文件的详细说明文本，并将简介写入一个新文件中</span><br><span class="line">cat file1 | command( sed, <span class="keyword">grep</span>, awk, <span class="keyword">grep</span>, etc...) &amp;<span class="keyword">gt</span>;&amp;<span class="keyword">gt</span>; result.txt 合并一个文件的详细说明文本，并将简介写入一个已有的文件中</span><br><span class="line"><span class="keyword">grep</span> Aug /var/<span class="keyword">log</span>/messages 在文件 <span class="string">&#x27;/var/log/messages&#x27;</span>中查找关键词<span class="string">&quot;Aug&quot;</span></span><br><span class="line"><span class="keyword">grep</span> ^Aug /var/<span class="keyword">log</span>/messages 在文件 <span class="string">&#x27;/var/log/messages&#x27;</span>中查找以<span class="string">&quot;Aug&quot;</span>开始的词汇</span><br><span class="line"><span class="keyword">grep</span> [<span class="number">0</span>-<span class="number">9</span>] /var/<span class="keyword">log</span>/messages 选择 <span class="string">&#x27;/var/log/messages&#x27;</span> 文件中所有包含数字的行</span><br><span class="line"><span class="keyword">grep</span> Aug -R /var/<span class="keyword">log</span>/* 在目录 <span class="string">&#x27;/var/log&#x27;</span> 及随后的目录中搜索字符串<span class="string">&quot;Aug&quot;</span></span><br><span class="line">sed <span class="string">&#x27;s/stringa1/stringa2/g&#x27;</span> example.txt 将example.txt文件中的 <span class="string">&quot;string1&quot;</span> 替换成 <span class="string">&quot;string2&quot;</span></span><br><span class="line">sed <span class="string">&#x27;/^$/d&#x27;</span> example.txt 从example.txt文件中删除所有空白行</span><br><span class="line">sed <span class="string">&#x27;/ *#/d; /^$/d&#x27;</span> example.txt 从example.txt文件中删除所有注释和空白行</span><br><span class="line">echo <span class="string">&#x27;esempio&#x27;</span> | <span class="keyword">tr</span> <span class="string">&#x27;[:lower:]&#x27;</span> <span class="string">&#x27;[:upper:]&#x27;</span> 合并上下单元格内容</span><br><span class="line">sed -e <span class="string">&#x27;1d&#x27;</span> result.txt 从文件example.txt 中排除第一行</span><br><span class="line">sed -n <span class="string">&#x27;/stringa1/p&#x27;</span> 查看只包含词汇 <span class="string">&quot;string1&quot;</span>的行</span><br><span class="line">sed -e <span class="string">&#x27;s/ *$//&#x27;</span> example.txt 删除每一行最后的空白字符</span><br><span class="line">sed -e <span class="string">&#x27;s/stringa1//g&#x27;</span> example.txt 从文档中只删除词汇 <span class="string">&quot;string1&quot;</span> 并保留剩余全部</span><br><span class="line">sed -n <span class="string">&#x27;1,5p;5q&#x27;</span> example.txt 查看从第一行到第<span class="number">5</span>行内容</span><br><span class="line">sed -n <span class="string">&#x27;5p;5q&#x27;</span> example.txt 查看第<span class="number">5</span>行</span><br><span class="line">sed -e <span class="string">&#x27;s/00*/0/g&#x27;</span> example.txt 用单个零替换多个零</span><br><span class="line">cat -n file1 标示文件的行数</span><br><span class="line">cat example.txt | awk <span class="string">&#x27;NR%2==1&#x27;</span> 删除example.txt文件中的所有偶数行</span><br><span class="line">echo a b c | awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span> 查看一行第一栏</span><br><span class="line">echo a b c | awk <span class="string">&#x27;&#123;print $1,$3&#125;&#x27;</span> 查看一行的第一和第三栏</span><br><span class="line">paste file1 file2 合并两个文件或两栏的内容</span><br><span class="line">paste -d <span class="string">&#x27;+&#x27;</span> file1 file2 合并两个文件或两栏的内容，中间用<span class="string">&quot;+&quot;</span>区分</span><br><span class="line"><span class="keyword">sort</span> file1 file2 排序两个文件的内容</span><br><span class="line"><span class="keyword">sort</span> file1 file2 | uniq 取出两个文件的并集(重复的行只保留一份)</span><br><span class="line"><span class="keyword">sort</span> file1 file2 | uniq -u 删除交集，留下其他的行</span><br><span class="line"><span class="keyword">sort</span> file1 file2 | uniq -d 取出两个文件的交集(只留下同时存在于两个文件中的文件)</span><br><span class="line">comm -<span class="number">1</span> file1 file2 比较两个文件的内容只删除 <span class="string">&#x27;file1&#x27;</span> 所包含的内容</span><br><span class="line">comm -<span class="number">2</span> file1 file2 比较两个文件的内容只删除 <span class="string">&#x27;file2&#x27;</span> 所包含的内容</span><br><span class="line">comm -<span class="number">3</span> file1 file2 比较两个文件的内容只删除两个文件共有的部分</span><br></pre></td></tr></table></figure>
-<h3 id="字符设置和文件格式转换"><a href="#字符设置和文件格式转换" class="headerlink" title="字符设置和文件格式转换"></a>字符设置和文件格式转换</h3><figure class="highlight gams"><table><tr><td class="code"><pre><span class="line">dos2unix filedos.txt fileunix.txt 将一个文本文件的格式从MSDOS转换成UNIX</span><br><span class="line">unix2dos fileunix.txt filedos.txt 将一个文本文件的格式从UNIX转换成MSDOS</span><br><span class="line"><span class="function"><span class="title">recode</span></span> ..HTML &amp;<span class="keyword">lt</span>; page.txt &amp;<span class="keyword">gt</span>; page.html 将一个文本文件转换成html</span><br><span class="line">recode -l | more 显示所有允许的转换格式</span><br></pre></td></tr></table></figure>
-<h3 id="文件系统分析"><a href="#文件系统分析" class="headerlink" title="文件系统分析"></a>文件系统分析</h3><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">badblocks</span> -v /dev/hda<span class="number">1</span> 检查磁盘hda<span class="number">1</span>上的坏磁块</span><br><span class="line"><span class="attribute">fsck</span> /dev/hda<span class="number">1</span> 修复/检查hda<span class="number">1</span>磁盘上linux文件系统的完整性</span><br><span class="line"><span class="attribute">fsck</span>.ext<span class="number">2</span> /dev/hda<span class="number">1</span> 修复/检查hda<span class="number">1</span>磁盘上ext<span class="number">2</span>文件系统的完整性</span><br><span class="line"><span class="attribute">e2fsck</span> /dev/hda<span class="number">1</span> 修复/检查hda<span class="number">1</span>磁盘上ext<span class="number">2</span>文件系统的完整性</span><br><span class="line"><span class="attribute">e2fsck</span> -j /dev/hda<span class="number">1</span> 修复/检查hda<span class="number">1</span>磁盘上ext<span class="number">3</span>文件系统的完整性</span><br><span class="line"><span class="attribute">fsck</span>.ext<span class="number">3</span> /dev/hda<span class="number">1</span> 修复/检查hda<span class="number">1</span>磁盘上ext<span class="number">3</span>文件系统的完整性</span><br><span class="line"><span class="attribute">fsck</span>.vfat /dev/hda<span class="number">1</span> 修复/检查hda<span class="number">1</span>磁盘上fat文件系统的完整性</span><br><span class="line"><span class="attribute">fsck</span>.msdos /dev/hda<span class="number">1</span> 修复/检查hda<span class="number">1</span>磁盘上dos文件系统的完整性</span><br><span class="line"><span class="attribute">dosfsck</span> /dev/hda<span class="number">1</span> 修复/检查hda<span class="number">1</span>磁盘上dos文件系统的完整性</span><br></pre></td></tr></table></figure>
-<h3 id="初始化一个文件系统"><a href="#初始化一个文件系统" class="headerlink" title="初始化一个文件系统"></a>初始化一个文件系统</h3><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">mkfs</span> /dev/hda<span class="number">1</span> 在hda<span class="number">1</span>分区创建一个文件系统</span><br><span class="line"><span class="attribute">mke2fs</span> /dev/hda<span class="number">1</span> 在hda<span class="number">1</span>分区创建一个linux ext<span class="number">2</span>的文件系统</span><br><span class="line"><span class="attribute">mke2fs</span> -j /dev/hda<span class="number">1</span> 在hda<span class="number">1</span>分区创建一个linux ext<span class="number">3</span>(日志型)的文件系统</span><br><span class="line"><span class="attribute">mkfs</span> -t vfat <span class="number">32</span> -F /dev/hda<span class="number">1</span> 创建一个 FAT<span class="number">32</span> 文件系统</span><br><span class="line"><span class="attribute">fdformat</span> -n /dev/fd<span class="number">0</span> 格式化一个软盘</span><br><span class="line"><span class="attribute">mkswap</span> /dev/hda<span class="number">3</span> 创建一个swap文件系统</span><br></pre></td></tr></table></figure>
-<h3 id="SWAP文件系统"><a href="#SWAP文件系统" class="headerlink" title="SWAP文件系统"></a>SWAP文件系统</h3><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkswap <span class="regexp">/dev/</span>hda3 创建一个swap文件系统</span><br><span class="line">swapon <span class="regexp">/dev/</span>hda3 启用一个新的swap文件系统</span><br><span class="line">swapon <span class="regexp">/dev/</span>hda2 <span class="regexp">/dev/</span>hdb3 启用两个swap分区</span><br></pre></td></tr></table></figure>
-<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line">dump -0aj -f /tmp/home0.bak /home 制作一个 <span class="string">&#x27;/home&#x27;</span> 目录的完整备份</span><br><span class="line">dump -1aj -f /tmp/home0.bak /home 制作一个 <span class="string">&#x27;/home&#x27;</span> 目录的交互式备份</span><br><span class="line">restore -<span class="keyword">if</span> /tmp/home0.bak 还原一个交互式备份</span><br><span class="line">rsync -rogpav --<span class="keyword">delete</span> /home /tmp 同步两边的目录</span><br><span class="line">rsync -rogpav -e ssh --<span class="keyword">delete</span> /home ip_address:/tmp 通过SSH通道rsync</span><br><span class="line">rsync -az -e ssh --<span class="keyword">delete</span> ip_addr:<span class="regexp">/home/</span><span class="keyword">public</span> /home/local 通过ssh和压缩将一个远程目录同步到本地目录</span><br><span class="line">rsync -az -e ssh --<span class="keyword">delete</span> /home/local ip_addr:<span class="regexp">/home/</span><span class="keyword">public</span> 通过ssh和压缩将本地目录同步到远程目录</span><br><span class="line">dd bs=1M <span class="keyword">if</span>=<span class="regexp">/dev/</span>hda | gzip | ssh user<span class="meta">@ip_addr</span> <span class="string">&#x27;dd of=hda.gz&#x27;</span> 通过ssh在远程主机上执行一次备份本地磁盘的操作</span><br><span class="line">dd <span class="keyword">if</span>=<span class="regexp">/dev/</span>sda <span class="keyword">of</span>=<span class="regexp">/tmp/</span>file1 备份磁盘内容到一个文件</span><br><span class="line">tar -Puf backup.tar /home/user 执行一次对 <span class="string">&#x27;/home/user&#x27;</span> 目录的交互式备份操作</span><br><span class="line">( cd /tmp/local/ &amp;amp;&amp;amp; tar c . ) | ssh -C user<span class="meta">@ip_addr</span> <span class="string">&#x27;cd /home/share/ &amp;amp;&amp;amp; tar x -p&#x27;</span> 通过ssh在远程目录中复制一个目录内容</span><br><span class="line">( tar c /home ) | ssh -C user<span class="meta">@ip_addr</span> <span class="string">&#x27;cd /home/backup-home &amp;amp;&amp;amp; tar x -p&#x27;</span> 通过ssh在远程目录中复制一个本地目录</span><br><span class="line">tar cf - . | (cd /tmp/backup ; tar xf - ) 本地将一个目录复制到另一个地方，保留原有权限及链接</span><br><span class="line">find /home/user1 -name <span class="string">&#x27;*.txt&#x27;</span> | xargs cp -av --target-directory=<span class="regexp">/home/</span>backup/ --parents 从一个目录查找并复制所有以 <span class="string">&#x27;.txt&#x27;</span> 结尾的文件到另一个目录</span><br><span class="line">find /<span class="keyword">var</span>/log -name <span class="string">&#x27;*.log&#x27;</span> | tar cv --files-<span class="keyword">from</span>=- | bzip2 &amp;gt; log.tar.bz2 查找所有以 <span class="string">&#x27;.log&#x27;</span> 结尾的文件并做成一个bzip包</span><br><span class="line">dd <span class="keyword">if</span>=<span class="regexp">/dev/</span>hda <span class="keyword">of</span>=<span class="regexp">/dev/</span>fd0 bs=<span class="number">512</span> count=<span class="number">1</span> 做一个将 MBR (Master Boot Record)内容复制到软盘的动作</span><br><span class="line">dd <span class="keyword">if</span>=<span class="regexp">/dev/</span>fd0 <span class="keyword">of</span>=<span class="regexp">/dev/</span>hda bs=<span class="number">512</span> count=<span class="number">1</span> 从已经保存到软盘的备份中恢复MBR内容</span><br></pre></td></tr></table></figure>
-<h3 id="光盘"><a href="#光盘" class="headerlink" title="光盘"></a>光盘</h3><figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line">cdrecord -v gracetime=2 dev=<span class="string">/dev/cdrom</span> -eject blank=fast -force 清空一个可复写的光盘内容</span><br><span class="line">mkisofs <span class="string">/dev/cdrom</span> &amp;gt; <span class="keyword">cd</span>.iso 在磁盘上创建一个光盘的iso镜像文件</span><br><span class="line">mkisofs <span class="string">/dev/cdrom</span> | gzip &amp;gt; <span class="keyword">cd</span>_iso.gz 在磁盘上创建一个压缩了的光盘iso镜像文件</span><br><span class="line">mkisofs -J -allow-leading-dots -R -V <span class="string">&quot;Label CD&quot;</span> -iso-level 4 -o <span class="string">./cd.iso</span> data_<span class="keyword">cd</span> 创建一个目录的iso镜像文件</span><br><span class="line">cdrecord -v dev=<span class="string">/dev/cdrom</span> <span class="keyword">cd</span>.iso 刻录一个ISO镜像文件</span><br><span class="line">gzip -dc <span class="keyword">cd</span>_iso.gz | cdrecord dev=<span class="string">/dev/cdrom</span> - 刻录一个压缩了的ISO镜像文件</span><br><span class="line">mount -o loop <span class="keyword">cd</span>.iso <span class="string">/mnt/iso</span> 挂载一个ISO镜像文件</span><br><span class="line">cd-paranoia -B 从一个CD光盘转录音轨到 wav 文件中</span><br><span class="line">cd-paranoia -- <span class="string">&quot;-3&quot;</span> 从一个CD光盘转录音轨到 wav 文件中（参数-3）</span><br><span class="line">cdrecord <span class="params">--scanbus</span> 扫描总线以识别scsi通道</span><br><span class="line">dd <span class="keyword">if</span>=<span class="string">/dev/hdc</span> | md5sum 校验一个设备的md5sum编码，例如一张 CD</span><br></pre></td></tr></table></figure>
-<h3 id="网络-（以太网和WIFI无线）"><a href="#网络-（以太网和WIFI无线）" class="headerlink" title="网络 - （以太网和WIFI无线）"></a>网络 - （以太网和WIFI无线）</h3><figure class="highlight tcl"><table><tr><td class="code"><pre><span class="line">ifconfig eth0 显示一个以太网卡的配置</span><br><span class="line">ifup eth0 启用一个 &#x27;eth0&#x27; 网络设备</span><br><span class="line">ifdown eth0 禁用一个 &#x27;eth0&#x27; 网络设备</span><br><span class="line">ifconfig eth0 <span class="number">192.168</span><span class="number">.1</span><span class="number">.1</span> netmask <span class="number">255.255</span><span class="number">.255</span><span class="number">.0</span> 控制IP地址</span><br><span class="line">ifconfig eth0 promisc 设置 &#x27;eth0&#x27; 成混杂模式以嗅探数据包 (sniffing)</span><br><span class="line">dhclient eth0 以dhcp模式启用 &#x27;eth0&#x27;</span><br><span class="line">route -n show routing table</span><br><span class="line">route add -net <span class="number">0</span>/<span class="number">0</span> gw IP_Gateway configura default gateway</span><br><span class="line">route add -net <span class="number">192.168</span><span class="number">.0</span><span class="number">.0</span> netmask <span class="number">255.255</span><span class="number">.0</span><span class="number">.0</span> gw <span class="number">192.168</span><span class="number">.1</span><span class="number">.1</span> configure static route to reach network &#x27;<span class="number">192.168</span><span class="number">.0</span><span class="number">.0</span>/<span class="number">16</span>&#x27;</span><br><span class="line">route del <span class="number">0</span>/<span class="number">0</span> gw IP_gateway remove static route</span><br><span class="line">echo <span class="string">&quot;1&quot;</span> &amp;gt; /<span class="keyword">proc</span>/sys/net/ipv4/ip_forward<span class="title"> activate</span> ip<span class="title"> routing</span></span><br><span class="line"><span class="title">hostname</span> show<span class="title"> hostname</span> of<span class="title"> system</span></span><br><span class="line"><span class="title">host</span> www.example.com<span class="title"> lookup</span> hostname<span class="title"> to</span> resolve<span class="title"> name</span> to<span class="title"> ip</span> address<span class="title"> and</span> viceversa(1)</span><br><span class="line">nslookup<span class="title"> www.example.com</span> lookup<span class="title"> hostname</span> to<span class="title"> resolve</span> name<span class="title"> to</span> ip<span class="title"> address</span> and<span class="title"> viceversa(2)</span></span><br><span class="line"><span class="title">ip</span> link<span class="title"> show</span> show<span class="title"> link</span> status<span class="title"> of</span> all<span class="title"> interfaces</span></span><br><span class="line"><span class="title">mii-tool</span> eth0<span class="title"> show</span> link<span class="title"> status</span> of &#x27;eth0&#x27;</span><br><span class="line">ethtool<span class="title"> eth0</span> show<span class="title"> statistics</span> of<span class="title"> network</span> card &#x27;eth0&#x27;</span><br><span class="line">netstat -tup<span class="title"> show</span> all<span class="title"> active</span> network<span class="title"> connections</span> and<span class="title"> their</span> PID</span><br><span class="line">netstat -tupl<span class="title"> show</span> all<span class="title"> network</span> services<span class="title"> listening</span> on<span class="title"> the</span> system<span class="title"> and</span> their<span class="title"> PID</span></span><br><span class="line"><span class="title">tcpdump</span> tcp<span class="title"> port</span> 80<span class="title"> show</span> all<span class="title"> HTTP</span> traffic</span><br><span class="line">iwlist<span class="title"> scan</span> show<span class="title"> wireless</span> networks</span><br><span class="line">iwconfig<span class="title"> eth1</span> show<span class="title"> configuration</span> of<span class="title"> a</span> wireless<span class="title"> network</span> card</span><br><span class="line">hostname<span class="title"> show</span> hostname</span><br><span class="line">host<span class="title"> www.example.com</span> lookup<span class="title"> hostname</span> to<span class="title"> resolve</span> name<span class="title"> to</span> ip<span class="title"> address</span> and<span class="title"> viceversa</span></span><br><span class="line"><span class="title">nslookup</span> www.example.com<span class="title"> lookup</span> hostname<span class="title"> to</span> resolve<span class="title"> name</span> to<span class="title"> ip</span> address<span class="title"> and</span> viceversa</span><br><span class="line">whois<span class="title"> www.example.com</span> lookup<span class="title"> on</span> Whois<span class="title"> database</span></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>shell</tag>
-        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -1478,145 +1443,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Macbook Pro 2017安装macOS+Windows+Ubuntu简要教程</title>
-    <url>/2019/03/06/mbp2017_win_mac_ubuntu.html</url>
-    <content><![CDATA[<blockquote>
-<p>各位访客想必已经发现本站<a href="https://www.bugprogrammer.me/">https://www.bugprogrammer.me</a> 已经一个月没有更新了，为了本站长期稳定运行下去，博主最近在做博客改版以及cdn、图床方案的测试，本站不会断更，也感谢大半年来各位访客的支持。言归正传，博主近期购入了MacBook Pro 2017，原因很简单，博主需要retina屏幕。黑苹果笔记本无法使用独显，目前的macOS版本下，核显+4K的配合会出现动画掉帧现象，即使是核显版本的mbp也难以幸免，所以想要retina+独显+macOS，只能购入mbp了。</p>
-</blockquote>
-<blockquote>
-<p>博主发现mbp有一个神奇的地方，安装mac+win+linux超级麻烦，按普通pc方案，最后安装linux会出现问题，表现为安装完linux后，Windows会被破坏，无法进入(不是引导的问题，就是系统挂了！！！)，而macOS正常。博主Google了一下，发现很多教程都是老版本的mbp，区别很大。所以博主放出我自己的解决方案。</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
-<li>mbp不同于普通PC，请严格按照博主的方案进行，否则会出现意想不到的问题。</li>
-<li>mbp2018是否适用博主不敢保证，因为2018款的mac新增了一个T2芯片，有报道说T2会阻止Linux启动。</li>
-</ul>
-<h2 id="安装顺序-重中之重"><a href="#安装顺序-重中之重" class="headerlink" title="安装顺序(重中之重)"></a>安装顺序(重中之重)</h2><p><font color=#A52A2A ><strong>macOS Mojave–&gt;Ubuntu 18.04–&gt;Windows 10</strong></font></p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>macOS Mojave镜像、Windows 10镜像、Ubuntu18.04镜像、Windows PE、外接键鼠。</p>
-<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><h3 id="安装macOS-Mojave"><a href="#安装macOS-Mojave" class="headerlink" title="安装macOS Mojave"></a>安装macOS Mojave</h3><p>正常安装即可，另外新买的mbp自带macOS系统，版本过老的话直接升级就可以。</p>
-<h3 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h3><ul>
-<li>打开BootCamp(启动转换助理)，点击菜单栏上的操作，下载Windows支持软件，下载完毕后保存到U盘，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/75a0d5124f3e6e152ffb49529f4580d1199f655e.jpg"></li>
-<li>按照BootCamp的流程选择Windows 10镜像，确定Windows分区大小。</li>
-<li>分区完成后会自动重启开始安装Windows 10，请注意此处要按Option建进入macOS，不要进入Windows分区。</li>
-<li>打开macOS自带分区工具，此时我们会看到两个分区，一个macOS分区，一个BootCamp分区。点击macOS所在分区，点击+，新增分区，格式选择MS-DOS(FAT)，做为Ubuntu 18.04安装分区。<font color=#A52A2A ><strong>至此，我们拥有3个分区，分别安装macOS，Windows、Ubuntu。</strong></font></li>
-</ul>
-<h3 id="安装Ubuntu-18-04"><a href="#安装Ubuntu-18-04" class="headerlink" title="安装Ubuntu 18.04"></a>安装Ubuntu 18.04</h3><h4 id="准备工作-1"><a href="#准备工作-1" class="headerlink" title="准备工作"></a>准备工作</h4><ul>
-<li>下载Ubuntu 18.04修改版本(来自网络大神，已经集成mbp2017内置键盘，触摸板，touch bar驱动，安装方便)<br><a href="https://goo.gl/4ddQMu">https://goo.gl/4ddQMu</a></li>
-<li>使用usbwriter将Ubuntu 18.04镜像写入U盘。</li>
-</ul>
-<h4 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h4><ul>
-<li>插入U盘，重启按住Option，选择Ubuntu 18.04安装盘，选择安装(注意：不可以选择试用，安装会出错)。</li>
-<li>分区：找到之前分配的fat32格式分区，点击-，删除分区，这样会得到一部分空闲分区。按照自己习惯将空闲分区进行分配。博主的分配方案是：efi、boot、home、/、swap。</li>
-<li>分区完成后，继续安装。</li>
-</ul>
-<blockquote>
-<p>至此，我们在开机时按住Option键即可自由切换macOS和Ubuntu。</p>
-</blockquote>
-<h4 id="安装Windows"><a href="#安装Windows" class="headerlink" title="安装Windows"></a>安装Windows</h4><blockquote>
-<p>因为我们已经自行创建了Ubuntu分区，所以已经不能使用BootCamp安装Windows 10。</p>
-</blockquote>
-<ul>
-<li><font color=#A52A2A ><strong>在macOS下将之前分配好的BootCamp分区格式化为hfs格式。(重中之重)</strong></font></li>
-<li>进入winpe，连接外接键鼠。</li>
-<li>winpe下打开分区工具，将刚才格式化为hfs格式的分区格式化为ntfs格式，供Windows 10使用。</li>
-<li>打开winntsetup工具，将Windows安装到ntfs格式分区。</li>
-</ul>
-<blockquote>
-<p>安装完成后重启发现无法进入Windows 10，请进行如下操作。</p>
-</blockquote>
-<ul>
-<li>进入Ubuntu 18.04，打开终端，输入如下命令<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sudo update-grub</span></span><br></pre></td></tr></table></figure></li>
-<li>重启进入Ubuntu启动项，会在grub菜单中看到Windows Boot Manager选项，回车选择，完成Windows 10安装。</li>
-<li>进入Windows 10后，安装之前下载的Windows支持软件。</li>
-</ul>
-<blockquote>
-<p>至此，三个系统已经安装完成，并且都可以启动成功。开机按住Option键，看到两个启动项。选择mac启动项进入macOS，选择Windows启动项进入grub界面，grub下有Ubuntu 18.04以及Windows Boot Manager两个选项。什么，切换系统不方便？？往下看！！！</p>
-</blockquote>
-<h3 id="安装refind，实现自动引导"><a href="#安装refind，实现自动引导" class="headerlink" title="安装refind，实现自动引导"></a>安装refind，实现自动引导</h3><ul>
-<li>下载refind并解压<br><a href="https://sourceforge.net/projects/refind/">https://sourceforge.net/projects/refind/</a></li>
-<li>打开文件夹，执行refind-install脚本即可成功安装refind，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/8632cec3cc44f7485e92c8727ba9e3a17a7fb808.jpg"></li>
-<li>进入Windows 10，安装bootice软件。</li>
-<li>使用bootice将refind设置为第一启动项。</li>
-<li>重启即可看到refind引导界面。</li>
-<li>按delete键隐藏不需要的启动项，保留macOS、Windows、Ubuntu即可。</li>
-<li>什么？refind默认界面不好看？emmmm，那就换个主题吧！！Google大把教程！！！</li>
-</ul>
-<blockquote>
-<p>至此，MacBook Pro 2017安装macOS+Windows+Ubuntu成功！！！</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Macintosh</category>
-      </categories>
-      <tags>
-        <tag>Macintosh</tag>
-        <tag>Linux</tag>
-        <tag>MacBook Pro</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>mi5开启全面屏手势教程(非原创，转自一个已经被miui论坛删除又幸运的被Chrome缓存下来的帖子)</title>
-    <url>/2018/06/22/mi5-enable-gesture.html</url>
-    <content><![CDATA[<h3 id="MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看"><a href="#MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看" class="headerlink" title="MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看"></a>MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看</h3><a id="more"></a>
-
-<blockquote>
-<p>我把我开启全面屏的过程写了一下，由于在过程中看到其他帖子写的太随便，不够详细，所以来写一个详细一些的，方便mi5用户体验全面屏手势，话说真的很好用啊，那些说不用root用第三方软件实现的手势不管是从美观程度和可用性都没原厂的好啊，刷完自己体会吧。</p>
-</blockquote>
-<h3 id="适用对象"><a href="#适用对象" class="headerlink" title="适用对象"></a>适用对象</h3><ul>
-<li>已经获取root权限的mi5</li>
-<li>已是开发版系统，并且在授权管理开启了root授权</li>
-<li>稳定版用户，自行升级到开发版开启root权限，或者用其他办法获取root授权</li>
-</ul>
-<h3 id="简要流程"><a href="#简要流程" class="headerlink" title="简要流程"></a>简要流程</h3><ul>
-<li>获取完整root权限</li>
-<li>安装rec，挂载system分区</li>
-<li>使用re文件管理器找到/system/build.prop文件，在文件尾部加入qemu.hw.mainkeys=0</li>
-<li>重启手机，即可在设置中找到全面屏选项</li>
-</ul>
-<h3 id="详细流程"><a href="#详细流程" class="headerlink" title="详细流程"></a>详细流程</h3><blockquote>
-<p>默认使用win10系统，已安装mi5的驱动。</p>
-</blockquote>
-<h4 id="获取完整root权限"><a href="#获取完整root权限" class="headerlink" title="获取完整root权限"></a>获取完整root权限</h4><ul>
-<li>手机开启usb调试模式</li>
-<li><a href="https://www.miui.com/forum.php?mod=attachment&aid=MjIzNzU2ODl8YjIwMjgyNGJlNjI1OGQxZTY3OGFhZmNhOTUyOTI2MzR8MTUyOTY1Njg5NA%3D%3D&request=yes&_f=.rar">下载一键破译分区工具</a></li>
-<li>解压下载的文件，运行.bat文件，如图<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0racrzmmlj307003ogli.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0racylveqj30i2081aas.jpg"></li>
-</ul>
-<h4 id="安装rec，挂载system分区"><a href="#安装rec，挂载system分区" class="headerlink" title="安装rec，挂载system分区"></a>安装rec，挂载system分区</h4><ul>
-<li><a href="https://www.miui.com/forum.php?mod=attachment&aid=MjIzNzYwNDd8Yjg4YjdlOWNmYjQ4OWI0NmJmZWFlMTFmMzc4NmMwODJ8MTUyOTY1Njg5NA%3D%3D&request=yes&_f=.apk">下载twrp.apk</a></li>
-<li>手机安装下载的app（此app需要root权限，如果是开发版小米的root权限管理，去设置给他权限，其他root管理软件到对应的管理权限的地方，给它权限）</li>
-<li>打开安装的app</li>
-<li>选择TWRP FLASH</li>
-<li>选择Select Device 找到 Xiaomi Mi 5 – gemini 并选择它</li>
-<li>选最新的.img文件（例如xian在是：twrp-3.2.1-1-gemini.img） </li>
-<li>他会提示是否要下载，点击okay</li>
-<li>下载好了之后点击FLASH TO RECOVERY按钮</li>
-<li>成功的话会提示：Flash completed Successfully!</li>
-<li>失败的话，多半是root权限问题，检查一下是否给了这个软件root权限</li>
-<li>按住音量上键并重启手机，直到手机出现twrp的logo时放开音量上键 进入rec</li>
-<li>点击挂载，选择system分区，返回，重启手机</li>
-</ul>
-<h4 id="使用re管理器修改文件（此软件需要root权限）"><a href="#使用re管理器修改文件（此软件需要root权限）" class="headerlink" title="使用re管理器修改文件（此软件需要root权限）"></a>使用re管理器修改文件（此软件需要root权限）</h4><ul>
-<li>下载一个re管理器，找到/system/build.prop这个文件（是文件不是文件夹）</li>
-<li>以文本方式编辑，在文件最后加上 qemu.hw.mainkeys=0，保存</li>
-<li>以文本方式查看一下它，看是否保存成功</li>
-<li>如果失败多半是root权限或者挂载分区有问题，回到前面的步骤重试</li>
-<li>如果保存成功，只需重启手机即可在设置中找到全面屏选项<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rad71il1j30fy0ppq3m.jpg"></li>
-</ul>
-<h4 id="如果想关掉全面屏，只需将-system-build-prop-文件中的-qemu-hw-mainkeys-0-删去，重启即可"><a href="#如果想关掉全面屏，只需将-system-build-prop-文件中的-qemu-hw-mainkeys-0-删去，重启即可" class="headerlink" title="如果想关掉全面屏，只需将/system/build.prop 文件中的 qemu.hw.mainkeys=0 删去，重启即可"></a>如果想关掉全面屏，只需将/system/build.prop 文件中的 qemu.hw.mainkeys=0 删去，重启即可</h4><blockquote>
-<p>写的尽量详细了，如在过程中有问题，可以回复</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>mi5</tag>
-        <tag>miui</tag>
-        <tag>Android</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>macOS High Sierra 10.13.4下Z370主板USB相关解决方案</title>
     <url>/2018/05/09/macos-high-sierra-10-13-4-z370-motherboard-usb-related-solutions.html</url>
     <content><![CDATA[<blockquote>
@@ -1651,38 +1477,6 @@
         <tag>Hackintosh</tag>
         <tag>usb</tag>
         <tag>z370</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>最简单的挂载EFI分区方案</title>
-    <url>/2019/12/03/mountEFI.html</url>
-    <content><![CDATA[<blockquote>
-<p>博主使用OC已经有一段时间，最近发现一个不爽点。OC配置本身不需要各种GUI工具，但是，每次挂载EFI都要打开类似Clover Configurator的工具挂载EFI，比较麻烦，所以博主分享一种点击即挂载并打开EFI分区的方案。<a id="more"></a></p>
-</blockquote>
-<h1 id="获取EFI分区的UUID"><a href="#获取EFI分区的UUID" class="headerlink" title="获取EFI分区的UUID"></a>获取EFI分区的UUID</h1><ul>
-<li>用Clover Configurator看一下负责引导的EFI分区的分区号，比如博主的是<font color=#A52A2A >disk0s1</font>。(详细过程略，相信大家都懂)</li>
-<li>输入以下命令获取UUID。<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sudo</span> diskutil <span class="literal">info</span> disk0s1 | grep <span class="string">&#x27;Partition UUID&#x27;</span></span><br></pre></td></tr></table></figure>
-  <img src= "/images/loading.gif" data-lazy-src="/images/mountEFI.png"></li>
-</ul>
-<h1 id="准备应用程序"><a href="#准备应用程序" class="headerlink" title="准备应用程序"></a>准备应用程序</h1><ul>
-<li><p>打开系统自带的自动操作程序，依次点击应用程序-&gt;选取-&gt;运行shell脚本。<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-3.png"></p>
-</li>
-<li><p>将以下脚本粘贴进去</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">mountEFI=$(<span class="built_in">echo</span> <span class="string">&#x27;你的密码&#x27;</span> | sudo -S diskutil info 你的UUID | grep <span class="string">&#x27;Device Node&#x27;</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;你的密码&#x27;</span> | sudo -S diskutil mount <span class="string">&#x27;/&#x27;</span><span class="variable">$&#123;mountEFI#*/&#125;</span></span><br><span class="line">open /Volumes/EFI/EFI/OC</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/mountEFI-1.png"></p>
-</li>
-<li><p>保存成app<br><img src= "/images/loading.gif" data-lazy-src="/images/mountEFI-2.png"></p>
-</li>
-</ul>
-<blockquote>
-<p>至此，您已经成功制作EFI挂载工具，以后只要点击就可以直接挂载并打开！</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -1731,38 +1525,6 @@
       <tags>
         <tag>Hackintosh</tag>
         <tag>OpenCore</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>macOS 10.14.6 beta下填充PCI列表的简要教程</title>
-    <url>/2019/05/21/pci-list-for-hackintosh.html</url>
-    <content><![CDATA[<blockquote>
-<p>不知各位爱好者是否发现了一些朋友的黑苹果系统中,关于本机里的pci列表下有详细的设备信息。以前实现这个比较麻烦，需要ssdt。现在已经有简便方案。<a id="more"></a></p>
-</blockquote>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>目前白苹果上并没有显示PCI列表，所以，各位是否实现全靠自愿。</p>
-<h3 id="所需软件"><a href="#所需软件" class="headerlink" title="所需软件"></a>所需软件</h3><ul>
-<li><a href='http://headsoft.com.au/download/mac/Hackintool.zip'>Hackintool</a></li>
-<li>Clover Configurator</li>
-</ul>
-<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
-<li>打开Clover Configurator，依次点击<font color=#A52A2A ><strong><em>Boot.log-&gt;Generate log-&gt;Save boot.log to desktop</em></strong></font>，如图。生成在桌面的文件名称为bootlog.txt。<br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-1.png"></li>
-</ul>
-<h4 id="下面以NVME-SSD-SM961为例进行讲解"><a href="#下面以NVME-SSD-SM961为例进行讲解" class="headerlink" title="下面以NVME SSD SM961为例进行讲解"></a>下面以NVME SSD SM961为例进行讲解</h4><ul>
-<li>打开Hackintool，记住SM961的设备id，如图即为0xA804。<br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-2.png"></li>
-<li>打开之前保存的bootlog.txt文件，搜索A804，我们会发现这一行数据中有一个形如xx:xx.xx的字符串，这个就是pciaddr,记下它，稍后会用到。如图：pciaddr为<font color=#A52A2A ><strong><em>04:00.00</em></strong></font><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-3.png"></li>
-<li>使用Clover Configurator打开config.plist,依次点击Devices-&gt;Arbitrary,按图示填写数据即可显示PCI列表。<font color=#A52A2A ><strong><em>注意：PciAddr一栏填写刚才查询出来的pciaddr，即</em></strong>04:00.00*<strong>,Comment一栏随便填。右侧属性栏中的Key值至少有两个参数**<em>AAPL,slot-name</em></strong>以及*<strong>model**<em>，Value随便填，Value Type选STRING</em></strong>。</font><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-4.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-5.png"></li>
-</ul>
-<h3 id="一个特殊情况-声卡"><a href="#一个特殊情况-声卡" class="headerlink" title="一个特殊情况(声卡)"></a>一个特殊情况(声卡)</h3><p>由于我们在注入声卡属性时会覆盖layout-id，导致声卡无声。所以如果要注入声卡属性，要在clover下做如下设置。</p>
-<ul>
-<li><font color=#A52A2A ><strong><em>Devices-&gt;Audio-&gt;inject-&gt;No</em></strong><font></li>
-<li><font color=#A52A2A ><strong><em>Boot-&gt;alcid=layout-id</em></strong><font><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-6.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-7.png"></li>
-</ul>
-<h3 id="至此，您已经成功显示PCI列表"><a href="#至此，您已经成功显示PCI列表" class="headerlink" title="至此，您已经成功显示PCI列表"></a>至此，您已经成功显示PCI列表</h3>]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -1945,6 +1707,183 @@
         <tag>Nginx</tag>
         <tag>PHP</tag>
         <tag>SSL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux常用命令总结</title>
+    <url>/2018/05/06/linux-common-command-summary.html</url>
+    <content><![CDATA[<p>由于最近一直在使用Linux操作系统，经常要使用一些Linux命令,所以总结一下Linux中的常用命令<a id="more"></a>：</p>
+<h3 id="系统信息"><a href="#系统信息" class="headerlink" title="系统信息"></a>系统信息</h3><figure class="highlight tcl"><table><tr><td class="code"><pre><span class="line">arch 显示机器的处理器架构(<span class="number">1</span>)</span><br><span class="line">uname -m 显示机器的处理器架构(<span class="number">2</span>)</span><br><span class="line">uname -r 显示正在使用的内核版本</span><br><span class="line">dmidecode -q 显示硬件系统部件 - (SMBIOS / DMI)</span><br><span class="line">hdparm -i /dev/hda 罗列一个磁盘的架构特性</span><br><span class="line">hdparm -tT /dev/sda 在磁盘上执行测试性读取操作</span><br><span class="line">cat /<span class="keyword">proc</span>/cpuinfo 显示CPU<span class="title"> info的信息</span></span><br><span class="line"><span class="title">cat</span> /<span class="keyword">proc</span>/interrupts 显示中断</span><br><span class="line">cat /<span class="keyword">proc</span>/meminfo 校验内存使用</span><br><span class="line">cat /<span class="keyword">proc</span>/swaps 显示哪些swap被使用</span><br><span class="line">cat /<span class="keyword">proc</span>/version 显示内核的版本</span><br><span class="line">cat /<span class="keyword">proc</span>/net/dev 显示网络适配器及统计</span><br><span class="line">cat /<span class="keyword">proc</span>/mounts 显示已加载的文件系统</span><br><span class="line">lspci -tv 罗列<span class="title"> PCI</span> 设备</span><br><span class="line">lsusb -tv 显示<span class="title"> USB</span> 设备</span><br><span class="line">date 显示系统日期</span><br><span class="line">cal 2007 显示2007年的日历表</span><br><span class="line">date 041217002007.00 设置日期和时间 - 月日时分年.秒</span><br><span class="line">clock -w 将时间修改保存到<span class="title"> BIOS</span></span><br></pre></td></tr></table></figure>
+<h3 id="关机-系统的关机、重启以及登出"><a href="#关机-系统的关机、重启以及登出" class="headerlink" title="关机 (系统的关机、重启以及登出 )"></a>关机 (系统的关机、重启以及登出 )</h3><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">shutdown</span> -h now 关闭系统(<span class="number">1</span>)</span><br><span class="line"><span class="attribute">init</span> <span class="number">0</span> 关闭系统(<span class="number">2</span>)</span><br><span class="line"><span class="attribute">telinit</span> <span class="number">0</span> 关闭系统(<span class="number">3</span>)</span><br><span class="line"><span class="attribute">shutdown</span> -h hours:minutes &amp;amp; 按预定时间关闭系统</span><br><span class="line"><span class="attribute">shutdown</span> -c 取消按预定时间关闭系统</span><br><span class="line"><span class="attribute">shutdown</span> -r now 重启(<span class="number">1</span>)</span><br><span class="line"><span class="attribute">reboot</span> 重启(<span class="number">2</span>)</span><br><span class="line"><span class="attribute">logout</span> 注销</span><br></pre></td></tr></table></figure>
+<h3 id="文件和目录"><a href="#文件和目录" class="headerlink" title="文件和目录"></a>文件和目录</h3><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">cd</span> /home 进入 &#x27;/ home&#x27; 目录&#x27;</span><br><span class="line"><span class="attribute">cd</span> .. 返回上一级目录</span><br><span class="line"><span class="attribute">cd</span> ../.. 返回上两级目录</span><br><span class="line"><span class="attribute">cd</span> 进入个人的主目录</span><br><span class="line"><span class="attribute">cd</span> ~user<span class="number">1</span> 进入个人的主目录</span><br><span class="line"><span class="attribute">cd</span> - 返回上次所在的目录</span><br><span class="line"><span class="attribute">pwd</span> 显示工作路径</span><br><span class="line"><span class="attribute">ls</span> 查看目录中的文件</span><br><span class="line"><span class="attribute">ls</span> -F 查看目录中的文件</span><br><span class="line"><span class="attribute">ls</span> -l 显示文件和目录的详细资料</span><br><span class="line"><span class="attribute">ls</span> -a 显示隐藏文件</span><br><span class="line"><span class="attribute">ls</span> *[<span class="number">0</span>-<span class="number">9</span>]* 显示包含数字的文件名和目录名</span><br><span class="line"><span class="attribute">tree</span> 显示文件和目录由根目录开始的树形结构(<span class="number">1</span>)</span><br><span class="line"><span class="attribute">lstree</span> 显示文件和目录由根目录开始的树形结构(<span class="number">2</span>)</span><br><span class="line"><span class="attribute">mkdir</span> dir<span class="number">1</span> 创建一个叫做 &#x27;dir<span class="number">1</span>&#x27; 的目录&#x27;</span><br><span class="line"><span class="attribute">mkdir</span> dir<span class="number">1</span> dir<span class="number">2</span> 同时创建两个目录</span><br><span class="line"><span class="attribute">mkdir</span> -p /tmp/dir<span class="number">1</span>/dir<span class="number">2</span> 创建一个目录树</span><br><span class="line"><span class="attribute">rm</span> -f file<span class="number">1</span> 删除一个叫做 &#x27;file<span class="number">1</span>&#x27; 的文件&#x27;</span><br><span class="line"><span class="attribute">rmdir</span> dir<span class="number">1</span> 删除一个叫做 &#x27;dir<span class="number">1</span>&#x27; 的目录&#x27;</span><br><span class="line"><span class="attribute">rm</span> -rf dir<span class="number">1</span> 删除一个叫做 &#x27;dir<span class="number">1</span>&#x27; 的目录并同时删除其内容</span><br><span class="line"><span class="attribute">rm</span> -rf dir<span class="number">1</span> dir<span class="number">2</span> 同时删除两个目录及它们的内容</span><br><span class="line"><span class="attribute">mv</span> dir<span class="number">1</span> new_dir 重命名/移动 一个目录</span><br><span class="line"><span class="attribute">cp</span> file<span class="number">1</span> file<span class="number">2</span> 复制一个文件</span><br><span class="line"><span class="attribute">cp</span> dir/* . 复制一个目录下的所有文件到当前工作目录</span><br><span class="line"><span class="attribute">cp</span> -a /tmp/dir<span class="number">1</span> . 复制一个目录到当前工作目录</span><br><span class="line"><span class="attribute">cp</span> -a dir<span class="number">1</span> dir<span class="number">2</span> 复制一个目录</span><br><span class="line"><span class="attribute">ln</span> -s file<span class="number">1</span> lnk<span class="number">1</span> 创建一个指向文件或目录的软链接</span><br><span class="line"><span class="attribute">ln</span> file<span class="number">1</span> lnk<span class="number">1</span> 创建一个指向文件或目录的物理链接</span><br><span class="line"><span class="attribute">touch</span> -t <span class="number">0712250000</span> file<span class="number">1</span> 修改一个文件或目录的时间戳 - (YYMMDDhhmm)</span><br><span class="line"><span class="attribute">file</span> file<span class="number">1</span> outputs the mime type of the file as text</span><br><span class="line"><span class="attribute">iconv</span> -l 列出已知的编码</span><br><span class="line"><span class="attribute">iconv</span> -f fromEncoding -t toEncoding inputFile &amp;gt; outputFile creates a new from the given input file by assuming it is encoded in fromEncoding and converting it to toEncoding.</span><br><span class="line"><span class="attribute">find</span> . -maxdepth <span class="number">1</span> -name *.jpg -print -exec convert <span class="string">&quot;&#123;&#125;&quot;</span> -resize <span class="number">80</span>x<span class="number">60</span> <span class="string">&quot;thumbs/&#123;&#125;&quot;</span> \; batch resize files in the current directory and send them to a thumbnails directory (requires convert from Imagemagick)</span><br></pre></td></tr></table></figure>
+<h3 id="文件搜索"><a href="#文件搜索" class="headerlink" title="文件搜索"></a>文件搜索</h3><figure class="highlight sqf"><table><tr><td class="code"><pre><span class="line"><span class="built_in">find</span> / -<span class="built_in">name</span> file1 从 <span class="string">&#x27;/&#x27;</span> 开始进入根文件系统搜索文件和目录</span><br><span class="line"><span class="built_in">find</span> / -user user1 搜索属于用户 <span class="string">&#x27;user1&#x27;</span> 的文件和目录</span><br><span class="line"><span class="built_in">find</span> /home/user1 -<span class="built_in">name</span> \*.bin 在目录 <span class="string">&#x27;/ home/user1&#x27;</span> 中搜索带有<span class="string">&#x27;.bin&#x27;</span> 结尾的文件</span><br><span class="line"><span class="built_in">find</span> /usr/bin -<span class="built_in">type</span> f -atime +<span class="number">100</span> 搜索在过去<span class="number">100</span>天内未被使用过的执行文件</span><br><span class="line"><span class="built_in">find</span> /usr/bin -<span class="built_in">type</span> f -mtime -<span class="number">10</span> 搜索在<span class="number">10</span>天内被创建或者修改过的文件</span><br><span class="line"><span class="built_in">find</span> / -<span class="built_in">name</span> \*.rpm -<span class="built_in">exec</span> chmod <span class="number">755</span> <span class="string">&#x27;&#123;&#125;&#x27;</span> \; 搜索以 <span class="string">&#x27;.rpm&#x27;</span> 结尾的文件并定义其权限</span><br><span class="line"><span class="built_in">find</span> / -xdev -<span class="built_in">name</span> \*.rpm 搜索以 <span class="string">&#x27;.rpm&#x27;</span> 结尾的文件，忽略光驱、捷盘等可移动设备</span><br><span class="line">locate \*.ps 寻找以 <span class="string">&#x27;.ps&#x27;</span> 结尾的文件 - 先运行 <span class="string">&#x27;updatedb&#x27;</span> 命令</span><br><span class="line">whereis <span class="built_in">halt</span> 显示一个二进制文件、源码或man的位置</span><br><span class="line">which <span class="built_in">halt</span> 显示一个二进制文件或可执行文件的完整路径</span><br></pre></td></tr></table></figure>
+<h3 id="挂载一个文件系统"><a href="#挂载一个文件系统" class="headerlink" title="挂载一个文件系统"></a>挂载一个文件系统</h3><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mount <span class="regexp">/dev/</span>hda2 <span class="regexp">/mnt/</span>hda2 挂载一个叫做hda2的盘 - 确定目录 <span class="string">&#x27;/ mnt/hda2&#x27;</span> 已经存在</span><br><span class="line">umount <span class="regexp">/dev/</span>hda2 卸载一个叫做hda2的盘 - 先从挂载点 <span class="string">&#x27;/ mnt/hda2&#x27;</span> 退出</span><br><span class="line">fuser -km <span class="regexp">/mnt/</span>hda2 当设备繁忙时强制卸载</span><br><span class="line">umount -n <span class="regexp">/mnt/</span>hda2 运行卸载操作而不写入 <span class="regexp">/etc/m</span>tab 文件- 当文件为只读或当磁盘写满时非常有用</span><br><span class="line">mount <span class="regexp">/dev/</span>fd0 <span class="regexp">/mnt/</span>floppy 挂载一个软盘</span><br><span class="line">mount <span class="regexp">/dev/</span>cdrom <span class="regexp">/mnt/</span>cdrom 挂载一个cdrom或dvdrom</span><br><span class="line">mount <span class="regexp">/dev/</span>hdc <span class="regexp">/mnt/</span>cdr利奴性ecorder 挂载一个cdrw或dvdrom</span><br><span class="line">mount <span class="regexp">/dev/</span>hdb <span class="regexp">/mnt/</span>cdrecorder 挂载一个cdrw或dvdrom</span><br><span class="line">mount -o loop file.iso <span class="regexp">/mnt/</span>cdrom 挂载一个文件或ISO镜像文件</span><br><span class="line">mount -t vfat <span class="regexp">/dev/</span>hda5 <span class="regexp">/mnt/</span>hda5 挂载一个Windows FAT32文件系统</span><br><span class="line">mount <span class="regexp">/dev/</span>sda1 <span class="regexp">/mnt/u</span>sbdisk 挂载一个usb 捷盘或闪存设备</span><br><span class="line">mount -t smbfs -o username=user,password=pass <span class="regexp">//</span>WinClient<span class="regexp">/share /m</span>nt/share 挂载一个windows网络共享</span><br></pre></td></tr></table></figure>
+<h3 id="磁盘空间"><a href="#磁盘空间" class="headerlink" title="磁盘空间"></a>磁盘空间</h3><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">df</span> -h 显示已经挂载的分区列表</span><br><span class="line"><span class="attribute">ls</span> -lSr |more 以尺寸大小排列文件和目录</span><br><span class="line"><span class="attribute">du</span> -sh dir<span class="number">1</span> 估算目录 &#x27;dir<span class="number">1</span>&#x27; 已经使用的磁盘空间&#x27;</span><br><span class="line"><span class="attribute">du</span> -sk * | sort -rn 以容量大小为依据依次显示文件和目录的大小</span><br><span class="line"><span class="attribute">rpm</span> -q -a --qf &#x27;%<span class="number">10</span>&#123;SIZE&#125;t<span class="variable">%&#123;NAME&#125;</span>n&#x27; | sort -k<span class="number">1</span>,<span class="number">1</span>n 以大小为依据依次显示已安装的rpm包所使用的空间 (fedora, redhat类系统)</span><br><span class="line"><span class="attribute">dpkg</span>-query -W -f=&#x27;<span class="variable">$&#123;Installed-Size;10&#125;</span>t<span class="variable">$&#123;Package&#125;</span>n&#x27; | sort -k<span class="number">1</span>,<span class="number">1</span>n 以大小为依据显示已安装的deb包所使用的空间 (ubuntu, debian类系统)</span><br></pre></td></tr></table></figure>
+<h3 id="用户和群组"><a href="#用户和群组" class="headerlink" title="用户和群组"></a>用户和群组</h3><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">groupadd</span> group_name 创建一个新用户组</span><br><span class="line"><span class="attribute">groupdel</span> group_name 删除一个用户组</span><br><span class="line"><span class="attribute">groupmod</span> -n new_group_name old_group_name 重命名一个用户组</span><br><span class="line"><span class="attribute">useradd</span> -c <span class="string">&quot;Name Surname &quot;</span> -g admin -d /home/user<span class="number">1</span> -s /bin/bash user<span class="number">1</span> 创建一个属于 <span class="string">&quot;admin&quot;</span> 用户组的用户</span><br><span class="line"><span class="attribute">useradd</span> user<span class="number">1</span> 创建一个新用户</span><br><span class="line"><span class="attribute">userdel</span> -r user<span class="number">1</span> 删除一个用户 ( &#x27;-r&#x27; 排除主目录)</span><br><span class="line"><span class="attribute">usermod</span> -c <span class="string">&quot;User FTP&quot;</span> -g system -d /ftp/user<span class="number">1</span> -s /bin/nologin user<span class="number">1</span> 修改用户属性</span><br><span class="line"><span class="attribute">passwd</span> 修改口令</span><br><span class="line"><span class="attribute">passwd</span> user<span class="number">1</span> 修改一个用户的口令 (只允许root执行)</span><br><span class="line"><span class="attribute">chage</span> -E <span class="number">2005</span>-<span class="number">12</span>-<span class="number">31</span> user<span class="number">1</span> 设置用户口令的失效期限</span><br><span class="line"><span class="attribute">pwck</span> 检查 &#x27;/etc/passwd&#x27; 的文件格式和语法修正以及存在的用户</span><br><span class="line"><span class="attribute">grpck</span> 检查 &#x27;/etc/passwd&#x27; 的文件格式和语法修正以及存在的群组</span><br><span class="line"><span class="attribute">newgrp</span> group_name 登陆进一个新的群组以改变新创建文件的预设群组</span><br></pre></td></tr></table></figure>
+<h3 id="文件的权限-使用-“-”-设置权限，使用-“-“-用于取消"><a href="#文件的权限-使用-“-”-设置权限，使用-“-“-用于取消" class="headerlink" title="文件的权限 - 使用 “+” 设置权限，使用 “-“ 用于取消"></a>文件的权限 - 使用 “+” 设置权限，使用 “-“ 用于取消</h3><figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">ls -lh 显示权限</span><br><span class="line">ls /tmp | pr -T5 -W$COLUMNS 将终端划分成<span class="number">5</span>栏显示</span><br><span class="line">chmod ugo+rwx directory1 设置目录的所有人(u)、群组(g)以及其他人(o)以读（r ）、写(w)和执行(x)的权限</span><br><span class="line">chmod go-rwx directory1 删除群组(g)与其他人(o)对目录的读写执行权限</span><br><span class="line">chown user1 file1 改变一个文件的所有人属性</span><br><span class="line">chown -R user1 directory1 改变一个目录的所有人属性并同时改变改目录下所有文件的属性</span><br><span class="line">chgrp group1 file1 改变文件的群组</span><br><span class="line">chown user1:group1 file1 改变一个文件的所有人和群组属性</span><br><span class="line"><span class="keyword">find</span> / -perm -u+s 罗列一个系统中所有使用了SUID控制的文件</span><br><span class="line">chmod u+s <span class="regexp">/bin/</span>file1 设置一个二进制文件的 SUID 位 - 运行该文件的用户也被赋予和所有者同样的权限</span><br><span class="line">chmod u-s <span class="regexp">/bin/</span>file1 禁用一个二进制文件的 SUID位</span><br><span class="line">chmod g+s <span class="regexp">/home/</span><span class="keyword">public</span> 设置一个目录的SGID 位 - 类似SUID ，不过这是针对目录的</span><br><span class="line">chmod g-s <span class="regexp">/home/</span><span class="keyword">public</span> 禁用一个目录的 SGID 位</span><br><span class="line">chmod o+t <span class="regexp">/home/</span><span class="keyword">public</span> 设置一个文件的 STIKY 位 - 只允许合法所有人删除文件</span><br><span class="line">chmod o-t <span class="regexp">/home/</span><span class="keyword">public</span> 禁用一个目录的 STIKY 位</span><br></pre></td></tr></table></figure>
+<h3 id="文件的特殊属性-使用-“-”-设置权限，使用-“-“-用于取消"><a href="#文件的特殊属性-使用-“-”-设置权限，使用-“-“-用于取消" class="headerlink" title="文件的特殊属性 - 使用 “+” 设置权限，使用 “-“ 用于取消"></a>文件的特殊属性 - 使用 “+” 设置权限，使用 “-“ 用于取消</h3><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">chattr</span> +a file<span class="number">1</span> 只允许以追加方式读写文件</span><br><span class="line"><span class="attribute">chattr</span> +c file<span class="number">1</span> 允许这个文件能被内核自动压缩/解压</span><br><span class="line"><span class="attribute">chattr</span> +d file<span class="number">1</span> 在进行文件系统备份时，dump程序将忽略这个文件</span><br><span class="line"><span class="attribute">chattr</span> +i file<span class="number">1</span> 设置成不可变的文件，不能被删除、修改、重命名或者链接</span><br><span class="line"><span class="attribute">chattr</span> +s file<span class="number">1</span> 允许一个文件被安全地删除</span><br><span class="line"><span class="attribute">chattr</span> +S file<span class="number">1</span> 一旦应用程序对这个文件执行了写操作，使系统立刻把修改的结果写到磁盘</span><br><span class="line"><span class="attribute">chattr</span> +u file<span class="number">1</span> 若文件被删除，系统会允许你在以后恢复这个被删除的文件</span><br><span class="line"><span class="attribute">lsattr</span> 显示特殊的属性</span><br></pre></td></tr></table></figure>
+<h3 id="打包和压缩文件"><a href="#打包和压缩文件" class="headerlink" title="打包和压缩文件"></a>打包和压缩文件</h3><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">bunzip2</span> file<span class="number">1</span>.bz<span class="number">2</span> 解压一个叫做 &#x27;file<span class="number">1</span>.bz<span class="number">2</span>&#x27;的文件</span><br><span class="line"><span class="attribute">bzip2</span> file<span class="number">1</span> 压缩一个叫做 &#x27;file<span class="number">1</span>&#x27; 的文件</span><br><span class="line"><span class="attribute">gunzip</span> file<span class="number">1</span>.gz 解压一个叫做 &#x27;file<span class="number">1</span>.gz&#x27;的文件</span><br><span class="line"><span class="attribute">gzip</span> file<span class="number">1</span> 压缩一个叫做 &#x27;file<span class="number">1</span>&#x27;的文件</span><br><span class="line"><span class="attribute">gzip</span> -<span class="number">9</span> file<span class="number">1</span> 最大程度压缩</span><br><span class="line"><span class="attribute">rar</span> a file<span class="number">1</span>.rar test_file 创建一个叫做 &#x27;file<span class="number">1</span>.rar&#x27; 的包</span><br><span class="line"><span class="attribute">rar</span> a file<span class="number">1</span>.rar file<span class="number">1</span> file<span class="number">2</span> dir<span class="number">1</span> 同时压缩 &#x27;file<span class="number">1</span>&#x27;, &#x27;file<span class="number">2</span>&#x27; 以及目录 &#x27;dir<span class="number">1</span>&#x27;</span><br><span class="line"><span class="attribute">rar</span> x file<span class="number">1</span>.rar 解压rar包</span><br><span class="line"><span class="attribute">unrar</span> x file<span class="number">1</span>.rar 解压rar包</span><br><span class="line"><span class="attribute">tar</span> -cvf archive.tar file<span class="number">1</span> 创建一个非压缩的 tarball</span><br><span class="line"><span class="attribute">tar</span> -cvf archive.tar file<span class="number">1</span> file<span class="number">2</span> dir<span class="number">1</span> 创建一个包含了 &#x27;file<span class="number">1</span>&#x27;, &#x27;file<span class="number">2</span>&#x27; 以及 &#x27;dir<span class="number">1</span>&#x27;的档案文件</span><br><span class="line"><span class="attribute">tar</span> -tf archive.tar 显示一个包中的内容</span><br><span class="line"><span class="attribute">tar</span> -xvf archive.tar 释放一个包</span><br><span class="line"><span class="attribute">tar</span> -xvf archive.tar -C /tmp 将压缩包释放到 /tmp目录下</span><br><span class="line"><span class="attribute">tar</span> -cvfj archive.tar.bz<span class="number">2</span> dir<span class="number">1</span> 创建一个bzip<span class="number">2</span>格式的压缩包</span><br><span class="line"><span class="attribute">tar</span> -xvfj archive.tar.bz<span class="number">2</span> 解压一个bzip<span class="number">2</span>格式的压缩包</span><br><span class="line"><span class="attribute">tar</span> -cvfz archive.tar.gz dir<span class="number">1</span> 创建一个gzip格式的压缩包</span><br><span class="line"><span class="attribute">tar</span> -xvfz archive.tar.gz 解压一个gzip格式的压缩包</span><br><span class="line"><span class="attribute">zip</span> file<span class="number">1</span>.zip file<span class="number">1</span> 创建一个zip格式的压缩包</span><br><span class="line"><span class="attribute">zip</span> -r file<span class="number">1</span>.zip file<span class="number">1</span> file<span class="number">2</span> dir<span class="number">1</span> 将几个文件和目录同时压缩成一个zip格式的压缩包</span><br><span class="line"><span class="attribute">unzip</span> file<span class="number">1</span>.zip 解压一个zip格式压缩包</span><br></pre></td></tr></table></figure>
+<h3 id="RPM-包-（Fedora-Redhat及类似系统）"><a href="#RPM-包-（Fedora-Redhat及类似系统）" class="headerlink" title="RPM 包 - （Fedora, Redhat及类似系统）"></a>RPM 包 - （Fedora, Redhat及类似系统）</h3><figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">rpm -ivh <span class="keyword">package</span>.rpm 安装一个rpm包</span><br><span class="line">rpm -ivh --nodeeps <span class="keyword">package</span>.rpm 安装一个rpm包而忽略依赖关系警告</span><br><span class="line">rpm -U <span class="keyword">package</span>.rpm 更新一个rpm包但不改变其配置文件</span><br><span class="line">rpm -F <span class="keyword">package</span>.rpm 更新一个确定已经安装的rpm包</span><br><span class="line">rpm -e package_name.rpm 删除一个rpm包</span><br><span class="line">rpm -qa 显示系统中所有已经安装的rpm包</span><br><span class="line">rpm -qa | <span class="keyword">grep</span> httpd 显示所有名称中包含 <span class="string">&quot;httpd&quot;</span> 字样的rpm包</span><br><span class="line">rpm -qi package_name 获取一个已安装包的特殊信息</span><br><span class="line">rpm -qg <span class="string">&quot;System Environment/Daemons&quot;</span> 显示一个组件的rpm包</span><br><span class="line">rpm -ql package_name 显示一个已经安装的rpm包提供的文件列表</span><br><span class="line">rpm -qc package_name 显示一个已经安装的rpm包提供的配置文件列表</span><br><span class="line">rpm -q package_name --whatrequires 显示与一个rpm包存在依赖关系的列表</span><br><span class="line">rpm -q package_name --whatprovides 显示一个rpm包所占的体积</span><br><span class="line">rpm -q package_name --scripts 显示在安装/删除期间所执行的脚本l</span><br><span class="line">rpm -q package_name --changelog 显示一个rpm包的修改历史</span><br><span class="line">rpm -qf <span class="regexp">/etc/</span>httpd<span class="regexp">/conf/</span>httpd.conf 确认所给的文件由哪个rpm包所提供</span><br><span class="line">rpm -qp <span class="keyword">package</span>.rpm -l 显示由一个尚未安装的rpm包提供的文件列表</span><br><span class="line">rpm --<span class="keyword">import</span> <span class="regexp">/media/</span>cdrom/RPM-GPG-KEY 导入公钥数字证书</span><br><span class="line">rpm --checksig <span class="keyword">package</span>.rpm 确认一个rpm包的完整性</span><br><span class="line">rpm -qa gpg-pubkey 确认已安装的所有rpm包的完整性</span><br><span class="line">rpm -V package_name 检查文件尺寸、 许可、类型、所有者、群组、MD5检查以及最后修改时间</span><br><span class="line">rpm -Va 检查系统中所有已安装的rpm包- 小心使用</span><br><span class="line">rpm -Vp <span class="keyword">package</span>.rpm 确认一个rpm包还未安装</span><br><span class="line">rpm2cpio <span class="keyword">package</span>.rpm | cpio --extract --make-directories *bin* 从一个rpm包运行可执行文件</span><br><span class="line">rpm -ivh <span class="regexp">/usr/</span>src<span class="regexp">/redhat/</span>RPMS<span class="regexp">/`arch`/</span><span class="keyword">package</span>.rpm 从一个rpm源码安装一个构建好的包</span><br><span class="line">rpmbuild --rebuild package_name.src.rpm 从一个rpm源码构建一个 rpm 包</span><br></pre></td></tr></table></figure>
+<h3 id="YUM-软件包升级器-（Fedora-RedHat及类似系统）"><a href="#YUM-软件包升级器-（Fedora-RedHat及类似系统）" class="headerlink" title="YUM 软件包升级器 - （Fedora, RedHat及类似系统）"></a>YUM 软件包升级器 - （Fedora, RedHat及类似系统）</h3><figure class="highlight ceylon"><table><tr><td class="code"><pre><span class="line">yum install <span class="keyword">package</span><span class="number">_n</span>ame 下载并安装一个rpm包</span><br><span class="line">yum localinstall <span class="keyword">package</span><span class="number">_n</span>ame.rpm 将安装一个rpm包，使用你自己的软件仓库为你解决所有依赖关系</span><br><span class="line">yum update <span class="keyword">package</span><span class="number">_n</span>ame.rpm 更新当前系统中所有安装的rpm包</span><br><span class="line">yum update <span class="keyword">package</span><span class="number">_n</span>ame 更新一个rpm包</span><br><span class="line">yum remove <span class="keyword">package</span><span class="number">_n</span>ame 删除一个rpm包</span><br><span class="line">yum list 列出当前系统中安装的所有包</span><br><span class="line">yum search <span class="keyword">package</span><span class="number">_n</span>ame 在rpm仓库中搜寻软件包</span><br><span class="line">yum clean packages 清理rpm缓存删除下载的包</span><br><span class="line">yum clean headers 删除所有头文件</span><br><span class="line">yum clean all 删除所有缓存的包和头文件</span><br></pre></td></tr></table></figure>
+<h3 id="DEB-包-Debian-Ubuntu-以及类似系统"><a href="#DEB-包-Debian-Ubuntu-以及类似系统" class="headerlink" title="DEB 包 (Debian, Ubuntu 以及类似系统)"></a>DEB 包 (Debian, Ubuntu 以及类似系统)</h3><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">dpkg -i package.<span class="keyword">deb</span> 安装/更新一个 <span class="keyword">deb</span> 包</span><br><span class="line">dpkg -r package_name 从系统删除一个 <span class="keyword">deb</span> 包</span><br><span class="line">dpkg -<span class="keyword">l</span> 显示系统中所有已经安装的 <span class="keyword">deb</span> 包</span><br><span class="line">dpkg -<span class="keyword">l</span> | <span class="keyword">grep</span> httpd 显示所有名称中包含 <span class="string">&quot;httpd&quot;</span> 字样的<span class="keyword">deb</span>包</span><br><span class="line">dpkg -s package_name 获得已经安装在系统中一个特殊包的信息</span><br><span class="line">dpkg -L package_name 显示系统中已经安装的一个<span class="keyword">deb</span>包所提供的文件列表</span><br><span class="line">dpkg --contents package.<span class="keyword">deb</span> 显示尚未安装的一个包所提供的文件列表</span><br><span class="line">dpkg -S /bin/ping 确认所给的文件由哪个<span class="keyword">deb</span>包提供</span><br></pre></td></tr></table></figure>
+<h3 id="APT-软件工具-Debian-Ubuntu-以及类似系统"><a href="#APT-软件工具-Debian-Ubuntu-以及类似系统" class="headerlink" title="APT 软件工具 (Debian, Ubuntu 以及类似系统)"></a>APT 软件工具 (Debian, Ubuntu 以及类似系统)</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">apt-<span class="builtin-name">get</span> install package_name 安装/更新一个 deb 包</span><br><span class="line">apt-cdrom install package_name 从光盘安装/更新一个 deb 包</span><br><span class="line">apt-<span class="builtin-name">get</span> update 升级列表中的软件包</span><br><span class="line">apt-<span class="builtin-name">get</span><span class="built_in"> upgrade </span>升级所有已安装的软件</span><br><span class="line">apt-<span class="builtin-name">get</span> <span class="builtin-name">remove</span> package_name 从系统删除一个deb包</span><br><span class="line">apt-<span class="builtin-name">get</span> check 确认依赖的软件仓库正确</span><br><span class="line">apt-<span class="builtin-name">get</span> clean 从下载的软件包中清理缓存</span><br><span class="line">apt-cache search searched-package 返回包含所要搜索字符串的软件包名称</span><br></pre></td></tr></table></figure>
+<h3 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h3><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">cat</span> file<span class="number">1</span> 从第一个字节开始正向查看文件的内容</span><br><span class="line"><span class="attribute">tac</span> file<span class="number">1</span> 从最后一行开始反向查看一个文件的内容</span><br><span class="line"><span class="attribute">more</span> file<span class="number">1</span> 查看一个长文件的内容</span><br><span class="line"><span class="attribute">less</span> file<span class="number">1</span> 类似于 &#x27;more&#x27; 命令，但是它允许在文件中和正向操作一样的反向操作</span><br><span class="line"><span class="attribute">head</span> -<span class="number">2</span> file<span class="number">1</span> 查看一个文件的前两行</span><br><span class="line"><span class="attribute">tail</span> -<span class="number">2</span> file<span class="number">1</span> 查看一个文件的最后两行</span><br><span class="line"><span class="attribute">tail</span> -f /var/log/messages 实时查看被添加到一个文件中的内容</span><br></pre></td></tr></table></figure>
+<h3 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h3><figure class="highlight perl"><table><tr><td class="code"><pre><span class="line">cat file1 file2 ... | command &amp;<span class="keyword">lt</span>;&amp;<span class="keyword">gt</span>; file1_in.txt_or_file1_out.txt general syntax <span class="keyword">for</span> text manipulation using PIPE, STDIN <span class="keyword">and</span> STDOUT</span><br><span class="line">cat file1 | command( sed, <span class="keyword">grep</span>, awk, <span class="keyword">grep</span>, etc...) &amp;<span class="keyword">gt</span>; result.txt 合并一个文件的详细说明文本，并将简介写入一个新文件中</span><br><span class="line">cat file1 | command( sed, <span class="keyword">grep</span>, awk, <span class="keyword">grep</span>, etc...) &amp;<span class="keyword">gt</span>;&amp;<span class="keyword">gt</span>; result.txt 合并一个文件的详细说明文本，并将简介写入一个已有的文件中</span><br><span class="line"><span class="keyword">grep</span> Aug /var/<span class="keyword">log</span>/messages 在文件 <span class="string">&#x27;/var/log/messages&#x27;</span>中查找关键词<span class="string">&quot;Aug&quot;</span></span><br><span class="line"><span class="keyword">grep</span> ^Aug /var/<span class="keyword">log</span>/messages 在文件 <span class="string">&#x27;/var/log/messages&#x27;</span>中查找以<span class="string">&quot;Aug&quot;</span>开始的词汇</span><br><span class="line"><span class="keyword">grep</span> [<span class="number">0</span>-<span class="number">9</span>] /var/<span class="keyword">log</span>/messages 选择 <span class="string">&#x27;/var/log/messages&#x27;</span> 文件中所有包含数字的行</span><br><span class="line"><span class="keyword">grep</span> Aug -R /var/<span class="keyword">log</span>/* 在目录 <span class="string">&#x27;/var/log&#x27;</span> 及随后的目录中搜索字符串<span class="string">&quot;Aug&quot;</span></span><br><span class="line">sed <span class="string">&#x27;s/stringa1/stringa2/g&#x27;</span> example.txt 将example.txt文件中的 <span class="string">&quot;string1&quot;</span> 替换成 <span class="string">&quot;string2&quot;</span></span><br><span class="line">sed <span class="string">&#x27;/^$/d&#x27;</span> example.txt 从example.txt文件中删除所有空白行</span><br><span class="line">sed <span class="string">&#x27;/ *#/d; /^$/d&#x27;</span> example.txt 从example.txt文件中删除所有注释和空白行</span><br><span class="line">echo <span class="string">&#x27;esempio&#x27;</span> | <span class="keyword">tr</span> <span class="string">&#x27;[:lower:]&#x27;</span> <span class="string">&#x27;[:upper:]&#x27;</span> 合并上下单元格内容</span><br><span class="line">sed -e <span class="string">&#x27;1d&#x27;</span> result.txt 从文件example.txt 中排除第一行</span><br><span class="line">sed -n <span class="string">&#x27;/stringa1/p&#x27;</span> 查看只包含词汇 <span class="string">&quot;string1&quot;</span>的行</span><br><span class="line">sed -e <span class="string">&#x27;s/ *$//&#x27;</span> example.txt 删除每一行最后的空白字符</span><br><span class="line">sed -e <span class="string">&#x27;s/stringa1//g&#x27;</span> example.txt 从文档中只删除词汇 <span class="string">&quot;string1&quot;</span> 并保留剩余全部</span><br><span class="line">sed -n <span class="string">&#x27;1,5p;5q&#x27;</span> example.txt 查看从第一行到第<span class="number">5</span>行内容</span><br><span class="line">sed -n <span class="string">&#x27;5p;5q&#x27;</span> example.txt 查看第<span class="number">5</span>行</span><br><span class="line">sed -e <span class="string">&#x27;s/00*/0/g&#x27;</span> example.txt 用单个零替换多个零</span><br><span class="line">cat -n file1 标示文件的行数</span><br><span class="line">cat example.txt | awk <span class="string">&#x27;NR%2==1&#x27;</span> 删除example.txt文件中的所有偶数行</span><br><span class="line">echo a b c | awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span> 查看一行第一栏</span><br><span class="line">echo a b c | awk <span class="string">&#x27;&#123;print $1,$3&#125;&#x27;</span> 查看一行的第一和第三栏</span><br><span class="line">paste file1 file2 合并两个文件或两栏的内容</span><br><span class="line">paste -d <span class="string">&#x27;+&#x27;</span> file1 file2 合并两个文件或两栏的内容，中间用<span class="string">&quot;+&quot;</span>区分</span><br><span class="line"><span class="keyword">sort</span> file1 file2 排序两个文件的内容</span><br><span class="line"><span class="keyword">sort</span> file1 file2 | uniq 取出两个文件的并集(重复的行只保留一份)</span><br><span class="line"><span class="keyword">sort</span> file1 file2 | uniq -u 删除交集，留下其他的行</span><br><span class="line"><span class="keyword">sort</span> file1 file2 | uniq -d 取出两个文件的交集(只留下同时存在于两个文件中的文件)</span><br><span class="line">comm -<span class="number">1</span> file1 file2 比较两个文件的内容只删除 <span class="string">&#x27;file1&#x27;</span> 所包含的内容</span><br><span class="line">comm -<span class="number">2</span> file1 file2 比较两个文件的内容只删除 <span class="string">&#x27;file2&#x27;</span> 所包含的内容</span><br><span class="line">comm -<span class="number">3</span> file1 file2 比较两个文件的内容只删除两个文件共有的部分</span><br></pre></td></tr></table></figure>
+<h3 id="字符设置和文件格式转换"><a href="#字符设置和文件格式转换" class="headerlink" title="字符设置和文件格式转换"></a>字符设置和文件格式转换</h3><figure class="highlight gams"><table><tr><td class="code"><pre><span class="line">dos2unix filedos.txt fileunix.txt 将一个文本文件的格式从MSDOS转换成UNIX</span><br><span class="line">unix2dos fileunix.txt filedos.txt 将一个文本文件的格式从UNIX转换成MSDOS</span><br><span class="line"><span class="function"><span class="title">recode</span></span> ..HTML &amp;<span class="keyword">lt</span>; page.txt &amp;<span class="keyword">gt</span>; page.html 将一个文本文件转换成html</span><br><span class="line">recode -l | more 显示所有允许的转换格式</span><br></pre></td></tr></table></figure>
+<h3 id="文件系统分析"><a href="#文件系统分析" class="headerlink" title="文件系统分析"></a>文件系统分析</h3><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">badblocks</span> -v /dev/hda<span class="number">1</span> 检查磁盘hda<span class="number">1</span>上的坏磁块</span><br><span class="line"><span class="attribute">fsck</span> /dev/hda<span class="number">1</span> 修复/检查hda<span class="number">1</span>磁盘上linux文件系统的完整性</span><br><span class="line"><span class="attribute">fsck</span>.ext<span class="number">2</span> /dev/hda<span class="number">1</span> 修复/检查hda<span class="number">1</span>磁盘上ext<span class="number">2</span>文件系统的完整性</span><br><span class="line"><span class="attribute">e2fsck</span> /dev/hda<span class="number">1</span> 修复/检查hda<span class="number">1</span>磁盘上ext<span class="number">2</span>文件系统的完整性</span><br><span class="line"><span class="attribute">e2fsck</span> -j /dev/hda<span class="number">1</span> 修复/检查hda<span class="number">1</span>磁盘上ext<span class="number">3</span>文件系统的完整性</span><br><span class="line"><span class="attribute">fsck</span>.ext<span class="number">3</span> /dev/hda<span class="number">1</span> 修复/检查hda<span class="number">1</span>磁盘上ext<span class="number">3</span>文件系统的完整性</span><br><span class="line"><span class="attribute">fsck</span>.vfat /dev/hda<span class="number">1</span> 修复/检查hda<span class="number">1</span>磁盘上fat文件系统的完整性</span><br><span class="line"><span class="attribute">fsck</span>.msdos /dev/hda<span class="number">1</span> 修复/检查hda<span class="number">1</span>磁盘上dos文件系统的完整性</span><br><span class="line"><span class="attribute">dosfsck</span> /dev/hda<span class="number">1</span> 修复/检查hda<span class="number">1</span>磁盘上dos文件系统的完整性</span><br></pre></td></tr></table></figure>
+<h3 id="初始化一个文件系统"><a href="#初始化一个文件系统" class="headerlink" title="初始化一个文件系统"></a>初始化一个文件系统</h3><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">mkfs</span> /dev/hda<span class="number">1</span> 在hda<span class="number">1</span>分区创建一个文件系统</span><br><span class="line"><span class="attribute">mke2fs</span> /dev/hda<span class="number">1</span> 在hda<span class="number">1</span>分区创建一个linux ext<span class="number">2</span>的文件系统</span><br><span class="line"><span class="attribute">mke2fs</span> -j /dev/hda<span class="number">1</span> 在hda<span class="number">1</span>分区创建一个linux ext<span class="number">3</span>(日志型)的文件系统</span><br><span class="line"><span class="attribute">mkfs</span> -t vfat <span class="number">32</span> -F /dev/hda<span class="number">1</span> 创建一个 FAT<span class="number">32</span> 文件系统</span><br><span class="line"><span class="attribute">fdformat</span> -n /dev/fd<span class="number">0</span> 格式化一个软盘</span><br><span class="line"><span class="attribute">mkswap</span> /dev/hda<span class="number">3</span> 创建一个swap文件系统</span><br></pre></td></tr></table></figure>
+<h3 id="SWAP文件系统"><a href="#SWAP文件系统" class="headerlink" title="SWAP文件系统"></a>SWAP文件系统</h3><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkswap <span class="regexp">/dev/</span>hda3 创建一个swap文件系统</span><br><span class="line">swapon <span class="regexp">/dev/</span>hda3 启用一个新的swap文件系统</span><br><span class="line">swapon <span class="regexp">/dev/</span>hda2 <span class="regexp">/dev/</span>hdb3 启用两个swap分区</span><br></pre></td></tr></table></figure>
+<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line">dump -0aj -f /tmp/home0.bak /home 制作一个 <span class="string">&#x27;/home&#x27;</span> 目录的完整备份</span><br><span class="line">dump -1aj -f /tmp/home0.bak /home 制作一个 <span class="string">&#x27;/home&#x27;</span> 目录的交互式备份</span><br><span class="line">restore -<span class="keyword">if</span> /tmp/home0.bak 还原一个交互式备份</span><br><span class="line">rsync -rogpav --<span class="keyword">delete</span> /home /tmp 同步两边的目录</span><br><span class="line">rsync -rogpav -e ssh --<span class="keyword">delete</span> /home ip_address:/tmp 通过SSH通道rsync</span><br><span class="line">rsync -az -e ssh --<span class="keyword">delete</span> ip_addr:<span class="regexp">/home/</span><span class="keyword">public</span> /home/local 通过ssh和压缩将一个远程目录同步到本地目录</span><br><span class="line">rsync -az -e ssh --<span class="keyword">delete</span> /home/local ip_addr:<span class="regexp">/home/</span><span class="keyword">public</span> 通过ssh和压缩将本地目录同步到远程目录</span><br><span class="line">dd bs=1M <span class="keyword">if</span>=<span class="regexp">/dev/</span>hda | gzip | ssh user<span class="meta">@ip_addr</span> <span class="string">&#x27;dd of=hda.gz&#x27;</span> 通过ssh在远程主机上执行一次备份本地磁盘的操作</span><br><span class="line">dd <span class="keyword">if</span>=<span class="regexp">/dev/</span>sda <span class="keyword">of</span>=<span class="regexp">/tmp/</span>file1 备份磁盘内容到一个文件</span><br><span class="line">tar -Puf backup.tar /home/user 执行一次对 <span class="string">&#x27;/home/user&#x27;</span> 目录的交互式备份操作</span><br><span class="line">( cd /tmp/local/ &amp;amp;&amp;amp; tar c . ) | ssh -C user<span class="meta">@ip_addr</span> <span class="string">&#x27;cd /home/share/ &amp;amp;&amp;amp; tar x -p&#x27;</span> 通过ssh在远程目录中复制一个目录内容</span><br><span class="line">( tar c /home ) | ssh -C user<span class="meta">@ip_addr</span> <span class="string">&#x27;cd /home/backup-home &amp;amp;&amp;amp; tar x -p&#x27;</span> 通过ssh在远程目录中复制一个本地目录</span><br><span class="line">tar cf - . | (cd /tmp/backup ; tar xf - ) 本地将一个目录复制到另一个地方，保留原有权限及链接</span><br><span class="line">find /home/user1 -name <span class="string">&#x27;*.txt&#x27;</span> | xargs cp -av --target-directory=<span class="regexp">/home/</span>backup/ --parents 从一个目录查找并复制所有以 <span class="string">&#x27;.txt&#x27;</span> 结尾的文件到另一个目录</span><br><span class="line">find /<span class="keyword">var</span>/log -name <span class="string">&#x27;*.log&#x27;</span> | tar cv --files-<span class="keyword">from</span>=- | bzip2 &amp;gt; log.tar.bz2 查找所有以 <span class="string">&#x27;.log&#x27;</span> 结尾的文件并做成一个bzip包</span><br><span class="line">dd <span class="keyword">if</span>=<span class="regexp">/dev/</span>hda <span class="keyword">of</span>=<span class="regexp">/dev/</span>fd0 bs=<span class="number">512</span> count=<span class="number">1</span> 做一个将 MBR (Master Boot Record)内容复制到软盘的动作</span><br><span class="line">dd <span class="keyword">if</span>=<span class="regexp">/dev/</span>fd0 <span class="keyword">of</span>=<span class="regexp">/dev/</span>hda bs=<span class="number">512</span> count=<span class="number">1</span> 从已经保存到软盘的备份中恢复MBR内容</span><br></pre></td></tr></table></figure>
+<h3 id="光盘"><a href="#光盘" class="headerlink" title="光盘"></a>光盘</h3><figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line">cdrecord -v gracetime=2 dev=<span class="string">/dev/cdrom</span> -eject blank=fast -force 清空一个可复写的光盘内容</span><br><span class="line">mkisofs <span class="string">/dev/cdrom</span> &amp;gt; <span class="keyword">cd</span>.iso 在磁盘上创建一个光盘的iso镜像文件</span><br><span class="line">mkisofs <span class="string">/dev/cdrom</span> | gzip &amp;gt; <span class="keyword">cd</span>_iso.gz 在磁盘上创建一个压缩了的光盘iso镜像文件</span><br><span class="line">mkisofs -J -allow-leading-dots -R -V <span class="string">&quot;Label CD&quot;</span> -iso-level 4 -o <span class="string">./cd.iso</span> data_<span class="keyword">cd</span> 创建一个目录的iso镜像文件</span><br><span class="line">cdrecord -v dev=<span class="string">/dev/cdrom</span> <span class="keyword">cd</span>.iso 刻录一个ISO镜像文件</span><br><span class="line">gzip -dc <span class="keyword">cd</span>_iso.gz | cdrecord dev=<span class="string">/dev/cdrom</span> - 刻录一个压缩了的ISO镜像文件</span><br><span class="line">mount -o loop <span class="keyword">cd</span>.iso <span class="string">/mnt/iso</span> 挂载一个ISO镜像文件</span><br><span class="line">cd-paranoia -B 从一个CD光盘转录音轨到 wav 文件中</span><br><span class="line">cd-paranoia -- <span class="string">&quot;-3&quot;</span> 从一个CD光盘转录音轨到 wav 文件中（参数-3）</span><br><span class="line">cdrecord <span class="params">--scanbus</span> 扫描总线以识别scsi通道</span><br><span class="line">dd <span class="keyword">if</span>=<span class="string">/dev/hdc</span> | md5sum 校验一个设备的md5sum编码，例如一张 CD</span><br></pre></td></tr></table></figure>
+<h3 id="网络-（以太网和WIFI无线）"><a href="#网络-（以太网和WIFI无线）" class="headerlink" title="网络 - （以太网和WIFI无线）"></a>网络 - （以太网和WIFI无线）</h3><figure class="highlight tcl"><table><tr><td class="code"><pre><span class="line">ifconfig eth0 显示一个以太网卡的配置</span><br><span class="line">ifup eth0 启用一个 &#x27;eth0&#x27; 网络设备</span><br><span class="line">ifdown eth0 禁用一个 &#x27;eth0&#x27; 网络设备</span><br><span class="line">ifconfig eth0 <span class="number">192.168</span><span class="number">.1</span><span class="number">.1</span> netmask <span class="number">255.255</span><span class="number">.255</span><span class="number">.0</span> 控制IP地址</span><br><span class="line">ifconfig eth0 promisc 设置 &#x27;eth0&#x27; 成混杂模式以嗅探数据包 (sniffing)</span><br><span class="line">dhclient eth0 以dhcp模式启用 &#x27;eth0&#x27;</span><br><span class="line">route -n show routing table</span><br><span class="line">route add -net <span class="number">0</span>/<span class="number">0</span> gw IP_Gateway configura default gateway</span><br><span class="line">route add -net <span class="number">192.168</span><span class="number">.0</span><span class="number">.0</span> netmask <span class="number">255.255</span><span class="number">.0</span><span class="number">.0</span> gw <span class="number">192.168</span><span class="number">.1</span><span class="number">.1</span> configure static route to reach network &#x27;<span class="number">192.168</span><span class="number">.0</span><span class="number">.0</span>/<span class="number">16</span>&#x27;</span><br><span class="line">route del <span class="number">0</span>/<span class="number">0</span> gw IP_gateway remove static route</span><br><span class="line">echo <span class="string">&quot;1&quot;</span> &amp;gt; /<span class="keyword">proc</span>/sys/net/ipv4/ip_forward<span class="title"> activate</span> ip<span class="title"> routing</span></span><br><span class="line"><span class="title">hostname</span> show<span class="title"> hostname</span> of<span class="title"> system</span></span><br><span class="line"><span class="title">host</span> www.example.com<span class="title"> lookup</span> hostname<span class="title"> to</span> resolve<span class="title"> name</span> to<span class="title"> ip</span> address<span class="title"> and</span> viceversa(1)</span><br><span class="line">nslookup<span class="title"> www.example.com</span> lookup<span class="title"> hostname</span> to<span class="title"> resolve</span> name<span class="title"> to</span> ip<span class="title"> address</span> and<span class="title"> viceversa(2)</span></span><br><span class="line"><span class="title">ip</span> link<span class="title"> show</span> show<span class="title"> link</span> status<span class="title"> of</span> all<span class="title"> interfaces</span></span><br><span class="line"><span class="title">mii-tool</span> eth0<span class="title"> show</span> link<span class="title"> status</span> of &#x27;eth0&#x27;</span><br><span class="line">ethtool<span class="title"> eth0</span> show<span class="title"> statistics</span> of<span class="title"> network</span> card &#x27;eth0&#x27;</span><br><span class="line">netstat -tup<span class="title"> show</span> all<span class="title"> active</span> network<span class="title"> connections</span> and<span class="title"> their</span> PID</span><br><span class="line">netstat -tupl<span class="title"> show</span> all<span class="title"> network</span> services<span class="title"> listening</span> on<span class="title"> the</span> system<span class="title"> and</span> their<span class="title"> PID</span></span><br><span class="line"><span class="title">tcpdump</span> tcp<span class="title"> port</span> 80<span class="title"> show</span> all<span class="title"> HTTP</span> traffic</span><br><span class="line">iwlist<span class="title"> scan</span> show<span class="title"> wireless</span> networks</span><br><span class="line">iwconfig<span class="title"> eth1</span> show<span class="title"> configuration</span> of<span class="title"> a</span> wireless<span class="title"> network</span> card</span><br><span class="line">hostname<span class="title"> show</span> hostname</span><br><span class="line">host<span class="title"> www.example.com</span> lookup<span class="title"> hostname</span> to<span class="title"> resolve</span> name<span class="title"> to</span> ip<span class="title"> address</span> and<span class="title"> viceversa</span></span><br><span class="line"><span class="title">nslookup</span> www.example.com<span class="title"> lookup</span> hostname<span class="title"> to</span> resolve<span class="title"> name</span> to<span class="title"> ip</span> address<span class="title"> and</span> viceversa</span><br><span class="line">whois<span class="title"> www.example.com</span> lookup<span class="title"> on</span> Whois<span class="title"> database</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Macbook Pro 2017安装macOS+Windows+Ubuntu简要教程</title>
+    <url>/2019/03/06/mbp2017_win_mac_ubuntu.html</url>
+    <content><![CDATA[<blockquote>
+<p>各位访客想必已经发现本站<a href="https://www.bugprogrammer.me/">https://www.bugprogrammer.me</a> 已经一个月没有更新了，为了本站长期稳定运行下去，博主最近在做博客改版以及cdn、图床方案的测试，本站不会断更，也感谢大半年来各位访客的支持。言归正传，博主近期购入了MacBook Pro 2017，原因很简单，博主需要retina屏幕。黑苹果笔记本无法使用独显，目前的macOS版本下，核显+4K的配合会出现动画掉帧现象，即使是核显版本的mbp也难以幸免，所以想要retina+独显+macOS，只能购入mbp了。</p>
+</blockquote>
+<blockquote>
+<p>博主发现mbp有一个神奇的地方，安装mac+win+linux超级麻烦，按普通pc方案，最后安装linux会出现问题，表现为安装完linux后，Windows会被破坏，无法进入(不是引导的问题，就是系统挂了！！！)，而macOS正常。博主Google了一下，发现很多教程都是老版本的mbp，区别很大。所以博主放出我自己的解决方案。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
+<li>mbp不同于普通PC，请严格按照博主的方案进行，否则会出现意想不到的问题。</li>
+<li>mbp2018是否适用博主不敢保证，因为2018款的mac新增了一个T2芯片，有报道说T2会阻止Linux启动。</li>
+</ul>
+<h2 id="安装顺序-重中之重"><a href="#安装顺序-重中之重" class="headerlink" title="安装顺序(重中之重)"></a>安装顺序(重中之重)</h2><p><font color=#A52A2A ><strong>macOS Mojave–&gt;Ubuntu 18.04–&gt;Windows 10</strong></font></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>macOS Mojave镜像、Windows 10镜像、Ubuntu18.04镜像、Windows PE、外接键鼠。</p>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><h3 id="安装macOS-Mojave"><a href="#安装macOS-Mojave" class="headerlink" title="安装macOS Mojave"></a>安装macOS Mojave</h3><p>正常安装即可，另外新买的mbp自带macOS系统，版本过老的话直接升级就可以。</p>
+<h3 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h3><ul>
+<li>打开BootCamp(启动转换助理)，点击菜单栏上的操作，下载Windows支持软件，下载完毕后保存到U盘，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/75a0d5124f3e6e152ffb49529f4580d1199f655e.jpg"></li>
+<li>按照BootCamp的流程选择Windows 10镜像，确定Windows分区大小。</li>
+<li>分区完成后会自动重启开始安装Windows 10，请注意此处要按Option建进入macOS，不要进入Windows分区。</li>
+<li>打开macOS自带分区工具，此时我们会看到两个分区，一个macOS分区，一个BootCamp分区。点击macOS所在分区，点击+，新增分区，格式选择MS-DOS(FAT)，做为Ubuntu 18.04安装分区。<font color=#A52A2A ><strong>至此，我们拥有3个分区，分别安装macOS，Windows、Ubuntu。</strong></font></li>
+</ul>
+<h3 id="安装Ubuntu-18-04"><a href="#安装Ubuntu-18-04" class="headerlink" title="安装Ubuntu 18.04"></a>安装Ubuntu 18.04</h3><h4 id="准备工作-1"><a href="#准备工作-1" class="headerlink" title="准备工作"></a>准备工作</h4><ul>
+<li>下载Ubuntu 18.04修改版本(来自网络大神，已经集成mbp2017内置键盘，触摸板，touch bar驱动，安装方便)<br><a href="https://goo.gl/4ddQMu">https://goo.gl/4ddQMu</a></li>
+<li>使用usbwriter将Ubuntu 18.04镜像写入U盘。</li>
+</ul>
+<h4 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h4><ul>
+<li>插入U盘，重启按住Option，选择Ubuntu 18.04安装盘，选择安装(注意：不可以选择试用，安装会出错)。</li>
+<li>分区：找到之前分配的fat32格式分区，点击-，删除分区，这样会得到一部分空闲分区。按照自己习惯将空闲分区进行分配。博主的分配方案是：efi、boot、home、/、swap。</li>
+<li>分区完成后，继续安装。</li>
+</ul>
+<blockquote>
+<p>至此，我们在开机时按住Option键即可自由切换macOS和Ubuntu。</p>
+</blockquote>
+<h4 id="安装Windows"><a href="#安装Windows" class="headerlink" title="安装Windows"></a>安装Windows</h4><blockquote>
+<p>因为我们已经自行创建了Ubuntu分区，所以已经不能使用BootCamp安装Windows 10。</p>
+</blockquote>
+<ul>
+<li><font color=#A52A2A ><strong>在macOS下将之前分配好的BootCamp分区格式化为hfs格式。(重中之重)</strong></font></li>
+<li>进入winpe，连接外接键鼠。</li>
+<li>winpe下打开分区工具，将刚才格式化为hfs格式的分区格式化为ntfs格式，供Windows 10使用。</li>
+<li>打开winntsetup工具，将Windows安装到ntfs格式分区。</li>
+</ul>
+<blockquote>
+<p>安装完成后重启发现无法进入Windows 10，请进行如下操作。</p>
+</blockquote>
+<ul>
+<li>进入Ubuntu 18.04，打开终端，输入如下命令<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sudo update-grub</span></span><br></pre></td></tr></table></figure></li>
+<li>重启进入Ubuntu启动项，会在grub菜单中看到Windows Boot Manager选项，回车选择，完成Windows 10安装。</li>
+<li>进入Windows 10后，安装之前下载的Windows支持软件。</li>
+</ul>
+<blockquote>
+<p>至此，三个系统已经安装完成，并且都可以启动成功。开机按住Option键，看到两个启动项。选择mac启动项进入macOS，选择Windows启动项进入grub界面，grub下有Ubuntu 18.04以及Windows Boot Manager两个选项。什么，切换系统不方便？？往下看！！！</p>
+</blockquote>
+<h3 id="安装refind，实现自动引导"><a href="#安装refind，实现自动引导" class="headerlink" title="安装refind，实现自动引导"></a>安装refind，实现自动引导</h3><ul>
+<li>下载refind并解压<br><a href="https://sourceforge.net/projects/refind/">https://sourceforge.net/projects/refind/</a></li>
+<li>打开文件夹，执行refind-install脚本即可成功安装refind，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/8632cec3cc44f7485e92c8727ba9e3a17a7fb808.jpg"></li>
+<li>进入Windows 10，安装bootice软件。</li>
+<li>使用bootice将refind设置为第一启动项。</li>
+<li>重启即可看到refind引导界面。</li>
+<li>按delete键隐藏不需要的启动项，保留macOS、Windows、Ubuntu即可。</li>
+<li>什么？refind默认界面不好看？emmmm，那就换个主题吧！！Google大把教程！！！</li>
+</ul>
+<blockquote>
+<p>至此，MacBook Pro 2017安装macOS+Windows+Ubuntu成功！！！</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Macintosh</category>
+      </categories>
+      <tags>
+        <tag>Macintosh</tag>
+        <tag>Linux</tag>
+        <tag>MacBook Pro</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>macOS 10.14.6 beta下填充PCI列表的简要教程</title>
+    <url>/2019/05/21/pci-list-for-hackintosh.html</url>
+    <content><![CDATA[<blockquote>
+<p>不知各位爱好者是否发现了一些朋友的黑苹果系统中,关于本机里的pci列表下有详细的设备信息。以前实现这个比较麻烦，需要ssdt。现在已经有简便方案。<a id="more"></a></p>
+</blockquote>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>目前白苹果上并没有显示PCI列表，所以，各位是否实现全靠自愿。</p>
+<h3 id="所需软件"><a href="#所需软件" class="headerlink" title="所需软件"></a>所需软件</h3><ul>
+<li><a href='http://headsoft.com.au/download/mac/Hackintool.zip'>Hackintool</a></li>
+<li>Clover Configurator</li>
+</ul>
+<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
+<li>打开Clover Configurator，依次点击<font color=#A52A2A ><strong><em>Boot.log-&gt;Generate log-&gt;Save boot.log to desktop</em></strong></font>，如图。生成在桌面的文件名称为bootlog.txt。<br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-1.png"></li>
+</ul>
+<h4 id="下面以NVME-SSD-SM961为例进行讲解"><a href="#下面以NVME-SSD-SM961为例进行讲解" class="headerlink" title="下面以NVME SSD SM961为例进行讲解"></a>下面以NVME SSD SM961为例进行讲解</h4><ul>
+<li>打开Hackintool，记住SM961的设备id，如图即为0xA804。<br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-2.png"></li>
+<li>打开之前保存的bootlog.txt文件，搜索A804，我们会发现这一行数据中有一个形如xx:xx.xx的字符串，这个就是pciaddr,记下它，稍后会用到。如图：pciaddr为<font color=#A52A2A ><strong><em>04:00.00</em></strong></font><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-3.png"></li>
+<li>使用Clover Configurator打开config.plist,依次点击Devices-&gt;Arbitrary,按图示填写数据即可显示PCI列表。<font color=#A52A2A ><strong><em>注意：PciAddr一栏填写刚才查询出来的pciaddr，即</em></strong>04:00.00*<strong>,Comment一栏随便填。右侧属性栏中的Key值至少有两个参数**<em>AAPL,slot-name</em></strong>以及*<strong>model**<em>，Value随便填，Value Type选STRING</em></strong>。</font><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-4.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-5.png"></li>
+</ul>
+<h3 id="一个特殊情况-声卡"><a href="#一个特殊情况-声卡" class="headerlink" title="一个特殊情况(声卡)"></a>一个特殊情况(声卡)</h3><p>由于我们在注入声卡属性时会覆盖layout-id，导致声卡无声。所以如果要注入声卡属性，要在clover下做如下设置。</p>
+<ul>
+<li><font color=#A52A2A ><strong><em>Devices-&gt;Audio-&gt;inject-&gt;No</em></strong><font></li>
+<li><font color=#A52A2A ><strong><em>Boot-&gt;alcid=layout-id</em></strong><font><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-6.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-7.png"></li>
+</ul>
+<h3 id="至此，您已经成功显示PCI列表"><a href="#至此，您已经成功显示PCI列表" class="headerlink" title="至此，您已经成功显示PCI列表"></a>至此，您已经成功显示PCI列表</h3>]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>最简单的挂载EFI分区方案</title>
+    <url>/2019/12/03/mountEFI.html</url>
+    <content><![CDATA[<blockquote>
+<p>博主使用OC已经有一段时间，最近发现一个不爽点。OC配置本身不需要各种GUI工具，但是，每次挂载EFI都要打开类似Clover Configurator的工具挂载EFI，比较麻烦，所以博主分享一种点击即挂载并打开EFI分区的方案。<a id="more"></a></p>
+</blockquote>
+<h1 id="获取EFI分区的UUID"><a href="#获取EFI分区的UUID" class="headerlink" title="获取EFI分区的UUID"></a>获取EFI分区的UUID</h1><ul>
+<li>用Clover Configurator看一下负责引导的EFI分区的分区号，比如博主的是<font color=#A52A2A >disk0s1</font>。(详细过程略，相信大家都懂)</li>
+<li>输入以下命令获取UUID。<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sudo</span> diskutil <span class="literal">info</span> disk0s1 | grep <span class="string">&#x27;Partition UUID&#x27;</span></span><br></pre></td></tr></table></figure>
+  <img src= "/images/loading.gif" data-lazy-src="/images/mountEFI.png"></li>
+</ul>
+<h1 id="准备应用程序"><a href="#准备应用程序" class="headerlink" title="准备应用程序"></a>准备应用程序</h1><ul>
+<li><p>打开系统自带的自动操作程序，依次点击应用程序-&gt;选取-&gt;运行shell脚本。<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-3.png"></p>
+</li>
+<li><p>将以下脚本粘贴进去</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">mountEFI=$(<span class="built_in">echo</span> <span class="string">&#x27;你的密码&#x27;</span> | sudo -S diskutil info 你的UUID | grep <span class="string">&#x27;Device Node&#x27;</span>)</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;你的密码&#x27;</span> | sudo -S diskutil mount <span class="string">&#x27;/&#x27;</span><span class="variable">$&#123;mountEFI#*/&#125;</span></span><br><span class="line">open /Volumes/EFI/EFI/OC</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/mountEFI-1.png"></p>
+</li>
+<li><p>保存成app<br><img src= "/images/loading.gif" data-lazy-src="/images/mountEFI-2.png"></p>
+</li>
+</ul>
+<blockquote>
+<p>至此，您已经成功制作EFI挂载工具，以后只要点击就可以直接挂载并打开！</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -2236,6 +2175,67 @@
         <tag>OpenSSL</tag>
         <tag>TLS 1.3</tag>
         <tag>HSTS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mi5开启全面屏手势教程(非原创，转自一个已经被miui论坛删除又幸运的被Chrome缓存下来的帖子)</title>
+    <url>/2018/06/22/mi5-enable-gesture.html</url>
+    <content><![CDATA[<h3 id="MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看"><a href="#MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看" class="headerlink" title="MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看"></a>MI5用户，升级miui10，发现没有全面屏手势的同学可以来看看</h3><a id="more"></a>
+
+<blockquote>
+<p>我把我开启全面屏的过程写了一下，由于在过程中看到其他帖子写的太随便，不够详细，所以来写一个详细一些的，方便mi5用户体验全面屏手势，话说真的很好用啊，那些说不用root用第三方软件实现的手势不管是从美观程度和可用性都没原厂的好啊，刷完自己体会吧。</p>
+</blockquote>
+<h3 id="适用对象"><a href="#适用对象" class="headerlink" title="适用对象"></a>适用对象</h3><ul>
+<li>已经获取root权限的mi5</li>
+<li>已是开发版系统，并且在授权管理开启了root授权</li>
+<li>稳定版用户，自行升级到开发版开启root权限，或者用其他办法获取root授权</li>
+</ul>
+<h3 id="简要流程"><a href="#简要流程" class="headerlink" title="简要流程"></a>简要流程</h3><ul>
+<li>获取完整root权限</li>
+<li>安装rec，挂载system分区</li>
+<li>使用re文件管理器找到/system/build.prop文件，在文件尾部加入qemu.hw.mainkeys=0</li>
+<li>重启手机，即可在设置中找到全面屏选项</li>
+</ul>
+<h3 id="详细流程"><a href="#详细流程" class="headerlink" title="详细流程"></a>详细流程</h3><blockquote>
+<p>默认使用win10系统，已安装mi5的驱动。</p>
+</blockquote>
+<h4 id="获取完整root权限"><a href="#获取完整root权限" class="headerlink" title="获取完整root权限"></a>获取完整root权限</h4><ul>
+<li>手机开启usb调试模式</li>
+<li><a href="https://www.miui.com/forum.php?mod=attachment&aid=MjIzNzU2ODl8YjIwMjgyNGJlNjI1OGQxZTY3OGFhZmNhOTUyOTI2MzR8MTUyOTY1Njg5NA%3D%3D&request=yes&_f=.rar">下载一键破译分区工具</a></li>
+<li>解压下载的文件，运行.bat文件，如图<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0racrzmmlj307003ogli.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0racylveqj30i2081aas.jpg"></li>
+</ul>
+<h4 id="安装rec，挂载system分区"><a href="#安装rec，挂载system分区" class="headerlink" title="安装rec，挂载system分区"></a>安装rec，挂载system分区</h4><ul>
+<li><a href="https://www.miui.com/forum.php?mod=attachment&aid=MjIzNzYwNDd8Yjg4YjdlOWNmYjQ4OWI0NmJmZWFlMTFmMzc4NmMwODJ8MTUyOTY1Njg5NA%3D%3D&request=yes&_f=.apk">下载twrp.apk</a></li>
+<li>手机安装下载的app（此app需要root权限，如果是开发版小米的root权限管理，去设置给他权限，其他root管理软件到对应的管理权限的地方，给它权限）</li>
+<li>打开安装的app</li>
+<li>选择TWRP FLASH</li>
+<li>选择Select Device 找到 Xiaomi Mi 5 – gemini 并选择它</li>
+<li>选最新的.img文件（例如xian在是：twrp-3.2.1-1-gemini.img） </li>
+<li>他会提示是否要下载，点击okay</li>
+<li>下载好了之后点击FLASH TO RECOVERY按钮</li>
+<li>成功的话会提示：Flash completed Successfully!</li>
+<li>失败的话，多半是root权限问题，检查一下是否给了这个软件root权限</li>
+<li>按住音量上键并重启手机，直到手机出现twrp的logo时放开音量上键 进入rec</li>
+<li>点击挂载，选择system分区，返回，重启手机</li>
+</ul>
+<h4 id="使用re管理器修改文件（此软件需要root权限）"><a href="#使用re管理器修改文件（此软件需要root权限）" class="headerlink" title="使用re管理器修改文件（此软件需要root权限）"></a>使用re管理器修改文件（此软件需要root权限）</h4><ul>
+<li>下载一个re管理器，找到/system/build.prop这个文件（是文件不是文件夹）</li>
+<li>以文本方式编辑，在文件最后加上 qemu.hw.mainkeys=0，保存</li>
+<li>以文本方式查看一下它，看是否保存成功</li>
+<li>如果失败多半是root权限或者挂载分区有问题，回到前面的步骤重试</li>
+<li>如果保存成功，只需重启手机即可在设置中找到全面屏选项<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rad71il1j30fy0ppq3m.jpg"></li>
+</ul>
+<h4 id="如果想关掉全面屏，只需将-system-build-prop-文件中的-qemu-hw-mainkeys-0-删去，重启即可"><a href="#如果想关掉全面屏，只需将-system-build-prop-文件中的-qemu-hw-mainkeys-0-删去，重启即可" class="headerlink" title="如果想关掉全面屏，只需将/system/build.prop 文件中的 qemu.hw.mainkeys=0 删去，重启即可"></a>如果想关掉全面屏，只需将/system/build.prop 文件中的 qemu.hw.mainkeys=0 删去，重启即可</h4><blockquote>
+<p>写的尽量详细了，如在过程中有问题，可以回复</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>mi5</tag>
+        <tag>miui</tag>
       </tags>
   </entry>
 </search>
