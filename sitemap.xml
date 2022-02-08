@@ -9,7 +9,7 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/index.html</loc>
+    <loc>https://www.bugprogrammer.me/link/index.html</loc>
     
     <lastmod>2021-07-29</lastmod>
     
@@ -23,7 +23,14 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/link/index.html</loc>
+    <loc>https://www.bugprogrammer.me/tags/index.html</loc>
+    
+    <lastmod>2021-07-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/categories/index.html</loc>
     
     <lastmod>2021-07-29</lastmod>
     
@@ -38,13 +45,6 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/friends/index.html</loc>
-    
-    <lastmod>2021-07-29</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/categories/index.html</loc>
     
     <lastmod>2021-07-29</lastmod>
     
@@ -375,14 +375,14 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/Clover/</loc>
+    <loc>https://www.bugprogrammer.me/tags/VoodooI2C/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/VoodooI2C/</loc>
+    <loc>https://www.bugprogrammer.me/tags/Clover/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -417,13 +417,6 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2018/</loc>
-    <lastmod>2022-02-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.bugprogrammer.me/tags/acrock-z390/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
@@ -432,20 +425,6 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/i9-9900K/</loc>
-    <lastmod>2022-02-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/OpenWrt/</loc>
-    <lastmod>2022-02-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/ipv6/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -466,6 +445,13 @@
   </url>
   
   <url>
+    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2018/</loc>
+    <lastmod>2022-02-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.bugprogrammer.me/tags/RX5700/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
@@ -473,7 +459,14 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/Secure-Boot/</loc>
+    <loc>https://www.bugprogrammer.me/tags/OpenWrt/</loc>
+    <lastmod>2022-02-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/ipv6/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -481,6 +474,20 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/OpenCore/</loc>
+    <lastmod>2022-02-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/BootCamp/</loc>
+    <lastmod>2022-02-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/Secure-Boot/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -495,13 +502,6 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/weg/</loc>
-    <lastmod>2022-02-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/BootCamp/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -536,20 +536,6 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/usb/</loc>
-    <lastmod>2022-02-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/z370/</loc>
-    <lastmod>2022-02-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.bugprogrammer.me/tags/MacBook-Pro/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
@@ -572,6 +558,20 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/Android/</loc>
+    <lastmod>2022-02-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/usb/</loc>
+    <lastmod>2022-02-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/z370/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -620,20 +620,6 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/Android-Q/</loc>
-    <lastmod>2022-02-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/OnePlus-7-Pro/</loc>
-    <lastmod>2022-02-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.bugprogrammer.me/tags/cmd/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
@@ -649,6 +635,20 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/Windows10/</loc>
+    <lastmod>2022-02-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/Android-Q/</loc>
+    <lastmod>2022-02-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/OnePlus-7-Pro/</loc>
     <lastmod>2022-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
