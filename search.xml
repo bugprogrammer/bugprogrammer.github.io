@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>关于macOS Big Sur Hackintosh简要说明</title>
+    <url>/2020/07/09/about-BigSur.html</url>
+    <content><![CDATA[<blockquote>
+<p>博主很忙，昨晚才详细测试macOS Big Sur Hackintosh相关情况(全新直接安装)，本文会一直更新到正式版本发布。<a id="more"></a></p>
+</blockquote>
+<h1 id="OpenCore配置"><a href="#OpenCore配置" class="headerlink" title="OpenCore配置"></a>OpenCore配置</h1><blockquote>
+<p>在这里，博主只讲解和Catalina不同的地方</p>
+</blockquote>
+<ul>
+<li>OpenCore以及Lilu及其插件更新到最新版本(源码编译)，请自行编译(每个人需要的kext不同，博主提供无意义)。可以使用以下工具编译<br><a href="https://github.com/bugprogrammer/HackintoshBuild/releases/tag/2.1">https://github.com/bugprogrammer/HackintoshBuild/releases/tag/2.1</a></li>
+<li>boot-args加入vsmcgen=1参数<br><img src= "/images/loading.gif" data-lazy-src="/images/bigsur-1.png"></li>
+<li>csr-active-config设置为E70B0000<br><img src= "/images/loading.gif" data-lazy-src="/images/bigsur-2.png"></li>
+<li>booter-fileset-basesystem以及booter-fileset-kernel相关项目全部删除</li>
+<li>禁用核显或者id设置0x12345678</li>
+</ul>
+<blockquote>
+<p>至此,您已经可以愉快的安装Big Sur，但是安装完成后Recovery无法进入，博主暂未解决。。。</p>
+</blockquote>
+<h1 id="删除快照，重获权限"><a href="#删除快照，重获权限" class="headerlink" title="删除快照，重获权限"></a>删除快照，重获权限</h1><p>博主按照pcbeta网友licheng的思路编写了一个脚本，可以很简单的删除快照，请在USB安装环境中的终端执行。中途要输入分区名(如Macintosh HD)和挂载点(如disk0s2)<br><a href="https://downloads.bugprogrammer.me/shell/deletesnapshot.sh">deletesnapshot.sh</a><br><img src= "/images/loading.gif" data-lazy-src="/images/bigsur-3.png"></p>
+<h1 id="未完待续。。。"><a href="#未完待续。。。" class="headerlink" title="未完待续。。。"></a>未完待续。。。</h1><h1 id="2020-07-09更新"><a href="#2020-07-09更新" class="headerlink" title="2020-07-09更新"></a>2020-07-09更新</h1><h2 id="Recovery进入"><a href="#Recovery进入" class="headerlink" title="Recovery进入"></a>Recovery进入</h2><ul>
+<li>关闭核显或设置id为0x12345678</li>
+<li>按照如图设置即可<br><img src= "/images/loading.gif" data-lazy-src="/images/bigsur-4.png"></li>
+</ul>
+<h1 id="2020-07-18更新"><a href="#2020-07-18更新" class="headerlink" title="2020-07-18更新"></a>2020-07-18更新</h1><h2 id="所有网卡罢工修复-免驱94360CD和RTL8125"><a href="#所有网卡罢工修复-免驱94360CD和RTL8125" class="headerlink" title="所有网卡罢工修复(免驱94360CD和RTL8125)"></a>所有网卡罢工修复(免驱94360CD和RTL8125)</h2><ul>
+<li>按照如图设置即可<br><img src= "/images/loading.gif" data-lazy-src="/images/bigsur-5.png"></li>
+</ul>
+<h1 id="2020-08-10更新"><a href="#2020-08-10更新" class="headerlink" title="2020-08-10更新"></a>2020-08-10更新</h1><h2 id="关闭快照在线执行方案"><a href="#关闭快照在线执行方案" class="headerlink" title="关闭快照在线执行方案"></a>关闭快照在线执行方案</h2><ul>
+<li>recovery中连接网络</li>
+<li>执行如下命令<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://downloads.bugprogrammer.me/shell/deletesnapshot.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>macOS下编译Clover教程</title>
     <url>/2018/06/29/Build_Clover.html</url>
     <content><![CDATA[<blockquote>
@@ -93,39 +135,14 @@
       </tags>
   </entry>
   <entry>
-    <title>关于macOS Big Sur Hackintosh简要说明</title>
-    <url>/2020/07/09/about-BigSur.html</url>
+    <title>博主的Hackintosh全家桶定时编译上线GitHub</title>
+    <url>/2020/09/07/HackintoshPlugins.html</url>
     <content><![CDATA[<blockquote>
-<p>博主很忙，昨晚才详细测试macOS Big Sur Hackintosh相关情况(全新直接安装)，本文会一直更新到正式版本发布。<a id="more"></a></p>
+<p>鉴于很多小伙伴编译困难，博主用azure pipelines建立了自动编译流水线，包括OC以及常用kexts，每8小时更新一次，欢迎食用</p>
 </blockquote>
-<h1 id="OpenCore配置"><a href="#OpenCore配置" class="headerlink" title="OpenCore配置"></a>OpenCore配置</h1><blockquote>
-<p>在这里，博主只讲解和Catalina不同的地方</p>
-</blockquote>
-<ul>
-<li>OpenCore以及Lilu及其插件更新到最新版本(源码编译)，请自行编译(每个人需要的kext不同，博主提供无意义)。可以使用以下工具编译<br><a href="https://github.com/bugprogrammer/HackintoshBuild/releases/tag/2.1">https://github.com/bugprogrammer/HackintoshBuild/releases/tag/2.1</a></li>
-<li>boot-args加入vsmcgen=1参数<br><img src= "/images/loading.gif" data-lazy-src="/images/bigsur-1.png"></li>
-<li>csr-active-config设置为E70B0000<br><img src= "/images/loading.gif" data-lazy-src="/images/bigsur-2.png"></li>
-<li>booter-fileset-basesystem以及booter-fileset-kernel相关项目全部删除</li>
-<li>禁用核显或者id设置0x12345678</li>
-</ul>
-<blockquote>
-<p>至此,您已经可以愉快的安装Big Sur，但是安装完成后Recovery无法进入，博主暂未解决。。。</p>
-</blockquote>
-<h1 id="删除快照，重获权限"><a href="#删除快照，重获权限" class="headerlink" title="删除快照，重获权限"></a>删除快照，重获权限</h1><p>博主按照pcbeta网友licheng的思路编写了一个脚本，可以很简单的删除快照，请在USB安装环境中的终端执行。中途要输入分区名(如Macintosh HD)和挂载点(如disk0s2)<br><a href="https://downloads.bugprogrammer.me/shell/deletesnapshot.sh">deletesnapshot.sh</a><br><img src= "/images/loading.gif" data-lazy-src="/images/bigsur-3.png"></p>
-<h1 id="未完待续。。。"><a href="#未完待续。。。" class="headerlink" title="未完待续。。。"></a>未完待续。。。</h1><h1 id="2020-07-09更新"><a href="#2020-07-09更新" class="headerlink" title="2020-07-09更新"></a>2020-07-09更新</h1><h2 id="Recovery进入"><a href="#Recovery进入" class="headerlink" title="Recovery进入"></a>Recovery进入</h2><ul>
-<li>关闭核显或设置id为0x12345678</li>
-<li>按照如图设置即可<br><img src= "/images/loading.gif" data-lazy-src="/images/bigsur-4.png"></li>
-</ul>
-<h1 id="2020-07-18更新"><a href="#2020-07-18更新" class="headerlink" title="2020-07-18更新"></a>2020-07-18更新</h1><h2 id="所有网卡罢工修复-免驱94360CD和RTL8125"><a href="#所有网卡罢工修复-免驱94360CD和RTL8125" class="headerlink" title="所有网卡罢工修复(免驱94360CD和RTL8125)"></a>所有网卡罢工修复(免驱94360CD和RTL8125)</h2><ul>
-<li>按照如图设置即可<br><img src= "/images/loading.gif" data-lazy-src="/images/bigsur-5.png"></li>
-</ul>
-<h1 id="2020-08-10更新"><a href="#2020-08-10更新" class="headerlink" title="2020-08-10更新"></a>2020-08-10更新</h1><h2 id="关闭快照在线执行方案"><a href="#关闭快照在线执行方案" class="headerlink" title="关闭快照在线执行方案"></a>关闭快照在线执行方案</h2><ul>
-<li>recovery中连接网络</li>
-<li>执行如下命令<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://downloads.bugprogrammer.me/shell/deletesnapshot.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
+<h3 id="仓库链接"><a href="#仓库链接" class="headerlink" title="仓库链接"></a>仓库链接</h3><p><a href="https://github.com/bugprogrammer/HackinPlugins">https://github.com/bugprogrammer/HackinPlugins</a></p>
+<h3 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h3><p>直接下载或者使用HackintoshBuild中的每日构建功能</p>
+<h3 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-3.png"></p>
 ]]></content>
       <categories>
         <category>Hackintosh</category>
@@ -146,23 +163,6 @@
 <h2 id="脚本使用"><a href="#脚本使用" class="headerlink" title="脚本使用"></a>脚本使用</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/Hackintosh_build.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
 <h1 id="使用截图"><a href="#使用截图" class="headerlink" title="使用截图"></a>使用截图</h1><img src= "/images/loading.gif" data-lazy-src="/images/build-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/build-2.png"></li>
 </ul>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博主的Hackintosh全家桶定时编译上线GitHub</title>
-    <url>/2020/09/07/HackintoshPlugins.html</url>
-    <content><![CDATA[<blockquote>
-<p>鉴于很多小伙伴编译困难，博主用azure pipelines建立了自动编译流水线，包括OC以及常用kexts，每8小时更新一次，欢迎食用</p>
-</blockquote>
-<h3 id="仓库链接"><a href="#仓库链接" class="headerlink" title="仓库链接"></a>仓库链接</h3><p><a href="https://github.com/bugprogrammer/HackinPlugins">https://github.com/bugprogrammer/HackinPlugins</a></p>
-<h3 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h3><p>直接下载或者使用HackintoshBuild中的每日构建功能</p>
-<h3 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-3.png"></p>
 ]]></content>
       <categories>
         <category>Hackintosh</category>
@@ -564,57 +564,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ThinkPad S1 2018 Hackintosh记录+教程+完整EFI分享</title>
-    <url>/2018/09/01/ThinkPad_Hackintosh_2018.html</url>
-    <content><![CDATA[<blockquote>
-<p>朋友购买了ThinkPad S1 2018版本，配置为i5-8250U+uhd620+8g ram+256g 联想定制ssd(NVME)+1080P屏幕。安装黑苹果大体顺利，现将大概过程分享，供同机型的朋友借鉴。<a id="more"></a></p>
-</blockquote>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li>因ThinkPad S1 2018使用的是intel无线网卡，大家都知道intel无线网卡在黑苹果下目前无解，所以替换了Bcm94352z。虽然Bcm94360是免驱的，但是博主不建议笔记本用户选用，因为Bcm94360和普通的ngff无线网卡相比宽了一块，所以笔记本有概率无法安装。</li>
-<li>完美程度：显卡+声卡+双网卡+蓝牙完美驱动，USB正常，睡眠唤醒正常，显示器内建正常，HDMI外接屏幕正常，变频7档，小太阳正常，电池正常(感谢黑果小兵和宪武以及其他大牛的帮助)。触摸屏以及电容笔可用，但只能单点触摸。触摸板和小红点可用，但是不支持手势。</li>
-<li>因为电脑是朋友的，所以截图不方便，因此本教程尽量多使用命令行方式，各位可以直接复制粘贴。</li>
-<li>本教程需要你有一个macOS环境，可以是虚拟机。虚拟机安装macOS百度教程很多，请自学。</li>
-<li>安装前要在Windows下准备好安装macOS所需分区。</li>
-</ul>
-<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><h3 id="制作安装盘"><a href="#制作安装盘" class="headerlink" title="制作安装盘"></a>制作安装盘</h3><ul>
-<li>下载macOS High Sierra 10.13.6镜像，博主建议在App Store下载，下载成功后会保存在Application下。</li>
-<li>格式化U盘为Mac OS扩展日志式，U盘名称设置为mac，格式化后会生成两个分区，第一个是EFI分区，用来存放Clover引导，第二个用于写入镜像，格式化U盘如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/7eb9ec5bdd42a032dc9707bd8255427e82618323.jpg"></li>
-<li>写入镜像:终端输入如下命令并输入密码即可。<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/Applications/</span>Install\ macOS\ High\ Sierra.app<span class="regexp">/Contents/</span>Resources<span class="regexp">/createinstallmedia --volume /</span>Volumes<span class="regexp">/mac --applicationpath /</span>Applications/Install\ macOS\ High\ Sierra.app</span><br></pre></td></tr></table></figure>
-<h3 id="获取博主分享的Clover文件-保存在桌面"><a href="#获取博主分享的Clover文件-保存在桌面" class="headerlink" title="获取博主分享的Clover文件,保存在桌面"></a>获取博主分享的Clover文件,保存在桌面</h3></li>
-<li>输入如下命令即可在桌面保存hackintosh文件夹，内含Clover文件夹<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~<span class="string">/Desktop</span> &amp;&amp; git clone https:<span class="string">//github.com/bugprogrammer/hackintosh.git</span> &amp;&amp; <span class="keyword">cd</span> hackintosh &amp;&amp; git checkout ThinkPad-S1-2018 </span><br></pre></td></tr></table></figure>
-<img src= "/images/loading.gif" data-lazy-src="/images/13d9520b827daa228ded32453ae6b69163965369.jpg"></li>
-</ul>
-<h3 id="挂载U盘EFI分区，放入Clover引导"><a href="#挂载U盘EFI分区，放入Clover引导" class="headerlink" title="挂载U盘EFI分区，放入Clover引导"></a>挂载U盘EFI分区，放入Clover引导</h3><p>使用Clover Configurator挂载EFI分区，将博主分享的EFI拷贝进去。<br>   <img src= "/images/loading.gif" data-lazy-src="/images/360ffd8a61b894b90505d9f89e798ab259461fd1.jpg"><br>   <img src= "/images/loading.gif" data-lazy-src="/images/f191d798eef6ca014e5f4f3d4df6e817c5dad4ae.jpg"></p>
-<h3 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h3><ul>
-<li>U盘启动，进入安装盘</li>
-<li>选择语言为简体中文，磁盘工具下抹盘为APFS</li>
-<li>点击安装macOS，选择刚才准备好的分区，安装系统</li>
-<li>安装系统有两个阶段，中途会重启，属于正常现象</li>
-</ul>
-<h3 id="系统完善"><a href="#系统完善" class="headerlink" title="系统完善"></a>系统完善</h3><blockquote>
-<p>因为有些操作是在系统内完成的，所以只有一个efi不可能安装完成就完美，所以进入系统后要完善系统。</p>
-</blockquote>
-<h4 id="蓝牙"><a href="#蓝牙" class="headerlink" title="蓝牙"></a>蓝牙</h4><p>挂载EFI分区，终端下输入如下命令重启即可</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/BrcmFirmwareData.kext /</span>Library/Extensions</span><br><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/BrcmPatchRAM2.kext /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure>
-<h4 id="电池"><a href="#电池" class="headerlink" title="电池"></a>电池</h4><p>挂载EFI分区，终端下输入如下命令重启即可</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/ACPIBatteryManager.kext  /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure>
-<h4 id="小太阳"><a href="#小太阳" class="headerlink" title="小太阳"></a>小太阳</h4><ul>
-<li>挂载EFI分区，终端下输入如下命令重启<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/AppleBacklightInjector.kext  /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure></li>
-<li>设置快捷键，将亮度调节快捷键修改成笔记本键盘相应键位，ThinkPad S1 2017为F5亮度增，F6亮度减。(需要外接键盘才能设置，设置完成后可以拔掉外接键盘)<br>  <img src= "/images/loading.gif" data-lazy-src="/images/a7883fe77213f7236c7b3677e631aadf5737a2ee.jpg"></li>
-</ul>
-<h4 id="显示器内建以及开启hidpi"><a href="#显示器内建以及开启hidpi" class="headerlink" title="显示器内建以及开启hidpi"></a>显示器内建以及开启hidpi</h4><p>终端输入如下命令执行一建Hidpi脚本并按下图选择即可(感谢xzhih大牛提供脚本)，重启之后，你会发现Hidpi和内建显示器成功完成。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/master/hidpi.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<p>  <img src= "/images/loading.gif" data-lazy-src="/images/ee9bda948796e3d12b9ade6e3e82eab9a089a256.jpg"><br>  <img src= "/images/loading.gif" data-lazy-src="/images/d14a98efc2249b2ec0ddd1ad0215f3b8058d31e2.jpg"></p>
-<h2 id="至此，ThinkPad-S1-2018-黑苹果95完美"><a href="#至此，ThinkPad-S1-2018-黑苹果95完美" class="headerlink" title="至此，ThinkPad S1 2018 黑苹果95完美"></a>至此，ThinkPad S1 2018 黑苹果95完美</h2>]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>macOS</tag>
-        <tag>ThinkPad S1 2018</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ThinkPad S1 2017 Hackintosh记录+教程+完整EFI分享</title>
     <url>/2018/07/28/ThinkPad_Hackintosh.html</url>
     <content><![CDATA[<blockquote>
@@ -663,6 +612,57 @@
       <tags>
         <tag>macOS</tag>
         <tag>ThinkPad S1 2017</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ThinkPad S1 2018 Hackintosh记录+教程+完整EFI分享</title>
+    <url>/2018/09/01/ThinkPad_Hackintosh_2018.html</url>
+    <content><![CDATA[<blockquote>
+<p>朋友购买了ThinkPad S1 2018版本，配置为i5-8250U+uhd620+8g ram+256g 联想定制ssd(NVME)+1080P屏幕。安装黑苹果大体顺利，现将大概过程分享，供同机型的朋友借鉴。<a id="more"></a></p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li>因ThinkPad S1 2018使用的是intel无线网卡，大家都知道intel无线网卡在黑苹果下目前无解，所以替换了Bcm94352z。虽然Bcm94360是免驱的，但是博主不建议笔记本用户选用，因为Bcm94360和普通的ngff无线网卡相比宽了一块，所以笔记本有概率无法安装。</li>
+<li>完美程度：显卡+声卡+双网卡+蓝牙完美驱动，USB正常，睡眠唤醒正常，显示器内建正常，HDMI外接屏幕正常，变频7档，小太阳正常，电池正常(感谢黑果小兵和宪武以及其他大牛的帮助)。触摸屏以及电容笔可用，但只能单点触摸。触摸板和小红点可用，但是不支持手势。</li>
+<li>因为电脑是朋友的，所以截图不方便，因此本教程尽量多使用命令行方式，各位可以直接复制粘贴。</li>
+<li>本教程需要你有一个macOS环境，可以是虚拟机。虚拟机安装macOS百度教程很多，请自学。</li>
+<li>安装前要在Windows下准备好安装macOS所需分区。</li>
+</ul>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><h3 id="制作安装盘"><a href="#制作安装盘" class="headerlink" title="制作安装盘"></a>制作安装盘</h3><ul>
+<li>下载macOS High Sierra 10.13.6镜像，博主建议在App Store下载，下载成功后会保存在Application下。</li>
+<li>格式化U盘为Mac OS扩展日志式，U盘名称设置为mac，格式化后会生成两个分区，第一个是EFI分区，用来存放Clover引导，第二个用于写入镜像，格式化U盘如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/7eb9ec5bdd42a032dc9707bd8255427e82618323.jpg"></li>
+<li>写入镜像:终端输入如下命令并输入密码即可。<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/Applications/</span>Install\ macOS\ High\ Sierra.app<span class="regexp">/Contents/</span>Resources<span class="regexp">/createinstallmedia --volume /</span>Volumes<span class="regexp">/mac --applicationpath /</span>Applications/Install\ macOS\ High\ Sierra.app</span><br></pre></td></tr></table></figure>
+<h3 id="获取博主分享的Clover文件-保存在桌面"><a href="#获取博主分享的Clover文件-保存在桌面" class="headerlink" title="获取博主分享的Clover文件,保存在桌面"></a>获取博主分享的Clover文件,保存在桌面</h3></li>
+<li>输入如下命令即可在桌面保存hackintosh文件夹，内含Clover文件夹<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~<span class="string">/Desktop</span> &amp;&amp; git clone https:<span class="string">//github.com/bugprogrammer/hackintosh.git</span> &amp;&amp; <span class="keyword">cd</span> hackintosh &amp;&amp; git checkout ThinkPad-S1-2018 </span><br></pre></td></tr></table></figure>
+<img src= "/images/loading.gif" data-lazy-src="/images/13d9520b827daa228ded32453ae6b69163965369.jpg"></li>
+</ul>
+<h3 id="挂载U盘EFI分区，放入Clover引导"><a href="#挂载U盘EFI分区，放入Clover引导" class="headerlink" title="挂载U盘EFI分区，放入Clover引导"></a>挂载U盘EFI分区，放入Clover引导</h3><p>使用Clover Configurator挂载EFI分区，将博主分享的EFI拷贝进去。<br>   <img src= "/images/loading.gif" data-lazy-src="/images/360ffd8a61b894b90505d9f89e798ab259461fd1.jpg"><br>   <img src= "/images/loading.gif" data-lazy-src="/images/f191d798eef6ca014e5f4f3d4df6e817c5dad4ae.jpg"></p>
+<h3 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h3><ul>
+<li>U盘启动，进入安装盘</li>
+<li>选择语言为简体中文，磁盘工具下抹盘为APFS</li>
+<li>点击安装macOS，选择刚才准备好的分区，安装系统</li>
+<li>安装系统有两个阶段，中途会重启，属于正常现象</li>
+</ul>
+<h3 id="系统完善"><a href="#系统完善" class="headerlink" title="系统完善"></a>系统完善</h3><blockquote>
+<p>因为有些操作是在系统内完成的，所以只有一个efi不可能安装完成就完美，所以进入系统后要完善系统。</p>
+</blockquote>
+<h4 id="蓝牙"><a href="#蓝牙" class="headerlink" title="蓝牙"></a>蓝牙</h4><p>挂载EFI分区，终端下输入如下命令重启即可</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/BrcmFirmwareData.kext /</span>Library/Extensions</span><br><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/BrcmPatchRAM2.kext /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure>
+<h4 id="电池"><a href="#电池" class="headerlink" title="电池"></a>电池</h4><p>挂载EFI分区，终端下输入如下命令重启即可</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/ACPIBatteryManager.kext  /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure>
+<h4 id="小太阳"><a href="#小太阳" class="headerlink" title="小太阳"></a>小太阳</h4><ul>
+<li>挂载EFI分区，终端下输入如下命令重启<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/AppleBacklightInjector.kext  /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure></li>
+<li>设置快捷键，将亮度调节快捷键修改成笔记本键盘相应键位，ThinkPad S1 2017为F5亮度增，F6亮度减。(需要外接键盘才能设置，设置完成后可以拔掉外接键盘)<br>  <img src= "/images/loading.gif" data-lazy-src="/images/a7883fe77213f7236c7b3677e631aadf5737a2ee.jpg"></li>
+</ul>
+<h4 id="显示器内建以及开启hidpi"><a href="#显示器内建以及开启hidpi" class="headerlink" title="显示器内建以及开启hidpi"></a>显示器内建以及开启hidpi</h4><p>终端输入如下命令执行一建Hidpi脚本并按下图选择即可(感谢xzhih大牛提供脚本)，重启之后，你会发现Hidpi和内建显示器成功完成。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/master/hidpi.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<p>  <img src= "/images/loading.gif" data-lazy-src="/images/ee9bda948796e3d12b9ade6e3e82eab9a089a256.jpg"><br>  <img src= "/images/loading.gif" data-lazy-src="/images/d14a98efc2249b2ec0ddd1ad0215f3b8058d31e2.jpg"></p>
+<h2 id="至此，ThinkPad-S1-2018-黑苹果95完美"><a href="#至此，ThinkPad-S1-2018-黑苹果95完美" class="headerlink" title="至此，ThinkPad S1 2018 黑苹果95完美"></a>至此，ThinkPad S1 2018 黑苹果95完美</h2>]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>macOS</tag>
+        <tag>ThinkPad S1 2018</tag>
       </tags>
   </entry>
   <entry>
@@ -754,40 +754,6 @@
       </tags>
   </entry>
   <entry>
-    <title>关于DRM视频播放以及sidecar和DRM共存的解决方案</title>
-    <url>/2019/12/11/about-DRM.html</url>
-    <content><![CDATA[<blockquote>
-<p>macOS Catalina 10.15发布后，不少小伙伴发现DRM视频播放出现bug。表现为Apple TV+无法播放，Netflix无法用Safari浏览器播放(macOS下只有Safari可以播放Netflix 1080P)。博主研究测试，得以<font color=#A52A2A >部分</font>解决。现发布播放DRM视频以及sidecar和DRM共存的解决方案。<a id="more"></a></p>
-</blockquote>
-<h1 id="目前支持Hackintosh-DRM的独显-核显DRM不可用"><a href="#目前支持Hackintosh-DRM的独显-核显DRM不可用" class="headerlink" title="目前支持Hackintosh DRM的独显(核显DRM不可用)"></a>目前支持Hackintosh DRM的独显(核显DRM不可用)</h1><p>Vega 56、Vega 64、VII、RX 5700、RX 5700 XT。可以使用完整DRM(Apple TV+/Safari Netflix/Amazon Prime)。RX5xx可以使用Apple TV+，Safari Netflix以及Amazon Prime不可用。<font color=#A52A2A >本文前提是使用以上显卡的任意一款</font></p>
-<h1 id="播放DRM视频的解决方案"><a href="#播放DRM视频的解决方案" class="headerlink" title="播放DRM视频的解决方案"></a>播放DRM视频的解决方案</h1><h2 id="无核显用户"><a href="#无核显用户" class="headerlink" title="无核显用户"></a>无核显用户</h2><p>无核显用户只需要把smbios设置为iMac Pro 1,1即可。</p>
-<h2 id="有核显用户"><a href="#有核显用户" class="headerlink" title="有核显用户"></a>有核显用户</h2><ul>
-<li>Lilu使用v1.4.1版本(<a href="https://github.com/acidanthera/Lilu)%EF%BC%8C">https://github.com/acidanthera/Lilu)，</a> 目前需要手动编译。</li>
-<li>Whatevergreen使用v1.3.6版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)，目前需要手动编译。</li>
-<li>boot-args加入shikigva=80。</li>
-<li>重启。</li>
-</ul>
-<h1 id="sidecar和DRM共存的解决方案"><a href="#sidecar和DRM共存的解决方案" class="headerlink" title="sidecar和DRM共存的解决方案"></a>sidecar和DRM共存的解决方案</h1><blockquote>
-<p>前提：intel酷睿 6、7、8、9代带有核显的CPU+目前支持Hackintosh DRM的独显(上文有写)。本文以<font color=#A52A2A >9900K+5700XT</font>为例。</p>
-</blockquote>
-<ul>
-<li>BIOS开启核显并设置DVMT为128M，主显卡为独显。</li>
-<li>SMBIOS设置为iMac 19,1。</li>
-<li>注入如下缓冲帧信息。<br>  <img src= "/images/loading.gif" data-lazy-src="/images/DRM-1.png"></li>
-<li>Lilu使用v1.4.1版本(<a href="https://github.com/acidanthera/Lilu)%EF%BC%8C%E7%9B%AE%E5%89%8D%E9%9C%80%E8%A6%81%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91%E3%80%82">https://github.com/acidanthera/Lilu)，目前需要手动编译。</a></li>
-<li>Whatevergreen使用v1.3.6版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)，目前需要手动编译。</li>
-<li>boot-args加入shikigva=80。</li>
-<li>重启。</li>
-</ul>
-<h1 id="至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。"><a href="#至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。" class="headerlink" title="至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。"></a><font color=#A52A2A >至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。</font></h1>]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于macOS 10.14.4 18E2034镜像的说明</title>
     <url>/2019/03/27/about-macos-10.14.4-18E2034.html</url>
     <content><![CDATA[<blockquote>
@@ -815,8 +781,8 @@
         <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>macOS</tag>
         <tag>Hackintosh</tag>
+        <tag>macOS</tag>
       </tags>
   </entry>
   <entry>
@@ -859,6 +825,66 @@
       <tags>
         <tag>OpenWrt</tag>
         <tag>ipv6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于DRM视频播放以及sidecar和DRM共存的解决方案</title>
+    <url>/2019/12/11/about-DRM.html</url>
+    <content><![CDATA[<blockquote>
+<p>macOS Catalina 10.15发布后，不少小伙伴发现DRM视频播放出现bug。表现为Apple TV+无法播放，Netflix无法用Safari浏览器播放(macOS下只有Safari可以播放Netflix 1080P)。博主研究测试，得以<font color=#A52A2A >部分</font>解决。现发布播放DRM视频以及sidecar和DRM共存的解决方案。<a id="more"></a></p>
+</blockquote>
+<h1 id="目前支持Hackintosh-DRM的独显-核显DRM不可用"><a href="#目前支持Hackintosh-DRM的独显-核显DRM不可用" class="headerlink" title="目前支持Hackintosh DRM的独显(核显DRM不可用)"></a>目前支持Hackintosh DRM的独显(核显DRM不可用)</h1><p>Vega 56、Vega 64、VII、RX 5700、RX 5700 XT。可以使用完整DRM(Apple TV+/Safari Netflix/Amazon Prime)。RX5xx可以使用Apple TV+，Safari Netflix以及Amazon Prime不可用。<font color=#A52A2A >本文前提是使用以上显卡的任意一款</font></p>
+<h1 id="播放DRM视频的解决方案"><a href="#播放DRM视频的解决方案" class="headerlink" title="播放DRM视频的解决方案"></a>播放DRM视频的解决方案</h1><h2 id="无核显用户"><a href="#无核显用户" class="headerlink" title="无核显用户"></a>无核显用户</h2><p>无核显用户只需要把smbios设置为iMac Pro 1,1即可。</p>
+<h2 id="有核显用户"><a href="#有核显用户" class="headerlink" title="有核显用户"></a>有核显用户</h2><ul>
+<li>Lilu使用v1.4.1版本(<a href="https://github.com/acidanthera/Lilu)%EF%BC%8C">https://github.com/acidanthera/Lilu)，</a> 目前需要手动编译。</li>
+<li>Whatevergreen使用v1.3.6版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)，目前需要手动编译。</li>
+<li>boot-args加入shikigva=80。</li>
+<li>重启。</li>
+</ul>
+<h1 id="sidecar和DRM共存的解决方案"><a href="#sidecar和DRM共存的解决方案" class="headerlink" title="sidecar和DRM共存的解决方案"></a>sidecar和DRM共存的解决方案</h1><blockquote>
+<p>前提：intel酷睿 6、7、8、9代带有核显的CPU+目前支持Hackintosh DRM的独显(上文有写)。本文以<font color=#A52A2A >9900K+5700XT</font>为例。</p>
+</blockquote>
+<ul>
+<li>BIOS开启核显并设置DVMT为128M，主显卡为独显。</li>
+<li>SMBIOS设置为iMac 19,1。</li>
+<li>注入如下缓冲帧信息。<br>  <img src= "/images/loading.gif" data-lazy-src="/images/DRM-1.png"></li>
+<li>Lilu使用v1.4.1版本(<a href="https://github.com/acidanthera/Lilu)%EF%BC%8C%E7%9B%AE%E5%89%8D%E9%9C%80%E8%A6%81%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91%E3%80%82">https://github.com/acidanthera/Lilu)，目前需要手动编译。</a></li>
+<li>Whatevergreen使用v1.3.6版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)，目前需要手动编译。</li>
+<li>boot-args加入shikigva=80。</li>
+<li>重启。</li>
+</ul>
+<h1 id="至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。"><a href="#至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。" class="headerlink" title="至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。"></a><font color=#A52A2A >至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。</font></h1>]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>macOS Catalina 10.15关于sidecar功能的说明</title>
+    <url>/2019/06/13/about-sidecar.html</url>
+    <content><![CDATA[<blockquote>
+<p>macOS 10.15的一个重磅功能是sidecar。就是用iPad作为mac的扩展屏，博主测试了一下，挺好用的。但是在Hackintosh下，并不是随意就能启用sidecar。以下附上博主的启用sidecar教程。<a id="more"></a></p>
+</blockquote>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>目前无核显PC尚未遇到成功案例，可能是黑苹果的bug，也可能是macOS 10.15 beta1的bug。</p>
+<h2 id="博主PC配置"><a href="#博主PC配置" class="headerlink" title="博主PC配置"></a>博主PC配置</h2><p>Z390+9900K+Vega56</p>
+<h2 id="启用sidecar教程"><a href="#启用sidecar教程" class="headerlink" title="启用sidecar教程"></a>启用sidecar教程</h2><ul>
+<li>BIOS中设置主显卡为独显(PCIE)并且设置DVMT为128M，以便独显、核显并存。</li>
+<li>修改SMBIOS为iMac 19,1。<br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-1.png"></li>
+<li>勾选Inject intel。</li>
+<li>设置FakeID-&gt;IntelGFX为0x3e988086，ig-platform-id为0x3e980003(核显作为加速卡)。也可以设置FakeID-&gt;IntelGFX为0x3e928086，ig-platform-id为0x3e920003，博主测试均通过。<br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-3.png"></li>
+<li>重启电脑测试sidecar。</li>
+</ul>
+<h2 id="至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。"><a href="#至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。" class="headerlink" title="至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。"></a>至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-4.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-5.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-6.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-7.png"></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>macOS Catalina 10.15</tag>
+        <tag>sidecar</tag>
       </tags>
   </entry>
   <entry>
@@ -933,32 +959,6 @@
       </tags>
   </entry>
   <entry>
-    <title>macOS Catalina 10.15关于sidecar功能的说明</title>
-    <url>/2019/06/13/about-sidecar.html</url>
-    <content><![CDATA[<blockquote>
-<p>macOS 10.15的一个重磅功能是sidecar。就是用iPad作为mac的扩展屏，博主测试了一下，挺好用的。但是在Hackintosh下，并不是随意就能启用sidecar。以下附上博主的启用sidecar教程。<a id="more"></a></p>
-</blockquote>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>目前无核显PC尚未遇到成功案例，可能是黑苹果的bug，也可能是macOS 10.15 beta1的bug。</p>
-<h2 id="博主PC配置"><a href="#博主PC配置" class="headerlink" title="博主PC配置"></a>博主PC配置</h2><p>Z390+9900K+Vega56</p>
-<h2 id="启用sidecar教程"><a href="#启用sidecar教程" class="headerlink" title="启用sidecar教程"></a>启用sidecar教程</h2><ul>
-<li>BIOS中设置主显卡为独显(PCIE)并且设置DVMT为128M，以便独显、核显并存。</li>
-<li>修改SMBIOS为iMac 19,1。<br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-1.png"></li>
-<li>勾选Inject intel。</li>
-<li>设置FakeID-&gt;IntelGFX为0x3e988086，ig-platform-id为0x3e980003(核显作为加速卡)。也可以设置FakeID-&gt;IntelGFX为0x3e928086，ig-platform-id为0x3e920003，博主测试均通过。<br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-3.png"></li>
-<li>重启电脑测试sidecar。</li>
-</ul>
-<h2 id="至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。"><a href="#至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。" class="headerlink" title="至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。"></a>至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-4.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-5.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-6.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-7.png"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>macOS Catalina 10.15</tag>
-        <tag>sidecar</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ASRock Z390 Phantom Gaming-ITX使用BootCamp切换双系统注意事项</title>
     <url>/2020/04/04/bootcamp-about-z390.html</url>
     <content><![CDATA[<blockquote>
@@ -1003,6 +1003,45 @@
         <tag>macOS Catalina 10.15</tag>
         <tag>OpenCore</tag>
         <tag>BootCamp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么？这辣鸡BIOS竟然不能关闭Secure Boot？教你在开启Secure Boot的情况下安装macOS</title>
+    <url>/2019/07/06/clover-with-secure-boot.html</url>
+    <content><![CDATA[<h1 id="相关理论"><a href="#相关理论" class="headerlink" title="相关理论"></a>相关理论</h1><h2 id="BIOS"><a href="#BIOS" class="headerlink" title="BIOS"></a>BIOS</h2><p>BIOS是英文”Basic Input Output System”的缩略语，直译过来后中文名称就是”基本输入输出系统”。其实，它是一组固化到计算机内主板上一个ROM芯片上的程序，它保存着计算机最重要的基本输入输出的程序、系统设置信息、开机后自检程序和系统自启动程序。 其主要功能是为计算机提供最底层的、最直接的硬件设置和控制。<a id="more"></a></p>
+<h2 id="UEFI"><a href="#UEFI" class="headerlink" title="UEFI"></a>UEFI</h2><p>UEFI，全称“统一的可扩展固件接口”(Unified Extensible Firmware Interface)， 是一种详细描述全新类型接口的标准。这种接口用于操作系统自动从预启动的操作环境，加载到一种操作系统上，从而使开机程序化繁为简，节省时间。</p>
+<h2 id="Secure-Boot"><a href="#Secure-Boot" class="headerlink" title="Secure Boot"></a>Secure Boot</h2><p>Secure Boot只是UEFI的一个部分。两者的关系是局部与整体的关系。Secure Boot的目的，是防止恶意软件侵入。它的做法就是采用密钥。UEFI规定，主板出厂的时候，可以内置一些可靠的公钥。然后，任何想要在这块主板上加载的操作系统或者硬件驱动程序，都必须通过这些公钥的认证。也就是说，这些软件必须用对应的私钥签署过，否则主板拒绝加载。由于恶意软件不可能通过认证，因此就没有办法感染Boot。</p>
+<h1 id="在开启Secure-Boot的情况下使用Clover启动macOS以及其他操作系统-如Linux"><a href="#在开启Secure-Boot的情况下使用Clover启动macOS以及其他操作系统-如Linux" class="headerlink" title="在开启Secure Boot的情况下使用Clover启动macOS以及其他操作系统(如Linux)"></a>在开启Secure Boot的情况下使用Clover启动macOS以及其他操作系统(如Linux)</h1><h2 id="准备工作-Windows下操作"><a href="#准备工作-Windows下操作" class="headerlink" title="准备工作(Windows下操作)"></a>准备工作(Windows下操作)</h2><ul>
+<li><p>下载并解压Super-UEFIinSecureBoot-Disk(感谢ValdikSS开发工具)。<br><a href="https://github.com/ValdikSS/Super-UEFIinSecureBoot-Disk/releases/download/3/Super-UEFIinSecureBoot-Disk_minimal_v3.zip">https://github.com/ValdikSS/Super-UEFIinSecureBoot-Disk/releases/download/3/Super-UEFIinSecureBoot-Disk_minimal_v3.zip</a></p>
+</li>
+<li><p>下载etcher<br><a href="https://github.com/balena-io/etcher/releases/download/v1.5.51/balenaEtcher-Portable-1.5.51.exe">https://github.com/balena-io/etcher/releases/download/v1.5.51/balenaEtcher-Portable-1.5.51.exe</a></p>
+</li>
+<li><p>准备一个U盘并备份文件，用etcher将Super-UEFIinSecureBoot-Disk写入U盘。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-1.png"></p>
+</li>
+</ul>
+<h2 id="实现教程"><a href="#实现教程" class="headerlink" title="实现教程"></a>实现教程</h2><blockquote>
+<p>现在请在BIOS中开启Secure Boot选项并且重启进入Windows操作。</p>
+</blockquote>
+<h3 id="注册证书"><a href="#注册证书" class="headerlink" title="注册证书"></a>注册证书</h3><p>使用做好的U盘启动电脑，按照图示完成证书注册。(出现黑色的grub2界面表示注册成功)<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-2.png"></p>
+<h3 id="集成Clover"><a href="#集成Clover" class="headerlink" title="集成Clover"></a>集成Clover</h3><ul>
+<li><p>将CLOVER文件夹拷贝到U盘的EFI文件夹下，与BOOT以及grub文件夹同级。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-3.png"></p>
+</li>
+<li><p>打开Clover文件夹将Cloverx64.efi文件重命名为grubx64_real.efi。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-4.png"></p>
+</li>
+<li><p>打开BOOT文件夹备份grubx64_real.efi文件，并将Clover文件夹下的grubx64_real.efi文件拷贝到BOOT文件夹下。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-5.png"></p>
+</li>
+<li><p>重启电脑，并用U盘引导。</p>
+</li>
+</ul>
+<h1 id="是时候看看成果了！"><a href="#是时候看看成果了！" class="headerlink" title="是时候看看成果了！"></a>是时候看看成果了！</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-6.png"></p>
+<h1 id="最后别忘了将USB的引导移到硬盘中。"><a href="#最后别忘了将USB的引导移到硬盘中。" class="headerlink" title="最后别忘了将USB的引导移到硬盘中。"></a>最后别忘了将USB的引导移到硬盘中。</h1><h1 id="关于后续更新Clover的问题"><a href="#关于后续更新Clover的问题" class="headerlink" title="关于后续更新Clover的问题"></a>关于后续更新Clover的问题</h1><p>下载新版本的Clover，将cloverx64.efi重命名为grubx64_real.efi并覆盖EFI中Clover文件夹与BOOT文件夹中的同名文件。</p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>Secure Boot</tag>
       </tags>
   </entry>
   <entry>
@@ -1059,45 +1098,6 @@
         <tag>macOS Catalina 10.15</tag>
         <tag>OpenCore</tag>
         <tag>weg</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>什么？这辣鸡BIOS竟然不能关闭Secure Boot？教你在开启Secure Boot的情况下安装macOS</title>
-    <url>/2019/07/06/clover-with-secure-boot.html</url>
-    <content><![CDATA[<h1 id="相关理论"><a href="#相关理论" class="headerlink" title="相关理论"></a>相关理论</h1><h2 id="BIOS"><a href="#BIOS" class="headerlink" title="BIOS"></a>BIOS</h2><p>BIOS是英文”Basic Input Output System”的缩略语，直译过来后中文名称就是”基本输入输出系统”。其实，它是一组固化到计算机内主板上一个ROM芯片上的程序，它保存着计算机最重要的基本输入输出的程序、系统设置信息、开机后自检程序和系统自启动程序。 其主要功能是为计算机提供最底层的、最直接的硬件设置和控制。<a id="more"></a></p>
-<h2 id="UEFI"><a href="#UEFI" class="headerlink" title="UEFI"></a>UEFI</h2><p>UEFI，全称“统一的可扩展固件接口”(Unified Extensible Firmware Interface)， 是一种详细描述全新类型接口的标准。这种接口用于操作系统自动从预启动的操作环境，加载到一种操作系统上，从而使开机程序化繁为简，节省时间。</p>
-<h2 id="Secure-Boot"><a href="#Secure-Boot" class="headerlink" title="Secure Boot"></a>Secure Boot</h2><p>Secure Boot只是UEFI的一个部分。两者的关系是局部与整体的关系。Secure Boot的目的，是防止恶意软件侵入。它的做法就是采用密钥。UEFI规定，主板出厂的时候，可以内置一些可靠的公钥。然后，任何想要在这块主板上加载的操作系统或者硬件驱动程序，都必须通过这些公钥的认证。也就是说，这些软件必须用对应的私钥签署过，否则主板拒绝加载。由于恶意软件不可能通过认证，因此就没有办法感染Boot。</p>
-<h1 id="在开启Secure-Boot的情况下使用Clover启动macOS以及其他操作系统-如Linux"><a href="#在开启Secure-Boot的情况下使用Clover启动macOS以及其他操作系统-如Linux" class="headerlink" title="在开启Secure Boot的情况下使用Clover启动macOS以及其他操作系统(如Linux)"></a>在开启Secure Boot的情况下使用Clover启动macOS以及其他操作系统(如Linux)</h1><h2 id="准备工作-Windows下操作"><a href="#准备工作-Windows下操作" class="headerlink" title="准备工作(Windows下操作)"></a>准备工作(Windows下操作)</h2><ul>
-<li><p>下载并解压Super-UEFIinSecureBoot-Disk(感谢ValdikSS开发工具)。<br><a href="https://github.com/ValdikSS/Super-UEFIinSecureBoot-Disk/releases/download/3/Super-UEFIinSecureBoot-Disk_minimal_v3.zip">https://github.com/ValdikSS/Super-UEFIinSecureBoot-Disk/releases/download/3/Super-UEFIinSecureBoot-Disk_minimal_v3.zip</a></p>
-</li>
-<li><p>下载etcher<br><a href="https://github.com/balena-io/etcher/releases/download/v1.5.51/balenaEtcher-Portable-1.5.51.exe">https://github.com/balena-io/etcher/releases/download/v1.5.51/balenaEtcher-Portable-1.5.51.exe</a></p>
-</li>
-<li><p>准备一个U盘并备份文件，用etcher将Super-UEFIinSecureBoot-Disk写入U盘。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-1.png"></p>
-</li>
-</ul>
-<h2 id="实现教程"><a href="#实现教程" class="headerlink" title="实现教程"></a>实现教程</h2><blockquote>
-<p>现在请在BIOS中开启Secure Boot选项并且重启进入Windows操作。</p>
-</blockquote>
-<h3 id="注册证书"><a href="#注册证书" class="headerlink" title="注册证书"></a>注册证书</h3><p>使用做好的U盘启动电脑，按照图示完成证书注册。(出现黑色的grub2界面表示注册成功)<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-2.png"></p>
-<h3 id="集成Clover"><a href="#集成Clover" class="headerlink" title="集成Clover"></a>集成Clover</h3><ul>
-<li><p>将CLOVER文件夹拷贝到U盘的EFI文件夹下，与BOOT以及grub文件夹同级。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-3.png"></p>
-</li>
-<li><p>打开Clover文件夹将Cloverx64.efi文件重命名为grubx64_real.efi。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-4.png"></p>
-</li>
-<li><p>打开BOOT文件夹备份grubx64_real.efi文件，并将Clover文件夹下的grubx64_real.efi文件拷贝到BOOT文件夹下。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-5.png"></p>
-</li>
-<li><p>重启电脑，并用U盘引导。</p>
-</li>
-</ul>
-<h1 id="是时候看看成果了！"><a href="#是时候看看成果了！" class="headerlink" title="是时候看看成果了！"></a>是时候看看成果了！</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-6.png"></p>
-<h1 id="最后别忘了将USB的引导移到硬盘中。"><a href="#最后别忘了将USB的引导移到硬盘中。" class="headerlink" title="最后别忘了将USB的引导移到硬盘中。"></a>最后别忘了将USB的引导移到硬盘中。</h1><h1 id="关于后续更新Clover的问题"><a href="#关于后续更新Clover的问题" class="headerlink" title="关于后续更新Clover的问题"></a>关于后续更新Clover的问题</h1><p>下载新版本的Clover，将cloverx64.efi重命名为grubx64_real.efi并覆盖EFI中Clover文件夹与BOOT文件夹中的同名文件。</p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>Secure Boot</tag>
       </tags>
   </entry>
   <entry>
@@ -1478,6 +1478,43 @@
       </tags>
   </entry>
   <entry>
+    <title>教你制作macOS+Ubuntu+WindowsPE超级启动盘(仅支持UEFI)</title>
+    <url>/2019/07/26/make-super-usb.html</url>
+    <content><![CDATA[<blockquote>
+<p>对于多系统用户，有没有觉得每一个系统一个U盘很麻烦而且浪费U盘，本文会教你如何制作macOS+Ubuntu+WindowsPE多系统启动盘。注意：建议使用博主分享的PE，其他PE文件结构或许不同，不确定能否成功。<a id="more"></a></p>
+</blockquote>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
+<li>USB 3.0U盘(不可小于16g，博主的是闪迪64gU盘)</li>
+<li>macOS 10.15 beta4原版镜像，进入如下网址，内有下载分享<br><a href="http://bbs.pcbeta.com/viewthread-1823322-1-1.html">http://bbs.pcbeta.com/viewthread-1823322-1-1.html</a></li>
+<li>Ubuntu 19.04镜像，下载地址如下，可直接粘贴到迅雷<br><a href="http://mirror.cogentco.com/pub/linux/ubuntu-releases/19.04/ubuntu-19.04-desktop-amd64.iso">http://mirror.cogentco.com/pub/linux/ubuntu-releases/19.04/ubuntu-19.04-desktop-amd64.iso</a></li>
+<li>Windows 10 1809 PE，百毒盘地址如下(注意，此PE为博主自制PE，兼容PC以及mbp2017，无任何流氓行为，可放心使用)<br>链接: <a href="https://pan.baidu.com/s/1Qb9ieHzwDATaU-FhFuDUJQ">https://pan.baidu.com/s/1Qb9ieHzwDATaU-FhFuDUJQ</a>  密码: 15ns</li>
+<li>一个配置好的可引导Hackintosh的Clover</li>
+</ul>
+<h1 id="写入macOS镜像并放入Clover"><a href="#写入macOS镜像并放入Clover" class="headerlink" title="写入macOS镜像并放入Clover"></a>写入macOS镜像并放入Clover</h1><h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><p>将U盘格式化成为Hfs格式，卷标为mac，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-1.png"></p>
+<h2 id="将Install-macOS-Catalina-Beta-app拷贝到Application下"><a href="#将Install-macOS-Catalina-Beta-app拷贝到Application下" class="headerlink" title="将Install macOS Catalina Beta.app拷贝到Application下"></a>将Install macOS Catalina Beta.app拷贝到Application下</h2><h2 id="终端输入如下命令写入镜像"><a href="#终端输入如下命令写入镜像" class="headerlink" title="终端输入如下命令写入镜像"></a>终端输入如下命令写入镜像</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/Applications/</span>Install\ macOS\ Catalina\ Beta.app<span class="regexp">/Contents/</span>Resources<span class="regexp">/createinstallmedia --volume /</span>Volumes<span class="regexp">/mac --applicationpath /</span>Applications/Install\ macOS\ Catalina\ Beta.app</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/superusb-2.png"></p>
+<h2 id="挂载U盘EFI分区，将Clover拷贝进去"><a href="#挂载U盘EFI分区，将Clover拷贝进去" class="headerlink" title="挂载U盘EFI分区，将Clover拷贝进去"></a>挂载U盘EFI分区，将Clover拷贝进去</h2><h1 id="为Ubuntu以及Windows-PE准备分区"><a href="#为Ubuntu以及Windows-PE准备分区" class="headerlink" title="为Ubuntu以及Windows PE准备分区"></a>为Ubuntu以及Windows PE准备分区</h1><ul>
+<li>打开磁盘工具，添加分区，格式为HFs，名称为other。将分区Install macOS Catalina Beta的大小修改为8G，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-3.png"></li>
+<li>进入Windows打开diskgenius，删掉那个最大的HFs分区。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-4.png"></li>
+<li>在空闲区域添加三个Fat32格式的分区，名称分别为Ubuntu，WinPE，Data。其中Ubuntu大小为4G，WinPE大小为3G，Data为剩余空间。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-5.png"></li>
+</ul>
+<h1 id="拷贝Ubuntu以及WinPE的文件"><a href="#拷贝Ubuntu以及WinPE的文件" class="headerlink" title="拷贝Ubuntu以及WinPE的文件"></a>拷贝Ubuntu以及WinPE的文件</h1><p>将Ubuntu以及WinPE的镜像解压，直接把镜像根目录所有文件拷贝到对应分区。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-6.png"></p>
+<h1 id="引导设置"><a href="#引导设置" class="headerlink" title="引导设置"></a>引导设置</h1><h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><ul>
+<li>在U盘EFI分区新建grub文件夹，和CLOVER文件夹同级。</li>
+<li>打开Ubuntu分区，将boot/grub文件夹下的grub.cfg文件以及EFI/BOOT文件夹下的Bootx64.efi和grubx64.efi两个文件拷贝到刚刚新建的grub文件夹下。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-7.png"></li>
+</ul>
+<h2 id="WinPE"><a href="#WinPE" class="headerlink" title="WinPE"></a>WinPE</h2><p>打开WinPE分区，将efi/microsoft/boot文件夹下的cdboot.efi文件重命名为cdboot-bak.efi，并将efi/boot文件夹下的bootx64.efi文件拷贝到efi/microsoft/boot文件夹下。并重命名为cdboot.efi。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-8.png"></p>
+<h1 id="至此，你的macOS-Ubuntu-WinPE超级启动盘制作完成。"><a href="#至此，你的macOS-Ubuntu-WinPE超级启动盘制作完成。" class="headerlink" title="至此，你的macOS+Ubuntu+WinPE超级启动盘制作完成。"></a>至此，你的macOS+Ubuntu+WinPE超级启动盘制作完成。</h1><h1 id="成品"><a href="#成品" class="headerlink" title="成品"></a>成品</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/superusb-9.png"></p>
+<h1 id="2019-7-30更新"><a href="#2019-7-30更新" class="headerlink" title="2019-7-30更新"></a>2019-7-30更新</h1><h2 id="重要注意事项"><a href="#重要注意事项" class="headerlink" title="重要注意事项"></a>重要注意事项</h2><p><strong><font color=#A52A2A >如果要把这个启动盘用于白苹果，记得挂载U盘EFI分区，将Boot-&gt;Bootx64.efi文件以及Clover-&gt;Cloverx64.efi文件的后缀(.efi)去掉，这样做的目的是干掉U盘的Clover启动项。以防止白苹果误进入Clover，这很重要，白苹果使用Clover会彻底黑屏变砖。白苹果可以按option键选择进入macOS安装盘、Ubuntu安装盘或WinPE启动盘，如果以后安装黑苹果，完全可以再把文件名改回来或者使用本地硬盘中的Clover引导启动盘。</font></strong></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Macbook Pro 2017安装macOS+Windows+Ubuntu简要教程</title>
     <url>/2019/03/06/mbp2017_win_mac_ubuntu.html</url>
     <content><![CDATA[<blockquote>
@@ -1553,43 +1590,6 @@
         <tag>Macintosh</tag>
         <tag>Linux</tag>
         <tag>MacBook Pro</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>教你制作macOS+Ubuntu+WindowsPE超级启动盘(仅支持UEFI)</title>
-    <url>/2019/07/26/make-super-usb.html</url>
-    <content><![CDATA[<blockquote>
-<p>对于多系统用户，有没有觉得每一个系统一个U盘很麻烦而且浪费U盘，本文会教你如何制作macOS+Ubuntu+WindowsPE多系统启动盘。注意：建议使用博主分享的PE，其他PE文件结构或许不同，不确定能否成功。<a id="more"></a></p>
-</blockquote>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
-<li>USB 3.0U盘(不可小于16g，博主的是闪迪64gU盘)</li>
-<li>macOS 10.15 beta4原版镜像，进入如下网址，内有下载分享<br><a href="http://bbs.pcbeta.com/viewthread-1823322-1-1.html">http://bbs.pcbeta.com/viewthread-1823322-1-1.html</a></li>
-<li>Ubuntu 19.04镜像，下载地址如下，可直接粘贴到迅雷<br><a href="http://mirror.cogentco.com/pub/linux/ubuntu-releases/19.04/ubuntu-19.04-desktop-amd64.iso">http://mirror.cogentco.com/pub/linux/ubuntu-releases/19.04/ubuntu-19.04-desktop-amd64.iso</a></li>
-<li>Windows 10 1809 PE，百毒盘地址如下(注意，此PE为博主自制PE，兼容PC以及mbp2017，无任何流氓行为，可放心使用)<br>链接: <a href="https://pan.baidu.com/s/1Qb9ieHzwDATaU-FhFuDUJQ">https://pan.baidu.com/s/1Qb9ieHzwDATaU-FhFuDUJQ</a>  密码: 15ns</li>
-<li>一个配置好的可引导Hackintosh的Clover</li>
-</ul>
-<h1 id="写入macOS镜像并放入Clover"><a href="#写入macOS镜像并放入Clover" class="headerlink" title="写入macOS镜像并放入Clover"></a>写入macOS镜像并放入Clover</h1><h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><p>将U盘格式化成为Hfs格式，卷标为mac，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-1.png"></p>
-<h2 id="将Install-macOS-Catalina-Beta-app拷贝到Application下"><a href="#将Install-macOS-Catalina-Beta-app拷贝到Application下" class="headerlink" title="将Install macOS Catalina Beta.app拷贝到Application下"></a>将Install macOS Catalina Beta.app拷贝到Application下</h2><h2 id="终端输入如下命令写入镜像"><a href="#终端输入如下命令写入镜像" class="headerlink" title="终端输入如下命令写入镜像"></a>终端输入如下命令写入镜像</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/Applications/</span>Install\ macOS\ Catalina\ Beta.app<span class="regexp">/Contents/</span>Resources<span class="regexp">/createinstallmedia --volume /</span>Volumes<span class="regexp">/mac --applicationpath /</span>Applications/Install\ macOS\ Catalina\ Beta.app</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/superusb-2.png"></p>
-<h2 id="挂载U盘EFI分区，将Clover拷贝进去"><a href="#挂载U盘EFI分区，将Clover拷贝进去" class="headerlink" title="挂载U盘EFI分区，将Clover拷贝进去"></a>挂载U盘EFI分区，将Clover拷贝进去</h2><h1 id="为Ubuntu以及Windows-PE准备分区"><a href="#为Ubuntu以及Windows-PE准备分区" class="headerlink" title="为Ubuntu以及Windows PE准备分区"></a>为Ubuntu以及Windows PE准备分区</h1><ul>
-<li>打开磁盘工具，添加分区，格式为HFs，名称为other。将分区Install macOS Catalina Beta的大小修改为8G，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-3.png"></li>
-<li>进入Windows打开diskgenius，删掉那个最大的HFs分区。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-4.png"></li>
-<li>在空闲区域添加三个Fat32格式的分区，名称分别为Ubuntu，WinPE，Data。其中Ubuntu大小为4G，WinPE大小为3G，Data为剩余空间。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-5.png"></li>
-</ul>
-<h1 id="拷贝Ubuntu以及WinPE的文件"><a href="#拷贝Ubuntu以及WinPE的文件" class="headerlink" title="拷贝Ubuntu以及WinPE的文件"></a>拷贝Ubuntu以及WinPE的文件</h1><p>将Ubuntu以及WinPE的镜像解压，直接把镜像根目录所有文件拷贝到对应分区。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-6.png"></p>
-<h1 id="引导设置"><a href="#引导设置" class="headerlink" title="引导设置"></a>引导设置</h1><h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><ul>
-<li>在U盘EFI分区新建grub文件夹，和CLOVER文件夹同级。</li>
-<li>打开Ubuntu分区，将boot/grub文件夹下的grub.cfg文件以及EFI/BOOT文件夹下的Bootx64.efi和grubx64.efi两个文件拷贝到刚刚新建的grub文件夹下。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-7.png"></li>
-</ul>
-<h2 id="WinPE"><a href="#WinPE" class="headerlink" title="WinPE"></a>WinPE</h2><p>打开WinPE分区，将efi/microsoft/boot文件夹下的cdboot.efi文件重命名为cdboot-bak.efi，并将efi/boot文件夹下的bootx64.efi文件拷贝到efi/microsoft/boot文件夹下。并重命名为cdboot.efi。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-8.png"></p>
-<h1 id="至此，你的macOS-Ubuntu-WinPE超级启动盘制作完成。"><a href="#至此，你的macOS-Ubuntu-WinPE超级启动盘制作完成。" class="headerlink" title="至此，你的macOS+Ubuntu+WinPE超级启动盘制作完成。"></a>至此，你的macOS+Ubuntu+WinPE超级启动盘制作完成。</h1><h1 id="成品"><a href="#成品" class="headerlink" title="成品"></a>成品</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/superusb-9.png"></p>
-<h1 id="2019-7-30更新"><a href="#2019-7-30更新" class="headerlink" title="2019-7-30更新"></a>2019-7-30更新</h1><h2 id="重要注意事项"><a href="#重要注意事项" class="headerlink" title="重要注意事项"></a>重要注意事项</h2><p><strong><font color=#A52A2A >如果要把这个启动盘用于白苹果，记得挂载U盘EFI分区，将Boot-&gt;Bootx64.efi文件以及Clover-&gt;Cloverx64.efi文件的后缀(.efi)去掉，这样做的目的是干掉U盘的Clover启动项。以防止白苹果误进入Clover，这很重要，白苹果使用Clover会彻底黑屏变砖。白苹果可以按option键选择进入macOS安装盘、Ubuntu安装盘或WinPE启动盘，如果以后安装黑苹果，完全可以再把文件名改回来或者使用本地硬盘中的Clover引导启动盘。</font></strong></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -2048,52 +2048,6 @@
       </tags>
   </entry>
   <entry>
-    <title>使用macserial获取iMac 2019机型信息</title>
-    <url>/2019/04/03/smbios-for-imac2019.html</url>
-    <content><![CDATA[<blockquote>
-<p>Apple在近期发布了iMac 2019版本，最高可配i9+vega48，无T2芯片(美滋滋)，目前Clover Configurator尚未更新关于iMac 2019的smbios信息，本教程教大家如何使用macserial获取iMac 2019机型信息。</p>
-</blockquote>
-<a id="more"></a>
-
-<h3 id="获取macserial软件"><a href="#获取macserial软件" class="headerlink" title="获取macserial软件"></a>获取macserial软件</h3><blockquote>
-<p>macserial是github上的<font color=#A52A2A ><strong>acidanthera</strong></font>大佬开发，其release版本尚未添加iMac 2019信息，故需要编译安装。经过博主测试，需要修改build.tool脚本才能成功编译，故博主已将原项目<font color=#A52A2A ><strong>fork</strong></font>，并修改build.tool脚本，使其能正常编译。</p>
-</blockquote>
-<blockquote>
-<p>原项目地址:<a href="https://github.com/acidanthera/macserial">https://github.com/acidanthera/macserial</a></p>
-</blockquote>
-<blockquote>
-<p>博主fork地址:<a href="https://github.com/bugprogrammer/macserial">https://github.com/bugprogrammer/macserial</a></p>
-</blockquote>
-<h4 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h4><h5 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a>Xcode</h5><ul>
-<li>App Store下载Xcode</li>
-<li>终端输入如下命令并按提示安装<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
-<h4 id="获取macserial源码"><a href="#获取macserial源码" class="headerlink" title="获取macserial源码"></a>获取macserial源码</h4></li>
-</ul>
-<p>终端下输入如下命令即可</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cd ~/Desktop</span><br><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/bugprogrammer/m</span>acserial.git</span><br><span class="line">cd macserial</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/ce1c2f16f103e8ba764ec2c731370177bc99aab1.jpg"></p>
-<h4 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h4><p>终端下输入如下命令即可，成功后会打开生成文件目录。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">./<span class="selector-tag">build</span><span class="selector-class">.tool</span></span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/f2f100fad5fc616b32ea4c7a596379b3dbbcae9d.jpg"></p>
-<h3 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h3><h4 id="获取帮助"><a href="#获取帮助" class="headerlink" title="获取帮助"></a>获取帮助</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">bin</span>/macserial<span class="number">64</span> -h</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/4ee5818801c68268aa98ad5c21dd7b808124c2e7.jpg"></p>
-<h4 id="查看支持的所有机型"><a href="#查看支持的所有机型" class="headerlink" title="查看支持的所有机型"></a>查看支持的所有机型</h4><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">bin/macserial64 <span class="comment">--list</span></span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/2485bc9325d68c7209721bff27f35e0283549b27.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/dc354eafcda927a3095934b78989dd4128f04b1c.jpg"></p>
-<h3 id="获取iMac-2019机型信息-以iMac-19-1为例"><a href="#获取iMac-2019机型信息-以iMac-19-1为例" class="headerlink" title="获取iMac 2019机型信息(以iMac 19,1为例)"></a>获取iMac 2019机型信息(以iMac 19,1为例)</h3><h4 id="获取Serial-Number以及Board-Serial-Number"><a href="#获取Serial-Number以及Board-Serial-Number" class="headerlink" title="获取Serial Number以及Board Serial Number"></a>获取Serial Number以及Board Serial Number</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">bin</span>/macserial<span class="number">64</span> --model iMac<span class="number">19</span>,<span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/ace46b89621b91d46e0236ca9547315eaae38e7b.jpg"></p>
-<h4 id="通过源码获取其他信息"><a href="#通过源码获取其他信息" class="headerlink" title="通过源码获取其他信息"></a>通过源码获取其他信息</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sed</span> -n &#x27;<span class="number">424</span>,<span class="number">429</span>p&#x27; src/modelinfo.h</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/5c207d8538d1a6a7ee6f5000500dbf718b845aab.jpg"></p>
-<h3 id="最终成品"><a href="#最终成品" class="headerlink" title="最终成品"></a>最终成品</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/ce8b62d1cf5cc748a11a21b86cd234e48e5d5aa3.png"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>macOS</tag>
-        <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>一加7 Pro Android Q root教程</title>
     <url>/2019/08/18/root-for-oneplus7pro-androidQ.html</url>
     <content><![CDATA[<blockquote>
@@ -2155,6 +2109,52 @@
       <tags>
         <tag>Android Q</tag>
         <tag>OnePlus 7 Pro</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用macserial获取iMac 2019机型信息</title>
+    <url>/2019/04/03/smbios-for-imac2019.html</url>
+    <content><![CDATA[<blockquote>
+<p>Apple在近期发布了iMac 2019版本，最高可配i9+vega48，无T2芯片(美滋滋)，目前Clover Configurator尚未更新关于iMac 2019的smbios信息，本教程教大家如何使用macserial获取iMac 2019机型信息。</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="获取macserial软件"><a href="#获取macserial软件" class="headerlink" title="获取macserial软件"></a>获取macserial软件</h3><blockquote>
+<p>macserial是github上的<font color=#A52A2A ><strong>acidanthera</strong></font>大佬开发，其release版本尚未添加iMac 2019信息，故需要编译安装。经过博主测试，需要修改build.tool脚本才能成功编译，故博主已将原项目<font color=#A52A2A ><strong>fork</strong></font>，并修改build.tool脚本，使其能正常编译。</p>
+</blockquote>
+<blockquote>
+<p>原项目地址:<a href="https://github.com/acidanthera/macserial">https://github.com/acidanthera/macserial</a></p>
+</blockquote>
+<blockquote>
+<p>博主fork地址:<a href="https://github.com/bugprogrammer/macserial">https://github.com/bugprogrammer/macserial</a></p>
+</blockquote>
+<h4 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h4><h5 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a>Xcode</h5><ul>
+<li>App Store下载Xcode</li>
+<li>终端输入如下命令并按提示安装<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
+<h4 id="获取macserial源码"><a href="#获取macserial源码" class="headerlink" title="获取macserial源码"></a>获取macserial源码</h4></li>
+</ul>
+<p>终端下输入如下命令即可</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cd ~/Desktop</span><br><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/bugprogrammer/m</span>acserial.git</span><br><span class="line">cd macserial</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/ce1c2f16f103e8ba764ec2c731370177bc99aab1.jpg"></p>
+<h4 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h4><p>终端下输入如下命令即可，成功后会打开生成文件目录。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">./<span class="selector-tag">build</span><span class="selector-class">.tool</span></span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/f2f100fad5fc616b32ea4c7a596379b3dbbcae9d.jpg"></p>
+<h3 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h3><h4 id="获取帮助"><a href="#获取帮助" class="headerlink" title="获取帮助"></a>获取帮助</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">bin</span>/macserial<span class="number">64</span> -h</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/4ee5818801c68268aa98ad5c21dd7b808124c2e7.jpg"></p>
+<h4 id="查看支持的所有机型"><a href="#查看支持的所有机型" class="headerlink" title="查看支持的所有机型"></a>查看支持的所有机型</h4><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">bin/macserial64 <span class="comment">--list</span></span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/2485bc9325d68c7209721bff27f35e0283549b27.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/dc354eafcda927a3095934b78989dd4128f04b1c.jpg"></p>
+<h3 id="获取iMac-2019机型信息-以iMac-19-1为例"><a href="#获取iMac-2019机型信息-以iMac-19-1为例" class="headerlink" title="获取iMac 2019机型信息(以iMac 19,1为例)"></a>获取iMac 2019机型信息(以iMac 19,1为例)</h3><h4 id="获取Serial-Number以及Board-Serial-Number"><a href="#获取Serial-Number以及Board-Serial-Number" class="headerlink" title="获取Serial Number以及Board Serial Number"></a>获取Serial Number以及Board Serial Number</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">bin</span>/macserial<span class="number">64</span> --model iMac<span class="number">19</span>,<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/ace46b89621b91d46e0236ca9547315eaae38e7b.jpg"></p>
+<h4 id="通过源码获取其他信息"><a href="#通过源码获取其他信息" class="headerlink" title="通过源码获取其他信息"></a>通过源码获取其他信息</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sed</span> -n &#x27;<span class="number">424</span>,<span class="number">429</span>p&#x27; src/modelinfo.h</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/5c207d8538d1a6a7ee6f5000500dbf718b845aab.jpg"></p>
+<h3 id="最终成品"><a href="#最终成品" class="headerlink" title="最终成品"></a>最终成品</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/ce8b62d1cf5cc748a11a21b86cd234e48e5d5aa3.png"></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>macOS</tag>
       </tags>
   </entry>
   <entry>

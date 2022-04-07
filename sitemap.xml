@@ -16,14 +16,14 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/index.html</loc>
+    <loc>https://www.bugprogrammer.me/schedule/index.html</loc>
     
     <lastmod>2021-07-29</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/schedule/index.html</loc>
+    <loc>https://www.bugprogrammer.me/tags/index.html</loc>
     
     <lastmod>2021-07-29</lastmod>
     
@@ -361,6 +361,13 @@
 
   
   <url>
+    <loc>https://www.bugprogrammer.me/tags/Hackintosh/</loc>
+    <lastmod>2022-04-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.bugprogrammer.me/tags/macOS/</loc>
     <lastmod>2022-04-07</lastmod>
     <changefreq>daily</changefreq>
@@ -389,13 +396,6 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/Hackintosh/</loc>
-    <lastmod>2022-04-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.bugprogrammer.me/tags/Linux-Kernel/</loc>
     <lastmod>2022-04-07</lastmod>
     <changefreq>daily</changefreq>
@@ -410,14 +410,14 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2018/</loc>
+    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2017/</loc>
     <lastmod>2022-04-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2017/</loc>
+    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2018/</loc>
     <lastmod>2022-04-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -452,13 +452,6 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/RX5700/</loc>
-    <lastmod>2022-04-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.bugprogrammer.me/tags/macOS-Catalina-10-15/</loc>
     <lastmod>2022-04-07</lastmod>
     <changefreq>daily</changefreq>
@@ -467,6 +460,13 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/sidecar/</loc>
+    <lastmod>2022-04-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/RX5700/</loc>
     <lastmod>2022-04-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -487,6 +487,13 @@
   </url>
   
   <url>
+    <loc>https://www.bugprogrammer.me/tags/Secure-Boot/</loc>
+    <lastmod>2022-04-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.bugprogrammer.me/tags/Linux/</loc>
     <lastmod>2022-04-07</lastmod>
     <changefreq>daily</changefreq>
@@ -495,13 +502,6 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/weg/</loc>
-    <lastmod>2022-04-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/Secure-Boot/</loc>
     <lastmod>2022-04-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
