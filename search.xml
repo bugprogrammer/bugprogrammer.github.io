@@ -754,6 +754,40 @@
       </tags>
   </entry>
   <entry>
+    <title>关于DRM视频播放以及sidecar和DRM共存的解决方案</title>
+    <url>/2019/12/11/about-DRM.html</url>
+    <content><![CDATA[<blockquote>
+<p>macOS Catalina 10.15发布后，不少小伙伴发现DRM视频播放出现bug。表现为Apple TV+无法播放，Netflix无法用Safari浏览器播放(macOS下只有Safari可以播放Netflix 1080P)。博主研究测试，得以<font color=#A52A2A >部分</font>解决。现发布播放DRM视频以及sidecar和DRM共存的解决方案。<a id="more"></a></p>
+</blockquote>
+<h1 id="目前支持Hackintosh-DRM的独显-核显DRM不可用"><a href="#目前支持Hackintosh-DRM的独显-核显DRM不可用" class="headerlink" title="目前支持Hackintosh DRM的独显(核显DRM不可用)"></a>目前支持Hackintosh DRM的独显(核显DRM不可用)</h1><p>Vega 56、Vega 64、VII、RX 5700、RX 5700 XT。可以使用完整DRM(Apple TV+/Safari Netflix/Amazon Prime)。RX5xx可以使用Apple TV+，Safari Netflix以及Amazon Prime不可用。<font color=#A52A2A >本文前提是使用以上显卡的任意一款</font></p>
+<h1 id="播放DRM视频的解决方案"><a href="#播放DRM视频的解决方案" class="headerlink" title="播放DRM视频的解决方案"></a>播放DRM视频的解决方案</h1><h2 id="无核显用户"><a href="#无核显用户" class="headerlink" title="无核显用户"></a>无核显用户</h2><p>无核显用户只需要把smbios设置为iMac Pro 1,1即可。</p>
+<h2 id="有核显用户"><a href="#有核显用户" class="headerlink" title="有核显用户"></a>有核显用户</h2><ul>
+<li>Lilu使用v1.4.1版本(<a href="https://github.com/acidanthera/Lilu)%EF%BC%8C">https://github.com/acidanthera/Lilu)，</a> 目前需要手动编译。</li>
+<li>Whatevergreen使用v1.3.6版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)，目前需要手动编译。</li>
+<li>boot-args加入shikigva=80。</li>
+<li>重启。</li>
+</ul>
+<h1 id="sidecar和DRM共存的解决方案"><a href="#sidecar和DRM共存的解决方案" class="headerlink" title="sidecar和DRM共存的解决方案"></a>sidecar和DRM共存的解决方案</h1><blockquote>
+<p>前提：intel酷睿 6、7、8、9代带有核显的CPU+目前支持Hackintosh DRM的独显(上文有写)。本文以<font color=#A52A2A >9900K+5700XT</font>为例。</p>
+</blockquote>
+<ul>
+<li>BIOS开启核显并设置DVMT为128M，主显卡为独显。</li>
+<li>SMBIOS设置为iMac 19,1。</li>
+<li>注入如下缓冲帧信息。<br>  <img src= "/images/loading.gif" data-lazy-src="/images/DRM-1.png"></li>
+<li>Lilu使用v1.4.1版本(<a href="https://github.com/acidanthera/Lilu)%EF%BC%8C%E7%9B%AE%E5%89%8D%E9%9C%80%E8%A6%81%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91%E3%80%82">https://github.com/acidanthera/Lilu)，目前需要手动编译。</a></li>
+<li>Whatevergreen使用v1.3.6版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)，目前需要手动编译。</li>
+<li>boot-args加入shikigva=80。</li>
+<li>重启。</li>
+</ul>
+<h1 id="至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。"><a href="#至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。" class="headerlink" title="至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。"></a><font color=#A52A2A >至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。</font></h1>]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于macOS 10.14.4 18E2034镜像的说明</title>
     <url>/2019/03/27/about-macos-10.14.4-18E2034.html</url>
     <content><![CDATA[<blockquote>
@@ -825,40 +859,6 @@
       <tags>
         <tag>OpenWrt</tag>
         <tag>ipv6</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于DRM视频播放以及sidecar和DRM共存的解决方案</title>
-    <url>/2019/12/11/about-DRM.html</url>
-    <content><![CDATA[<blockquote>
-<p>macOS Catalina 10.15发布后，不少小伙伴发现DRM视频播放出现bug。表现为Apple TV+无法播放，Netflix无法用Safari浏览器播放(macOS下只有Safari可以播放Netflix 1080P)。博主研究测试，得以<font color=#A52A2A >部分</font>解决。现发布播放DRM视频以及sidecar和DRM共存的解决方案。<a id="more"></a></p>
-</blockquote>
-<h1 id="目前支持Hackintosh-DRM的独显-核显DRM不可用"><a href="#目前支持Hackintosh-DRM的独显-核显DRM不可用" class="headerlink" title="目前支持Hackintosh DRM的独显(核显DRM不可用)"></a>目前支持Hackintosh DRM的独显(核显DRM不可用)</h1><p>Vega 56、Vega 64、VII、RX 5700、RX 5700 XT。可以使用完整DRM(Apple TV+/Safari Netflix/Amazon Prime)。RX5xx可以使用Apple TV+，Safari Netflix以及Amazon Prime不可用。<font color=#A52A2A >本文前提是使用以上显卡的任意一款</font></p>
-<h1 id="播放DRM视频的解决方案"><a href="#播放DRM视频的解决方案" class="headerlink" title="播放DRM视频的解决方案"></a>播放DRM视频的解决方案</h1><h2 id="无核显用户"><a href="#无核显用户" class="headerlink" title="无核显用户"></a>无核显用户</h2><p>无核显用户只需要把smbios设置为iMac Pro 1,1即可。</p>
-<h2 id="有核显用户"><a href="#有核显用户" class="headerlink" title="有核显用户"></a>有核显用户</h2><ul>
-<li>Lilu使用v1.4.1版本(<a href="https://github.com/acidanthera/Lilu)%EF%BC%8C">https://github.com/acidanthera/Lilu)，</a> 目前需要手动编译。</li>
-<li>Whatevergreen使用v1.3.6版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)，目前需要手动编译。</li>
-<li>boot-args加入shikigva=80。</li>
-<li>重启。</li>
-</ul>
-<h1 id="sidecar和DRM共存的解决方案"><a href="#sidecar和DRM共存的解决方案" class="headerlink" title="sidecar和DRM共存的解决方案"></a>sidecar和DRM共存的解决方案</h1><blockquote>
-<p>前提：intel酷睿 6、7、8、9代带有核显的CPU+目前支持Hackintosh DRM的独显(上文有写)。本文以<font color=#A52A2A >9900K+5700XT</font>为例。</p>
-</blockquote>
-<ul>
-<li>BIOS开启核显并设置DVMT为128M，主显卡为独显。</li>
-<li>SMBIOS设置为iMac 19,1。</li>
-<li>注入如下缓冲帧信息。<br>  <img src= "/images/loading.gif" data-lazy-src="/images/DRM-1.png"></li>
-<li>Lilu使用v1.4.1版本(<a href="https://github.com/acidanthera/Lilu)%EF%BC%8C%E7%9B%AE%E5%89%8D%E9%9C%80%E8%A6%81%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91%E3%80%82">https://github.com/acidanthera/Lilu)，目前需要手动编译。</a></li>
-<li>Whatevergreen使用v1.3.6版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)，目前需要手动编译。</li>
-<li>boot-args加入shikigva=80。</li>
-<li>重启。</li>
-</ul>
-<h1 id="至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。"><a href="#至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。" class="headerlink" title="至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。"></a><font color=#A52A2A >至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。</font></h1>]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -1202,30 +1202,6 @@
       </tags>
   </entry>
   <entry>
-    <title>无核显开启sidecar方法</title>
-    <url>/2019/11/24/fix-sidecar-without-igpu.html</url>
-    <content><![CDATA[<blockquote>
-<p>之前<font color=#A52A2A >@fang2018</font>发布了一个相关教程，地址如下:<font color=#A52A2A ><a href="https://fangf.cc/2019/10/14/noneigpusidecar/">https://fangf.cc/2019/10/14/noneigpusidecar/</a></font>, 现在随着Whatevergreen的更新，之前的方法已经不再适用。现在发布新教程。</p>
-</blockquote>
-<a id="more"></a>
-
-<h1 id="无核显开启sidecar教程"><a href="#无核显开启sidecar教程" class="headerlink" title="无核显开启sidecar教程"></a>无核显开启sidecar教程</h1><ul>
-<li>smbios设置成iMac19,1或iMac18,3(绝对不能用iMac Pro 1,1或Mac Pro 7,1)</li>
-<li>Lilu使用v1.3.9版本(<a href="https://github.com/acidanthera/Lilu">https://github.com/acidanthera/Lilu</a>)</li>
-<li>Whatevergreen使用v1.3.5版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)</li>
-<li>boot-args加入shikigva=16</li>
-<li>重启</li>
-</ul>
-<h1 id="至此，您的sidecar功能已经可用。"><a href="#至此，您的sidecar功能已经可用。" class="headerlink" title="至此，您的sidecar功能已经可用。"></a>至此，您的sidecar功能已经可用。</h1>]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>sidecar</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博主github Hackintosh仓库公开以及使用方法</title>
     <url>/2019/05/23/github-hackintosh.html</url>
     <content><![CDATA[<p>为了方便大家安装macOS，博主将测试过的机型的Clover文件整理并发布至github，地址为<strong><a href="https://github.com/bugprogrammer/hackintosh">https://github.com/bugprogrammer/hackintosh</a></strong> <strong><font color=#A52A2A >注意:仓库中所有机型都是博主亲自安装并测试过的机型。</strong></font><a id="more"></a></p>
@@ -1249,6 +1225,30 @@
       </categories>
       <tags>
         <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>无核显开启sidecar方法</title>
+    <url>/2019/11/24/fix-sidecar-without-igpu.html</url>
+    <content><![CDATA[<blockquote>
+<p>之前<font color=#A52A2A >@fang2018</font>发布了一个相关教程，地址如下:<font color=#A52A2A ><a href="https://fangf.cc/2019/10/14/noneigpusidecar/">https://fangf.cc/2019/10/14/noneigpusidecar/</a></font>, 现在随着Whatevergreen的更新，之前的方法已经不再适用。现在发布新教程。</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="无核显开启sidecar教程"><a href="#无核显开启sidecar教程" class="headerlink" title="无核显开启sidecar教程"></a>无核显开启sidecar教程</h1><ul>
+<li>smbios设置成iMac19,1或iMac18,3(绝对不能用iMac Pro 1,1或Mac Pro 7,1)</li>
+<li>Lilu使用v1.3.9版本(<a href="https://github.com/acidanthera/Lilu">https://github.com/acidanthera/Lilu</a>)</li>
+<li>Whatevergreen使用v1.3.5版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)</li>
+<li>boot-args加入shikigva=16</li>
+<li>重启</li>
+</ul>
+<h1 id="至此，您的sidecar功能已经可用。"><a href="#至此，您的sidecar功能已经可用。" class="headerlink" title="至此，您的sidecar功能已经可用。"></a>至此，您的sidecar功能已经可用。</h1>]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>sidecar</tag>
       </tags>
   </entry>
   <entry>
@@ -2158,6 +2158,34 @@
       </tags>
   </entry>
   <entry>
+    <title>解锁macOS10.15的系统分区</title>
+    <url>/2019/07/13/unlockSystem.html</url>
+    <content><![CDATA[<blockquote>
+<p>macOS 10.15的一个显著变化就是Apple锁定了系统分区，导致L/E以及S/L/E无法拷贝文件。Kext Utility无法重建缓存。也间接影响了HomeBrew的使用，下面教大家如何解锁系统分区。<a id="more"></a></p>
+</blockquote>
+<h1 id="准备应用程序"><a href="#准备应用程序" class="headerlink" title="准备应用程序"></a>准备应用程序</h1><ul>
+<li><p>打开系统自带的自动操作程序，依次点击应用程序-&gt;选取-&gt;运行shell脚本。<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-3.png"></p>
+</li>
+<li><p>将以下脚本粘贴进去</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;你的电脑密码&#x27;</span>|sudo -S mount -uw / &amp;&amp; killall Finder</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/unlock-4.png"></p>
+</li>
+<li><p>保存成app<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-5.png"></p>
+</li>
+</ul>
+<h1 id="添加开机自启"><a href="#添加开机自启" class="headerlink" title="添加开机自启"></a>添加开机自启</h1><p>打开偏好设置-&gt;用户与群组-&gt;登录项，将unlockSystem.app添加到启动项，并点击隐藏。<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-6.png"></p>
+<blockquote>
+<p>至此，您已经成功解锁系统分区，可以尝试SLE/LE写入以及重建缓存操作了，博主亲测成功哦！</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>为个人网站升级TLS 1.3以及HSTS</title>
     <url>/2019/01/14/update-website-tls1.3-and-HSTS.html</url>
     <content><![CDATA[<h1 id="理论相关"><a href="#理论相关" class="headerlink" title="理论相关"></a>理论相关</h1><h2 id="TLS"><a href="#TLS" class="headerlink" title="TLS"></a>TLS</h2><h3 id="TLS简介"><a href="#TLS简介" class="headerlink" title="TLS简介"></a>TLS简介</h3><p>SSL(Secure Sockets Layer) 安全套接层，是一种安全协议，经历了 SSL 1.0、2.0、3.0 版本后发展成了标准安全协议——TLS (Transport Layer Security) 传输层安全性协议。TLS 有 1.0 (RFC 2246)、1.1(RFC 4346)、1.2(RFC 5246)、1.3(RFC 8446) 版本。</p>
@@ -2208,34 +2236,6 @@
         <tag>OpenSSL</tag>
         <tag>TLS 1.3</tag>
         <tag>HSTS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解锁macOS10.15的系统分区</title>
-    <url>/2019/07/13/unlockSystem.html</url>
-    <content><![CDATA[<blockquote>
-<p>macOS 10.15的一个显著变化就是Apple锁定了系统分区，导致L/E以及S/L/E无法拷贝文件。Kext Utility无法重建缓存。也间接影响了HomeBrew的使用，下面教大家如何解锁系统分区。<a id="more"></a></p>
-</blockquote>
-<h1 id="准备应用程序"><a href="#准备应用程序" class="headerlink" title="准备应用程序"></a>准备应用程序</h1><ul>
-<li><p>打开系统自带的自动操作程序，依次点击应用程序-&gt;选取-&gt;运行shell脚本。<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-3.png"></p>
-</li>
-<li><p>将以下脚本粘贴进去</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;你的电脑密码&#x27;</span>|sudo -S mount -uw / &amp;&amp; killall Finder</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/unlock-4.png"></p>
-</li>
-<li><p>保存成app<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-5.png"></p>
-</li>
-</ul>
-<h1 id="添加开机自启"><a href="#添加开机自启" class="headerlink" title="添加开机自启"></a>添加开机自启</h1><p>打开偏好设置-&gt;用户与群组-&gt;登录项，将unlockSystem.app添加到启动项，并点击隐藏。<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-6.png"></p>
-<blockquote>
-<p>至此，您已经成功解锁系统分区，可以尝试SLE/LE写入以及重建缓存操作了，博主亲测成功哦！</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
       </tags>
   </entry>
 </search>
