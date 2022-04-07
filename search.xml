@@ -1,46 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>macOS下编译Clover教程</title>
-    <url>/2018/06/29/Build_Clover.html</url>
-    <content><![CDATA[<blockquote>
-<p>随着macOS 10.14公测版本的发布，黑苹果用户对Clover新版本的需求提高，想要最新版本的Clover最直接的方法就是源码编译，方便快捷，教程如下。<a id="more"></a></p>
-</blockquote>
-<h3 id="安装相关环境"><a href="#安装相关环境" class="headerlink" title="安装相关环境"></a>安装相关环境</h3><h4 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a>Xcode</h4><ul>
-<li>Mac App Store商店安装Xcode</li>
-<li>终端下输入如下命令并按提示安装<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
-<h4 id="python"><a href="#python" class="headerlink" title="python"></a>python</h4></li>
-<li>官网下载安装即可 </li>
-</ul>
-<h4 id="准备编译脚本Build-Clover-command"><a href="#准备编译脚本Build-Clover-command" class="headerlink" title="准备编译脚本Build_Clover.command"></a>准备编译脚本Build_Clover.command</h4><ul>
-<li>输入如下命令下载编译脚本并进入相应目录<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/Micky1979/</span>Build_Clover.git &amp;&amp; cd Build_Clover</span><br></pre></td></tr></table></figure></li>
-<li>给予执行权限<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">chmod u+x <span class="module-access"><span class="module"><span class="identifier">Build_Clover</span>.</span></span>command</span><br></pre></td></tr></table></figure></li>
-<li>执行脚本，中途会自动下载Clover最新源码，请等待，下载源码过程以及成功进入菜单如图所示<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">./<span class="module-access"><span class="module"><span class="identifier">Build_Clover</span>.</span></span>command</span><br></pre></td></tr></table></figure>
-  <img src= "/images/loading.gif" data-lazy-src="/images/132e7a9ff24c9d81c184e861e8572ba886888101.jpg"><br>  <img src= "/images/loading.gif" data-lazy-src="/images/2dcb06511dcffdf8ff0d64fdcc03012c50f12848.jpg"></li>
-</ul>
-<h4 id="Build-Clover-command菜单解释"><a href="#Build-Clover-command菜单解释" class="headerlink" title="Build_Clover.command菜单解释"></a>Build_Clover.command菜单解释</h4><ul>
-<li>update Clover only (no building) 更新Clover源码不编译</li>
-<li>update Clover + force edk2 update (no building) 更新Clover源码和Build_Clover脚本文件，不编译 </li>
-<li>run my script on the source 执行自定义脚本</li>
-<li>build existing revision (no update, for testing only) 编译已存在版本，仅供测试使用</li>
-<li>build existing revision for release (no update, standard build) 编译已存在版本，不更新，常规编译</li>
-<li>build existing revision with custom macros enabled 启用宏的模式下编译</li>
-<li>enter Developers mode (only for devs) 进入开发模式</li>
-<li>Try Clover Configurator Pro.app 尝试启动Clover Configurator</li>
-<li>edit the configuration file 编辑配置文件</li>
-<li>Exit 退出菜单</li>
-</ul>
-<h3 id="编译Clover"><a href="#编译Clover" class="headerlink" title="编译Clover"></a>编译Clover</h3><p>脚本菜单中选择**<em>build existing revision for release (no update, standard build)-&gt;Standard x64 only-&gt;Standard**</em>开始编译，过程请等待。编译结束后会自动打开clover的pkg安装包所在目录。安装此pkg包即可升级到最新版本的Clover。<br><img src= "/images/loading.gif" data-lazy-src="/images/e2b7cb1cda2263bc19eea7075aa49779ee181c63.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/22a2efa8dcb27fe042fb85af67fb328488a61c55.jpg"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>macOS</tag>
-        <tag>Clover</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于macOS Big Sur Hackintosh简要说明</title>
     <url>/2020/07/09/about-BigSur.html</url>
     <content><![CDATA[<blockquote>
@@ -83,6 +43,46 @@
       </tags>
   </entry>
   <entry>
+    <title>macOS下编译Clover教程</title>
+    <url>/2018/06/29/Build_Clover.html</url>
+    <content><![CDATA[<blockquote>
+<p>随着macOS 10.14公测版本的发布，黑苹果用户对Clover新版本的需求提高，想要最新版本的Clover最直接的方法就是源码编译，方便快捷，教程如下。<a id="more"></a></p>
+</blockquote>
+<h3 id="安装相关环境"><a href="#安装相关环境" class="headerlink" title="安装相关环境"></a>安装相关环境</h3><h4 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a>Xcode</h4><ul>
+<li>Mac App Store商店安装Xcode</li>
+<li>终端下输入如下命令并按提示安装<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
+<h4 id="python"><a href="#python" class="headerlink" title="python"></a>python</h4></li>
+<li>官网下载安装即可 </li>
+</ul>
+<h4 id="准备编译脚本Build-Clover-command"><a href="#准备编译脚本Build-Clover-command" class="headerlink" title="准备编译脚本Build_Clover.command"></a>准备编译脚本Build_Clover.command</h4><ul>
+<li>输入如下命令下载编译脚本并进入相应目录<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/Micky1979/</span>Build_Clover.git &amp;&amp; cd Build_Clover</span><br></pre></td></tr></table></figure></li>
+<li>给予执行权限<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">chmod u+x <span class="module-access"><span class="module"><span class="identifier">Build_Clover</span>.</span></span>command</span><br></pre></td></tr></table></figure></li>
+<li>执行脚本，中途会自动下载Clover最新源码，请等待，下载源码过程以及成功进入菜单如图所示<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">./<span class="module-access"><span class="module"><span class="identifier">Build_Clover</span>.</span></span>command</span><br></pre></td></tr></table></figure>
+  <img src= "/images/loading.gif" data-lazy-src="/images/132e7a9ff24c9d81c184e861e8572ba886888101.jpg"><br>  <img src= "/images/loading.gif" data-lazy-src="/images/2dcb06511dcffdf8ff0d64fdcc03012c50f12848.jpg"></li>
+</ul>
+<h4 id="Build-Clover-command菜单解释"><a href="#Build-Clover-command菜单解释" class="headerlink" title="Build_Clover.command菜单解释"></a>Build_Clover.command菜单解释</h4><ul>
+<li>update Clover only (no building) 更新Clover源码不编译</li>
+<li>update Clover + force edk2 update (no building) 更新Clover源码和Build_Clover脚本文件，不编译 </li>
+<li>run my script on the source 执行自定义脚本</li>
+<li>build existing revision (no update, for testing only) 编译已存在版本，仅供测试使用</li>
+<li>build existing revision for release (no update, standard build) 编译已存在版本，不更新，常规编译</li>
+<li>build existing revision with custom macros enabled 启用宏的模式下编译</li>
+<li>enter Developers mode (only for devs) 进入开发模式</li>
+<li>Try Clover Configurator Pro.app 尝试启动Clover Configurator</li>
+<li>edit the configuration file 编辑配置文件</li>
+<li>Exit 退出菜单</li>
+</ul>
+<h3 id="编译Clover"><a href="#编译Clover" class="headerlink" title="编译Clover"></a>编译Clover</h3><p>脚本菜单中选择**<em>build existing revision for release (no update, standard build)-&gt;Standard x64 only-&gt;Standard**</em>开始编译，过程请等待。编译结束后会自动打开clover的pkg安装包所在目录。安装此pkg包即可升级到最新版本的Clover。<br><img src= "/images/loading.gif" data-lazy-src="/images/e2b7cb1cda2263bc19eea7075aa49779ee181c63.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/22a2efa8dcb27fe042fb85af67fb328488a61c55.jpg"></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>macOS</tag>
+        <tag>Clover</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>macOS下编译VoodooI2C教程(2019最新更新)</title>
     <url>/2018/12/01/Build_VoodooI2C.html</url>
     <content><![CDATA[<blockquote>
@@ -114,44 +114,6 @@
       </tags>
   </entry>
   <entry>
-    <title>博主自编译的开源软件用于Apple Silicon Macs(长期更新)</title>
-    <url>/2021/04/23/Compiling-Soft-for-AppleSilicons.html</url>
-    <content><![CDATA[<blockquote>
-<p>自从博主购入m1版本的Mac mini以来，体验惊艳。低发热，低功耗，高性能，特别是gpu性能，让我这个不需要独显的人不用为了启动台的流畅度而被迫购入独显，这些优点已经让博主把Hackintosh吃灰。由于Apple Silicon是基于ARM架构的，所以不可避免出现app生态问题。现在发布博主自编译的开源软件，以用于Apple Silicon Macs。此帖将长期更新<a id="more"></a></p>
-</blockquote>
-<h1 id="软件列表"><a href="#软件列表" class="headerlink" title="软件列表"></a>软件列表</h1><ul>
-<li><p>FileZilla<br><a href="https://downloads.bugprogrammer.me/AppleSiliconApps/FileZilla自编译版本.zip">点击下载</a></p>
-</li>
-<li><p>Mos<br><a href="https://downloads.bugprogrammer.me/AppleSiliconApps/Mos自编译版本.zip">点击下载</a></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Macintosh</category>
-        <category>Apple Silicon</category>
-      </categories>
-      <tags>
-        <tag>Macintosh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博主的Hackintosh全家桶定时编译上线GitHub</title>
-    <url>/2020/09/07/HackintoshPlugins.html</url>
-    <content><![CDATA[<blockquote>
-<p>鉴于很多小伙伴编译困难，博主用azure pipelines建立了自动编译流水线，包括OC以及常用kexts，每8小时更新一次，欢迎食用</p>
-</blockquote>
-<h3 id="仓库链接"><a href="#仓库链接" class="headerlink" title="仓库链接"></a>仓库链接</h3><p><a href="https://github.com/bugprogrammer/HackinPlugins">https://github.com/bugprogrammer/HackinPlugins</a></p>
-<h3 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h3><p>直接下载或者使用HackintoshBuild中的每日构建功能</p>
-<h3 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-3.png"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博主的Hackintosh Bootloader以及kexts编译脚本分享</title>
     <url>/2019/12/21/Hackintosh_Build.html</url>
     <content><![CDATA[<blockquote>
@@ -163,6 +125,23 @@
 <h2 id="脚本使用"><a href="#脚本使用" class="headerlink" title="脚本使用"></a>脚本使用</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/Hackintosh_build.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
 <h1 id="使用截图"><a href="#使用截图" class="headerlink" title="使用截图"></a>使用截图</h1><img src= "/images/loading.gif" data-lazy-src="/images/build-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/build-2.png"></li>
 </ul>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博主的Hackintosh全家桶定时编译上线GitHub</title>
+    <url>/2020/09/07/HackintoshPlugins.html</url>
+    <content><![CDATA[<blockquote>
+<p>鉴于很多小伙伴编译困难，博主用azure pipelines建立了自动编译流水线，包括OC以及常用kexts，每8小时更新一次，欢迎食用</p>
+</blockquote>
+<h3 id="仓库链接"><a href="#仓库链接" class="headerlink" title="仓库链接"></a>仓库链接</h3><p><a href="https://github.com/bugprogrammer/HackinPlugins">https://github.com/bugprogrammer/HackinPlugins</a></p>
+<h3 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h3><p>直接下载或者使用HackintoshBuild中的每日构建功能</p>
+<h3 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-3.png"></p>
 ]]></content>
       <categories>
         <category>Hackintosh</category>
@@ -340,6 +319,149 @@
       </tags>
   </entry>
   <entry>
+    <title>博主自编译的开源软件用于Apple Silicon Macs(长期更新)</title>
+    <url>/2021/04/23/Compiling-Soft-for-AppleSilicons.html</url>
+    <content><![CDATA[<blockquote>
+<p>自从博主购入m1版本的Mac mini以来，体验惊艳。低发热，低功耗，高性能，特别是gpu性能，让我这个不需要独显的人不用为了启动台的流畅度而被迫购入独显，这些优点已经让博主把Hackintosh吃灰。由于Apple Silicon是基于ARM架构的，所以不可避免出现app生态问题。现在发布博主自编译的开源软件，以用于Apple Silicon Macs。此帖将长期更新<a id="more"></a></p>
+</blockquote>
+<h1 id="软件列表"><a href="#软件列表" class="headerlink" title="软件列表"></a>软件列表</h1><ul>
+<li><p>FileZilla<br><a href="https://downloads.bugprogrammer.me/AppleSiliconApps/FileZilla自编译版本.zip">点击下载</a></p>
+</li>
+<li><p>Mos<br><a href="https://downloads.bugprogrammer.me/AppleSiliconApps/Mos自编译版本.zip">点击下载</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Macintosh</category>
+        <category>Apple Silicon</category>
+      </categories>
+      <tags>
+        <tag>Macintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux内核简介及编译教程</title>
+    <url>/2018/09/01/Linux_Kernel_Build.html</url>
+    <content><![CDATA[<blockquote>
+<p>博主去年双11购入AMD Vega显卡(为了黑苹果免驱以及硬解)，发现Linux下无法驱动Vega显卡，4K显示器分辨率被锁定为1920x2160的奇葩分辨率，无法接受。于是Google了一下发现当时的内核(Linux 4.12)并不支持AMD Vega显卡，于是打算编译内核升级到最新版本，毕竟Linux的舒适使用对博主十分重要。现在分享一下Linux Kernel的编译教程。<a id="more"></a><br><br /><b>注意：由于时间久远，博主的Linux已经升级Ubuntu 18.04，自带内核版本为Linux 4.15，所以演示平台为Ubuntu 18.04，编译的内核版本为Linux 4.18.5。另外，本文中部分图片来源网络。因为经典体系架构图现画比较麻烦。</b></p>
+</blockquote>
+<h3 id="Linux内核简介"><a href="#Linux内核简介" class="headerlink" title="Linux内核简介"></a>Linux内核简介</h3><h4 id="Linux-Kernel-Map"><a href="#Linux-Kernel-Map" class="headerlink" title="Linux Kernel Map"></a>Linux Kernel Map</h4><p><img src= "/images/loading.gif" data-lazy-src="/images/6b49439752bdd908e832187bbbfe555dcd56864e.jpg"></p>
+<h4 id="Linux-系统体系结构"><a href="#Linux-系统体系结构" class="headerlink" title="Linux 系统体系结构"></a>Linux 系统体系结构</h4><p>如下图所示，Linux体系结构，从大的方面可以分为用户空间(User Space)和内核空间(Kernel Space)两部分。</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/299f340bcfb4ac1703fdb841e613bcaf57862165.jpg"></p>
+<ul>
+<li>用户空间中包含了C库，用户的应用程序。在某些体系结构图中还包含了shell，当然shell脚本也是Linux体系中不可缺少的一部分。</li>
+<li>内核空间包括硬件平台、平台依赖代码、内核、系统调用接口。</li>
+<li>在任何一个现代操作系统中，都是分层的。为什么需要分层呢？<blockquote>
+<p>从程序员的角度分析，将linux底层和应用分开，做应用的做应用，做底层的做底层，各干各的。经济学的基本原理是，分工产生效率。<br /><br>从安全性的角度分析，是为了保护内核。现代CPU通常都实现了不同的工作模式。<br><br />以ARM为例：ARM实现了7种工作模式，不同模式下CPU可以执行的指令或者访问的寄存器不同：(1)用户模式 usr (2)系统模式 sys(3)管理模式 svc(4)快速中断 fiq(5)外部中断 irq(6)数据访问终止 abt(7)未定义指令异常。如果任何一个上层应用都可以调用寄存器，那样肯定是无法稳定执行的。而且因为出现了这个问题，出现了一个新的学科“现代操作系统”，如果大家感兴趣可以看一下“现代操作系统”相关文章或者书籍。<br /><br>以X86为例：X86实现了4个不同级别的权限，Ring0—Ring3 ;Ring0下可以执行特权指令，可以访问IO设备；Ring3则有很多的限制。如果分析一下Android的，这方面做的更加“丧心病狂”，Android所有的APK应用程序，都是在Java虚拟机上面运行，应用程序更加远离底层。<br /><br>另外，用户空间和内核空间是程序执行的两种不同状态，我们可以通过“系统调用”和“硬件中断”来完成用户空间到内核空间的转移。</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="Linux-Kernel体系结构"><a href="#Linux-Kernel体系结构" class="headerlink" title="Linux Kernel体系结构"></a>Linux Kernel体系结构</h4><p>如下图所示，是Linux内核结构图。</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/97909a09aa119314a15a18235b9eb288ba7ad448.jpg"></p>
+<h5 id="SCI层（System-Call-Interface）"><a href="#SCI层（System-Call-Interface）" class="headerlink" title="SCI层（System Call Interface）"></a>SCI层（System Call Interface）</h5><p>这一层是给应用用户空间提供一套标准的系统调用函数来访问Linux。前面分析Linux体系结构的时候，介绍过任何一类现代操作系统都不会允许上层应用直接访问底层，在Linux中，内核提供了一套标准接口，上层应用就可以通过这一套标准接口来访问底层。</p>
+<h5 id="PM（Procees-Management）"><a href="#PM（Procees-Management）" class="headerlink" title="PM（Procees Management）"></a>PM（Procees Management）</h5><p>这一部分包括具体创建进程（fork、exec）,停止进程（kill、exit）,并控制他们之间的通信（signal等）。还包括进程调度，控制活动进程如何共享CPU。这一部分是Linux已经做好的，在写驱动的时候，只需要调用对应的函数即可实现这些功能，例如创建进程、进程通信等等。</p>
+<h5 id="MM（Memory-Management）"><a href="#MM（Memory-Management）" class="headerlink" title="MM（Memory Management）"></a>MM（Memory Management）</h5><p>内存管理的主要作用是控制多个进程安全的共享内存区域。</p>
+<h5 id="VFS（Virtual-File-Systems）"><a href="#VFS（Virtual-File-Systems）" class="headerlink" title="VFS（Virtual File Systems）"></a>VFS（Virtual File Systems）</h5><p>虚拟文件系统，隐藏各种文件系统的具体细节，为文件操作提供统一的接口。在Linux中“一切皆文件”，这些文件就是通过VFS来实现的。Linux提供了一个大的通用模型，使这个模型包含了所有文件系统功能的集合。如下图所示，是一个虚拟文件系统的结构图。</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/5a07b3a364feae45f4bd211f19d963e1977eff58.jpg"></p>
+<h5 id="DD（Device-Drivers）"><a href="#DD（Device-Drivers）" class="headerlink" title="DD（Device Drivers）"></a>DD（Device Drivers）</h5><p>设备驱动，Linux驱动一般分为网络设备、块设备、字符设备、杂项设备，需要我们编写的只有字符设备，杂项设备是不容易归类的一种驱动，杂项设备和字符设备有很多重合的地方。</p>
+<h5 id="PD（Physical-Devices）"><a href="#PD（Physical-Devices）" class="headerlink" title="PD（Physical Devices）"></a>PD（Physical Devices）</h5><p>这一部分提供丰富的网络协议支持。</p>
+<h3 id="Linux-Kernel源码"><a href="#Linux-Kernel源码" class="headerlink" title="Linux Kernel源码"></a>Linux Kernel源码</h3><h4 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h4><p><b><a href="http://www.kernel.org/">www.kernel.org</a></b></p>
+<h4 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h4><ul>
+<li>arch：根据cpu体系结构不同而分的代码</li>
+<li>block：部分块设备驱动程序</li>
+<li>crypto：加密，压缩，CRC校验算法</li>
+<li>documentation：内核文档</li>
+<li>drivers：设备驱动程序</li>
+<li>fs(虚拟文件系统vfs):文件系统</li>
+<li>include：内核所需的头文件，(与平台无关的头文件在include/linux中)</li>
+<li>lib：库文件代码(与平台相关的)</li>
+<li>mm：实现内存管理，与硬件体系结构无关的(与硬件体系结构相关的在arch中)</li>
+<li>net：网络协议的代码</li>
+<li>samples：一些内核编程的范例</li>
+<li>scripts：配置内核的脚本</li>
+<li>security：SElinux的模块</li>
+<li>sound：音频设备的驱动程序</li>
+<li>usr：cpio命令实现，用于制作根文件系统的命令(文件系统与内核放到一块的命令)</li>
+<li>virt：内核虚拟机</li>
+</ul>
+<h3 id="Linux-Kernel编译"><a href="#Linux-Kernel编译" class="headerlink" title="Linux Kernel编译"></a>Linux Kernel编译</h3><h4 id="下载Linux-Kernel源码并拷贝到-usr-src目录"><a href="#下载Linux-Kernel源码并拷贝到-usr-src目录" class="headerlink" title="下载Linux Kernel源码并拷贝到/usr/src目录"></a>下载Linux Kernel源码并拷贝到/usr/src目录</h4><p>输入如下命令即可</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">wget https:<span class="regexp">//</span>cdn.kernel.org<span class="regexp">/pub/</span>linux<span class="regexp">/kernel/</span>v4.x<span class="regexp">/linux-4.18.5.tar.xz &amp;&amp; cp -f linux-4.18.5.tar.xz /u</span>sr/src</span><br></pre></td></tr></table></figure>
+<h4 id="解压Linux-Kernel"><a href="#解压Linux-Kernel" class="headerlink" title="解压Linux Kernel"></a>解压Linux Kernel</h4><p>输入如下命令即可</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">cd</span> /usr/src &amp;&amp; tar -xvf linux-<span class="number">4</span>.<span class="number">18</span>.<span class="number">5</span>.tar.xz &amp;&amp; cd linux-<span class="number">4</span>.<span class="number">18</span>.<span class="number">5</span></span><br></pre></td></tr></table></figure>
+<h4 id="Ubuntu-18-04下，要执行以下命令安装软件包"><a href="#Ubuntu-18-04下，要执行以下命令安装软件包" class="headerlink" title="Ubuntu 18.04下，要执行以下命令安装软件包"></a>Ubuntu 18.04下，要执行以下命令安装软件包</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">sudo apt <span class="keyword">install</span> fortune</span><br></pre></td></tr></table></figure>
+<h4 id="配置编译参数"><a href="#配置编译参数" class="headerlink" title="配置编译参数"></a>配置编译参数</h4><p>执行以下命令，会弹出一个带有GUI的配置界面，一般情况下默认参数就好，光标移动到Save保存即可，如图：</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">make menuconfig</span></span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/bc6c5ce369b72802e5c97d5a38ef3b2b50ad6455.jpg"></p>
+<h4 id="编译内核"><a href="#编译内核" class="headerlink" title="编译内核"></a>编译内核</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">make</span> -j<span class="number">12</span></span><br></pre></td></tr></table></figure>
+<p><b>注意：-j参数后面加本机CPU线程数可以加快编译速度，博主的8700K是6核心12线程，所以-j12。</b></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/39a28f2943c8062679567b03687c28c54354b5c9.jpg"></p>
+<h4 id="安装内核"><a href="#安装内核" class="headerlink" title="安装内核"></a>安装内核</h4><figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line"><span class="built_in">make</span> modules_install</span><br><span class="line"><span class="built_in">make</span> install</span><br></pre></td></tr></table></figure>
+<h4 id="更新grub引导"><a href="#更新grub引导" class="headerlink" title="更新grub引导"></a>更新grub引导</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">update</span>-grub<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>至此升级内核成功，重启电脑。</p>
+<h4 id="确认升级是否成功"><a href="#确认升级是否成功" class="headerlink" title="确认升级是否成功"></a>确认升级是否成功</h4><p>重启后，执行如下命令查看内核版本，和编译版本相同即为成功</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">uname -r</span></span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/7de8222416d47ef89b548125c35e3b5f3238508f.jpg"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux_Kernel</tag>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ThinkPad S1 2017 Hackintosh记录+教程+完整EFI分享</title>
+    <url>/2018/07/28/ThinkPad_Hackintosh.html</url>
+    <content><![CDATA[<blockquote>
+<p>朋友购买了ThinkPad S1 2017版本，配置为i5-7200U+hd620+8g ram+256g intel ssd(NVME)+1080P屏幕。安装黑苹果大体顺利，现将大概过程分享，供同机型的朋友借鉴。<a id="more"></a></p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li>因ThinkPad S1 2017使用的是intel无线网卡，大家都知道intel无线网卡在黑苹果下目前无解，所以替换了Bcm94352z。虽然Bcm94360是免驱的，但是博主不建议笔记本用户选用，因为Bcm94360和普通的ngff无线网卡相比宽了一块，所以笔记本有概率无法安装。</li>
+<li>完美程度：显卡+声卡+双网卡+蓝牙完美驱动，USB正常，睡眠唤醒正常，显示器内建正常，HDMI外接屏幕正常，变频7档，小太阳正常，电池正常(感谢黑果小兵和宪武以及其他大牛的帮助)。触摸屏以及电容笔可用，但只能单点触摸。触摸板和小红点可用，但是不支持手势。</li>
+<li>因为电脑是朋友的，所以截图不方便，因此本教程尽量多使用命令行方式，各位可以直接复制粘贴。</li>
+<li>本教程需要你有一个macOS环境，可以是虚拟机。虚拟机安装macOS百度教程很多，请自学。</li>
+<li>安装前要在Windows下准备好安装macOS所需分区。</li>
+</ul>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><h3 id="制作安装盘"><a href="#制作安装盘" class="headerlink" title="制作安装盘"></a>制作安装盘</h3><ul>
+<li>下载macOS High Sierra 10.13.6镜像，博主建议在App Store下载，下载成功后会保存在Application下。</li>
+<li>格式化U盘为Mac OS扩展日志式，U盘名称设置为mac，格式化后会生成两个分区，第一个是EFI分区，用来存放Clover引导，第二个用于写入镜像，格式化U盘如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/7eb9ec5bdd42a032dc9707bd8255427e82618323.jpg"></li>
+<li>写入镜像:终端输入如下命令并输入密码即可。<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/Applications/</span>Install\ macOS\ High\ Sierra.app<span class="regexp">/Contents/</span>Resources<span class="regexp">/createinstallmedia --volume /</span>Volumes<span class="regexp">/mac --applicationpath /</span>Applications/Install\ macOS\ High\ Sierra.app</span><br></pre></td></tr></table></figure>
+<h3 id="获取博主分享的Clover文件-保存在桌面"><a href="#获取博主分享的Clover文件-保存在桌面" class="headerlink" title="获取博主分享的Clover文件,保存在桌面"></a>获取博主分享的Clover文件,保存在桌面</h3></li>
+<li>输入如下命令即可在桌面保存hackintosh文件夹，内含Clover文件夹<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~<span class="string">/Desktop</span> &amp;&amp; git clone https:<span class="string">//github.com/bugprogrammer/hackintosh.git</span> &amp;&amp; <span class="keyword">cd</span> hackintosh &amp;&amp; git checkout ThinkPad-S1-2017 </span><br></pre></td></tr></table></figure>
+<img src= "/images/loading.gif" data-lazy-src="/images/d36b4788d3a64bcc071322e9a8dd0668cd7d7b20.jpg"></li>
+</ul>
+<h3 id="挂载U盘EFI分区，放入Clover引导"><a href="#挂载U盘EFI分区，放入Clover引导" class="headerlink" title="挂载U盘EFI分区，放入Clover引导"></a>挂载U盘EFI分区，放入Clover引导</h3><p>使用Clover Configurator挂载EFI分区，将博主分享的EFI拷贝进去。<br>   <img src= "/images/loading.gif" data-lazy-src="/images/deb75b00e28a324d97692897f31013241d00124f.jpg"><br>   <img src= "/images/loading.gif" data-lazy-src="/images/49f17878784bf4892e1e2be3e4af61fc5c5d9117.jpg"></p>
+<h3 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h3><ul>
+<li>U盘启动，进入安装盘</li>
+<li>选择语言为简体中文，磁盘工具下抹盘为APFS</li>
+<li>点击安装macOS，选择刚才准备好的分区，安装系统</li>
+<li>安装系统有两个阶段，中途会重启，属于正常现象</li>
+</ul>
+<h3 id="系统完善"><a href="#系统完善" class="headerlink" title="系统完善"></a>系统完善</h3><blockquote>
+<p>因为有些操作是在系统内完成的，所以只有一个efi不可能安装完成就完美，所以进入系统后要完善系统。</p>
+</blockquote>
+<h4 id="蓝牙"><a href="#蓝牙" class="headerlink" title="蓝牙"></a>蓝牙</h4><p>挂载EFI分区，终端下输入如下命令重启即可</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/BrcmFirmwareData.kext /</span>Library/Extensions</span><br><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/BrcmPatchRAM2.kext /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure>
+<h4 id="电池"><a href="#电池" class="headerlink" title="电池"></a>电池</h4><p>挂载EFI分区，终端下输入如下命令重启即可</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/ACPIBatteryManager.kext  /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure>
+<h4 id="小太阳"><a href="#小太阳" class="headerlink" title="小太阳"></a>小太阳</h4><ul>
+<li>挂载EFI分区，终端下输入如下命令重启<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/AppleBacklightInjector.kext  /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure></li>
+<li>设置快捷键，将亮度调节快捷键修改成笔记本键盘相应键位，ThinkPad S1 2017为F5亮度增，F6亮度减。(需要外接键盘才能设置，设置完成后可以拔掉外接键盘)<br>  <img src= "/images/loading.gif" data-lazy-src="/images/a7883fe77213f7236c7b3677e631aadf5737a2ee.jpg"></li>
+</ul>
+<h4 id="显示器内建以及开启hidpi"><a href="#显示器内建以及开启hidpi" class="headerlink" title="显示器内建以及开启hidpi"></a>显示器内建以及开启hidpi</h4><p>终端输入如下命令执行一建Hidpi脚本并按下图选择即可(感谢xzhih大牛提供脚本)，重启之后，你会发现Hidpi和内建显示器成功完成。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/master/hidpi.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<p>  <img src= "/images/loading.gif" data-lazy-src="/images/ee9bda948796e3d12b9ade6e3e82eab9a089a256.jpg"><br>  <img src= "/images/loading.gif" data-lazy-src="/images/d14a98efc2249b2ec0ddd1ad0215f3b8058d31e2.jpg"></p>
+<h2 id="至此，ThinkPad-S1-2017-黑苹果95完美"><a href="#至此，ThinkPad-S1-2017-黑苹果95完美" class="headerlink" title="至此，ThinkPad S1 2017 黑苹果95完美"></a>至此，ThinkPad S1 2017 黑苹果95完美</h2>]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>macOS</tag>
+        <tag>ThinkPad S1 2017</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>技嘉Z490 ELITE+i9 10900K+RX 5700 XT Hackintosh构建说明</title>
     <url>/2020/05/27/Hackintosh_for_Z490_10900K.html</url>
     <content><![CDATA[<blockquote>
@@ -493,179 +615,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux内核简介及编译教程</title>
-    <url>/2018/09/01/Linux_Kernel_Build.html</url>
-    <content><![CDATA[<blockquote>
-<p>博主去年双11购入AMD Vega显卡(为了黑苹果免驱以及硬解)，发现Linux下无法驱动Vega显卡，4K显示器分辨率被锁定为1920x2160的奇葩分辨率，无法接受。于是Google了一下发现当时的内核(Linux 4.12)并不支持AMD Vega显卡，于是打算编译内核升级到最新版本，毕竟Linux的舒适使用对博主十分重要。现在分享一下Linux Kernel的编译教程。<a id="more"></a><br><br /><b>注意：由于时间久远，博主的Linux已经升级Ubuntu 18.04，自带内核版本为Linux 4.15，所以演示平台为Ubuntu 18.04，编译的内核版本为Linux 4.18.5。另外，本文中部分图片来源网络。因为经典体系架构图现画比较麻烦。</b></p>
-</blockquote>
-<h3 id="Linux内核简介"><a href="#Linux内核简介" class="headerlink" title="Linux内核简介"></a>Linux内核简介</h3><h4 id="Linux-Kernel-Map"><a href="#Linux-Kernel-Map" class="headerlink" title="Linux Kernel Map"></a>Linux Kernel Map</h4><p><img src= "/images/loading.gif" data-lazy-src="/images/6b49439752bdd908e832187bbbfe555dcd56864e.jpg"></p>
-<h4 id="Linux-系统体系结构"><a href="#Linux-系统体系结构" class="headerlink" title="Linux 系统体系结构"></a>Linux 系统体系结构</h4><p>如下图所示，Linux体系结构，从大的方面可以分为用户空间(User Space)和内核空间(Kernel Space)两部分。</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/299f340bcfb4ac1703fdb841e613bcaf57862165.jpg"></p>
-<ul>
-<li>用户空间中包含了C库，用户的应用程序。在某些体系结构图中还包含了shell，当然shell脚本也是Linux体系中不可缺少的一部分。</li>
-<li>内核空间包括硬件平台、平台依赖代码、内核、系统调用接口。</li>
-<li>在任何一个现代操作系统中，都是分层的。为什么需要分层呢？<blockquote>
-<p>从程序员的角度分析，将linux底层和应用分开，做应用的做应用，做底层的做底层，各干各的。经济学的基本原理是，分工产生效率。<br /><br>从安全性的角度分析，是为了保护内核。现代CPU通常都实现了不同的工作模式。<br><br />以ARM为例：ARM实现了7种工作模式，不同模式下CPU可以执行的指令或者访问的寄存器不同：(1)用户模式 usr (2)系统模式 sys(3)管理模式 svc(4)快速中断 fiq(5)外部中断 irq(6)数据访问终止 abt(7)未定义指令异常。如果任何一个上层应用都可以调用寄存器，那样肯定是无法稳定执行的。而且因为出现了这个问题，出现了一个新的学科“现代操作系统”，如果大家感兴趣可以看一下“现代操作系统”相关文章或者书籍。<br /><br>以X86为例：X86实现了4个不同级别的权限，Ring0—Ring3 ;Ring0下可以执行特权指令，可以访问IO设备；Ring3则有很多的限制。如果分析一下Android的，这方面做的更加“丧心病狂”，Android所有的APK应用程序，都是在Java虚拟机上面运行，应用程序更加远离底层。<br /><br>另外，用户空间和内核空间是程序执行的两种不同状态，我们可以通过“系统调用”和“硬件中断”来完成用户空间到内核空间的转移。</p>
-</blockquote>
-</li>
-</ul>
-<h4 id="Linux-Kernel体系结构"><a href="#Linux-Kernel体系结构" class="headerlink" title="Linux Kernel体系结构"></a>Linux Kernel体系结构</h4><p>如下图所示，是Linux内核结构图。</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/97909a09aa119314a15a18235b9eb288ba7ad448.jpg"></p>
-<h5 id="SCI层（System-Call-Interface）"><a href="#SCI层（System-Call-Interface）" class="headerlink" title="SCI层（System Call Interface）"></a>SCI层（System Call Interface）</h5><p>这一层是给应用用户空间提供一套标准的系统调用函数来访问Linux。前面分析Linux体系结构的时候，介绍过任何一类现代操作系统都不会允许上层应用直接访问底层，在Linux中，内核提供了一套标准接口，上层应用就可以通过这一套标准接口来访问底层。</p>
-<h5 id="PM（Procees-Management）"><a href="#PM（Procees-Management）" class="headerlink" title="PM（Procees Management）"></a>PM（Procees Management）</h5><p>这一部分包括具体创建进程（fork、exec）,停止进程（kill、exit）,并控制他们之间的通信（signal等）。还包括进程调度，控制活动进程如何共享CPU。这一部分是Linux已经做好的，在写驱动的时候，只需要调用对应的函数即可实现这些功能，例如创建进程、进程通信等等。</p>
-<h5 id="MM（Memory-Management）"><a href="#MM（Memory-Management）" class="headerlink" title="MM（Memory Management）"></a>MM（Memory Management）</h5><p>内存管理的主要作用是控制多个进程安全的共享内存区域。</p>
-<h5 id="VFS（Virtual-File-Systems）"><a href="#VFS（Virtual-File-Systems）" class="headerlink" title="VFS（Virtual File Systems）"></a>VFS（Virtual File Systems）</h5><p>虚拟文件系统，隐藏各种文件系统的具体细节，为文件操作提供统一的接口。在Linux中“一切皆文件”，这些文件就是通过VFS来实现的。Linux提供了一个大的通用模型，使这个模型包含了所有文件系统功能的集合。如下图所示，是一个虚拟文件系统的结构图。</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/5a07b3a364feae45f4bd211f19d963e1977eff58.jpg"></p>
-<h5 id="DD（Device-Drivers）"><a href="#DD（Device-Drivers）" class="headerlink" title="DD（Device Drivers）"></a>DD（Device Drivers）</h5><p>设备驱动，Linux驱动一般分为网络设备、块设备、字符设备、杂项设备，需要我们编写的只有字符设备，杂项设备是不容易归类的一种驱动，杂项设备和字符设备有很多重合的地方。</p>
-<h5 id="PD（Physical-Devices）"><a href="#PD（Physical-Devices）" class="headerlink" title="PD（Physical Devices）"></a>PD（Physical Devices）</h5><p>这一部分提供丰富的网络协议支持。</p>
-<h3 id="Linux-Kernel源码"><a href="#Linux-Kernel源码" class="headerlink" title="Linux Kernel源码"></a>Linux Kernel源码</h3><h4 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h4><p><b><a href="http://www.kernel.org/">www.kernel.org</a></b></p>
-<h4 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h4><ul>
-<li>arch：根据cpu体系结构不同而分的代码</li>
-<li>block：部分块设备驱动程序</li>
-<li>crypto：加密，压缩，CRC校验算法</li>
-<li>documentation：内核文档</li>
-<li>drivers：设备驱动程序</li>
-<li>fs(虚拟文件系统vfs):文件系统</li>
-<li>include：内核所需的头文件，(与平台无关的头文件在include/linux中)</li>
-<li>lib：库文件代码(与平台相关的)</li>
-<li>mm：实现内存管理，与硬件体系结构无关的(与硬件体系结构相关的在arch中)</li>
-<li>net：网络协议的代码</li>
-<li>samples：一些内核编程的范例</li>
-<li>scripts：配置内核的脚本</li>
-<li>security：SElinux的模块</li>
-<li>sound：音频设备的驱动程序</li>
-<li>usr：cpio命令实现，用于制作根文件系统的命令(文件系统与内核放到一块的命令)</li>
-<li>virt：内核虚拟机</li>
-</ul>
-<h3 id="Linux-Kernel编译"><a href="#Linux-Kernel编译" class="headerlink" title="Linux Kernel编译"></a>Linux Kernel编译</h3><h4 id="下载Linux-Kernel源码并拷贝到-usr-src目录"><a href="#下载Linux-Kernel源码并拷贝到-usr-src目录" class="headerlink" title="下载Linux Kernel源码并拷贝到/usr/src目录"></a>下载Linux Kernel源码并拷贝到/usr/src目录</h4><p>输入如下命令即可</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">wget https:<span class="regexp">//</span>cdn.kernel.org<span class="regexp">/pub/</span>linux<span class="regexp">/kernel/</span>v4.x<span class="regexp">/linux-4.18.5.tar.xz &amp;&amp; cp -f linux-4.18.5.tar.xz /u</span>sr/src</span><br></pre></td></tr></table></figure>
-<h4 id="解压Linux-Kernel"><a href="#解压Linux-Kernel" class="headerlink" title="解压Linux Kernel"></a>解压Linux Kernel</h4><p>输入如下命令即可</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">cd</span> /usr/src &amp;&amp; tar -xvf linux-<span class="number">4</span>.<span class="number">18</span>.<span class="number">5</span>.tar.xz &amp;&amp; cd linux-<span class="number">4</span>.<span class="number">18</span>.<span class="number">5</span></span><br></pre></td></tr></table></figure>
-<h4 id="Ubuntu-18-04下，要执行以下命令安装软件包"><a href="#Ubuntu-18-04下，要执行以下命令安装软件包" class="headerlink" title="Ubuntu 18.04下，要执行以下命令安装软件包"></a>Ubuntu 18.04下，要执行以下命令安装软件包</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">sudo apt <span class="keyword">install</span> fortune</span><br></pre></td></tr></table></figure>
-<h4 id="配置编译参数"><a href="#配置编译参数" class="headerlink" title="配置编译参数"></a>配置编译参数</h4><p>执行以下命令，会弹出一个带有GUI的配置界面，一般情况下默认参数就好，光标移动到Save保存即可，如图：</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">make menuconfig</span></span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/bc6c5ce369b72802e5c97d5a38ef3b2b50ad6455.jpg"></p>
-<h4 id="编译内核"><a href="#编译内核" class="headerlink" title="编译内核"></a>编译内核</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">make</span> -j<span class="number">12</span></span><br></pre></td></tr></table></figure>
-<p><b>注意：-j参数后面加本机CPU线程数可以加快编译速度，博主的8700K是6核心12线程，所以-j12。</b></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/39a28f2943c8062679567b03687c28c54354b5c9.jpg"></p>
-<h4 id="安装内核"><a href="#安装内核" class="headerlink" title="安装内核"></a>安装内核</h4><figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line"><span class="built_in">make</span> modules_install</span><br><span class="line"><span class="built_in">make</span> install</span><br></pre></td></tr></table></figure>
-<h4 id="更新grub引导"><a href="#更新grub引导" class="headerlink" title="更新grub引导"></a>更新grub引导</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">update</span>-grub<span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p>至此升级内核成功，重启电脑。</p>
-<h4 id="确认升级是否成功"><a href="#确认升级是否成功" class="headerlink" title="确认升级是否成功"></a>确认升级是否成功</h4><p>重启后，执行如下命令查看内核版本，和编译版本相同即为成功</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">uname -r</span></span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/7de8222416d47ef89b548125c35e3b5f3238508f.jpg"></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux_Kernel</tag>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ThinkPad S1 2017 Hackintosh记录+教程+完整EFI分享</title>
-    <url>/2018/07/28/ThinkPad_Hackintosh.html</url>
-    <content><![CDATA[<blockquote>
-<p>朋友购买了ThinkPad S1 2017版本，配置为i5-7200U+hd620+8g ram+256g intel ssd(NVME)+1080P屏幕。安装黑苹果大体顺利，现将大概过程分享，供同机型的朋友借鉴。<a id="more"></a></p>
-</blockquote>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li>因ThinkPad S1 2017使用的是intel无线网卡，大家都知道intel无线网卡在黑苹果下目前无解，所以替换了Bcm94352z。虽然Bcm94360是免驱的，但是博主不建议笔记本用户选用，因为Bcm94360和普通的ngff无线网卡相比宽了一块，所以笔记本有概率无法安装。</li>
-<li>完美程度：显卡+声卡+双网卡+蓝牙完美驱动，USB正常，睡眠唤醒正常，显示器内建正常，HDMI外接屏幕正常，变频7档，小太阳正常，电池正常(感谢黑果小兵和宪武以及其他大牛的帮助)。触摸屏以及电容笔可用，但只能单点触摸。触摸板和小红点可用，但是不支持手势。</li>
-<li>因为电脑是朋友的，所以截图不方便，因此本教程尽量多使用命令行方式，各位可以直接复制粘贴。</li>
-<li>本教程需要你有一个macOS环境，可以是虚拟机。虚拟机安装macOS百度教程很多，请自学。</li>
-<li>安装前要在Windows下准备好安装macOS所需分区。</li>
-</ul>
-<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><h3 id="制作安装盘"><a href="#制作安装盘" class="headerlink" title="制作安装盘"></a>制作安装盘</h3><ul>
-<li>下载macOS High Sierra 10.13.6镜像，博主建议在App Store下载，下载成功后会保存在Application下。</li>
-<li>格式化U盘为Mac OS扩展日志式，U盘名称设置为mac，格式化后会生成两个分区，第一个是EFI分区，用来存放Clover引导，第二个用于写入镜像，格式化U盘如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/7eb9ec5bdd42a032dc9707bd8255427e82618323.jpg"></li>
-<li>写入镜像:终端输入如下命令并输入密码即可。<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/Applications/</span>Install\ macOS\ High\ Sierra.app<span class="regexp">/Contents/</span>Resources<span class="regexp">/createinstallmedia --volume /</span>Volumes<span class="regexp">/mac --applicationpath /</span>Applications/Install\ macOS\ High\ Sierra.app</span><br></pre></td></tr></table></figure>
-<h3 id="获取博主分享的Clover文件-保存在桌面"><a href="#获取博主分享的Clover文件-保存在桌面" class="headerlink" title="获取博主分享的Clover文件,保存在桌面"></a>获取博主分享的Clover文件,保存在桌面</h3></li>
-<li>输入如下命令即可在桌面保存hackintosh文件夹，内含Clover文件夹<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~<span class="string">/Desktop</span> &amp;&amp; git clone https:<span class="string">//github.com/bugprogrammer/hackintosh.git</span> &amp;&amp; <span class="keyword">cd</span> hackintosh &amp;&amp; git checkout ThinkPad-S1-2017 </span><br></pre></td></tr></table></figure>
-<img src= "/images/loading.gif" data-lazy-src="/images/d36b4788d3a64bcc071322e9a8dd0668cd7d7b20.jpg"></li>
-</ul>
-<h3 id="挂载U盘EFI分区，放入Clover引导"><a href="#挂载U盘EFI分区，放入Clover引导" class="headerlink" title="挂载U盘EFI分区，放入Clover引导"></a>挂载U盘EFI分区，放入Clover引导</h3><p>使用Clover Configurator挂载EFI分区，将博主分享的EFI拷贝进去。<br>   <img src= "/images/loading.gif" data-lazy-src="/images/deb75b00e28a324d97692897f31013241d00124f.jpg"><br>   <img src= "/images/loading.gif" data-lazy-src="/images/49f17878784bf4892e1e2be3e4af61fc5c5d9117.jpg"></p>
-<h3 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h3><ul>
-<li>U盘启动，进入安装盘</li>
-<li>选择语言为简体中文，磁盘工具下抹盘为APFS</li>
-<li>点击安装macOS，选择刚才准备好的分区，安装系统</li>
-<li>安装系统有两个阶段，中途会重启，属于正常现象</li>
-</ul>
-<h3 id="系统完善"><a href="#系统完善" class="headerlink" title="系统完善"></a>系统完善</h3><blockquote>
-<p>因为有些操作是在系统内完成的，所以只有一个efi不可能安装完成就完美，所以进入系统后要完善系统。</p>
-</blockquote>
-<h4 id="蓝牙"><a href="#蓝牙" class="headerlink" title="蓝牙"></a>蓝牙</h4><p>挂载EFI分区，终端下输入如下命令重启即可</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/BrcmFirmwareData.kext /</span>Library/Extensions</span><br><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/BrcmPatchRAM2.kext /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure>
-<h4 id="电池"><a href="#电池" class="headerlink" title="电池"></a>电池</h4><p>挂载EFI分区，终端下输入如下命令重启即可</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/ACPIBatteryManager.kext  /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure>
-<h4 id="小太阳"><a href="#小太阳" class="headerlink" title="小太阳"></a>小太阳</h4><ul>
-<li>挂载EFI分区，终端下输入如下命令重启<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/AppleBacklightInjector.kext  /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure></li>
-<li>设置快捷键，将亮度调节快捷键修改成笔记本键盘相应键位，ThinkPad S1 2017为F5亮度增，F6亮度减。(需要外接键盘才能设置，设置完成后可以拔掉外接键盘)<br>  <img src= "/images/loading.gif" data-lazy-src="/images/a7883fe77213f7236c7b3677e631aadf5737a2ee.jpg"></li>
-</ul>
-<h4 id="显示器内建以及开启hidpi"><a href="#显示器内建以及开启hidpi" class="headerlink" title="显示器内建以及开启hidpi"></a>显示器内建以及开启hidpi</h4><p>终端输入如下命令执行一建Hidpi脚本并按下图选择即可(感谢xzhih大牛提供脚本)，重启之后，你会发现Hidpi和内建显示器成功完成。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/master/hidpi.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<p>  <img src= "/images/loading.gif" data-lazy-src="/images/ee9bda948796e3d12b9ade6e3e82eab9a089a256.jpg"><br>  <img src= "/images/loading.gif" data-lazy-src="/images/d14a98efc2249b2ec0ddd1ad0215f3b8058d31e2.jpg"></p>
-<h2 id="至此，ThinkPad-S1-2017-黑苹果95完美"><a href="#至此，ThinkPad-S1-2017-黑苹果95完美" class="headerlink" title="至此，ThinkPad S1 2017 黑苹果95完美"></a>至此，ThinkPad S1 2017 黑苹果95完美</h2>]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>macOS</tag>
-        <tag>ThinkPad S1 2017</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ThinkPad S1 2018 Hackintosh记录+教程+完整EFI分享</title>
-    <url>/2018/09/01/ThinkPad_Hackintosh_2018.html</url>
-    <content><![CDATA[<blockquote>
-<p>朋友购买了ThinkPad S1 2018版本，配置为i5-8250U+uhd620+8g ram+256g 联想定制ssd(NVME)+1080P屏幕。安装黑苹果大体顺利，现将大概过程分享，供同机型的朋友借鉴。<a id="more"></a></p>
-</blockquote>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li>因ThinkPad S1 2018使用的是intel无线网卡，大家都知道intel无线网卡在黑苹果下目前无解，所以替换了Bcm94352z。虽然Bcm94360是免驱的，但是博主不建议笔记本用户选用，因为Bcm94360和普通的ngff无线网卡相比宽了一块，所以笔记本有概率无法安装。</li>
-<li>完美程度：显卡+声卡+双网卡+蓝牙完美驱动，USB正常，睡眠唤醒正常，显示器内建正常，HDMI外接屏幕正常，变频7档，小太阳正常，电池正常(感谢黑果小兵和宪武以及其他大牛的帮助)。触摸屏以及电容笔可用，但只能单点触摸。触摸板和小红点可用，但是不支持手势。</li>
-<li>因为电脑是朋友的，所以截图不方便，因此本教程尽量多使用命令行方式，各位可以直接复制粘贴。</li>
-<li>本教程需要你有一个macOS环境，可以是虚拟机。虚拟机安装macOS百度教程很多，请自学。</li>
-<li>安装前要在Windows下准备好安装macOS所需分区。</li>
-</ul>
-<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><h3 id="制作安装盘"><a href="#制作安装盘" class="headerlink" title="制作安装盘"></a>制作安装盘</h3><ul>
-<li>下载macOS High Sierra 10.13.6镜像，博主建议在App Store下载，下载成功后会保存在Application下。</li>
-<li>格式化U盘为Mac OS扩展日志式，U盘名称设置为mac，格式化后会生成两个分区，第一个是EFI分区，用来存放Clover引导，第二个用于写入镜像，格式化U盘如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/7eb9ec5bdd42a032dc9707bd8255427e82618323.jpg"></li>
-<li>写入镜像:终端输入如下命令并输入密码即可。<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/Applications/</span>Install\ macOS\ High\ Sierra.app<span class="regexp">/Contents/</span>Resources<span class="regexp">/createinstallmedia --volume /</span>Volumes<span class="regexp">/mac --applicationpath /</span>Applications/Install\ macOS\ High\ Sierra.app</span><br></pre></td></tr></table></figure>
-<h3 id="获取博主分享的Clover文件-保存在桌面"><a href="#获取博主分享的Clover文件-保存在桌面" class="headerlink" title="获取博主分享的Clover文件,保存在桌面"></a>获取博主分享的Clover文件,保存在桌面</h3></li>
-<li>输入如下命令即可在桌面保存hackintosh文件夹，内含Clover文件夹<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~<span class="string">/Desktop</span> &amp;&amp; git clone https:<span class="string">//github.com/bugprogrammer/hackintosh.git</span> &amp;&amp; <span class="keyword">cd</span> hackintosh &amp;&amp; git checkout ThinkPad-S1-2018 </span><br></pre></td></tr></table></figure>
-<img src= "/images/loading.gif" data-lazy-src="/images/13d9520b827daa228ded32453ae6b69163965369.jpg"></li>
-</ul>
-<h3 id="挂载U盘EFI分区，放入Clover引导"><a href="#挂载U盘EFI分区，放入Clover引导" class="headerlink" title="挂载U盘EFI分区，放入Clover引导"></a>挂载U盘EFI分区，放入Clover引导</h3><p>使用Clover Configurator挂载EFI分区，将博主分享的EFI拷贝进去。<br>   <img src= "/images/loading.gif" data-lazy-src="/images/360ffd8a61b894b90505d9f89e798ab259461fd1.jpg"><br>   <img src= "/images/loading.gif" data-lazy-src="/images/f191d798eef6ca014e5f4f3d4df6e817c5dad4ae.jpg"></p>
-<h3 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h3><ul>
-<li>U盘启动，进入安装盘</li>
-<li>选择语言为简体中文，磁盘工具下抹盘为APFS</li>
-<li>点击安装macOS，选择刚才准备好的分区，安装系统</li>
-<li>安装系统有两个阶段，中途会重启，属于正常现象</li>
-</ul>
-<h3 id="系统完善"><a href="#系统完善" class="headerlink" title="系统完善"></a>系统完善</h3><blockquote>
-<p>因为有些操作是在系统内完成的，所以只有一个efi不可能安装完成就完美，所以进入系统后要完善系统。</p>
-</blockquote>
-<h4 id="蓝牙"><a href="#蓝牙" class="headerlink" title="蓝牙"></a>蓝牙</h4><p>挂载EFI分区，终端下输入如下命令重启即可</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/BrcmFirmwareData.kext /</span>Library/Extensions</span><br><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/BrcmPatchRAM2.kext /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure>
-<h4 id="电池"><a href="#电池" class="headerlink" title="电池"></a>电池</h4><p>挂载EFI分区，终端下输入如下命令重启即可</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/ACPIBatteryManager.kext  /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure>
-<h4 id="小太阳"><a href="#小太阳" class="headerlink" title="小太阳"></a>小太阳</h4><ul>
-<li>挂载EFI分区，终端下输入如下命令重启<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/AppleBacklightInjector.kext  /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure></li>
-<li>设置快捷键，将亮度调节快捷键修改成笔记本键盘相应键位，ThinkPad S1 2017为F5亮度增，F6亮度减。(需要外接键盘才能设置，设置完成后可以拔掉外接键盘)<br>  <img src= "/images/loading.gif" data-lazy-src="/images/a7883fe77213f7236c7b3677e631aadf5737a2ee.jpg"></li>
-</ul>
-<h4 id="显示器内建以及开启hidpi"><a href="#显示器内建以及开启hidpi" class="headerlink" title="显示器内建以及开启hidpi"></a>显示器内建以及开启hidpi</h4><p>终端输入如下命令执行一建Hidpi脚本并按下图选择即可(感谢xzhih大牛提供脚本)，重启之后，你会发现Hidpi和内建显示器成功完成。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/master/hidpi.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<p>  <img src= "/images/loading.gif" data-lazy-src="/images/ee9bda948796e3d12b9ade6e3e82eab9a089a256.jpg"><br>  <img src= "/images/loading.gif" data-lazy-src="/images/d14a98efc2249b2ec0ddd1ad0215f3b8058d31e2.jpg"></p>
-<h2 id="至此，ThinkPad-S1-2018-黑苹果95完美"><a href="#至此，ThinkPad-S1-2018-黑苹果95完美" class="headerlink" title="至此，ThinkPad S1 2018 黑苹果95完美"></a>至此，ThinkPad S1 2018 黑苹果95完美</h2>]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>macOS</tag>
-        <tag>ThinkPad S1 2018</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hackintosh for ASRock Z390 Phantom Gaming-ITX/ac+i9-9900K相关问题解决方案</title>
     <url>/2018/11/05/Z390+9900K_Hackintosh.html</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
@@ -788,38 +737,6 @@
       </tags>
   </entry>
   <entry>
-    <title>关于macOS 10.14.4 18E2034镜像的说明</title>
-    <url>/2019/03/27/about-macos-10.14.4-18E2034.html</url>
-    <content><![CDATA[<blockquote>
-<p>macOS 10.14.4 18E2034是一个特供镜像，博主猜测是iMac 2019的预装镜像(参测而已，因为经测试发现9900K型号仍然不识别，所以。。。)</p>
-</blockquote>
-<a id="more"></a>
-
-<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><h4 id="新建一个空壳镜像"><a href="#新建一个空壳镜像" class="headerlink" title="新建一个空壳镜像"></a>新建一个空壳镜像</h4><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/Applications/</span>Install\ macOS\ Mojave.app<span class="regexp">/Contents/</span>SharedSupport/</span><br></pre></td></tr></table></figure>
-<h4 id="获取镜像下载脚本"><a href="#获取镜像下载脚本" class="headerlink" title="获取镜像下载脚本"></a>获取镜像下载脚本</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">curl</span> https://www.tonymacx<span class="number">86</span>.com/attachments/createinstaller-<span class="number">10</span>-<span class="number">14</span>-<span class="number">4</span>-sb-sh-zip.<span class="number">395290</span>/ -o createInstaller-<span class="number">10</span>.<span class="number">14</span>.<span class="number">4</span>-SB.sh.zip</span><br><span class="line"><span class="attribute">unzip</span> createInstaller-<span class="number">10</span>.<span class="number">14</span>.<span class="number">4</span>-SB.sh.zip</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/e75ea7c233265be8aa47e9548df8c03ba93c6402.jpg"></p>
-<h4 id="修改脚本"><a href="#修改脚本" class="headerlink" title="修改脚本"></a>修改脚本</h4><blockquote>
-<p>由于下载可能失败,为了避免每次失败后都要重建空壳镜像，我们把脚本中的cp命令加上强制属性-f</p>
-</blockquote>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/3c35e1b7a49496a405706479ca6efab82865281b.jpg"></p>
-<h4 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h4><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">./createInstaller-<span class="number">10.14</span>.<span class="number">4</span>-<span class="module-access"><span class="module"><span class="identifier">SB</span>.</span></span>sh</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/a72f6742ed9dbd856a1872f1033e3a9b1a256f56.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/690c70a7ce3805cef14a2e66b0203bccecb7eed7.jpg"></p>
-<h3 id="博主的测试以及特供镜像的变化"><a href="#博主的测试以及特供镜像的变化" class="headerlink" title="博主的测试以及特供镜像的变化"></a>博主的测试以及特供镜像的变化</h3><ul>
-<li><font color=#A52A2A ><strong>仍然不显示9900K型号。</strong></font></li>
-<li><font color=#A52A2A ><strong>z390仍然要EmuVariableUefi-64.efi，否则睡眠、关机都变成重启。</strong></font></li>
-<li>AppleGraphicsPowerManagement.kext新增了两个机型，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/d8799656284986686c88dc71e6b0388fb7a773c3.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/9b9ed14414971bea8690c7ba3dd4b8d4ca632a85.jpg"></li>
-<li> AMDRadeonX5000GLDriver.bundle新增<font color=#A52A2A ><strong>Vega48</strong></font>和<font color=#A52A2A ><strong>Vega64X</strong></font>信息<br><img src= "/images/loading.gif" data-lazy-src="/images/e5dd1ea1e2ba4126ba28dd30334b2da8e6c245ed.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/9ac7e58ca2616f651daa617ec5defd17d1a1ab45.jpg"></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>macOS</tag>
-        <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OpenWrt获取IPv6详细教程</title>
     <url>/2021/05/06/about-openwrt-ipv6.html</url>
     <content><![CDATA[<blockquote>
@@ -859,6 +776,38 @@
       <tags>
         <tag>OpenWrt</tag>
         <tag>ipv6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于macOS 10.14.4 18E2034镜像的说明</title>
+    <url>/2019/03/27/about-macos-10.14.4-18E2034.html</url>
+    <content><![CDATA[<blockquote>
+<p>macOS 10.14.4 18E2034是一个特供镜像，博主猜测是iMac 2019的预装镜像(参测而已，因为经测试发现9900K型号仍然不识别，所以。。。)</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><h4 id="新建一个空壳镜像"><a href="#新建一个空壳镜像" class="headerlink" title="新建一个空壳镜像"></a>新建一个空壳镜像</h4><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/Applications/</span>Install\ macOS\ Mojave.app<span class="regexp">/Contents/</span>SharedSupport/</span><br></pre></td></tr></table></figure>
+<h4 id="获取镜像下载脚本"><a href="#获取镜像下载脚本" class="headerlink" title="获取镜像下载脚本"></a>获取镜像下载脚本</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">curl</span> https://www.tonymacx<span class="number">86</span>.com/attachments/createinstaller-<span class="number">10</span>-<span class="number">14</span>-<span class="number">4</span>-sb-sh-zip.<span class="number">395290</span>/ -o createInstaller-<span class="number">10</span>.<span class="number">14</span>.<span class="number">4</span>-SB.sh.zip</span><br><span class="line"><span class="attribute">unzip</span> createInstaller-<span class="number">10</span>.<span class="number">14</span>.<span class="number">4</span>-SB.sh.zip</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/e75ea7c233265be8aa47e9548df8c03ba93c6402.jpg"></p>
+<h4 id="修改脚本"><a href="#修改脚本" class="headerlink" title="修改脚本"></a>修改脚本</h4><blockquote>
+<p>由于下载可能失败,为了避免每次失败后都要重建空壳镜像，我们把脚本中的cp命令加上强制属性-f</p>
+</blockquote>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/3c35e1b7a49496a405706479ca6efab82865281b.jpg"></p>
+<h4 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h4><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">./createInstaller-<span class="number">10.14</span>.<span class="number">4</span>-<span class="module-access"><span class="module"><span class="identifier">SB</span>.</span></span>sh</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/a72f6742ed9dbd856a1872f1033e3a9b1a256f56.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/690c70a7ce3805cef14a2e66b0203bccecb7eed7.jpg"></p>
+<h3 id="博主的测试以及特供镜像的变化"><a href="#博主的测试以及特供镜像的变化" class="headerlink" title="博主的测试以及特供镜像的变化"></a>博主的测试以及特供镜像的变化</h3><ul>
+<li><font color=#A52A2A ><strong>仍然不显示9900K型号。</strong></font></li>
+<li><font color=#A52A2A ><strong>z390仍然要EmuVariableUefi-64.efi，否则睡眠、关机都变成重启。</strong></font></li>
+<li>AppleGraphicsPowerManagement.kext新增了两个机型，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/d8799656284986686c88dc71e6b0388fb7a773c3.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/9b9ed14414971bea8690c7ba3dd4b8d4ca632a85.jpg"></li>
+<li> AMDRadeonX5000GLDriver.bundle新增<font color=#A52A2A ><strong>Vega48</strong></font>和<font color=#A52A2A ><strong>Vega64X</strong></font>信息<br><img src= "/images/loading.gif" data-lazy-src="/images/e5dd1ea1e2ba4126ba28dd30334b2da8e6c245ed.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/9ac7e58ca2616f651daa617ec5defd17d1a1ab45.jpg"></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>macOS</tag>
       </tags>
   </entry>
   <entry>
@@ -959,6 +908,32 @@
       </tags>
   </entry>
   <entry>
+    <title>修复OpenCore在较新主板上引导Linux失败</title>
+    <url>/2020/04/03/fix-boot-linux-with-opencore.html</url>
+    <content><![CDATA[<blockquote>
+<p>自从OpenCore推出以来，一直存在一个bug，在较新主板上引导Linux会失败，无法加载内核，现在已经可以解决。<a id="more"></a></p>
+</blockquote>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><ul>
+<li><p>编译最新OpenCore(建议使用HackintoshBuild工具)或从以下链接下载<br><a href="https://downloads.bugprogrammer.me/OpenCore/OpenCore-0.5.7-RELEASE.zip">OpenCore-0.5.7-RELEASE.zip</a></p>
+</li>
+<li><p>替换bootx64.efi OpenCore.efi OpenRuntime.efi</p>
+</li>
+<li><p>修改config.plist<br>Booter-&gt;Quirks-&gt;SyncRuntimePermissions-&gt;Yes<br><img src= "/images/loading.gif" data-lazy-src="/images/Linux.png"></p>
+</li>
+</ul>
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>最近有人提到新版本OC启动Windows会失败(集中在Skylake平台)，博主没有遇到，请小伙伴们注意下，博主会抽空跟进最新情况。相关issue如下:<br><a href="https://github.com/acidanthera/bugtracker/issues/491">https://github.com/acidanthera/bugtracker/issues/491</a></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>macOS Catalina 10.15</tag>
+        <tag>OpenCore</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ASRock Z390 Phantom Gaming-ITX使用BootCamp切换双系统注意事项</title>
     <url>/2020/04/04/bootcamp-about-z390.html</url>
     <content><![CDATA[<blockquote>
@@ -1045,32 +1020,6 @@
       </tags>
   </entry>
   <entry>
-    <title>修复OpenCore在较新主板上引导Linux失败</title>
-    <url>/2020/04/03/fix-boot-linux-with-opencore.html</url>
-    <content><![CDATA[<blockquote>
-<p>自从OpenCore推出以来，一直存在一个bug，在较新主板上引导Linux会失败，无法加载内核，现在已经可以解决。<a id="more"></a></p>
-</blockquote>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><ul>
-<li><p>编译最新OpenCore(建议使用HackintoshBuild工具)或从以下链接下载<br><a href="https://downloads.bugprogrammer.me/OpenCore/OpenCore-0.5.7-RELEASE.zip">OpenCore-0.5.7-RELEASE.zip</a></p>
-</li>
-<li><p>替换bootx64.efi OpenCore.efi OpenRuntime.efi</p>
-</li>
-<li><p>修改config.plist<br>Booter-&gt;Quirks-&gt;SyncRuntimePermissions-&gt;Yes<br><img src= "/images/loading.gif" data-lazy-src="/images/Linux.png"></p>
-</li>
-</ul>
-<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>最近有人提到新版本OC启动Windows会失败(集中在Skylake平台)，博主没有遇到，请小伙伴们注意下，博主会抽空跟进最新情况。相关issue如下:<br><a href="https://github.com/acidanthera/bugtracker/issues/491">https://github.com/acidanthera/bugtracker/issues/491</a></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>macOS Catalina 10.15</tag>
-        <tag>OpenCore</tag>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>原版Whatevergreen实现核显最高频率(部分主板不支持),魔改版本停更</title>
     <url>/2020/03/24/fix-igpu-with-vit9696-weg.html</url>
     <content><![CDATA[<blockquote>
@@ -1143,6 +1092,107 @@
       </tags>
   </entry>
   <entry>
+    <title>ThinkPad S1 2018 Hackintosh记录+教程+完整EFI分享</title>
+    <url>/2018/09/01/ThinkPad_Hackintosh_2018.html</url>
+    <content><![CDATA[<blockquote>
+<p>朋友购买了ThinkPad S1 2018版本，配置为i5-8250U+uhd620+8g ram+256g 联想定制ssd(NVME)+1080P屏幕。安装黑苹果大体顺利，现将大概过程分享，供同机型的朋友借鉴。<a id="more"></a></p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li>因ThinkPad S1 2018使用的是intel无线网卡，大家都知道intel无线网卡在黑苹果下目前无解，所以替换了Bcm94352z。虽然Bcm94360是免驱的，但是博主不建议笔记本用户选用，因为Bcm94360和普通的ngff无线网卡相比宽了一块，所以笔记本有概率无法安装。</li>
+<li>完美程度：显卡+声卡+双网卡+蓝牙完美驱动，USB正常，睡眠唤醒正常，显示器内建正常，HDMI外接屏幕正常，变频7档，小太阳正常，电池正常(感谢黑果小兵和宪武以及其他大牛的帮助)。触摸屏以及电容笔可用，但只能单点触摸。触摸板和小红点可用，但是不支持手势。</li>
+<li>因为电脑是朋友的，所以截图不方便，因此本教程尽量多使用命令行方式，各位可以直接复制粘贴。</li>
+<li>本教程需要你有一个macOS环境，可以是虚拟机。虚拟机安装macOS百度教程很多，请自学。</li>
+<li>安装前要在Windows下准备好安装macOS所需分区。</li>
+</ul>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><h3 id="制作安装盘"><a href="#制作安装盘" class="headerlink" title="制作安装盘"></a>制作安装盘</h3><ul>
+<li>下载macOS High Sierra 10.13.6镜像，博主建议在App Store下载，下载成功后会保存在Application下。</li>
+<li>格式化U盘为Mac OS扩展日志式，U盘名称设置为mac，格式化后会生成两个分区，第一个是EFI分区，用来存放Clover引导，第二个用于写入镜像，格式化U盘如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/7eb9ec5bdd42a032dc9707bd8255427e82618323.jpg"></li>
+<li>写入镜像:终端输入如下命令并输入密码即可。<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/Applications/</span>Install\ macOS\ High\ Sierra.app<span class="regexp">/Contents/</span>Resources<span class="regexp">/createinstallmedia --volume /</span>Volumes<span class="regexp">/mac --applicationpath /</span>Applications/Install\ macOS\ High\ Sierra.app</span><br></pre></td></tr></table></figure>
+<h3 id="获取博主分享的Clover文件-保存在桌面"><a href="#获取博主分享的Clover文件-保存在桌面" class="headerlink" title="获取博主分享的Clover文件,保存在桌面"></a>获取博主分享的Clover文件,保存在桌面</h3></li>
+<li>输入如下命令即可在桌面保存hackintosh文件夹，内含Clover文件夹<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~<span class="string">/Desktop</span> &amp;&amp; git clone https:<span class="string">//github.com/bugprogrammer/hackintosh.git</span> &amp;&amp; <span class="keyword">cd</span> hackintosh &amp;&amp; git checkout ThinkPad-S1-2018 </span><br></pre></td></tr></table></figure>
+<img src= "/images/loading.gif" data-lazy-src="/images/13d9520b827daa228ded32453ae6b69163965369.jpg"></li>
+</ul>
+<h3 id="挂载U盘EFI分区，放入Clover引导"><a href="#挂载U盘EFI分区，放入Clover引导" class="headerlink" title="挂载U盘EFI分区，放入Clover引导"></a>挂载U盘EFI分区，放入Clover引导</h3><p>使用Clover Configurator挂载EFI分区，将博主分享的EFI拷贝进去。<br>   <img src= "/images/loading.gif" data-lazy-src="/images/360ffd8a61b894b90505d9f89e798ab259461fd1.jpg"><br>   <img src= "/images/loading.gif" data-lazy-src="/images/f191d798eef6ca014e5f4f3d4df6e817c5dad4ae.jpg"></p>
+<h3 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h3><ul>
+<li>U盘启动，进入安装盘</li>
+<li>选择语言为简体中文，磁盘工具下抹盘为APFS</li>
+<li>点击安装macOS，选择刚才准备好的分区，安装系统</li>
+<li>安装系统有两个阶段，中途会重启，属于正常现象</li>
+</ul>
+<h3 id="系统完善"><a href="#系统完善" class="headerlink" title="系统完善"></a>系统完善</h3><blockquote>
+<p>因为有些操作是在系统内完成的，所以只有一个efi不可能安装完成就完美，所以进入系统后要完善系统。</p>
+</blockquote>
+<h4 id="蓝牙"><a href="#蓝牙" class="headerlink" title="蓝牙"></a>蓝牙</h4><p>挂载EFI分区，终端下输入如下命令重启即可</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/BrcmFirmwareData.kext /</span>Library/Extensions</span><br><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/BrcmPatchRAM2.kext /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure>
+<h4 id="电池"><a href="#电池" class="headerlink" title="电池"></a>电池</h4><p>挂载EFI分区，终端下输入如下命令重启即可</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/ACPIBatteryManager.kext  /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure>
+<h4 id="小太阳"><a href="#小太阳" class="headerlink" title="小太阳"></a>小太阳</h4><ul>
+<li>挂载EFI分区，终端下输入如下命令重启<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/AppleBacklightInjector.kext  /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure></li>
+<li>设置快捷键，将亮度调节快捷键修改成笔记本键盘相应键位，ThinkPad S1 2017为F5亮度增，F6亮度减。(需要外接键盘才能设置，设置完成后可以拔掉外接键盘)<br>  <img src= "/images/loading.gif" data-lazy-src="/images/a7883fe77213f7236c7b3677e631aadf5737a2ee.jpg"></li>
+</ul>
+<h4 id="显示器内建以及开启hidpi"><a href="#显示器内建以及开启hidpi" class="headerlink" title="显示器内建以及开启hidpi"></a>显示器内建以及开启hidpi</h4><p>终端输入如下命令执行一建Hidpi脚本并按下图选择即可(感谢xzhih大牛提供脚本)，重启之后，你会发现Hidpi和内建显示器成功完成。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/master/hidpi.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<p>  <img src= "/images/loading.gif" data-lazy-src="/images/ee9bda948796e3d12b9ade6e3e82eab9a089a256.jpg"><br>  <img src= "/images/loading.gif" data-lazy-src="/images/d14a98efc2249b2ec0ddd1ad0215f3b8058d31e2.jpg"></p>
+<h2 id="至此，ThinkPad-S1-2018-黑苹果95完美"><a href="#至此，ThinkPad-S1-2018-黑苹果95完美" class="headerlink" title="至此，ThinkPad S1 2018 黑苹果95完美"></a>至此，ThinkPad S1 2018 黑苹果95完美</h2>]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>macOS</tag>
+        <tag>ThinkPad S1 2018</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>无核显开启sidecar方法</title>
+    <url>/2019/11/24/fix-sidecar-without-igpu.html</url>
+    <content><![CDATA[<blockquote>
+<p>之前<font color=#A52A2A >@fang2018</font>发布了一个相关教程，地址如下:<font color=#A52A2A ><a href="https://fangf.cc/2019/10/14/noneigpusidecar/">https://fangf.cc/2019/10/14/noneigpusidecar/</a></font>, 现在随着Whatevergreen的更新，之前的方法已经不再适用。现在发布新教程。</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="无核显开启sidecar教程"><a href="#无核显开启sidecar教程" class="headerlink" title="无核显开启sidecar教程"></a>无核显开启sidecar教程</h1><ul>
+<li>smbios设置成iMac19,1或iMac18,3(绝对不能用iMac Pro 1,1或Mac Pro 7,1)</li>
+<li>Lilu使用v1.3.9版本(<a href="https://github.com/acidanthera/Lilu">https://github.com/acidanthera/Lilu</a>)</li>
+<li>Whatevergreen使用v1.3.5版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)</li>
+<li>boot-args加入shikigva=16</li>
+<li>重启</li>
+</ul>
+<h1 id="至此，您的sidecar功能已经可用。"><a href="#至此，您的sidecar功能已经可用。" class="headerlink" title="至此，您的sidecar功能已经可用。"></a>至此，您的sidecar功能已经可用。</h1>]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>sidecar</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博主github Hackintosh仓库公开以及使用方法</title>
+    <url>/2019/05/23/github-hackintosh.html</url>
+    <content><![CDATA[<p>为了方便大家安装macOS，博主将测试过的机型的Clover文件整理并发布至github，地址为<strong><a href="https://github.com/bugprogrammer/hackintosh">https://github.com/bugprogrammer/hackintosh</a></strong> <strong><font color=#A52A2A >注意:仓库中所有机型都是博主亲自安装并测试过的机型。</strong></font><a id="more"></a></p>
+<blockquote>
+<p>由于部分用户认为git操作较为麻烦，需要学习。所以博主提供了自动化脚本方案，几乎自动获取Clover。脚本支持Windows、macOS、Ubuntu。</p>
+</blockquote>
+<h2 id="脚本使用方法"><a href="#脚本使用方法" class="headerlink" title="脚本使用方法"></a>脚本使用方法</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><ul>
+<li>点击如下链接下载git。<br><a href="https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe">https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe</a></li>
+<li>按默认设置安装即可。</li>
+</ul>
+<h4 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h4><p>打开git-bash <strong><font color=#A52A2A >(注意一定要用git-bash)，执行如下命令即可</font></strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h3><p>终端输入如下命令即可 <strong><font color=#A52A2A >(注意脚本中绿字提示)</font></strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h3><p>终端输入如下命令即可</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="脚本使用截图-以macOS为例"><a href="#脚本使用截图-以macOS为例" class="headerlink" title="脚本使用截图(以macOS为例)"></a>脚本使用截图(以macOS为例)</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-3.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-4.png"></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>修复OpenCore 0.5.3关于本机不显示内存教程</title>
     <url>/2019/12/04/fix-showmemory.html</url>
     <content><![CDATA[<blockquote>
@@ -1202,56 +1252,6 @@
       </tags>
   </entry>
   <entry>
-    <title>无核显开启sidecar方法</title>
-    <url>/2019/11/24/fix-sidecar-without-igpu.html</url>
-    <content><![CDATA[<blockquote>
-<p>之前<font color=#A52A2A >@fang2018</font>发布了一个相关教程，地址如下:<font color=#A52A2A ><a href="https://fangf.cc/2019/10/14/noneigpusidecar/">https://fangf.cc/2019/10/14/noneigpusidecar/</a></font>, 现在随着Whatevergreen的更新，之前的方法已经不再适用。现在发布新教程。</p>
-</blockquote>
-<a id="more"></a>
-
-<h1 id="无核显开启sidecar教程"><a href="#无核显开启sidecar教程" class="headerlink" title="无核显开启sidecar教程"></a>无核显开启sidecar教程</h1><ul>
-<li>smbios设置成iMac19,1或iMac18,3(绝对不能用iMac Pro 1,1或Mac Pro 7,1)</li>
-<li>Lilu使用v1.3.9版本(<a href="https://github.com/acidanthera/Lilu">https://github.com/acidanthera/Lilu</a>)</li>
-<li>Whatevergreen使用v1.3.5版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)</li>
-<li>boot-args加入shikigva=16</li>
-<li>重启</li>
-</ul>
-<h1 id="至此，您的sidecar功能已经可用。"><a href="#至此，您的sidecar功能已经可用。" class="headerlink" title="至此，您的sidecar功能已经可用。"></a>至此，您的sidecar功能已经可用。</h1>]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>sidecar</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博主github Hackintosh仓库公开以及使用方法</title>
-    <url>/2019/05/23/github-hackintosh.html</url>
-    <content><![CDATA[<p>为了方便大家安装macOS，博主将测试过的机型的Clover文件整理并发布至github，地址为<strong><a href="https://github.com/bugprogrammer/hackintosh">https://github.com/bugprogrammer/hackintosh</a></strong> <strong><font color=#A52A2A >注意:仓库中所有机型都是博主亲自安装并测试过的机型。</strong></font><a id="more"></a></p>
-<blockquote>
-<p>由于部分用户认为git操作较为麻烦，需要学习。所以博主提供了自动化脚本方案，几乎自动获取Clover。脚本支持Windows、macOS、Ubuntu。</p>
-</blockquote>
-<h2 id="脚本使用方法"><a href="#脚本使用方法" class="headerlink" title="脚本使用方法"></a>脚本使用方法</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><ul>
-<li>点击如下链接下载git。<br><a href="https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe">https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe</a></li>
-<li>按默认设置安装即可。</li>
-</ul>
-<h4 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h4><p>打开git-bash <strong><font color=#A52A2A >(注意一定要用git-bash)，执行如下命令即可</font></strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h3><p>终端输入如下命令即可 <strong><font color=#A52A2A >(注意脚本中绿字提示)</font></strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h3><p>终端输入如下命令即可</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<h2 id="脚本使用截图-以macOS为例"><a href="#脚本使用截图-以macOS为例" class="headerlink" title="脚本使用截图(以macOS为例)"></a>脚本使用截图(以macOS为例)</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-3.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-4.png"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>macOS Catalina 10.15目前情况(持续更新)</title>
     <url>/2019/06/04/hackintosh-10.15.html</url>
     <content><![CDATA[<p>Apple的WWDC2019已经结束，为我们带来了macOS 10.15、MacPro等出色产品。博主连夜测试了10.15在PC机上的运行情况，现在梳理如下(持续更新)。<a id="more"></a></p>
@@ -1290,41 +1290,6 @@
         <tag>Hackintosh</tag>
         <tag>macOS Catalina 10.15</tag>
         <tag>OpenCore</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>美化你的shell,macOS下安装zsh和neofetch教程(Unix/Linux也适用)</title>
-    <url>/2018/05/11/install-zsh.html</url>
-    <content><![CDATA[<p>最近在使用Hackintosh，发现macOS自带的shell并不好用，所以安装了被誉为终极shell的zsh，方法整理如下：<a id="more"></a> </p>
-<h3 id="确认包管理器"><a href="#确认包管理器" class="headerlink" title="确认包管理器"></a>确认包管理器</h3><blockquote>
-<p>unix以及类unix(如Linux及其发行版)下都有对应的包管理器,常见的包管理器如下：macOS下为HomeBrew，Debian/Ubuntu为apt，Fedora为yum或dnf，Centos为yum，Archlinux为pacman等。</p>
-</blockquote>
-<h3 id="macOS安装HomeBrew以及wget-其他系统用户跳过此步骤"><a href="#macOS安装HomeBrew以及wget-其他系统用户跳过此步骤" class="headerlink" title="macOS安装HomeBrew以及wget(其他系统用户跳过此步骤)"></a>macOS安装HomeBrew以及wget(其他系统用户跳过此步骤)</h3><h4 id="HomeBrew"><a href="#HomeBrew" class="headerlink" title="HomeBrew"></a>HomeBrew</h4><p>由于macOS下没有自带HomeBrew，故需要手动安装。首先安装xcode，然后终端运行如下命令即可安装HomeBrew。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ruby -e <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><ul>
-<li>更新：brew update </li>
-<li>安装软件包：brew install “PackegeName” </li>
-<li>搜索软件包：brew search “PackegeName”</li>
-<li>卸载软件包：brew remove “PackegeName” </li>
-</ul>
-<h4 id="wget："><a href="#wget：" class="headerlink" title="wget："></a>wget：</h4><figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>wget</span><br></pre></td></tr></table></figure>
-<h3 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h3><h4 id="macOS："><a href="#macOS：" class="headerlink" title="macOS："></a>macOS：</h4><figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>zsh</span><br></pre></td></tr></table></figure>
-<h4 id="Debian-Ubuntu"><a href="#Debian-Ubuntu" class="headerlink" title="Debian/Ubuntu:"></a>Debian/Ubuntu:</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">apt <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure>
-<h4 id="Fedora"><a href="#Fedora" class="headerlink" title="Fedora:"></a>Fedora:</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">dnf <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure>
-<h4 id="Centos"><a href="#Centos" class="headerlink" title="Centos:"></a>Centos:</h4><figure class="highlight sas"><table><tr><td class="code"><pre><span class="line">yum <span class="meta">update</span> <span class="variable">&amp;&amp;</span> yum install zsh</span><br></pre></td></tr></table></figure>
-<h4 id="Archlinux"><a href="#Archlinux" class="headerlink" title="Archlinux:"></a>Archlinux:</h4><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">pacman -S zsh</span></span><br></pre></td></tr></table></figure>
-<h3 id="将系统默认shell更换为zsh"><a href="#将系统默认shell更换为zsh" class="headerlink" title="将系统默认shell更换为zsh"></a>将系统默认shell更换为zsh</h3><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">chsh -s <span class="regexp">/bin/</span>zsh</span><br></pre></td></tr></table></figure>
-<h3 id="安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。"><a href="#安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。" class="headerlink" title="安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。"></a>安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。</h3><h3 id="配置zsh"><a href="#配置zsh" class="headerlink" title="配置zsh"></a>配置zsh</h3><p>使用oh-my-zsh可以很方便的配置zsh,并生成.zshrc配置文件方便修改 输入以下命令安装oh-my-zsh</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<p>安装成功后输入nano .zshrc打开.zshrc文件添加neofetch,修改ZSH_THEME=”random”，意为每次打开终端即启动neofetch，zsh主题随机，也就是每次打开终端都会改变一个主题，修改如图： <img src= "/images/loading.gif" data-lazy-src="/images/c7fd2a6d2692642c94a9a78c42f04ee4ef71b410.jpg"> 重启电脑就会看到效果。</p>
-<h3 id="用描述文件美化终端-不同系统，不同桌面环境会有所不同-需要自己摸索了，下面以macOS为例"><a href="#用描述文件美化终端-不同系统，不同桌面环境会有所不同-需要自己摸索了，下面以macOS为例" class="headerlink" title="用描述文件美化终端(不同系统，不同桌面环境会有所不同,需要自己摸索了，下面以macOS为例)"></a>用描述文件美化终端(不同系统，不同桌面环境会有所不同,需要自己摸索了，下面以macOS为例)</h3><p>打开终端，点击右键打开显示检查器，选择一个样式双击打开描述文件，按自己的喜好设置文字风格，样式，透明度，模糊程度，窗口大小等，成品图如下： <img src= "/images/loading.gif" data-lazy-src="/images/e7005ea1415345c95c83b5c0f1cbd21b124c8245.jpg"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>shell</tag>
-        <tag>zsh</tag>
       </tags>
   </entry>
   <entry>
@@ -1406,6 +1371,41 @@
       </tags>
   </entry>
   <entry>
+    <title>美化你的shell,macOS下安装zsh和neofetch教程(Unix/Linux也适用)</title>
+    <url>/2018/05/11/install-zsh.html</url>
+    <content><![CDATA[<p>最近在使用Hackintosh，发现macOS自带的shell并不好用，所以安装了被誉为终极shell的zsh，方法整理如下：<a id="more"></a> </p>
+<h3 id="确认包管理器"><a href="#确认包管理器" class="headerlink" title="确认包管理器"></a>确认包管理器</h3><blockquote>
+<p>unix以及类unix(如Linux及其发行版)下都有对应的包管理器,常见的包管理器如下：macOS下为HomeBrew，Debian/Ubuntu为apt，Fedora为yum或dnf，Centos为yum，Archlinux为pacman等。</p>
+</blockquote>
+<h3 id="macOS安装HomeBrew以及wget-其他系统用户跳过此步骤"><a href="#macOS安装HomeBrew以及wget-其他系统用户跳过此步骤" class="headerlink" title="macOS安装HomeBrew以及wget(其他系统用户跳过此步骤)"></a>macOS安装HomeBrew以及wget(其他系统用户跳过此步骤)</h3><h4 id="HomeBrew"><a href="#HomeBrew" class="headerlink" title="HomeBrew"></a>HomeBrew</h4><p>由于macOS下没有自带HomeBrew，故需要手动安装。首先安装xcode，然后终端运行如下命令即可安装HomeBrew。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ruby -e <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><ul>
+<li>更新：brew update </li>
+<li>安装软件包：brew install “PackegeName” </li>
+<li>搜索软件包：brew search “PackegeName”</li>
+<li>卸载软件包：brew remove “PackegeName” </li>
+</ul>
+<h4 id="wget："><a href="#wget：" class="headerlink" title="wget："></a>wget：</h4><figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>wget</span><br></pre></td></tr></table></figure>
+<h3 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h3><h4 id="macOS："><a href="#macOS：" class="headerlink" title="macOS："></a>macOS：</h4><figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>zsh</span><br></pre></td></tr></table></figure>
+<h4 id="Debian-Ubuntu"><a href="#Debian-Ubuntu" class="headerlink" title="Debian/Ubuntu:"></a>Debian/Ubuntu:</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">apt <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure>
+<h4 id="Fedora"><a href="#Fedora" class="headerlink" title="Fedora:"></a>Fedora:</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">dnf <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure>
+<h4 id="Centos"><a href="#Centos" class="headerlink" title="Centos:"></a>Centos:</h4><figure class="highlight sas"><table><tr><td class="code"><pre><span class="line">yum <span class="meta">update</span> <span class="variable">&amp;&amp;</span> yum install zsh</span><br></pre></td></tr></table></figure>
+<h4 id="Archlinux"><a href="#Archlinux" class="headerlink" title="Archlinux:"></a>Archlinux:</h4><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">pacman -S zsh</span></span><br></pre></td></tr></table></figure>
+<h3 id="将系统默认shell更换为zsh"><a href="#将系统默认shell更换为zsh" class="headerlink" title="将系统默认shell更换为zsh"></a>将系统默认shell更换为zsh</h3><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">chsh -s <span class="regexp">/bin/</span>zsh</span><br></pre></td></tr></table></figure>
+<h3 id="安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。"><a href="#安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。" class="headerlink" title="安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。"></a>安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。</h3><h3 id="配置zsh"><a href="#配置zsh" class="headerlink" title="配置zsh"></a>配置zsh</h3><p>使用oh-my-zsh可以很方便的配置zsh,并生成.zshrc配置文件方便修改 输入以下命令安装oh-my-zsh</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<p>安装成功后输入nano .zshrc打开.zshrc文件添加neofetch,修改ZSH_THEME=”random”，意为每次打开终端即启动neofetch，zsh主题随机，也就是每次打开终端都会改变一个主题，修改如图： <img src= "/images/loading.gif" data-lazy-src="/images/c7fd2a6d2692642c94a9a78c42f04ee4ef71b410.jpg"> 重启电脑就会看到效果。</p>
+<h3 id="用描述文件美化终端-不同系统，不同桌面环境会有所不同-需要自己摸索了，下面以macOS为例"><a href="#用描述文件美化终端-不同系统，不同桌面环境会有所不同-需要自己摸索了，下面以macOS为例" class="headerlink" title="用描述文件美化终端(不同系统，不同桌面环境会有所不同,需要自己摸索了，下面以macOS为例)"></a>用描述文件美化终端(不同系统，不同桌面环境会有所不同,需要自己摸索了，下面以macOS为例)</h3><p>打开终端，点击右键打开显示检查器，选择一个样式双击打开描述文件，按自己的喜好设置文字风格，样式，透明度，模糊程度，窗口大小等，成品图如下： <img src= "/images/loading.gif" data-lazy-src="/images/e7005ea1415345c95c83b5c0f1cbd21b124c8245.jpg"></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
+        <tag>zsh</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux常用命令总结</title>
     <url>/2018/05/06/linux-common-command-summary.html</url>
     <content><![CDATA[<p>由于最近一直在使用Linux操作系统，经常要使用一些Linux命令,所以总结一下Linux中的常用命令<a id="more"></a>：</p>
@@ -1438,43 +1438,6 @@
       <tags>
         <tag>shell</tag>
         <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>macOS High Sierra 10.13.4下Z370主板USB相关解决方案</title>
-    <url>/2018/05/09/macos-high-sierra-10-13-4-z370-motherboard-usb-related-solutions.html</url>
-    <content><![CDATA[<blockquote>
-<p>有些使用z370主板安装macOS的朋友可能遇到USB方面的问题，一些朋友的表现为部分USB失灵，还有一部分可能遇到usb3.0设备插在 3.0接口处不识别，今天放上本人的解决方案<a id="more"></a>。</p>
-</blockquote>
-<h3 id="在clover加入以下补丁并重启测试USB情况查看USB是否完整识别，3-0设备插在usb3-0上是否可用。"><a href="#在clover加入以下补丁并重启测试USB情况查看USB是否完整识别，3-0设备插在usb3-0上是否可用。" class="headerlink" title="在clover加入以下补丁并重启测试USB情况查看USB是否完整识别，3.0设备插在usb3.0上是否可用。"></a>在clover加入以下补丁并重启测试USB情况查看USB是否完整识别，3.0设备插在usb3.0上是否可用。</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ra9pmr9mj30sg01fwen.jpg"></p>
-<h3 id="添加补丁后遇到USB3-0移动硬盘插在usb3-0接口上识别为内置硬盘-桌面不显示黄盘-的解决方案："><a href="#添加补丁后遇到USB3-0移动硬盘插在usb3-0接口上识别为内置硬盘-桌面不显示黄盘-的解决方案：" class="headerlink" title="添加补丁后遇到USB3.0移动硬盘插在usb3.0接口上识别为内置硬盘(桌面不显示黄盘)的解决方案："></a>添加补丁后遇到USB3.0移动硬盘插在usb3.0接口上识别为内置硬盘(桌面不显示黄盘)的解决方案：</h3><p>下载最新版<a href="https://bitbucket.org/RehabMan/os-x-usb-inject-all/downloads/RehabMan-USBInjectAll-2018-0420.zip">usbinjectall.kext</a>,并解压拷贝到efi/clover/kexts/other下。</p>
-<h3 id="usb引起睡眠之后瞬间唤醒的解决方案-按照步骤2添加usbinjectall-kext后有概率遇到-此解决方案包括但不限于以上情况-："><a href="#usb引起睡眠之后瞬间唤醒的解决方案-按照步骤2添加usbinjectall-kext后有概率遇到-此解决方案包括但不限于以上情况-：" class="headerlink" title="usb引起睡眠之后瞬间唤醒的解决方案(按照步骤2添加usbinjectall.kext后有概率遇到,此解决方案包括但不限于以上情况)："></a>usb引起睡眠之后瞬间唤醒的解决方案(按照步骤2添加usbinjectall.kext后有概率遇到,此解决方案包括但不限于以上情况)：</h3><h4 id="方案1-DSDT打补丁-："><a href="#方案1-DSDT打补丁-：" class="headerlink" title="方案1(DSDT打补丁)："></a>方案1(DSDT打补丁)：</h4><p>特点：无需排查导致bug的具体usb口是哪个。同时会使usb唤醒失效，无法用键鼠唤醒，故不推荐！！！</p>
-<ul>
-<li>下载<a href="https://bitbucket.org/RehabMan/acpica/downloads/iasl.zip">iasl</a>用来反编译dsdt,把iasl编译器拷贝到/usr/bin目录,方便调用。</li>
-<li>下载<a href="https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads/RehabMan-MaciASL-2018-0507.zip">MaciASL</a>，我提供的版本自带RehabMan dsdt补丁库。</li>
-<li>提取DSDT：开机clover引导界面处按F4自动提取，路径EFI/Clover/ACPI/origin下。把DSDT.aml拷贝到桌面。</li>
-<li>反编译DSDT：终端输入cd ~/Desktop进入桌面目录，再输入iasl -da -dl *.aml反编译DSDT，成功后会在桌面生成DSDT.dsl 文件。</li>
-<li>给DSDT打补丁：用MaciASL打开DSDT.dsl,点击patch，在左侧补丁栏选择USB3 _PRW 0x6D Skylake(instant wake),再点击 Apply完成，如图： <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ra9y5srvj30sg0dbwgu.jpg"></li>
-<li>编译、排错、保存：打完补丁后点击Complie编译，如果有错请暂时依照网络资源排错。关于DSDT排错，本人后续会详细更新， 敬请期待！排错完成后点击File-&gt;Save As保存DSDT，格式为ACPI Machine Language Binary(aml)。</li>
-<li>将dsdt拷贝到efi/clover/acpi/patched下并重启生效。</li>
-</ul>
-<h4 id="方案2-修改usbinjectall-kext"><a href="#方案2-修改usbinjectall-kext" class="headerlink" title="方案2(修改usbinjectall.kext)"></a>方案2(修改usbinjectall.kext)</h4><p>特点：需要排查导致bug的具体usb接口，但不会导致usb唤醒失效，可以用键鼠唤醒，故强烈推荐。</p>
-<ul>
-<li>排查引起bug的USB：一般为蓝牙或摄像头等特殊接口。可以拔掉相应排线重启测试，若拔掉后不再瞬间唤醒，则接口确定，比如 本人的是连接蓝牙排线的usb所导致。</li>
-<li>Windows下进入设备管理器，确定usb设备id，如图则为8086_a2af。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raapm4ahj30j707jmyl.jpg"></li>
-<li>确定导致bug的usb编号：下载并打开<a href="https://us.softpedia-secure-download.com/dl/cd6af705d256e781d022b220f14acd38/5af2e088/400138300/mac/System-Utilities/IORegistryExplorer.zip">IORegistryExplorer</a>,找到XHC分支，在XHC分支中找到导致bug的usb所连接的设备(比如我 的是蓝牙)，此设备对应的HS号即为所需编号，如图则为HS10(注意HS10下面的BCM20702A0就是我的蓝牙，也就是说HS10导致的睡眠 瞬间唤醒)： <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raay9umlj30sg0g07ax.jpg"></li>
-<li>将usbinjectall.kext拷贝到桌面，并下载<a href="https://www.fatcatsoftware.com/plisteditpro/PlistEditPro.zip">PlistEdit Pro</a>。</li>
-<li>修改usbinjectall.kext：右击usbinjectall.kext，用PlistEdit Pro打开info.plist。找到IOKitPersonalities-&gt; ConfigurationData-&gt;Configuration分支，在下面选择自己usb的id(Windows下找的那个，我的是8086_a2af)分支，进入后打开 ports可以看到一堆HS编号，打开自己的HS编号(步骤3找到的那个，我的是HS10)，将UsbConnector属性值改成255(255为特殊端口) 并保存，如图： <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rabd1qt4j30sg0mz13x.jpg"></li>
-<li>将修改好的usbinjectall.kext拷贝到efi/clover/kexts/other下重建缓存并重启。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>usb</tag>
-        <tag>z370</tag>
       </tags>
   </entry>
   <entry>
@@ -1512,6 +1475,43 @@
       </categories>
       <tags>
         <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>macOS High Sierra 10.13.4下Z370主板USB相关解决方案</title>
+    <url>/2018/05/09/macos-high-sierra-10-13-4-z370-motherboard-usb-related-solutions.html</url>
+    <content><![CDATA[<blockquote>
+<p>有些使用z370主板安装macOS的朋友可能遇到USB方面的问题，一些朋友的表现为部分USB失灵，还有一部分可能遇到usb3.0设备插在 3.0接口处不识别，今天放上本人的解决方案<a id="more"></a>。</p>
+</blockquote>
+<h3 id="在clover加入以下补丁并重启测试USB情况查看USB是否完整识别，3-0设备插在usb3-0上是否可用。"><a href="#在clover加入以下补丁并重启测试USB情况查看USB是否完整识别，3-0设备插在usb3-0上是否可用。" class="headerlink" title="在clover加入以下补丁并重启测试USB情况查看USB是否完整识别，3.0设备插在usb3.0上是否可用。"></a>在clover加入以下补丁并重启测试USB情况查看USB是否完整识别，3.0设备插在usb3.0上是否可用。</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ra9pmr9mj30sg01fwen.jpg"></p>
+<h3 id="添加补丁后遇到USB3-0移动硬盘插在usb3-0接口上识别为内置硬盘-桌面不显示黄盘-的解决方案："><a href="#添加补丁后遇到USB3-0移动硬盘插在usb3-0接口上识别为内置硬盘-桌面不显示黄盘-的解决方案：" class="headerlink" title="添加补丁后遇到USB3.0移动硬盘插在usb3.0接口上识别为内置硬盘(桌面不显示黄盘)的解决方案："></a>添加补丁后遇到USB3.0移动硬盘插在usb3.0接口上识别为内置硬盘(桌面不显示黄盘)的解决方案：</h3><p>下载最新版<a href="https://bitbucket.org/RehabMan/os-x-usb-inject-all/downloads/RehabMan-USBInjectAll-2018-0420.zip">usbinjectall.kext</a>,并解压拷贝到efi/clover/kexts/other下。</p>
+<h3 id="usb引起睡眠之后瞬间唤醒的解决方案-按照步骤2添加usbinjectall-kext后有概率遇到-此解决方案包括但不限于以上情况-："><a href="#usb引起睡眠之后瞬间唤醒的解决方案-按照步骤2添加usbinjectall-kext后有概率遇到-此解决方案包括但不限于以上情况-：" class="headerlink" title="usb引起睡眠之后瞬间唤醒的解决方案(按照步骤2添加usbinjectall.kext后有概率遇到,此解决方案包括但不限于以上情况)："></a>usb引起睡眠之后瞬间唤醒的解决方案(按照步骤2添加usbinjectall.kext后有概率遇到,此解决方案包括但不限于以上情况)：</h3><h4 id="方案1-DSDT打补丁-："><a href="#方案1-DSDT打补丁-：" class="headerlink" title="方案1(DSDT打补丁)："></a>方案1(DSDT打补丁)：</h4><p>特点：无需排查导致bug的具体usb口是哪个。同时会使usb唤醒失效，无法用键鼠唤醒，故不推荐！！！</p>
+<ul>
+<li>下载<a href="https://bitbucket.org/RehabMan/acpica/downloads/iasl.zip">iasl</a>用来反编译dsdt,把iasl编译器拷贝到/usr/bin目录,方便调用。</li>
+<li>下载<a href="https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads/RehabMan-MaciASL-2018-0507.zip">MaciASL</a>，我提供的版本自带RehabMan dsdt补丁库。</li>
+<li>提取DSDT：开机clover引导界面处按F4自动提取，路径EFI/Clover/ACPI/origin下。把DSDT.aml拷贝到桌面。</li>
+<li>反编译DSDT：终端输入cd ~/Desktop进入桌面目录，再输入iasl -da -dl *.aml反编译DSDT，成功后会在桌面生成DSDT.dsl 文件。</li>
+<li>给DSDT打补丁：用MaciASL打开DSDT.dsl,点击patch，在左侧补丁栏选择USB3 _PRW 0x6D Skylake(instant wake),再点击 Apply完成，如图： <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ra9y5srvj30sg0dbwgu.jpg"></li>
+<li>编译、排错、保存：打完补丁后点击Complie编译，如果有错请暂时依照网络资源排错。关于DSDT排错，本人后续会详细更新， 敬请期待！排错完成后点击File-&gt;Save As保存DSDT，格式为ACPI Machine Language Binary(aml)。</li>
+<li>将dsdt拷贝到efi/clover/acpi/patched下并重启生效。</li>
+</ul>
+<h4 id="方案2-修改usbinjectall-kext"><a href="#方案2-修改usbinjectall-kext" class="headerlink" title="方案2(修改usbinjectall.kext)"></a>方案2(修改usbinjectall.kext)</h4><p>特点：需要排查导致bug的具体usb接口，但不会导致usb唤醒失效，可以用键鼠唤醒，故强烈推荐。</p>
+<ul>
+<li>排查引起bug的USB：一般为蓝牙或摄像头等特殊接口。可以拔掉相应排线重启测试，若拔掉后不再瞬间唤醒，则接口确定，比如 本人的是连接蓝牙排线的usb所导致。</li>
+<li>Windows下进入设备管理器，确定usb设备id，如图则为8086_a2af。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raapm4ahj30j707jmyl.jpg"></li>
+<li>确定导致bug的usb编号：下载并打开<a href="https://us.softpedia-secure-download.com/dl/cd6af705d256e781d022b220f14acd38/5af2e088/400138300/mac/System-Utilities/IORegistryExplorer.zip">IORegistryExplorer</a>,找到XHC分支，在XHC分支中找到导致bug的usb所连接的设备(比如我 的是蓝牙)，此设备对应的HS号即为所需编号，如图则为HS10(注意HS10下面的BCM20702A0就是我的蓝牙，也就是说HS10导致的睡眠 瞬间唤醒)： <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raay9umlj30sg0g07ax.jpg"></li>
+<li>将usbinjectall.kext拷贝到桌面，并下载<a href="https://www.fatcatsoftware.com/plisteditpro/PlistEditPro.zip">PlistEdit Pro</a>。</li>
+<li>修改usbinjectall.kext：右击usbinjectall.kext，用PlistEdit Pro打开info.plist。找到IOKitPersonalities-&gt; ConfigurationData-&gt;Configuration分支，在下面选择自己usb的id(Windows下找的那个，我的是8086_a2af)分支，进入后打开 ports可以看到一堆HS编号，打开自己的HS编号(步骤3找到的那个，我的是HS10)，将UsbConnector属性值改成255(255为特殊端口) 并保存，如图： <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rabd1qt4j30sg0mz13x.jpg"></li>
+<li>将修改好的usbinjectall.kext拷贝到efi/clover/kexts/other下重建缓存并重启。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>usb</tag>
+        <tag>z370</tag>
       </tags>
   </entry>
   <entry>
@@ -1731,6 +1731,188 @@
       <tags>
         <tag>Hackintosh</tag>
         <tag>OpenCore</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PHP+Nginx+MySQL搭建网站简易教程(以Centos7为例)</title>
+    <url>/2018/05/19/phpnginxmysql.html</url>
+    <content><![CDATA[<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
+<li>一台vps</li>
+<li>一个域名并做好域名解析(本人在godaddy 购买的),解析之后ping域名，如果返回的是vps的ip，则域名解析成功。如图：<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raflgpljj30nu03emyp.jpg"></li>
+<li>一个SSL证书，个人网站免费的Let’s Encrypt即可(申请过程后面讲)。<a id="more"></a></li>
+</ul>
+<h3 id="安装PHP7-0及其扩展"><a href="#安装PHP7-0及其扩展" class="headerlink" title="安装PHP7.0及其扩展"></a>安装PHP7.0及其扩展</h3><ul>
+<li>更新yum源<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">rpm -Uvh https:<span class="regexp">//</span>dl.fedoraproject.org<span class="regexp">/pub/</span>epel<span class="regexp">/epel-release-latest-7.noarch.rpm rpm -Uvh https:/</span><span class="regexp">/mirror.webtatic.com/yum</span><span class="regexp">/el7/</span>webtatic-release.rpm</span><br></pre></td></tr></table></figure></li>
+<li>安装PHP7.0(php70w-common,php70w-fpm,php70w-mysqlnd必须必须安装)<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">yum</span> install php<span class="number">70</span>w-common php<span class="number">70</span>w-fpm php<span class="number">70</span>w-opcache php<span class="number">70</span>w-gd php<span class="number">70</span>w-mysqlnd php<span class="number">70</span>w-mbstring php<span class="number">70</span>w-pecl-redis php<span class="number">70</span>w-pecl-memcached php<span class="number">70</span>w-devel</span><br></pre></td></tr></table></figure></li>
+<li>版本验证<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">php -v</span></span><br></pre></td></tr></table></figure></li>
+<li>查看显示，如图则成功。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rafz02acj30vc04ujtk.jpg"></li>
+</ul>
+<h3 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h3><ul>
+<li><p>安装wget(顺便吐槽CentOS)</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">yum <span class="keyword">install</span> wget</span><br></pre></td></tr></table></figure></li>
+<li><p>下载MySQL源包</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">wget http:<span class="regexp">//</span>dev.mysql.com<span class="regexp">/get/my</span>sql57-community-release-el7-<span class="number">8</span>.noarch.rpm</span><br></pre></td></tr></table></figure></li>
+<li><p>安装MySQL源包</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">yum</span> localinstall mysql<span class="number">57</span>-community-release-el<span class="number">7</span>-<span class="number">8</span>.noarch.rpm</span><br></pre></td></tr></table></figure></li>
+<li><p>yum安装MySQL</p>
+<figure class="highlight axapta"><table><tr><td class="code"><pre><span class="line">yum install mysql-community-<span class="keyword">server</span></span><br></pre></td></tr></table></figure></li>
+<li><p>启动MySQL服务(如不报错则为成功)</p>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">systemctl <span class="literal">start</span> mysqld</span><br></pre></td></tr></table></figure>
+<h3 id="修改Mysql-root密码"><a href="#修改Mysql-root密码" class="headerlink" title="修改Mysql root密码"></a>修改Mysql root密码</h3><blockquote>
+<p>mysql安装完成之后，在/var/log/mysqld.log文件中给root生成了一个默认密码。通过下面的方式找到root默认密码，然后登录mysql进行修改。</p>
+</blockquote>
+</li>
+<li><p>输入如下命令</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="keyword">grep</span> <span class="string">&#x27;temporary password&#x27;</span> <span class="regexp">/var/</span>log/mysqld.log</span><br></pre></td></tr></table></figure>
+<p>  返回的字符串就是默认生成的密码。如图：<br>  <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ragcl5pkj315801st9j.jpg"></p>
+</li>
+<li><p>输入以下命令并输入默认密码进入MySQL</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">mysql -uroot -p</span></span><br></pre></td></tr></table></figure></li>
+<li><p>输入以下命令修改密码</p>
+<figure class="highlight gams"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set</span> password <span class="comment">for root@localhost = password(</span><span class="comment">&#x27;新密码&#x27;</span><span class="comment">)</span>;</span><br></pre></td></tr></table></figure></li>
+<li><p>刷新权限</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="built_in">flush</span> privileges；</span><br></pre></td></tr></table></figure>
+<h3 id="编译安装Nginx"><a href="#编译安装Nginx" class="headerlink" title="编译安装Nginx"></a>编译安装Nginx</h3></li>
+</ul>
+<h4 id="选择编译安装Nginx的理由"><a href="#选择编译安装Nginx的理由" class="headerlink" title="选择编译安装Nginx的理由"></a>选择编译安装Nginx的理由</h4><blockquote>
+<p>因为nginx功能强大，模块众多，所以自己需要了解究竟需要什么模块，实现那些功能，这就需要我们自己定制Nginx，编译安装满足高自定义性，故采用编译安装。</p>
+</blockquote>
+<h4 id="编译教程"><a href="#编译教程" class="headerlink" title="编译教程"></a>编译教程</h4><ul>
+<li><p>下载Nginx源码</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">wget http:<span class="regexp">//</span>nginx.org<span class="regexp">/download/</span>nginx-<span class="number">1.14</span>.<span class="number">0</span>.tar.gz</span><br></pre></td></tr></table></figure></li>
+<li><p>解压并进入nginx目录，如图则正确</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">tar</span> -zxvf nginx-<span class="number">1</span>.<span class="number">14</span>.<span class="number">0</span>.tar.gz &amp;&amp; cd nginx-<span class="number">1</span>.<span class="number">14</span>.<span class="number">0</span> &amp;&amp; ls</span><br></pre></td></tr></table></figure>
+<p>  <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ragsj5m4j30xk01u3z2.jpg"></p>
+</li>
+<li><p>安装所需环境</p>
+<figure class="highlight nsis"><table><tr><td class="code"><pre><span class="line">yum -y install gcc pcre pcre-devel <span class="literal">zlib</span> <span class="literal">zlib</span>-devel openssl openssl-devel</span><br></pre></td></tr></table></figure></li>
+<li><p>生成MakeFile,如图则成功(–with-http_v2_module为http 2.0模块，–with-http_ssl_module为SSL模块，尤为重要)</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">./configure --prefix=<span class="regexp">/usr/</span>local/nginx --<span class="keyword">with</span>-http_stub_status_module --<span class="keyword">with</span>-http_ssl_module --<span class="keyword">with</span>-stream --<span class="keyword">with</span>-stream_ssl_module --<span class="keyword">with</span>-http_v2_module --<span class="keyword">with</span>-threads</span><br></pre></td></tr></table></figure>
+<p>  <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rah8cr7ij30sg0fa43p.jpg"></p>
+</li>
+<li><p>编译及安装</p>
+<figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line"><span class="built_in">make</span> &amp;&amp; <span class="built_in">make</span> install</span><br></pre></td></tr></table></figure></li>
+<li><p>启动nginx</p>
+<p>  输入如下命令并在浏览器输入ip或域名，如看到nginx主页，恭喜安装成功啦！</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>sbin/nginx</span><br></pre></td></tr></table></figure>
+<h3 id="Nginx基础使用"><a href="#Nginx基础使用" class="headerlink" title="Nginx基础使用"></a>Nginx基础使用</h3></li>
+</ul>
+<h4 id="Nginx相关文件路径"><a href="#Nginx相关文件路径" class="headerlink" title="Nginx相关文件路径"></a>Nginx相关文件路径</h4><ul>
+<li>主文件：/usr/local/nginx/sbin/nginx</li>
+<li>配置文件：/usr/local/nginx/conf/nginx.conf</span></li>
+<li>日志文件：<br>/usr/local/nginx/logs/error.log (错误日志)<br />       /usr/local/nginx/logs/access.log (成功文件)</li>
+</ul>
+<h4 id="Nginx相关操作"><a href="#Nginx相关操作" class="headerlink" title="Nginx相关操作"></a>Nginx相关操作</h4><blockquote>
+<p>启动</p>
+</blockquote>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>sbin/nginx</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>重启</p>
+</blockquote>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>sbin/nginx -s restart</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>关闭</p>
+</blockquote>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>sbin/nginx -s stop</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>查看配置文件</p>
+</blockquote>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">nano <span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>conf/nginx.conf</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>查看出错日志</p>
+</blockquote>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">nano <span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>logs/error.log</span><br></pre></td></tr></table></figure>
+<h4 id="nginx-conf简单解读-写法很多"><a href="#nginx-conf简单解读-写法很多" class="headerlink" title="nginx.conf简单解读(写法很多)"></a>nginx.conf简单解读(写法很多)</h4><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span>       <span class="number">80</span>; <span class="comment">#监听80端口，接收http请求</span></span><br><span class="line">    <span class="attribute">server_name</span>  bugprogrammer.tk; <span class="comment">#就是网站地址</span></span><br><span class="line">    <span class="attribute">root</span> /var/www/phpmyadmin; <span class="comment"># 准备存放代码工程的路径</span></span><br><span class="line">    <span class="comment">#路由到网站根目录bugprogrammer.me时候的处理</span></span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">        <span class="attribute">index</span> index.php; <span class="comment">#跳转到bugprogrammer.tk/index.php</span></span><br><span class="line">        <span class="attribute">autoindex</span> <span class="literal">on</span>;</span><br><span class="line">    &#125;   </span><br><span class="line"></span><br><span class="line">    <span class="comment">#当请求网站下php文件的时候，反向代理到php-fpm</span></span><br><span class="line">    <span class="attribute">location</span> <span class="regexp">~ \.php$</span> &#123;</span><br><span class="line">        <span class="attribute">include</span> /usr/local/etc/nginx/fastcgi.conf; <span class="comment">#加载nginx的fastcgi模块</span></span><br><span class="line">        <span class="attribute">fastcgi_intercept_errors</span> <span class="literal">on</span>;</span><br><span class="line">        <span class="attribute">fastcgi_pass</span>   <span class="number">127.0.0.1:9000</span>; <span class="comment">#nginx fastcgi进程监听的IP地址和端口</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="php-fpm-Nginx整合配置"><a href="#php-fpm-Nginx整合配置" class="headerlink" title="php-fpm+Nginx整合配置"></a>php-fpm+Nginx整合配置</h3><h4 id="修改nginx-conf"><a href="#修改nginx-conf" class="headerlink" title="修改nginx.conf"></a>修改nginx.conf</h4><p>   取消首行user以及php-fpm模块前的注释,并修改网站目录(注意主服务和php-fpm都要修改)，如图：</p>
+<p>  <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rai09k5kj30jk03qglp.jpg"></p>
+<p> <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raial5exj30ui05swfz.jpg"></p>
+<h4 id="在网站目录-上图为phpmyadmin目录-新建一个index-php文件，并粘贴如下代码-伟大的Hello-World！！！"><a href="#在网站目录-上图为phpmyadmin目录-新建一个index-php文件，并粘贴如下代码-伟大的Hello-World！！！" class="headerlink" title="在网站目录(上图为phpmyadmin目录)新建一个index.php文件，并粘贴如下代码(伟大的Hello World！！！)"></a>在网站目录(上图为phpmyadmin目录)新建一个index.php文件，并粘贴如下代码(伟大的Hello World！！！)</h4><figure class="highlight php-template"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></span><br><span class="line"><span class="xml"> <span class="tag">&lt;<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>PHP 测试<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></span><br><span class="line"><span class="xml"> <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="xml"> <span class="tag">&lt;<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="xml"> </span><span class="php"><span class="meta">&lt;?php</span> <span class="keyword">echo</span> <span class="string">&#x27;&lt;p&gt;Hello World&lt;/p&gt;&#x27;</span>; <span class="meta">?&gt;</span></span></span><br><span class="line"><span class="xml"> <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="启动php-fpm"><a href="#启动php-fpm" class="headerlink" title="启动php-fpm"></a>启动php-fpm</h4><figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">service php-fpm <span class="literal">start</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>启动Nginx(见Nginx相关操作)并在浏览器输入域名或ip测试，如下及成功。</p>
+</blockquote>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/QQ20180519-0034182x.png"></p>
+<h3 id="建立网站-以phpmyadmin为例"><a href="#建立网站-以phpmyadmin为例" class="headerlink" title="建立网站(以phpmyadmin为例)"></a>建立网站(以phpmyadmin为例)</h3><ul>
+<li><p>下载phpmyadmin最新版并解压到网站目录下，如图：</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rainsehgj31e60noh23.jpg"></p>
+</li>
+<li><p>重启nginx并测试网站</p>
+</li>
+</ul>
+<h3 id="相关错误以及解决方案"><a href="#相关错误以及解决方案" class="headerlink" title="相关错误以及解决方案"></a>相关错误以及解决方案</h3><h4 id="常见错误1，如图"><a href="#常见错误1，如图" class="headerlink" title="常见错误1，如图"></a>常见错误1，如图</h4><p><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raixovo5j328s070wfz.jpg"></p>
+<blockquote>
+<p>这个错误的原因是phpmyadmin找不到sesson的存放路径，所以在浏览器允许session的情况下需要调整php的配置文件php.ini</p>
+</blockquote>
+<h5 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h5><ul>
+<li>打开php.ini(路径为)，并添加如下参数<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">session.save_path</span> = <span class="string">&quot;/var/lib/php/session&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li>创建sesson存储目录，给予读写权限，并调整所属用户即可解决<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir <span class="regexp">/var/</span>lib<span class="regexp">/php/</span>session &amp;&amp; chmod -R <span class="number">777</span> <span class="regexp">/var/</span>lib<span class="regexp">/php/</span>session &amp;&amp; chown -R nobody:nobody <span class="regexp">/var/</span>lib<span class="regexp">/php/</span>session</span><br></pre></td></tr></table></figure>
+<h4 id="常见错误2，如图"><a href="#常见错误2，如图" class="headerlink" title="常见错误2，如图"></a>常见错误2，如图</h4><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rajw7itcj30r40xswhw.jpg"></li>
+</ul>
+<h5 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h5><p>进入phpmyadmin目录下将config.sample.inc.php文件改名为config.inc.php并打开，将$cfg[‘Servers’][$i][‘host’] = ‘localhost’改为<br>$cfg[‘Servers’][$i][‘host’] = ‘127.0.0.1’并保存，命令及图解如下：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">cd</span> /<span class="selector-tag">var</span>/<span class="selector-tag">www</span>/<span class="selector-tag">phpmyadmin</span> &amp;&amp; <span class="selector-tag">mv</span> <span class="selector-tag">config</span><span class="selector-class">.sample</span><span class="selector-class">.inc</span><span class="selector-class">.php</span> <span class="selector-tag">config</span><span class="selector-class">.inc</span><span class="selector-class">.php</span> &amp;&amp; <span class="selector-tag">nano</span> <span class="selector-tag">config</span><span class="selector-class">.inc</span><span class="selector-class">.php</span></span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rakbiwkaj30jg05wta5.jpg"></p>
+<h4 id="常见错误3，如图"><a href="#常见错误3，如图" class="headerlink" title="常见错误3，如图"></a>常见错误3，如图</h4><p> <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rakk9axdj31vu02wwer.jpg"></p>
+<h5 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案"></a>解决方案</h5><p>同(2)打开config.inc.php，找到$cfg[‘blowfish_secret’] = ‘’,在引号中填写短语密码，推荐填写UUID，如图：<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ralsvm28j30p20163yt.jpg"></p>
+<h4 id="常见错误4，如图"><a href="#常见错误4，如图" class="headerlink" title="常见错误4，如图"></a>常见错误4，如图</h4><p><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ram4443kj31vs02ggmb.jpg"></p>
+<h5 id="解决方案-3"><a href="#解决方案-3" class="headerlink" title="解决方案"></a>解决方案</h5><p>创建tmp文件夹并给予读写权限即可</p>
+<figure class="highlight perl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">mkdir</span> tmp &amp;&amp; <span class="keyword">chmod</span> <span class="number">777</span> tmp</span><br></pre></td></tr></table></figure>
+<h3 id="阶段成果"><a href="#阶段成果" class="headerlink" title="阶段成果"></a>阶段成果</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rame2gaaj30p00oggnx.jpg"> <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ramml3d3j329m1ke7n3.jpg"></p>
+<h3 id="后续优化-前提是按照我的教程编译安装的Nginx-注意SSL和HTTP-2-0模块"><a href="#后续优化-前提是按照我的教程编译安装的Nginx-注意SSL和HTTP-2-0模块" class="headerlink" title="后续优化(前提是按照我的教程编译安装的Nginx,注意SSL和HTTP 2.0模块)"></a>后续优化(前提是按照我的教程编译安装的Nginx,注意SSL和HTTP 2.0模块)</h3><h4 id="升级https"><a href="#升级https" class="headerlink" title="升级https"></a>升级https</h4><ul>
+<li><p>关闭Nginx</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>sbin/nginx -s stop</span><br></pre></td></tr></table></figure></li>
+<li><p>获得Let’s Encrypt官方客户端并进入相应目录(如果没有安装git请先yum install git)</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/letsencrypt/</span>letsencrypt &amp;&amp; cd letsencrypt</span><br></pre></td></tr></table></figure></li>
+<li><p>申请SSL证书,请按要求填写域名，邮箱，最后一张图代表成功，申请后路径在/etc/letsencrypt/live/域名/,一共4个文件</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">./certbot-<span class="built_in">auto</span> certonly</span><br></pre></td></tr></table></figure>
+<p>  <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ramzrwdsj312w0leaft.jpg"><br>  <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0randesxaj30v40ay41x.jpg"><br>  <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rano5p6uj314s05kq51.jpg"></p>
+</li>
+<li><p>修改Nginx.conf，添加SSL支持。</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen <span class="number">443</span> ssl;</span><br><span class="line">    server_name 域名;</span><br><span class="line">    …</span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate <span class="regexp">/etc/</span>letsencrypt<span class="regexp">/live/</span>域名/fullchain.pem;</span><br><span class="line">    ssl_certificate_key <span class="regexp">/etc/</span>letsencrypt<span class="regexp">/live/</span>域名/privkey.pem;</span><br><span class="line"></span><br><span class="line">    ssl_protocols TLSv1 TLSv1.<span class="number">1</span> TLSv1.<span class="number">2</span>;</span><br><span class="line">    ssl_prefer_server_ciphers on;</span><br><span class="line">    ssl_ciphers ‘EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH’;</span><br><span class="line">    …</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>启动Nginx，分别用http://域名和https://域名测试网站，如果https可以进入，http不能进入，你就成功一半了。</p>
+</li>
+<li><p>实现http自动跳转到https</p>
+<p>  新建如下server即可</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span> 域名;</span><br><span class="line">    <span class="attribute">return</span> <span class="number">301</span> https://$host$request_uri;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>用http://域名测试网站，如果能自动跳转https则成功。</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raofxm8bj30ea01omx6.jpg"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="更新-SSL通配符版本申请"><a href="#更新-SSL通配符版本申请" class="headerlink" title="(更新)SSL通配符版本申请"></a>(更新)SSL通配符版本申请</h4><blockquote>
+<p>一个天大的好消息，Let’s Encrypt已经发布了通配符版本SSL证书。顾名思义，通配符SSL证书不再需要为每一个二级域名重复申请SSL证书，以域名bugprogrammer.tk为例，只需要申请*.bugprogrammer.tk以及bugprogrammer.tk即可用于根域名以及所有二级域名，非常方便。申请教程如下。</p>
+</blockquote>
+<ul>
+<li><p>获取最新版Let’s Encrypt客户端</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">wget http<span class="variable">s:</span>//<span class="built_in">get</span>.acme.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure></li>
+<li><p>申请通配符SSL证书，按要求输入邮箱，同意条款等操作，如图。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">./<span class="selector-tag">certbot-auto</span> <span class="selector-tag">certonly</span>  <span class="selector-tag">-d</span> *<span class="selector-class">.bugprogrammer</span><span class="selector-class">.tk</span> <span class="selector-tag">-d</span> <span class="selector-tag">bugprogrammer</span><span class="selector-class">.tk</span> <span class="selector-tag">--manual</span> <span class="selector-tag">--preferred-challenges</span> <span class="selector-tag">dns</span> <span class="selector-tag">--server</span> <span class="selector-tag">https</span>://<span class="selector-tag">acme-v02</span><span class="selector-class">.api</span><span class="selector-class">.letsencrypt</span><span class="selector-class">.org</span>/<span class="selector-tag">directory</span></span><br></pre></td></tr></table></figure>
+<p>  <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raor0tq6j31nm0wqqbh.jpg"></p>
+</li>
+<li><p><strong><em>至关重要的步骤，</em></strong>按如下图操作，在域名DNS设置处添加*<strong>TXT**<em>类型解析，如下图即为：</em></strong>name:_acmechallenge<br>value:UYgQnnncMwZ9Z_Ja1mtkbTmayZP_5IDQcXgWIWlyY8w。***<br>添加解析后回车继续。因为我们同时申请了*.bugprogrammer.tk以及bugprogrammer.tk，所以会出现两个解析要求。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raoz7dk9j314o0fg0ud.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rap7mas5j327k076q4a.jpg"></p>
+</li>
+<li><p>如下图即为成功<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rapgxju2j31320eqdhv.jpg"></p>
+</li>
+</ul>
+<h4 id="升级http2"><a href="#升级http2" class="headerlink" title="升级http2"></a>升级http2</h4><ul>
+<li><p>打开nginx.conf，在listen 443 ssl后面加上http2并重启nginx</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rapq9gdnj30dg0360st.jpg"></p>
+</li>
+<li><p>打开<a href="https://myssl.com/http2_check.html%EF%BC%8C">https://myssl.com/http2_check.html，</a> 输入域名检测是否成功，成功如图：</p>
+</li>
+</ul>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raq4onyqj313q0letb4.jpg"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Centos</tag>
+        <tag>MySQL</tag>
+        <tag>Nginx</tag>
+        <tag>PHP</tag>
+        <tag>SSL</tag>
       </tags>
   </entry>
   <entry>
@@ -1971,36 +2153,8 @@
         <category>Hackintosh</category>
       </categories>
       <tags>
+        <tag>Hackintosh</tag>
         <tag>macOS</tag>
-        <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>解锁macOS10.15的系统分区</title>
-    <url>/2019/07/13/unlockSystem.html</url>
-    <content><![CDATA[<blockquote>
-<p>macOS 10.15的一个显著变化就是Apple锁定了系统分区，导致L/E以及S/L/E无法拷贝文件。Kext Utility无法重建缓存。也间接影响了HomeBrew的使用，下面教大家如何解锁系统分区。<a id="more"></a></p>
-</blockquote>
-<h1 id="准备应用程序"><a href="#准备应用程序" class="headerlink" title="准备应用程序"></a>准备应用程序</h1><ul>
-<li><p>打开系统自带的自动操作程序，依次点击应用程序-&gt;选取-&gt;运行shell脚本。<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-3.png"></p>
-</li>
-<li><p>将以下脚本粘贴进去</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;你的电脑密码&#x27;</span>|sudo -S mount -uw / &amp;&amp; killall Finder</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/unlock-4.png"></p>
-</li>
-<li><p>保存成app<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-5.png"></p>
-</li>
-</ul>
-<h1 id="添加开机自启"><a href="#添加开机自启" class="headerlink" title="添加开机自启"></a>添加开机自启</h1><p>打开偏好设置-&gt;用户与群组-&gt;登录项，将unlockSystem.app添加到启动项，并点击隐藏。<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-6.png"></p>
-<blockquote>
-<p>至此，您已经成功解锁系统分区，可以尝试SLE/LE写入以及重建缓存操作了，博主亲测成功哦！</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -2049,193 +2203,39 @@
         <category>WEB</category>
       </categories>
       <tags>
-        <tag>Debian</tag>
         <tag>Nginx</tag>
+        <tag>Debian</tag>
         <tag>OpenSSL</tag>
         <tag>TLS 1.3</tag>
         <tag>HSTS</tag>
       </tags>
   </entry>
   <entry>
-    <title>PHP+Nginx+MySQL搭建网站简易教程(以Centos7为例)</title>
-    <url>/2018/05/19/phpnginxmysql.html</url>
-    <content><![CDATA[<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
-<li>一台vps</li>
-<li>一个域名并做好域名解析(本人在godaddy 购买的),解析之后ping域名，如果返回的是vps的ip，则域名解析成功。如图：<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raflgpljj30nu03emyp.jpg"></li>
-<li>一个SSL证书，个人网站免费的Let’s Encrypt即可(申请过程后面讲)。<a id="more"></a></li>
-</ul>
-<h3 id="安装PHP7-0及其扩展"><a href="#安装PHP7-0及其扩展" class="headerlink" title="安装PHP7.0及其扩展"></a>安装PHP7.0及其扩展</h3><ul>
-<li>更新yum源<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">rpm -Uvh https:<span class="regexp">//</span>dl.fedoraproject.org<span class="regexp">/pub/</span>epel<span class="regexp">/epel-release-latest-7.noarch.rpm rpm -Uvh https:/</span><span class="regexp">/mirror.webtatic.com/yum</span><span class="regexp">/el7/</span>webtatic-release.rpm</span><br></pre></td></tr></table></figure></li>
-<li>安装PHP7.0(php70w-common,php70w-fpm,php70w-mysqlnd必须必须安装)<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">yum</span> install php<span class="number">70</span>w-common php<span class="number">70</span>w-fpm php<span class="number">70</span>w-opcache php<span class="number">70</span>w-gd php<span class="number">70</span>w-mysqlnd php<span class="number">70</span>w-mbstring php<span class="number">70</span>w-pecl-redis php<span class="number">70</span>w-pecl-memcached php<span class="number">70</span>w-devel</span><br></pre></td></tr></table></figure></li>
-<li>版本验证<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">php -v</span></span><br></pre></td></tr></table></figure></li>
-<li>查看显示，如图则成功。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rafz02acj30vc04ujtk.jpg"></li>
-</ul>
-<h3 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h3><ul>
-<li><p>安装wget(顺便吐槽CentOS)</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">yum <span class="keyword">install</span> wget</span><br></pre></td></tr></table></figure></li>
-<li><p>下载MySQL源包</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">wget http:<span class="regexp">//</span>dev.mysql.com<span class="regexp">/get/my</span>sql57-community-release-el7-<span class="number">8</span>.noarch.rpm</span><br></pre></td></tr></table></figure></li>
-<li><p>安装MySQL源包</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">yum</span> localinstall mysql<span class="number">57</span>-community-release-el<span class="number">7</span>-<span class="number">8</span>.noarch.rpm</span><br></pre></td></tr></table></figure></li>
-<li><p>yum安装MySQL</p>
-<figure class="highlight axapta"><table><tr><td class="code"><pre><span class="line">yum install mysql-community-<span class="keyword">server</span></span><br></pre></td></tr></table></figure></li>
-<li><p>启动MySQL服务(如不报错则为成功)</p>
-<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">systemctl <span class="literal">start</span> mysqld</span><br></pre></td></tr></table></figure>
-<h3 id="修改Mysql-root密码"><a href="#修改Mysql-root密码" class="headerlink" title="修改Mysql root密码"></a>修改Mysql root密码</h3><blockquote>
-<p>mysql安装完成之后，在/var/log/mysqld.log文件中给root生成了一个默认密码。通过下面的方式找到root默认密码，然后登录mysql进行修改。</p>
+    <title>解锁macOS10.15的系统分区</title>
+    <url>/2019/07/13/unlockSystem.html</url>
+    <content><![CDATA[<blockquote>
+<p>macOS 10.15的一个显著变化就是Apple锁定了系统分区，导致L/E以及S/L/E无法拷贝文件。Kext Utility无法重建缓存。也间接影响了HomeBrew的使用，下面教大家如何解锁系统分区。<a id="more"></a></p>
 </blockquote>
+<h1 id="准备应用程序"><a href="#准备应用程序" class="headerlink" title="准备应用程序"></a>准备应用程序</h1><ul>
+<li><p>打开系统自带的自动操作程序，依次点击应用程序-&gt;选取-&gt;运行shell脚本。<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-3.png"></p>
 </li>
-<li><p>输入如下命令</p>
-<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="keyword">grep</span> <span class="string">&#x27;temporary password&#x27;</span> <span class="regexp">/var/</span>log/mysqld.log</span><br></pre></td></tr></table></figure>
-<p>  返回的字符串就是默认生成的密码。如图：<br>  <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ragcl5pkj315801st9j.jpg"></p>
+<li><p>将以下脚本粘贴进去</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="meta">#! /bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;你的电脑密码&#x27;</span>|sudo -S mount -uw / &amp;&amp; killall Finder</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/unlock-4.png"></p>
 </li>
-<li><p>输入以下命令并输入默认密码进入MySQL</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">mysql -uroot -p</span></span><br></pre></td></tr></table></figure></li>
-<li><p>输入以下命令修改密码</p>
-<figure class="highlight gams"><table><tr><td class="code"><pre><span class="line"><span class="keyword">set</span> password <span class="comment">for root@localhost = password(</span><span class="comment">&#x27;新密码&#x27;</span><span class="comment">)</span>;</span><br></pre></td></tr></table></figure></li>
-<li><p>刷新权限</p>
-<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="built_in">flush</span> privileges；</span><br></pre></td></tr></table></figure>
-<h3 id="编译安装Nginx"><a href="#编译安装Nginx" class="headerlink" title="编译安装Nginx"></a>编译安装Nginx</h3></li>
+<li><p>保存成app<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-5.png"></p>
+</li>
 </ul>
-<h4 id="选择编译安装Nginx的理由"><a href="#选择编译安装Nginx的理由" class="headerlink" title="选择编译安装Nginx的理由"></a>选择编译安装Nginx的理由</h4><blockquote>
-<p>因为nginx功能强大，模块众多，所以自己需要了解究竟需要什么模块，实现那些功能，这就需要我们自己定制Nginx，编译安装满足高自定义性，故采用编译安装。</p>
-</blockquote>
-<h4 id="编译教程"><a href="#编译教程" class="headerlink" title="编译教程"></a>编译教程</h4><ul>
-<li><p>下载Nginx源码</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">wget http:<span class="regexp">//</span>nginx.org<span class="regexp">/download/</span>nginx-<span class="number">1.14</span>.<span class="number">0</span>.tar.gz</span><br></pre></td></tr></table></figure></li>
-<li><p>解压并进入nginx目录，如图则正确</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">tar</span> -zxvf nginx-<span class="number">1</span>.<span class="number">14</span>.<span class="number">0</span>.tar.gz &amp;&amp; cd nginx-<span class="number">1</span>.<span class="number">14</span>.<span class="number">0</span> &amp;&amp; ls</span><br></pre></td></tr></table></figure>
-<p>  <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ragsj5m4j30xk01u3z2.jpg"></p>
-</li>
-<li><p>安装所需环境</p>
-<figure class="highlight nsis"><table><tr><td class="code"><pre><span class="line">yum -y install gcc pcre pcre-devel <span class="literal">zlib</span> <span class="literal">zlib</span>-devel openssl openssl-devel</span><br></pre></td></tr></table></figure></li>
-<li><p>生成MakeFile,如图则成功(–with-http_v2_module为http 2.0模块，–with-http_ssl_module为SSL模块，尤为重要)</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">./configure --prefix=<span class="regexp">/usr/</span>local/nginx --<span class="keyword">with</span>-http_stub_status_module --<span class="keyword">with</span>-http_ssl_module --<span class="keyword">with</span>-stream --<span class="keyword">with</span>-stream_ssl_module --<span class="keyword">with</span>-http_v2_module --<span class="keyword">with</span>-threads</span><br></pre></td></tr></table></figure>
-<p>  <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rah8cr7ij30sg0fa43p.jpg"></p>
-</li>
-<li><p>编译及安装</p>
-<figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line"><span class="built_in">make</span> &amp;&amp; <span class="built_in">make</span> install</span><br></pre></td></tr></table></figure></li>
-<li><p>启动nginx</p>
-<p>  输入如下命令并在浏览器输入ip或域名，如看到nginx主页，恭喜安装成功啦！</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>sbin/nginx</span><br></pre></td></tr></table></figure>
-<h3 id="Nginx基础使用"><a href="#Nginx基础使用" class="headerlink" title="Nginx基础使用"></a>Nginx基础使用</h3></li>
-</ul>
-<h4 id="Nginx相关文件路径"><a href="#Nginx相关文件路径" class="headerlink" title="Nginx相关文件路径"></a>Nginx相关文件路径</h4><ul>
-<li>主文件：/usr/local/nginx/sbin/nginx</li>
-<li>配置文件：/usr/local/nginx/conf/nginx.conf</span></li>
-<li>日志文件：<br>/usr/local/nginx/logs/error.log (错误日志)<br />       /usr/local/nginx/logs/access.log (成功文件)</li>
-</ul>
-<h4 id="Nginx相关操作"><a href="#Nginx相关操作" class="headerlink" title="Nginx相关操作"></a>Nginx相关操作</h4><blockquote>
-<p>启动</p>
-</blockquote>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>sbin/nginx</span><br></pre></td></tr></table></figure>
+<h1 id="添加开机自启"><a href="#添加开机自启" class="headerlink" title="添加开机自启"></a>添加开机自启</h1><p>打开偏好设置-&gt;用户与群组-&gt;登录项，将unlockSystem.app添加到启动项，并点击隐藏。<br><img src= "/images/loading.gif" data-lazy-src="/images/unlock-6.png"></p>
 <blockquote>
-<p>重启</p>
+<p>至此，您已经成功解锁系统分区，可以尝试SLE/LE写入以及重建缓存操作了，博主亲测成功哦！</p>
 </blockquote>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>sbin/nginx -s restart</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>关闭</p>
-</blockquote>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>sbin/nginx -s stop</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>查看配置文件</p>
-</blockquote>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">nano <span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>conf/nginx.conf</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>查看出错日志</p>
-</blockquote>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">nano <span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>logs/error.log</span><br></pre></td></tr></table></figure>
-<h4 id="nginx-conf简单解读-写法很多"><a href="#nginx-conf简单解读-写法很多" class="headerlink" title="nginx.conf简单解读(写法很多)"></a>nginx.conf简单解读(写法很多)</h4><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span>       <span class="number">80</span>; <span class="comment">#监听80端口，接收http请求</span></span><br><span class="line">    <span class="attribute">server_name</span>  bugprogrammer.tk; <span class="comment">#就是网站地址</span></span><br><span class="line">    <span class="attribute">root</span> /var/www/phpmyadmin; <span class="comment"># 准备存放代码工程的路径</span></span><br><span class="line">    <span class="comment">#路由到网站根目录bugprogrammer.me时候的处理</span></span><br><span class="line">    <span class="attribute">location</span> / &#123;</span><br><span class="line">        <span class="attribute">index</span> index.php; <span class="comment">#跳转到bugprogrammer.tk/index.php</span></span><br><span class="line">        <span class="attribute">autoindex</span> <span class="literal">on</span>;</span><br><span class="line">    &#125;   </span><br><span class="line"></span><br><span class="line">    <span class="comment">#当请求网站下php文件的时候，反向代理到php-fpm</span></span><br><span class="line">    <span class="attribute">location</span> <span class="regexp">~ \.php$</span> &#123;</span><br><span class="line">        <span class="attribute">include</span> /usr/local/etc/nginx/fastcgi.conf; <span class="comment">#加载nginx的fastcgi模块</span></span><br><span class="line">        <span class="attribute">fastcgi_intercept_errors</span> <span class="literal">on</span>;</span><br><span class="line">        <span class="attribute">fastcgi_pass</span>   <span class="number">127.0.0.1:9000</span>; <span class="comment">#nginx fastcgi进程监听的IP地址和端口</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="php-fpm-Nginx整合配置"><a href="#php-fpm-Nginx整合配置" class="headerlink" title="php-fpm+Nginx整合配置"></a>php-fpm+Nginx整合配置</h3><h4 id="修改nginx-conf"><a href="#修改nginx-conf" class="headerlink" title="修改nginx.conf"></a>修改nginx.conf</h4><p>   取消首行user以及php-fpm模块前的注释,并修改网站目录(注意主服务和php-fpm都要修改)，如图：</p>
-<p>  <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rai09k5kj30jk03qglp.jpg"></p>
-<p> <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raial5exj30ui05swfz.jpg"></p>
-<h4 id="在网站目录-上图为phpmyadmin目录-新建一个index-php文件，并粘贴如下代码-伟大的Hello-World！！！"><a href="#在网站目录-上图为phpmyadmin目录-新建一个index-php文件，并粘贴如下代码-伟大的Hello-World！！！" class="headerlink" title="在网站目录(上图为phpmyadmin目录)新建一个index.php文件，并粘贴如下代码(伟大的Hello World！！！)"></a>在网站目录(上图为phpmyadmin目录)新建一个index.php文件，并粘贴如下代码(伟大的Hello World！！！)</h4><figure class="highlight php-template"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></span><br><span class="line"><span class="xml"> <span class="tag">&lt;<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>PHP 测试<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></span><br><span class="line"><span class="xml"> <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="xml"> <span class="tag">&lt;<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="xml"> </span><span class="php"><span class="meta">&lt;?php</span> <span class="keyword">echo</span> <span class="string">&#x27;&lt;p&gt;Hello World&lt;/p&gt;&#x27;</span>; <span class="meta">?&gt;</span></span></span><br><span class="line"><span class="xml"> <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h4 id="启动php-fpm"><a href="#启动php-fpm" class="headerlink" title="启动php-fpm"></a>启动php-fpm</h4><figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">service php-fpm <span class="literal">start</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>启动Nginx(见Nginx相关操作)并在浏览器输入域名或ip测试，如下及成功。</p>
-</blockquote>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/QQ20180519-0034182x.png"></p>
-<h3 id="建立网站-以phpmyadmin为例"><a href="#建立网站-以phpmyadmin为例" class="headerlink" title="建立网站(以phpmyadmin为例)"></a>建立网站(以phpmyadmin为例)</h3><ul>
-<li><p>下载phpmyadmin最新版并解压到网站目录下，如图：</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rainsehgj31e60noh23.jpg"></p>
-</li>
-<li><p>重启nginx并测试网站</p>
-</li>
-</ul>
-<h3 id="相关错误以及解决方案"><a href="#相关错误以及解决方案" class="headerlink" title="相关错误以及解决方案"></a>相关错误以及解决方案</h3><h4 id="常见错误1，如图"><a href="#常见错误1，如图" class="headerlink" title="常见错误1，如图"></a>常见错误1，如图</h4><p><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raixovo5j328s070wfz.jpg"></p>
-<blockquote>
-<p>这个错误的原因是phpmyadmin找不到sesson的存放路径，所以在浏览器允许session的情况下需要调整php的配置文件php.ini</p>
-</blockquote>
-<h5 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h5><ul>
-<li>打开php.ini(路径为)，并添加如下参数<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">session.save_path</span> = <span class="string">&quot;/var/lib/php/session&quot;</span></span><br></pre></td></tr></table></figure></li>
-<li>创建sesson存储目录，给予读写权限，并调整所属用户即可解决<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir <span class="regexp">/var/</span>lib<span class="regexp">/php/</span>session &amp;&amp; chmod -R <span class="number">777</span> <span class="regexp">/var/</span>lib<span class="regexp">/php/</span>session &amp;&amp; chown -R nobody:nobody <span class="regexp">/var/</span>lib<span class="regexp">/php/</span>session</span><br></pre></td></tr></table></figure>
-<h4 id="常见错误2，如图"><a href="#常见错误2，如图" class="headerlink" title="常见错误2，如图"></a>常见错误2，如图</h4><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rajw7itcj30r40xswhw.jpg"></li>
-</ul>
-<h5 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h5><p>进入phpmyadmin目录下将config.sample.inc.php文件改名为config.inc.php并打开，将$cfg[‘Servers’][$i][‘host’] = ‘localhost’改为<br>$cfg[‘Servers’][$i][‘host’] = ‘127.0.0.1’并保存，命令及图解如下：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">cd</span> /<span class="selector-tag">var</span>/<span class="selector-tag">www</span>/<span class="selector-tag">phpmyadmin</span> &amp;&amp; <span class="selector-tag">mv</span> <span class="selector-tag">config</span><span class="selector-class">.sample</span><span class="selector-class">.inc</span><span class="selector-class">.php</span> <span class="selector-tag">config</span><span class="selector-class">.inc</span><span class="selector-class">.php</span> &amp;&amp; <span class="selector-tag">nano</span> <span class="selector-tag">config</span><span class="selector-class">.inc</span><span class="selector-class">.php</span></span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rakbiwkaj30jg05wta5.jpg"></p>
-<h4 id="常见错误3，如图"><a href="#常见错误3，如图" class="headerlink" title="常见错误3，如图"></a>常见错误3，如图</h4><p> <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rakk9axdj31vu02wwer.jpg"></p>
-<h5 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案"></a>解决方案</h5><p>同(2)打开config.inc.php，找到$cfg[‘blowfish_secret’] = ‘’,在引号中填写短语密码，推荐填写UUID，如图：<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ralsvm28j30p20163yt.jpg"></p>
-<h4 id="常见错误4，如图"><a href="#常见错误4，如图" class="headerlink" title="常见错误4，如图"></a>常见错误4，如图</h4><p><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ram4443kj31vs02ggmb.jpg"></p>
-<h5 id="解决方案-3"><a href="#解决方案-3" class="headerlink" title="解决方案"></a>解决方案</h5><p>创建tmp文件夹并给予读写权限即可</p>
-<figure class="highlight perl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">mkdir</span> tmp &amp;&amp; <span class="keyword">chmod</span> <span class="number">777</span> tmp</span><br></pre></td></tr></table></figure>
-<h3 id="阶段成果"><a href="#阶段成果" class="headerlink" title="阶段成果"></a>阶段成果</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rame2gaaj30p00oggnx.jpg"> <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ramml3d3j329m1ke7n3.jpg"></p>
-<h3 id="后续优化-前提是按照我的教程编译安装的Nginx-注意SSL和HTTP-2-0模块"><a href="#后续优化-前提是按照我的教程编译安装的Nginx-注意SSL和HTTP-2-0模块" class="headerlink" title="后续优化(前提是按照我的教程编译安装的Nginx,注意SSL和HTTP 2.0模块)"></a>后续优化(前提是按照我的教程编译安装的Nginx,注意SSL和HTTP 2.0模块)</h3><h4 id="升级https"><a href="#升级https" class="headerlink" title="升级https"></a>升级https</h4><ul>
-<li><p>关闭Nginx</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>sbin/nginx -s stop</span><br></pre></td></tr></table></figure></li>
-<li><p>获得Let’s Encrypt官方客户端并进入相应目录(如果没有安装git请先yum install git)</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/letsencrypt/</span>letsencrypt &amp;&amp; cd letsencrypt</span><br></pre></td></tr></table></figure></li>
-<li><p>申请SSL证书,请按要求填写域名，邮箱，最后一张图代表成功，申请后路径在/etc/letsencrypt/live/域名/,一共4个文件</p>
-<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">./certbot-<span class="built_in">auto</span> certonly</span><br></pre></td></tr></table></figure>
-<p>  <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ramzrwdsj312w0leaft.jpg"><br>  <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0randesxaj30v40ay41x.jpg"><br>  <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rano5p6uj314s05kq51.jpg"></p>
-</li>
-<li><p>修改Nginx.conf，添加SSL支持。</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen <span class="number">443</span> ssl;</span><br><span class="line">    server_name 域名;</span><br><span class="line">    …</span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate <span class="regexp">/etc/</span>letsencrypt<span class="regexp">/live/</span>域名/fullchain.pem;</span><br><span class="line">    ssl_certificate_key <span class="regexp">/etc/</span>letsencrypt<span class="regexp">/live/</span>域名/privkey.pem;</span><br><span class="line"></span><br><span class="line">    ssl_protocols TLSv1 TLSv1.<span class="number">1</span> TLSv1.<span class="number">2</span>;</span><br><span class="line">    ssl_prefer_server_ciphers on;</span><br><span class="line">    ssl_ciphers ‘EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH’;</span><br><span class="line">    …</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>启动Nginx，分别用http://域名和https://域名测试网站，如果https可以进入，http不能进入，你就成功一半了。</p>
-</li>
-<li><p>实现http自动跳转到https</p>
-<p>  新建如下server即可</p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span> 域名;</span><br><span class="line">    <span class="attribute">return</span> <span class="number">301</span> https://$host$request_uri;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>用http://域名测试网站，如果能自动跳转https则成功。</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raofxm8bj30ea01omx6.jpg"></p>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="更新-SSL通配符版本申请"><a href="#更新-SSL通配符版本申请" class="headerlink" title="(更新)SSL通配符版本申请"></a>(更新)SSL通配符版本申请</h4><blockquote>
-<p>一个天大的好消息，Let’s Encrypt已经发布了通配符版本SSL证书。顾名思义，通配符SSL证书不再需要为每一个二级域名重复申请SSL证书，以域名bugprogrammer.tk为例，只需要申请*.bugprogrammer.tk以及bugprogrammer.tk即可用于根域名以及所有二级域名，非常方便。申请教程如下。</p>
-</blockquote>
-<ul>
-<li><p>获取最新版Let’s Encrypt客户端</p>
-<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">wget http<span class="variable">s:</span>//<span class="built_in">get</span>.acme.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure></li>
-<li><p>申请通配符SSL证书，按要求输入邮箱，同意条款等操作，如图。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">./<span class="selector-tag">certbot-auto</span> <span class="selector-tag">certonly</span>  <span class="selector-tag">-d</span> *<span class="selector-class">.bugprogrammer</span><span class="selector-class">.tk</span> <span class="selector-tag">-d</span> <span class="selector-tag">bugprogrammer</span><span class="selector-class">.tk</span> <span class="selector-tag">--manual</span> <span class="selector-tag">--preferred-challenges</span> <span class="selector-tag">dns</span> <span class="selector-tag">--server</span> <span class="selector-tag">https</span>://<span class="selector-tag">acme-v02</span><span class="selector-class">.api</span><span class="selector-class">.letsencrypt</span><span class="selector-class">.org</span>/<span class="selector-tag">directory</span></span><br></pre></td></tr></table></figure>
-<p>  <img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raor0tq6j31nm0wqqbh.jpg"></p>
-</li>
-<li><p><strong><em>至关重要的步骤，</em></strong>按如下图操作，在域名DNS设置处添加*<strong>TXT**<em>类型解析，如下图即为：</em></strong>name:_acmechallenge<br>value:UYgQnnncMwZ9Z_Ja1mtkbTmayZP_5IDQcXgWIWlyY8w。***<br>添加解析后回车继续。因为我们同时申请了*.bugprogrammer.tk以及bugprogrammer.tk，所以会出现两个解析要求。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raoz7dk9j314o0fg0ud.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rap7mas5j327k076q4a.jpg"></p>
-</li>
-<li><p>如下图即为成功<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rapgxju2j31320eqdhv.jpg"></p>
-</li>
-</ul>
-<h4 id="升级http2"><a href="#升级http2" class="headerlink" title="升级http2"></a>升级http2</h4><ul>
-<li><p>打开nginx.conf，在listen 443 ssl后面加上http2并重启nginx</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rapq9gdnj30dg0360st.jpg"></p>
-</li>
-<li><p>打开<a href="https://myssl.com/http2_check.html%EF%BC%8C">https://myssl.com/http2_check.html，</a> 输入域名检测是否成功，成功如图：</p>
-</li>
-</ul>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raq4onyqj313q0letb4.jpg"></p>
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>Nginx</tag>
-        <tag>Centos</tag>
-        <tag>MySQL</tag>
-        <tag>PHP</tag>
-        <tag>SSL</tag>
+        <tag>Hackintosh</tag>
       </tags>
   </entry>
 </search>
