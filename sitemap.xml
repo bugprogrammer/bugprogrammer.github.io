@@ -16,14 +16,14 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/schedule/index.html</loc>
+    <loc>https://www.bugprogrammer.me/tags/index.html</loc>
     
     <lastmod>2021-07-29</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/index.html</loc>
+    <loc>https://www.bugprogrammer.me/schedule/index.html</loc>
     
     <lastmod>2021-07-29</lastmod>
     
@@ -37,14 +37,14 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/friends/index.html</loc>
+    <loc>https://www.bugprogrammer.me/categories/index.html</loc>
     
     <lastmod>2021-07-29</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/categories/index.html</loc>
+    <loc>https://www.bugprogrammer.me/friends/index.html</loc>
     
     <lastmod>2021-07-29</lastmod>
     
@@ -494,14 +494,14 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/Linux/</loc>
+    <loc>https://www.bugprogrammer.me/tags/weg/</loc>
     <lastmod>2023-05-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/weg/</loc>
+    <loc>https://www.bugprogrammer.me/tags/Linux/</loc>
     <lastmod>2023-05-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
