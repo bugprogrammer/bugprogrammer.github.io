@@ -16,14 +16,14 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/schedule/index.html</loc>
+    <loc>https://www.bugprogrammer.me/tags/index.html</loc>
     
     <lastmod>2021-07-29</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/index.html</loc>
+    <loc>https://www.bugprogrammer.me/schedule/index.html</loc>
     
     <lastmod>2021-07-29</lastmod>
     
@@ -37,14 +37,14 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/categories/index.html</loc>
+    <loc>https://www.bugprogrammer.me/friends/index.html</loc>
     
     <lastmod>2021-07-29</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/friends/index.html</loc>
+    <loc>https://www.bugprogrammer.me/categories/index.html</loc>
     
     <lastmod>2021-07-29</lastmod>
     
@@ -361,13 +361,6 @@
 
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/Hackintosh/</loc>
-    <lastmod>2023-05-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.bugprogrammer.me/tags/macOS/</loc>
     <lastmod>2023-05-17</lastmod>
     <changefreq>daily</changefreq>
@@ -376,6 +369,13 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/Clover/</loc>
+    <lastmod>2023-05-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/Hackintosh/</loc>
     <lastmod>2023-05-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -410,13 +410,6 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2018/</loc>
-    <lastmod>2023-05-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2017/</loc>
     <lastmod>2023-05-17</lastmod>
     <changefreq>daily</changefreq>
@@ -432,6 +425,13 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/i9-9900K/</loc>
+    <lastmod>2023-05-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/ThinkPad-S1-2018/</loc>
     <lastmod>2023-05-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -473,21 +473,7 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/Secure-Boot/</loc>
-    <lastmod>2023-05-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.bugprogrammer.me/tags/OpenCore/</loc>
-    <lastmod>2023-05-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/Linux/</loc>
     <lastmod>2023-05-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -501,7 +487,28 @@
   </url>
   
   <url>
+    <loc>https://www.bugprogrammer.me/tags/Secure-Boot/</loc>
+    <lastmod>2023-05-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/Linux/</loc>
+    <lastmod>2023-05-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.bugprogrammer.me/tags/weg/</loc>
+    <lastmod>2023-05-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/ASUS-N550JV/</loc>
     <lastmod>2023-05-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -523,13 +530,6 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/linux/</loc>
-    <lastmod>2023-05-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/ASUS-N550JV/</loc>
     <lastmod>2023-05-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -578,6 +578,48 @@
   </url>
   
   <url>
+    <loc>https://www.bugprogrammer.me/tags/Project-Treble/</loc>
+    <lastmod>2023-05-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/Centos/</loc>
+    <lastmod>2023-05-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/MySQL/</loc>
+    <lastmod>2023-05-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/Nginx/</loc>
+    <lastmod>2023-05-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/PHP/</loc>
+    <lastmod>2023-05-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/SSL/</loc>
+    <lastmod>2023-05-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.bugprogrammer.me/tags/cmd/</loc>
     <lastmod>2023-05-17</lastmod>
     <changefreq>daily</changefreq>
@@ -613,21 +655,7 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/Project-Treble/</loc>
-    <lastmod>2023-05-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.bugprogrammer.me/tags/Debian/</loc>
-    <lastmod>2023-05-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/Nginx/</loc>
     <lastmod>2023-05-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -649,34 +677,6 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/HSTS/</loc>
-    <lastmod>2023-05-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/Centos/</loc>
-    <lastmod>2023-05-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/MySQL/</loc>
-    <lastmod>2023-05-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/PHP/</loc>
-    <lastmod>2023-05-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.bugprogrammer.me/tags/SSL/</loc>
     <lastmod>2023-05-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -727,14 +727,14 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/categories/Windows-Desktop/</loc>
+    <loc>https://www.bugprogrammer.me/categories/Android-Rom/</loc>
     <lastmod>2023-05-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/categories/Android-Rom/</loc>
+    <loc>https://www.bugprogrammer.me/categories/Windows-Desktop/</loc>
     <lastmod>2023-05-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
