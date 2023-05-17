@@ -828,9 +828,9 @@
       
         <tags>
             
-            <tag> Nginx </tag>
-            
             <tag> Debian </tag>
+            
+            <tag> Nginx </tag>
             
             <tag> OpenSSL </tag>
             
@@ -1083,11 +1083,11 @@
       
         <tags>
             
+            <tag> Nginx </tag>
+            
             <tag> Centos </tag>
             
             <tag> MySQL </tag>
-            
-            <tag> Nginx </tag>
             
             <tag> PHP </tag>
             
