@@ -114,196 +114,6 @@
       </tags>
   </entry>
   <entry>
-    <title>博主的Hackintosh Bootloader以及kexts编译脚本分享</title>
-    <url>/2019/12/21/Hackintosh_Build.html</url>
-    <content><![CDATA[<blockquote>
-<p>鉴于很多小伙伴问我如何编译Hackintosh Bootloader以及kexts，今奉上博主的编译脚本。<a id="more"></a></p>
-</blockquote>
-<h1 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h1><h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul>
-<li>App Store安装Xcode11</li>
-<li>输入以下命令并按提示安装命令行工具<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
-<h2 id="脚本使用"><a href="#脚本使用" class="headerlink" title="脚本使用"></a>脚本使用</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/Hackintosh_build.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<h1 id="使用截图"><a href="#使用截图" class="headerlink" title="使用截图"></a>使用截图</h1><img src= "/images/loading.gif" data-lazy-src="/images/build-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/build-2.png"></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博主的Hackintosh全家桶定时编译上线GitHub</title>
-    <url>/2020/09/07/HackintoshPlugins.html</url>
-    <content><![CDATA[<blockquote>
-<p>鉴于很多小伙伴编译困难，博主用azure pipelines建立了自动编译流水线，包括OC以及常用kexts，每8小时更新一次，欢迎食用</p>
-</blockquote>
-<h3 id="仓库链接"><a href="#仓库链接" class="headerlink" title="仓库链接"></a>仓库链接</h3><p><a href="https://github.com/bugprogrammer/HackinPlugins">https://github.com/bugprogrammer/HackinPlugins</a></p>
-<h3 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h3><p>直接下载或者使用HackintoshBuild中的每日构建功能</p>
-<h3 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-3.png"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>技嘉Z490 ELITE+i9 10900K+RX 5700 XT Hackintosh构建说明</title>
-    <url>/2020/05/27/Hackintosh_for_Z490_10900K.html</url>
-    <content><![CDATA[<blockquote>
-<p>Z490主板以及10代桌面处理器(吐槽下14nm+++++++++++++++)正式解禁开卖，博主升级电脑，购入Z490 ELITE+10900K套装(原价哦)，简单测试了下Hackintosh运行情况，现简要说明。<a id="more"></a></p>
-</blockquote>
-<h1 id="运行情况以及完美程度"><a href="#运行情况以及完美程度" class="headerlink" title="运行情况以及完美程度"></a>运行情况以及完美程度</h1><h2 id="正常工作"><a href="#正常工作" class="headerlink" title="正常工作"></a>正常工作</h2><ul>
-<li>核显</li>
-<li>独显</li>
-<li>声卡</li>
-<li>WIFI</li>
-<li>蓝牙</li>
-<li>sidecar</li>
-<li>电源节能5项</li>
-<li>USB</li>
-<li>睡眠唤醒</li>
-<li>USBPower充电</li>
-<li>DRM视频播放</li>
-<li>原生NVRAM启动盘切换</li>
-</ul>
-<h2 id="无法工作"><a href="#无法工作" class="headerlink" title="无法工作"></a>无法工作</h2><ul>
-<li>RTL8125 2.5G有线网卡</li>
-</ul>
-<h2 id="小瑕疵"><a href="#小瑕疵" class="headerlink" title="小瑕疵"></a>小瑕疵</h2><ul>
-<li>关于本机处理器只显示频率</li>
-</ul>
-<h1 id="构建过程"><a href="#构建过程" class="headerlink" title="构建过程"></a>构建过程</h1><h2 id="下载镜像-略"><a href="#下载镜像-略" class="headerlink" title="下载镜像(略)"></a>下载镜像(略)</h2><h2 id="进系统"><a href="#进系统" class="headerlink" title="进系统"></a>进系统</h2><h3 id="系统版本低于10-15-5正式版"><a href="#系统版本低于10-15-5正式版" class="headerlink" title="系统版本低于10.15.5正式版"></a>系统版本低于10.15.5正式版</h3><ul>
-<li><p>OC config.plist中作如下设置</p>
-<blockquote>
-<p>Kernel-&gt;Emulate-&gt;Cpuid1Data(Data)-&gt;EB060800 00000000 00000000 00000000<br>Kernel-&gt;Emulate-&gt;Cpuid1Mask(Data)-&gt;FFFFFFFF 00000000 00000000 00000000<br>Kernel-&gt;Quirks-&gt;AppleXcpmCfgLock(Boolean)-&gt;YES</p>
-</blockquote>
-</li>
-<li><p>加入SSDT-AWAC.aml并在config.plist中启用(OC中自带)</p>
-</li>
-</ul>
-<h3 id="系统版本已经是10-15-5正式版"><a href="#系统版本已经是10-15-5正式版" class="headerlink" title="系统版本已经是10.15.5正式版"></a>系统版本已经是10.15.5正式版</h3><ul>
-<li><p>OC config.plist中作如下设置</p>
-<blockquote>
-<p>Kernel-&gt;Quirks-&gt;AppleXcpmCfgLock(Boolean)-&gt;YES</p>
-</blockquote>
-</li>
-<li><p>加入SSDT-AWAC.aml并在config.plist中启用(OC中自带)</p>
-</li>
-</ul>
-<h2 id="核显"><a href="#核显" class="headerlink" title="核显"></a>核显</h2><ul>
-<li>BIOS下开启核显(重要)</li>
-<li>OC config.plist中注入如下信息,注意IGPU路径要换成自己的<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-2.png"></li>
-</ul>
-<h2 id="独显"><a href="#独显" class="headerlink" title="独显"></a>独显</h2><h3 id="基础驱动"><a href="#基础驱动" class="headerlink" title="基础驱动"></a>基础驱动</h3><ul>
-<li>加入WhateverGreen.kext</li>
-<li>boot-args加入agdpmod=pikera<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-3.png"></li>
-</ul>
-<h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><ul>
-<li>OC config.plist中注入如下信息,注意GFX路径要换成自己的<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-4.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-5.png"></li>
-</ul>
-<h2 id="声卡"><a href="#声卡" class="headerlink" title="声卡"></a>声卡</h2><ul>
-<li>加入AppleALC.kext，FakePCIID.kext，FakePCIID_Intel_HDMI_Audio.kext</li>
-<li>OC config.plist中注入如下信息,注意HDEF路径要换成自己的<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-6.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-7.png"></li>
-</ul>
-<h2 id="WIFI以及蓝牙"><a href="#WIFI以及蓝牙" class="headerlink" title="WIFI以及蓝牙"></a>WIFI以及蓝牙</h2><ul>
-<li>博主用的是BCM94352Z，和以前驱动方法完全相同，故不赘述。</li>
-</ul>
-<h2 id="sidecar"><a href="#sidecar" class="headerlink" title="sidecar"></a>sidecar</h2><ul>
-<li>核显正常驱动即可，无线连接sidecar有问题的，请重新登录icloud以及清空NVRAM。</li>
-</ul>
-<h2 id="电源节能5项"><a href="#电源节能5项" class="headerlink" title="电源节能5项"></a>电源节能5项</h2><ul>
-<li>加入以下SSDT并在config中启用即可(以下ssdt已经修复节能变成4项的问题)<br><a href="https://downloads.bugprogrammer.me/SSDT/SSDT-PLUG.aml">SSDT-PLUG.aml</a></li>
-</ul>
-<h2 id="USB"><a href="#USB" class="headerlink" title="USB"></a>USB</h2><blockquote>
-<p>博主首先尝试了原始的USBPorts.kext方案，发现并不能解决睡眠即时唤醒的bug，所以博主使用了新方案。</p>
-</blockquote>
-<ul>
-<li>OC config.plist中做如下配置<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-8.png"></li>
-<li>定制USBPorts.kext(虽然不能解决睡眠即时唤醒，但是可以解决插入移动硬盘被识别为内置的bug)。</li>
-<li>加入如下SSDT并在config.plist中启用<br><a href="https://downloads.bugprogrammer.me/SSDT/SSDT-GPRW.aml">SSDT-GPRW.aml</a></li>
-<li>OC config.plist中做如下配置<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-9.png"></li>
-</ul>
-<h2 id="睡眠唤醒"><a href="#睡眠唤醒" class="headerlink" title="睡眠唤醒"></a>睡眠唤醒</h2><ul>
-<li>USB以及电源节能5项搞定以后，睡眠唤醒即正常。</li>
-</ul>
-<h2 id="USBPower充电"><a href="#USBPower充电" class="headerlink" title="USBPower充电"></a>USBPower充电</h2><ul>
-<li>在USBPorts.kext的info.plist注入如下信息即可<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-10.png"></li>
-</ul>
-<h2 id="DRM视频播放"><a href="#DRM视频播放" class="headerlink" title="DRM视频播放"></a>DRM视频播放</h2><ul>
-<li>加入并启用Whatevergreen.kext</li>
-<li>boot-args加入参数shikigva=80<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-11.png"></li>
-</ul>
-<h2 id="原生NVRAM启动盘切换"><a href="#原生NVRAM启动盘切换" class="headerlink" title="原生NVRAM启动盘切换"></a>原生NVRAM启动盘切换</h2><ul>
-<li>与Z390完全一样，可以去掉SSDT-PMC。(原生NVRAM)</li>
-</ul>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><blockquote>
-<p>过程写的较为简洁，萌新小伙伴需要看一些其他基础，本文目标是梳理一下Z490 Hackintosh构建的基本情况和驱动完善方法，后续进展会继续更新。<br>EFI Github地址: <a href="https://github.com/bugprogrammer/hackintosh/tree/Z490-AORUS-ELETE+10900K+RX5700XT">https://github.com/bugprogrammer/hackintosh/tree/Z490-AORUS-ELETE+10900K+RX5700XT</a></p>
-</blockquote>
-<h1 id="2020-05-31更新"><a href="#2020-05-31更新" class="headerlink" title="2020-05-31更新"></a>2020-05-31更新</h1><h2 id="核显-1"><a href="#核显-1" class="headerlink" title="核显"></a>核显</h2><p>最新版本的macOS(10.15.5)以及Whatevergreen(1.4.0)已经支持Comet Lake新核显id。新id如下</p>
-<ul>
-<li>0x9BC80003 =&gt; i5-10500及以下CPU所附带的UHD 630核显</li>
-<li>0x9BC50003 =&gt; i5-10600K及以上CPU所附带的UHD 630核显</li>
-</ul>
-<p>博主的i9-10900K正好适用0x9BC50003，故核显部分更新如下<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-12.png"></p>
-<h1 id="2020-06-02更新"><a href="#2020-06-02更新" class="headerlink" title="2020-06-02更新"></a>2020-06-02更新</h1><h2 id="解锁msr-lock-cfg-lock"><a href="#解锁msr-lock-cfg-lock" class="headerlink" title="解锁msr lock(cfg lock)"></a>解锁msr lock(cfg lock)</h2><blockquote>
-<p>博主之前测试发现传统的msr解锁方案(setup_var)不起作用，因为手头没有编程器，不敢硬刷BIOS，故暂时搁置。偶然在tonymacx86上看到了一个解锁工具，测试成功，教程如下。</p>
-</blockquote>
-<ul>
-<li><p>下载CFGLock.efi工具<br><a href="https://downloads.bugprogrammer.me/tools/CFGLock.efi">CFGLock.efi</a></p>
-</li>
-<li><p>放入OC文件夹下的tools目录中并在config.plist中启用<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-13.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-14.png"></p>
-</li>
-<li><p>重启，OC启动菜单选择CFGLock，并按提示操作即可(按y)，工具使用中出现如下交互提示</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Brumbaers</span> CFG Unlock</span><br><span class="line"><span class="attribute">1</span>. <span class="number">05</span> <span class="number">003</span>E <span class="number">0011</span> /CFG Lock/ VarStore Name: CpuSetup</span><br><span class="line"></span><br><span class="line"><span class="attribute">Exactly</span> <span class="number">1</span> CFG Variable found: CFG Lock</span><br><span class="line"><span class="attribute">In</span> VarStore <span class="string">&quot;CpuSetup&quot;</span> GUID: B<span class="number">08</span>F<span class="number">97</span>FF-E<span class="number">6</span>E<span class="number">8</span>-<span class="number">4193</span> - A<span class="number">9</span>-<span class="number">97</span>-<span class="number">5</span>E-<span class="number">9</span>E-<span class="number">98</span>-<span class="number">0</span>A-DB-<span class="number">32</span> Offset: <span class="number">003</span>E Size: <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">Variable</span> read: value <span class="number">1</span></span><br><span class="line"><span class="attribute">Do</span> you want to toggle the value y/n ?</span><br></pre></td></tr></table></figure></li>
-<li><p>用HackintoshBuild检测cfg lock情况，成功解锁如下图<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-15.png"></p>
-</li>
-<li><p>config.plist中关闭cfg补丁<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-16.png"></p>
-</li>
-</ul>
-<h2 id="定制CPU名称-博主电脑只显示频率"><a href="#定制CPU名称-博主电脑只显示频率" class="headerlink" title="定制CPU名称(博主电脑只显示频率)"></a>定制CPU名称(博主电脑只显示频率)</h2><ul>
-<li><p>下载cpu-name.sh脚本(来自tonymacx86)<br><a href="https://downloads.bugprogrammer.me/tools/cpu_name.sh">cpu-name.sh</a></p>
-</li>
-<li><p>使用方法</p>
-<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> xxx(脚本所在目录)</span><br><span class="line">chmod +x cpu-name.<span class="keyword">sh</span></span><br><span class="line">./cpu-name.<span class="keyword">sh</span> <span class="string">&quot;cpu名称&quot;</span>(例如：./cpu-name.<span class="keyword">sh</span> <span class="string">&quot;十核 Intel Core i9&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/Z490-17.png"></p>
-</li>
-</ul>
-<h1 id="2020-06-04更新"><a href="#2020-06-04更新" class="headerlink" title="2020-06-04更新"></a>2020-06-04更新</h1><h2 id="ACPI-error-TZ-TZ10-STA"><a href="#ACPI-error-TZ-TZ10-STA" class="headerlink" title="ACPI error(_TZ.TZ10._STA)"></a>ACPI error(_TZ.TZ10._STA)</h2><blockquote>
-<p>这个是技嘉主板通病。TZ10是一个温控模块，_STA方法是操作系统检查，如果找不到匹配操作系统(Darwin)就会出错。SSDT中定义如下。</p>
-</blockquote>
-<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">Method</span> (_STA, <span class="number">0</span>, NotSerialized)  <span class="comment">// _STA: Status</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2001&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x04, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2001.1&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x05, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;FreeBSD&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x06, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;HP-UX&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x07, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;OpenVMS&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x08, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2001 SP1&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x09, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2001 SP2&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x0A, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2001 SP3&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x0B, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2006&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x0C, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2006 SP1&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x0D, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2009&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x0E, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2012&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x0F, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2013&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x10, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2015&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x11, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2016&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x12, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2017&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x13, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2017.2&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x14, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2018&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x15, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2018.2&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x16, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (LLessEqual (Local0, <span class="number">0</span>x0E))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (One, \GSA1.ZRD2)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">Return</span> (<span class="number">0</span>x0B)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><ul>
-<li>OC config.plist中做如下配置<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-18.png"></li>
-<li>加入如下SSDT并在config.plist中启用<br><a href="https://downloads.bugprogrammer.me/SSDT/SSDT-OC-XOSI.aml">SSDT-OC-XOSI.aml</a></li>
-</ul>
-<h1 id="2020-06-07更新"><a href="#2020-06-07更新" class="headerlink" title="2020-06-07更新"></a>2020-06-07更新</h1><h2 id="修复技嘉Hackintosh启动随机出现内存错误"><a href="#修复技嘉Hackintosh启动随机出现内存错误" class="headerlink" title="修复技嘉Hackintosh启动随机出现内存错误"></a>修复技嘉Hackintosh启动随机出现内存错误</h2><ul>
-<li><p>config.plist中做以下修改</p>
-<blockquote>
-<p>Booter-&gt;Quirks-&gt;DevirtualiseMmio-&gt;YES<br>Booter-&gt;Quirks-&gt;ProtectUefiServices-&gt;NO<br>NVRAM-&gt;Add-&gt;7C436110-AB2A-4BBB-A880-FE41995C9F82-&gt;slide=1(添加)</p>
-</blockquote>
-</li>
-<li><p>加入如下.efi文件并在config.plist中启用<br><a href="https://downloads.bugprogrammer.me/efidriver/MemoryAllocation.efi">MemoryAllocation.efi</a></p>
-</li>
-</ul>
-<h1 id="2020-06-11更新"><a href="#2020-06-11更新" class="headerlink" title="2020-06-11更新"></a>2020-06-11更新</h1><p>更新10.15.6要把之前的CPUID仿冒加回来。。。</p>
-<h1 id="2020-06-12更新"><a href="#2020-06-12更新" class="headerlink" title="2020-06-12更新"></a>2020-06-12更新</h1><h2 id="RTL8125-2-5G-10-15可用，10-14未测试"><a href="#RTL8125-2-5G-10-15可用，10-14未测试" class="headerlink" title="RTL8125 2.5G(10.15可用，10.14未测试)"></a>RTL8125 2.5G(10.15可用，10.14未测试)</h2><p>使用以下kext即可<br><a href="https://downloads.bugprogrammer.me/Kexts/LucyRTL8125Ethernet.kext.zip">LucyRTL8125Ethernet.kext</a><br>编译自 <a href="https://github.com/derBrumbaer/LucyRTL8125Ethernet%EF%BC%8C">https://github.com/derBrumbaer/LucyRTL8125Ethernet，</a> 感谢derBrumbaer以及Mieze。<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-19.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-20.png"></p>
-<h1 id="2020-07-14更新"><a href="#2020-07-14更新" class="headerlink" title="2020-07-14更新"></a>2020-07-14更新</h1><h2 id="声卡-1"><a href="#声卡-1" class="headerlink" title="声卡"></a>声卡</h2><blockquote>
-<p>据博主测试，最新的AppleALC(1.5.1)已经支持400系列，故此可以删除FakePCIID.kext以及FakePCIID_Intel_HDMI_Audio.kext, config中删除声卡的device-id，直接使用最新的AppleALC即可。</p>
-</blockquote>
-<p><a href="https://downloads.bugprogrammer.me/Kexts/AppleALC.kext.zip">AppleALC.kext.zip</a></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博主自编译的开源软件用于Apple Silicon Macs(长期更新)</title>
     <url>/2021/04/23/Compiling-Soft-for-AppleSilicons.html</url>
     <content><![CDATA[<blockquote>
@@ -325,125 +135,40 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux内核简介及编译教程</title>
-    <url>/2018/09/01/Linux_Kernel_Build.html</url>
+    <title>博主的Hackintosh全家桶定时编译上线GitHub</title>
+    <url>/2020/09/07/HackintoshPlugins.html</url>
     <content><![CDATA[<blockquote>
-<p>博主去年双11购入AMD Vega显卡(为了黑苹果免驱以及硬解)，发现Linux下无法驱动Vega显卡，4K显示器分辨率被锁定为1920x2160的奇葩分辨率，无法接受。于是查阅了一下资料发现当时的内核(Linux 4.12)并不支持AMD Vega显卡，于是打算编译内核升级到最新版本，毕竟Linux的舒适使用对博主十分重要。现在分享一下Linux Kernel的编译教程。<a id="more"></a><br><br /><b>注意：由于时间久远，博主的Linux已经升级Ubuntu 18.04，自带内核版本为Linux 4.15，所以演示平台为Ubuntu 18.04，编译的内核版本为Linux 4.18.5。另外，本文中部分图片来源网络。因为经典体系架构图现画比较麻烦。</b></p>
+<p>鉴于很多小伙伴编译困难，博主用azure pipelines建立了自动编译流水线，包括OC以及常用kexts，每8小时更新一次，欢迎食用</p>
 </blockquote>
-<h3 id="Linux内核简介"><a href="#Linux内核简介" class="headerlink" title="Linux内核简介"></a>Linux内核简介</h3><h4 id="Linux-Kernel-Map"><a href="#Linux-Kernel-Map" class="headerlink" title="Linux Kernel Map"></a>Linux Kernel Map</h4><p><img src= "/images/loading.gif" data-lazy-src="/images/6b49439752bdd908e832187bbbfe555dcd56864e.jpg"></p>
-<h4 id="Linux-系统体系结构"><a href="#Linux-系统体系结构" class="headerlink" title="Linux 系统体系结构"></a>Linux 系统体系结构</h4><p>如下图所示，Linux体系结构，从大的方面可以分为用户空间(User Space)和内核空间(Kernel Space)两部分。</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/299f340bcfb4ac1703fdb841e613bcaf57862165.jpg"></p>
-<ul>
-<li>用户空间中包含了C库，用户的应用程序。在某些体系结构图中还包含了shell，当然shell脚本也是Linux体系中不可缺少的一部分。</li>
-<li>内核空间包括硬件平台、平台依赖代码、内核、系统调用接口。</li>
-<li>在任何一个现代操作系统中，都是分层的。为什么需要分层呢？<blockquote>
-<p>从程序员的角度分析，将linux底层和应用分开，做应用的做应用，做底层的做底层，各干各的。经济学的基本原理是，分工产生效率。<br /><br>从安全性的角度分析，是为了保护内核。现代CPU通常都实现了不同的工作模式。<br><br />以ARM为例：ARM实现了7种工作模式，不同模式下CPU可以执行的指令或者访问的寄存器不同：(1)用户模式 usr (2)系统模式 sys(3)管理模式 svc(4)快速中断 fiq(5)外部中断 irq(6)数据访问终止 abt(7)未定义指令异常。如果任何一个上层应用都可以调用寄存器，那样肯定是无法稳定执行的。而且因为出现了这个问题，出现了一个新的学科“现代操作系统”，如果大家感兴趣可以看一下“现代操作系统”相关文章或者书籍。<br /><br>以X86为例：X86实现了4个不同级别的权限，Ring0—Ring3 ;Ring0下可以执行特权指令，可以访问IO设备；Ring3则有很多的限制。如果分析一下Android的，这方面做的更加“丧心病狂”，Android所有的APK应用程序，都是在Java虚拟机上面运行，应用程序更加远离底层。<br /><br>另外，用户空间和内核空间是程序执行的两种不同状态，我们可以通过“系统调用”和“硬件中断”来完成用户空间到内核空间的转移。</p>
-</blockquote>
-</li>
-</ul>
-<h4 id="Linux-Kernel体系结构"><a href="#Linux-Kernel体系结构" class="headerlink" title="Linux Kernel体系结构"></a>Linux Kernel体系结构</h4><p>如下图所示，是Linux内核结构图。</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/97909a09aa119314a15a18235b9eb288ba7ad448.jpg"></p>
-<h5 id="SCI层（System-Call-Interface）"><a href="#SCI层（System-Call-Interface）" class="headerlink" title="SCI层（System Call Interface）"></a>SCI层（System Call Interface）</h5><p>这一层是给应用用户空间提供一套标准的系统调用函数来访问Linux。前面分析Linux体系结构的时候，介绍过任何一类现代操作系统都不会允许上层应用直接访问底层，在Linux中，内核提供了一套标准接口，上层应用就可以通过这一套标准接口来访问底层。</p>
-<h5 id="PM（Procees-Management）"><a href="#PM（Procees-Management）" class="headerlink" title="PM（Procees Management）"></a>PM（Procees Management）</h5><p>这一部分包括具体创建进程（fork、exec）,停止进程（kill、exit）,并控制他们之间的通信（signal等）。还包括进程调度，控制活动进程如何共享CPU。这一部分是Linux已经做好的，在写驱动的时候，只需要调用对应的函数即可实现这些功能，例如创建进程、进程通信等等。</p>
-<h5 id="MM（Memory-Management）"><a href="#MM（Memory-Management）" class="headerlink" title="MM（Memory Management）"></a>MM（Memory Management）</h5><p>内存管理的主要作用是控制多个进程安全的共享内存区域。</p>
-<h5 id="VFS（Virtual-File-Systems）"><a href="#VFS（Virtual-File-Systems）" class="headerlink" title="VFS（Virtual File Systems）"></a>VFS（Virtual File Systems）</h5><p>虚拟文件系统，隐藏各种文件系统的具体细节，为文件操作提供统一的接口。在Linux中“一切皆文件”，这些文件就是通过VFS来实现的。Linux提供了一个大的通用模型，使这个模型包含了所有文件系统功能的集合。如下图所示，是一个虚拟文件系统的结构图。</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/5a07b3a364feae45f4bd211f19d963e1977eff58.jpg"></p>
-<h5 id="DD（Device-Drivers）"><a href="#DD（Device-Drivers）" class="headerlink" title="DD（Device Drivers）"></a>DD（Device Drivers）</h5><p>设备驱动，Linux驱动一般分为网络设备、块设备、字符设备、杂项设备，需要我们编写的只有字符设备，杂项设备是不容易归类的一种驱动，杂项设备和字符设备有很多重合的地方。</p>
-<h5 id="PD（Physical-Devices）"><a href="#PD（Physical-Devices）" class="headerlink" title="PD（Physical Devices）"></a>PD（Physical Devices）</h5><p>这一部分提供丰富的网络协议支持。</p>
-<h3 id="Linux-Kernel源码"><a href="#Linux-Kernel源码" class="headerlink" title="Linux Kernel源码"></a>Linux Kernel源码</h3><h4 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h4><p><b><a href="http://www.kernel.org/">www.kernel.org</a></b></p>
-<h4 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h4><ul>
-<li>arch：根据cpu体系结构不同而分的代码</li>
-<li>block：部分块设备驱动程序</li>
-<li>crypto：加密，压缩，CRC校验算法</li>
-<li>documentation：内核文档</li>
-<li>drivers：设备驱动程序</li>
-<li>fs(虚拟文件系统vfs):文件系统</li>
-<li>include：内核所需的头文件，(与平台无关的头文件在include/linux中)</li>
-<li>lib：库文件代码(与平台相关的)</li>
-<li>mm：实现内存管理，与硬件体系结构无关的(与硬件体系结构相关的在arch中)</li>
-<li>net：网络协议的代码</li>
-<li>samples：一些内核编程的范例</li>
-<li>scripts：配置内核的脚本</li>
-<li>security：SElinux的模块</li>
-<li>sound：音频设备的驱动程序</li>
-<li>usr：cpio命令实现，用于制作根文件系统的命令(文件系统与内核放到一块的命令)</li>
-<li>virt：内核虚拟机</li>
-</ul>
-<h3 id="Linux-Kernel编译"><a href="#Linux-Kernel编译" class="headerlink" title="Linux Kernel编译"></a>Linux Kernel编译</h3><h4 id="下载Linux-Kernel源码并拷贝到-usr-src目录"><a href="#下载Linux-Kernel源码并拷贝到-usr-src目录" class="headerlink" title="下载Linux Kernel源码并拷贝到/usr/src目录"></a>下载Linux Kernel源码并拷贝到/usr/src目录</h4><p>输入如下命令即可</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">wget https:<span class="regexp">//</span>cdn.kernel.org<span class="regexp">/pub/</span>linux<span class="regexp">/kernel/</span>v4.x<span class="regexp">/linux-4.18.5.tar.xz &amp;&amp; cp -f linux-4.18.5.tar.xz /u</span>sr/src</span><br></pre></td></tr></table></figure>
-<h4 id="解压Linux-Kernel"><a href="#解压Linux-Kernel" class="headerlink" title="解压Linux Kernel"></a>解压Linux Kernel</h4><p>输入如下命令即可</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">cd</span> /usr/src &amp;&amp; tar -xvf linux-<span class="number">4</span>.<span class="number">18</span>.<span class="number">5</span>.tar.xz &amp;&amp; cd linux-<span class="number">4</span>.<span class="number">18</span>.<span class="number">5</span></span><br></pre></td></tr></table></figure>
-<h4 id="Ubuntu-18-04下，要执行以下命令安装软件包"><a href="#Ubuntu-18-04下，要执行以下命令安装软件包" class="headerlink" title="Ubuntu 18.04下，要执行以下命令安装软件包"></a>Ubuntu 18.04下，要执行以下命令安装软件包</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">sudo apt <span class="keyword">install</span> fortune</span><br></pre></td></tr></table></figure>
-<h4 id="配置编译参数"><a href="#配置编译参数" class="headerlink" title="配置编译参数"></a>配置编译参数</h4><p>执行以下命令，会弹出一个带有GUI的配置界面，一般情况下默认参数就好，光标移动到Save保存即可，如图：</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">make menuconfig</span></span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/bc6c5ce369b72802e5c97d5a38ef3b2b50ad6455.jpg"></p>
-<h4 id="编译内核"><a href="#编译内核" class="headerlink" title="编译内核"></a>编译内核</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">make</span> -j<span class="number">12</span></span><br></pre></td></tr></table></figure>
-<p><b>注意：-j参数后面加本机CPU线程数可以加快编译速度，博主的8700K是6核心12线程，所以-j12。</b></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/39a28f2943c8062679567b03687c28c54354b5c9.jpg"></p>
-<h4 id="安装内核"><a href="#安装内核" class="headerlink" title="安装内核"></a>安装内核</h4><figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line"><span class="built_in">make</span> modules_install</span><br><span class="line"><span class="built_in">make</span> install</span><br></pre></td></tr></table></figure>
-<h4 id="更新grub引导"><a href="#更新grub引导" class="headerlink" title="更新grub引导"></a>更新grub引导</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">update</span>-grub<span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p>至此升级内核成功，重启电脑。</p>
-<h4 id="确认升级是否成功"><a href="#确认升级是否成功" class="headerlink" title="确认升级是否成功"></a>确认升级是否成功</h4><p>重启后，执行如下命令查看内核版本，和编译版本相同即为成功</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">uname -r</span></span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/7de8222416d47ef89b548125c35e3b5f3238508f.jpg"></p>
+<h3 id="仓库链接"><a href="#仓库链接" class="headerlink" title="仓库链接"></a>仓库链接</h3><p><a href="https://github.com/bugprogrammer/HackinPlugins">https://github.com/bugprogrammer/HackinPlugins</a></p>
+<h3 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h3><p>直接下载或者使用HackintoshBuild中的每日构建功能</p>
+<h3 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pipelines-3.png"></p>
 ]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux_Kernel</tag>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ThinkPad S1 2017 Hackintosh记录+教程+完整EFI分享</title>
-    <url>/2018/07/28/ThinkPad_Hackintosh.html</url>
-    <content><![CDATA[<blockquote>
-<p>朋友购买了ThinkPad S1 2017版本，配置为i5-7200U+hd620+8g ram+256g intel ssd(NVME)+1080P屏幕。安装黑苹果大体顺利，现将大概过程分享，供同机型的朋友借鉴。<a id="more"></a></p>
-</blockquote>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li>因ThinkPad S1 2017使用的是intel无线网卡，大家都知道intel无线网卡在黑苹果下目前无解，所以替换了Bcm94352z。虽然Bcm94360是免驱的，但是博主不建议笔记本用户选用，因为Bcm94360和普通的ngff无线网卡相比宽了一块，所以笔记本有概率无法安装。</li>
-<li>完美程度：显卡+声卡+双网卡+蓝牙完美驱动，USB正常，睡眠唤醒正常，显示器内建正常，HDMI外接屏幕正常，变频7档，小太阳正常，电池正常(感谢黑果小兵和宪武以及其他大牛的帮助)。触摸屏以及电容笔可用，但只能单点触摸。触摸板和小红点可用，但是不支持手势。</li>
-<li>因为电脑是朋友的，所以截图不方便，因此本教程尽量多使用命令行方式，各位可以直接复制粘贴。</li>
-<li>本教程需要你有一个macOS环境，可以是虚拟机。虚拟机安装macOS百度教程很多，请自学。</li>
-<li>安装前要在Windows下准备好安装macOS所需分区。</li>
-</ul>
-<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><h3 id="制作安装盘"><a href="#制作安装盘" class="headerlink" title="制作安装盘"></a>制作安装盘</h3><ul>
-<li>下载macOS High Sierra 10.13.6镜像，博主建议在App Store下载，下载成功后会保存在Application下。</li>
-<li>格式化U盘为Mac OS扩展日志式，U盘名称设置为mac，格式化后会生成两个分区，第一个是EFI分区，用来存放Clover引导，第二个用于写入镜像，格式化U盘如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/7eb9ec5bdd42a032dc9707bd8255427e82618323.jpg"></li>
-<li>写入镜像:终端输入如下命令并输入密码即可。<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/Applications/</span>Install\ macOS\ High\ Sierra.app<span class="regexp">/Contents/</span>Resources<span class="regexp">/createinstallmedia --volume /</span>Volumes<span class="regexp">/mac --applicationpath /</span>Applications/Install\ macOS\ High\ Sierra.app</span><br></pre></td></tr></table></figure>
-<h3 id="获取博主分享的Clover文件-保存在桌面"><a href="#获取博主分享的Clover文件-保存在桌面" class="headerlink" title="获取博主分享的Clover文件,保存在桌面"></a>获取博主分享的Clover文件,保存在桌面</h3></li>
-<li>输入如下命令即可在桌面保存hackintosh文件夹，内含Clover文件夹<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~<span class="string">/Desktop</span> &amp;&amp; git clone https:<span class="string">//github.com/bugprogrammer/hackintosh.git</span> &amp;&amp; <span class="keyword">cd</span> hackintosh &amp;&amp; git checkout ThinkPad-S1-2017 </span><br></pre></td></tr></table></figure>
-<img src= "/images/loading.gif" data-lazy-src="/images/d36b4788d3a64bcc071322e9a8dd0668cd7d7b20.jpg"></li>
-</ul>
-<h3 id="挂载U盘EFI分区，放入Clover引导"><a href="#挂载U盘EFI分区，放入Clover引导" class="headerlink" title="挂载U盘EFI分区，放入Clover引导"></a>挂载U盘EFI分区，放入Clover引导</h3><p>使用Clover Configurator挂载EFI分区，将博主分享的EFI拷贝进去。<br>   <img src= "/images/loading.gif" data-lazy-src="/images/deb75b00e28a324d97692897f31013241d00124f.jpg"><br>   <img src= "/images/loading.gif" data-lazy-src="/images/49f17878784bf4892e1e2be3e4af61fc5c5d9117.jpg"></p>
-<h3 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h3><ul>
-<li>U盘启动，进入安装盘</li>
-<li>选择语言为简体中文，磁盘工具下抹盘为APFS</li>
-<li>点击安装macOS，选择刚才准备好的分区，安装系统</li>
-<li>安装系统有两个阶段，中途会重启，属于正常现象</li>
-</ul>
-<h3 id="系统完善"><a href="#系统完善" class="headerlink" title="系统完善"></a>系统完善</h3><blockquote>
-<p>因为有些操作是在系统内完成的，所以只有一个efi不可能安装完成就完美，所以进入系统后要完善系统。</p>
-</blockquote>
-<h4 id="蓝牙"><a href="#蓝牙" class="headerlink" title="蓝牙"></a>蓝牙</h4><p>挂载EFI分区，终端下输入如下命令重启即可</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/BrcmFirmwareData.kext /</span>Library/Extensions</span><br><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/BrcmPatchRAM2.kext /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure>
-<h4 id="电池"><a href="#电池" class="headerlink" title="电池"></a>电池</h4><p>挂载EFI分区，终端下输入如下命令重启即可</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/ACPIBatteryManager.kext  /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure>
-<h4 id="小太阳"><a href="#小太阳" class="headerlink" title="小太阳"></a>小太阳</h4><ul>
-<li>挂载EFI分区，终端下输入如下命令重启<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/AppleBacklightInjector.kext  /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure></li>
-<li>设置快捷键，将亮度调节快捷键修改成笔记本键盘相应键位，ThinkPad S1 2017为F5亮度增，F6亮度减。(需要外接键盘才能设置，设置完成后可以拔掉外接键盘)<br>  <img src= "/images/loading.gif" data-lazy-src="/images/a7883fe77213f7236c7b3677e631aadf5737a2ee.jpg"></li>
-</ul>
-<h4 id="显示器内建以及开启hidpi"><a href="#显示器内建以及开启hidpi" class="headerlink" title="显示器内建以及开启hidpi"></a>显示器内建以及开启hidpi</h4><p>终端输入如下命令执行一建Hidpi脚本并按下图选择即可(感谢xzhih大牛提供脚本)，重启之后，你会发现Hidpi和内建显示器成功完成。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/master/hidpi.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<p>  <img src= "/images/loading.gif" data-lazy-src="/images/ee9bda948796e3d12b9ade6e3e82eab9a089a256.jpg"><br>  <img src= "/images/loading.gif" data-lazy-src="/images/d14a98efc2249b2ec0ddd1ad0215f3b8058d31e2.jpg"></p>
-<h2 id="至此，ThinkPad-S1-2017-黑苹果95完美"><a href="#至此，ThinkPad-S1-2017-黑苹果95完美" class="headerlink" title="至此，ThinkPad S1 2017 黑苹果95完美"></a>至此，ThinkPad S1 2017 黑苹果95完美</h2>]]></content>
       <categories>
         <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>macOS</tag>
-        <tag>ThinkPad S1 2017</tag>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博主的Hackintosh Bootloader以及kexts编译脚本分享</title>
+    <url>/2019/12/21/Hackintosh_Build.html</url>
+    <content><![CDATA[<blockquote>
+<p>鉴于很多小伙伴问我如何编译Hackintosh Bootloader以及kexts，今奉上博主的编译脚本。<a id="more"></a></p>
+</blockquote>
+<h1 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h1><h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><ul>
+<li>App Store安装Xcode11</li>
+<li>输入以下命令并按提示安装命令行工具<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
+<h2 id="脚本使用"><a href="#脚本使用" class="headerlink" title="脚本使用"></a>脚本使用</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/Hackintosh_build.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<h1 id="使用截图"><a href="#使用截图" class="headerlink" title="使用截图"></a>使用截图</h1><img src= "/images/loading.gif" data-lazy-src="/images/build-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/build-2.png"></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -612,6 +337,281 @@
       </categories>
       <tags>
         <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>技嘉Z490 ELITE+i9 10900K+RX 5700 XT Hackintosh构建说明</title>
+    <url>/2020/05/27/Hackintosh_for_Z490_10900K.html</url>
+    <content><![CDATA[<blockquote>
+<p>Z490主板以及10代桌面处理器(吐槽下14nm+++++++++++++++)正式解禁开卖，博主升级电脑，购入Z490 ELITE+10900K套装(原价哦)，简单测试了下Hackintosh运行情况，现简要说明。<a id="more"></a></p>
+</blockquote>
+<h1 id="运行情况以及完美程度"><a href="#运行情况以及完美程度" class="headerlink" title="运行情况以及完美程度"></a>运行情况以及完美程度</h1><h2 id="正常工作"><a href="#正常工作" class="headerlink" title="正常工作"></a>正常工作</h2><ul>
+<li>核显</li>
+<li>独显</li>
+<li>声卡</li>
+<li>WIFI</li>
+<li>蓝牙</li>
+<li>sidecar</li>
+<li>电源节能5项</li>
+<li>USB</li>
+<li>睡眠唤醒</li>
+<li>USBPower充电</li>
+<li>DRM视频播放</li>
+<li>原生NVRAM启动盘切换</li>
+</ul>
+<h2 id="无法工作"><a href="#无法工作" class="headerlink" title="无法工作"></a>无法工作</h2><ul>
+<li>RTL8125 2.5G有线网卡</li>
+</ul>
+<h2 id="小瑕疵"><a href="#小瑕疵" class="headerlink" title="小瑕疵"></a>小瑕疵</h2><ul>
+<li>关于本机处理器只显示频率</li>
+</ul>
+<h1 id="构建过程"><a href="#构建过程" class="headerlink" title="构建过程"></a>构建过程</h1><h2 id="下载镜像-略"><a href="#下载镜像-略" class="headerlink" title="下载镜像(略)"></a>下载镜像(略)</h2><h2 id="进系统"><a href="#进系统" class="headerlink" title="进系统"></a>进系统</h2><h3 id="系统版本低于10-15-5正式版"><a href="#系统版本低于10-15-5正式版" class="headerlink" title="系统版本低于10.15.5正式版"></a>系统版本低于10.15.5正式版</h3><ul>
+<li><p>OC config.plist中作如下设置</p>
+<blockquote>
+<p>Kernel-&gt;Emulate-&gt;Cpuid1Data(Data)-&gt;EB060800 00000000 00000000 00000000<br>Kernel-&gt;Emulate-&gt;Cpuid1Mask(Data)-&gt;FFFFFFFF 00000000 00000000 00000000<br>Kernel-&gt;Quirks-&gt;AppleXcpmCfgLock(Boolean)-&gt;YES</p>
+</blockquote>
+</li>
+<li><p>加入SSDT-AWAC.aml并在config.plist中启用(OC中自带)</p>
+</li>
+</ul>
+<h3 id="系统版本已经是10-15-5正式版"><a href="#系统版本已经是10-15-5正式版" class="headerlink" title="系统版本已经是10.15.5正式版"></a>系统版本已经是10.15.5正式版</h3><ul>
+<li><p>OC config.plist中作如下设置</p>
+<blockquote>
+<p>Kernel-&gt;Quirks-&gt;AppleXcpmCfgLock(Boolean)-&gt;YES</p>
+</blockquote>
+</li>
+<li><p>加入SSDT-AWAC.aml并在config.plist中启用(OC中自带)</p>
+</li>
+</ul>
+<h2 id="核显"><a href="#核显" class="headerlink" title="核显"></a>核显</h2><ul>
+<li>BIOS下开启核显(重要)</li>
+<li>OC config.plist中注入如下信息,注意IGPU路径要换成自己的<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-2.png"></li>
+</ul>
+<h2 id="独显"><a href="#独显" class="headerlink" title="独显"></a>独显</h2><h3 id="基础驱动"><a href="#基础驱动" class="headerlink" title="基础驱动"></a>基础驱动</h3><ul>
+<li>加入WhateverGreen.kext</li>
+<li>boot-args加入agdpmod=pikera<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-3.png"></li>
+</ul>
+<h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><ul>
+<li>OC config.plist中注入如下信息,注意GFX路径要换成自己的<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-4.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-5.png"></li>
+</ul>
+<h2 id="声卡"><a href="#声卡" class="headerlink" title="声卡"></a>声卡</h2><ul>
+<li>加入AppleALC.kext，FakePCIID.kext，FakePCIID_Intel_HDMI_Audio.kext</li>
+<li>OC config.plist中注入如下信息,注意HDEF路径要换成自己的<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-6.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-7.png"></li>
+</ul>
+<h2 id="WIFI以及蓝牙"><a href="#WIFI以及蓝牙" class="headerlink" title="WIFI以及蓝牙"></a>WIFI以及蓝牙</h2><ul>
+<li>博主用的是BCM94352Z，和以前驱动方法完全相同，故不赘述。</li>
+</ul>
+<h2 id="sidecar"><a href="#sidecar" class="headerlink" title="sidecar"></a>sidecar</h2><ul>
+<li>核显正常驱动即可，无线连接sidecar有问题的，请重新登录icloud以及清空NVRAM。</li>
+</ul>
+<h2 id="电源节能5项"><a href="#电源节能5项" class="headerlink" title="电源节能5项"></a>电源节能5项</h2><ul>
+<li>加入以下SSDT并在config中启用即可(以下ssdt已经修复节能变成4项的问题)<br><a href="https://downloads.bugprogrammer.me/SSDT/SSDT-PLUG.aml">SSDT-PLUG.aml</a></li>
+</ul>
+<h2 id="USB"><a href="#USB" class="headerlink" title="USB"></a>USB</h2><blockquote>
+<p>博主首先尝试了原始的USBPorts.kext方案，发现并不能解决睡眠即时唤醒的bug，所以博主使用了新方案。</p>
+</blockquote>
+<ul>
+<li>OC config.plist中做如下配置<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-8.png"></li>
+<li>定制USBPorts.kext(虽然不能解决睡眠即时唤醒，但是可以解决插入移动硬盘被识别为内置的bug)。</li>
+<li>加入如下SSDT并在config.plist中启用<br><a href="https://downloads.bugprogrammer.me/SSDT/SSDT-GPRW.aml">SSDT-GPRW.aml</a></li>
+<li>OC config.plist中做如下配置<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-9.png"></li>
+</ul>
+<h2 id="睡眠唤醒"><a href="#睡眠唤醒" class="headerlink" title="睡眠唤醒"></a>睡眠唤醒</h2><ul>
+<li>USB以及电源节能5项搞定以后，睡眠唤醒即正常。</li>
+</ul>
+<h2 id="USBPower充电"><a href="#USBPower充电" class="headerlink" title="USBPower充电"></a>USBPower充电</h2><ul>
+<li>在USBPorts.kext的info.plist注入如下信息即可<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-10.png"></li>
+</ul>
+<h2 id="DRM视频播放"><a href="#DRM视频播放" class="headerlink" title="DRM视频播放"></a>DRM视频播放</h2><ul>
+<li>加入并启用Whatevergreen.kext</li>
+<li>boot-args加入参数shikigva=80<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-11.png"></li>
+</ul>
+<h2 id="原生NVRAM启动盘切换"><a href="#原生NVRAM启动盘切换" class="headerlink" title="原生NVRAM启动盘切换"></a>原生NVRAM启动盘切换</h2><ul>
+<li>与Z390完全一样，可以去掉SSDT-PMC。(原生NVRAM)</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><blockquote>
+<p>过程写的较为简洁，萌新小伙伴需要看一些其他基础，本文目标是梳理一下Z490 Hackintosh构建的基本情况和驱动完善方法，后续进展会继续更新。<br>EFI Github地址: <a href="https://github.com/bugprogrammer/hackintosh/tree/Z490-AORUS-ELETE+10900K+RX5700XT">https://github.com/bugprogrammer/hackintosh/tree/Z490-AORUS-ELETE+10900K+RX5700XT</a></p>
+</blockquote>
+<h1 id="2020-05-31更新"><a href="#2020-05-31更新" class="headerlink" title="2020-05-31更新"></a>2020-05-31更新</h1><h2 id="核显-1"><a href="#核显-1" class="headerlink" title="核显"></a>核显</h2><p>最新版本的macOS(10.15.5)以及Whatevergreen(1.4.0)已经支持Comet Lake新核显id。新id如下</p>
+<ul>
+<li>0x9BC80003 =&gt; i5-10500及以下CPU所附带的UHD 630核显</li>
+<li>0x9BC50003 =&gt; i5-10600K及以上CPU所附带的UHD 630核显</li>
+</ul>
+<p>博主的i9-10900K正好适用0x9BC50003，故核显部分更新如下<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-12.png"></p>
+<h1 id="2020-06-02更新"><a href="#2020-06-02更新" class="headerlink" title="2020-06-02更新"></a>2020-06-02更新</h1><h2 id="解锁msr-lock-cfg-lock"><a href="#解锁msr-lock-cfg-lock" class="headerlink" title="解锁msr lock(cfg lock)"></a>解锁msr lock(cfg lock)</h2><blockquote>
+<p>博主之前测试发现传统的msr解锁方案(setup_var)不起作用，因为手头没有编程器，不敢硬刷BIOS，故暂时搁置。偶然在tonymacx86上看到了一个解锁工具，测试成功，教程如下。</p>
+</blockquote>
+<ul>
+<li><p>下载CFGLock.efi工具<br><a href="https://downloads.bugprogrammer.me/tools/CFGLock.efi">CFGLock.efi</a></p>
+</li>
+<li><p>放入OC文件夹下的tools目录中并在config.plist中启用<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-13.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-14.png"></p>
+</li>
+<li><p>重启，OC启动菜单选择CFGLock，并按提示操作即可(按y)，工具使用中出现如下交互提示</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Brumbaers</span> CFG Unlock</span><br><span class="line"><span class="attribute">1</span>. <span class="number">05</span> <span class="number">003</span>E <span class="number">0011</span> /CFG Lock/ VarStore Name: CpuSetup</span><br><span class="line"></span><br><span class="line"><span class="attribute">Exactly</span> <span class="number">1</span> CFG Variable found: CFG Lock</span><br><span class="line"><span class="attribute">In</span> VarStore <span class="string">&quot;CpuSetup&quot;</span> GUID: B<span class="number">08</span>F<span class="number">97</span>FF-E<span class="number">6</span>E<span class="number">8</span>-<span class="number">4193</span> - A<span class="number">9</span>-<span class="number">97</span>-<span class="number">5</span>E-<span class="number">9</span>E-<span class="number">98</span>-<span class="number">0</span>A-DB-<span class="number">32</span> Offset: <span class="number">003</span>E Size: <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">Variable</span> read: value <span class="number">1</span></span><br><span class="line"><span class="attribute">Do</span> you want to toggle the value y/n ?</span><br></pre></td></tr></table></figure></li>
+<li><p>用HackintoshBuild检测cfg lock情况，成功解锁如下图<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-15.png"></p>
+</li>
+<li><p>config.plist中关闭cfg补丁<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-16.png"></p>
+</li>
+</ul>
+<h2 id="定制CPU名称-博主电脑只显示频率"><a href="#定制CPU名称-博主电脑只显示频率" class="headerlink" title="定制CPU名称(博主电脑只显示频率)"></a>定制CPU名称(博主电脑只显示频率)</h2><ul>
+<li><p>下载cpu-name.sh脚本(来自tonymacx86)<br><a href="https://downloads.bugprogrammer.me/tools/cpu_name.sh">cpu-name.sh</a></p>
+</li>
+<li><p>使用方法</p>
+<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> xxx(脚本所在目录)</span><br><span class="line">chmod +x cpu-name.<span class="keyword">sh</span></span><br><span class="line">./cpu-name.<span class="keyword">sh</span> <span class="string">&quot;cpu名称&quot;</span>(例如：./cpu-name.<span class="keyword">sh</span> <span class="string">&quot;十核 Intel Core i9&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/Z490-17.png"></p>
+</li>
+</ul>
+<h1 id="2020-06-04更新"><a href="#2020-06-04更新" class="headerlink" title="2020-06-04更新"></a>2020-06-04更新</h1><h2 id="ACPI-error-TZ-TZ10-STA"><a href="#ACPI-error-TZ-TZ10-STA" class="headerlink" title="ACPI error(_TZ.TZ10._STA)"></a>ACPI error(_TZ.TZ10._STA)</h2><blockquote>
+<p>这个是技嘉主板通病。TZ10是一个温控模块，_STA方法是操作系统检查，如果找不到匹配操作系统(Darwin)就会出错。SSDT中定义如下。</p>
+</blockquote>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">Method</span> (_STA, <span class="number">0</span>, NotSerialized)  <span class="comment">// _STA: Status</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2001&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x04, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2001.1&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x05, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;FreeBSD&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x06, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;HP-UX&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x07, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;OpenVMS&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x08, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2001 SP1&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x09, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2001 SP2&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x0A, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2001 SP3&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x0B, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2006&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x0C, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2006 SP1&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x0D, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2009&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x0E, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2012&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x0F, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2013&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x10, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2015&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x11, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2016&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x12, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2017&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x13, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2017.2&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x14, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2018&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x15, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (\_OSI (<span class="string">&quot;Windows 2018.2&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (<span class="number">0</span>x16, Local0)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">If</span> (LLessEqual (Local0, <span class="number">0</span>x0E))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">Store</span> (One, \GSA1.ZRD2)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">Return</span> (<span class="number">0</span>x0B)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><ul>
+<li>OC config.plist中做如下配置<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-18.png"></li>
+<li>加入如下SSDT并在config.plist中启用<br><a href="https://downloads.bugprogrammer.me/SSDT/SSDT-OC-XOSI.aml">SSDT-OC-XOSI.aml</a></li>
+</ul>
+<h1 id="2020-06-07更新"><a href="#2020-06-07更新" class="headerlink" title="2020-06-07更新"></a>2020-06-07更新</h1><h2 id="修复技嘉Hackintosh启动随机出现内存错误"><a href="#修复技嘉Hackintosh启动随机出现内存错误" class="headerlink" title="修复技嘉Hackintosh启动随机出现内存错误"></a>修复技嘉Hackintosh启动随机出现内存错误</h2><ul>
+<li><p>config.plist中做以下修改</p>
+<blockquote>
+<p>Booter-&gt;Quirks-&gt;DevirtualiseMmio-&gt;YES<br>Booter-&gt;Quirks-&gt;ProtectUefiServices-&gt;NO<br>NVRAM-&gt;Add-&gt;7C436110-AB2A-4BBB-A880-FE41995C9F82-&gt;slide=1(添加)</p>
+</blockquote>
+</li>
+<li><p>加入如下.efi文件并在config.plist中启用<br><a href="https://downloads.bugprogrammer.me/efidriver/MemoryAllocation.efi">MemoryAllocation.efi</a></p>
+</li>
+</ul>
+<h1 id="2020-06-11更新"><a href="#2020-06-11更新" class="headerlink" title="2020-06-11更新"></a>2020-06-11更新</h1><p>更新10.15.6要把之前的CPUID仿冒加回来。。。</p>
+<h1 id="2020-06-12更新"><a href="#2020-06-12更新" class="headerlink" title="2020-06-12更新"></a>2020-06-12更新</h1><h2 id="RTL8125-2-5G-10-15可用，10-14未测试"><a href="#RTL8125-2-5G-10-15可用，10-14未测试" class="headerlink" title="RTL8125 2.5G(10.15可用，10.14未测试)"></a>RTL8125 2.5G(10.15可用，10.14未测试)</h2><p>使用以下kext即可<br><a href="https://downloads.bugprogrammer.me/Kexts/LucyRTL8125Ethernet.kext.zip">LucyRTL8125Ethernet.kext</a><br>编译自 <a href="https://github.com/derBrumbaer/LucyRTL8125Ethernet%EF%BC%8C">https://github.com/derBrumbaer/LucyRTL8125Ethernet，</a> 感谢derBrumbaer以及Mieze。<br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-19.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/Z490-20.png"></p>
+<h1 id="2020-07-14更新"><a href="#2020-07-14更新" class="headerlink" title="2020-07-14更新"></a>2020-07-14更新</h1><h2 id="声卡-1"><a href="#声卡-1" class="headerlink" title="声卡"></a>声卡</h2><blockquote>
+<p>据博主测试，最新的AppleALC(1.5.1)已经支持400系列，故此可以删除FakePCIID.kext以及FakePCIID_Intel_HDMI_Audio.kext, config中删除声卡的device-id，直接使用最新的AppleALC即可。</p>
+</blockquote>
+<p><a href="https://downloads.bugprogrammer.me/Kexts/AppleALC.kext.zip">AppleALC.kext.zip</a></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux内核简介及编译教程</title>
+    <url>/2018/09/01/Linux_Kernel_Build.html</url>
+    <content><![CDATA[<blockquote>
+<p>博主去年双11购入AMD Vega显卡(为了黑苹果免驱以及硬解)，发现Linux下无法驱动Vega显卡，4K显示器分辨率被锁定为1920x2160的奇葩分辨率，无法接受。于是查阅了一下资料发现当时的内核(Linux 4.12)并不支持AMD Vega显卡，于是打算编译内核升级到最新版本，毕竟Linux的舒适使用对博主十分重要。现在分享一下Linux Kernel的编译教程。<a id="more"></a><br><br /><b>注意：由于时间久远，博主的Linux已经升级Ubuntu 18.04，自带内核版本为Linux 4.15，所以演示平台为Ubuntu 18.04，编译的内核版本为Linux 4.18.5。另外，本文中部分图片来源网络。因为经典体系架构图现画比较麻烦。</b></p>
+</blockquote>
+<h3 id="Linux内核简介"><a href="#Linux内核简介" class="headerlink" title="Linux内核简介"></a>Linux内核简介</h3><h4 id="Linux-Kernel-Map"><a href="#Linux-Kernel-Map" class="headerlink" title="Linux Kernel Map"></a>Linux Kernel Map</h4><p><img src= "/images/loading.gif" data-lazy-src="/images/6b49439752bdd908e832187bbbfe555dcd56864e.jpg"></p>
+<h4 id="Linux-系统体系结构"><a href="#Linux-系统体系结构" class="headerlink" title="Linux 系统体系结构"></a>Linux 系统体系结构</h4><p>如下图所示，Linux体系结构，从大的方面可以分为用户空间(User Space)和内核空间(Kernel Space)两部分。</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/299f340bcfb4ac1703fdb841e613bcaf57862165.jpg"></p>
+<ul>
+<li>用户空间中包含了C库，用户的应用程序。在某些体系结构图中还包含了shell，当然shell脚本也是Linux体系中不可缺少的一部分。</li>
+<li>内核空间包括硬件平台、平台依赖代码、内核、系统调用接口。</li>
+<li>在任何一个现代操作系统中，都是分层的。为什么需要分层呢？<blockquote>
+<p>从程序员的角度分析，将linux底层和应用分开，做应用的做应用，做底层的做底层，各干各的。经济学的基本原理是，分工产生效率。<br /><br>从安全性的角度分析，是为了保护内核。现代CPU通常都实现了不同的工作模式。<br><br />以ARM为例：ARM实现了7种工作模式，不同模式下CPU可以执行的指令或者访问的寄存器不同：(1)用户模式 usr (2)系统模式 sys(3)管理模式 svc(4)快速中断 fiq(5)外部中断 irq(6)数据访问终止 abt(7)未定义指令异常。如果任何一个上层应用都可以调用寄存器，那样肯定是无法稳定执行的。而且因为出现了这个问题，出现了一个新的学科“现代操作系统”，如果大家感兴趣可以看一下“现代操作系统”相关文章或者书籍。<br /><br>以X86为例：X86实现了4个不同级别的权限，Ring0—Ring3 ;Ring0下可以执行特权指令，可以访问IO设备；Ring3则有很多的限制。如果分析一下Android的，这方面做的更加“丧心病狂”，Android所有的APK应用程序，都是在Java虚拟机上面运行，应用程序更加远离底层。<br /><br>另外，用户空间和内核空间是程序执行的两种不同状态，我们可以通过“系统调用”和“硬件中断”来完成用户空间到内核空间的转移。</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="Linux-Kernel体系结构"><a href="#Linux-Kernel体系结构" class="headerlink" title="Linux Kernel体系结构"></a>Linux Kernel体系结构</h4><p>如下图所示，是Linux内核结构图。</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/97909a09aa119314a15a18235b9eb288ba7ad448.jpg"></p>
+<h5 id="SCI层（System-Call-Interface）"><a href="#SCI层（System-Call-Interface）" class="headerlink" title="SCI层（System Call Interface）"></a>SCI层（System Call Interface）</h5><p>这一层是给应用用户空间提供一套标准的系统调用函数来访问Linux。前面分析Linux体系结构的时候，介绍过任何一类现代操作系统都不会允许上层应用直接访问底层，在Linux中，内核提供了一套标准接口，上层应用就可以通过这一套标准接口来访问底层。</p>
+<h5 id="PM（Procees-Management）"><a href="#PM（Procees-Management）" class="headerlink" title="PM（Procees Management）"></a>PM（Procees Management）</h5><p>这一部分包括具体创建进程（fork、exec）,停止进程（kill、exit）,并控制他们之间的通信（signal等）。还包括进程调度，控制活动进程如何共享CPU。这一部分是Linux已经做好的，在写驱动的时候，只需要调用对应的函数即可实现这些功能，例如创建进程、进程通信等等。</p>
+<h5 id="MM（Memory-Management）"><a href="#MM（Memory-Management）" class="headerlink" title="MM（Memory Management）"></a>MM（Memory Management）</h5><p>内存管理的主要作用是控制多个进程安全的共享内存区域。</p>
+<h5 id="VFS（Virtual-File-Systems）"><a href="#VFS（Virtual-File-Systems）" class="headerlink" title="VFS（Virtual File Systems）"></a>VFS（Virtual File Systems）</h5><p>虚拟文件系统，隐藏各种文件系统的具体细节，为文件操作提供统一的接口。在Linux中“一切皆文件”，这些文件就是通过VFS来实现的。Linux提供了一个大的通用模型，使这个模型包含了所有文件系统功能的集合。如下图所示，是一个虚拟文件系统的结构图。</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/5a07b3a364feae45f4bd211f19d963e1977eff58.jpg"></p>
+<h5 id="DD（Device-Drivers）"><a href="#DD（Device-Drivers）" class="headerlink" title="DD（Device Drivers）"></a>DD（Device Drivers）</h5><p>设备驱动，Linux驱动一般分为网络设备、块设备、字符设备、杂项设备，需要我们编写的只有字符设备，杂项设备是不容易归类的一种驱动，杂项设备和字符设备有很多重合的地方。</p>
+<h5 id="PD（Physical-Devices）"><a href="#PD（Physical-Devices）" class="headerlink" title="PD（Physical Devices）"></a>PD（Physical Devices）</h5><p>这一部分提供丰富的网络协议支持。</p>
+<h3 id="Linux-Kernel源码"><a href="#Linux-Kernel源码" class="headerlink" title="Linux Kernel源码"></a>Linux Kernel源码</h3><h4 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h4><p><b><a href="http://www.kernel.org/">www.kernel.org</a></b></p>
+<h4 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h4><ul>
+<li>arch：根据cpu体系结构不同而分的代码</li>
+<li>block：部分块设备驱动程序</li>
+<li>crypto：加密，压缩，CRC校验算法</li>
+<li>documentation：内核文档</li>
+<li>drivers：设备驱动程序</li>
+<li>fs(虚拟文件系统vfs):文件系统</li>
+<li>include：内核所需的头文件，(与平台无关的头文件在include/linux中)</li>
+<li>lib：库文件代码(与平台相关的)</li>
+<li>mm：实现内存管理，与硬件体系结构无关的(与硬件体系结构相关的在arch中)</li>
+<li>net：网络协议的代码</li>
+<li>samples：一些内核编程的范例</li>
+<li>scripts：配置内核的脚本</li>
+<li>security：SElinux的模块</li>
+<li>sound：音频设备的驱动程序</li>
+<li>usr：cpio命令实现，用于制作根文件系统的命令(文件系统与内核放到一块的命令)</li>
+<li>virt：内核虚拟机</li>
+</ul>
+<h3 id="Linux-Kernel编译"><a href="#Linux-Kernel编译" class="headerlink" title="Linux Kernel编译"></a>Linux Kernel编译</h3><h4 id="下载Linux-Kernel源码并拷贝到-usr-src目录"><a href="#下载Linux-Kernel源码并拷贝到-usr-src目录" class="headerlink" title="下载Linux Kernel源码并拷贝到/usr/src目录"></a>下载Linux Kernel源码并拷贝到/usr/src目录</h4><p>输入如下命令即可</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">wget https:<span class="regexp">//</span>cdn.kernel.org<span class="regexp">/pub/</span>linux<span class="regexp">/kernel/</span>v4.x<span class="regexp">/linux-4.18.5.tar.xz &amp;&amp; cp -f linux-4.18.5.tar.xz /u</span>sr/src</span><br></pre></td></tr></table></figure>
+<h4 id="解压Linux-Kernel"><a href="#解压Linux-Kernel" class="headerlink" title="解压Linux Kernel"></a>解压Linux Kernel</h4><p>输入如下命令即可</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">cd</span> /usr/src &amp;&amp; tar -xvf linux-<span class="number">4</span>.<span class="number">18</span>.<span class="number">5</span>.tar.xz &amp;&amp; cd linux-<span class="number">4</span>.<span class="number">18</span>.<span class="number">5</span></span><br></pre></td></tr></table></figure>
+<h4 id="Ubuntu-18-04下，要执行以下命令安装软件包"><a href="#Ubuntu-18-04下，要执行以下命令安装软件包" class="headerlink" title="Ubuntu 18.04下，要执行以下命令安装软件包"></a>Ubuntu 18.04下，要执行以下命令安装软件包</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">sudo apt <span class="keyword">install</span> fortune</span><br></pre></td></tr></table></figure>
+<h4 id="配置编译参数"><a href="#配置编译参数" class="headerlink" title="配置编译参数"></a>配置编译参数</h4><p>执行以下命令，会弹出一个带有GUI的配置界面，一般情况下默认参数就好，光标移动到Save保存即可，如图：</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">make menuconfig</span></span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/bc6c5ce369b72802e5c97d5a38ef3b2b50ad6455.jpg"></p>
+<h4 id="编译内核"><a href="#编译内核" class="headerlink" title="编译内核"></a>编译内核</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">make</span> -j<span class="number">12</span></span><br></pre></td></tr></table></figure>
+<p><b>注意：-j参数后面加本机CPU线程数可以加快编译速度，博主的8700K是6核心12线程，所以-j12。</b></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/39a28f2943c8062679567b03687c28c54354b5c9.jpg"></p>
+<h4 id="安装内核"><a href="#安装内核" class="headerlink" title="安装内核"></a>安装内核</h4><figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line"><span class="built_in">make</span> modules_install</span><br><span class="line"><span class="built_in">make</span> install</span><br></pre></td></tr></table></figure>
+<h4 id="更新grub引导"><a href="#更新grub引导" class="headerlink" title="更新grub引导"></a>更新grub引导</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">update</span>-grub<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>至此升级内核成功，重启电脑。</p>
+<h4 id="确认升级是否成功"><a href="#确认升级是否成功" class="headerlink" title="确认升级是否成功"></a>确认升级是否成功</h4><p>重启后，执行如下命令查看内核版本，和编译版本相同即为成功</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">uname -r</span></span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/7de8222416d47ef89b548125c35e3b5f3238508f.jpg"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux_Kernel</tag>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ThinkPad S1 2017 Hackintosh记录+教程+完整EFI分享</title>
+    <url>/2018/07/28/ThinkPad_Hackintosh.html</url>
+    <content><![CDATA[<blockquote>
+<p>朋友购买了ThinkPad S1 2017版本，配置为i5-7200U+hd620+8g ram+256g intel ssd(NVME)+1080P屏幕。安装黑苹果大体顺利，现将大概过程分享，供同机型的朋友借鉴。<a id="more"></a></p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li>因ThinkPad S1 2017使用的是intel无线网卡，大家都知道intel无线网卡在黑苹果下目前无解，所以替换了Bcm94352z。虽然Bcm94360是免驱的，但是博主不建议笔记本用户选用，因为Bcm94360和普通的ngff无线网卡相比宽了一块，所以笔记本有概率无法安装。</li>
+<li>完美程度：显卡+声卡+双网卡+蓝牙完美驱动，USB正常，睡眠唤醒正常，显示器内建正常，HDMI外接屏幕正常，变频7档，小太阳正常，电池正常(感谢黑果小兵和宪武以及其他大牛的帮助)。触摸屏以及电容笔可用，但只能单点触摸。触摸板和小红点可用，但是不支持手势。</li>
+<li>因为电脑是朋友的，所以截图不方便，因此本教程尽量多使用命令行方式，各位可以直接复制粘贴。</li>
+<li>本教程需要你有一个macOS环境，可以是虚拟机。虚拟机安装macOS百度教程很多，请自学。</li>
+<li>安装前要在Windows下准备好安装macOS所需分区。</li>
+</ul>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><h3 id="制作安装盘"><a href="#制作安装盘" class="headerlink" title="制作安装盘"></a>制作安装盘</h3><ul>
+<li>下载macOS High Sierra 10.13.6镜像，博主建议在App Store下载，下载成功后会保存在Application下。</li>
+<li>格式化U盘为Mac OS扩展日志式，U盘名称设置为mac，格式化后会生成两个分区，第一个是EFI分区，用来存放Clover引导，第二个用于写入镜像，格式化U盘如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/7eb9ec5bdd42a032dc9707bd8255427e82618323.jpg"></li>
+<li>写入镜像:终端输入如下命令并输入密码即可。<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/Applications/</span>Install\ macOS\ High\ Sierra.app<span class="regexp">/Contents/</span>Resources<span class="regexp">/createinstallmedia --volume /</span>Volumes<span class="regexp">/mac --applicationpath /</span>Applications/Install\ macOS\ High\ Sierra.app</span><br></pre></td></tr></table></figure>
+<h3 id="获取博主分享的Clover文件-保存在桌面"><a href="#获取博主分享的Clover文件-保存在桌面" class="headerlink" title="获取博主分享的Clover文件,保存在桌面"></a>获取博主分享的Clover文件,保存在桌面</h3></li>
+<li>输入如下命令即可在桌面保存hackintosh文件夹，内含Clover文件夹<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~<span class="string">/Desktop</span> &amp;&amp; git clone https:<span class="string">//github.com/bugprogrammer/hackintosh.git</span> &amp;&amp; <span class="keyword">cd</span> hackintosh &amp;&amp; git checkout ThinkPad-S1-2017 </span><br></pre></td></tr></table></figure>
+<img src= "/images/loading.gif" data-lazy-src="/images/d36b4788d3a64bcc071322e9a8dd0668cd7d7b20.jpg"></li>
+</ul>
+<h3 id="挂载U盘EFI分区，放入Clover引导"><a href="#挂载U盘EFI分区，放入Clover引导" class="headerlink" title="挂载U盘EFI分区，放入Clover引导"></a>挂载U盘EFI分区，放入Clover引导</h3><p>使用Clover Configurator挂载EFI分区，将博主分享的EFI拷贝进去。<br>   <img src= "/images/loading.gif" data-lazy-src="/images/deb75b00e28a324d97692897f31013241d00124f.jpg"><br>   <img src= "/images/loading.gif" data-lazy-src="/images/49f17878784bf4892e1e2be3e4af61fc5c5d9117.jpg"></p>
+<h3 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h3><ul>
+<li>U盘启动，进入安装盘</li>
+<li>选择语言为简体中文，磁盘工具下抹盘为APFS</li>
+<li>点击安装macOS，选择刚才准备好的分区，安装系统</li>
+<li>安装系统有两个阶段，中途会重启，属于正常现象</li>
+</ul>
+<h3 id="系统完善"><a href="#系统完善" class="headerlink" title="系统完善"></a>系统完善</h3><blockquote>
+<p>因为有些操作是在系统内完成的，所以只有一个efi不可能安装完成就完美，所以进入系统后要完善系统。</p>
+</blockquote>
+<h4 id="蓝牙"><a href="#蓝牙" class="headerlink" title="蓝牙"></a>蓝牙</h4><p>挂载EFI分区，终端下输入如下命令重启即可</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/BrcmFirmwareData.kext /</span>Library/Extensions</span><br><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/BrcmPatchRAM2.kext /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure>
+<h4 id="电池"><a href="#电池" class="headerlink" title="电池"></a>电池</h4><p>挂载EFI分区，终端下输入如下命令重启即可</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/ACPIBatteryManager.kext  /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure>
+<h4 id="小太阳"><a href="#小太阳" class="headerlink" title="小太阳"></a>小太阳</h4><ul>
+<li>挂载EFI分区，终端下输入如下命令重启<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp -Rf <span class="regexp">/Volumes/</span>EFI<span class="regexp">/EFI/</span>CLOVER<span class="regexp">/kexts/</span>Other<span class="regexp">/AppleBacklightInjector.kext  /</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo chmod -Rf <span class="number">755</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo chown -Rf <span class="number">0</span>:<span class="number">0</span> <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/PrelinkedKernels/</span>*</span><br><span class="line">sudo rm -Rf <span class="regexp">/System/</span>Library<span class="regexp">/Caches/</span>com.apple.kext.caches/*</span><br><span class="line">sudo touch -f <span class="regexp">/System/</span>Library/Extensions</span><br><span class="line">sudo touch -f <span class="regexp">/Library/</span>Extensions</span><br><span class="line">sudo kextcache -Boot -U /</span><br></pre></td></tr></table></figure></li>
+<li>设置快捷键，将亮度调节快捷键修改成笔记本键盘相应键位，ThinkPad S1 2017为F5亮度增，F6亮度减。(需要外接键盘才能设置，设置完成后可以拔掉外接键盘)<br>  <img src= "/images/loading.gif" data-lazy-src="/images/a7883fe77213f7236c7b3677e631aadf5737a2ee.jpg"></li>
+</ul>
+<h4 id="显示器内建以及开启hidpi"><a href="#显示器内建以及开启hidpi" class="headerlink" title="显示器内建以及开启hidpi"></a>显示器内建以及开启hidpi</h4><p>终端输入如下命令执行一建Hidpi脚本并按下图选择即可(感谢xzhih大牛提供脚本)，重启之后，你会发现Hidpi和内建显示器成功完成。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/master/hidpi.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<p>  <img src= "/images/loading.gif" data-lazy-src="/images/ee9bda948796e3d12b9ade6e3e82eab9a089a256.jpg"><br>  <img src= "/images/loading.gif" data-lazy-src="/images/d14a98efc2249b2ec0ddd1ad0215f3b8058d31e2.jpg"></p>
+<h2 id="至此，ThinkPad-S1-2017-黑苹果95完美"><a href="#至此，ThinkPad-S1-2017-黑苹果95完美" class="headerlink" title="至此，ThinkPad S1 2017 黑苹果95完美"></a>至此，ThinkPad S1 2017 黑苹果95完美</h2>]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>macOS</tag>
+        <tag>ThinkPad S1 2017</tag>
       </tags>
   </entry>
   <entry>
@@ -788,38 +788,6 @@
       </tags>
   </entry>
   <entry>
-    <title>关于macOS 10.14.4 18E2034镜像的说明</title>
-    <url>/2019/03/27/about-macos-10.14.4-18E2034.html</url>
-    <content><![CDATA[<blockquote>
-<p>macOS 10.14.4 18E2034是一个特供镜像，博主猜测是iMac 2019的预装镜像(参测而已，因为经测试发现9900K型号仍然不识别，所以。。。)</p>
-</blockquote>
-<a id="more"></a>
-
-<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><h4 id="新建一个空壳镜像"><a href="#新建一个空壳镜像" class="headerlink" title="新建一个空壳镜像"></a>新建一个空壳镜像</h4><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/Applications/</span>Install\ macOS\ Mojave.app<span class="regexp">/Contents/</span>SharedSupport/</span><br></pre></td></tr></table></figure>
-<h4 id="获取镜像下载脚本"><a href="#获取镜像下载脚本" class="headerlink" title="获取镜像下载脚本"></a>获取镜像下载脚本</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">curl</span> https://www.tonymacx<span class="number">86</span>.com/attachments/createinstaller-<span class="number">10</span>-<span class="number">14</span>-<span class="number">4</span>-sb-sh-zip.<span class="number">395290</span>/ -o createInstaller-<span class="number">10</span>.<span class="number">14</span>.<span class="number">4</span>-SB.sh.zip</span><br><span class="line"><span class="attribute">unzip</span> createInstaller-<span class="number">10</span>.<span class="number">14</span>.<span class="number">4</span>-SB.sh.zip</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/e75ea7c233265be8aa47e9548df8c03ba93c6402.jpg"></p>
-<h4 id="修改脚本"><a href="#修改脚本" class="headerlink" title="修改脚本"></a>修改脚本</h4><blockquote>
-<p>由于下载可能失败,为了避免每次失败后都要重建空壳镜像，我们把脚本中的cp命令加上强制属性-f</p>
-</blockquote>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/3c35e1b7a49496a405706479ca6efab82865281b.jpg"></p>
-<h4 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h4><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">./createInstaller-<span class="number">10.14</span>.<span class="number">4</span>-<span class="module-access"><span class="module"><span class="identifier">SB</span>.</span></span>sh</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/a72f6742ed9dbd856a1872f1033e3a9b1a256f56.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/690c70a7ce3805cef14a2e66b0203bccecb7eed7.jpg"></p>
-<h3 id="博主的测试以及特供镜像的变化"><a href="#博主的测试以及特供镜像的变化" class="headerlink" title="博主的测试以及特供镜像的变化"></a>博主的测试以及特供镜像的变化</h3><ul>
-<li><font color=#A52A2A ><strong>仍然不显示9900K型号。</strong></font></li>
-<li><font color=#A52A2A ><strong>z390仍然要EmuVariableUefi-64.efi，否则睡眠、关机都变成重启。</strong></font></li>
-<li>AppleGraphicsPowerManagement.kext新增了两个机型，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/d8799656284986686c88dc71e6b0388fb7a773c3.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/9b9ed14414971bea8690c7ba3dd4b8d4ca632a85.jpg"></li>
-<li> AMDRadeonX5000GLDriver.bundle新增<font color=#A52A2A ><strong>Vega48</strong></font>和<font color=#A52A2A ><strong>Vega64X</strong></font>信息<br><img src= "/images/loading.gif" data-lazy-src="/images/e5dd1ea1e2ba4126ba28dd30334b2da8e6c245ed.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/9ac7e58ca2616f651daa617ec5defd17d1a1ab45.jpg"></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>macOS</tag>
-        <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OpenWrt获取IPv6详细教程</title>
     <url>/2021/05/06/about-openwrt-ipv6.html</url>
     <content><![CDATA[<blockquote>
@@ -859,6 +827,38 @@
       <tags>
         <tag>OpenWrt</tag>
         <tag>ipv6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于macOS 10.14.4 18E2034镜像的说明</title>
+    <url>/2019/03/27/about-macos-10.14.4-18E2034.html</url>
+    <content><![CDATA[<blockquote>
+<p>macOS 10.14.4 18E2034是一个特供镜像，博主猜测是iMac 2019的预装镜像(参测而已，因为经测试发现9900K型号仍然不识别，所以。。。)</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><h4 id="新建一个空壳镜像"><a href="#新建一个空壳镜像" class="headerlink" title="新建一个空壳镜像"></a>新建一个空壳镜像</h4><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/Applications/</span>Install\ macOS\ Mojave.app<span class="regexp">/Contents/</span>SharedSupport/</span><br></pre></td></tr></table></figure>
+<h4 id="获取镜像下载脚本"><a href="#获取镜像下载脚本" class="headerlink" title="获取镜像下载脚本"></a>获取镜像下载脚本</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">curl</span> https://www.tonymacx<span class="number">86</span>.com/attachments/createinstaller-<span class="number">10</span>-<span class="number">14</span>-<span class="number">4</span>-sb-sh-zip.<span class="number">395290</span>/ -o createInstaller-<span class="number">10</span>.<span class="number">14</span>.<span class="number">4</span>-SB.sh.zip</span><br><span class="line"><span class="attribute">unzip</span> createInstaller-<span class="number">10</span>.<span class="number">14</span>.<span class="number">4</span>-SB.sh.zip</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/e75ea7c233265be8aa47e9548df8c03ba93c6402.jpg"></p>
+<h4 id="修改脚本"><a href="#修改脚本" class="headerlink" title="修改脚本"></a>修改脚本</h4><blockquote>
+<p>由于下载可能失败,为了避免每次失败后都要重建空壳镜像，我们把脚本中的cp命令加上强制属性-f</p>
+</blockquote>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/3c35e1b7a49496a405706479ca6efab82865281b.jpg"></p>
+<h4 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h4><figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">./createInstaller-<span class="number">10.14</span>.<span class="number">4</span>-<span class="module-access"><span class="module"><span class="identifier">SB</span>.</span></span>sh</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/a72f6742ed9dbd856a1872f1033e3a9b1a256f56.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/690c70a7ce3805cef14a2e66b0203bccecb7eed7.jpg"></p>
+<h3 id="博主的测试以及特供镜像的变化"><a href="#博主的测试以及特供镜像的变化" class="headerlink" title="博主的测试以及特供镜像的变化"></a>博主的测试以及特供镜像的变化</h3><ul>
+<li><font color=#A52A2A ><strong>仍然不显示9900K型号。</strong></font></li>
+<li><font color=#A52A2A ><strong>z390仍然要EmuVariableUefi-64.efi，否则睡眠、关机都变成重启。</strong></font></li>
+<li>AppleGraphicsPowerManagement.kext新增了两个机型，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/d8799656284986686c88dc71e6b0388fb7a773c3.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/9b9ed14414971bea8690c7ba3dd4b8d4ca632a85.jpg"></li>
+<li> AMDRadeonX5000GLDriver.bundle新增<font color=#A52A2A ><strong>Vega48</strong></font>和<font color=#A52A2A ><strong>Vega64X</strong></font>信息<br><img src= "/images/loading.gif" data-lazy-src="/images/e5dd1ea1e2ba4126ba28dd30334b2da8e6c245ed.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/9ac7e58ca2616f651daa617ec5defd17d1a1ab45.jpg"></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>macOS</tag>
+        <tag>Hackintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -1006,45 +1006,6 @@
       </tags>
   </entry>
   <entry>
-    <title>什么？这辣鸡BIOS竟然不能关闭Secure Boot？教你在开启Secure Boot的情况下安装macOS</title>
-    <url>/2019/07/06/clover-with-secure-boot.html</url>
-    <content><![CDATA[<h1 id="相关理论"><a href="#相关理论" class="headerlink" title="相关理论"></a>相关理论</h1><h2 id="BIOS"><a href="#BIOS" class="headerlink" title="BIOS"></a>BIOS</h2><p>BIOS是英文”Basic Input Output System”的缩略语，直译过来后中文名称就是”基本输入输出系统”。其实，它是一组固化到计算机内主板上一个ROM芯片上的程序，它保存着计算机最重要的基本输入输出的程序、系统设置信息、开机后自检程序和系统自启动程序。 其主要功能是为计算机提供最底层的、最直接的硬件设置和控制。<a id="more"></a></p>
-<h2 id="UEFI"><a href="#UEFI" class="headerlink" title="UEFI"></a>UEFI</h2><p>UEFI，全称“统一的可扩展固件接口”(Unified Extensible Firmware Interface)， 是一种详细描述全新类型接口的标准。这种接口用于操作系统自动从预启动的操作环境，加载到一种操作系统上，从而使开机程序化繁为简，节省时间。</p>
-<h2 id="Secure-Boot"><a href="#Secure-Boot" class="headerlink" title="Secure Boot"></a>Secure Boot</h2><p>Secure Boot只是UEFI的一个部分。两者的关系是局部与整体的关系。Secure Boot的目的，是防止恶意软件侵入。它的做法就是采用密钥。UEFI规定，主板出厂的时候，可以内置一些可靠的公钥。然后，任何想要在这块主板上加载的操作系统或者硬件驱动程序，都必须通过这些公钥的认证。也就是说，这些软件必须用对应的私钥签署过，否则主板拒绝加载。由于恶意软件不可能通过认证，因此就没有办法感染Boot。</p>
-<h1 id="在开启Secure-Boot的情况下使用Clover启动macOS以及其他操作系统-如Linux"><a href="#在开启Secure-Boot的情况下使用Clover启动macOS以及其他操作系统-如Linux" class="headerlink" title="在开启Secure Boot的情况下使用Clover启动macOS以及其他操作系统(如Linux)"></a>在开启Secure Boot的情况下使用Clover启动macOS以及其他操作系统(如Linux)</h1><h2 id="准备工作-Windows下操作"><a href="#准备工作-Windows下操作" class="headerlink" title="准备工作(Windows下操作)"></a>准备工作(Windows下操作)</h2><ul>
-<li><p>下载并解压Super-UEFIinSecureBoot-Disk(感谢ValdikSS开发工具)。<br><a href="https://github.com/ValdikSS/Super-UEFIinSecureBoot-Disk/releases/download/3/Super-UEFIinSecureBoot-Disk_minimal_v3.zip">https://github.com/ValdikSS/Super-UEFIinSecureBoot-Disk/releases/download/3/Super-UEFIinSecureBoot-Disk_minimal_v3.zip</a></p>
-</li>
-<li><p>下载etcher<br><a href="https://github.com/balena-io/etcher/releases/download/v1.5.51/balenaEtcher-Portable-1.5.51.exe">https://github.com/balena-io/etcher/releases/download/v1.5.51/balenaEtcher-Portable-1.5.51.exe</a></p>
-</li>
-<li><p>准备一个U盘并备份文件，用etcher将Super-UEFIinSecureBoot-Disk写入U盘。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-1.png"></p>
-</li>
-</ul>
-<h2 id="实现教程"><a href="#实现教程" class="headerlink" title="实现教程"></a>实现教程</h2><blockquote>
-<p>现在请在BIOS中开启Secure Boot选项并且重启进入Windows操作。</p>
-</blockquote>
-<h3 id="注册证书"><a href="#注册证书" class="headerlink" title="注册证书"></a>注册证书</h3><p>使用做好的U盘启动电脑，按照图示完成证书注册。(出现黑色的grub2界面表示注册成功)<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-2.png"></p>
-<h3 id="集成Clover"><a href="#集成Clover" class="headerlink" title="集成Clover"></a>集成Clover</h3><ul>
-<li><p>将CLOVER文件夹拷贝到U盘的EFI文件夹下，与BOOT以及grub文件夹同级。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-3.png"></p>
-</li>
-<li><p>打开Clover文件夹将Cloverx64.efi文件重命名为grubx64_real.efi。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-4.png"></p>
-</li>
-<li><p>打开BOOT文件夹备份grubx64_real.efi文件，并将Clover文件夹下的grubx64_real.efi文件拷贝到BOOT文件夹下。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-5.png"></p>
-</li>
-<li><p>重启电脑，并用U盘引导。</p>
-</li>
-</ul>
-<h1 id="是时候看看成果了！"><a href="#是时候看看成果了！" class="headerlink" title="是时候看看成果了！"></a>是时候看看成果了！</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-6.png"></p>
-<h1 id="最后别忘了将USB的引导移到硬盘中。"><a href="#最后别忘了将USB的引导移到硬盘中。" class="headerlink" title="最后别忘了将USB的引导移到硬盘中。"></a>最后别忘了将USB的引导移到硬盘中。</h1><h1 id="关于后续更新Clover的问题"><a href="#关于后续更新Clover的问题" class="headerlink" title="关于后续更新Clover的问题"></a>关于后续更新Clover的问题</h1><p>下载新版本的Clover，将cloverx64.efi重命名为grubx64_real.efi并覆盖EFI中Clover文件夹与BOOT文件夹中的同名文件。</p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>Secure Boot</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>修复OpenCore在较新主板上引导Linux失败</title>
     <url>/2020/04/03/fix-boot-linux-with-opencore.html</url>
     <content><![CDATA[<blockquote>
@@ -1068,78 +1029,6 @@
         <tag>macOS Catalina 10.15</tag>
         <tag>OpenCore</tag>
         <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>原版Whatevergreen实现核显最高频率(部分主板不支持),魔改版本停更</title>
-    <url>/2020/03/24/fix-igpu-with-vit9696-weg.html</url>
-    <content><![CDATA[<blockquote>
-<p>Whatevergreen原作者更新了1.3.8版本，开始支持GuC Firmware载入，实现核显满血运行(部分主板不支持),效果完全等同于魔改版本，故魔改停更。现发布原版Whatevergreen实现核显满血教程。<a id="more"></a></p>
-</blockquote>
-<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
-<li>下载并替换以下kexts<br><a href="https://downloads.bugprogrammer.me/Kexts/WhateverGreen-1.3.8-RELEASE.zip">WhateverGreen-1.3.8-RELEASE.zip</a><br><a href="https://downloads.bugprogrammer.me/Kexts/Lilu-1.4.3-RELEASE.zip">Lilu-1.4.3-RELEASE.zip</a></li>
-<li>boot-args下加入igfxfw=2参数</li>
-<li>重启生效</li>
-</ul>
-<h3 id="哪些主板不支持"><a href="#哪些主板不支持" class="headerlink" title="哪些主板不支持"></a>哪些主板不支持</h3><blockquote>
-<p>已知z370不支持</p>
-</blockquote>
-<h4 id="如何确定自己的主板是否支持加载GuC"><a href="#如何确定自己的主板是否支持加载GuC" class="headerlink" title="如何确定自己的主板是否支持加载GuC"></a>如何确定自己的主板是否支持加载GuC</h4><ul>
-<li>按照以上教程操作</li>
-<li>-v重启，如出现下图则不支持<br><img src= "/images/loading.gif" data-lazy-src="/images/guc.png"></li>
-</ul>
-<h3 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/weg.png"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>macOS Catalina 10.15</tag>
-        <tag>OpenCore</tag>
-        <tag>weg</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博主魔改版Whatevergreen解析，还你正常核显频率(1.2g)</title>
-    <url>/2019/10/03/fix-igpu-with-weg.html</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这篇文章是给台式机用户看的，高度依赖Whatevergreen缓冲帧补丁的小伙伴请绕行。<a id="more"></a></p>
-<h1 id="事件起因"><a href="#事件起因" class="headerlink" title="事件起因"></a>事件起因</h1><p>前几天细心的群友发现了一个bug，在加入Whatevergreen的情况下，核显频率会稳定在0.5g左右，远低于正常值1.2g，经排查，发现是Whatevergreen导致的问题。</p>
-<h1 id="为什么不选择删除Whatevergreen"><a href="#为什么不选择删除Whatevergreen" class="headerlink" title="为什么不选择删除Whatevergreen"></a>为什么不选择删除Whatevergreen</h1><p>博主已经测试过删掉Whatevergreen的情况，并不完美，体现如下。</p>
-<ul>
-<li><p>AGDP patch时灵时不灵<br>博主测试了加入AGDP patch解决dp花屏的方案，时灵时不灵，在系统更新，安装器，recovery等环境下100%失效，OpenCore以及Clover都已经实测，时灵时不灵。</p>
-</li>
-<li><p>核显型号名称要手动注入<br>Whatevergreen内置型号识别功能，id和型号对应，比如3E980003-&gt;Intel UHD Graphics 630。所以删掉Whatevergreen会导致核显型号显示错误，要手动注入Device-&gt;model属性。</p>
-</li>
-<li><p>重命名补丁要手动添加<br>Whatevergreen内置change GFX0 to IGPU,change PEGP to GFX0,change HECI to IMEI,change MEI to IMEI等补丁，去掉后这些要手动添加。</p>
-</li>
-</ul>
-<h1 id="博主修改的Whatevergreen改了哪些内容"><a href="#博主修改的Whatevergreen改了哪些内容" class="headerlink" title="博主修改的Whatevergreen改了哪些内容"></a>博主修改的Whatevergreen改了哪些内容</h1><ul>
-<li>删除igfx(核显)相关补丁。</li>
-<li>删除Nvidia相关补丁。</li>
-<li>删除Shiki相关功能。</li>
-<li>保留AGDP补丁。</li>
-<li>保留基础重命名补丁。</li>
-<li>保留型号对应识别功能。</li>
-<li>保留紫线移除补丁。</li>
-</ul>
-<h1 id="如何使用博主修改的Whatevergreen"><a href="#如何使用博主修改的Whatevergreen" class="headerlink" title="如何使用博主修改的Whatevergreen"></a>如何使用博主修改的Whatevergreen</h1><ul>
-<li>Bios主显卡设置成独显，DVMT 128M。</li>
-<li>移除change GFX0 to IGPU,change PEGP to GFX0,change HECI to IMEI,change MEI to IMEI等补丁。</li>
-<li>移除显卡相关的SSDT。</li>
-<li>加入Whatevergreen(Lilu要求1.3.8)。</li>
-</ul>
-<h1 id="修改版Whatevergreen-Github地址如下"><a href="#修改版Whatevergreen-Github地址如下" class="headerlink" title="修改版Whatevergreen Github地址如下"></a>修改版Whatevergreen Github地址如下</h1><p><a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a></p>
-<h1 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h1><p>如图，核显性能测试如下<br><img src= "/images/loading.gif" data-lazy-src="/images/weg.png"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>macOS Catalina 10.15</tag>
-        <tag>OpenCore</tag>
-        <tag>weg</tag>
       </tags>
   </entry>
   <entry>
@@ -1202,6 +1091,117 @@
       </tags>
   </entry>
   <entry>
+    <title>什么？这辣鸡BIOS竟然不能关闭Secure Boot？教你在开启Secure Boot的情况下安装macOS</title>
+    <url>/2019/07/06/clover-with-secure-boot.html</url>
+    <content><![CDATA[<h1 id="相关理论"><a href="#相关理论" class="headerlink" title="相关理论"></a>相关理论</h1><h2 id="BIOS"><a href="#BIOS" class="headerlink" title="BIOS"></a>BIOS</h2><p>BIOS是英文”Basic Input Output System”的缩略语，直译过来后中文名称就是”基本输入输出系统”。其实，它是一组固化到计算机内主板上一个ROM芯片上的程序，它保存着计算机最重要的基本输入输出的程序、系统设置信息、开机后自检程序和系统自启动程序。 其主要功能是为计算机提供最底层的、最直接的硬件设置和控制。<a id="more"></a></p>
+<h2 id="UEFI"><a href="#UEFI" class="headerlink" title="UEFI"></a>UEFI</h2><p>UEFI，全称“统一的可扩展固件接口”(Unified Extensible Firmware Interface)， 是一种详细描述全新类型接口的标准。这种接口用于操作系统自动从预启动的操作环境，加载到一种操作系统上，从而使开机程序化繁为简，节省时间。</p>
+<h2 id="Secure-Boot"><a href="#Secure-Boot" class="headerlink" title="Secure Boot"></a>Secure Boot</h2><p>Secure Boot只是UEFI的一个部分。两者的关系是局部与整体的关系。Secure Boot的目的，是防止恶意软件侵入。它的做法就是采用密钥。UEFI规定，主板出厂的时候，可以内置一些可靠的公钥。然后，任何想要在这块主板上加载的操作系统或者硬件驱动程序，都必须通过这些公钥的认证。也就是说，这些软件必须用对应的私钥签署过，否则主板拒绝加载。由于恶意软件不可能通过认证，因此就没有办法感染Boot。</p>
+<h1 id="在开启Secure-Boot的情况下使用Clover启动macOS以及其他操作系统-如Linux"><a href="#在开启Secure-Boot的情况下使用Clover启动macOS以及其他操作系统-如Linux" class="headerlink" title="在开启Secure Boot的情况下使用Clover启动macOS以及其他操作系统(如Linux)"></a>在开启Secure Boot的情况下使用Clover启动macOS以及其他操作系统(如Linux)</h1><h2 id="准备工作-Windows下操作"><a href="#准备工作-Windows下操作" class="headerlink" title="准备工作(Windows下操作)"></a>准备工作(Windows下操作)</h2><ul>
+<li><p>下载并解压Super-UEFIinSecureBoot-Disk(感谢ValdikSS开发工具)。<br><a href="https://github.com/ValdikSS/Super-UEFIinSecureBoot-Disk/releases/download/3/Super-UEFIinSecureBoot-Disk_minimal_v3.zip">https://github.com/ValdikSS/Super-UEFIinSecureBoot-Disk/releases/download/3/Super-UEFIinSecureBoot-Disk_minimal_v3.zip</a></p>
+</li>
+<li><p>下载etcher<br><a href="https://github.com/balena-io/etcher/releases/download/v1.5.51/balenaEtcher-Portable-1.5.51.exe">https://github.com/balena-io/etcher/releases/download/v1.5.51/balenaEtcher-Portable-1.5.51.exe</a></p>
+</li>
+<li><p>准备一个U盘并备份文件，用etcher将Super-UEFIinSecureBoot-Disk写入U盘。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-1.png"></p>
+</li>
+</ul>
+<h2 id="实现教程"><a href="#实现教程" class="headerlink" title="实现教程"></a>实现教程</h2><blockquote>
+<p>现在请在BIOS中开启Secure Boot选项并且重启进入Windows操作。</p>
+</blockquote>
+<h3 id="注册证书"><a href="#注册证书" class="headerlink" title="注册证书"></a>注册证书</h3><p>使用做好的U盘启动电脑，按照图示完成证书注册。(出现黑色的grub2界面表示注册成功)<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-2.png"></p>
+<h3 id="集成Clover"><a href="#集成Clover" class="headerlink" title="集成Clover"></a>集成Clover</h3><ul>
+<li><p>将CLOVER文件夹拷贝到U盘的EFI文件夹下，与BOOT以及grub文件夹同级。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-3.png"></p>
+</li>
+<li><p>打开Clover文件夹将Cloverx64.efi文件重命名为grubx64_real.efi。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-4.png"></p>
+</li>
+<li><p>打开BOOT文件夹备份grubx64_real.efi文件，并将Clover文件夹下的grubx64_real.efi文件拷贝到BOOT文件夹下。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-5.png"></p>
+</li>
+<li><p>重启电脑，并用U盘引导。</p>
+</li>
+</ul>
+<h1 id="是时候看看成果了！"><a href="#是时候看看成果了！" class="headerlink" title="是时候看看成果了！"></a>是时候看看成果了！</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-6.png"></p>
+<h1 id="最后别忘了将USB的引导移到硬盘中。"><a href="#最后别忘了将USB的引导移到硬盘中。" class="headerlink" title="最后别忘了将USB的引导移到硬盘中。"></a>最后别忘了将USB的引导移到硬盘中。</h1><h1 id="关于后续更新Clover的问题"><a href="#关于后续更新Clover的问题" class="headerlink" title="关于后续更新Clover的问题"></a>关于后续更新Clover的问题</h1><p>下载新版本的Clover，将cloverx64.efi重命名为grubx64_real.efi并覆盖EFI中Clover文件夹与BOOT文件夹中的同名文件。</p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>Secure Boot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博主魔改版Whatevergreen解析，还你正常核显频率(1.2g)</title>
+    <url>/2019/10/03/fix-igpu-with-weg.html</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这篇文章是给台式机用户看的，高度依赖Whatevergreen缓冲帧补丁的小伙伴请绕行。<a id="more"></a></p>
+<h1 id="事件起因"><a href="#事件起因" class="headerlink" title="事件起因"></a>事件起因</h1><p>前几天细心的群友发现了一个bug，在加入Whatevergreen的情况下，核显频率会稳定在0.5g左右，远低于正常值1.2g，经排查，发现是Whatevergreen导致的问题。</p>
+<h1 id="为什么不选择删除Whatevergreen"><a href="#为什么不选择删除Whatevergreen" class="headerlink" title="为什么不选择删除Whatevergreen"></a>为什么不选择删除Whatevergreen</h1><p>博主已经测试过删掉Whatevergreen的情况，并不完美，体现如下。</p>
+<ul>
+<li><p>AGDP patch时灵时不灵<br>博主测试了加入AGDP patch解决dp花屏的方案，时灵时不灵，在系统更新，安装器，recovery等环境下100%失效，OpenCore以及Clover都已经实测，时灵时不灵。</p>
+</li>
+<li><p>核显型号名称要手动注入<br>Whatevergreen内置型号识别功能，id和型号对应，比如3E980003-&gt;Intel UHD Graphics 630。所以删掉Whatevergreen会导致核显型号显示错误，要手动注入Device-&gt;model属性。</p>
+</li>
+<li><p>重命名补丁要手动添加<br>Whatevergreen内置change GFX0 to IGPU,change PEGP to GFX0,change HECI to IMEI,change MEI to IMEI等补丁，去掉后这些要手动添加。</p>
+</li>
+</ul>
+<h1 id="博主修改的Whatevergreen改了哪些内容"><a href="#博主修改的Whatevergreen改了哪些内容" class="headerlink" title="博主修改的Whatevergreen改了哪些内容"></a>博主修改的Whatevergreen改了哪些内容</h1><ul>
+<li>删除igfx(核显)相关补丁。</li>
+<li>删除Nvidia相关补丁。</li>
+<li>删除Shiki相关功能。</li>
+<li>保留AGDP补丁。</li>
+<li>保留基础重命名补丁。</li>
+<li>保留型号对应识别功能。</li>
+<li>保留紫线移除补丁。</li>
+</ul>
+<h1 id="如何使用博主修改的Whatevergreen"><a href="#如何使用博主修改的Whatevergreen" class="headerlink" title="如何使用博主修改的Whatevergreen"></a>如何使用博主修改的Whatevergreen</h1><ul>
+<li>Bios主显卡设置成独显，DVMT 128M。</li>
+<li>移除change GFX0 to IGPU,change PEGP to GFX0,change HECI to IMEI,change MEI to IMEI等补丁。</li>
+<li>移除显卡相关的SSDT。</li>
+<li>加入Whatevergreen(Lilu要求1.3.8)。</li>
+</ul>
+<h1 id="修改版Whatevergreen-Github地址如下"><a href="#修改版Whatevergreen-Github地址如下" class="headerlink" title="修改版Whatevergreen Github地址如下"></a>修改版Whatevergreen Github地址如下</h1><p><a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a></p>
+<h1 id="性能测试"><a href="#性能测试" class="headerlink" title="性能测试"></a>性能测试</h1><p>如图，核显性能测试如下<br><img src= "/images/loading.gif" data-lazy-src="/images/weg.png"></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>macOS Catalina 10.15</tag>
+        <tag>OpenCore</tag>
+        <tag>weg</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>原版Whatevergreen实现核显最高频率(部分主板不支持),魔改版本停更</title>
+    <url>/2020/03/24/fix-igpu-with-vit9696-weg.html</url>
+    <content><![CDATA[<blockquote>
+<p>Whatevergreen原作者更新了1.3.8版本，开始支持GuC Firmware载入，实现核显满血运行(部分主板不支持),效果完全等同于魔改版本，故魔改停更。现发布原版Whatevergreen实现核显满血教程。<a id="more"></a></p>
+</blockquote>
+<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
+<li>下载并替换以下kexts<br><a href="https://downloads.bugprogrammer.me/Kexts/WhateverGreen-1.3.8-RELEASE.zip">WhateverGreen-1.3.8-RELEASE.zip</a><br><a href="https://downloads.bugprogrammer.me/Kexts/Lilu-1.4.3-RELEASE.zip">Lilu-1.4.3-RELEASE.zip</a></li>
+<li>boot-args下加入igfxfw=2参数</li>
+<li>重启生效</li>
+</ul>
+<h3 id="哪些主板不支持"><a href="#哪些主板不支持" class="headerlink" title="哪些主板不支持"></a>哪些主板不支持</h3><blockquote>
+<p>已知z370不支持</p>
+</blockquote>
+<h4 id="如何确定自己的主板是否支持加载GuC"><a href="#如何确定自己的主板是否支持加载GuC" class="headerlink" title="如何确定自己的主板是否支持加载GuC"></a>如何确定自己的主板是否支持加载GuC</h4><ul>
+<li>按照以上教程操作</li>
+<li>-v重启，如出现下图则不支持<br><img src= "/images/loading.gif" data-lazy-src="/images/guc.png"></li>
+</ul>
+<h3 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/weg.png"></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>macOS Catalina 10.15</tag>
+        <tag>OpenCore</tag>
+        <tag>weg</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>无核显开启sidecar方法</title>
     <url>/2019/11/24/fix-sidecar-without-igpu.html</url>
     <content><![CDATA[<blockquote>
@@ -1223,32 +1223,6 @@
       <tags>
         <tag>Hackintosh</tag>
         <tag>sidecar</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>博主github Hackintosh仓库公开以及使用方法</title>
-    <url>/2019/05/23/github-hackintosh.html</url>
-    <content><![CDATA[<p>为了方便大家安装macOS，博主将测试过的机型的Clover文件整理并发布至github，地址为<strong><a href="https://github.com/bugprogrammer/hackintosh">https://github.com/bugprogrammer/hackintosh</a></strong> <strong><font color=#A52A2A >注意:仓库中所有机型都是博主亲自安装并测试过的机型。</strong></font><a id="more"></a></p>
-<blockquote>
-<p>由于部分用户认为git操作较为麻烦，需要学习。所以博主提供了自动化脚本方案，几乎自动获取Clover。脚本支持Windows、macOS、Ubuntu。</p>
-</blockquote>
-<h2 id="脚本使用方法"><a href="#脚本使用方法" class="headerlink" title="脚本使用方法"></a>脚本使用方法</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><ul>
-<li>点击如下链接下载git。<br><a href="https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe">https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe</a></li>
-<li>按默认设置安装即可。</li>
-</ul>
-<h4 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h4><p>打开git-bash <strong><font color=#A52A2A >(注意一定要用git-bash)，执行如下命令即可</font></strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h3><p>终端输入如下命令即可 <strong><font color=#A52A2A >(注意脚本中绿字提示)</font></strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h3><p>终端输入如下命令即可</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<h2 id="脚本使用截图-以macOS为例"><a href="#脚本使用截图-以macOS为例" class="headerlink" title="脚本使用截图(以macOS为例)"></a>脚本使用截图(以macOS为例)</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-3.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-4.png"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -1338,6 +1312,32 @@
       <tags>
         <tag>macOS</tag>
         <tag>ASUS N550JV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博主github Hackintosh仓库公开以及使用方法</title>
+    <url>/2019/05/23/github-hackintosh.html</url>
+    <content><![CDATA[<p>为了方便大家安装macOS，博主将测试过的机型的Clover文件整理并发布至github，地址为<strong><a href="https://github.com/bugprogrammer/hackintosh">https://github.com/bugprogrammer/hackintosh</a></strong> <strong><font color=#A52A2A >注意:仓库中所有机型都是博主亲自安装并测试过的机型。</strong></font><a id="more"></a></p>
+<blockquote>
+<p>由于部分用户认为git操作较为麻烦，需要学习。所以博主提供了自动化脚本方案，几乎自动获取Clover。脚本支持Windows、macOS、Ubuntu。</p>
+</blockquote>
+<h2 id="脚本使用方法"><a href="#脚本使用方法" class="headerlink" title="脚本使用方法"></a>脚本使用方法</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><ul>
+<li>点击如下链接下载git。<br><a href="https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe">https://github.com/git-for-windows/git/releases/download/v2.22.0.windows.1/Git-2.22.0-64-bit.exe</a></li>
+<li>按默认设置安装即可。</li>
+</ul>
+<h4 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h4><p>打开git-bash <strong><font color=#A52A2A >(注意一定要用git-bash)，执行如下命令即可</font></strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="macOS"><a href="#macOS" class="headerlink" title="macOS"></a>macOS</h3><p>终端输入如下命令即可 <strong><font color=#A52A2A >(注意脚本中绿字提示)</font></strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h3><p>终端输入如下命令即可</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/bugprogrammer/hackintosh/master/get-clover.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="脚本使用截图-以macOS为例"><a href="#脚本使用截图-以macOS为例" class="headerlink" title="脚本使用截图(以macOS为例)"></a>脚本使用截图(以macOS为例)</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-3.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/git-hackintosh-4.png"></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -1766,75 +1766,6 @@
       </tags>
   </entry>
   <entry>
-    <title>小米6第三方Project Treble实现</title>
-    <url>/2018/05/08/project-treble-for-xiaomi-mi6-unofficial.html</url>
-    <content><![CDATA[<h3 id="关于Project-Treble"><a href="#关于Project-Treble" class="headerlink" title="关于Project Treble"></a>关于Project Treble</h3><blockquote>
-<p>为了解决Android碎片化问题，减少技术支持层面的拖累，Google终于开窍了，在推广最新Android 8.x（又称Android O）时提出了“Project Treble”计划<a id="more"></a>。</p>
-</blockquote>
-<blockquote>
-<p>在Project Treble计划出现以前，Android手机的更新都是这种节奏：Android新版本发布，处理器厂商会拿到第一手资源，进行底层的适配和修改后发送给采购该处理器的手机厂商，而后者会根据自己的需要继续修改系统。</p>
-</blockquote>
-<blockquote>
-<p>而Project Treble计划则改变了这个流程，谷歌将原本由芯片厂商负责的代码修改工作纳入到Android项目中，绕过芯片厂而直接将打包好处理器适配性的系统发送给手机厂商，从而大大节省时间和研发难度，让手机厂商升级系统的门槛变得更低。同时也使第三方Rom(如Lineage)的适配变得容易。</p>
-</blockquote>
-<blockquote>
-<p>对谷歌来说，让所有的Android手机都能像其亲儿子“Pixel”系列一样，可以直接接收自己的推送更新才是终极目标(为Google打Call)。</p>
-</blockquote>
-<h3 id="国内Project-Treble支持现状"><a href="#国内Project-Treble支持现状" class="headerlink" title="国内Project Treble支持现状"></a>国内Project Treble支持现状</h3><blockquote>
-<p>由于众所周知的原因，国内的山寨”安卓”和国际上正版的”Android”根本不是一个世界，广大国产手机还有好多机型尚未吃上Android 8.x，无从谈起Project Treble，少数预装8.x的机型并没有跟进Project Treble这个Android史上最大的底层变化，所以非官方Project Treble应运而生。</p>
-</blockquote>
-<h3 id="相关名词"><a href="#相关名词" class="headerlink" title="相关名词"></a>相关名词</h3><ul>
-<li><p>Recovery</p>
-<blockquote>
-<p>Android设备的还原模式，类似于Windows上臭名远扬的Ghost。。。可以执行刷写，清除等操作。建议使用twrp。recovery实际是一个精简的Linux系统加上Google开发的GUI，和Android OS同级。</p>
-</blockquote>
-</li>
-<li><p>Bootloader</p>
-<blockquote>
-<p>BootLoader是在操作系统内核运行之前运行。可以初始化硬件设备、建立内存空间映射图，从而将系统的软硬件环境带到一个合适状态，以便为最终调用操作系统内核准备好正确的环境。在嵌入式系统中，通常并没有像BIOS那样的固件程序（注，有的嵌入式CPU也会内嵌一段短小的启动程序），因此整个系统的加载启动任务就完全由BootLoader来完成。在一个基于ARM7TDMI core的嵌入式系统中，系统在上电或复位时通常都从地址0x00000000处开始执行，而在这个地址处安排的通常就是系统的BootLoader程序。为了安全起见，Android的BootLoader通常是锁定的，因此想要刷写rom必须解锁，不同手机解锁方式不同，也有的手机无法解锁。</p>
-</blockquote>
-</li>
-<li><p>Adb</p>
-<blockquote>
-<p>全称Android Debug Bridge，起到连接桥的作用。</p>
-</blockquote>
-</li>
-<li><p>GSI</p>
-<blockquote>
-<p>Project Treble的通用镜像。</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
-<li><p><a href="http://bigota.d.miui.com/tools/MiFlash2017-12-12-0-ex.zip">下载并安装Android必备驱动(可以用小米线刷工具)</a></p>
-</li>
-<li><p><a href="http://adbshell.com/upload/adb.zip">下载adb工具包并且把路径粘贴到path中方便调用。</a></p>
-</li>
-<li><p><a href="https://tx5.androidfilehost.com/dl/IZNJy7Ho94g2VDXuXEqsKQ/1525938076/818070582850499029/twrp-3.2.1-0-sagit-blankaf-3.img">下载支持Project Treble的Recovery</a></p>
-</li>
-<li><p><a href="https://tx5.androidfilehost.com/dl/aXZKVCDmTMQjF14uBMfdOQ/1525938364/890129502657591482/ProjectTrouble-MI6-sagit-treble-v2-BETA.zip">下载Project Treble卡刷包</a></p>
-</li>
-<li><p><a href="https://tx5.androidfilehost.com/dl/T0mVmfhLtO7_CtV2jWwS3A/1525938498/673956719939836698/system-arm64-aonly-gapps-su.img">下载GSI镜像</a></p>
-</li>
-<li><p>刷入Recovery:将Recovery文件拷贝到磁盘根目录,假设在D盘，并改一个简单的名字，假设改成recovery.img。手机进入Fastboot模式(电源+音量-)，打开cmd或powershell，输入如下命令即可:</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">fastboot</span> <span class="selector-tag">flash</span> <span class="selector-tag">recovery</span> <span class="selector-tag">d</span>:\<span class="selector-tag">recovery</span><span class="selector-class">.img</span></span><br></pre></td></tr></table></figure></li>
-<li><p>刷入Project Treble卡刷包：卡刷包拷入手机根目录，手机进入Recovery模式(电源+音量+)清除Dalvik/Cache/System/Data/Vendor 等分区，点击安装，找到卡刷包刷入。</p>
-</li>
-<li><p>刷入GSI镜像：手机进入Fastboot模式(电源+音量-)，将GSI拷贝到D盘并重命名为system.img，打开cmd或powershell，输入如下命令即可，完成后重启手机即可。</p>
-<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">fastboot flash <span class="keyword">system</span> d:\<span class="keyword">system</span>.img</span><br></pre></td></tr></table></figure></li>
-<li><p>检测是否成功：查看手机型号为Phh-Treble with GApps则为成功。酷安下载Treble Check，第一项打钩表示成功。如图即为成功：<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ratgqs3lj304p08c3yu.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ratnz3fjj304p08cjs4.jpg"></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Android Rom</category>
-      </categories>
-      <tags>
-        <tag>Android</tag>
-        <tag>Project Treble</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>PHP+Nginx+MySQL搭建网站简易教程(以Centos7为例)</title>
     <url>/2018/05/19/phpnginxmysql.html</url>
     <content><![CDATA[<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
@@ -2048,49 +1979,72 @@
       </tags>
   </entry>
   <entry>
-    <title>使用macserial获取iMac 2019机型信息</title>
-    <url>/2019/04/03/smbios-for-imac2019.html</url>
-    <content><![CDATA[<blockquote>
-<p>Apple在近期发布了iMac 2019版本，最高可配i9+vega48，无T2芯片(美滋滋)，目前Clover Configurator尚未更新关于iMac 2019的smbios信息，本教程教大家如何使用macserial获取iMac 2019机型信息。</p>
-</blockquote>
-<a id="more"></a>
-
-<h3 id="获取macserial软件"><a href="#获取macserial软件" class="headerlink" title="获取macserial软件"></a>获取macserial软件</h3><blockquote>
-<p>macserial是github上的<font color=#A52A2A ><strong>acidanthera</strong></font>大佬开发，其release版本尚未添加iMac 2019信息，故需要编译安装。经过博主测试，需要修改build.tool脚本才能成功编译，故博主已将原项目<font color=#A52A2A ><strong>fork</strong></font>，并修改build.tool脚本，使其能正常编译。</p>
+    <title>小米6第三方Project Treble实现</title>
+    <url>/2018/05/08/project-treble-for-xiaomi-mi6-unofficial.html</url>
+    <content><![CDATA[<h3 id="关于Project-Treble"><a href="#关于Project-Treble" class="headerlink" title="关于Project Treble"></a>关于Project Treble</h3><blockquote>
+<p>为了解决Android碎片化问题，减少技术支持层面的拖累，Google终于开窍了，在推广最新Android 8.x（又称Android O）时提出了“Project Treble”计划<a id="more"></a>。</p>
 </blockquote>
 <blockquote>
-<p>原项目地址:<a href="https://github.com/acidanthera/macserial">https://github.com/acidanthera/macserial</a></p>
+<p>在Project Treble计划出现以前，Android手机的更新都是这种节奏：Android新版本发布，处理器厂商会拿到第一手资源，进行底层的适配和修改后发送给采购该处理器的手机厂商，而后者会根据自己的需要继续修改系统。</p>
 </blockquote>
 <blockquote>
-<p>博主fork地址:<a href="https://github.com/bugprogrammer/macserial">https://github.com/bugprogrammer/macserial</a></p>
+<p>而Project Treble计划则改变了这个流程，谷歌将原本由芯片厂商负责的代码修改工作纳入到Android项目中，绕过芯片厂而直接将打包好处理器适配性的系统发送给手机厂商，从而大大节省时间和研发难度，让手机厂商升级系统的门槛变得更低。同时也使第三方Rom(如Lineage)的适配变得容易。</p>
 </blockquote>
-<h4 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h4><h5 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a>Xcode</h5><ul>
-<li>App Store下载Xcode</li>
-<li>终端输入如下命令并按提示安装<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
-<h4 id="获取macserial源码"><a href="#获取macserial源码" class="headerlink" title="获取macserial源码"></a>获取macserial源码</h4></li>
+<blockquote>
+<p>对谷歌来说，让所有的Android手机都能像其亲儿子“Pixel”系列一样，可以直接接收自己的推送更新才是终极目标(为Google打Call)。</p>
+</blockquote>
+<h3 id="国内Project-Treble支持现状"><a href="#国内Project-Treble支持现状" class="headerlink" title="国内Project Treble支持现状"></a>国内Project Treble支持现状</h3><blockquote>
+<p>由于众所周知的原因，国内的山寨”安卓”和国际上正版的”Android”根本不是一个世界，广大国产手机还有好多机型尚未吃上Android 8.x，无从谈起Project Treble，少数预装8.x的机型并没有跟进Project Treble这个Android史上最大的底层变化，所以非官方Project Treble应运而生。</p>
+</blockquote>
+<h3 id="相关名词"><a href="#相关名词" class="headerlink" title="相关名词"></a>相关名词</h3><ul>
+<li><p>Recovery</p>
+<blockquote>
+<p>Android设备的还原模式，类似于Windows上臭名远扬的Ghost。。。可以执行刷写，清除等操作。建议使用twrp。recovery实际是一个精简的Linux系统加上Google开发的GUI，和Android OS同级。</p>
+</blockquote>
+</li>
+<li><p>Bootloader</p>
+<blockquote>
+<p>BootLoader是在操作系统内核运行之前运行。可以初始化硬件设备、建立内存空间映射图，从而将系统的软硬件环境带到一个合适状态，以便为最终调用操作系统内核准备好正确的环境。在嵌入式系统中，通常并没有像BIOS那样的固件程序（注，有的嵌入式CPU也会内嵌一段短小的启动程序），因此整个系统的加载启动任务就完全由BootLoader来完成。在一个基于ARM7TDMI core的嵌入式系统中，系统在上电或复位时通常都从地址0x00000000处开始执行，而在这个地址处安排的通常就是系统的BootLoader程序。为了安全起见，Android的BootLoader通常是锁定的，因此想要刷写rom必须解锁，不同手机解锁方式不同，也有的手机无法解锁。</p>
+</blockquote>
+</li>
+<li><p>Adb</p>
+<blockquote>
+<p>全称Android Debug Bridge，起到连接桥的作用。</p>
+</blockquote>
+</li>
+<li><p>GSI</p>
+<blockquote>
+<p>Project Treble的通用镜像。</p>
+</blockquote>
+</li>
 </ul>
-<p>终端下输入如下命令即可</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cd ~/Desktop</span><br><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/bugprogrammer/m</span>acserial.git</span><br><span class="line">cd macserial</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/ce1c2f16f103e8ba764ec2c731370177bc99aab1.jpg"></p>
-<h4 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h4><p>终端下输入如下命令即可，成功后会打开生成文件目录。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">./<span class="selector-tag">build</span><span class="selector-class">.tool</span></span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/f2f100fad5fc616b32ea4c7a596379b3dbbcae9d.jpg"></p>
-<h3 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h3><h4 id="获取帮助"><a href="#获取帮助" class="headerlink" title="获取帮助"></a>获取帮助</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">bin</span>/macserial<span class="number">64</span> -h</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/4ee5818801c68268aa98ad5c21dd7b808124c2e7.jpg"></p>
-<h4 id="查看支持的所有机型"><a href="#查看支持的所有机型" class="headerlink" title="查看支持的所有机型"></a>查看支持的所有机型</h4><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">bin/macserial64 <span class="comment">--list</span></span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/2485bc9325d68c7209721bff27f35e0283549b27.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/dc354eafcda927a3095934b78989dd4128f04b1c.jpg"></p>
-<h3 id="获取iMac-2019机型信息-以iMac-19-1为例"><a href="#获取iMac-2019机型信息-以iMac-19-1为例" class="headerlink" title="获取iMac 2019机型信息(以iMac 19,1为例)"></a>获取iMac 2019机型信息(以iMac 19,1为例)</h3><h4 id="获取Serial-Number以及Board-Serial-Number"><a href="#获取Serial-Number以及Board-Serial-Number" class="headerlink" title="获取Serial Number以及Board Serial Number"></a>获取Serial Number以及Board Serial Number</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">bin</span>/macserial<span class="number">64</span> --model iMac<span class="number">19</span>,<span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/ace46b89621b91d46e0236ca9547315eaae38e7b.jpg"></p>
-<h4 id="通过源码获取其他信息"><a href="#通过源码获取其他信息" class="headerlink" title="通过源码获取其他信息"></a>通过源码获取其他信息</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sed</span> -n &#x27;<span class="number">424</span>,<span class="number">429</span>p&#x27; src/modelinfo.h</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/5c207d8538d1a6a7ee6f5000500dbf718b845aab.jpg"></p>
-<h3 id="最终成品"><a href="#最终成品" class="headerlink" title="最终成品"></a>最终成品</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/ce8b62d1cf5cc748a11a21b86cd234e48e5d5aa3.png"></p>
+<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
+<li><p><a href="http://bigota.d.miui.com/tools/MiFlash2017-12-12-0-ex.zip">下载并安装Android必备驱动(可以用小米线刷工具)</a></p>
+</li>
+<li><p><a href="http://adbshell.com/upload/adb.zip">下载adb工具包并且把路径粘贴到path中方便调用。</a></p>
+</li>
+<li><p><a href="https://tx5.androidfilehost.com/dl/IZNJy7Ho94g2VDXuXEqsKQ/1525938076/818070582850499029/twrp-3.2.1-0-sagit-blankaf-3.img">下载支持Project Treble的Recovery</a></p>
+</li>
+<li><p><a href="https://tx5.androidfilehost.com/dl/aXZKVCDmTMQjF14uBMfdOQ/1525938364/890129502657591482/ProjectTrouble-MI6-sagit-treble-v2-BETA.zip">下载Project Treble卡刷包</a></p>
+</li>
+<li><p><a href="https://tx5.androidfilehost.com/dl/T0mVmfhLtO7_CtV2jWwS3A/1525938498/673956719939836698/system-arm64-aonly-gapps-su.img">下载GSI镜像</a></p>
+</li>
+<li><p>刷入Recovery:将Recovery文件拷贝到磁盘根目录,假设在D盘，并改一个简单的名字，假设改成recovery.img。手机进入Fastboot模式(电源+音量-)，打开cmd或powershell，输入如下命令即可:</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">fastboot</span> <span class="selector-tag">flash</span> <span class="selector-tag">recovery</span> <span class="selector-tag">d</span>:\<span class="selector-tag">recovery</span><span class="selector-class">.img</span></span><br></pre></td></tr></table></figure></li>
+<li><p>刷入Project Treble卡刷包：卡刷包拷入手机根目录，手机进入Recovery模式(电源+音量+)清除Dalvik/Cache/System/Data/Vendor 等分区，点击安装，找到卡刷包刷入。</p>
+</li>
+<li><p>刷入GSI镜像：手机进入Fastboot模式(电源+音量-)，将GSI拷贝到D盘并重命名为system.img，打开cmd或powershell，输入如下命令即可，完成后重启手机即可。</p>
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">fastboot flash <span class="keyword">system</span> d:\<span class="keyword">system</span>.img</span><br></pre></td></tr></table></figure></li>
+<li><p>检测是否成功：查看手机型号为Phh-Treble with GApps则为成功。酷安下载Treble Check，第一项打钩表示成功。如图即为成功：<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ratgqs3lj304p08c3yu.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ratnz3fjj304p08cjs4.jpg"></p>
+</li>
+</ul>
 ]]></content>
       <categories>
-        <category>Hackintosh</category>
+        <category>Android Rom</category>
       </categories>
       <tags>
-        <tag>macOS</tag>
-        <tag>Hackintosh</tag>
+        <tag>Android</tag>
+        <tag>Project Treble</tag>
       </tags>
   </entry>
   <entry>
@@ -2155,6 +2109,52 @@
       <tags>
         <tag>Android Q</tag>
         <tag>OnePlus 7 Pro</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用macserial获取iMac 2019机型信息</title>
+    <url>/2019/04/03/smbios-for-imac2019.html</url>
+    <content><![CDATA[<blockquote>
+<p>Apple在近期发布了iMac 2019版本，最高可配i9+vega48，无T2芯片(美滋滋)，目前Clover Configurator尚未更新关于iMac 2019的smbios信息，本教程教大家如何使用macserial获取iMac 2019机型信息。</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="获取macserial软件"><a href="#获取macserial软件" class="headerlink" title="获取macserial软件"></a>获取macserial软件</h3><blockquote>
+<p>macserial是github上的<font color=#A52A2A ><strong>acidanthera</strong></font>大佬开发，其release版本尚未添加iMac 2019信息，故需要编译安装。经过博主测试，需要修改build.tool脚本才能成功编译，故博主已将原项目<font color=#A52A2A ><strong>fork</strong></font>，并修改build.tool脚本，使其能正常编译。</p>
+</blockquote>
+<blockquote>
+<p>原项目地址:<a href="https://github.com/acidanthera/macserial">https://github.com/acidanthera/macserial</a></p>
+</blockquote>
+<blockquote>
+<p>博主fork地址:<a href="https://github.com/bugprogrammer/macserial">https://github.com/bugprogrammer/macserial</a></p>
+</blockquote>
+<h4 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h4><h5 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a>Xcode</h5><ul>
+<li>App Store下载Xcode</li>
+<li>终端输入如下命令并按提示安装<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
+<h4 id="获取macserial源码"><a href="#获取macserial源码" class="headerlink" title="获取macserial源码"></a>获取macserial源码</h4></li>
+</ul>
+<p>终端下输入如下命令即可</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cd ~/Desktop</span><br><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/bugprogrammer/m</span>acserial.git</span><br><span class="line">cd macserial</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/ce1c2f16f103e8ba764ec2c731370177bc99aab1.jpg"></p>
+<h4 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h4><p>终端下输入如下命令即可，成功后会打开生成文件目录。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">./<span class="selector-tag">build</span><span class="selector-class">.tool</span></span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/f2f100fad5fc616b32ea4c7a596379b3dbbcae9d.jpg"></p>
+<h3 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h3><h4 id="获取帮助"><a href="#获取帮助" class="headerlink" title="获取帮助"></a>获取帮助</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">bin</span>/macserial<span class="number">64</span> -h</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/4ee5818801c68268aa98ad5c21dd7b808124c2e7.jpg"></p>
+<h4 id="查看支持的所有机型"><a href="#查看支持的所有机型" class="headerlink" title="查看支持的所有机型"></a>查看支持的所有机型</h4><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">bin/macserial64 <span class="comment">--list</span></span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/2485bc9325d68c7209721bff27f35e0283549b27.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/dc354eafcda927a3095934b78989dd4128f04b1c.jpg"></p>
+<h3 id="获取iMac-2019机型信息-以iMac-19-1为例"><a href="#获取iMac-2019机型信息-以iMac-19-1为例" class="headerlink" title="获取iMac 2019机型信息(以iMac 19,1为例)"></a>获取iMac 2019机型信息(以iMac 19,1为例)</h3><h4 id="获取Serial-Number以及Board-Serial-Number"><a href="#获取Serial-Number以及Board-Serial-Number" class="headerlink" title="获取Serial Number以及Board Serial Number"></a>获取Serial Number以及Board Serial Number</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">bin</span>/macserial<span class="number">64</span> --model iMac<span class="number">19</span>,<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/ace46b89621b91d46e0236ca9547315eaae38e7b.jpg"></p>
+<h4 id="通过源码获取其他信息"><a href="#通过源码获取其他信息" class="headerlink" title="通过源码获取其他信息"></a>通过源码获取其他信息</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sed</span> -n &#x27;<span class="number">424</span>,<span class="number">429</span>p&#x27; src/modelinfo.h</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/5c207d8538d1a6a7ee6f5000500dbf718b845aab.jpg"></p>
+<h3 id="最终成品"><a href="#最终成品" class="headerlink" title="最终成品"></a>最终成品</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/ce8b62d1cf5cc748a11a21b86cd234e48e5d5aa3.png"></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>macOS</tag>
+        <tag>Hackintosh</tag>
       </tags>
   </entry>
   <entry>

@@ -37,14 +37,14 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/friends/index.html</loc>
+    <loc>https://www.bugprogrammer.me/categories/index.html</loc>
     
     <lastmod>2021-07-29</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/categories/index.html</loc>
+    <loc>https://www.bugprogrammer.me/friends/index.html</loc>
     
     <lastmod>2021-07-29</lastmod>
     
@@ -487,14 +487,14 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/Secure-Boot/</loc>
+    <loc>https://www.bugprogrammer.me/tags/Linux/</loc>
     <lastmod>2023-05-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/Linux/</loc>
+    <loc>https://www.bugprogrammer.me/tags/Secure-Boot/</loc>
     <lastmod>2023-05-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -578,13 +578,6 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/tags/Project-Treble/</loc>
-    <lastmod>2023-05-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.bugprogrammer.me/tags/Centos/</loc>
     <lastmod>2023-05-17</lastmod>
     <changefreq>daily</changefreq>
@@ -635,6 +628,13 @@
   
   <url>
     <loc>https://www.bugprogrammer.me/tags/Windows10/</loc>
+    <lastmod>2023-05-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.bugprogrammer.me/tags/Project-Treble/</loc>
     <lastmod>2023-05-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -727,14 +727,14 @@
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/categories/Android-Rom/</loc>
+    <loc>https://www.bugprogrammer.me/categories/Windows-Desktop/</loc>
     <lastmod>2023-05-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.bugprogrammer.me/categories/Windows-Desktop/</loc>
+    <loc>https://www.bugprogrammer.me/categories/Android-Rom/</loc>
     <lastmod>2023-05-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
