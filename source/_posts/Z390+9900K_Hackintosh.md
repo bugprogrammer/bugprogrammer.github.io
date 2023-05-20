@@ -14,7 +14,7 @@ toc: true
 ---
 
 ## 前言
-> 你没看错，的确是Z390+9900K黑苹果，博主第一时间海淘测试(价钱不说了),大概率国内首发Z390+9900K黑苹果常见问题解决方案。
+> 你没看错，的确是Z390+9900K黑苹果，博主第一时间购买测试(价钱不说了),大概率国内首发Z390+9900K黑苹果常见问题解决方案。
 
 <!--more-->
 
@@ -104,7 +104,7 @@ https://github.com/acidanthera/Lilu/releases
 ![](/images/5116d7b08b15be2b52486a9000fff0d635779f1d.jpg)
 * 进入ALC1220文件夹，打开info.plist，修改Revisions值为之前IORegistryExplorer查到的IOHDACodecRevision值的10进制数，即1048833。
 ![](/images/a0ec8957c76bfcae2efd370694d34b97607c9ce8.jpg)
-* Xcode打开AppleALC.xcodeproj，编译生成AppleALC.kext，编译教程请Google。本教程主要教授修改思路。
+* Xcode打开AppleALC.xcodeproj，编译生成AppleALC.kext，编译教程请自行查阅其他教程。本教程主要教授修改思路。
 * 将修改的AppleALC.kext放到EFI/CLOVER/kexts/Other下，Kext Utility重建缓存，重启电脑。
 * 愉快的使用声卡吧！！！
 

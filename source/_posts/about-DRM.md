@@ -11,10 +11,10 @@ updated: 2019-12-11 20:16:00
 toc: true
 ---
 
-> macOS Catalina 10.15发布后，不少小伙伴发现DRM视频播放出现bug。表现为Apple TV+无法播放，Netflix无法用Safari浏览器播放(macOS下只有Safari可以播放Netflix 1080P)。博主研究测试，得以<font color=#A52A2A >部分</font>解决。现发布播放DRM视频以及sidecar和DRM共存的解决方案。<!--more-->
+> macOS Catalina 10.15发布后，不少小伙伴发现DRM视频播放出现bug。博主研究测试，得以<font color=#A52A2A >部分</font>解决。现发布播放DRM视频以及sidecar和DRM共存的解决方案。<!--more-->
 
 # 目前支持Hackintosh DRM的独显(核显DRM不可用)
-Vega 56、Vega 64、VII、RX 5700、RX 5700 XT。可以使用完整DRM(Apple TV+/Safari Netflix/Amazon Prime)。RX5xx可以使用Apple TV+，Safari Netflix以及Amazon Prime不可用。<font color=#A52A2A >本文前提是使用以上显卡的任意一款</font>
+Vega 56、Vega 64、VII、RX 5700、RX 5700 XT，可以使用完整DRM。<font color=#A52A2A >本文前提是使用以上显卡的任意一款</font>
 
 # 播放DRM视频的解决方案
 ## 无核显用户

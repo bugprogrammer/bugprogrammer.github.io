@@ -15,7 +15,7 @@ toc: true
 
 >各位访客想必已经发现本站https://www.bugprogrammer.me 已经一个月没有更新了，为了本站长期稳定运行下去，博主最近在做博客改版以及cdn、图床方案的测试，本站不会断更，也感谢大半年来各位访客的支持。言归正传，博主近期购入了MacBook Pro 2017，原因很简单，博主需要retina屏幕。黑苹果笔记本无法使用独显，目前的macOS版本下，核显+4K的配合会出现动画掉帧现象，即使是核显版本的mbp也难以幸免，所以想要retina+独显+macOS，只能购入mbp了。
 
-> 博主发现mbp有一个神奇的地方，安装mac+win+linux超级麻烦，按普通pc方案，最后安装linux会出现问题，表现为安装完linux后，Windows会被破坏，无法进入(不是引导的问题，就是系统挂了！！！)，而macOS正常。博主Google了一下，发现很多教程都是老版本的mbp，区别很大。所以博主放出我自己的解决方案。
+> 博主发现mbp有一个神奇的地方，安装mac+win+linux超级麻烦，按普通pc方案，最后安装linux会出现问题，表现为安装完linux后，Windows会被破坏，无法进入(不是引导的问题，就是系统挂了！！！)，而macOS正常。博主查阅了一下资料，发现很多教程都是老版本的mbp，区别很大。所以博主放出我自己的解决方案。
 <!--more-->
 
 ## 注意事项
@@ -81,6 +81,6 @@ https://sourceforge.net/projects/refind/
 * 使用bootice将refind设置为第一启动项。
 * 重启即可看到refind引导界面。
 * 按delete键隐藏不需要的启动项，保留macOS、Windows、Ubuntu即可。
-* 什么？refind默认界面不好看？emmmm，那就换个主题吧！！Google大把教程！！！
+* 什么？refind默认界面不好看？emmmm，那就换个主题吧！！网络上大把教程！！！
 
 > 至此，MacBook Pro 2017安装macOS+Windows+Ubuntu成功！！！

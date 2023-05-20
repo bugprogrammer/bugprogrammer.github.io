@@ -38,7 +38,7 @@ copy:
 #   icon: link || the description
 
 social:
-  fas fa-envelope: mailto:a951426440@gmail.com || Email
+  fas fa-envelope: mailto:87811991@163.com || Email
   fab fa-qq: tencent://message/?uin=951426440&amp;Site=&amp;menu=yes || QQ
   fas fa-rss: /atom.xml || RSS
   
@@ -242,7 +242,7 @@ comments:
   # Up to two comments system, the first will be shown as default
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Utterances/Facebook Comments/Twikoo
   use: 
-    - Gitalk
+  # - Gitalk
   # - Valine
   # - Disqus
   text: true # Display the comment name next to the button
@@ -386,7 +386,7 @@ baidu_analytics:
 
 # Google Analytics
 # https://analytics.google.com/analytics/web/
-google_analytics: UA-119545430-2
+#google_analytics: UA-119545430-2
 
 # Tencent Analytics ID
 # https://mta.qq.com
@@ -781,7 +781,7 @@ baidu_push: false
 
 # https://instant.page/
 # prefetch (預加載)
-instantpage: false
+instantpage: true
 
 # https://github.com/vinta/pangu.js
 # Insert a space between Chinese character and English character (中英文之間添加空格)
