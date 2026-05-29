@@ -9,14 +9,14 @@
   </url>
   
   <url>
-    <loc>https://bugprogrammer.github.io/tags/index.html</loc>
+    <loc>https://bugprogrammer.github.io/schedule/index.html</loc>
     
     <lastmod>2024-03-23</lastmod>
     
   </url>
   
   <url>
-    <loc>https://bugprogrammer.github.io/schedule/index.html</loc>
+    <loc>https://bugprogrammer.github.io/tags/index.html</loc>
     
     <lastmod>2024-03-23</lastmod>
     
@@ -37,14 +37,14 @@
   </url>
   
   <url>
-    <loc>https://bugprogrammer.github.io/categories/index.html</loc>
+    <loc>https://bugprogrammer.github.io/about/index.html</loc>
     
     <lastmod>2024-03-23</lastmod>
     
   </url>
   
   <url>
-    <loc>https://bugprogrammer.github.io/about/index.html</loc>
+    <loc>https://bugprogrammer.github.io/categories/index.html</loc>
     
     <lastmod>2024-03-23</lastmod>
     
@@ -382,14 +382,14 @@
   </url>
   
   <url>
-    <loc>https://bugprogrammer.github.io/tags/Clover/</loc>
+    <loc>https://bugprogrammer.github.io/tags/VoodooI2C/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://bugprogrammer.github.io/tags/VoodooI2C/</loc>
+    <loc>https://bugprogrammer.github.io/tags/Clover/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -445,20 +445,6 @@
   </url>
   
   <url>
-    <loc>https://bugprogrammer.github.io/tags/OpenWrt/</loc>
-    <lastmod>2026-05-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://bugprogrammer.github.io/tags/ipv6/</loc>
-    <lastmod>2026-05-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://bugprogrammer.github.io/tags/macOS-Catalina-10-15/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>daily</changefreq>
@@ -473,14 +459,14 @@
   </url>
   
   <url>
-    <loc>https://bugprogrammer.github.io/tags/RX5700/</loc>
+    <loc>https://bugprogrammer.github.io/tags/OpenWrt/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://bugprogrammer.github.io/tags/Secure-Boot/</loc>
+    <loc>https://bugprogrammer.github.io/tags/ipv6/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -488,6 +474,13 @@
   
   <url>
     <loc>https://bugprogrammer.github.io/tags/ivy-bridge/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bugprogrammer.github.io/tags/RX5700/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -508,7 +501,7 @@
   </url>
   
   <url>
-    <loc>https://bugprogrammer.github.io/tags/weg/</loc>
+    <loc>https://bugprogrammer.github.io/tags/Secure-Boot/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -516,6 +509,13 @@
   
   <url>
     <loc>https://bugprogrammer.github.io/tags/Linux/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bugprogrammer.github.io/tags/weg/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -564,13 +564,6 @@
   </url>
   
   <url>
-    <loc>https://bugprogrammer.github.io/tags/MacBook-Pro/</loc>
-    <lastmod>2026-05-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://bugprogrammer.github.io/tags/mi5/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>daily</changefreq>
@@ -586,6 +579,13 @@
   
   <url>
     <loc>https://bugprogrammer.github.io/tags/Android/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bugprogrammer.github.io/tags/MacBook-Pro/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -627,6 +627,13 @@
   </url>
   
   <url>
+    <loc>https://bugprogrammer.github.io/tags/Project-Treble/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://bugprogrammer.github.io/tags/cmd/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>daily</changefreq>
@@ -656,13 +663,6 @@
   
   <url>
     <loc>https://bugprogrammer.github.io/tags/OnePlus-7-Pro/</loc>
-    <lastmod>2026-05-29</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://bugprogrammer.github.io/tags/Project-Treble/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -741,14 +741,14 @@
   </url>
   
   <url>
-    <loc>https://bugprogrammer.github.io/categories/Windows-Desktop/</loc>
+    <loc>https://bugprogrammer.github.io/categories/Android-Rom/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://bugprogrammer.github.io/categories/Android-Rom/</loc>
+    <loc>https://bugprogrammer.github.io/categories/Windows-Desktop/</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
