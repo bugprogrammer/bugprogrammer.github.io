@@ -1,0 +1,572 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>在一台ivy bridge计算机上安装20个操作系统 | Bugprogrammer的博客</title><meta name="keywords" content="Hackintosh,ivy bridge"><meta name="author" content="Bugprogrammer"><meta name="copyright" content="Bugprogrammer"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="macOS 26是Intel Mac可以使用的最后一个macOS版本，在即将到来的WWDC 2026上，Apple将发布macOS 27，届时将仅支持Apple Silicon Macs。在黑苹果即将成为历史的时刻，笔者在一台配备了4K显示器的ivy bridge计算机上以物理机的形式安装并运行了包括Windows XP-Windows11的所有Windows操作系统以及所有支持4K 60hz">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在一台ivy bridge计算机上安装20个操作系统">
+<meta property="og:url" content="https://bugprogrammer.github.io/2026/05/28/all-in-one-os.html">
+<meta property="og:site_name" content="Bugprogrammer的博客">
+<meta property="og:description" content="macOS 26是Intel Mac可以使用的最后一个macOS版本，在即将到来的WWDC 2026上，Apple将发布macOS 27，届时将仅支持Apple Silicon Macs。在黑苹果即将成为历史的时刻，笔者在一台配备了4K显示器的ivy bridge计算机上以物理机的形式安装并运行了包括Windows XP-Windows11的所有Windows操作系统以及所有支持4K 60hz">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://bugprogrammer.github.io/images/index.jpeg">
+<meta property="article:published_time" content="2026-05-28T12:40:00.000Z">
+<meta property="article:modified_time" content="2026-05-29T07:36:48.746Z">
+<meta property="article:author" content="Bugprogrammer">
+<meta property="article:tag" content="Hackintosh">
+<meta property="article:tag" content="ivy bridge">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bugprogrammer.github.io/images/index.jpeg"><link rel="shortcut icon" href="/images/my.jpg"><link rel="canonical" href="https://bugprogrammer.github.io/2026/05/28/all-in-one-os"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/fontawesome/css/all.min.css" media="print" onload="this.media='all'"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":300,"position":"top","messagePrev":"此文章发表于","messageNext":"天以前，其内容可能已不再适用"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Bugprogrammer","link":"链接: ","source":"来源: Bugprogrammer的博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: '/static/jquery.min.js',
+    justifiedGallery: {
+      js: '/static/jquery.justifiedGallery.min.js',
+      css: '/static/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: '/static/jquery.fancybox.min.js',
+      css: '/static/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-05-29 15:36:48'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = '1'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Bugprogrammer的博客" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="/images/my.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">45</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">47</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/images/index.jpeg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Bugprogrammer的博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">在一台ivy bridge计算机上安装20个操作系统</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-05-28T12:40:00.000Z" title="发表于 2026-05-28 20:40:00">2026-05-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-05-29T07:36:48.746Z" title="更新于 2026-05-29 15:36:48">2026-05-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Hackintosh/">Hackintosh</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>16分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>macOS 26是Intel Mac可以使用的最后一个macOS版本，在即将到来的WWDC 2026上，Apple将发布macOS 27，届时将仅支持Apple Silicon Macs。在黑苹果即将成为历史的时刻，笔者在一台配备了4K显示器的ivy bridge计算机上以物理机的形式安装并运行了包括Windows XP-Windows11的所有Windows操作系统以及所有支持4K 60hz hidpi的intel macOS操作系统。</p>
+</blockquote>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%9D%E5%AE%AB%E6%A0%BC.jpg"></p>
+<h1 id="B站演示视频"><a href="#B站演示视频" class="headerlink" title="B站演示视频"></a>B站演示视频</h1><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1QkGX6qE9q">在一台ivy bridge计算机上安装20个操作系统(内录4K Retina呈现，推荐电脑全屏观看)_哔哩哔哩_bilibili</a></p>
+<h1 id="配置清单"><a href="#配置清单" class="headerlink" title="配置清单"></a>配置清单</h1><ul>
+<li><p>主板： 华硕p8z77m-pro</p>
+</li>
+<li><p>CPU： i7-3770</p>
+</li>
+<li><p>内存： 16g ddr3 1600mhz</p>
+</li>
+<li><p>显卡： nvidia gtx770</p>
+</li>
+<li><p>SSD1：三星870evo sata 256g</p>
+</li>
+<li><p>SSD2：三星870evo sata 2T</p>
+</li>
+<li><p>无线网卡1：fenvi-t919</p>
+</li>
+<li><p>无线网卡2：bcm94331csax</p>
+</li>
+<li><p>显示器：dell S2725QS 4K</p>
+</li>
+<li><p>机箱：乔思伯d32 pro mesh版</p>
+</li>
+<li><p>操作系统：Windows XP-Windows11</p>
+</li>
+<li><p>操作系统：OS X Mountain Lion-macOS Sequoia</p>
+</li>
+</ul>
+<h1 id="为何选择这套配置"><a href="#为何选择这套配置" class="headerlink" title="为何选择这套配置"></a>为何选择这套配置</h1><h2 id="主板-CPU"><a href="#主板-CPU" class="headerlink" title="主板+CPU"></a>主板+CPU</h2><blockquote>
+<p>要同时兼容如此多的操作系统，首先要考虑一个特殊的Windows版本，即Windows Vista。Windows Vista最新原生支持的平台是ivy bridge。Haswell可以安装XP却无法稳定运行Vista，Haswell下的Vista会随机报错。所以要全面兼容xp-win11以及OS X 10.8-macOS 15，可以选择的最新平台就是ivy bridge。黑苹果方面，ivy bridge原生支持OS X 10.7-macOS 11。macOS 12-macOS 15可以用oclp搞定。因为黑苹果需求，AMD处理器也不建议选择。</p>
+</blockquote>
+<h2 id="显卡"><a href="#显卡" class="headerlink" title="显卡"></a>显卡</h2><blockquote>
+<p>根据Dortania的OpenCore文档，Kepler架构的Nvidia显卡可以原生支持OS X 10.8-macOS 11，更新版本用oclp搞定。Kepler也完美支持XP-Win11。文档中还提到AMD的HD 7000系列和HD 8000系列可以原生支持OS X 10.8-macOS 12，但笔者亲测，HD 7750在OS X 10.8.5下，无法进入桌面，仅显示白屏+鼠标指针。网络上有遇到同样问题的。链接如下：<a target="_blank" rel="noopener" href="https://www.insanelymac.com/forum/topic/290733-hd-7950-doesnt-work-on-mac-os-x-1084/%E3%80%82">https://www.insanelymac.com/forum/topic/290733-hd-7950-doesnt-work-on-mac-os-x-1084/。</a></p>
+</blockquote>
+<h2 id="无线网卡-蓝牙"><a href="#无线网卡-蓝牙" class="headerlink" title="无线网卡+蓝牙"></a>无线网卡+蓝牙</h2><blockquote>
+<p>根据Dortania的OpenCore文档，fenvi-t919是很好的黑苹果无线网卡，无线+蓝牙原生免驱，Windows下win7-win11也没问题。XP/Vista的wifi/蓝牙也不重要了。但是要注意fenvi-t919在10.8下有严重bug。重启只能进入10.9(或关机)再切换其他系统，否则其他系统wifi会失效(包括Windows)，所以需要一张单独用于10.8的无线网卡并在10.8下屏蔽fenvi-t919，笔者选择的bcm94331csax，很便宜，10.8下完美免驱。这张卡我们不插蓝牙线，形成双无线网卡+单蓝牙架构，bcm94331csax的wifi还可以在XP下用。后文会详解如何使用SSDT屏蔽多余无线网卡，实现OS X 10.8下使用bcm94331csax，OS X 10.9-macOS 15下使用fenvi-t919。</p>
+</blockquote>
+<h1 id="黑苹果完美程度-未测试需要Apple-ID的功能"><a href="#黑苹果完美程度-未测试需要Apple-ID的功能" class="headerlink" title="黑苹果完美程度(未测试需要Apple ID的功能)"></a>黑苹果完美程度(未测试需要Apple ID的功能)</h1><h2 id="正常工作："><a href="#正常工作：" class="headerlink" title="正常工作："></a>正常工作：</h2><ul>
+<li><p>声卡</p>
+</li>
+<li><p>核显</p>
+</li>
+<li><p>独显</p>
+</li>
+<li><p>4K hidpi显示</p>
+</li>
+<li><p>有线网卡</p>
+</li>
+<li><p>WiFi</p>
+</li>
+<li><p>蓝牙</p>
+</li>
+<li><p>睡眠</p>
+</li>
+<li><p>唤醒</p>
+</li>
+<li><p>USB</p>
+</li>
+<li><p>变频</p>
+</li>
+<li><p>AppleVTD</p>
+</li>
+</ul>
+<h2 id="bug"><a href="#bug" class="headerlink" title="bug"></a>bug</h2><ul>
+<li><del>在10.8下切换系统，必须先切换到10.9(或关机)再切换到其他系统，否则其他系统搜不到WIFI信号(包括Windows)，10.8系统会把华硕BE86U的5Ghz WiFi识别成企业级无法使用，连接2.4Ghz WIFI正常。</del>   已修复。</li>
+<li>10.8系统较老，不识别WPA2/WPA3-Personal协议。设置一个使用WPA2协议的SSID专供老系统使用即可。</li>
+</ul>
+<h1 id="构建重点"><a href="#构建重点" class="headerlink" title="构建重点"></a>构建重点</h1><h2 id="BIOS设置"><a href="#BIOS设置" class="headerlink" title="BIOS设置"></a>BIOS设置</h2><h3 id="处理器设置"><a href="#处理器设置" class="headerlink" title="处理器设置"></a>处理器设置</h3><ul>
+<li>VT-d-&gt;开启(笔者的主板BIOS没有此选项，但默认开启了)</li>
+</ul>
+<h3 id="显卡设置"><a href="#显卡设置" class="headerlink" title="显卡设置"></a>显卡设置</h3><ul>
+<li><p>首选显卡-&gt;PCIE</p>
+</li>
+<li><p>iGPU内存-&gt;128M</p>
+</li>
+<li><p>初始化IGPU-&gt;开启</p>
+</li>
+</ul>
+<h3 id="USB设置"><a href="#USB设置" class="headerlink" title="USB设置"></a>USB设置</h3><ul>
+<li><p>Intel USB 2.0 EHCI Controller-&gt;开启</p>
+</li>
+<li><p>Legacy USB 支持-&gt;开启</p>
+</li>
+<li><p>Legacy USB 3.0 支持-&gt;开启</p>
+</li>
+<li><p>Intel xHCI模式-&gt;自动(开启会导致xp/vista的USB 3.0失效)</p>
+</li>
+<li><p>EHCI Hand-off-&gt;开启</p>
+</li>
+</ul>
+<h3 id="CSM"><a href="#CSM" class="headerlink" title="CSM"></a>CSM</h3><ul>
+<li>启动设备控制-&gt;UEFI 与 Legacy</li>
+</ul>
+<h3 id="安全启动"><a href="#安全启动" class="headerlink" title="安全启动"></a>安全启动</h3><ul>
+<li>操作系统类型-&gt;其他操作系统</li>
+</ul>
+<h2 id="Bootloader-选择"><a href="#Bootloader-选择" class="headerlink" title="Bootloader 选择"></a>Bootloader 选择</h2><ul>
+<li><p><del>OpenCore 用于引导黑苹果以及refind</del> </p>
+<ul>
+<li><p><del>OpenCore 添加refind启动项</del></p>
+<p><del>Misc-&gt;BlessOverride 下加入条目 \EFI\EFI\refind\refind_x64.efi 即可</del></p>
+</li>
+<li><p><del>refind用于引导mbr分区表上的Windows XP</del>    </p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">- timeout -1 #隐藏refind ui，直接进入目标系统</span></span><br><span class="line"><span class="deletion">- scanfor manual hdbios #仅搜索传统bios引导项</span></span><br><span class="line"><span class="deletion">- dont_scan_volumes &quot;2TB&quot; #删除不需要的引导项，禁止扫描指定硬盘(引号里添加引导项名称的子集)</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>OpenCore用于引导OS X 10.8-macOS 15以及OpenShell工具</p>
+<ul>
+<li><p>将仓库中的.contentVisibility文件拷贝到vista/win7的EFI/Microsoft/Boot中以在OC选择菜单中隐藏vista/win7。</p>
+</li>
+<li><p>将仓库中的.contentDetails文件拷贝到 win8-win11的EFI/Microsoft/Boot中，并且修改其内容，如Windows 8，即可自定义OC选择菜单中Windows系统名称。</p>
+</li>
+<li><p>将仓库中的 .contentFlavour文件拷贝到 win8-win11的EFI/Microsoft/Boot中，并且修改其内容，如Windows8:Windows，即可自定义OC选择菜单中Windows系统的图标，假定系统图标名为Windows8.icns。</p>
+</li>
+</ul>
+</li>
+<li><p>xorboot用于引导legacy系统(vista,win7)、refind(启动xp)以及OpenShell工具</p>
+<ul>
+<li><p>xorboot的安装使用极其简单，完全GUI配置，0代码，添加vista和win7的bootmgfw.efi文件、refind的refind_x64.efi文件以及OpenShell.efi工具即可。</p>
+</li>
+<li><p>refind.conf 重要设置</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">timeout</span> <span class="number">-1</span> <span class="comment">#隐藏refind ui，直接进入目标系统</span></span><br><span class="line">scanfor manual hdbios <span class="comment">#仅搜索传统bios引导项以及手动设置项</span></span><br><span class="line">dont_scan_volumes <span class="string">&quot;2TB&quot;</span> <span class="comment">#删除不需要的引导项，禁止扫描指定硬盘(引号里添加引导项名称的子集)</span></span><br><span class="line">uefi_deep_legacy_scan <span class="number">1</span> <span class="comment">#建议设置，否则可能找不到xp</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>OpenShell工具及其重要，后面讲。</p>
+</li>
+</ul>
+<h2 id="时间同步"><a href="#时间同步" class="headerlink" title="时间同步"></a>时间同步</h2><ul>
+<li>在Windows下导入仓库中的WinUTCOn.reg文件，重启即可解决Windows时间不对的问题。</li>
+</ul>
+<h2 id="核显驱动"><a href="#核显驱动" class="headerlink" title="核显驱动"></a>核显驱动</h2><ul>
+<li><p>加入Whatevergreen.kext</p>
+</li>
+<li><p>按照下图注入igpu信息即可，设备地址用Hackintool获取</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/igpu.jpg"></p>
+</li>
+</ul>
+<h2 id="声卡驱动"><a href="#声卡驱动" class="headerlink" title="声卡驱动"></a>声卡驱动</h2><ul>
+<li><p>10.8</p>
+<blockquote>
+<p>华硕的 p8z77m-pro主板的声卡是alc892，AppleALC对于此声卡的支持起始于10.9，笔者自行修改编译了支持alc892声卡在10.8下使用的AppleALC，在EFI里，直接用即可。(已经向原作者提交了pr，希望能够合并到主分支，链接如下：<a target="_blank" rel="noopener" href="https://github.com/acidanthera/AppleALC/pull/947">https://github.com/acidanthera/AppleALC/pull/947</a>)</p>
+<hr>
+<p>2026.5.24更新：原作者已将pr合并到主分支，直接下载最新的官方AppleALC即可。</p>
+</blockquote>
+</li>
+<li><p>加入AppleALC.kext</p>
+<p>按照下图注入hda信息即可，设备地址用Hackintool获取</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/hda.jpg"></p>
+</li>
+</ul>
+<h2 id="独显驱动"><a href="#独显驱动" class="headerlink" title="独显驱动"></a>独显驱动</h2><ul>
+<li>加入Whatevergreen.kext。无需任何其他配置。</li>
+</ul>
+<h2 id="电源管理"><a href="#电源管理" class="headerlink" title="电源管理"></a>电源管理</h2><ul>
+<li><p>按照下图启用如下补丁</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/pm2.jpg"></p>
+</li>
+<li><p>运行仓库中的ssdtPRGen.sh生成SSDT，重命名为SSDT-PM.aml，加入到OC的ACPI文件夹并在config中启用。</p>
+</li>
+<li><p>禁用刚才启用的补丁</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/pm1.jpg"></p>
+</li>
+</ul>
+<h2 id="AppleVTD"><a href="#AppleVTD" class="headerlink" title="AppleVTD"></a>AppleVTD</h2><blockquote>
+<p>在新系统上(如macOS 13)，Intel VT-d的开启变得非常重要，如不开启，可能导致网卡失效。雷电设备也和VT-d高度相关，下面是开启教程。</p>
+</blockquote>
+<ul>
+<li><p>在BIOS中开启vt-d选项</p>
+</li>
+<li><p>在OC的Kernel-&gt;Patch中禁用DisableIoMapper选项并重启</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd1.jpg"></p>
+</li>
+<li><p>用MaciASL导出DMAR表并另存为dsl格式</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd2.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd3.jpg"></p>
+</li>
+<li><p>打开dsl文件。删除所有[Reserved Memory Region]区域并另存为SSDT-DMAR，格式选择aml</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd4.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd5.jpg"></p>
+</li>
+<li><p>将SSDT-DMAR.aml放入OC的ACPI文件夹中并在config中启用</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd6.jpg"></p>
+</li>
+<li><p>在OC的config中，找到ACPI-&gt;Delete，加入如下条目以阻止原生DMAR表载入</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd7.jpg"></p>
+</li>
+<li><p>重启，打开ioreg工具，如图则为AppleVTD加载成功</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd8.jpg"></p>
+</li>
+</ul>
+<h2 id="10-8下实现4K-60hz-Hidpi"><a href="#10-8下实现4K-60hz-Hidpi" class="headerlink" title="10.8下实现4K 60hz Hidpi"></a>10.8下实现4K 60hz Hidpi</h2><blockquote>
+<p>首先Mac系统是在10.9.3开始正式支持的4K 60hz hidpi，10.7和10.8只支持低分辨率的Retina，但是物理分辨率无法输出4K，因为当时的白苹果配备的显卡也没有支持4K输出的，黑苹果可用显卡要输出4K，最早的是Nvidia GTX 600系列，而600系列支持的最初版Mac系统是10.8，故而想要实现4K 60hz hidpi，最起码需要10.8系统起步，显卡支持4K输出是最基本的前提要求。因为10.8没有原生支持4K输出，所以要通过第三方方案实现4K 60hz hidpi。</p>
+</blockquote>
+<h3 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h3><blockquote>
+<p>由于笔者的GTX 770 在10.8下最高只能识别2K分辨率，所以要先解决4K输出，再通过命令开启hidpi，具体方案如下。</p>
+</blockquote>
+<ul>
+<li><p>安装Nvidia webdriver，仓库里已经提供。</p>
+</li>
+<li><p>openCore NVRAM-&gt;Add-&gt;7C436110-AB2A-4BBB-A880-FE41995C9F82-&gt;boot-args下添加nvda_drv=1，重启。至此已经实现10.8下的4K输出。</p>
+</li>
+<li><p>输入如下命令并重启开启10.8下的hidpi</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool YES</span><br></pre></td></tr></table></figure></li>
+<li><p>设置-&gt;显示器里面有两个1080p，一个一个测试，有一个是hidpi (因为毕竟是第三方方案，多少有点bug，所幸效果非常完美)。</p>
+</li>
+</ul>
+<h4 id="至此，您已经成功的在10-8下实现了4K-60hz-hidpi。"><a href="#至此，您已经成功的在10-8下实现了4K-60hz-hidpi。" class="headerlink" title="至此，您已经成功的在10.8下实现了4K 60hz hidpi。"></a>至此，您已经成功的在10.8下实现了4K 60hz hidpi。</h4><h2 id="关于macOS-12-macOS15"><a href="#关于macOS-12-macOS15" class="headerlink" title="关于macOS 12-macOS15"></a>关于macOS 12-macOS15</h2><blockquote>
+<p>这一套硬件配置原生支持截止到macOS 11，macOS 12缺失了Intel hd 4000以及Nvidia GTX 770的驱动。macOS 13在前者的基础上，缺失了AVX2指令集，macOS 14和macOS 15在前者基础上缺失了博通的网卡驱动，本章我们解决这些问题。</p>
+</blockquote>
+<ul>
+<li><p>OC的NVRAM下设置如下boot-args</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/oclp1.jpg"></p>
+</li>
+<li><p>OC的NVRAM下设置如下条目以关闭sip</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/oclp2.jpg"></p>
+</li>
+<li><p>OC的Misc下关闭安全启动</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/oclp3.jpg"></p>
+</li>
+<li><p>按照下图加入kexts并在config中根据系统版本启用(注意顺序)</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/oclp4.jpg"></p>
+</li>
+<li><p>按照下图根据系统版本禁用内置kext</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/oclp5.jpg"></p>
+</li>
+<li><p>重启</p>
+</li>
+<li><p>使用oclp打补丁并重启</p>
+</li>
+</ul>
+<blockquote>
+<p>至此，您的macOS 12-macOS 15系统已完全正常</p>
+</blockquote>
+<h2 id="SMBIOS选择"><a href="#SMBIOS选择" class="headerlink" title="SMBIOS选择"></a>SMBIOS选择</h2><h3 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h3><p>请选择系统版本支持的SMBIOS</p>
+<h3 id="安装完成"><a href="#安装完成" class="headerlink" title="安装完成"></a>安装完成</h3><ul>
+<li><p>设置SMBIOS为iMac13,2</p>
+</li>
+<li><p>OpenCore下加入如图补丁以跳过board-id检查(EFI文件夹里有完整的config.plist文件)</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/Skip%20Board%20ID%20check.jpg"></p>
+</li>
+</ul>
+<h1 id="2025-11-15更新"><a href="#2025-11-15更新" class="headerlink" title="2025.11.15更新"></a>2025.11.15更新</h1><ul>
+<li><p>删除refind无用文件夹，修复refind进入极慢的bug(B站视频已经更新)</p>
+</li>
+<li><p>修复OS X 10.9启动无logo，直到登录界面才亮屏的bug(B站视频已经更新)</p>
+</li>
+</ul>
+<h1 id="2026-5-24更新"><a href="#2026-5-24更新" class="headerlink" title="2026.5.24更新"></a>2026.5.24更新</h1><h2 id="使用第三方OC主题，提升美观程度"><a href="#使用第三方OC主题，提升美观程度" class="headerlink" title="使用第三方OC主题，提升美观程度"></a>使用第三方OC主题，提升美观程度</h2><ul>
+<li>见EFI</li>
+</ul>
+<h2 id="解决10-8必须切换到10-9-或关机-，再切换其他系统，否则其他系统wifi失效的问题"><a href="#解决10-8必须切换到10-9-或关机-，再切换其他系统，否则其他系统wifi失效的问题" class="headerlink" title="解决10.8必须切换到10.9(或关机)，再切换其他系统，否则其他系统wifi失效的问题"></a>解决10.8必须切换到10.9(或关机)，再切换其他系统，否则其他系统wifi失效的问题</h2><blockquote>
+<p>这个问题的成因是OS X 10.8的94630驱动自身有bug，不完美，据说当年的iMac在10.8上用过94360，镜像是定制的，我没下载到。于是我添加了一张bcm94331csax专门用于10.8。</p>
+</blockquote>
+<ul>
+<li><p>添加一张bcm94331csax网卡，不插蓝牙线，这张卡的wifi，将用于OS X 10.8和XP(xp没有96360的驱动)。蓝牙方面，所有系统用fenvi-t919的蓝牙，即双无线网卡+单蓝牙架构</p>
+</li>
+<li><p>在OC的Kernel Patch下添加如下条目以实现macOS版本区分(10.8-&gt;Darw12，其他-&gt;Darwin)</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/Change%20_OSI%20from%20Darwin%20to%20Darw12.jpg"></p>
+</li>
+<li><p>加入如下SSDT以根据系统版本禁用多余网卡(10.8禁用fenvi-t919，其他macOS禁用bcm94331)，路径在ioreg工具中查看并在SSDT中修改。</p>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line">DefinitionBlock (<span class="string">&quot;&quot;</span>, <span class="string">&quot;SSDT&quot;</span>, <span class="number">2</span>, <span class="string">&quot;HACK&quot;</span>, <span class="string">&quot;WIFISEL&quot;</span>, <span class="number">0x00000000</span>)</span><br><span class="line">&#123;</span><br><span class="line">    External (_SB_<span class="number">.</span>PCI0<span class="number">.</span>PEG1, DeviceObj)</span><br><span class="line">    External (_SB_<span class="number">.</span>PCI0<span class="number">.</span>RP01<span class="number">.</span>PXSX, DeviceObj)</span><br><span class="line"></span><br><span class="line">    Scope (_SB<span class="number">.</span>PCI0<span class="number">.</span>RP01<span class="number">.</span>PXSX)</span><br><span class="line">    &#123;</span><br><span class="line">        Method (_DSM, <span class="number">4</span>, NotSerialized)  // _DSM: Device-Specific Method</span><br><span class="line">        &#123;</span><br><span class="line">            If ((Arg2 == <span class="meta">Zero</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                Return (Buffer (One)</span><br><span class="line">                &#123;</span><br><span class="line">                     <span class="number">0x03</span>                                           </span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            If (_OSI (<span class="string">&quot;Darw12&quot;</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                Return (Package (<span class="number">0x0C</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">&quot;device-id&quot;</span>, </span><br><span class="line">                    Buffer (<span class="number">0x04</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x00</span>, <span class="number">0x00</span>                           </span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">&quot;vendor-id&quot;</span>, </span><br><span class="line">                    Buffer (<span class="number">0x04</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x00</span>, <span class="number">0x00</span>                           </span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">&quot;class-code&quot;</span>, </span><br><span class="line">                    Buffer (<span class="number">0x04</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>                           </span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">&quot;compatible&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;pci14e4,ffff&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;name&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;pci14e4,ffff&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;model&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;94360 Disabled for 10.8&quot;</span></span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            Return (Package (<span class="number">0x02</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;model&quot;</span>, </span><br><span class="line">                <span class="string">&quot;BCM4360 802.11ac Wireless&quot;</span></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Scope (_SB<span class="number">.</span>PCI0<span class="number">.</span>PEG1)</span><br><span class="line">    &#123;</span><br><span class="line">        Method (_DSM, <span class="number">4</span>, NotSerialized)  // _DSM: Device-Specific Method</span><br><span class="line">        &#123;</span><br><span class="line">            If ((Arg2 == <span class="meta">Zero</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                Return (Buffer (One)</span><br><span class="line">                &#123;</span><br><span class="line">                     <span class="number">0x03</span>                                             </span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            If (_OSI (<span class="string">&quot;Darwin&quot;</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                Return (Package (<span class="number">0x0C</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">&quot;device-id&quot;</span>, </span><br><span class="line">                    Buffer (<span class="number">0x04</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x00</span>, <span class="number">0x00</span>                           </span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">&quot;vendor-id&quot;</span>, </span><br><span class="line">                    Buffer (<span class="number">0x04</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x00</span>, <span class="number">0x00</span>                           </span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">&quot;class-code&quot;</span>, </span><br><span class="line">                    Buffer (<span class="number">0x04</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>                           </span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">&quot;compatible&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;pci14e4,ffff&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;name&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;pci14e4,ffff&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;model&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;94331 Disabled for Modern OS&quot;</span></span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            Return (Package (<span class="number">0x02</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;model&quot;</span>, </span><br><span class="line">                <span class="string">&quot;BCM4331 802.11n Wireless&quot;</span></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>在config中启用以上SSDT。</p>
+</li>
+<li><p>在其他需要判断OS类型的SSDT中，将If (_OSI (“Darwin”))改成If ((_OSI (“Darwin”) || _OSI (“Darw12”)))</p>
+</li>
+</ul>
+<h3 id="至此，随便切换系统，wifi也不会失效了。"><a href="#至此，随便切换系统，wifi也不会失效了。" class="headerlink" title="至此，随便切换系统，wifi也不会失效了。"></a>至此，随便切换系统，wifi也不会失效了。</h3><h2 id="解决10-8-10-11关于本机不显示年份的问题"><a href="#解决10-8-10-11关于本机不显示年份的问题" class="headerlink" title="解决10.8-10.11关于本机不显示年份的问题"></a>解决10.8-10.11关于本机不显示年份的问题</h2><blockquote>
+<p>macOS关于本机的年份是通过API返回的，这些系统由于年代久远，已无法正常访问API网站，所以我们要手动编辑本地文件以添加年份。</p>
+</blockquote>
+<ul>
+<li><p>在正常工作的现代操作系统上运行如下命令以获取应该显示的内容(cc=xxxx，xxxx为所选机型序列号后四位，10.11以及更早系统访问的API有语言参数，10.12开始没有了，所以老OS X版本关于本机的年份是系统语言，新版是英文)</p>
+<figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -s &quot;https://support-sp.apple.com/sp/product?cc=DNCW&amp;lang=zh-Hans_CN&quot; | sed -n &#x27;s/.*&lt;configCode&gt;<span class="symbol">\(</span>.*<span class="symbol">\)</span>&lt;<span class="symbol">\/</span>configCode&gt;.*/<span class="symbol">\1</span>/p&#x27;</span><br></pre></td></tr></table></figure></li>
+<li><p>记录返回值，如 iMac（27 英寸，2012 年末）</p>
+</li>
+<li><p>打开SMBIOS年份修复文件夹中的的plist文件，注意系统版本，修改序列号后四位，语言，机型三个信息。修改好的类似下图，两张图分别为10.8的和10.9-10.11的</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/10.8.jpg">  </p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/10.9-10.11.jpg"></p>
+</li>
+<li><p>将改好的plist文件覆盖到 ~/Library/Preferences并重启，你会发现OS X 10.8-10.11的关于本机年份恢复了</p>
+</li>
+</ul>
+<h2 id="解决csm中开启video-legacy以后，OC选择界面分辨率极低，macOS启动logo扁平，Windows启动logo偏移向左上角等问题"><a href="#解决csm中开启video-legacy以后，OC选择界面分辨率极低，macOS启动logo扁平，Windows启动logo偏移向左上角等问题" class="headerlink" title="解决csm中开启video legacy以后，OC选择界面分辨率极低，macOS启动logo扁平，Windows启动logo偏移向左上角等问题"></a>解决csm中开启video legacy以后，OC选择界面分辨率极低，macOS启动logo扁平，Windows启动logo偏移向左上角等问题</h2><blockquote>
+<p>众所周知，xp/vista/win7是不能在纯UEFI模式下启动的，需要设置csm下的video为legacy，这样做的代价是无法获得高清的主板logo，Windows启动logo，macOS启动logo以及引导器高清图标，并且Windows启动logo会偏移到左上角，macOS 启动logo会扁平。现在我们解决这个问题。</p>
+</blockquote>
+<blockquote>
+<p>前提：1 机器支持UEFI    2 显卡支持UEFI或者刷过vbios以支持UEFI</p>
+</blockquote>
+<blockquote>
+<p>核心思路：永远不要想着在纯UEFI下启动xp/vista/win7。我们使用OC引导win8-win11以及OS X 10.8-macOS 15，csm的video设置为UEFI。使用xorboot引导xp/vista/win7，csm的video设置为legacy，这样自然是完美的，传统操作系统和现代操作系统各得其所。但是需要修改bios设置和第一启动项，很麻烦，我们要做的就是把这个修改bios设置和第一启动项的动作自动化。</p>
+</blockquote>
+<ul>
+<li><p>升级显卡的GOP模块(如果你的显卡在纯UEFI下可以点亮并且可以全高清显示OC图标，Windows/macOS的启动logo也不会偏移，扁平，则跳过此步骤。笔者的GTX 770开纯UEFI点不亮)</p>
+<ul>
+<li><p>用GPU-Z导出显卡vbios</p>
+</li>
+<li><p>打开仓库中的GOP_Updater，将vbios文件拖拽到GOPupd.bat上，按照提示升级GOP模块，会生成一个新的vbios，把它重命名为1.rom以方便刷写</p>
+</li>
+<li><p>使用nvflash刷写新的vbios，Windows打开管理员模式的终端，输入如下命令</p>
+<blockquote>
+<p>nvflash.exe -6 1.rom</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>到主板官网下载bios，用set_dump GUI打开，搜索csm下面video的偏移量，笔者的是0x8CE，并且注意legacy only和UEFI only分别对应的数字如下图，UEFI only 0x1，legacy only 0x2</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/csm.jpg"></p>
+</li>
+<li><p>修改BIOS设置，将csm打开，启动设备控制选择UEFI and Legacy，这样可以保证mbr下的xp系统的启动。并且把第一第二启动项分别设置为OC和xorboot。</p>
+</li>
+<li><p>准备startup.nsh脚本，这个脚本做两件事</p>
+<ul>
+<li><p>用setup_var修改csm中的video选项，如</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">setup_var</span>.efi -r Setup:<span class="number">0</span>x<span class="number">8</span>CE=<span class="number">0</span>x<span class="number">02</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用重命名efi文件的方法，修改第一启动项为OC或xorboot，完整脚本如下</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">@echo -<span class="literal">off</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 寻找包含我们工具包的分区</span></span><br><span class="line"><span class="keyword">for</span> %i <span class="keyword">in</span> fs0 fs1 fs2 fs3 fs4 fs5</span><br><span class="line">    <span class="keyword">if</span> exist %i:<span class="string">\EFI\tools\setup_var.efi</span> <span class="keyword">then</span></span><br><span class="line">        <span class="comment"># 锁定当前分区</span></span><br><span class="line">        %i:</span><br><span class="line">        goto FOUND</span><br><span class="line">    endif</span><br><span class="line">endfor</span><br><span class="line"></span><br><span class="line">echo <span class="string">&quot;Error: Tools partition not found.&quot;</span></span><br><span class="line">goto END</span><br><span class="line"></span><br><span class="line">:FOUND</span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断当前模式</span></span><br><span class="line"><span class="keyword">if</span> exist EFI<span class="string">\OC\OpenCore.efi</span> <span class="keyword">then</span></span><br><span class="line">   <span class="comment"># csm video切legacy</span></span><br><span class="line">   <span class="comment"># 备份OC</span></span><br><span class="line">   mv EFI<span class="string">\OC\OpenCore.efi</span> EFI<span class="string">\OC\OpenCore.efi.bak</span> &gt; nul</span><br><span class="line">   <span class="comment"># 恢复 xorboot</span></span><br><span class="line">   <span class="keyword">if</span> exist EFI<span class="string">\xorboot\xorboot.efi.bak</span> <span class="keyword">then</span></span><br><span class="line">      mv EFI<span class="string">\xorboot\xorboot.efi.bak</span> EFI<span class="string">\xorboot\xorboot.efi</span> &gt; nul</span><br><span class="line">   endif</span><br><span class="line">   <span class="comment"># 修改 BIOS 变量 (Video -&gt; Legacy)</span></span><br><span class="line">   EFI<span class="string">\tools\setup_var.efi</span> -r Setup:<span class="number">0x8CE</span>=<span class="number">0x02</span> &gt; nul</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">   <span class="comment"># csm video切uefi</span></span><br><span class="line">   <span class="comment"># 恢复OC</span></span><br><span class="line">   <span class="keyword">if</span> exist EFI<span class="string">\OC\OpenCore.efi.bak</span> <span class="keyword">then</span></span><br><span class="line">      mv EFI<span class="string">\OC\OpenCore.efi.bak</span> EFI<span class="string">\OC\OpenCore.efi</span> &gt; nul</span><br><span class="line">   endif</span><br><span class="line">   <span class="comment"># 备份xorboot</span></span><br><span class="line">   <span class="keyword">if</span> exist EFI<span class="string">\xorboot\xorboot.efi</span> <span class="keyword">then</span></span><br><span class="line">      mv EFI<span class="string">\xorboot\xorboot.efi</span> EFI<span class="string">\xorboot\xorboot.efi.bak</span> &gt; nul</span><br><span class="line">   endif</span><br><span class="line">   <span class="comment"># 修改 BIOS 变量 (Legacy -&gt; UEFI)</span></span><br><span class="line">   EFI<span class="string">\tools\setup_var.efi</span> -r Setup:<span class="number">0x8CE</span>=<span class="number">0x01</span> &gt; nul</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line">:END</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>脚本简单解释</p>
+<ul>
+<li><p>搜索存在setup_var.efi的分区并锁定</p>
+</li>
+<li><p>判断当前模式，如果存在OpenCore.efi文件，则说明当前video是UEFI模式，反之则为legacy。</p>
+</li>
+<li><p>基于当前模式执行不同操作</p>
+<ul>
+<li><p>UEFI：将OpenCore.efi重命名为OpenCore.efi.bak，将xorboot的efi文件名称还原回xorboot.efi，相当于第一启动项改xorboot，用setup_var.efi将video设置成legacy，会自动重启，自然进入legacy模式的xorboot，进而启动xp/vista/7。</p>
+</li>
+<li><p>legacy：将OpenCore.efi.bak还原为OpenCore.efi，将xorboot.efi重命名为xorboot.efi.bak，相当于第一启动项改OC，用setup_var.efi将video设置成UEFI，会自动重启，自然进入UEFI模式的OC，进而启动现代系统。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>将startup.nsh放到EFI分区(和OpenShell.efi文件同分区)根目录，和EFI文件夹同层级</p>
+</li>
+<li><p>在OC的Tools文件夹中加入OpenShell.efi文件并在config中添加此条目，参数为-nointerrupt -noconsolein -noconsoleout</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/OpenShell.jpg"></p>
+</li>
+<li><p>xorboot加入OpenShell条目，参数同上</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/xorboot1.jpg"></p>
+</li>
+</ul>
+<h3 id="至此，已完成自动化设置bios的第一启动项并且控制csm中的video选项，OpenShell-efi会自动运行同分区根目录的startup-nsh脚本。"><a href="#至此，已完成自动化设置bios的第一启动项并且控制csm中的video选项，OpenShell-efi会自动运行同分区根目录的startup-nsh脚本。" class="headerlink" title="至此，已完成自动化设置bios的第一启动项并且控制csm中的video选项，OpenShell.efi会自动运行同分区根目录的startup.nsh脚本。"></a>至此，已完成自动化设置bios的第一启动项并且控制csm中的video选项，OpenShell.efi会自动运行同分区根目录的startup.nsh脚本。</h3><h1 id="引导器截图"><a href="#引导器截图" class="headerlink" title="引导器截图"></a>引导器截图</h1><h2 id="OpenCore"><a href="#OpenCore" class="headerlink" title="OpenCore"></a>OpenCore</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/OC1.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/OC2.jpg"></p>
+<h2 id="XorBoot"><a href="#XorBoot" class="headerlink" title="XorBoot"></a>XorBoot</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/xorboot2.jpg"></p>
+<h1 id="系统桌面截图"><a href="#系统桌面截图" class="headerlink" title="系统桌面截图"></a>系统桌面截图</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/xp.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/vista.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/win7.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/win8.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/win8.1.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/win10.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/win11.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/osx%2010.8.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/osx%2010.9.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/osx%2010.10.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/osx%2010.11.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2010.12.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2010.13.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2010.14.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2010.15.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2011.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2012.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2013.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2014.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2015.jpg"></p>
+</article><div style="text-align:center;color: #ccc;font-size:14px;">-------------&#x672C;&#x6587;&#x7ED3;&#x675F;<i class="fa fa-paw"></i>&#x611F;&#x8C22;&#x60A8;&#x7684;&#x9605;&#x8BFB;-------------</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">博主QQ号: </span><span class="post-copyright-meta">951426440</span></div></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">QQ群列表: </span></div><div class="post-copyright__author"><span class="post-copyright-meta"><a target="_blank" rel="noopener" href="https://shang.qq.com/wpa/qunwpa?idkey=860990e11014839268b97278613c5b16d3569e4ef42561eeab25b5457064cd87">Hackintosh极客俱乐部</a></span><span class="post-copyright-meta">   414114950</span></div></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Bugprogrammer</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://bugprogrammer.github.io/2026/05/28/all-in-one-os.html">https://bugprogrammer.github.io/2026/05/28/all-in-one-os.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://bugprogrammer.github.io" target="_blank">Bugprogrammer的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hackintosh/">Hackintosh</a><a class="post-meta__tags" href="/tags/ivy-bridge/">ivy bridge</a></div><div class="post_share"><div class="social-share" data-image="/images/index.jpeg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="/static/share.min.css" media="print" onload="this.media='all'"><script src="/static/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/05/06/about-openwrt-ipv6.html"><img class="next-cover" data-lazy-src="/images/index.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">OpenWrt获取IPv6详细教程</div></div></a></div></nav></div><div class="aside_content" id="aside_content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#B%E7%AB%99%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91"><span class="toc-number">1.</span> <span class="toc-text">B站演示视频</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%B8%85%E5%8D%95"><span class="toc-number">2.</span> <span class="toc-text">配置清单</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BA%E4%BD%95%E9%80%89%E6%8B%A9%E8%BF%99%E5%A5%97%E9%85%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">为何选择这套配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E6%9D%BF-CPU"><span class="toc-number">3.1.</span> <span class="toc-text">主板+CPU</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%BE%E5%8D%A1"><span class="toc-number">3.2.</span> <span class="toc-text">显卡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A0%E7%BA%BF%E7%BD%91%E5%8D%A1-%E8%93%9D%E7%89%99"><span class="toc-number">3.3.</span> <span class="toc-text">无线网卡+蓝牙</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%8C%E7%BE%8E%E7%A8%8B%E5%BA%A6-%E6%9C%AA%E6%B5%8B%E8%AF%95%E9%9C%80%E8%A6%81Apple-ID%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="toc-number">4.</span> <span class="toc-text">黑苹果完美程度(未测试需要Apple ID的功能)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%B8%B8%E5%B7%A5%E4%BD%9C%EF%BC%9A"><span class="toc-number">4.1.</span> <span class="toc-text">正常工作：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bug"><span class="toc-number">4.2.</span> <span class="toc-text">bug</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA%E9%87%8D%E7%82%B9"><span class="toc-number">5.</span> <span class="toc-text">构建重点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#BIOS%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.1.</span> <span class="toc-text">BIOS设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E5%99%A8%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.1.1.</span> <span class="toc-text">处理器设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E5%8D%A1%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.1.2.</span> <span class="toc-text">显卡设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#USB%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.1.3.</span> <span class="toc-text">USB设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSM"><span class="toc-number">5.1.4.</span> <span class="toc-text">CSM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E5%90%AF%E5%8A%A8"><span class="toc-number">5.1.5.</span> <span class="toc-text">安全启动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bootloader-%E9%80%89%E6%8B%A9"><span class="toc-number">5.2.</span> <span class="toc-text">Bootloader 选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5"><span class="toc-number">5.3.</span> <span class="toc-text">时间同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E6%98%BE%E9%A9%B1%E5%8A%A8"><span class="toc-number">5.4.</span> <span class="toc-text">核显驱动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A3%B0%E5%8D%A1%E9%A9%B1%E5%8A%A8"><span class="toc-number">5.5.</span> <span class="toc-text">声卡驱动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8B%AC%E6%98%BE%E9%A9%B1%E5%8A%A8"><span class="toc-number">5.6.</span> <span class="toc-text">独显驱动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86"><span class="toc-number">5.7.</span> <span class="toc-text">电源管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AppleVTD"><span class="toc-number">5.8.</span> <span class="toc-text">AppleVTD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-8%E4%B8%8B%E5%AE%9E%E7%8E%B04K-60hz-Hidpi"><span class="toc-number">5.9.</span> <span class="toc-text">10.8下实现4K 60hz Hidpi</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88"><span class="toc-number">5.9.1.</span> <span class="toc-text">实现方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%B3%E6%AD%A4%EF%BC%8C%E6%82%A8%E5%B7%B2%E7%BB%8F%E6%88%90%E5%8A%9F%E7%9A%84%E5%9C%A810-8%E4%B8%8B%E5%AE%9E%E7%8E%B0%E4%BA%864K-60hz-hidpi%E3%80%82"><span class="toc-number">5.9.1.1.</span> <span class="toc-text">至此，您已经成功的在10.8下实现了4K 60hz hidpi。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8EmacOS-12-macOS15"><span class="toc-number">5.10.</span> <span class="toc-text">关于macOS 12-macOS15</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SMBIOS%E9%80%89%E6%8B%A9"><span class="toc-number">5.11.</span> <span class="toc-text">SMBIOS选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F"><span class="toc-number">5.11.1.</span> <span class="toc-text">安装系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90"><span class="toc-number">5.11.2.</span> <span class="toc-text">安装完成</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2025-11-15%E6%9B%B4%E6%96%B0"><span class="toc-number">6.</span> <span class="toc-text">2025.11.15更新</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2026-5-24%E6%9B%B4%E6%96%B0"><span class="toc-number">7.</span> <span class="toc-text">2026.5.24更新</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9OC%E4%B8%BB%E9%A2%98%EF%BC%8C%E6%8F%90%E5%8D%87%E7%BE%8E%E8%A7%82%E7%A8%8B%E5%BA%A6"><span class="toc-number">7.1.</span> <span class="toc-text">使用第三方OC主题，提升美观程度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B310-8%E5%BF%85%E9%A1%BB%E5%88%87%E6%8D%A2%E5%88%B010-9-%E6%88%96%E5%85%B3%E6%9C%BA-%EF%BC%8C%E5%86%8D%E5%88%87%E6%8D%A2%E5%85%B6%E4%BB%96%E7%B3%BB%E7%BB%9F%EF%BC%8C%E5%90%A6%E5%88%99%E5%85%B6%E4%BB%96%E7%B3%BB%E7%BB%9Fwifi%E5%A4%B1%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">7.2.</span> <span class="toc-text">解决10.8必须切换到10.9(或关机)，再切换其他系统，否则其他系统wifi失效的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%B3%E6%AD%A4%EF%BC%8C%E9%9A%8F%E4%BE%BF%E5%88%87%E6%8D%A2%E7%B3%BB%E7%BB%9F%EF%BC%8Cwifi%E4%B9%9F%E4%B8%8D%E4%BC%9A%E5%A4%B1%E6%95%88%E4%BA%86%E3%80%82"><span class="toc-number">7.2.1.</span> <span class="toc-text">至此，随便切换系统，wifi也不会失效了。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B310-8-10-11%E5%85%B3%E4%BA%8E%E6%9C%AC%E6%9C%BA%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%B9%B4%E4%BB%BD%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">7.3.</span> <span class="toc-text">解决10.8-10.11关于本机不显示年份的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3csm%E4%B8%AD%E5%BC%80%E5%90%AFvideo-legacy%E4%BB%A5%E5%90%8E%EF%BC%8COC%E9%80%89%E6%8B%A9%E7%95%8C%E9%9D%A2%E5%88%86%E8%BE%A8%E7%8E%87%E6%9E%81%E4%BD%8E%EF%BC%8CmacOS%E5%90%AF%E5%8A%A8logo%E6%89%81%E5%B9%B3%EF%BC%8CWindows%E5%90%AF%E5%8A%A8logo%E5%81%8F%E7%A7%BB%E5%90%91%E5%B7%A6%E4%B8%8A%E8%A7%92%E7%AD%89%E9%97%AE%E9%A2%98"><span class="toc-number">7.4.</span> <span class="toc-text">解决csm中开启video legacy以后，OC选择界面分辨率极低，macOS启动logo扁平，Windows启动logo偏移向左上角等问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%B3%E6%AD%A4%EF%BC%8C%E5%B7%B2%E5%AE%8C%E6%88%90%E8%87%AA%E5%8A%A8%E5%8C%96%E8%AE%BE%E7%BD%AEbios%E7%9A%84%E7%AC%AC%E4%B8%80%E5%90%AF%E5%8A%A8%E9%A1%B9%E5%B9%B6%E4%B8%94%E6%8E%A7%E5%88%B6csm%E4%B8%AD%E7%9A%84video%E9%80%89%E9%A1%B9%EF%BC%8COpenShell-efi%E4%BC%9A%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C%E5%90%8C%E5%88%86%E5%8C%BA%E6%A0%B9%E7%9B%AE%E5%BD%95%E7%9A%84startup-nsh%E8%84%9A%E6%9C%AC%E3%80%82"><span class="toc-number">7.4.1.</span> <span class="toc-text">至此，已完成自动化设置bios的第一启动项并且控制csm中的video选项，OpenShell.efi会自动运行同分区根目录的startup.nsh脚本。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E5%AF%BC%E5%99%A8%E6%88%AA%E5%9B%BE"><span class="toc-number">8.</span> <span class="toc-text">引导器截图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenCore"><span class="toc-number">8.1.</span> <span class="toc-text">OpenCore</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XorBoot"><span class="toc-number">8.2.</span> <span class="toc-text">XorBoot</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%A1%8C%E9%9D%A2%E6%88%AA%E5%9B%BE"><span class="toc-number">9.</span> <span class="toc-text">系统桌面截图</span></a></li></ol></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2018 - 2026 By Bugprogrammer</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/static/instantpage.min.js" type="module"></script><script src="/static/lazyload.iife.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.spacingElementById('content-inner')
+  else {
+    getScript('/static/pangu.min.js')
+      .then(() => {
+        pangu.spacingElementById('content-inner')
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="/static/canvas-fluttering-ribbon.min.js"></script><script src="/static/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="/static/click-heart.min.js" async="async" mobile="false"></script></div></body></html>
