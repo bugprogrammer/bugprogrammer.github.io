@@ -9,14 +9,14 @@
   </url>
   
   <url>
-    <loc>https://bugprogrammer.github.io/schedule/index.html</loc>
+    <loc>https://bugprogrammer.github.io/tags/index.html</loc>
     
     <lastmod>2024-03-23</lastmod>
     
   </url>
   
   <url>
-    <loc>https://bugprogrammer.github.io/tags/index.html</loc>
+    <loc>https://bugprogrammer.github.io/schedule/index.html</loc>
     
     <lastmod>2024-03-23</lastmod>
     
@@ -382,6 +382,13 @@
   </url>
   
   <url>
+    <loc>https://bugprogrammer.github.io/tags/VoodooI2C/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://bugprogrammer.github.io/tags/Clover/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>daily</changefreq>
@@ -396,13 +403,6 @@
   </url>
   
   <url>
-    <loc>https://bugprogrammer.github.io/tags/VoodooI2C/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://bugprogrammer.github.io/tags/Linux-Kernel/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>daily</changefreq>
@@ -411,6 +411,13 @@
   
   <url>
     <loc>https://bugprogrammer.github.io/tags/Ubuntu/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bugprogrammer.github.io/tags/ThinkPad-S1-2018/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -432,13 +439,6 @@
   
   <url>
     <loc>https://bugprogrammer.github.io/tags/i9-9900K/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://bugprogrammer.github.io/tags/ThinkPad-S1-2018/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -508,13 +508,6 @@
   </url>
   
   <url>
-    <loc>https://bugprogrammer.github.io/tags/Linux/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://bugprogrammer.github.io/tags/weg/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>daily</changefreq>
@@ -522,7 +515,7 @@
   </url>
   
   <url>
-    <loc>https://bugprogrammer.github.io/tags/ASUS-N550JV/</loc>
+    <loc>https://bugprogrammer.github.io/tags/Linux/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -537,6 +530,13 @@
   
   <url>
     <loc>https://bugprogrammer.github.io/tags/zsh/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bugprogrammer.github.io/tags/ASUS-N550JV/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -599,6 +599,27 @@
   </url>
   
   <url>
+    <loc>https://bugprogrammer.github.io/tags/cmd/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bugprogrammer.github.io/tags/sethc/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bugprogrammer.github.io/tags/Windows10/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://bugprogrammer.github.io/tags/Centos/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>daily</changefreq>
@@ -628,27 +649,6 @@
   
   <url>
     <loc>https://bugprogrammer.github.io/tags/SSL/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://bugprogrammer.github.io/tags/cmd/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://bugprogrammer.github.io/tags/sethc/</loc>
-    <lastmod>2026-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://bugprogrammer.github.io/tags/Windows10/</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
