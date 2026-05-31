@@ -820,32 +820,6 @@
       </tags>
   </entry>
   <entry>
-    <title>macOS Catalina 10.15关于sidecar功能的说明</title>
-    <url>/2019/06/13/about-sidecar.html</url>
-    <content><![CDATA[<blockquote>
-<p>macOS 10.15的一个重磅功能是sidecar。就是用iPad作为mac的扩展屏，博主测试了一下，挺好用的。但是在Hackintosh下，并不是随意就能启用sidecar。以下附上博主的启用sidecar教程。<a id="more"></a></p>
-</blockquote>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>目前无核显PC尚未遇到成功案例，可能是黑苹果的bug，也可能是macOS 10.15 beta1的bug。</p>
-<h2 id="博主PC配置"><a href="#博主PC配置" class="headerlink" title="博主PC配置"></a>博主PC配置</h2><p>Z390+9900K+Vega56</p>
-<h2 id="启用sidecar教程"><a href="#启用sidecar教程" class="headerlink" title="启用sidecar教程"></a>启用sidecar教程</h2><ul>
-<li>BIOS中设置主显卡为独显(PCIE)并且设置DVMT为128M，以便独显、核显并存。</li>
-<li>修改SMBIOS为iMac 19,1。<br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-1.png"></li>
-<li>勾选Inject intel。</li>
-<li>设置FakeID-&gt;IntelGFX为0x3e988086，ig-platform-id为0x3e980003(核显作为加速卡)。也可以设置FakeID-&gt;IntelGFX为0x3e928086，ig-platform-id为0x3e920003，博主测试均通过。<br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-3.png"></li>
-<li>重启电脑测试sidecar。</li>
-</ul>
-<h2 id="至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。"><a href="#至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。" class="headerlink" title="至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。"></a>至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-4.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-5.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-6.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-7.png"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>macOS Catalina 10.15</tag>
-        <tag>sidecar</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OpenWrt获取IPv6详细教程</title>
     <url>/2021/05/06/about-openwrt-ipv6.html</url>
     <content><![CDATA[<blockquote>
@@ -956,6 +930,53 @@
       <tags>
         <tag>Hackintosh</tag>
         <tag>RX5700</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ASRock Z390 Phantom Gaming-ITX使用BootCamp切换双系统注意事项</title>
+    <url>/2020/04/04/bootcamp-about-z390.html</url>
+    <content><![CDATA[<blockquote>
+<p>博主为了方便使用Linux一直是以grub作为主引导器(grub-&gt;OC)，最近OC解决了Linux引导问题，所以换回OC作为主引导器。摸索了一下，实现了原生NVRAM+BootCamp双系统切换。<a id="more"></a></p>
+</blockquote>
+<h1 id="实现教程"><a href="#实现教程" class="headerlink" title="实现教程"></a>实现教程</h1><h2 id="原生NVRAM"><a href="#原生NVRAM" class="headerlink" title="原生NVRAM"></a>原生NVRAM</h2><ul>
+<li><p>加入并在config.plist里启用如下SSDT<br><a href="https://downloads.bugprogrammer.me/SSDT/SSDT-PMC.aml">SSDT-PMC.aml</a></p>
+</li>
+<li><p>修改config.plist</p>
+</li>
+<li><p>NVRAM-&gt;LegacyEnable-&gt;No</p>
+</li>
+<li><p>NVRAM-&gt;LegacyOverwrite-&gt;No</p>
+</li>
+<li><p>NVRAM-&gt;WriteFlash-&gt;Yes</p>
+</li>
+<li><p>Booter-&gt;Quirks-&gt;DisableVariableWrite-&gt;No</p>
+</li>
+</ul>
+<h2 id="BootCamp切换"><a href="#BootCamp切换" class="headerlink" title="BootCamp切换"></a>BootCamp切换</h2><ul>
+<li><p>修改config.plist</p>
+</li>
+<li><p>PlatformInfo-&gt;Generic-&gt;AdviseWindows-&gt;Yes</p>
+</li>
+<li><p>UEFI-&gt;RequestBootVarRouting-&gt;Yes</p>
+</li>
+<li><p>Windows下安装BootCamp软件，重启。</p>
+</li>
+<li><p>如果D盘消失，请使用傲梅分区助理取消D盘隐藏。(<font color=#A52A2A ><strong>注意：一定要使用傲梅分区助理，博主测试其他分区工具重启后D盘会再次消失</strong></font>)</p>
+</li>
+</ul>
+<h2 id="隐藏OC引导界面"><a href="#隐藏OC引导界面" class="headerlink" title="隐藏OC引导界面"></a>隐藏OC引导界面</h2><ul>
+<li>修改config.plist</li>
+<li>Misc-&gt;Boot-&gt;ShowPicker-&gt;No</li>
+</ul>
+<h1 id="至此，你已经可以使用BootCamp切换双系统，体验类似白苹果。"><a href="#至此，你已经可以使用BootCamp切换双系统，体验类似白苹果。" class="headerlink" title="至此，你已经可以使用BootCamp切换双系统，体验类似白苹果。"></a>至此，你已经可以使用BootCamp切换双系统，体验类似白苹果。</h1>]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>macOS Catalina 10.15</tag>
+        <tag>OpenCore</tag>
+        <tag>BootCamp</tag>
       </tags>
   </entry>
   <entry>
@@ -1385,50 +1406,29 @@
       </tags>
   </entry>
   <entry>
-    <title>ASRock Z390 Phantom Gaming-ITX使用BootCamp切换双系统注意事项</title>
-    <url>/2020/04/04/bootcamp-about-z390.html</url>
+    <title>macOS Catalina 10.15关于sidecar功能的说明</title>
+    <url>/2019/06/13/about-sidecar.html</url>
     <content><![CDATA[<blockquote>
-<p>博主为了方便使用Linux一直是以grub作为主引导器(grub-&gt;OC)，最近OC解决了Linux引导问题，所以换回OC作为主引导器。摸索了一下，实现了原生NVRAM+BootCamp双系统切换。<a id="more"></a></p>
+<p>macOS 10.15的一个重磅功能是sidecar。就是用iPad作为mac的扩展屏，博主测试了一下，挺好用的。但是在Hackintosh下，并不是随意就能启用sidecar。以下附上博主的启用sidecar教程。<a id="more"></a></p>
 </blockquote>
-<h1 id="实现教程"><a href="#实现教程" class="headerlink" title="实现教程"></a>实现教程</h1><h2 id="原生NVRAM"><a href="#原生NVRAM" class="headerlink" title="原生NVRAM"></a>原生NVRAM</h2><ul>
-<li><p>加入并在config.plist里启用如下SSDT<br><a href="https://downloads.bugprogrammer.me/SSDT/SSDT-PMC.aml">SSDT-PMC.aml</a></p>
-</li>
-<li><p>修改config.plist</p>
-</li>
-<li><p>NVRAM-&gt;LegacyEnable-&gt;No</p>
-</li>
-<li><p>NVRAM-&gt;LegacyOverwrite-&gt;No</p>
-</li>
-<li><p>NVRAM-&gt;WriteFlash-&gt;Yes</p>
-</li>
-<li><p>Booter-&gt;Quirks-&gt;DisableVariableWrite-&gt;No</p>
-</li>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>目前无核显PC尚未遇到成功案例，可能是黑苹果的bug，也可能是macOS 10.15 beta1的bug。</p>
+<h2 id="博主PC配置"><a href="#博主PC配置" class="headerlink" title="博主PC配置"></a>博主PC配置</h2><p>Z390+9900K+Vega56</p>
+<h2 id="启用sidecar教程"><a href="#启用sidecar教程" class="headerlink" title="启用sidecar教程"></a>启用sidecar教程</h2><ul>
+<li>BIOS中设置主显卡为独显(PCIE)并且设置DVMT为128M，以便独显、核显并存。</li>
+<li>修改SMBIOS为iMac 19,1。<br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-1.png"></li>
+<li>勾选Inject intel。</li>
+<li>设置FakeID-&gt;IntelGFX为0x3e988086，ig-platform-id为0x3e980003(核显作为加速卡)。也可以设置FakeID-&gt;IntelGFX为0x3e928086，ig-platform-id为0x3e920003，博主测试均通过。<br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-3.png"></li>
+<li>重启电脑测试sidecar。</li>
 </ul>
-<h2 id="BootCamp切换"><a href="#BootCamp切换" class="headerlink" title="BootCamp切换"></a>BootCamp切换</h2><ul>
-<li><p>修改config.plist</p>
-</li>
-<li><p>PlatformInfo-&gt;Generic-&gt;AdviseWindows-&gt;Yes</p>
-</li>
-<li><p>UEFI-&gt;RequestBootVarRouting-&gt;Yes</p>
-</li>
-<li><p>Windows下安装BootCamp软件，重启。</p>
-</li>
-<li><p>如果D盘消失，请使用傲梅分区助理取消D盘隐藏。(<font color=#A52A2A ><strong>注意：一定要使用傲梅分区助理，博主测试其他分区工具重启后D盘会再次消失</strong></font>)</p>
-</li>
-</ul>
-<h2 id="隐藏OC引导界面"><a href="#隐藏OC引导界面" class="headerlink" title="隐藏OC引导界面"></a>隐藏OC引导界面</h2><ul>
-<li>修改config.plist</li>
-<li>Misc-&gt;Boot-&gt;ShowPicker-&gt;No</li>
-</ul>
-<h1 id="至此，你已经可以使用BootCamp切换双系统，体验类似白苹果。"><a href="#至此，你已经可以使用BootCamp切换双系统，体验类似白苹果。" class="headerlink" title="至此，你已经可以使用BootCamp切换双系统，体验类似白苹果。"></a>至此，你已经可以使用BootCamp切换双系统，体验类似白苹果。</h1>]]></content>
+<h2 id="至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。"><a href="#至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。" class="headerlink" title="至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。"></a>至此sidecar已完美开启，H264以及H265硬解正常，博主测试FCP导出正常。注意：更换SMBIOS后要记得修改usbports中的机型信息。</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-4.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-5.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-6.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/sidecar-7.png"></p>
+]]></content>
       <categories>
         <category>Hackintosh</category>
       </categories>
       <tags>
         <tag>Hackintosh</tag>
         <tag>macOS Catalina 10.15</tag>
-        <tag>OpenCore</tag>
-        <tag>BootCamp</tag>
+        <tag>sidecar</tag>
       </tags>
   </entry>
   <entry>
@@ -1589,30 +1589,6 @@
       </tags>
   </entry>
   <entry>
-    <title>无核显开启sidecar方法</title>
-    <url>/2019/11/24/fix-sidecar-without-igpu.html</url>
-    <content><![CDATA[<blockquote>
-<p>之前<font color=#A52A2A >@fang2018</font>发布了一个相关教程，地址如下:<font color=#A52A2A ><a href="https://fangf.cc/2019/10/14/noneigpusidecar/">https://fangf.cc/2019/10/14/noneigpusidecar/</a></font>, 现在随着Whatevergreen的更新，之前的方法已经不再适用。现在发布新教程。</p>
-</blockquote>
-<a id="more"></a>
-
-<h1 id="无核显开启sidecar教程"><a href="#无核显开启sidecar教程" class="headerlink" title="无核显开启sidecar教程"></a>无核显开启sidecar教程</h1><ul>
-<li>smbios设置成iMac19,1或iMac18,3(绝对不能用iMac Pro 1,1或Mac Pro 7,1)</li>
-<li>Lilu使用v1.3.9版本(<a href="https://github.com/acidanthera/Lilu">https://github.com/acidanthera/Lilu</a>)</li>
-<li>Whatevergreen使用v1.3.5版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)</li>
-<li>boot-args加入shikigva=16</li>
-<li>重启</li>
-</ul>
-<h1 id="至此，您的sidecar功能已经可用。"><a href="#至此，您的sidecar功能已经可用。" class="headerlink" title="至此，您的sidecar功能已经可用。"></a>至此，您的sidecar功能已经可用。</h1>]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>sidecar</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>博主github Hackintosh仓库公开以及使用方法</title>
     <url>/2019/05/23/github-hackintosh.html</url>
     <content><![CDATA[<p>为了方便大家安装macOS，博主将测试过的机型的Clover文件整理并发布至github，地址为<strong><a href="https://github.com/bugprogrammer/hackintosh">https://github.com/bugprogrammer/hackintosh</a></strong> <strong><font color=#A52A2A >注意:仓库中所有机型都是博主亲自安装并测试过的机型。</strong></font><a id="more"></a></p>
@@ -1636,6 +1612,30 @@
       </categories>
       <tags>
         <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>无核显开启sidecar方法</title>
+    <url>/2019/11/24/fix-sidecar-without-igpu.html</url>
+    <content><![CDATA[<blockquote>
+<p>之前<font color=#A52A2A >@fang2018</font>发布了一个相关教程，地址如下:<font color=#A52A2A ><a href="https://fangf.cc/2019/10/14/noneigpusidecar/">https://fangf.cc/2019/10/14/noneigpusidecar/</a></font>, 现在随着Whatevergreen的更新，之前的方法已经不再适用。现在发布新教程。</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="无核显开启sidecar教程"><a href="#无核显开启sidecar教程" class="headerlink" title="无核显开启sidecar教程"></a>无核显开启sidecar教程</h1><ul>
+<li>smbios设置成iMac19,1或iMac18,3(绝对不能用iMac Pro 1,1或Mac Pro 7,1)</li>
+<li>Lilu使用v1.3.9版本(<a href="https://github.com/acidanthera/Lilu">https://github.com/acidanthera/Lilu</a>)</li>
+<li>Whatevergreen使用v1.3.5版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)</li>
+<li>boot-args加入shikigva=16</li>
+<li>重启</li>
+</ul>
+<h1 id="至此，您的sidecar功能已经可用。"><a href="#至此，您的sidecar功能已经可用。" class="headerlink" title="至此，您的sidecar功能已经可用。"></a>至此，您的sidecar功能已经可用。</h1>]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>sidecar</tag>
       </tags>
   </entry>
   <entry>
@@ -1677,41 +1677,6 @@
         <tag>Hackintosh</tag>
         <tag>macOS Catalina 10.15</tag>
         <tag>OpenCore</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>美化你的shell,macOS下安装zsh和neofetch教程(Unix/Linux也适用)</title>
-    <url>/2018/05/11/install-zsh.html</url>
-    <content><![CDATA[<p>最近在使用Hackintosh，发现macOS自带的shell并不好用，所以安装了被誉为终极shell的zsh，方法整理如下：<a id="more"></a> </p>
-<h3 id="确认包管理器"><a href="#确认包管理器" class="headerlink" title="确认包管理器"></a>确认包管理器</h3><blockquote>
-<p>unix以及类unix(如Linux及其发行版)下都有对应的包管理器,常见的包管理器如下：macOS下为HomeBrew，Debian/Ubuntu为apt，Fedora为yum或dnf，Centos为yum，Archlinux为pacman等。</p>
-</blockquote>
-<h3 id="macOS安装HomeBrew以及wget-其他系统用户跳过此步骤"><a href="#macOS安装HomeBrew以及wget-其他系统用户跳过此步骤" class="headerlink" title="macOS安装HomeBrew以及wget(其他系统用户跳过此步骤)"></a>macOS安装HomeBrew以及wget(其他系统用户跳过此步骤)</h3><h4 id="HomeBrew"><a href="#HomeBrew" class="headerlink" title="HomeBrew"></a>HomeBrew</h4><p>由于macOS下没有自带HomeBrew，故需要手动安装。首先安装xcode，然后终端运行如下命令即可安装HomeBrew。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ruby -e <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><ul>
-<li>更新：brew update </li>
-<li>安装软件包：brew install “PackegeName” </li>
-<li>搜索软件包：brew search “PackegeName”</li>
-<li>卸载软件包：brew remove “PackegeName” </li>
-</ul>
-<h4 id="wget："><a href="#wget：" class="headerlink" title="wget："></a>wget：</h4><figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>wget</span><br></pre></td></tr></table></figure>
-<h3 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h3><h4 id="macOS："><a href="#macOS：" class="headerlink" title="macOS："></a>macOS：</h4><figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>zsh</span><br></pre></td></tr></table></figure>
-<h4 id="Debian-Ubuntu"><a href="#Debian-Ubuntu" class="headerlink" title="Debian/Ubuntu:"></a>Debian/Ubuntu:</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">apt <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure>
-<h4 id="Fedora"><a href="#Fedora" class="headerlink" title="Fedora:"></a>Fedora:</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">dnf <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure>
-<h4 id="Centos"><a href="#Centos" class="headerlink" title="Centos:"></a>Centos:</h4><figure class="highlight sas"><table><tr><td class="code"><pre><span class="line">yum <span class="meta">update</span> <span class="variable">&amp;&amp;</span> yum install zsh</span><br></pre></td></tr></table></figure>
-<h4 id="Archlinux"><a href="#Archlinux" class="headerlink" title="Archlinux:"></a>Archlinux:</h4><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">pacman -S zsh</span></span><br></pre></td></tr></table></figure>
-<h3 id="将系统默认shell更换为zsh"><a href="#将系统默认shell更换为zsh" class="headerlink" title="将系统默认shell更换为zsh"></a>将系统默认shell更换为zsh</h3><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">chsh -s <span class="regexp">/bin/</span>zsh</span><br></pre></td></tr></table></figure>
-<h3 id="安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。"><a href="#安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。" class="headerlink" title="安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。"></a>安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。</h3><h3 id="配置zsh"><a href="#配置zsh" class="headerlink" title="配置zsh"></a>配置zsh</h3><p>使用oh-my-zsh可以很方便的配置zsh,并生成.zshrc配置文件方便修改 输入以下命令安装oh-my-zsh</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<p>安装成功后输入nano .zshrc打开.zshrc文件添加neofetch,修改ZSH_THEME=”random”，意为每次打开终端即启动neofetch，zsh主题随机，也就是每次打开终端都会改变一个主题，修改如图： <img src= "/images/loading.gif" data-lazy-src="/images/c7fd2a6d2692642c94a9a78c42f04ee4ef71b410.jpg"> 重启电脑就会看到效果。</p>
-<h3 id="用描述文件美化终端-不同系统，不同桌面环境会有所不同-需要自己摸索了，下面以macOS为例"><a href="#用描述文件美化终端-不同系统，不同桌面环境会有所不同-需要自己摸索了，下面以macOS为例" class="headerlink" title="用描述文件美化终端(不同系统，不同桌面环境会有所不同,需要自己摸索了，下面以macOS为例)"></a>用描述文件美化终端(不同系统，不同桌面环境会有所不同,需要自己摸索了，下面以macOS为例)</h3><p>打开终端，点击右键打开显示检查器，选择一个样式双击打开描述文件，按自己的喜好设置文字风格，样式，透明度，模糊程度，窗口大小等，成品图如下： <img src= "/images/loading.gif" data-lazy-src="/images/e7005ea1415345c95c83b5c0f1cbd21b124c8245.jpg"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>shell</tag>
-        <tag>zsh</tag>
       </tags>
   </entry>
   <entry>
@@ -1760,6 +1725,41 @@
       <tags>
         <tag>macOS</tag>
         <tag>ASUS N550JV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>美化你的shell,macOS下安装zsh和neofetch教程(Unix/Linux也适用)</title>
+    <url>/2018/05/11/install-zsh.html</url>
+    <content><![CDATA[<p>最近在使用Hackintosh，发现macOS自带的shell并不好用，所以安装了被誉为终极shell的zsh，方法整理如下：<a id="more"></a> </p>
+<h3 id="确认包管理器"><a href="#确认包管理器" class="headerlink" title="确认包管理器"></a>确认包管理器</h3><blockquote>
+<p>unix以及类unix(如Linux及其发行版)下都有对应的包管理器,常见的包管理器如下：macOS下为HomeBrew，Debian/Ubuntu为apt，Fedora为yum或dnf，Centos为yum，Archlinux为pacman等。</p>
+</blockquote>
+<h3 id="macOS安装HomeBrew以及wget-其他系统用户跳过此步骤"><a href="#macOS安装HomeBrew以及wget-其他系统用户跳过此步骤" class="headerlink" title="macOS安装HomeBrew以及wget(其他系统用户跳过此步骤)"></a>macOS安装HomeBrew以及wget(其他系统用户跳过此步骤)</h3><h4 id="HomeBrew"><a href="#HomeBrew" class="headerlink" title="HomeBrew"></a>HomeBrew</h4><p>由于macOS下没有自带HomeBrew，故需要手动安装。首先安装xcode，然后终端运行如下命令即可安装HomeBrew。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ruby -e <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><ul>
+<li>更新：brew update </li>
+<li>安装软件包：brew install “PackegeName” </li>
+<li>搜索软件包：brew search “PackegeName”</li>
+<li>卸载软件包：brew remove “PackegeName” </li>
+</ul>
+<h4 id="wget："><a href="#wget：" class="headerlink" title="wget："></a>wget：</h4><figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>wget</span><br></pre></td></tr></table></figure>
+<h3 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h3><h4 id="macOS："><a href="#macOS：" class="headerlink" title="macOS："></a>macOS：</h4><figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>zsh</span><br></pre></td></tr></table></figure>
+<h4 id="Debian-Ubuntu"><a href="#Debian-Ubuntu" class="headerlink" title="Debian/Ubuntu:"></a>Debian/Ubuntu:</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">apt <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure>
+<h4 id="Fedora"><a href="#Fedora" class="headerlink" title="Fedora:"></a>Fedora:</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">dnf <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure>
+<h4 id="Centos"><a href="#Centos" class="headerlink" title="Centos:"></a>Centos:</h4><figure class="highlight sas"><table><tr><td class="code"><pre><span class="line">yum <span class="meta">update</span> <span class="variable">&amp;&amp;</span> yum install zsh</span><br></pre></td></tr></table></figure>
+<h4 id="Archlinux"><a href="#Archlinux" class="headerlink" title="Archlinux:"></a>Archlinux:</h4><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">pacman -S zsh</span></span><br></pre></td></tr></table></figure>
+<h3 id="将系统默认shell更换为zsh"><a href="#将系统默认shell更换为zsh" class="headerlink" title="将系统默认shell更换为zsh"></a>将系统默认shell更换为zsh</h3><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">chsh -s <span class="regexp">/bin/</span>zsh</span><br></pre></td></tr></table></figure>
+<h3 id="安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。"><a href="#安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。" class="headerlink" title="安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。"></a>安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。</h3><h3 id="配置zsh"><a href="#配置zsh" class="headerlink" title="配置zsh"></a>配置zsh</h3><p>使用oh-my-zsh可以很方便的配置zsh,并生成.zshrc配置文件方便修改 输入以下命令安装oh-my-zsh</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<p>安装成功后输入nano .zshrc打开.zshrc文件添加neofetch,修改ZSH_THEME=”random”，意为每次打开终端即启动neofetch，zsh主题随机，也就是每次打开终端都会改变一个主题，修改如图： <img src= "/images/loading.gif" data-lazy-src="/images/c7fd2a6d2692642c94a9a78c42f04ee4ef71b410.jpg"> 重启电脑就会看到效果。</p>
+<h3 id="用描述文件美化终端-不同系统，不同桌面环境会有所不同-需要自己摸索了，下面以macOS为例"><a href="#用描述文件美化终端-不同系统，不同桌面环境会有所不同-需要自己摸索了，下面以macOS为例" class="headerlink" title="用描述文件美化终端(不同系统，不同桌面环境会有所不同,需要自己摸索了，下面以macOS为例)"></a>用描述文件美化终端(不同系统，不同桌面环境会有所不同,需要自己摸索了，下面以macOS为例)</h3><p>打开终端，点击右键打开显示检查器，选择一个样式双击打开描述文件，按自己的喜好设置文字风格，样式，透明度，模糊程度，窗口大小等，成品图如下： <img src= "/images/loading.gif" data-lazy-src="/images/e7005ea1415345c95c83b5c0f1cbd21b124c8245.jpg"></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
+        <tag>zsh</tag>
       </tags>
   </entry>
   <entry>
@@ -1865,84 +1865,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Macbook Pro 2017安装macOS+Windows+Ubuntu简要教程</title>
-    <url>/2019/03/06/mbp2017_win_mac_ubuntu.html</url>
-    <content><![CDATA[<blockquote>
-<p>各位访客想必已经发现本站<a href="https://www.bugprogrammer.me/">https://www.bugprogrammer.me</a> 已经一个月没有更新了，为了本站长期稳定运行下去，博主最近在做博客改版以及cdn、图床方案的测试，本站不会断更，也感谢大半年来各位访客的支持。言归正传，博主近期购入了MacBook Pro 2017，原因很简单，博主需要retina屏幕。黑苹果笔记本无法使用独显，目前的macOS版本下，核显+4K的配合会出现动画掉帧现象，即使是核显版本的mbp也难以幸免，所以想要retina+独显+macOS，只能购入mbp了。</p>
-</blockquote>
-<blockquote>
-<p>博主发现mbp有一个神奇的地方，安装mac+win+linux超级麻烦，按普通pc方案，最后安装linux会出现问题，表现为安装完linux后，Windows会被破坏，无法进入(不是引导的问题，就是系统挂了！！！)，而macOS正常。博主查阅了一下资料，发现很多教程都是老版本的mbp，区别很大。所以博主放出我自己的解决方案。</p>
-</blockquote>
-<a id="more"></a>
-
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
-<li>mbp不同于普通PC，请严格按照博主的方案进行，否则会出现意想不到的问题。</li>
-<li>mbp2018是否适用博主不敢保证，因为2018款的mac新增了一个T2芯片，有报道说T2会阻止Linux启动。</li>
-</ul>
-<h2 id="安装顺序-重中之重"><a href="#安装顺序-重中之重" class="headerlink" title="安装顺序(重中之重)"></a>安装顺序(重中之重)</h2><p><font color=#A52A2A ><strong>macOS Mojave–&gt;Ubuntu 18.04–&gt;Windows 10</strong></font></p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>macOS Mojave镜像、Windows 10镜像、Ubuntu18.04镜像、Windows PE、外接键鼠。</p>
-<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><h3 id="安装macOS-Mojave"><a href="#安装macOS-Mojave" class="headerlink" title="安装macOS Mojave"></a>安装macOS Mojave</h3><p>正常安装即可，另外新买的mbp自带macOS系统，版本过老的话直接升级就可以。</p>
-<h3 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h3><ul>
-<li>打开BootCamp(启动转换助理)，点击菜单栏上的操作，下载Windows支持软件，下载完毕后保存到U盘，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/75a0d5124f3e6e152ffb49529f4580d1199f655e.jpg"></li>
-<li>按照BootCamp的流程选择Windows 10镜像，确定Windows分区大小。</li>
-<li>分区完成后会自动重启开始安装Windows 10，请注意此处要按Option建进入macOS，不要进入Windows分区。</li>
-<li>打开macOS自带分区工具，此时我们会看到两个分区，一个macOS分区，一个BootCamp分区。点击macOS所在分区，点击+，新增分区，格式选择MS-DOS(FAT)，做为Ubuntu 18.04安装分区。<font color=#A52A2A ><strong>至此，我们拥有3个分区，分别安装macOS，Windows、Ubuntu。</strong></font></li>
-</ul>
-<h3 id="安装Ubuntu-18-04"><a href="#安装Ubuntu-18-04" class="headerlink" title="安装Ubuntu 18.04"></a>安装Ubuntu 18.04</h3><h4 id="准备工作-1"><a href="#准备工作-1" class="headerlink" title="准备工作"></a>准备工作</h4><ul>
-<li>下载Ubuntu 18.04修改版本(来自网络大神，已经集成mbp2017内置键盘，触摸板，touch bar驱动，安装方便)<br><a href="https://goo.gl/4ddQMu">https://goo.gl/4ddQMu</a></li>
-<li>使用usbwriter将Ubuntu 18.04镜像写入U盘。</li>
-</ul>
-<h4 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h4><ul>
-<li>插入U盘，重启按住Option，选择Ubuntu 18.04安装盘，选择安装(注意：不可以选择试用，安装会出错)。</li>
-<li>分区：找到之前分配的fat32格式分区，点击-，删除分区，这样会得到一部分空闲分区。按照自己习惯将空闲分区进行分配。博主的分配方案是：efi、boot、home、/、swap。</li>
-<li>分区完成后，继续安装。</li>
-</ul>
-<blockquote>
-<p>至此，我们在开机时按住Option键即可自由切换macOS和Ubuntu。</p>
-</blockquote>
-<h4 id="安装Windows"><a href="#安装Windows" class="headerlink" title="安装Windows"></a>安装Windows</h4><blockquote>
-<p>因为我们已经自行创建了Ubuntu分区，所以已经不能使用BootCamp安装Windows 10。</p>
-</blockquote>
-<ul>
-<li><font color=#A52A2A ><strong>在macOS下将之前分配好的BootCamp分区格式化为hfs格式。(重中之重)</strong></font></li>
-<li>进入winpe，连接外接键鼠。</li>
-<li>winpe下打开分区工具，将刚才格式化为hfs格式的分区格式化为ntfs格式，供Windows 10使用。</li>
-<li>打开winntsetup工具，将Windows安装到ntfs格式分区。</li>
-</ul>
-<blockquote>
-<p>安装完成后重启发现无法进入Windows 10，请进行如下操作。</p>
-</blockquote>
-<ul>
-<li>进入Ubuntu 18.04，打开终端，输入如下命令<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sudo update-grub</span></span><br></pre></td></tr></table></figure></li>
-<li>重启进入Ubuntu启动项，会在grub菜单中看到Windows Boot Manager选项，回车选择，完成Windows 10安装。</li>
-<li>进入Windows 10后，安装之前下载的Windows支持软件。</li>
-</ul>
-<blockquote>
-<p>至此，三个系统已经安装完成，并且都可以启动成功。开机按住Option键，看到两个启动项。选择mac启动项进入macOS，选择Windows启动项进入grub界面，grub下有Ubuntu 18.04以及Windows Boot Manager两个选项。什么，切换系统不方便？？往下看！！！</p>
-</blockquote>
-<h3 id="安装refind，实现自动引导"><a href="#安装refind，实现自动引导" class="headerlink" title="安装refind，实现自动引导"></a>安装refind，实现自动引导</h3><ul>
-<li>下载refind并解压<br><a href="https://sourceforge.net/projects/refind/">https://sourceforge.net/projects/refind/</a></li>
-<li>打开文件夹，执行refind-install脚本即可成功安装refind，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/8632cec3cc44f7485e92c8727ba9e3a17a7fb808.jpg"></li>
-<li>进入Windows 10，安装bootice软件。</li>
-<li>使用bootice将refind设置为第一启动项。</li>
-<li>重启即可看到refind引导界面。</li>
-<li>按delete键隐藏不需要的启动项，保留macOS、Windows、Ubuntu即可。</li>
-<li>什么？refind默认界面不好看？emmmm，那就换个主题吧！！网络上大把教程！！！</li>
-</ul>
-<blockquote>
-<p>至此，MacBook Pro 2017安装macOS+Windows+Ubuntu成功！！！</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Macintosh</category>
-      </categories>
-      <tags>
-        <tag>Macintosh</tag>
-        <tag>Linux</tag>
-        <tag>MacBook Pro</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>教你制作macOS+Ubuntu+WindowsPE超级启动盘(仅支持UEFI)</title>
     <url>/2019/07/26/make-super-usb.html</url>
     <content><![CDATA[<blockquote>
@@ -2038,6 +1960,84 @@
         <tag>mi5</tag>
         <tag>miui</tag>
         <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Macbook Pro 2017安装macOS+Windows+Ubuntu简要教程</title>
+    <url>/2019/03/06/mbp2017_win_mac_ubuntu.html</url>
+    <content><![CDATA[<blockquote>
+<p>各位访客想必已经发现本站<a href="https://www.bugprogrammer.me/">https://www.bugprogrammer.me</a> 已经一个月没有更新了，为了本站长期稳定运行下去，博主最近在做博客改版以及cdn、图床方案的测试，本站不会断更，也感谢大半年来各位访客的支持。言归正传，博主近期购入了MacBook Pro 2017，原因很简单，博主需要retina屏幕。黑苹果笔记本无法使用独显，目前的macOS版本下，核显+4K的配合会出现动画掉帧现象，即使是核显版本的mbp也难以幸免，所以想要retina+独显+macOS，只能购入mbp了。</p>
+</blockquote>
+<blockquote>
+<p>博主发现mbp有一个神奇的地方，安装mac+win+linux超级麻烦，按普通pc方案，最后安装linux会出现问题，表现为安装完linux后，Windows会被破坏，无法进入(不是引导的问题，就是系统挂了！！！)，而macOS正常。博主查阅了一下资料，发现很多教程都是老版本的mbp，区别很大。所以博主放出我自己的解决方案。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
+<li>mbp不同于普通PC，请严格按照博主的方案进行，否则会出现意想不到的问题。</li>
+<li>mbp2018是否适用博主不敢保证，因为2018款的mac新增了一个T2芯片，有报道说T2会阻止Linux启动。</li>
+</ul>
+<h2 id="安装顺序-重中之重"><a href="#安装顺序-重中之重" class="headerlink" title="安装顺序(重中之重)"></a>安装顺序(重中之重)</h2><p><font color=#A52A2A ><strong>macOS Mojave–&gt;Ubuntu 18.04–&gt;Windows 10</strong></font></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>macOS Mojave镜像、Windows 10镜像、Ubuntu18.04镜像、Windows PE、外接键鼠。</p>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><h3 id="安装macOS-Mojave"><a href="#安装macOS-Mojave" class="headerlink" title="安装macOS Mojave"></a>安装macOS Mojave</h3><p>正常安装即可，另外新买的mbp自带macOS系统，版本过老的话直接升级就可以。</p>
+<h3 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h3><ul>
+<li>打开BootCamp(启动转换助理)，点击菜单栏上的操作，下载Windows支持软件，下载完毕后保存到U盘，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/75a0d5124f3e6e152ffb49529f4580d1199f655e.jpg"></li>
+<li>按照BootCamp的流程选择Windows 10镜像，确定Windows分区大小。</li>
+<li>分区完成后会自动重启开始安装Windows 10，请注意此处要按Option建进入macOS，不要进入Windows分区。</li>
+<li>打开macOS自带分区工具，此时我们会看到两个分区，一个macOS分区，一个BootCamp分区。点击macOS所在分区，点击+，新增分区，格式选择MS-DOS(FAT)，做为Ubuntu 18.04安装分区。<font color=#A52A2A ><strong>至此，我们拥有3个分区，分别安装macOS，Windows、Ubuntu。</strong></font></li>
+</ul>
+<h3 id="安装Ubuntu-18-04"><a href="#安装Ubuntu-18-04" class="headerlink" title="安装Ubuntu 18.04"></a>安装Ubuntu 18.04</h3><h4 id="准备工作-1"><a href="#准备工作-1" class="headerlink" title="准备工作"></a>准备工作</h4><ul>
+<li>下载Ubuntu 18.04修改版本(来自网络大神，已经集成mbp2017内置键盘，触摸板，touch bar驱动，安装方便)<br><a href="https://goo.gl/4ddQMu">https://goo.gl/4ddQMu</a></li>
+<li>使用usbwriter将Ubuntu 18.04镜像写入U盘。</li>
+</ul>
+<h4 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h4><ul>
+<li>插入U盘，重启按住Option，选择Ubuntu 18.04安装盘，选择安装(注意：不可以选择试用，安装会出错)。</li>
+<li>分区：找到之前分配的fat32格式分区，点击-，删除分区，这样会得到一部分空闲分区。按照自己习惯将空闲分区进行分配。博主的分配方案是：efi、boot、home、/、swap。</li>
+<li>分区完成后，继续安装。</li>
+</ul>
+<blockquote>
+<p>至此，我们在开机时按住Option键即可自由切换macOS和Ubuntu。</p>
+</blockquote>
+<h4 id="安装Windows"><a href="#安装Windows" class="headerlink" title="安装Windows"></a>安装Windows</h4><blockquote>
+<p>因为我们已经自行创建了Ubuntu分区，所以已经不能使用BootCamp安装Windows 10。</p>
+</blockquote>
+<ul>
+<li><font color=#A52A2A ><strong>在macOS下将之前分配好的BootCamp分区格式化为hfs格式。(重中之重)</strong></font></li>
+<li>进入winpe，连接外接键鼠。</li>
+<li>winpe下打开分区工具，将刚才格式化为hfs格式的分区格式化为ntfs格式，供Windows 10使用。</li>
+<li>打开winntsetup工具，将Windows安装到ntfs格式分区。</li>
+</ul>
+<blockquote>
+<p>安装完成后重启发现无法进入Windows 10，请进行如下操作。</p>
+</blockquote>
+<ul>
+<li>进入Ubuntu 18.04，打开终端，输入如下命令<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sudo update-grub</span></span><br></pre></td></tr></table></figure></li>
+<li>重启进入Ubuntu启动项，会在grub菜单中看到Windows Boot Manager选项，回车选择，完成Windows 10安装。</li>
+<li>进入Windows 10后，安装之前下载的Windows支持软件。</li>
+</ul>
+<blockquote>
+<p>至此，三个系统已经安装完成，并且都可以启动成功。开机按住Option键，看到两个启动项。选择mac启动项进入macOS，选择Windows启动项进入grub界面，grub下有Ubuntu 18.04以及Windows Boot Manager两个选项。什么，切换系统不方便？？往下看！！！</p>
+</blockquote>
+<h3 id="安装refind，实现自动引导"><a href="#安装refind，实现自动引导" class="headerlink" title="安装refind，实现自动引导"></a>安装refind，实现自动引导</h3><ul>
+<li>下载refind并解压<br><a href="https://sourceforge.net/projects/refind/">https://sourceforge.net/projects/refind/</a></li>
+<li>打开文件夹，执行refind-install脚本即可成功安装refind，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/8632cec3cc44f7485e92c8727ba9e3a17a7fb808.jpg"></li>
+<li>进入Windows 10，安装bootice软件。</li>
+<li>使用bootice将refind设置为第一启动项。</li>
+<li>重启即可看到refind引导界面。</li>
+<li>按delete键隐藏不需要的启动项，保留macOS、Windows、Ubuntu即可。</li>
+<li>什么？refind默认界面不好看？emmmm，那就换个主题吧！！网络上大把教程！！！</li>
+</ul>
+<blockquote>
+<p>至此，MacBook Pro 2017安装macOS+Windows+Ubuntu成功！！！</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Macintosh</category>
+      </categories>
+      <tags>
+        <tag>Macintosh</tag>
+        <tag>Linux</tag>
+        <tag>MacBook Pro</tag>
       </tags>
   </entry>
   <entry>
@@ -2335,70 +2335,6 @@
       </tags>
   </entry>
   <entry>
-    <title>一加7 Pro Android Q root教程</title>
-    <url>/2019/08/18/root-for-oneplus7pro-androidQ.html</url>
-    <content><![CDATA[<blockquote>
-<p>博主近日把自己的一加7 Pro升级到了Android Q beta，发现暂时无法刷入twrp-recovery，也就意味着root有一点点的麻烦，今天博主发布个人测试可行的root方案。博主是在Mac下操作，Windows以及Linux同理。<a id="more"></a></p>
-</blockquote>
-<h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><h2 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a>Xcode</h2><ul>
-<li>Mac App Store安装Xcode。</li>
-<li>终端下输入如下命令并按提示安装。<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
-<h2 id="HomeBrew"><a href="#HomeBrew" class="headerlink" title="HomeBrew"></a>HomeBrew</h2>终端下执行如下命令即可。<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>bin<span class="regexp">/ruby -e &quot;$(curl -fsSL https:/</span><span class="regexp">/raw.githubusercontent.com/</span>Homebrew<span class="regexp">/install/m</span>aster/install)<span class="string">&quot;</span></span><br></pre></td></tr></table></figure>
-<h2 id="adb"><a href="#adb" class="headerlink" title="adb"></a>adb</h2>终端下执行如下命令即可<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~<span class="string">/Download</span></span><br><span class="line">wget https:<span class="string">//dl.google.com/android/repository/platform-tools-latest-darwin.zip</span></span><br><span class="line">unzip platform-tools-latest-darwin.zip</span><br><span class="line"><span class="keyword">echo</span> &#x27;export PATH=<span class="string">/Users/wbx/Downloads/platform-tools</span>:$PATH&#x27; &gt;&gt; ~<span class="string">/.zshrc</span></span><br><span class="line">source ~<span class="string">/.zshrc</span></span><br></pre></td></tr></table></figure>
-<img src= "/images/loading.gif" data-lazy-src="/images/root-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/root-2.png"></li>
-</ul>
-<h2 id="Python3以及pip3"><a href="#Python3以及pip3" class="headerlink" title="Python3以及pip3"></a>Python3以及pip3</h2><p>终端执行如下命令安装Python3</p>
-<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>python3</span><br></pre></td></tr></table></figure>
-<p>终端输入如下命令安装pip3</p>
-<figure class="highlight dsconfig"><table><tr><td class="code"><pre><span class="line"><span class="string">curl</span> <span class="string">https</span>://<span class="string">bootstrap</span>.<span class="string">pypa</span>.<span class="string">io</span>/<span class="built_in">get-pip.py</span> | <span class="string">python3</span></span><br></pre></td></tr></table></figure>
-<h2 id="protobuf模块"><a href="#protobuf模块" class="headerlink" title="protobuf模块"></a>protobuf模块</h2><p>终端执行如下命令安装protobuf模块</p>
-<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>protobuf</span><br><span class="line">pip3 <span class="keyword">install </span>protobuf</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>至此，环境搭建已经全部完成。</p>
-</blockquote>
-<h1 id="检测环境搭建正确性"><a href="#检测环境搭建正确性" class="headerlink" title="检测环境搭建正确性"></a>检测环境搭建正确性</h1><p>终端输入以下命令，结果如图则正确</p>
-<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">python3</span> -V</span><br><span class="line">pip3 -V</span><br><span class="line">adb <span class="keyword">version</span></span><br><span class="line">protoc --<span class="keyword">version</span></span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/root-3.png"></p>
-<h1 id="root权限获取教程"><a href="#root权限获取教程" class="headerlink" title="root权限获取教程"></a>root权限获取教程</h1><ul>
-<li><p>下载并解压手机当前使用的系统镜像，比如博主的是Android Q Developer Preview 4 for OnePlus 7 Pro。链接如下。<br><a href="https://oxygenos.oneplus.net/OnePlus7ProOxygen_13.X.04_OTA_004_all_1908020003_726196c3b79b4f85.zip">https://oxygenos.oneplus.net/OnePlus7ProOxygen_13.X.04_OTA_004_all_1908020003_726196c3b79b4f85.zip</a></p>
-</li>
-<li><p>下载并解压镜像解包工具。<br><a href="https://gist.github.com/ius/42bd02a5df2226633a342ab7a9c60f15/archive/48ffe1eee59af9a7da883d9ec7902d1507428dc4.zip">https://gist.github.com/ius/42bd02a5df2226633a342ab7a9c60f15/archive/48ffe1eee59af9a7da883d9ec7902d1507428dc4.zip</a></p>
-</li>
-<li><p>将解包工具中的两个.py文件放到我们解压的镜像目录。<br><img src= "/images/loading.gif" data-lazy-src="/images/root-4.png"></p>
-</li>
-<li><p>执行如下命令解包，当看到boot.img解包完成后按Ctrl+C终止命令。</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">cd</span> /Users/wbx/Downloads/OnePlus<span class="number">7</span>ProOxygen_<span class="number">13</span>.X.<span class="number">04</span>_OTA_<span class="number">004</span>_all_<span class="number">1908020003</span>_<span class="number">726196</span>c<span class="number">3</span>b<span class="number">79</span>b<span class="number">4</span>f<span class="number">85</span></span><br><span class="line"><span class="attribute">python3</span> payload_dumper.py payload.bin</span><br></pre></td></tr></table></figure>
-<p>  <img src= "/images/loading.gif" data-lazy-src="/images/root-5.png"><br>  <img src= "/images/loading.gif" data-lazy-src="/images/root-6.png"></p>
-</li>
-<li><p>数据线连接手机，手机开启USB调试模式，将解包生成的boot.img文件拷贝到手机根目录(由于macOS下无法直接将文件拷贝到Android，所以采用adb命令方案)</p>
-<figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">adb</span> <span class="keyword">push</span> boot.img /sdcard </span><br></pre></td></tr></table></figure>
-<p>  <img src= "/images/loading.gif" data-lazy-src="/images/root-7.png"></p>
-</li>
-<li><p>手机端安装Magisk Manager App，可以在酷安下载。</p>
-</li>
-<li><p>按照图示，给boot.img打补丁<br><img src= "/images/loading.gif" data-lazy-src="/images/root-8.png"></p>
-</li>
-<li><p>将打好补丁的magisk_patched.img传回电脑桌面</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">adb pull <span class="regexp">/sdcard/</span>Download<span class="regexp">/magisk_patched.img ~/</span>Desktop</span><br></pre></td></tr></table></figure>
-<p>  <img src= "/images/loading.gif" data-lazy-src="/images/root-9.png"></p>
-</li>
-<li><p>将桌面上的magisk_patched.img文件刷入到手机的boot分区，Root完成。</p>
-<figure class="highlight arcade"><table><tr><td class="code"><pre><span class="line">adb reboot-bootloader</span><br><span class="line">fastboot flash boot ~<span class="regexp">/Desktop/m</span>agisk_patched.img</span><br></pre></td></tr></table></figure>
-<p>  <img src= "/images/loading.gif" data-lazy-src="/images/root-10.png"></p>
-</li>
-</ul>
-<h1 id="至此您已经Root成功"><a href="#至此您已经Root成功" class="headerlink" title="至此您已经Root成功"></a>至此您已经Root成功</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/root-11.png"></p>
-<h1 id="OTA更新后如何保留Root权限"><a href="#OTA更新后如何保留Root权限" class="headerlink" title="OTA更新后如何保留Root权限"></a>OTA更新后如何保留Root权限</h1><p>OTA更新安装完成后，不要重启。按照图示操作后再重启即可保留Root权限<br><img src= "/images/loading.gif" data-lazy-src="/images/root-12.png"></p>
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-      <tags>
-        <tag>Android Q</tag>
-        <tag>OnePlus 7 Pro</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>小米6第三方Project Treble实现</title>
     <url>/2018/05/08/project-treble-for-xiaomi-mi6-unofficial.html</url>
     <content><![CDATA[<h3 id="关于Project-Treble"><a href="#关于Project-Treble" class="headerlink" title="关于Project Treble"></a>关于Project Treble</h3><blockquote>
@@ -2468,6 +2404,101 @@
       </tags>
   </entry>
   <entry>
+    <title>Windows 10下忘记密码的解决方案(本地账户，微软账户通杀)</title>
+    <url>/2018/05/27/reset-password-for-windows-10.html</url>
+    <content><![CDATA[<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><blockquote>
+<p>我们知道Windows下连按5次shift会弹出粘滞键，他的程序名称是sethc.exe。经测试在Windows登录界面处输入密码之前按5次shift键也可以启动sethc.exe。所以只要把cmd.exe重命名为sethc.exe就可以在登录之前打开cmd以便我们为所欲为。<a id="more"></a></p>
+</blockquote>
+<h3 id="PE破解密码的缺陷"><a href="#PE破解密码的缺陷" class="headerlink" title="PE破解密码的缺陷"></a>PE破解密码的缺陷</h3><p>如果电脑安装了双Windows系统，如win7+win10，pe破解可能失效。</p>
+<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
+<li>准备好windows 10安装U盘。</li>
+<li>U盘启动，点击下一步-&gt;修复计算机-&gt;疑难解答-&gt;命令提示符(一定要在安装盘下进入，系统下直接进入高级模式会要求输入密码)，如图<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raufjiqgj30sg0lcq30.jpg"><br>如出现下图则说明你不是通过安装盘进入的高级模式。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rauu65rxj30sg0lcwes.jpg"></li>
+<li>导航进入系统盘符，注意不一定是C盘，用dir命令查看盘符下的文件已确定是不是系统盘。如</span><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">C</span>:</span><br><span class="line"><span class="attribute">cd</span> Windows/System<span class="number">32</span></span><br></pre></td></tr></table></figure></li>
+<li>输入以下命令将cmd重命名，3、4步骤如图</span><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">ren</span> <span class="selector-tag">sethc</span><span class="selector-class">.exe</span> <span class="selector-tag">AAA</span><span class="selector-class">.exe</span></span><br><span class="line"><span class="selector-tag">ren</span> <span class="selector-tag">cmd</span><span class="selector-class">.exe</span> <span class="selector-tag">sethc</span><span class="selector-class">.exe</span></span><br></pre></td></tr></table></figure>
+<img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rav9bi0fj30sg0lcjrp.jpg"></li>
+<li>重启到登录界面按5次shift进入命令提示符(此时窗口名称为sethc.exe)</li>
+<li>输入如下命令启用Windows内置的Administrator用户，并重置Administrator的密码。如果之前用的是微软账户就可以不重置密码，默认无密码。<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> /active:yes </span><br><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> 新密码</span><br></pre></td></tr></table></figure>
+<img src= "/images/loading.gif" data-lazy-src="/images/Snipaste_2018-05-27_21-41-45.png"></li>
+<li>用Administrator登录系统，将之前忘记密码的用户修改密码，如果是微软账户就上官网重置密码。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ravn4bmhj30ia0h613m.jpg"></li>
+<li>进入原用户测试。</li>
+<li>进入文件资源管理器，将Windows/System32下的sethc.exe重命名为cmd.exe，AAA.exe重命名为sethc.exe。</li>
+<li>如果想禁用Administrator请执行以下命令。<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> /active:no</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Windows Desktop</category>
+      </categories>
+      <tags>
+        <tag>cmd</tag>
+        <tag>sethc</tag>
+        <tag>Windows10</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一加7 Pro Android Q root教程</title>
+    <url>/2019/08/18/root-for-oneplus7pro-androidQ.html</url>
+    <content><![CDATA[<blockquote>
+<p>博主近日把自己的一加7 Pro升级到了Android Q beta，发现暂时无法刷入twrp-recovery，也就意味着root有一点点的麻烦，今天博主发布个人测试可行的root方案。博主是在Mac下操作，Windows以及Linux同理。<a id="more"></a></p>
+</blockquote>
+<h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><h2 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a>Xcode</h2><ul>
+<li>Mac App Store安装Xcode。</li>
+<li>终端下输入如下命令并按提示安装。<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
+<h2 id="HomeBrew"><a href="#HomeBrew" class="headerlink" title="HomeBrew"></a>HomeBrew</h2>终端下执行如下命令即可。<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/usr/</span>bin<span class="regexp">/ruby -e &quot;$(curl -fsSL https:/</span><span class="regexp">/raw.githubusercontent.com/</span>Homebrew<span class="regexp">/install/m</span>aster/install)<span class="string">&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="adb"><a href="#adb" class="headerlink" title="adb"></a>adb</h2>终端下执行如下命令即可<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~<span class="string">/Download</span></span><br><span class="line">wget https:<span class="string">//dl.google.com/android/repository/platform-tools-latest-darwin.zip</span></span><br><span class="line">unzip platform-tools-latest-darwin.zip</span><br><span class="line"><span class="keyword">echo</span> &#x27;export PATH=<span class="string">/Users/wbx/Downloads/platform-tools</span>:$PATH&#x27; &gt;&gt; ~<span class="string">/.zshrc</span></span><br><span class="line">source ~<span class="string">/.zshrc</span></span><br></pre></td></tr></table></figure>
+<img src= "/images/loading.gif" data-lazy-src="/images/root-1.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/root-2.png"></li>
+</ul>
+<h2 id="Python3以及pip3"><a href="#Python3以及pip3" class="headerlink" title="Python3以及pip3"></a>Python3以及pip3</h2><p>终端执行如下命令安装Python3</p>
+<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>python3</span><br></pre></td></tr></table></figure>
+<p>终端输入如下命令安装pip3</p>
+<figure class="highlight dsconfig"><table><tr><td class="code"><pre><span class="line"><span class="string">curl</span> <span class="string">https</span>://<span class="string">bootstrap</span>.<span class="string">pypa</span>.<span class="string">io</span>/<span class="built_in">get-pip.py</span> | <span class="string">python3</span></span><br></pre></td></tr></table></figure>
+<h2 id="protobuf模块"><a href="#protobuf模块" class="headerlink" title="protobuf模块"></a>protobuf模块</h2><p>终端执行如下命令安装protobuf模块</p>
+<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>protobuf</span><br><span class="line">pip3 <span class="keyword">install </span>protobuf</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>至此，环境搭建已经全部完成。</p>
+</blockquote>
+<h1 id="检测环境搭建正确性"><a href="#检测环境搭建正确性" class="headerlink" title="检测环境搭建正确性"></a>检测环境搭建正确性</h1><p>终端输入以下命令，结果如图则正确</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">python3</span> -V</span><br><span class="line">pip3 -V</span><br><span class="line">adb <span class="keyword">version</span></span><br><span class="line">protoc --<span class="keyword">version</span></span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/root-3.png"></p>
+<h1 id="root权限获取教程"><a href="#root权限获取教程" class="headerlink" title="root权限获取教程"></a>root权限获取教程</h1><ul>
+<li><p>下载并解压手机当前使用的系统镜像，比如博主的是Android Q Developer Preview 4 for OnePlus 7 Pro。链接如下。<br><a href="https://oxygenos.oneplus.net/OnePlus7ProOxygen_13.X.04_OTA_004_all_1908020003_726196c3b79b4f85.zip">https://oxygenos.oneplus.net/OnePlus7ProOxygen_13.X.04_OTA_004_all_1908020003_726196c3b79b4f85.zip</a></p>
+</li>
+<li><p>下载并解压镜像解包工具。<br><a href="https://gist.github.com/ius/42bd02a5df2226633a342ab7a9c60f15/archive/48ffe1eee59af9a7da883d9ec7902d1507428dc4.zip">https://gist.github.com/ius/42bd02a5df2226633a342ab7a9c60f15/archive/48ffe1eee59af9a7da883d9ec7902d1507428dc4.zip</a></p>
+</li>
+<li><p>将解包工具中的两个.py文件放到我们解压的镜像目录。<br><img src= "/images/loading.gif" data-lazy-src="/images/root-4.png"></p>
+</li>
+<li><p>执行如下命令解包，当看到boot.img解包完成后按Ctrl+C终止命令。</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">cd</span> /Users/wbx/Downloads/OnePlus<span class="number">7</span>ProOxygen_<span class="number">13</span>.X.<span class="number">04</span>_OTA_<span class="number">004</span>_all_<span class="number">1908020003</span>_<span class="number">726196</span>c<span class="number">3</span>b<span class="number">79</span>b<span class="number">4</span>f<span class="number">85</span></span><br><span class="line"><span class="attribute">python3</span> payload_dumper.py payload.bin</span><br></pre></td></tr></table></figure>
+<p>  <img src= "/images/loading.gif" data-lazy-src="/images/root-5.png"><br>  <img src= "/images/loading.gif" data-lazy-src="/images/root-6.png"></p>
+</li>
+<li><p>数据线连接手机，手机开启USB调试模式，将解包生成的boot.img文件拷贝到手机根目录(由于macOS下无法直接将文件拷贝到Android，所以采用adb命令方案)</p>
+<figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">adb</span> <span class="keyword">push</span> boot.img /sdcard </span><br></pre></td></tr></table></figure>
+<p>  <img src= "/images/loading.gif" data-lazy-src="/images/root-7.png"></p>
+</li>
+<li><p>手机端安装Magisk Manager App，可以在酷安下载。</p>
+</li>
+<li><p>按照图示，给boot.img打补丁<br><img src= "/images/loading.gif" data-lazy-src="/images/root-8.png"></p>
+</li>
+<li><p>将打好补丁的magisk_patched.img传回电脑桌面</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">adb pull <span class="regexp">/sdcard/</span>Download<span class="regexp">/magisk_patched.img ~/</span>Desktop</span><br></pre></td></tr></table></figure>
+<p>  <img src= "/images/loading.gif" data-lazy-src="/images/root-9.png"></p>
+</li>
+<li><p>将桌面上的magisk_patched.img文件刷入到手机的boot分区，Root完成。</p>
+<figure class="highlight arcade"><table><tr><td class="code"><pre><span class="line">adb reboot-bootloader</span><br><span class="line">fastboot flash boot ~<span class="regexp">/Desktop/m</span>agisk_patched.img</span><br></pre></td></tr></table></figure>
+<p>  <img src= "/images/loading.gif" data-lazy-src="/images/root-10.png"></p>
+</li>
+</ul>
+<h1 id="至此您已经Root成功"><a href="#至此您已经Root成功" class="headerlink" title="至此您已经Root成功"></a>至此您已经Root成功</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/root-11.png"></p>
+<h1 id="OTA更新后如何保留Root权限"><a href="#OTA更新后如何保留Root权限" class="headerlink" title="OTA更新后如何保留Root权限"></a>OTA更新后如何保留Root权限</h1><p>OTA更新安装完成后，不要重启。按照图示操作后再重启即可保留Root权限<br><img src= "/images/loading.gif" data-lazy-src="/images/root-12.png"></p>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Android Q</tag>
+        <tag>OnePlus 7 Pro</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用macserial获取iMac 2019机型信息</title>
     <url>/2019/04/03/smbios-for-imac2019.html</url>
     <content><![CDATA[<blockquote>
@@ -2511,37 +2542,6 @@
       <tags>
         <tag>Hackintosh</tag>
         <tag>macOS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows 10下忘记密码的解决方案(本地账户，微软账户通杀)</title>
-    <url>/2018/05/27/reset-password-for-windows-10.html</url>
-    <content><![CDATA[<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><blockquote>
-<p>我们知道Windows下连按5次shift会弹出粘滞键，他的程序名称是sethc.exe。经测试在Windows登录界面处输入密码之前按5次shift键也可以启动sethc.exe。所以只要把cmd.exe重命名为sethc.exe就可以在登录之前打开cmd以便我们为所欲为。<a id="more"></a></p>
-</blockquote>
-<h3 id="PE破解密码的缺陷"><a href="#PE破解密码的缺陷" class="headerlink" title="PE破解密码的缺陷"></a>PE破解密码的缺陷</h3><p>如果电脑安装了双Windows系统，如win7+win10，pe破解可能失效。</p>
-<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
-<li>准备好windows 10安装U盘。</li>
-<li>U盘启动，点击下一步-&gt;修复计算机-&gt;疑难解答-&gt;命令提示符(一定要在安装盘下进入，系统下直接进入高级模式会要求输入密码)，如图<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raufjiqgj30sg0lcq30.jpg"><br>如出现下图则说明你不是通过安装盘进入的高级模式。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rauu65rxj30sg0lcwes.jpg"></li>
-<li>导航进入系统盘符，注意不一定是C盘，用dir命令查看盘符下的文件已确定是不是系统盘。如</span><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">C</span>:</span><br><span class="line"><span class="attribute">cd</span> Windows/System<span class="number">32</span></span><br></pre></td></tr></table></figure></li>
-<li>输入以下命令将cmd重命名，3、4步骤如图</span><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">ren</span> <span class="selector-tag">sethc</span><span class="selector-class">.exe</span> <span class="selector-tag">AAA</span><span class="selector-class">.exe</span></span><br><span class="line"><span class="selector-tag">ren</span> <span class="selector-tag">cmd</span><span class="selector-class">.exe</span> <span class="selector-tag">sethc</span><span class="selector-class">.exe</span></span><br></pre></td></tr></table></figure>
-<img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rav9bi0fj30sg0lcjrp.jpg"></li>
-<li>重启到登录界面按5次shift进入命令提示符(此时窗口名称为sethc.exe)</li>
-<li>输入如下命令启用Windows内置的Administrator用户，并重置Administrator的密码。如果之前用的是微软账户就可以不重置密码，默认无密码。<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> /active:yes </span><br><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> 新密码</span><br></pre></td></tr></table></figure>
-<img src= "/images/loading.gif" data-lazy-src="/images/Snipaste_2018-05-27_21-41-45.png"></li>
-<li>用Administrator登录系统，将之前忘记密码的用户修改密码，如果是微软账户就上官网重置密码。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ravn4bmhj30ia0h613m.jpg"></li>
-<li>进入原用户测试。</li>
-<li>进入文件资源管理器，将Windows/System32下的sethc.exe重命名为cmd.exe，AAA.exe重命名为sethc.exe。</li>
-<li>如果想禁用Administrator请执行以下命令。<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> /active:no</span><br></pre></td></tr></table></figure></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Windows Desktop</category>
-      </categories>
-      <tags>
-        <tag>cmd</tag>
-        <tag>sethc</tag>
-        <tag>Windows10</tag>
       </tags>
   </entry>
   <entry>
