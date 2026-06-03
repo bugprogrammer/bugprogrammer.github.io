@@ -542,9 +542,9 @@ if (asideStatus !== undefined) {
 <li>用AMIBCP打开P8Z77MP_UNLOCK.CAP，将需要解锁的选项(如CSM下的video选项，intel vt-d等)的Access/Use设置为USER并保存<br><img src= "/images/loading.gif" data-lazy-src="/images/bios5.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/bios4.png"></li>
 <li>用UEFITool打开处理后的P8Z77MP_UNLOCK.CAP，导航到BIOS region，点击右键，选择Extract as is…，文件名填1，点击保存。得到文件1.rgn<br><img src= "/images/loading.gif" data-lazy-src="/images/bios6.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/bios7.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/bios8.png"></li>
 <li>用UEFITool打开官网下载的BIOS，导航到BIOS region，点击右键，选择Replace as is…,选择1.rgn，点击打开<br><img src= "/images/loading.gif" data-lazy-src="/images/bios9.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/bios10.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/bios11.png"></li>
-<li>点击File-&gt;Save image file,名称为P8Z77MP.CAP，点击保存<br><img src= "/images/loading.gif" data-lazy-src="/images/bios12.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/bios13.png"><h4 id="至此，解锁了CFG-Lock、CSM下的video选项以及Intel-VT-d的修改版BIOS已制作完成"><a href="#至此，解锁了CFG-Lock、CSM下的video选项以及Intel-VT-d的修改版BIOS已制作完成" class="headerlink" title="至此，解锁了CFG Lock、CSM下的video选项以及Intel VT-d的修改版BIOS已制作完成"></a>至此，解锁了CFG Lock、CSM下的video选项以及Intel VT-d的修改版BIOS已制作完成</h4></li>
+<li>点击File-&gt;Save image file,名称为P8Z77MP.CAP，点击保存<br><img src= "/images/loading.gif" data-lazy-src="/images/bios12.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/bios13.png"></li>
 </ul>
-<h3 id="刷写修改版BIOS"><a href="#刷写修改版BIOS" class="headerlink" title="刷写修改版BIOS"></a>刷写修改版BIOS</h3><ul>
+<h4 id="至此，解锁了CFG-Lock、CSM下的video选项以及Intel-VT-d的修改版BIOS已制作完成"><a href="#至此，解锁了CFG-Lock、CSM下的video选项以及Intel-VT-d的修改版BIOS已制作完成" class="headerlink" title="至此，解锁了CFG Lock、CSM下的video选项以及Intel VT-d的修改版BIOS已制作完成"></a>至此，解锁了CFG Lock、CSM下的video选项以及Intel VT-d的修改版BIOS已制作完成</h4><h3 id="刷写修改版BIOS"><a href="#刷写修改版BIOS" class="headerlink" title="刷写修改版BIOS"></a>刷写修改版BIOS</h3><ul>
 <li>U盘格式化为FAT32格式，分区表类型为MBR，将处理好的P8Z77MP.CAP拷贝到U盘根目录(文件名必须正确)</li>
 <li>将U盘插入如下USB口(必须是这个口)<br><img src= "/images/loading.gif" data-lazy-src="/images/bios14.png"></li>
 <li>关机，打开机箱侧盖，按住下图中的BIOS_FLBK按键3s，黄灯开始闪烁，等待黄灯熄灭，BIOS刷写成功。<br><img src= "/images/loading.gif" data-lazy-src="/images/bios15.png"></li>
