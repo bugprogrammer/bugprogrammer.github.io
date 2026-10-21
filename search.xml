@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>macOS下编译Clover教程</title>
+    <url>/2018/06/29/Build_Clover.html</url>
+    <content><![CDATA[<blockquote>
+<p>随着macOS 10.14公测版本的发布，黑苹果用户对Clover新版本的需求提高，想要最新版本的Clover最直接的方法就是源码编译，方便快捷，教程如下。<a id="more"></a></p>
+</blockquote>
+<h3 id="安装相关环境"><a href="#安装相关环境" class="headerlink" title="安装相关环境"></a>安装相关环境</h3><h4 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a>Xcode</h4><ul>
+<li>Mac App Store商店安装Xcode</li>
+<li>终端下输入如下命令并按提示安装<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
+<h4 id="python"><a href="#python" class="headerlink" title="python"></a>python</h4></li>
+<li>官网下载安装即可 </li>
+</ul>
+<h4 id="准备编译脚本Build-Clover-command"><a href="#准备编译脚本Build-Clover-command" class="headerlink" title="准备编译脚本Build_Clover.command"></a>准备编译脚本Build_Clover.command</h4><ul>
+<li>输入如下命令下载编译脚本并进入相应目录<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/Micky1979/</span>Build_Clover.git &amp;&amp; cd Build_Clover</span><br></pre></td></tr></table></figure></li>
+<li>给予执行权限<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">chmod u+x <span class="module-access"><span class="module"><span class="identifier">Build_Clover</span>.</span></span>command</span><br></pre></td></tr></table></figure></li>
+<li>执行脚本，中途会自动下载Clover最新源码，请等待，下载源码过程以及成功进入菜单如图所示<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">./<span class="module-access"><span class="module"><span class="identifier">Build_Clover</span>.</span></span>command</span><br></pre></td></tr></table></figure>
+  <img src= "/images/loading.gif" data-lazy-src="/images/132e7a9ff24c9d81c184e861e8572ba886888101.jpg"><br>  <img src= "/images/loading.gif" data-lazy-src="/images/2dcb06511dcffdf8ff0d64fdcc03012c50f12848.jpg"></li>
+</ul>
+<h4 id="Build-Clover-command菜单解释"><a href="#Build-Clover-command菜单解释" class="headerlink" title="Build_Clover.command菜单解释"></a>Build_Clover.command菜单解释</h4><ul>
+<li>update Clover only (no building) 更新Clover源码不编译</li>
+<li>update Clover + force edk2 update (no building) 更新Clover源码和Build_Clover脚本文件，不编译 </li>
+<li>run my script on the source 执行自定义脚本</li>
+<li>build existing revision (no update, for testing only) 编译已存在版本，仅供测试使用</li>
+<li>build existing revision for release (no update, standard build) 编译已存在版本，不更新，常规编译</li>
+<li>build existing revision with custom macros enabled 启用宏的模式下编译</li>
+<li>enter Developers mode (only for devs) 进入开发模式</li>
+<li>Try Clover Configurator Pro.app 尝试启动Clover Configurator</li>
+<li>edit the configuration file 编辑配置文件</li>
+<li>Exit 退出菜单</li>
+</ul>
+<h3 id="编译Clover"><a href="#编译Clover" class="headerlink" title="编译Clover"></a>编译Clover</h3><p>脚本菜单中选择**<em>build existing revision for release (no update, standard build)-&gt;Standard x64 only-&gt;Standard**</em>开始编译，过程请等待。编译结束后会自动打开clover的pkg安装包所在目录。安装此pkg包即可升级到最新版本的Clover。<br><img src= "/images/loading.gif" data-lazy-src="/images/e2b7cb1cda2263bc19eea7075aa49779ee181c63.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/22a2efa8dcb27fe042fb85af67fb328488a61c55.jpg"></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>macOS</tag>
+        <tag>Clover</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于macOS Big Sur Hackintosh简要说明</title>
     <url>/2020/07/09/about-BigSur.html</url>
     <content><![CDATA[<blockquote>
@@ -40,46 +80,6 @@
       </categories>
       <tags>
         <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>macOS下编译Clover教程</title>
-    <url>/2018/06/29/Build_Clover.html</url>
-    <content><![CDATA[<blockquote>
-<p>随着macOS 10.14公测版本的发布，黑苹果用户对Clover新版本的需求提高，想要最新版本的Clover最直接的方法就是源码编译，方便快捷，教程如下。<a id="more"></a></p>
-</blockquote>
-<h3 id="安装相关环境"><a href="#安装相关环境" class="headerlink" title="安装相关环境"></a>安装相关环境</h3><h4 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a>Xcode</h4><ul>
-<li>Mac App Store商店安装Xcode</li>
-<li>终端下输入如下命令并按提示安装<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
-<h4 id="python"><a href="#python" class="headerlink" title="python"></a>python</h4></li>
-<li>官网下载安装即可 </li>
-</ul>
-<h4 id="准备编译脚本Build-Clover-command"><a href="#准备编译脚本Build-Clover-command" class="headerlink" title="准备编译脚本Build_Clover.command"></a>准备编译脚本Build_Clover.command</h4><ul>
-<li>输入如下命令下载编译脚本并进入相应目录<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/Micky1979/</span>Build_Clover.git &amp;&amp; cd Build_Clover</span><br></pre></td></tr></table></figure></li>
-<li>给予执行权限<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">chmod u+x <span class="module-access"><span class="module"><span class="identifier">Build_Clover</span>.</span></span>command</span><br></pre></td></tr></table></figure></li>
-<li>执行脚本，中途会自动下载Clover最新源码，请等待，下载源码过程以及成功进入菜单如图所示<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">./<span class="module-access"><span class="module"><span class="identifier">Build_Clover</span>.</span></span>command</span><br></pre></td></tr></table></figure>
-  <img src= "/images/loading.gif" data-lazy-src="/images/132e7a9ff24c9d81c184e861e8572ba886888101.jpg"><br>  <img src= "/images/loading.gif" data-lazy-src="/images/2dcb06511dcffdf8ff0d64fdcc03012c50f12848.jpg"></li>
-</ul>
-<h4 id="Build-Clover-command菜单解释"><a href="#Build-Clover-command菜单解释" class="headerlink" title="Build_Clover.command菜单解释"></a>Build_Clover.command菜单解释</h4><ul>
-<li>update Clover only (no building) 更新Clover源码不编译</li>
-<li>update Clover + force edk2 update (no building) 更新Clover源码和Build_Clover脚本文件，不编译 </li>
-<li>run my script on the source 执行自定义脚本</li>
-<li>build existing revision (no update, for testing only) 编译已存在版本，仅供测试使用</li>
-<li>build existing revision for release (no update, standard build) 编译已存在版本，不更新，常规编译</li>
-<li>build existing revision with custom macros enabled 启用宏的模式下编译</li>
-<li>enter Developers mode (only for devs) 进入开发模式</li>
-<li>Try Clover Configurator Pro.app 尝试启动Clover Configurator</li>
-<li>edit the configuration file 编辑配置文件</li>
-<li>Exit 退出菜单</li>
-</ul>
-<h3 id="编译Clover"><a href="#编译Clover" class="headerlink" title="编译Clover"></a>编译Clover</h3><p>脚本菜单中选择**<em>build existing revision for release (no update, standard build)-&gt;Standard x64 only-&gt;Standard**</em>开始编译，过程请等待。编译结束后会自动打开clover的pkg安装包所在目录。安装此pkg包即可升级到最新版本的Clover。<br><img src= "/images/loading.gif" data-lazy-src="/images/e2b7cb1cda2263bc19eea7075aa49779ee181c63.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/22a2efa8dcb27fe042fb85af67fb328488a61c55.jpg"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>macOS</tag>
-        <tag>Clover</tag>
       </tags>
   </entry>
   <entry>
@@ -340,6 +340,77 @@
       </tags>
   </entry>
   <entry>
+    <title>Linux内核简介及编译教程</title>
+    <url>/2018/09/01/Linux_Kernel_Build.html</url>
+    <content><![CDATA[<blockquote>
+<p>博主去年双11购入AMD Vega显卡(为了黑苹果免驱以及硬解)，发现Linux下无法驱动Vega显卡，4K显示器分辨率被锁定为1920x2160的奇葩分辨率，无法接受。于是查阅了一下资料发现当时的内核(Linux 4.12)并不支持AMD Vega显卡，于是打算编译内核升级到最新版本，毕竟Linux的舒适使用对博主十分重要。现在分享一下Linux Kernel的编译教程。<a id="more"></a><br><br /><b>注意：由于时间久远，博主的Linux已经升级Ubuntu 18.04，自带内核版本为Linux 4.15，所以演示平台为Ubuntu 18.04，编译的内核版本为Linux 4.18.5。另外，本文中部分图片来源网络。因为经典体系架构图现画比较麻烦。</b></p>
+</blockquote>
+<h3 id="Linux内核简介"><a href="#Linux内核简介" class="headerlink" title="Linux内核简介"></a>Linux内核简介</h3><h4 id="Linux-Kernel-Map"><a href="#Linux-Kernel-Map" class="headerlink" title="Linux Kernel Map"></a>Linux Kernel Map</h4><p><img src= "/images/loading.gif" data-lazy-src="/images/6b49439752bdd908e832187bbbfe555dcd56864e.jpg"></p>
+<h4 id="Linux-系统体系结构"><a href="#Linux-系统体系结构" class="headerlink" title="Linux 系统体系结构"></a>Linux 系统体系结构</h4><p>如下图所示，Linux体系结构，从大的方面可以分为用户空间(User Space)和内核空间(Kernel Space)两部分。</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/299f340bcfb4ac1703fdb841e613bcaf57862165.jpg"></p>
+<ul>
+<li>用户空间中包含了C库，用户的应用程序。在某些体系结构图中还包含了shell，当然shell脚本也是Linux体系中不可缺少的一部分。</li>
+<li>内核空间包括硬件平台、平台依赖代码、内核、系统调用接口。</li>
+<li>在任何一个现代操作系统中，都是分层的。为什么需要分层呢？<blockquote>
+<p>从程序员的角度分析，将linux底层和应用分开，做应用的做应用，做底层的做底层，各干各的。经济学的基本原理是，分工产生效率。<br /><br>从安全性的角度分析，是为了保护内核。现代CPU通常都实现了不同的工作模式。<br><br />以ARM为例：ARM实现了7种工作模式，不同模式下CPU可以执行的指令或者访问的寄存器不同：(1)用户模式 usr (2)系统模式 sys(3)管理模式 svc(4)快速中断 fiq(5)外部中断 irq(6)数据访问终止 abt(7)未定义指令异常。如果任何一个上层应用都可以调用寄存器，那样肯定是无法稳定执行的。而且因为出现了这个问题，出现了一个新的学科“现代操作系统”，如果大家感兴趣可以看一下“现代操作系统”相关文章或者书籍。<br /><br>以X86为例：X86实现了4个不同级别的权限，Ring0—Ring3 ;Ring0下可以执行特权指令，可以访问IO设备；Ring3则有很多的限制。如果分析一下Android的，这方面做的更加“丧心病狂”，Android所有的APK应用程序，都是在Java虚拟机上面运行，应用程序更加远离底层。<br /><br>另外，用户空间和内核空间是程序执行的两种不同状态，我们可以通过“系统调用”和“硬件中断”来完成用户空间到内核空间的转移。</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="Linux-Kernel体系结构"><a href="#Linux-Kernel体系结构" class="headerlink" title="Linux Kernel体系结构"></a>Linux Kernel体系结构</h4><p>如下图所示，是Linux内核结构图。</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/97909a09aa119314a15a18235b9eb288ba7ad448.jpg"></p>
+<h5 id="SCI层（System-Call-Interface）"><a href="#SCI层（System-Call-Interface）" class="headerlink" title="SCI层（System Call Interface）"></a>SCI层（System Call Interface）</h5><p>这一层是给应用用户空间提供一套标准的系统调用函数来访问Linux。前面分析Linux体系结构的时候，介绍过任何一类现代操作系统都不会允许上层应用直接访问底层，在Linux中，内核提供了一套标准接口，上层应用就可以通过这一套标准接口来访问底层。</p>
+<h5 id="PM（Procees-Management）"><a href="#PM（Procees-Management）" class="headerlink" title="PM（Procees Management）"></a>PM（Procees Management）</h5><p>这一部分包括具体创建进程（fork、exec）,停止进程（kill、exit）,并控制他们之间的通信（signal等）。还包括进程调度，控制活动进程如何共享CPU。这一部分是Linux已经做好的，在写驱动的时候，只需要调用对应的函数即可实现这些功能，例如创建进程、进程通信等等。</p>
+<h5 id="MM（Memory-Management）"><a href="#MM（Memory-Management）" class="headerlink" title="MM（Memory Management）"></a>MM（Memory Management）</h5><p>内存管理的主要作用是控制多个进程安全的共享内存区域。</p>
+<h5 id="VFS（Virtual-File-Systems）"><a href="#VFS（Virtual-File-Systems）" class="headerlink" title="VFS（Virtual File Systems）"></a>VFS（Virtual File Systems）</h5><p>虚拟文件系统，隐藏各种文件系统的具体细节，为文件操作提供统一的接口。在Linux中“一切皆文件”，这些文件就是通过VFS来实现的。Linux提供了一个大的通用模型，使这个模型包含了所有文件系统功能的集合。如下图所示，是一个虚拟文件系统的结构图。</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/5a07b3a364feae45f4bd211f19d963e1977eff58.jpg"></p>
+<h5 id="DD（Device-Drivers）"><a href="#DD（Device-Drivers）" class="headerlink" title="DD（Device Drivers）"></a>DD（Device Drivers）</h5><p>设备驱动，Linux驱动一般分为网络设备、块设备、字符设备、杂项设备，需要我们编写的只有字符设备，杂项设备是不容易归类的一种驱动，杂项设备和字符设备有很多重合的地方。</p>
+<h5 id="PD（Physical-Devices）"><a href="#PD（Physical-Devices）" class="headerlink" title="PD（Physical Devices）"></a>PD（Physical Devices）</h5><p>这一部分提供丰富的网络协议支持。</p>
+<h3 id="Linux-Kernel源码"><a href="#Linux-Kernel源码" class="headerlink" title="Linux Kernel源码"></a>Linux Kernel源码</h3><h4 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h4><p><b><a href="http://www.kernel.org/">www.kernel.org</a></b></p>
+<h4 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h4><ul>
+<li>arch：根据cpu体系结构不同而分的代码</li>
+<li>block：部分块设备驱动程序</li>
+<li>crypto：加密，压缩，CRC校验算法</li>
+<li>documentation：内核文档</li>
+<li>drivers：设备驱动程序</li>
+<li>fs(虚拟文件系统vfs):文件系统</li>
+<li>include：内核所需的头文件，(与平台无关的头文件在include/linux中)</li>
+<li>lib：库文件代码(与平台相关的)</li>
+<li>mm：实现内存管理，与硬件体系结构无关的(与硬件体系结构相关的在arch中)</li>
+<li>net：网络协议的代码</li>
+<li>samples：一些内核编程的范例</li>
+<li>scripts：配置内核的脚本</li>
+<li>security：SElinux的模块</li>
+<li>sound：音频设备的驱动程序</li>
+<li>usr：cpio命令实现，用于制作根文件系统的命令(文件系统与内核放到一块的命令)</li>
+<li>virt：内核虚拟机</li>
+</ul>
+<h3 id="Linux-Kernel编译"><a href="#Linux-Kernel编译" class="headerlink" title="Linux Kernel编译"></a>Linux Kernel编译</h3><h4 id="下载Linux-Kernel源码并拷贝到-usr-src目录"><a href="#下载Linux-Kernel源码并拷贝到-usr-src目录" class="headerlink" title="下载Linux Kernel源码并拷贝到/usr/src目录"></a>下载Linux Kernel源码并拷贝到/usr/src目录</h4><p>输入如下命令即可</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">wget https:<span class="regexp">//</span>cdn.kernel.org<span class="regexp">/pub/</span>linux<span class="regexp">/kernel/</span>v4.x<span class="regexp">/linux-4.18.5.tar.xz &amp;&amp; cp -f linux-4.18.5.tar.xz /u</span>sr/src</span><br></pre></td></tr></table></figure>
+<h4 id="解压Linux-Kernel"><a href="#解压Linux-Kernel" class="headerlink" title="解压Linux Kernel"></a>解压Linux Kernel</h4><p>输入如下命令即可</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">cd</span> /usr/src &amp;&amp; tar -xvf linux-<span class="number">4</span>.<span class="number">18</span>.<span class="number">5</span>.tar.xz &amp;&amp; cd linux-<span class="number">4</span>.<span class="number">18</span>.<span class="number">5</span></span><br></pre></td></tr></table></figure>
+<h4 id="Ubuntu-18-04下，要执行以下命令安装软件包"><a href="#Ubuntu-18-04下，要执行以下命令安装软件包" class="headerlink" title="Ubuntu 18.04下，要执行以下命令安装软件包"></a>Ubuntu 18.04下，要执行以下命令安装软件包</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">sudo apt <span class="keyword">install</span> fortune</span><br></pre></td></tr></table></figure>
+<h4 id="配置编译参数"><a href="#配置编译参数" class="headerlink" title="配置编译参数"></a>配置编译参数</h4><p>执行以下命令，会弹出一个带有GUI的配置界面，一般情况下默认参数就好，光标移动到Save保存即可，如图：</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">make menuconfig</span></span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/bc6c5ce369b72802e5c97d5a38ef3b2b50ad6455.jpg"></p>
+<h4 id="编译内核"><a href="#编译内核" class="headerlink" title="编译内核"></a>编译内核</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">make</span> -j<span class="number">12</span></span><br></pre></td></tr></table></figure>
+<p><b>注意：-j参数后面加本机CPU线程数可以加快编译速度，博主的8700K是6核心12线程，所以-j12。</b></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/39a28f2943c8062679567b03687c28c54354b5c9.jpg"></p>
+<h4 id="安装内核"><a href="#安装内核" class="headerlink" title="安装内核"></a>安装内核</h4><figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line"><span class="built_in">make</span> modules_install</span><br><span class="line"><span class="built_in">make</span> install</span><br></pre></td></tr></table></figure>
+<h4 id="更新grub引导"><a href="#更新grub引导" class="headerlink" title="更新grub引导"></a>更新grub引导</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">update</span>-grub<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>至此升级内核成功，重启电脑。</p>
+<h4 id="确认升级是否成功"><a href="#确认升级是否成功" class="headerlink" title="确认升级是否成功"></a>确认升级是否成功</h4><p>重启后，执行如下命令查看内核版本，和编译版本相同即为成功</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">uname -r</span></span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/7de8222416d47ef89b548125c35e3b5f3238508f.jpg"></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux_Kernel</tag>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>技嘉Z490 ELITE+i9 10900K+RX 5700 XT Hackintosh构建说明</title>
     <url>/2020/05/27/Hackintosh_for_Z490_10900K.html</url>
     <content><![CDATA[<blockquote>
@@ -544,111 +615,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux内核简介及编译教程</title>
-    <url>/2018/09/01/Linux_Kernel_Build.html</url>
-    <content><![CDATA[<blockquote>
-<p>博主去年双11购入AMD Vega显卡(为了黑苹果免驱以及硬解)，发现Linux下无法驱动Vega显卡，4K显示器分辨率被锁定为1920x2160的奇葩分辨率，无法接受。于是查阅了一下资料发现当时的内核(Linux 4.12)并不支持AMD Vega显卡，于是打算编译内核升级到最新版本，毕竟Linux的舒适使用对博主十分重要。现在分享一下Linux Kernel的编译教程。<a id="more"></a><br><br /><b>注意：由于时间久远，博主的Linux已经升级Ubuntu 18.04，自带内核版本为Linux 4.15，所以演示平台为Ubuntu 18.04，编译的内核版本为Linux 4.18.5。另外，本文中部分图片来源网络。因为经典体系架构图现画比较麻烦。</b></p>
-</blockquote>
-<h3 id="Linux内核简介"><a href="#Linux内核简介" class="headerlink" title="Linux内核简介"></a>Linux内核简介</h3><h4 id="Linux-Kernel-Map"><a href="#Linux-Kernel-Map" class="headerlink" title="Linux Kernel Map"></a>Linux Kernel Map</h4><p><img src= "/images/loading.gif" data-lazy-src="/images/6b49439752bdd908e832187bbbfe555dcd56864e.jpg"></p>
-<h4 id="Linux-系统体系结构"><a href="#Linux-系统体系结构" class="headerlink" title="Linux 系统体系结构"></a>Linux 系统体系结构</h4><p>如下图所示，Linux体系结构，从大的方面可以分为用户空间(User Space)和内核空间(Kernel Space)两部分。</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/299f340bcfb4ac1703fdb841e613bcaf57862165.jpg"></p>
-<ul>
-<li>用户空间中包含了C库，用户的应用程序。在某些体系结构图中还包含了shell，当然shell脚本也是Linux体系中不可缺少的一部分。</li>
-<li>内核空间包括硬件平台、平台依赖代码、内核、系统调用接口。</li>
-<li>在任何一个现代操作系统中，都是分层的。为什么需要分层呢？<blockquote>
-<p>从程序员的角度分析，将linux底层和应用分开，做应用的做应用，做底层的做底层，各干各的。经济学的基本原理是，分工产生效率。<br /><br>从安全性的角度分析，是为了保护内核。现代CPU通常都实现了不同的工作模式。<br><br />以ARM为例：ARM实现了7种工作模式，不同模式下CPU可以执行的指令或者访问的寄存器不同：(1)用户模式 usr (2)系统模式 sys(3)管理模式 svc(4)快速中断 fiq(5)外部中断 irq(6)数据访问终止 abt(7)未定义指令异常。如果任何一个上层应用都可以调用寄存器，那样肯定是无法稳定执行的。而且因为出现了这个问题，出现了一个新的学科“现代操作系统”，如果大家感兴趣可以看一下“现代操作系统”相关文章或者书籍。<br /><br>以X86为例：X86实现了4个不同级别的权限，Ring0—Ring3 ;Ring0下可以执行特权指令，可以访问IO设备；Ring3则有很多的限制。如果分析一下Android的，这方面做的更加“丧心病狂”，Android所有的APK应用程序，都是在Java虚拟机上面运行，应用程序更加远离底层。<br /><br>另外，用户空间和内核空间是程序执行的两种不同状态，我们可以通过“系统调用”和“硬件中断”来完成用户空间到内核空间的转移。</p>
-</blockquote>
-</li>
-</ul>
-<h4 id="Linux-Kernel体系结构"><a href="#Linux-Kernel体系结构" class="headerlink" title="Linux Kernel体系结构"></a>Linux Kernel体系结构</h4><p>如下图所示，是Linux内核结构图。</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/97909a09aa119314a15a18235b9eb288ba7ad448.jpg"></p>
-<h5 id="SCI层（System-Call-Interface）"><a href="#SCI层（System-Call-Interface）" class="headerlink" title="SCI层（System Call Interface）"></a>SCI层（System Call Interface）</h5><p>这一层是给应用用户空间提供一套标准的系统调用函数来访问Linux。前面分析Linux体系结构的时候，介绍过任何一类现代操作系统都不会允许上层应用直接访问底层，在Linux中，内核提供了一套标准接口，上层应用就可以通过这一套标准接口来访问底层。</p>
-<h5 id="PM（Procees-Management）"><a href="#PM（Procees-Management）" class="headerlink" title="PM（Procees Management）"></a>PM（Procees Management）</h5><p>这一部分包括具体创建进程（fork、exec）,停止进程（kill、exit）,并控制他们之间的通信（signal等）。还包括进程调度，控制活动进程如何共享CPU。这一部分是Linux已经做好的，在写驱动的时候，只需要调用对应的函数即可实现这些功能，例如创建进程、进程通信等等。</p>
-<h5 id="MM（Memory-Management）"><a href="#MM（Memory-Management）" class="headerlink" title="MM（Memory Management）"></a>MM（Memory Management）</h5><p>内存管理的主要作用是控制多个进程安全的共享内存区域。</p>
-<h5 id="VFS（Virtual-File-Systems）"><a href="#VFS（Virtual-File-Systems）" class="headerlink" title="VFS（Virtual File Systems）"></a>VFS（Virtual File Systems）</h5><p>虚拟文件系统，隐藏各种文件系统的具体细节，为文件操作提供统一的接口。在Linux中“一切皆文件”，这些文件就是通过VFS来实现的。Linux提供了一个大的通用模型，使这个模型包含了所有文件系统功能的集合。如下图所示，是一个虚拟文件系统的结构图。</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/5a07b3a364feae45f4bd211f19d963e1977eff58.jpg"></p>
-<h5 id="DD（Device-Drivers）"><a href="#DD（Device-Drivers）" class="headerlink" title="DD（Device Drivers）"></a>DD（Device Drivers）</h5><p>设备驱动，Linux驱动一般分为网络设备、块设备、字符设备、杂项设备，需要我们编写的只有字符设备，杂项设备是不容易归类的一种驱动，杂项设备和字符设备有很多重合的地方。</p>
-<h5 id="PD（Physical-Devices）"><a href="#PD（Physical-Devices）" class="headerlink" title="PD（Physical Devices）"></a>PD（Physical Devices）</h5><p>这一部分提供丰富的网络协议支持。</p>
-<h3 id="Linux-Kernel源码"><a href="#Linux-Kernel源码" class="headerlink" title="Linux Kernel源码"></a>Linux Kernel源码</h3><h4 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h4><p><b><a href="http://www.kernel.org/">www.kernel.org</a></b></p>
-<h4 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h4><ul>
-<li>arch：根据cpu体系结构不同而分的代码</li>
-<li>block：部分块设备驱动程序</li>
-<li>crypto：加密，压缩，CRC校验算法</li>
-<li>documentation：内核文档</li>
-<li>drivers：设备驱动程序</li>
-<li>fs(虚拟文件系统vfs):文件系统</li>
-<li>include：内核所需的头文件，(与平台无关的头文件在include/linux中)</li>
-<li>lib：库文件代码(与平台相关的)</li>
-<li>mm：实现内存管理，与硬件体系结构无关的(与硬件体系结构相关的在arch中)</li>
-<li>net：网络协议的代码</li>
-<li>samples：一些内核编程的范例</li>
-<li>scripts：配置内核的脚本</li>
-<li>security：SElinux的模块</li>
-<li>sound：音频设备的驱动程序</li>
-<li>usr：cpio命令实现，用于制作根文件系统的命令(文件系统与内核放到一块的命令)</li>
-<li>virt：内核虚拟机</li>
-</ul>
-<h3 id="Linux-Kernel编译"><a href="#Linux-Kernel编译" class="headerlink" title="Linux Kernel编译"></a>Linux Kernel编译</h3><h4 id="下载Linux-Kernel源码并拷贝到-usr-src目录"><a href="#下载Linux-Kernel源码并拷贝到-usr-src目录" class="headerlink" title="下载Linux Kernel源码并拷贝到/usr/src目录"></a>下载Linux Kernel源码并拷贝到/usr/src目录</h4><p>输入如下命令即可</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">wget https:<span class="regexp">//</span>cdn.kernel.org<span class="regexp">/pub/</span>linux<span class="regexp">/kernel/</span>v4.x<span class="regexp">/linux-4.18.5.tar.xz &amp;&amp; cp -f linux-4.18.5.tar.xz /u</span>sr/src</span><br></pre></td></tr></table></figure>
-<h4 id="解压Linux-Kernel"><a href="#解压Linux-Kernel" class="headerlink" title="解压Linux Kernel"></a>解压Linux Kernel</h4><p>输入如下命令即可</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">cd</span> /usr/src &amp;&amp; tar -xvf linux-<span class="number">4</span>.<span class="number">18</span>.<span class="number">5</span>.tar.xz &amp;&amp; cd linux-<span class="number">4</span>.<span class="number">18</span>.<span class="number">5</span></span><br></pre></td></tr></table></figure>
-<h4 id="Ubuntu-18-04下，要执行以下命令安装软件包"><a href="#Ubuntu-18-04下，要执行以下命令安装软件包" class="headerlink" title="Ubuntu 18.04下，要执行以下命令安装软件包"></a>Ubuntu 18.04下，要执行以下命令安装软件包</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">sudo apt <span class="keyword">install</span> fortune</span><br></pre></td></tr></table></figure>
-<h4 id="配置编译参数"><a href="#配置编译参数" class="headerlink" title="配置编译参数"></a>配置编译参数</h4><p>执行以下命令，会弹出一个带有GUI的配置界面，一般情况下默认参数就好，光标移动到Save保存即可，如图：</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">make menuconfig</span></span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/bc6c5ce369b72802e5c97d5a38ef3b2b50ad6455.jpg"></p>
-<h4 id="编译内核"><a href="#编译内核" class="headerlink" title="编译内核"></a>编译内核</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">make</span> -j<span class="number">12</span></span><br></pre></td></tr></table></figure>
-<p><b>注意：-j参数后面加本机CPU线程数可以加快编译速度，博主的8700K是6核心12线程，所以-j12。</b></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/39a28f2943c8062679567b03687c28c54354b5c9.jpg"></p>
-<h4 id="安装内核"><a href="#安装内核" class="headerlink" title="安装内核"></a>安装内核</h4><figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line"><span class="built_in">make</span> modules_install</span><br><span class="line"><span class="built_in">make</span> install</span><br></pre></td></tr></table></figure>
-<h4 id="更新grub引导"><a href="#更新grub引导" class="headerlink" title="更新grub引导"></a>更新grub引导</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">update</span>-grub<span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p>至此升级内核成功，重启电脑。</p>
-<h4 id="确认升级是否成功"><a href="#确认升级是否成功" class="headerlink" title="确认升级是否成功"></a>确认升级是否成功</h4><p>重启后，执行如下命令查看内核版本，和编译版本相同即为成功</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">uname -r</span></span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/7de8222416d47ef89b548125c35e3b5f3238508f.jpg"></p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux_Kernel</tag>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于DRM视频播放以及sidecar和DRM共存的解决方案</title>
-    <url>/2019/12/11/about-DRM.html</url>
-    <content><![CDATA[<blockquote>
-<p>macOS Catalina 10.15发布后，不少小伙伴发现DRM视频播放出现bug。博主研究测试，得以<font color=#A52A2A >部分</font>解决。现发布播放DRM视频以及sidecar和DRM共存的解决方案。<a id="more"></a></p>
-</blockquote>
-<h1 id="目前支持Hackintosh-DRM的独显-核显DRM不可用"><a href="#目前支持Hackintosh-DRM的独显-核显DRM不可用" class="headerlink" title="目前支持Hackintosh DRM的独显(核显DRM不可用)"></a>目前支持Hackintosh DRM的独显(核显DRM不可用)</h1><p>Vega 56、Vega 64、VII、RX 5700、RX 5700 XT，可以使用完整DRM。<font color=#A52A2A >本文前提是使用以上显卡的任意一款</font></p>
-<h1 id="播放DRM视频的解决方案"><a href="#播放DRM视频的解决方案" class="headerlink" title="播放DRM视频的解决方案"></a>播放DRM视频的解决方案</h1><h2 id="无核显用户"><a href="#无核显用户" class="headerlink" title="无核显用户"></a>无核显用户</h2><p>无核显用户只需要把smbios设置为iMac Pro 1,1即可。</p>
-<h2 id="有核显用户"><a href="#有核显用户" class="headerlink" title="有核显用户"></a>有核显用户</h2><ul>
-<li>Lilu使用v1.4.1版本(<a href="https://github.com/acidanthera/Lilu)%EF%BC%8C">https://github.com/acidanthera/Lilu)，</a> 目前需要手动编译。</li>
-<li>Whatevergreen使用v1.3.6版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)，目前需要手动编译。</li>
-<li>boot-args加入shikigva=80。</li>
-<li>重启。</li>
-</ul>
-<h1 id="sidecar和DRM共存的解决方案"><a href="#sidecar和DRM共存的解决方案" class="headerlink" title="sidecar和DRM共存的解决方案"></a>sidecar和DRM共存的解决方案</h1><blockquote>
-<p>前提：intel酷睿 6、7、8、9代带有核显的CPU+目前支持Hackintosh DRM的独显(上文有写)。本文以<font color=#A52A2A >9900K+5700XT</font>为例。</p>
-</blockquote>
-<ul>
-<li>BIOS开启核显并设置DVMT为128M，主显卡为独显。</li>
-<li>SMBIOS设置为iMac 19,1。</li>
-<li>注入如下缓冲帧信息。<br>  <img src= "/images/loading.gif" data-lazy-src="/images/DRM-1.png"></li>
-<li>Lilu使用v1.4.1版本(<a href="https://github.com/acidanthera/Lilu)%EF%BC%8C%E7%9B%AE%E5%89%8D%E9%9C%80%E8%A6%81%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91%E3%80%82">https://github.com/acidanthera/Lilu)，目前需要手动编译。</a></li>
-<li>Whatevergreen使用v1.3.6版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)，目前需要手动编译。</li>
-<li>boot-args加入shikigva=80。</li>
-<li>重启。</li>
-</ul>
-<h1 id="至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。"><a href="#至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。" class="headerlink" title="至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。"></a><font color=#A52A2A >至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。</font></h1>]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ThinkPad S1 2018 Hackintosh记录+教程+完整EFI分享</title>
     <url>/2018/09/01/ThinkPad_Hackintosh_2018.html</url>
     <content><![CDATA[<blockquote>
@@ -788,6 +754,40 @@
       </tags>
   </entry>
   <entry>
+    <title>关于DRM视频播放以及sidecar和DRM共存的解决方案</title>
+    <url>/2019/12/11/about-DRM.html</url>
+    <content><![CDATA[<blockquote>
+<p>macOS Catalina 10.15发布后，不少小伙伴发现DRM视频播放出现bug。博主研究测试，得以<font color=#A52A2A >部分</font>解决。现发布播放DRM视频以及sidecar和DRM共存的解决方案。<a id="more"></a></p>
+</blockquote>
+<h1 id="目前支持Hackintosh-DRM的独显-核显DRM不可用"><a href="#目前支持Hackintosh-DRM的独显-核显DRM不可用" class="headerlink" title="目前支持Hackintosh DRM的独显(核显DRM不可用)"></a>目前支持Hackintosh DRM的独显(核显DRM不可用)</h1><p>Vega 56、Vega 64、VII、RX 5700、RX 5700 XT，可以使用完整DRM。<font color=#A52A2A >本文前提是使用以上显卡的任意一款</font></p>
+<h1 id="播放DRM视频的解决方案"><a href="#播放DRM视频的解决方案" class="headerlink" title="播放DRM视频的解决方案"></a>播放DRM视频的解决方案</h1><h2 id="无核显用户"><a href="#无核显用户" class="headerlink" title="无核显用户"></a>无核显用户</h2><p>无核显用户只需要把smbios设置为iMac Pro 1,1即可。</p>
+<h2 id="有核显用户"><a href="#有核显用户" class="headerlink" title="有核显用户"></a>有核显用户</h2><ul>
+<li>Lilu使用v1.4.1版本(<a href="https://github.com/acidanthera/Lilu)%EF%BC%8C">https://github.com/acidanthera/Lilu)，</a> 目前需要手动编译。</li>
+<li>Whatevergreen使用v1.3.6版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)，目前需要手动编译。</li>
+<li>boot-args加入shikigva=80。</li>
+<li>重启。</li>
+</ul>
+<h1 id="sidecar和DRM共存的解决方案"><a href="#sidecar和DRM共存的解决方案" class="headerlink" title="sidecar和DRM共存的解决方案"></a>sidecar和DRM共存的解决方案</h1><blockquote>
+<p>前提：intel酷睿 6、7、8、9代带有核显的CPU+目前支持Hackintosh DRM的独显(上文有写)。本文以<font color=#A52A2A >9900K+5700XT</font>为例。</p>
+</blockquote>
+<ul>
+<li>BIOS开启核显并设置DVMT为128M，主显卡为独显。</li>
+<li>SMBIOS设置为iMac 19,1。</li>
+<li>注入如下缓冲帧信息。<br>  <img src= "/images/loading.gif" data-lazy-src="/images/DRM-1.png"></li>
+<li>Lilu使用v1.4.1版本(<a href="https://github.com/acidanthera/Lilu)%EF%BC%8C%E7%9B%AE%E5%89%8D%E9%9C%80%E8%A6%81%E6%89%8B%E5%8A%A8%E7%BC%96%E8%AF%91%E3%80%82">https://github.com/acidanthera/Lilu)，目前需要手动编译。</a></li>
+<li>Whatevergreen使用v1.3.6版本(<a href="https://github.com/acidanthera/WhateverGreen">https://github.com/acidanthera/WhateverGreen</a> 或 <a href="https://github.com/bugprogrammer/WhateverGreen">https://github.com/bugprogrammer/WhateverGreen</a> 均可)，目前需要手动编译。</li>
+<li>boot-args加入shikigva=80。</li>
+<li>重启。</li>
+</ul>
+<h1 id="至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。"><a href="#至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。" class="headerlink" title="至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。"></a><font color=#A52A2A >至此，在配置支持的前提下，sidecar和DRM可以共存。核显硬解以及独显DRM均完美。</font></h1>]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于macOS 10.14.4 18E2034镜像的说明</title>
     <url>/2019/03/27/about-macos-10.14.4-18E2034.html</url>
     <content><![CDATA[<blockquote>
@@ -815,8 +815,50 @@
         <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>Hackintosh</tag>
         <tag>macOS</tag>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OpenWrt获取IPv6详细教程</title>
+    <url>/2021/05/06/about-openwrt-ipv6.html</url>
+    <content><![CDATA[<blockquote>
+<p>前几天博主无意间登录光猫发现已经有了IPv6地址并且可以访问ipv6网站，但是自用的openwrt路由器却无法获取到IPv6地址，查阅资料发现大量资料已经过时，博主现在分享自己的解决方案。</p>
+</blockquote>
+<h1 id="编译支持IPv6的OpenWrt固件"><a href="#编译支持IPv6的OpenWrt固件" class="headerlink" title="编译支持IPv6的OpenWrt固件"></a>编译支持IPv6的OpenWrt固件</h1><blockquote>
+<p>博主用的是Lean的openwrt源码编译，GitHub地址如下：<a href="https://github.com/coolsnowwolf/lede%E3%80%82">https://github.com/coolsnowwolf/lede。</a> 具体编译教程原作者写得十分清楚，博主只讲关于IPv6的配置参数。</p>
+</blockquote>
+<h2 id="make-menuconfig配置-IPv6相关"><a href="#make-menuconfig配置-IPv6相关" class="headerlink" title="make menuconfig配置(IPv6相关)"></a>make menuconfig配置(IPv6相关)</h2><ul>
+<li>Extra Packages-&gt;ipv6helper选中</li>
+<li>Network-&gt;odhcp6c选中</li>
+<li>Network-&gt;odhcpd-ipv6only选中</li>
+</ul>
+<blockquote>
+<p>以上3项做完后即可按照原作者教程编译固件。</p>
+</blockquote>
+<h1 id="OpenWrt设置"><a href="#OpenWrt设置" class="headerlink" title="OpenWrt设置"></a>OpenWrt设置</h1><ul>
+<li>找到网络-&gt;DHCP/DNS-&gt;高级设置-&gt;禁止解析 IPv6 DNS 记录，把默认带的打勾去掉(没错，OpenWrt的脑残默认设置，不解析IPv6！！！)</li>
+</ul>
+<blockquote>
+<p>经过以上的编译以及设置，需要我们做的已经全部完成，正常情况下你已经可以享受IPv6了，什么？能获取到IPv6地址但不能上网？别急，往下看！！！</p>
+</blockquote>
+<h1 id="可以获取到IPv6地址但是不能上网的解决方案-重点"><a href="#可以获取到IPv6地址但是不能上网的解决方案-重点" class="headerlink" title="可以获取到IPv6地址但是不能上网的解决方案(重点)"></a>可以获取到IPv6地址但是不能上网的解决方案(重点)</h1><ul>
+<li>给运营商打电话，让客服把光猫改成桥接，要来PPPoE用户名以及密码，路由器端拨号。(没错，就这么简单)</li>
+</ul>
+<blockquote>
+<p>至此，你已经可以完美享受IPv6了。</p>
+</blockquote>
+<h1 id="放上两个IPv6的测试网站，用来测试IPv6情况"><a href="#放上两个IPv6的测试网站，用来测试IPv6情况" class="headerlink" title="放上两个IPv6的测试网站，用来测试IPv6情况"></a>放上两个IPv6的测试网站，用来测试IPv6情况</h1><ul>
+<li><a href="https://v6t.ipip.net/">https://v6t.ipip.net/</a></li>
+<li><a href="https://www.test-ipv6.com/">https://www.test-ipv6.com/</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>OpenWrt</category>
+      </categories>
+      <tags>
+        <tag>OpenWrt</tag>
+        <tag>ipv6</tag>
       </tags>
   </entry>
   <entry>
@@ -843,6 +885,441 @@
         <tag>Hackintosh</tag>
         <tag>macOS Catalina 10.15</tag>
         <tag>sidecar</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>21个版本的Windows/macOS共存的系统博物馆</title>
+    <url>/2026/05/28/all-in-one-os.html</url>
+    <content><![CDATA[<blockquote>
+<p>macOS 26 是 Intel Mac 可以使用的最后一个 macOS 版本，在即将到来的 WWDC 2026 上，Apple 将发布 macOS 27，届时将仅支持 Apple Silicon Macs。在黑苹果即将成为历史的时刻，笔者在一台配备了 4K 显示器的 ivy bridge 计算机上以物理机的形式安装并运行了包括 Windows XP-Windows11 的所有 Windows 操作系统版本以及所有支持 4K 60hz hidpi 的 intel macOS 操作系统版本。</p>
+</blockquote>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BD%91%E6%A0%BC.jpg"></p>
+<h1 id="B站演示视频"><a href="#B站演示视频" class="headerlink" title="B站演示视频"></a>B站演示视频</h1><p><a href="https://www.bilibili.com/video/BV1QkGX6qE9q">在一台 ivy bridge 计算机上安装 20 个操作系统版本 (内录 4K Retina 呈现，推荐电脑全屏观看)_哔哩哔哩_bilibili</a></p>
+<h1 id="配置清单"><a href="#配置清单" class="headerlink" title="配置清单"></a>配置清单</h1><ul>
+<li><p>主板： 华硕 P8Z77M-Pro</p>
+</li>
+<li><p>CPU： i7-3770</p>
+</li>
+<li><p>内存： 16g ddr3 1600mhz</p>
+</li>
+<li><p>显卡： Nvidia GTX770</p>
+</li>
+<li><p>SSD1：三星 870evo SATA 256g</p>
+</li>
+<li><p>SSD2：三星 870evo SATA 2T</p>
+</li>
+<li><p>无线网卡 1：Fenvi-T919</p>
+</li>
+<li><p>无线网卡 2：BCM94331CSAX</p>
+</li>
+<li><p>显示器：Dell S2725QS 4K</p>
+</li>
+<li><p>机箱：乔思伯 D32 Pro Mesh 版</p>
+</li>
+<li><p>操作系统：Windows XP-Windows11</p>
+</li>
+<li><p>操作系统：OS X Mountain Lion-macOS Tahoe</p>
+</li>
+</ul>
+<h1 id="为何选择这套配置"><a href="#为何选择这套配置" class="headerlink" title="为何选择这套配置"></a>为何选择这套配置</h1><h2 id="主板-CPU"><a href="#主板-CPU" class="headerlink" title="主板 + CPU"></a>主板 + CPU</h2><blockquote>
+<p>要同时兼容如此多的操作系统，首先要考虑一个特殊的 Windows 版本，即 Windows Vista。Windows Vista 最新原生支持的平台是 ivy bridge。Haswell 可以安装 XP 却无法稳定运行 Vista，Haswell 下的 Vista 会随机报错。所以要全面兼容 winxp-win11 以及 OS X 10.8-macOS 26，可以选择的最新平台就是 ivy bridge。黑苹果方面，ivy bridge 原生支持 OS X 10.7-macOS 11。macOS 12-macOS 26 可以用 oclp 搞定。因为黑苹果需求，AMD 处理器也不建议选择。</p>
+</blockquote>
+<h2 id="显卡"><a href="#显卡" class="headerlink" title="显卡"></a>显卡</h2><blockquote>
+<p>根据 Dortania 的 OpenCore 文档，Kepler 架构的 Nvidia 显卡可以原生支持 OS X 10.8-macOS 11，更新版本用 oclp 搞定。Kepler 也完美支持 XP-Win11。文档中还提到 AMD 的 HD 7000 系列和 HD 8000 系列可以原生支持 OS X 10.8-macOS 12，但笔者亲测，HD 7750 在 OS X 10.8.5 下，无法进入桌面，仅显示白屏 + 鼠标指针。网络上有遇到同样问题的。链接如下：<a href="https://www.insanelymac.com/forum/topic/290733-hd-7950-doesnt-work-on-mac-os-x-1084/">https://www.insanelymac.com/forum/topic/290733-hd-7950-doesnt-work-on-mac-os-x-1084/</a> 。</p>
+</blockquote>
+<h2 id="无线网卡-蓝牙"><a href="#无线网卡-蓝牙" class="headerlink" title="无线网卡 + 蓝牙"></a>无线网卡 + 蓝牙</h2><blockquote>
+<p>根据 Dortania 的 OpenCore 文档，Fenvi-T919 是很好的黑苹果无线网卡，无线 + 蓝牙原生免驱，Windows 下 win7-win11 也没问题。XP/Vista 的 wifi / 蓝牙也不重要了。但是要注意 Fenvi-T919 在 10.8 下有严重 bug。重启只能进入 10.9 (或关机) 再切换其他系统，否则其他系统 wifi 会失效 (包括 Windows)，所以需要一张单独用于 10.8 的无线网卡并在 10.8 下屏蔽 Fenvi-T919，笔者选择的 bcm94331csax，很便宜，10.8 下完美免驱。这张卡我们不插蓝牙线，形成双无线网卡 + 单蓝牙架构，BCM94331CSAX 的 wifi 还可以在 XP 下用。后文会详解如何使用 SSDT 根据系统版本屏蔽多余无线网卡，实现 OS X 10.8 下使用 单蓝牙架构，BCM94331CSAX，OS X 10.9-macOS 26 下使用 Fenvi-T919。</p>
+</blockquote>
+<h1 id="黑苹果完美程度-未测试需要-Apple-ID-的功能"><a href="#黑苹果完美程度-未测试需要-Apple-ID-的功能" class="headerlink" title="黑苹果完美程度 (未测试需要 Apple ID 的功能)"></a>黑苹果完美程度 (未测试需要 Apple ID 的功能)</h1><h2 id="正常工作"><a href="#正常工作" class="headerlink" title="正常工作"></a>正常工作</h2><ul>
+<li><p>声卡</p>
+</li>
+<li><p>核显</p>
+</li>
+<li><p>独显</p>
+</li>
+<li><p>4K hidpi显示</p>
+</li>
+<li><p>有线网卡</p>
+</li>
+<li><p>WiFi</p>
+</li>
+<li><p>蓝牙</p>
+</li>
+<li><p>睡眠</p>
+</li>
+<li><p>唤醒</p>
+</li>
+<li><p>USB</p>
+</li>
+<li><p>变频</p>
+</li>
+<li><p>AppleVTD</p>
+</li>
+<li><p>CFG Lock解锁 </p>
+</li>
+</ul>
+<h2 id="bug"><a href="#bug" class="headerlink" title="bug"></a>bug</h2><ul>
+<li><del>在 10.8 下切换系统，必须先切换到 10.9 (或关机) 再切换到其他系统，否则其他系统搜不到 WIFI 信号 (包括 Windows)，10.8 系统会把华硕 BE86U 的 5Ghz WiFi 识别成企业级无法使用，连接 2.4Ghz WIFI 正常。</del>   已修复。</li>
+<li>10.8 系统较老，不识别 WPA2/WPA3-Personal 协议。设置一个使用 WPA2 协议的 SSID 专供老系统使用即可。</li>
+</ul>
+<h1 id="这台多系统博物馆计算机的可用性"><a href="#这台多系统博物馆计算机的可用性" class="headerlink" title="这台多系统博物馆计算机的可用性"></a>这台多系统博物馆计算机的可用性</h1><blockquote>
+<p>不考虑生产力，只作为玩具，考虑系统级流畅度的情况下。winxp-win11 以及 OS X 10.8-macOS 12 都是高度可用的，非常流畅。macOS 13-macOS 26 流畅度显著下降，不支持 AVX 2.0 指令集是一个无法逾越的鸿沟。</p>
+</blockquote>
+<h1 id="构建重点"><a href="#构建重点" class="headerlink" title="构建重点"></a>构建重点</h1><h2 id="BIOS-设置"><a href="#BIOS-设置" class="headerlink" title="BIOS 设置"></a>BIOS 设置</h2><h3 id="处理器设置"><a href="#处理器设置" class="headerlink" title="处理器设置"></a>处理器设置</h3><ul>
+<li>VT-d-&gt; 开启 (笔者的主板 BIOS 没有此选项，但默认开启了)</li>
+</ul>
+<h3 id="显卡设置"><a href="#显卡设置" class="headerlink" title="显卡设置"></a>显卡设置</h3><ul>
+<li><p>首选显卡 -&gt; PCIE</p>
+</li>
+<li><p>iGPU 内存 -&gt; 128M</p>
+</li>
+<li><p>初始化 IGPU -&gt; 开启</p>
+</li>
+</ul>
+<h3 id="USB-设置"><a href="#USB-设置" class="headerlink" title="USB 设置"></a>USB 设置</h3><ul>
+<li><p>Intel USB 2.0 EHCI Controller -&gt; 开启</p>
+</li>
+<li><p>Legacy USB 支持 -&gt; 开启</p>
+</li>
+<li><p>Legacy USB 3.0 支持 -&gt; 开启</p>
+</li>
+<li><p>Intel xHCI 模式 -&gt; 自动 (开启会导致 xp/vista 的 USB 3.0 失效)</p>
+</li>
+<li><p>EHCI Hand-off -&gt; 开启</p>
+</li>
+</ul>
+<h3 id="CSM"><a href="#CSM" class="headerlink" title="CSM"></a>CSM</h3><ul>
+<li>启动设备控制 -&gt; UEFI 与 Legacy</li>
+</ul>
+<h3 id="安全启动"><a href="#安全启动" class="headerlink" title="安全启动"></a>安全启动</h3><ul>
+<li>操作系统类型 -&gt; 其他操作系统</li>
+</ul>
+<h2 id="Bootloader-选择"><a href="#Bootloader-选择" class="headerlink" title="Bootloader 选择"></a>Bootloader 选择</h2><ul>
+<li><p><del>OpenCore 用于引导黑苹果以及 refind</del></p>
+<ul>
+<li><p><del>OpenCore 添加 refind 启动项</del></p>
+<p><del>Misc-&gt;BlessOverride 下加入条目 \EFI\EFI\refind\refind_x64.efi 即可</del></p>
+</li>
+<li><p><del>refind 用于引导 mbr 分区表上的 Windows XP</del></p>
+<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- timeout -1 #隐藏refind ui，直接进入目标系统</span></span><br><span class="line"><span class="deletion">- scanfor manual hdbios #仅搜索传统bios引导项</span></span><br><span class="line"><span class="deletion">- dont_scan_volumes &quot;2TB&quot; #删除不需要的引导项，禁止扫描指定硬盘(引号里添加引导项名称的子集)</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>OpenCore 用于引导 OS X 10.8-macOS 26 以及 OpenShell 工具</p>
+<ul>
+<li><p>将仓库中的 .contentVisibility 文件拷贝到 vista/win7 的 EFI/Microsoft/Boot 目录中以在 OC 选择菜单中隐藏 vista/win7。</p>
+</li>
+<li><p>将仓库中的 .contentDetails 文件拷贝到 win8-win11 的 EFI/Microsoft/Boot 目录中，并且修改其内容，如 Windows 8，即可自定义 OC 选择菜单中 Windows 系统名称。</p>
+</li>
+<li><p>将仓库中的 .contentFlavour 文件拷贝到 win8-win11 的 EFI/Microsoft/Boot 目录中，并且修改其内容，如 Windows8:Windows，即可自定义 OC 选择菜单中 Windows 系统的图标，假定系统图标名为 Windows8.icns。</p>
+</li>
+</ul>
+</li>
+<li><p>xorboot 用于引导 Legacy 系统 (vista,win7)、refind (启动 xp) 以及 OpenShell 工具</p>
+<ul>
+<li><p>xorboot 的安装使用极其简单，完全 GUI 配置，0 代码，添加 vista 和 win7 的 bootmgfw.efi 文件、refind 的 refind_x64.efi 文件以及 OpenShell.efi 工具条目即可。</p>
+</li>
+<li><p>refind.conf 重要设置</p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">timeout</span> <span class="number">-1</span> <span class="comment">#隐藏refind ui，直接进入目标系统</span></span><br><span class="line">scanfor manual hdbios <span class="comment">#仅搜索传统bios引导项以及手动设置项</span></span><br><span class="line">dont_scan_volumes <span class="string">&quot;2TB&quot;</span> <span class="comment">#删除不需要的引导项，禁止扫描指定硬盘(引号里添加引导项名称的子集)</span></span><br><span class="line">uefi_deep_legacy_scan <span class="number">1</span> <span class="comment">#建议设置，否则可能找不到xp系统</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>OpenShell 工具及其重要，后面讲。</p>
+</li>
+</ul>
+<h2 id="时间同步"><a href="#时间同步" class="headerlink" title="时间同步"></a>时间同步</h2><ul>
+<li>在 Windows 下导入仓库中的 WinUTCOn.reg 文件，重启即可解决 Windows 时间不对的问题。</li>
+</ul>
+<h2 id="核显驱动"><a href="#核显驱动" class="headerlink" title="核显驱动"></a>核显驱动</h2><ul>
+<li><p>加入 Whatevergreen.kext</p>
+</li>
+<li><p>按照下图注入 igpu 信息即可，设备地址用 Hackintool 获取</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/igpu.jpg"></p>
+</li>
+</ul>
+<h2 id="声卡驱动"><a href="#声卡驱动" class="headerlink" title="声卡驱动"></a>声卡驱动</h2><ul>
+<li><p>10.8</p>
+<blockquote>
+<p>华硕的 P8Z77M-Pro 主板的声卡是 ALC892，AppleALC 对于此声卡的支持起始于 10.9，笔者自行修改编译了支持 ALC892 声卡在 10.8 下使用的 AppleALC，在 EFI 里，直接用即可。(已经向原作者提交了 pr，希望能够合并到主分支，链接如下：<a href="https://github.com/acidanthera/AppleALC/pull/947">https://github.com/acidanthera/AppleALC/pull/947</a>)</p>
+<hr>
+<p>2026.5.24 更新：原作者已将 pr 合并到主分支，直接下载最新的官方 AppleALC 即可。</p>
+</blockquote>
+</li>
+<li><p>加入 AppleALC.kext</p>
+<p>按照下图注入 HDA 信息即可，设备地址用 Hackintool 获取</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/hda.jpg"></p>
+</li>
+</ul>
+<h2 id="有线网卡驱动"><a href="#有线网卡驱动" class="headerlink" title="有线网卡驱动"></a>有线网卡驱动</h2><ul>
+<li>按照如下版本要求加入 RealtekRTL8111.kext 即可<ul>
+<li>OS X 10.8-OS X 10.10 -&gt; v1.2.3</li>
+<li>OS X 10.11-macOS 10.14 -&gt; v2.2.1</li>
+<li>macOS 10.15-macOS 26 -&gt; v3.0.4<br><img src= "/images/loading.gif" data-lazy-src="/images/lan.jpg">  </li>
+</ul>
+</li>
+</ul>
+<h2 id="独显驱动"><a href="#独显驱动" class="headerlink" title="独显驱动"></a>独显驱动</h2><ul>
+<li>加入 Whatevergreen.kext。无需任何其他配置。</li>
+</ul>
+<h2 id="电源管理"><a href="#电源管理" class="headerlink" title="电源管理"></a>电源管理</h2><h3 id="通用修复"><a href="#通用修复" class="headerlink" title="通用修复"></a>通用修复</h3><ul>
+<li><p>按照下图启用如下补丁</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/pm2.jpg"></p>
+</li>
+<li><p>运行仓库中的 ssdtPRGen.sh 生成 SSDT，重命名为 SSDT-PM.aml，加入到 OC 的 ACPI 文件夹并在 config 中启用。</p>
+</li>
+<li><p>禁用刚才启用的补丁</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/pm1.jpg"></p>
+</li>
+</ul>
+<h3 id="macOS-13-及以上版本额外添加"><a href="#macOS-13-及以上版本额外添加" class="headerlink" title="macOS 13 及以上版本额外添加"></a>macOS 13 及以上版本额外添加</h3><blockquote>
+<p>macOS 13 起，Apple 移除了 AppleIntelCPUPowerManagement，所以 ivy bridge 平台需要自行加入以下 Kexts 以恢复电源管理。</p>
+</blockquote>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/pm3.jpg"></p>
+<h2 id="AppleVTD"><a href="#AppleVTD" class="headerlink" title="AppleVTD"></a>AppleVTD</h2><blockquote>
+<p>在新系统上 (如 macOS 13)，Intel VT-d 的开启变得非常重要，如不开启，可能导致网卡失效。雷电设备也和 VT-d 高度相关，下面是开启教程。</p>
+</blockquote>
+<ul>
+<li><p>在 BIOS 中开启 vt-d 选项</p>
+</li>
+<li><p>在 OC 的 Kernel-&gt;Patch 中禁用 DisableIoMapper 选项并重启</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd1.jpg"></p>
+</li>
+<li><p>用 MaciASL 导出 DMAR 表并另存为 dsl 格式</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd2.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd3.jpg"></p>
+</li>
+<li><p>打开 dsl 文件。删除所有 [Reserved Memory Region] 区域并另存为 SSDT-DMAR，格式选择 aml</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd4.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd5.jpg"></p>
+</li>
+<li><p>将 SSDT-DMAR.aml 放入 OC 的 ACPI 文件夹中并在 config 中启用</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd6.jpg"></p>
+</li>
+<li><p>在 OC 的 config 中，找到 ACPI-&gt;Delete，加入如下条目以阻止原生 DMAR 表载入</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd7.jpg"></p>
+</li>
+<li><p>重启，打开 ioreg 工具，如图则为 AppleVTD 加载成功</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd8.jpg"></p>
+</li>
+</ul>
+<h2 id="OS-X-10-8-下实现-4K-60hz-Hidpi"><a href="#OS-X-10-8-下实现-4K-60hz-Hidpi" class="headerlink" title="OS X 10.8 下实现 4K 60hz Hidpi"></a>OS X 10.8 下实现 4K 60hz Hidpi</h2><blockquote>
+<p>首先 Mac 系统是在 10.9.3 开始正式支持的 4K 60hz hidpi，10.7 和 10.8 只支持低分辨率的 Retina，但是物理分辨率无法输出 4K，因为当时的白苹果配备的显卡也没有支持 4K 输出的，黑苹果可用显卡要输出 4K，最早的是 Nvidia GTX 600 系列，而 600 系列支持的最初版 Mac 系统是 10.8，故而想要实现 4K 60hz hidpi，最起码需要 10.8 系统起步，显卡支持 4K 输出是最基本的前提要求。因为 10.8 没有原生支持 4K 输出，所以要通过第三方方案实现 4K 60hz hidpi。</p>
+</blockquote>
+<h3 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h3><blockquote>
+<p>由于笔者的 GTX 770 在 10.8 下最高只能识别 2K 分辨率，所以要先解决 4K 输出，再通过命令开启 hidpi，具体方案如下。</p>
+</blockquote>
+<ul>
+<li><p>安装 Nvidia webdriver，仓库里已经提供。</p>
+</li>
+<li><p>在 OpenCore 的 NVRAM-&gt;Add-&gt;7C436110-AB2A-4BBB-A880-FE41995C9F82-&gt;boot-args 下添加 nvda_drv=1，重启。至此已经实现 10.8 下的 4K 输出。</p>
+</li>
+<li><p>输入如下命令并重启开启 10.8 下的 hidpi</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool YES</span><br></pre></td></tr></table></figure></li>
+<li><p>设置 -&gt; 显示器里面有两个 1080p，一个一个测试，有一个是 hidpi (因为毕竟是第三方方案，多少有点 bug，所幸效果非常完美)。</p>
+</li>
+</ul>
+<h4 id="至此，您已经成功的在-10-8-下实现了-4K-60hz-hidpi。"><a href="#至此，您已经成功的在-10-8-下实现了-4K-60hz-hidpi。" class="headerlink" title="至此，您已经成功的在 10.8 下实现了 4K 60hz hidpi。"></a>至此，您已经成功的在 10.8 下实现了 4K 60hz hidpi。</h4><h2 id="关于-macOS-12-macOS-26"><a href="#关于-macOS-12-macOS-26" class="headerlink" title="关于 macOS 12-macOS 26"></a>关于 macOS 12-macOS 26</h2><blockquote>
+<p>这一套硬件配置原生支持截止到 macOS 11，macOS 12 缺失了 Intel hd 4000 以及 Nvidia GTX 770 的驱动。macOS 13 在前者的基础上，缺失了 AVX2 指令集，macOS 14 和 macOS 15 在前者基础上缺失了博通的网卡驱动，macOS 26 在前者的基础上缺失了 AppleHDA，本章我们解决这些问题。</p>
+</blockquote>
+<ul>
+<li><p>在 OC 的 NVRAM 下设置如下 boot-args (macOS 26 必须加入 - amfipassbeta)</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/oclp1.jpg"></p>
+</li>
+<li><p>在 OC 的 NVRAM 下设置如下条目以关闭 SIP</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/oclp2.jpg"></p>
+</li>
+<li><p>在 OC 的 Misc 下关闭安全启动</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/oclp3.jpg"></p>
+</li>
+<li><p>按照下图加入 Kexts 并在 config 中根据系统版本启用 (注意顺序)</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/oclp4.jpg"></p>
+</li>
+<li><p>按照下图根据系统版本禁用内置 kext</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/oclp5.jpg"></p>
+</li>
+<li><p>重启</p>
+</li>
+<li><p>使用 oclp 打补丁并重启 (macOS 26 必须用 oclp 3.0.0 RC 版本)</p>
+</li>
+</ul>
+<blockquote>
+<p>至此，您的 macOS 12-macOS 26 系统已完全正常</p>
+</blockquote>
+<h2 id="SMBIOS-选择"><a href="#SMBIOS-选择" class="headerlink" title="SMBIOS 选择"></a>SMBIOS 选择</h2><h3 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h3><p>请选择系统版本支持的SMBIOS</p>
+<h3 id="安装完成"><a href="#安装完成" class="headerlink" title="安装完成"></a>安装完成</h3><ul>
+<li><p>设置 SMBIOS 为 iMac13,2</p>
+</li>
+<li><p>在 OpenCore 下加入如图补丁以跳过 board-id 检查 (EFI 文件夹里有完整的 config.plist 文件)</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/Skip%20Board%20ID%20check.jpg"></p>
+</li>
+</ul>
+<h1 id="2025-11-15-更新"><a href="#2025-11-15-更新" class="headerlink" title="2025.11.15 更新"></a>2025.11.15 更新</h1><ul>
+<li><p>删除 refind 无用文件夹，修复 refind 进入极慢的 bug (B 站视频已经更新)</p>
+</li>
+<li><p>修复 OS X 10.9 启动无 logo，直到登录界面才亮屏的 bug (B 站视频已经更新)</p>
+</li>
+</ul>
+<h1 id="2026-5-24更新"><a href="#2026-5-24更新" class="headerlink" title="2026.5.24更新"></a>2026.5.24更新</h1><h2 id="使用第三方-OC-主题，提升美观程度"><a href="#使用第三方-OC-主题，提升美观程度" class="headerlink" title="使用第三方 OC 主题，提升美观程度"></a>使用第三方 OC 主题，提升美观程度</h2><ul>
+<li>见EFI</li>
+</ul>
+<h2 id="解决-10-8-必须切换到-10-9-或关机-，再切换其他系统，否则其他系统-wifi-失效的问题"><a href="#解决-10-8-必须切换到-10-9-或关机-，再切换其他系统，否则其他系统-wifi-失效的问题" class="headerlink" title="解决 10.8 必须切换到 10.9 (或关机)，再切换其他系统，否则其他系统 wifi 失效的问题"></a>解决 10.8 必须切换到 10.9 (或关机)，再切换其他系统，否则其他系统 wifi 失效的问题</h2><blockquote>
+<p>这个问题的成因是 OS X 10.8 的 94630 驱动自身有 bug，不完美，据说当年的 iMac 在 10.8 上用过 94360，镜像是定制的，我没下载到。于是我添加了一张 BCM94331CSAX 专门用于 OS X 10.8。</p>
+</blockquote>
+<ul>
+<li><p>添加一张 BCM94331CSAX 网卡，不插蓝牙线，这张卡的 wifi，将用于 OS X 10.8 和 XP (XP 没有 96360 的驱动)。蓝牙方面，所有系统用 Fenvi-T919 的蓝牙，即双无线网卡 + 单蓝牙架构</p>
+</li>
+<li><p>在 OC 的 Kernel Patch 下添加如下条目以实现 macOS 版本区分 (10.8-&gt;Darw12，其他-&gt;Darwin)</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/Change%20_OSI%20from%20Darwin%20to%20Darw12.jpg"></p>
+</li>
+<li><p>加入如下 SSDT 以根据系统版本禁用多余网卡 (10.8 禁用 Fenvi-T919，其他 macOS 禁用 BCM94331CSAX)，路径在 ioreg 工具中查看并在 SSDT 中修改。</p>
+<figure class="highlight x86asm"><table><tr><td class="code"><pre><span class="line">DefinitionBlock (<span class="string">&quot;&quot;</span>, <span class="string">&quot;SSDT&quot;</span>, <span class="number">2</span>, <span class="string">&quot;HACK&quot;</span>, <span class="string">&quot;WIFISEL&quot;</span>, <span class="number">0x00000000</span>)</span><br><span class="line">&#123;</span><br><span class="line">    External (_SB_<span class="number">.</span>PCI0<span class="number">.</span>PEG1, DeviceObj)</span><br><span class="line">    External (_SB_<span class="number">.</span>PCI0<span class="number">.</span>RP01<span class="number">.</span>PXSX, DeviceObj)</span><br><span class="line"></span><br><span class="line">    Scope (_SB<span class="number">.</span>PCI0<span class="number">.</span>RP01<span class="number">.</span>PXSX)</span><br><span class="line">    &#123;</span><br><span class="line">        Method (_DSM, <span class="number">4</span>, NotSerialized)  // _DSM: Device-Specific Method</span><br><span class="line">        &#123;</span><br><span class="line">            If ((Arg2 == <span class="meta">Zero</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                Return (Buffer (One)</span><br><span class="line">                &#123;</span><br><span class="line">                     <span class="number">0x03</span>                                           </span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            If (_OSI (<span class="string">&quot;Darw12&quot;</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                Return (Package (<span class="number">0x0C</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">&quot;device-id&quot;</span>, </span><br><span class="line">                    Buffer (<span class="number">0x04</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x00</span>, <span class="number">0x00</span>                           </span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">&quot;vendor-id&quot;</span>, </span><br><span class="line">                    Buffer (<span class="number">0x04</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x00</span>, <span class="number">0x00</span>                           </span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">&quot;class-code&quot;</span>, </span><br><span class="line">                    Buffer (<span class="number">0x04</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>                           </span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">&quot;compatible&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;pci14e4,ffff&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;name&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;pci14e4,ffff&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;model&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;94360 Disabled for 10.8&quot;</span></span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            Return (Package (<span class="number">0x02</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;model&quot;</span>, </span><br><span class="line">                <span class="string">&quot;BCM4360 802.11ac Wireless&quot;</span></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Scope (_SB<span class="number">.</span>PCI0<span class="number">.</span>PEG1)</span><br><span class="line">    &#123;</span><br><span class="line">        Method (_DSM, <span class="number">4</span>, NotSerialized)  // _DSM: Device-Specific Method</span><br><span class="line">        &#123;</span><br><span class="line">            If ((Arg2 == <span class="meta">Zero</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                Return (Buffer (One)</span><br><span class="line">                &#123;</span><br><span class="line">                     <span class="number">0x03</span>                                             </span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            If (_OSI (<span class="string">&quot;Darwin&quot;</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                Return (Package (<span class="number">0x0C</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">&quot;device-id&quot;</span>, </span><br><span class="line">                    Buffer (<span class="number">0x04</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x00</span>, <span class="number">0x00</span>                           </span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">&quot;vendor-id&quot;</span>, </span><br><span class="line">                    Buffer (<span class="number">0x04</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x00</span>, <span class="number">0x00</span>                           </span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">&quot;class-code&quot;</span>, </span><br><span class="line">                    Buffer (<span class="number">0x04</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>                           </span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">&quot;compatible&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;pci14e4,ffff&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;name&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;pci14e4,ffff&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;model&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;94331 Disabled for Modern OS&quot;</span></span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            Return (Package (<span class="number">0x02</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;model&quot;</span>, </span><br><span class="line">                <span class="string">&quot;BCM4331 802.11n Wireless&quot;</span></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>在 config 中启用以上 SSDT。</p>
+</li>
+<li><p>在其他需要判断 OS 类型的 SSDT 中，将 If (_OSI (“Darwin”)) 改成 If ((_OSI (“Darwin”) || _OSI (“Darw12”)))</p>
+</li>
+</ul>
+<h3 id="至此，随便切换系统，wifi-也不会失效了。"><a href="#至此，随便切换系统，wifi-也不会失效了。" class="headerlink" title="至此，随便切换系统，wifi 也不会失效了。"></a>至此，随便切换系统，wifi 也不会失效了。</h3><h2 id="解决-10-8-10-11-关于本机不显示年份的问题"><a href="#解决-10-8-10-11-关于本机不显示年份的问题" class="headerlink" title="解决 10.8-10.11 关于本机不显示年份的问题"></a>解决 10.8-10.11 关于本机不显示年份的问题</h2><blockquote>
+<p>macOS 关于本机的年份是通过 API 返回的，这些系统由于年代久远，已无法正常访问 API 网站，所以我们要手动编辑本地文件以添加年份。</p>
+</blockquote>
+<ul>
+<li><p>在正常工作的现代操作系统上运行如下命令以获取应该显示的内容 (cc=xxxx，xxxx 为所选机型序列号后四位，10.11 以及更早系统访问的 API 有语言参数，10.12 开始没有了，所以老 OS X 版本关于本机的年份是系统语言，新版是英文)</p>
+<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">curl -s &quot;https://support-sp.apple.com/sp/product?cc=DNCW&amp;lang=zh-Hans_CN&quot; | sed -n &#x27;s/.*&lt;configCode&gt;<span class="symbol">\(</span>.*<span class="symbol">\)</span>&lt;<span class="symbol">\/</span>configCode&gt;.*/<span class="symbol">\1</span>/p&#x27;</span><br></pre></td></tr></table></figure></li>
+<li><p>记录返回值，如 iMac (27 英寸，2012 年末)</p>
+</li>
+<li><p>打开 SMBIOS 年份修复文件夹中的的 plist 文件，注意系统版本，修改序列号后四位，语言，机型三个信息。修改好的类似下图，两张图分别为 10.8 的和 10.9-10.11 的</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/10.8.jpg">  </p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/10.9-10.11.jpg"></p>
+</li>
+<li><p>将改好的 plist 文件覆盖到 ~/Library/Preferences 并重启，你会发现 OS X 10.8-10.11 的关于本机年份恢复了</p>
+</li>
+</ul>
+<h2 id="解决-csm-中开启-Video-Legacy-以后，OC-选择界面分辨率极低，macOS-启动-logo-扁平，Windows-启动-logo-偏移向左上角等问题"><a href="#解决-csm-中开启-Video-Legacy-以后，OC-选择界面分辨率极低，macOS-启动-logo-扁平，Windows-启动-logo-偏移向左上角等问题" class="headerlink" title="解决 csm 中开启 Video Legacy 以后，OC 选择界面分辨率极低，macOS 启动 logo 扁平，Windows 启动 logo 偏移向左上角等问题"></a>解决 csm 中开启 Video Legacy 以后，OC 选择界面分辨率极低，macOS 启动 logo 扁平，Windows 启动 logo 偏移向左上角等问题</h2><blockquote>
+<p>众所周知，xp/vista/win7 是不能在纯 UEFI 模式下启动的，需要设置 csm 下的 video 为 legacy，这样做的代价是无法获得高清的主板 logo，Windows 启动 logo，macOS 启动 logo 以及引导器高清图标，并且 Windows 启动 logo 会偏移到左上角，macOS 启动 logo 会扁平。现在我们解决这个问题。</p>
+</blockquote>
+<blockquote>
+<p>前提：1 机器支持 UEFI    2 显卡支持 UEFI 或者刷过 vbios 以支持 UEFI</p>
+</blockquote>
+<blockquote>
+<p>核心思路：永远不要想着在纯 UEFI 下启动 xp/vista/win7。我们使用 OC 引导 win8-win11 以及 OS X 10.8-macOS 26，csm 的 video 设置为 UEFI。使用 xorboot 引导 xp/vista/win7，csm 的 video 设置为 legacy，这样自然是完美的，传统操作系统和现代操作系统各得其所。但是需要修改 bios 设置和第一启动项，很麻烦，我们要做的就是把这个修改 bios 设置和第一启动项的动作自动化。</p>
+</blockquote>
+<ul>
+<li><p>升级显卡的 GOP 模块 (如果你的显卡在纯 UEFI 下可以点亮并且可以全高清显示 OC 图标，Windows/macOS 的启动 logo 也不会偏移，扁平，则跳过此步骤。笔者的 GTX 770 开纯 UEFI 点不亮)</p>
+<ul>
+<li><p>用 GPU-Z 导出显卡 vbios</p>
+</li>
+<li><p>打开仓库中的 GOP_Updater，将 vbios 文件拖拽到 GOPupd.bat 上，按照提示升级 GOP 模块，会生成一个新的 vbios，把它重命名为 1.rom 以方便刷写</p>
+</li>
+<li><p>使用 nvflash 刷写新的 vbios，Windows 打开管理员模式的终端，输入如下命令</p>
+<blockquote>
+<p>nvflash.exe -6 1.rom</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>到主板官网下载 bios，用 set_dump GUI 打开，搜索 csm 下面 video 的偏移量，笔者的是 0x8CE，并且注意 legacy only 和 UEFI only 分别对应的数字如下图，UEFI only 0x1，legacy only 0x2</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/csm.jpg"></p>
+</li>
+<li><p>修改 BIOS 设置，将 csm 打开，启动设备控制选择 UEFI and Legacy，这样可以保证 mbr 下的 xp 系统的启动。并且把第一第二启动项分别设置为 OC 和 xorboot。</p>
+</li>
+<li><p>准备 startup.nsh 脚本，这个脚本做两件事</p>
+<ul>
+<li><p>用 setup_var 修改 csm 中的 video 选项，如</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">setup_var</span>.efi -r Setup:<span class="number">0</span>x<span class="number">8</span>CE=<span class="number">0</span>x<span class="number">02</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用重命名 efi 文件的方法，修改第一启动项为 OC 或 xorboot，完整脚本如下</p>
+<figure class="highlight livescript"><table><tr><td class="code"><pre><span class="line">@echo -<span class="literal">off</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 寻找包含我们工具包的分区</span></span><br><span class="line"><span class="keyword">for</span> %i <span class="keyword">in</span> fs0 fs1 fs2 fs3 fs4 fs5</span><br><span class="line">    <span class="keyword">if</span> exist %i:<span class="string">\EFI\tools\setup_var.efi</span> <span class="keyword">then</span></span><br><span class="line">        <span class="comment"># 锁定当前分区</span></span><br><span class="line">        %i:</span><br><span class="line">        goto FOUND</span><br><span class="line">    endif</span><br><span class="line">endfor</span><br><span class="line"></span><br><span class="line">echo <span class="string">&quot;Error: Tools partition not found.&quot;</span></span><br><span class="line">goto END</span><br><span class="line"></span><br><span class="line">:FOUND</span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断当前模式</span></span><br><span class="line"><span class="keyword">if</span> exist EFI<span class="string">\OC\OpenCore.efi</span> <span class="keyword">then</span></span><br><span class="line">   <span class="comment"># csm video切legacy</span></span><br><span class="line">   <span class="comment"># 备份OC</span></span><br><span class="line">   mv EFI<span class="string">\OC\OpenCore.efi</span> EFI<span class="string">\OC\OpenCore.efi.bak</span> &gt; nul</span><br><span class="line">   <span class="comment"># 恢复 xorboot</span></span><br><span class="line">   <span class="keyword">if</span> exist EFI<span class="string">\xorboot\xorboot.efi.bak</span> <span class="keyword">then</span></span><br><span class="line">      mv EFI<span class="string">\xorboot\xorboot.efi.bak</span> EFI<span class="string">\xorboot\xorboot.efi</span> &gt; nul</span><br><span class="line">   endif</span><br><span class="line">   <span class="comment"># 修改 BIOS 变量 (Video -&gt; Legacy)</span></span><br><span class="line">   EFI<span class="string">\tools\setup_var.efi</span> -r Setup:<span class="number">0x8CE</span>=<span class="number">0x02</span> &gt; nul</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">   <span class="comment"># csm video切uefi</span></span><br><span class="line">   <span class="comment"># 恢复OC</span></span><br><span class="line">   <span class="keyword">if</span> exist EFI<span class="string">\OC\OpenCore.efi.bak</span> <span class="keyword">then</span></span><br><span class="line">      mv EFI<span class="string">\OC\OpenCore.efi.bak</span> EFI<span class="string">\OC\OpenCore.efi</span> &gt; nul</span><br><span class="line">   endif</span><br><span class="line">   <span class="comment"># 备份xorboot</span></span><br><span class="line">   <span class="keyword">if</span> exist EFI<span class="string">\xorboot\xorboot.efi</span> <span class="keyword">then</span></span><br><span class="line">      mv EFI<span class="string">\xorboot\xorboot.efi</span> EFI<span class="string">\xorboot\xorboot.efi.bak</span> &gt; nul</span><br><span class="line">   endif</span><br><span class="line">   <span class="comment"># 修改 BIOS 变量 (Legacy -&gt; UEFI)</span></span><br><span class="line">   EFI<span class="string">\tools\setup_var.efi</span> -r Setup:<span class="number">0x8CE</span>=<span class="number">0x01</span> &gt; nul</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line">:END</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>脚本简单解释</p>
+<ul>
+<li><p>搜索存在 setup_var.efi 的分区并锁定</p>
+</li>
+<li><p>判断当前模式，如果存在 OpenCore.efi 文件，则说明当前 video 是 UEFI 模式，反之则为 legacy。</p>
+</li>
+<li><p>基于当前模式执行不同操作</p>
+<ul>
+<li><p>UEFI：将 OpenCore.efi 重命名为 OpenCore.efi.bak，将 xorboot 的 efi 文件名称还原回 xorboot.efi，相当于第一启动项改 xorboot，用 setup_var.efi 将 video 设置成 legacy，会自动重启，自然进入 legacy 模式的 xorboot，进而启动 xp/vista/7。</p>
+</li>
+<li><p>legacy：将 OpenCore.efi.bak 还原为 OpenCore.efi，将 xorboot.efi 重命名为 xorboot.efi.bak，相当于第一启动项改 OC，用 setup_var.efi 将 video 设置成 UEFI，会自动重启，自然进入 UEFI 模式的 OC，进而启动现代系统。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>将 startup.nsh 放到 EFI 分区 (和 OpenShell.efi 文件同分区) 根目录，和 EFI 文件夹同层级</p>
+</li>
+<li><p>在 OC 的 Tools 文件夹中加入 OpenShell.efi 文件并在 config 中添加此条目，参数为 -nointerrupt -noconsolein -noconsoleout</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/OpenShell.jpg"></p>
+</li>
+<li><p>在 xorboot 中加入 OpenShell 条目，参数同上</p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/xorboot1.jpg"></p>
+</li>
+</ul>
+<h3 id="至此，已完成自动化设置-bios-的第一启动项并且控制-csm-中的-video-选项，OpenShell-efi-会自动运行同分区根目录的-startup-nsh-脚本。"><a href="#至此，已完成自动化设置-bios-的第一启动项并且控制-csm-中的-video-选项，OpenShell-efi-会自动运行同分区根目录的-startup-nsh-脚本。" class="headerlink" title="至此，已完成自动化设置 bios 的第一启动项并且控制 csm 中的 video 选项，OpenShell.efi 会自动运行同分区根目录的 startup.nsh 脚本。"></a>至此，已完成自动化设置 bios 的第一启动项并且控制 csm 中的 video 选项，OpenShell.efi 会自动运行同分区根目录的 startup.nsh 脚本。</h3><h1 id="2026-5-31更新"><a href="#2026-5-31更新" class="headerlink" title="2026.5.31更新"></a>2026.5.31更新</h1><h2 id="老系统浏览器"><a href="#老系统浏览器" class="headerlink" title="老系统浏览器"></a>老系统浏览器</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><ul>
+<li>supermium(Windows XP, 2003, Vista, 7, 8 and 8.1) <a href="https://github.com/win32ss/supermium">https://github.com/win32ss/supermium</a></li>
+</ul>
+<h3 id="Mac-OS-X-OS-X-macOS"><a href="#Mac-OS-X-OS-X-macOS" class="headerlink" title="Mac OS X/OS X/macOS"></a>Mac OS X/OS X/macOS</h3><ul>
+<li>chromium-legacy(Mac OS X 10.7，OS X 10.8-10.11，macOS 10.12-10.14) <a href="https://github.com/blueboxd/chromium-legacy">https://github.com/blueboxd/chromium-legacy</a></li>
+</ul>
+<h1 id="2026-6-3-更新"><a href="#2026-6-3-更新" class="headerlink" title="2026.6.3 更新"></a>2026.6.3 更新</h1><h2 id="解锁-CFG-Lock"><a href="#解锁-CFG-Lock" class="headerlink" title="解锁 CFG Lock"></a>解锁 CFG Lock</h2><blockquote>
+<p>笔者的主板是 ASUS P8Z77M Pro，这款主板无法搜索出 CFG Lock 的偏移量，所以需要修改 BIOS 并刷入以解锁 CFG Lock，笔者在仓库中提供了解锁后的 BIOS，位于 bios 文件夹中。</p>
+</blockquote>
+<h3 id="所需设备"><a href="#所需设备" class="headerlink" title="所需设备"></a>所需设备</h3><ul>
+<li>U 盘 1 个</li>
+</ul>
+<h3 id="所需工具-位于仓库中的-bios-文件夹"><a href="#所需工具-位于仓库中的-bios-文件夹" class="headerlink" title="所需工具 (位于仓库中的 bios 文件夹)"></a>所需工具 (位于仓库中的 bios 文件夹)</h3><ul>
+<li>UEFIPatch</li>
+<li>AMIBCP</li>
+<li>UEFITool</li>
+</ul>
+<h3 id="修改-BIOS-解锁-CFG-Lock-并解锁部分隐藏选项"><a href="#修改-BIOS-解锁-CFG-Lock-并解锁部分隐藏选项" class="headerlink" title="修改 BIOS (解锁 CFG Lock 并解锁部分隐藏选项)"></a>修改 BIOS (解锁 CFG Lock 并解锁部分隐藏选项)</h3><blockquote>
+<p>在 Windows11 下操作</p>
+</blockquote>
+<ul>
+<li>下载官方 BIOS 文件备用</li>
+<li>将官方 BIOS 重命名为 bios.CAP 并拷贝到 UEFIPatch 文件夹<br><img src= "/images/loading.gif" data-lazy-src="/images/bios1.png"></li>
+<li>在当前目录打开终端并输入如下命令以解锁 CFG Lock，解锁后的文件位于同目录，名为 bios.CAP.patched<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">.\<span class="selector-tag">UEFIPatch</span><span class="selector-class">.exe</span> .\<span class="selector-tag">bios</span><span class="selector-class">.CAP</span></span><br></pre></td></tr></table></figure>
+<img src= "/images/loading.gif" data-lazy-src="/images/bios2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/bios3.png"></li>
+<li>将 bios.CAP.patched 重命名为 P8Z77MP_UNLOCK.CAP</li>
+<li>用 AMIBCP 打开 P8Z77MP_UNLOCK.CAP，将需要解锁的选项 (如 CSM 下的 video 选项，intel vt-d 等) 的 Access/Use 设置为 USER 并保存<br><img src= "/images/loading.gif" data-lazy-src="/images/bios5.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/bios4.png"></li>
+<li>用 UEFITool 打开处理后的 P8Z77MP_UNLOCK.CAP，导航到 BIOS region，点击右键，选择 Extract as is…，文件名填 1，点击保存。得到文件 1.rgn<br><img src= "/images/loading.gif" data-lazy-src="/images/bios6.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/bios7.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/bios8.png"></li>
+<li>用 UEFITool 打开官网下载的 BIOS，导航到 BIOS region，点击右键，选择 Replace as is…, 选择 1.rgn，点击打开<br><img src= "/images/loading.gif" data-lazy-src="/images/bios9.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/bios10.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/bios11.png"></li>
+<li>点击 File-&gt;Save /image file, 名称为 P8Z77MP.CAP，点击保存<br><img src= "/images/loading.gif" data-lazy-src="/images/bios12.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/bios13.png"></li>
+</ul>
+<h4 id="至此，解锁了-CFG-Lock、CSM-下的-video-选项以及-Intel-VT-d-的修改版-BIOS-已制作完成"><a href="#至此，解锁了-CFG-Lock、CSM-下的-video-选项以及-Intel-VT-d-的修改版-BIOS-已制作完成" class="headerlink" title="至此，解锁了 CFG Lock、CSM 下的 video 选项以及 Intel VT-d 的修改版 BIOS 已制作完成"></a>至此，解锁了 CFG Lock、CSM 下的 video 选项以及 Intel VT-d 的修改版 BIOS 已制作完成</h4><h3 id="刷写修改版-BIOS"><a href="#刷写修改版-BIOS" class="headerlink" title="刷写修改版 BIOS"></a>刷写修改版 BIOS</h3><ul>
+<li>U 盘格式化为 FAT32 格式，分区表类型为 MBR，将处理好的 P8Z77MP.CAP 拷贝到 U 盘根目录 (文件名必须正确)</li>
+<li>将 U 盘插入如下 USB 口 (必须是这个口)<br><img src= "/images/loading.gif" data-lazy-src="/images/bios14.png"></li>
+<li>关机，打开机箱侧盖，按住下图中的 BIOS_FLBK 按键 3s，黄灯开始闪烁，等待黄灯熄灭，BIOS 刷写成功。<br><img src= "/images/loading.gif" data-lazy-src="/images/bios15.png"></li>
+</ul>
+<h3 id="至此，修改版-BIOS-已经刷写成功，CFG-Lock-已经成功解锁，请在-OC-的-config-中禁用-Kernel-gt-Quirks-下的-AppleCpuPmCfgLock-以及-AppleXcpmCfgLock-两个选项"><a href="#至此，修改版-BIOS-已经刷写成功，CFG-Lock-已经成功解锁，请在-OC-的-config-中禁用-Kernel-gt-Quirks-下的-AppleCpuPmCfgLock-以及-AppleXcpmCfgLock-两个选项" class="headerlink" title="至此，修改版 BIOS 已经刷写成功，CFG Lock 已经成功解锁，请在 OC 的 config 中禁用 Kernel-&gt;Quirks 下的 AppleCpuPmCfgLock 以及 AppleXcpmCfgLock 两个选项"></a>至此，修改版 BIOS 已经刷写成功，CFG Lock 已经成功解锁，请在 OC 的 config 中禁用 Kernel-&gt;Quirks 下的 AppleCpuPmCfgLock 以及 AppleXcpmCfgLock 两个选项</h3><h1 id="引导器截图"><a href="#引导器截图" class="headerlink" title="引导器截图"></a>引导器截图</h1><h2 id="OpenCore"><a href="#OpenCore" class="headerlink" title="OpenCore"></a>OpenCore</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/OC1.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/OC2.jpg"></p>
+<h2 id="XorBoot"><a href="#XorBoot" class="headerlink" title="XorBoot"></a>XorBoot</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/xorboot2.jpg"></p>
+<h1 id="系统桌面截图"><a href="#系统桌面截图" class="headerlink" title="系统桌面截图"></a>系统桌面截图</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/xp.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/vista.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/win7.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/win8.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/win8.1.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/win10.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/win11.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/osx%2010.8.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/osx%2010.9.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/osx%2010.10.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/osx%2010.11.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2010.12.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2010.13.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2010.14.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2010.15.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2011.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2012.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2013.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2014.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2015.jpg"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2026.jpg"></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>ivy bridge</tag>
       </tags>
   </entry>
   <entry>
@@ -917,462 +1394,98 @@
       </tags>
   </entry>
   <entry>
-    <title>OpenWrt获取IPv6详细教程</title>
-    <url>/2021/05/06/about-openwrt-ipv6.html</url>
-    <content><![CDATA[<blockquote>
-<p>前几天博主无意间登录光猫发现已经有了IPv6地址并且可以访问ipv6网站，但是自用的openwrt路由器却无法获取到IPv6地址，查阅资料发现大量资料已经过时，博主现在分享自己的解决方案。</p>
+    <title>什么？这辣鸡BIOS竟然不能关闭Secure Boot？教你在开启Secure Boot的情况下安装macOS</title>
+    <url>/2019/07/06/clover-with-secure-boot.html</url>
+    <content><![CDATA[<h1 id="相关理论"><a href="#相关理论" class="headerlink" title="相关理论"></a>相关理论</h1><h2 id="BIOS"><a href="#BIOS" class="headerlink" title="BIOS"></a>BIOS</h2><p>BIOS是英文”Basic Input Output System”的缩略语，直译过来后中文名称就是”基本输入输出系统”。其实，它是一组固化到计算机内主板上一个ROM芯片上的程序，它保存着计算机最重要的基本输入输出的程序、系统设置信息、开机后自检程序和系统自启动程序。 其主要功能是为计算机提供最底层的、最直接的硬件设置和控制。<a id="more"></a></p>
+<h2 id="UEFI"><a href="#UEFI" class="headerlink" title="UEFI"></a>UEFI</h2><p>UEFI，全称“统一的可扩展固件接口”(Unified Extensible Firmware Interface)， 是一种详细描述全新类型接口的标准。这种接口用于操作系统自动从预启动的操作环境，加载到一种操作系统上，从而使开机程序化繁为简，节省时间。</p>
+<h2 id="Secure-Boot"><a href="#Secure-Boot" class="headerlink" title="Secure Boot"></a>Secure Boot</h2><p>Secure Boot只是UEFI的一个部分。两者的关系是局部与整体的关系。Secure Boot的目的，是防止恶意软件侵入。它的做法就是采用密钥。UEFI规定，主板出厂的时候，可以内置一些可靠的公钥。然后，任何想要在这块主板上加载的操作系统或者硬件驱动程序，都必须通过这些公钥的认证。也就是说，这些软件必须用对应的私钥签署过，否则主板拒绝加载。由于恶意软件不可能通过认证，因此就没有办法感染Boot。</p>
+<h1 id="在开启Secure-Boot的情况下使用Clover启动macOS以及其他操作系统-如Linux"><a href="#在开启Secure-Boot的情况下使用Clover启动macOS以及其他操作系统-如Linux" class="headerlink" title="在开启Secure Boot的情况下使用Clover启动macOS以及其他操作系统(如Linux)"></a>在开启Secure Boot的情况下使用Clover启动macOS以及其他操作系统(如Linux)</h1><h2 id="准备工作-Windows下操作"><a href="#准备工作-Windows下操作" class="headerlink" title="准备工作(Windows下操作)"></a>准备工作(Windows下操作)</h2><ul>
+<li><p>下载并解压Super-UEFIinSecureBoot-Disk(感谢ValdikSS开发工具)。<br><a href="https://github.com/ValdikSS/Super-UEFIinSecureBoot-Disk/releases/download/3/Super-UEFIinSecureBoot-Disk_minimal_v3.zip">https://github.com/ValdikSS/Super-UEFIinSecureBoot-Disk/releases/download/3/Super-UEFIinSecureBoot-Disk_minimal_v3.zip</a></p>
+</li>
+<li><p>下载etcher<br><a href="https://github.com/balena-io/etcher/releases/download/v1.5.51/balenaEtcher-Portable-1.5.51.exe">https://github.com/balena-io/etcher/releases/download/v1.5.51/balenaEtcher-Portable-1.5.51.exe</a></p>
+</li>
+<li><p>准备一个U盘并备份文件，用etcher将Super-UEFIinSecureBoot-Disk写入U盘。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-1.png"></p>
+</li>
+</ul>
+<h2 id="实现教程"><a href="#实现教程" class="headerlink" title="实现教程"></a>实现教程</h2><blockquote>
+<p>现在请在BIOS中开启Secure Boot选项并且重启进入Windows操作。</p>
 </blockquote>
-<h1 id="编译支持IPv6的OpenWrt固件"><a href="#编译支持IPv6的OpenWrt固件" class="headerlink" title="编译支持IPv6的OpenWrt固件"></a>编译支持IPv6的OpenWrt固件</h1><blockquote>
-<p>博主用的是Lean的openwrt源码编译，GitHub地址如下：<a href="https://github.com/coolsnowwolf/lede%E3%80%82">https://github.com/coolsnowwolf/lede。</a> 具体编译教程原作者写得十分清楚，博主只讲关于IPv6的配置参数。</p>
-</blockquote>
-<h2 id="make-menuconfig配置-IPv6相关"><a href="#make-menuconfig配置-IPv6相关" class="headerlink" title="make menuconfig配置(IPv6相关)"></a>make menuconfig配置(IPv6相关)</h2><ul>
-<li>Extra Packages-&gt;ipv6helper选中</li>
-<li>Network-&gt;odhcp6c选中</li>
-<li>Network-&gt;odhcpd-ipv6only选中</li>
-</ul>
-<blockquote>
-<p>以上3项做完后即可按照原作者教程编译固件。</p>
-</blockquote>
-<h1 id="OpenWrt设置"><a href="#OpenWrt设置" class="headerlink" title="OpenWrt设置"></a>OpenWrt设置</h1><ul>
-<li>找到网络-&gt;DHCP/DNS-&gt;高级设置-&gt;禁止解析 IPv6 DNS 记录，把默认带的打勾去掉(没错，OpenWrt的脑残默认设置，不解析IPv6！！！)</li>
-</ul>
-<blockquote>
-<p>经过以上的编译以及设置，需要我们做的已经全部完成，正常情况下你已经可以享受IPv6了，什么？能获取到IPv6地址但不能上网？别急，往下看！！！</p>
-</blockquote>
-<h1 id="可以获取到IPv6地址但是不能上网的解决方案-重点"><a href="#可以获取到IPv6地址但是不能上网的解决方案-重点" class="headerlink" title="可以获取到IPv6地址但是不能上网的解决方案(重点)"></a>可以获取到IPv6地址但是不能上网的解决方案(重点)</h1><ul>
-<li>给运营商打电话，让客服把光猫改成桥接，要来PPPoE用户名以及密码，路由器端拨号。(没错，就这么简单)</li>
-</ul>
-<blockquote>
-<p>至此，你已经可以完美享受IPv6了。</p>
-</blockquote>
-<h1 id="放上两个IPv6的测试网站，用来测试IPv6情况"><a href="#放上两个IPv6的测试网站，用来测试IPv6情况" class="headerlink" title="放上两个IPv6的测试网站，用来测试IPv6情况"></a>放上两个IPv6的测试网站，用来测试IPv6情况</h1><ul>
-<li><a href="https://v6t.ipip.net/">https://v6t.ipip.net/</a></li>
-<li><a href="https://www.test-ipv6.com/">https://www.test-ipv6.com/</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>OpenWrt</category>
-      </categories>
-      <tags>
-        <tag>OpenWrt</tag>
-        <tag>ipv6</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>20个版本的Windows/macOS共存的系统博物馆</title>
-    <url>/2026/05/28/all-in-one-os.html</url>
-    <content><![CDATA[<blockquote>
-<p>macOS 26是Intel Mac可以使用的最后一个macOS版本，在即将到来的WWDC 2026上，Apple将发布macOS 27，届时将仅支持Apple Silicon Macs。在黑苹果即将成为历史的时刻，笔者在一台配备了4K显示器的ivy bridge计算机上以物理机的形式安装并运行了包括Windows XP-Windows11的所有Windows操作系统以及所有支持4K 60hz hidpi的intel macOS操作系统。</p>
-</blockquote>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B9%9D%E5%AE%AB%E6%A0%BC.jpg"></p>
-<h1 id="B站演示视频"><a href="#B站演示视频" class="headerlink" title="B站演示视频"></a>B站演示视频</h1><p><a href="https://www.bilibili.com/video/BV1QkGX6qE9q">在一台ivy bridge计算机上安装20个操作系统(内录4K Retina呈现，推荐电脑全屏观看)_哔哩哔哩_bilibili</a></p>
-<h1 id="配置清单"><a href="#配置清单" class="headerlink" title="配置清单"></a>配置清单</h1><ul>
-<li><p>主板： 华硕p8z77m-pro</p>
+<h3 id="注册证书"><a href="#注册证书" class="headerlink" title="注册证书"></a>注册证书</h3><p>使用做好的U盘启动电脑，按照图示完成证书注册。(出现黑色的grub2界面表示注册成功)<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-2.png"></p>
+<h3 id="集成Clover"><a href="#集成Clover" class="headerlink" title="集成Clover"></a>集成Clover</h3><ul>
+<li><p>将CLOVER文件夹拷贝到U盘的EFI文件夹下，与BOOT以及grub文件夹同级。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-3.png"></p>
 </li>
-<li><p>CPU： i7-3770</p>
+<li><p>打开Clover文件夹将Cloverx64.efi文件重命名为grubx64_real.efi。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-4.png"></p>
 </li>
-<li><p>内存： 16g ddr3 1600mhz</p>
+<li><p>打开BOOT文件夹备份grubx64_real.efi文件，并将Clover文件夹下的grubx64_real.efi文件拷贝到BOOT文件夹下。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-5.png"></p>
 </li>
-<li><p>显卡： nvidia gtx770</p>
-</li>
-<li><p>SSD1：三星870evo sata 256g</p>
-</li>
-<li><p>SSD2：三星870evo sata 2T</p>
-</li>
-<li><p>无线网卡1：fenvi-t919</p>
-</li>
-<li><p>无线网卡2：bcm94331csax</p>
-</li>
-<li><p>显示器：dell S2725QS 4K</p>
-</li>
-<li><p>机箱：乔思伯d32 pro mesh版</p>
-</li>
-<li><p>操作系统：Windows XP-Windows11</p>
-</li>
-<li><p>操作系统：OS X Mountain Lion-macOS Sequoia</p>
+<li><p>重启电脑，并用U盘引导。</p>
 </li>
 </ul>
-<h1 id="为何选择这套配置"><a href="#为何选择这套配置" class="headerlink" title="为何选择这套配置"></a>为何选择这套配置</h1><h2 id="主板-CPU"><a href="#主板-CPU" class="headerlink" title="主板+CPU"></a>主板+CPU</h2><blockquote>
-<p>要同时兼容如此多的操作系统，首先要考虑一个特殊的Windows版本，即Windows Vista。Windows Vista最新原生支持的平台是ivy bridge。Haswell可以安装XP却无法稳定运行Vista，Haswell下的Vista会随机报错。所以要全面兼容xp-win11以及OS X 10.8-macOS 15，可以选择的最新平台就是ivy bridge。黑苹果方面，ivy bridge原生支持OS X 10.7-macOS 11。macOS 12-macOS 15可以用oclp搞定。因为黑苹果需求，AMD处理器也不建议选择。</p>
-</blockquote>
-<h2 id="显卡"><a href="#显卡" class="headerlink" title="显卡"></a>显卡</h2><blockquote>
-<p>根据Dortania的OpenCore文档，Kepler架构的Nvidia显卡可以原生支持OS X 10.8-macOS 11，更新版本用oclp搞定。Kepler也完美支持XP-Win11。文档中还提到AMD的HD 7000系列和HD 8000系列可以原生支持OS X 10.8-macOS 12，但笔者亲测，HD 7750在OS X 10.8.5下，无法进入桌面，仅显示白屏+鼠标指针。网络上有遇到同样问题的。链接如下：<a href="https://www.insanelymac.com/forum/topic/290733-hd-7950-doesnt-work-on-mac-os-x-1084/%E3%80%82">https://www.insanelymac.com/forum/topic/290733-hd-7950-doesnt-work-on-mac-os-x-1084/。</a></p>
-</blockquote>
-<h2 id="无线网卡-蓝牙"><a href="#无线网卡-蓝牙" class="headerlink" title="无线网卡+蓝牙"></a>无线网卡+蓝牙</h2><blockquote>
-<p>根据Dortania的OpenCore文档，fenvi-t919是很好的黑苹果无线网卡，无线+蓝牙原生免驱，Windows下win7-win11也没问题。XP/Vista的wifi/蓝牙也不重要了。但是要注意fenvi-t919在10.8下有严重bug。重启只能进入10.9(或关机)再切换其他系统，否则其他系统wifi会失效(包括Windows)，所以需要一张单独用于10.8的无线网卡并在10.8下屏蔽fenvi-t919，笔者选择的bcm94331csax，很便宜，10.8下完美免驱。这张卡我们不插蓝牙线，形成双无线网卡+单蓝牙架构，bcm94331csax的wifi还可以在XP下用。后文会详解如何使用SSDT屏蔽多余无线网卡，实现OS X 10.8下使用bcm94331csax，OS X 10.9-macOS 15下使用fenvi-t919。</p>
-</blockquote>
-<h1 id="黑苹果完美程度-未测试需要Apple-ID的功能"><a href="#黑苹果完美程度-未测试需要Apple-ID的功能" class="headerlink" title="黑苹果完美程度(未测试需要Apple ID的功能)"></a>黑苹果完美程度(未测试需要Apple ID的功能)</h1><h2 id="正常工作"><a href="#正常工作" class="headerlink" title="正常工作"></a>正常工作</h2><ul>
-<li><p>声卡</p>
-</li>
-<li><p>核显</p>
-</li>
-<li><p>独显</p>
-</li>
-<li><p>4K hidpi显示</p>
-</li>
-<li><p>有线网卡</p>
-</li>
-<li><p>WiFi</p>
-</li>
-<li><p>蓝牙</p>
-</li>
-<li><p>睡眠</p>
-</li>
-<li><p>唤醒</p>
-</li>
-<li><p>USB</p>
-</li>
-<li><p>变频</p>
-</li>
-<li><p>AppleVTD</p>
-</li>
-</ul>
-<h2 id="bug"><a href="#bug" class="headerlink" title="bug"></a>bug</h2><ul>
-<li><del>在10.8下切换系统，必须先切换到10.9(或关机)再切换到其他系统，否则其他系统搜不到WIFI信号(包括Windows)，10.8系统会把华硕BE86U的5Ghz WiFi识别成企业级无法使用，连接2.4Ghz WIFI正常。</del>   已修复。</li>
-<li>10.8系统较老，不识别WPA2/WPA3-Personal协议。设置一个使用WPA2协议的SSID专供老系统使用即可。</li>
-</ul>
-<h1 id="构建重点"><a href="#构建重点" class="headerlink" title="构建重点"></a>构建重点</h1><h2 id="BIOS设置"><a href="#BIOS设置" class="headerlink" title="BIOS设置"></a>BIOS设置</h2><h3 id="处理器设置"><a href="#处理器设置" class="headerlink" title="处理器设置"></a>处理器设置</h3><ul>
-<li>VT-d-&gt;开启(笔者的主板BIOS没有此选项，但默认开启了)</li>
-</ul>
-<h3 id="显卡设置"><a href="#显卡设置" class="headerlink" title="显卡设置"></a>显卡设置</h3><ul>
-<li><p>首选显卡-&gt;PCIE</p>
-</li>
-<li><p>iGPU内存-&gt;128M</p>
-</li>
-<li><p>初始化IGPU-&gt;开启</p>
-</li>
-</ul>
-<h3 id="USB设置"><a href="#USB设置" class="headerlink" title="USB设置"></a>USB设置</h3><ul>
-<li><p>Intel USB 2.0 EHCI Controller-&gt;开启</p>
-</li>
-<li><p>Legacy USB 支持-&gt;开启</p>
-</li>
-<li><p>Legacy USB 3.0 支持-&gt;开启</p>
-</li>
-<li><p>Intel xHCI模式-&gt;自动(开启会导致xp/vista的USB 3.0失效)</p>
-</li>
-<li><p>EHCI Hand-off-&gt;开启</p>
-</li>
-</ul>
-<h3 id="CSM"><a href="#CSM" class="headerlink" title="CSM"></a>CSM</h3><ul>
-<li>启动设备控制-&gt;UEFI 与 Legacy</li>
-</ul>
-<h3 id="安全启动"><a href="#安全启动" class="headerlink" title="安全启动"></a>安全启动</h3><ul>
-<li>操作系统类型-&gt;其他操作系统</li>
-</ul>
-<h2 id="Bootloader-选择"><a href="#Bootloader-选择" class="headerlink" title="Bootloader 选择"></a>Bootloader 选择</h2><ul>
-<li><p><del>OpenCore 用于引导黑苹果以及refind</del> </p>
-<ul>
-<li><p><del>OpenCore 添加refind启动项</del></p>
-<p><del>Misc-&gt;BlessOverride 下加入条目 \EFI\EFI\refind\refind_x64.efi 即可</del></p>
-</li>
-<li><p><del>refind用于引导mbr分区表上的Windows XP</del>    </p>
-<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- timeout -1 #隐藏refind ui，直接进入目标系统</span></span><br><span class="line"><span class="deletion">- scanfor manual hdbios #仅搜索传统bios引导项</span></span><br><span class="line"><span class="deletion">- dont_scan_volumes &quot;2TB&quot; #删除不需要的引导项，禁止扫描指定硬盘(引号里添加引导项名称的子集)</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>OpenCore用于引导OS X 10.8-macOS 15以及OpenShell工具</p>
-<ul>
-<li><p>将仓库中的.contentVisibility文件拷贝到vista/win7的EFI/Microsoft/Boot中以在OC选择菜单中隐藏vista/win7。</p>
-</li>
-<li><p>将仓库中的.contentDetails文件拷贝到 win8-win11的EFI/Microsoft/Boot中，并且修改其内容，如Windows 8，即可自定义OC选择菜单中Windows系统名称。</p>
-</li>
-<li><p>将仓库中的 .contentFlavour文件拷贝到 win8-win11的EFI/Microsoft/Boot中，并且修改其内容，如Windows8:Windows，即可自定义OC选择菜单中Windows系统的图标，假定系统图标名为Windows8.icns。</p>
-</li>
-</ul>
-</li>
-<li><p>xorboot用于引导legacy系统(vista,win7)、refind(启动xp)以及OpenShell工具</p>
-<ul>
-<li><p>xorboot的安装使用极其简单，完全GUI配置，0代码，添加vista和win7的bootmgfw.efi文件、refind的refind_x64.efi文件以及OpenShell.efi工具即可。</p>
-</li>
-<li><p>refind.conf 重要设置</p>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">timeout</span> <span class="number">-1</span> <span class="comment">#隐藏refind ui，直接进入目标系统</span></span><br><span class="line">scanfor manual hdbios <span class="comment">#仅搜索传统bios引导项以及手动设置项</span></span><br><span class="line">dont_scan_volumes <span class="string">&quot;2TB&quot;</span> <span class="comment">#删除不需要的引导项，禁止扫描指定硬盘(引号里添加引导项名称的子集)</span></span><br><span class="line">uefi_deep_legacy_scan <span class="number">1</span> <span class="comment">#建议设置，否则可能找不到xp</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>OpenShell工具及其重要，后面讲。</p>
-</li>
-</ul>
-<h2 id="时间同步"><a href="#时间同步" class="headerlink" title="时间同步"></a>时间同步</h2><ul>
-<li>在Windows下导入仓库中的WinUTCOn.reg文件，重启即可解决Windows时间不对的问题。</li>
-</ul>
-<h2 id="核显驱动"><a href="#核显驱动" class="headerlink" title="核显驱动"></a>核显驱动</h2><ul>
-<li><p>加入Whatevergreen.kext</p>
-</li>
-<li><p>按照下图注入igpu信息即可，设备地址用Hackintool获取</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/igpu.jpg"></p>
-</li>
-</ul>
-<h2 id="声卡驱动"><a href="#声卡驱动" class="headerlink" title="声卡驱动"></a>声卡驱动</h2><ul>
-<li><p>10.8</p>
-<blockquote>
-<p>华硕的 p8z77m-pro主板的声卡是alc892，AppleALC对于此声卡的支持起始于10.9，笔者自行修改编译了支持alc892声卡在10.8下使用的AppleALC，在EFI里，直接用即可。(已经向原作者提交了pr，希望能够合并到主分支，链接如下：<a href="https://github.com/acidanthera/AppleALC/pull/947">https://github.com/acidanthera/AppleALC/pull/947</a>)</p>
-<hr>
-<p>2026.5.24更新：原作者已将pr合并到主分支，直接下载最新的官方AppleALC即可。</p>
-</blockquote>
-</li>
-<li><p>加入AppleALC.kext</p>
-<p>按照下图注入hda信息即可，设备地址用Hackintool获取</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/hda.jpg"></p>
-</li>
-</ul>
-<h2 id="独显驱动"><a href="#独显驱动" class="headerlink" title="独显驱动"></a>独显驱动</h2><ul>
-<li>加入Whatevergreen.kext。无需任何其他配置。</li>
-</ul>
-<h2 id="电源管理"><a href="#电源管理" class="headerlink" title="电源管理"></a>电源管理</h2><ul>
-<li><p>按照下图启用如下补丁</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/pm2.jpg"></p>
-</li>
-<li><p>运行仓库中的ssdtPRGen.sh生成SSDT，重命名为SSDT-PM.aml，加入到OC的ACPI文件夹并在config中启用。</p>
-</li>
-<li><p>禁用刚才启用的补丁</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/pm1.jpg"></p>
-</li>
-</ul>
-<h2 id="AppleVTD"><a href="#AppleVTD" class="headerlink" title="AppleVTD"></a>AppleVTD</h2><blockquote>
-<p>在新系统上(如macOS 13)，Intel VT-d的开启变得非常重要，如不开启，可能导致网卡失效。雷电设备也和VT-d高度相关，下面是开启教程。</p>
-</blockquote>
-<ul>
-<li><p>在BIOS中开启vt-d选项</p>
-</li>
-<li><p>在OC的Kernel-&gt;Patch中禁用DisableIoMapper选项并重启</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd1.jpg"></p>
-</li>
-<li><p>用MaciASL导出DMAR表并另存为dsl格式</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd2.jpg"></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd3.jpg"></p>
-</li>
-<li><p>打开dsl文件。删除所有[Reserved Memory Region]区域并另存为SSDT-DMAR，格式选择aml</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd4.jpg"></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd5.jpg"></p>
-</li>
-<li><p>将SSDT-DMAR.aml放入OC的ACPI文件夹中并在config中启用</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd6.jpg"></p>
-</li>
-<li><p>在OC的config中，找到ACPI-&gt;Delete，加入如下条目以阻止原生DMAR表载入</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd7.jpg"></p>
-</li>
-<li><p>重启，打开ioreg工具，如图则为AppleVTD加载成功</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/vtd8.jpg"></p>
-</li>
-</ul>
-<h2 id="10-8下实现4K-60hz-Hidpi"><a href="#10-8下实现4K-60hz-Hidpi" class="headerlink" title="10.8下实现4K 60hz Hidpi"></a>10.8下实现4K 60hz Hidpi</h2><blockquote>
-<p>首先Mac系统是在10.9.3开始正式支持的4K 60hz hidpi，10.7和10.8只支持低分辨率的Retina，但是物理分辨率无法输出4K，因为当时的白苹果配备的显卡也没有支持4K输出的，黑苹果可用显卡要输出4K，最早的是Nvidia GTX 600系列，而600系列支持的最初版Mac系统是10.8，故而想要实现4K 60hz hidpi，最起码需要10.8系统起步，显卡支持4K输出是最基本的前提要求。因为10.8没有原生支持4K输出，所以要通过第三方方案实现4K 60hz hidpi。</p>
-</blockquote>
-<h3 id="实现方案"><a href="#实现方案" class="headerlink" title="实现方案"></a>实现方案</h3><blockquote>
-<p>由于笔者的GTX 770 在10.8下最高只能识别2K分辨率，所以要先解决4K输出，再通过命令开启hidpi，具体方案如下。</p>
-</blockquote>
-<ul>
-<li><p>安装Nvidia webdriver，仓库里已经提供。</p>
-</li>
-<li><p>openCore NVRAM-&gt;Add-&gt;7C436110-AB2A-4BBB-A880-FE41995C9F82-&gt;boot-args下添加nvda_drv=1，重启。至此已经实现10.8下的4K输出。</p>
-</li>
-<li><p>输入如下命令并重启开启10.8下的hidpi</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool YES</span><br></pre></td></tr></table></figure></li>
-<li><p>设置-&gt;显示器里面有两个1080p，一个一个测试，有一个是hidpi (因为毕竟是第三方方案，多少有点bug，所幸效果非常完美)。</p>
-</li>
-</ul>
-<h4 id="至此，您已经成功的在10-8下实现了4K-60hz-hidpi。"><a href="#至此，您已经成功的在10-8下实现了4K-60hz-hidpi。" class="headerlink" title="至此，您已经成功的在10.8下实现了4K 60hz hidpi。"></a>至此，您已经成功的在10.8下实现了4K 60hz hidpi。</h4><h2 id="关于macOS-12-macOS15"><a href="#关于macOS-12-macOS15" class="headerlink" title="关于macOS 12-macOS15"></a>关于macOS 12-macOS15</h2><blockquote>
-<p>这一套硬件配置原生支持截止到macOS 11，macOS 12缺失了Intel hd 4000以及Nvidia GTX 770的驱动。macOS 13在前者的基础上，缺失了AVX2指令集，macOS 14和macOS 15在前者基础上缺失了博通的网卡驱动，本章我们解决这些问题。</p>
-</blockquote>
-<ul>
-<li><p>OC的NVRAM下设置如下boot-args</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/oclp1.jpg"></p>
-</li>
-<li><p>OC的NVRAM下设置如下条目以关闭sip</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/oclp2.jpg"></p>
-</li>
-<li><p>OC的Misc下关闭安全启动</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/oclp3.jpg"></p>
-</li>
-<li><p>按照下图加入kexts并在config中根据系统版本启用(注意顺序)</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/oclp4.jpg"></p>
-</li>
-<li><p>按照下图根据系统版本禁用内置kext</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/oclp5.jpg"></p>
-</li>
-<li><p>重启</p>
-</li>
-<li><p>使用oclp打补丁并重启</p>
-</li>
-</ul>
-<blockquote>
-<p>至此，您的macOS 12-macOS 15系统已完全正常</p>
-</blockquote>
-<h2 id="SMBIOS选择"><a href="#SMBIOS选择" class="headerlink" title="SMBIOS选择"></a>SMBIOS选择</h2><h3 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h3><p>请选择系统版本支持的SMBIOS</p>
-<h3 id="安装完成"><a href="#安装完成" class="headerlink" title="安装完成"></a>安装完成</h3><ul>
-<li><p>设置SMBIOS为iMac13,2</p>
-</li>
-<li><p>OpenCore下加入如图补丁以跳过board-id检查(EFI文件夹里有完整的config.plist文件)</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/Skip%20Board%20ID%20check.jpg"></p>
-</li>
-</ul>
-<h1 id="2025-11-15更新"><a href="#2025-11-15更新" class="headerlink" title="2025.11.15更新"></a>2025.11.15更新</h1><ul>
-<li><p>删除refind无用文件夹，修复refind进入极慢的bug(B站视频已经更新)</p>
-</li>
-<li><p>修复OS X 10.9启动无logo，直到登录界面才亮屏的bug(B站视频已经更新)</p>
-</li>
-</ul>
-<h1 id="2026-5-24更新"><a href="#2026-5-24更新" class="headerlink" title="2026.5.24更新"></a>2026.5.24更新</h1><h2 id="使用第三方OC主题，提升美观程度"><a href="#使用第三方OC主题，提升美观程度" class="headerlink" title="使用第三方OC主题，提升美观程度"></a>使用第三方OC主题，提升美观程度</h2><ul>
-<li>见EFI</li>
-</ul>
-<h2 id="解决10-8必须切换到10-9-或关机-，再切换其他系统，否则其他系统wifi失效的问题"><a href="#解决10-8必须切换到10-9-或关机-，再切换其他系统，否则其他系统wifi失效的问题" class="headerlink" title="解决10.8必须切换到10.9(或关机)，再切换其他系统，否则其他系统wifi失效的问题"></a>解决10.8必须切换到10.9(或关机)，再切换其他系统，否则其他系统wifi失效的问题</h2><blockquote>
-<p>这个问题的成因是OS X 10.8的94630驱动自身有bug，不完美，据说当年的iMac在10.8上用过94360，镜像是定制的，我没下载到。于是我添加了一张bcm94331csax专门用于10.8。</p>
-</blockquote>
-<ul>
-<li><p>添加一张bcm94331csax网卡，不插蓝牙线，这张卡的wifi，将用于OS X 10.8和XP(xp没有96360的驱动)。蓝牙方面，所有系统用fenvi-t919的蓝牙，即双无线网卡+单蓝牙架构</p>
-</li>
-<li><p>在OC的Kernel Patch下添加如下条目以实现macOS版本区分(10.8-&gt;Darw12，其他-&gt;Darwin)</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/Change%20_OSI%20from%20Darwin%20to%20Darw12.jpg"></p>
-</li>
-<li><p>加入如下SSDT以根据系统版本禁用多余网卡(10.8禁用fenvi-t919，其他macOS禁用bcm94331)，路径在ioreg工具中查看并在SSDT中修改。</p>
-<figure class="highlight x86asm"><table><tr><td class="code"><pre><span class="line">DefinitionBlock (<span class="string">&quot;&quot;</span>, <span class="string">&quot;SSDT&quot;</span>, <span class="number">2</span>, <span class="string">&quot;HACK&quot;</span>, <span class="string">&quot;WIFISEL&quot;</span>, <span class="number">0x00000000</span>)</span><br><span class="line">&#123;</span><br><span class="line">    External (_SB_<span class="number">.</span>PCI0<span class="number">.</span>PEG1, DeviceObj)</span><br><span class="line">    External (_SB_<span class="number">.</span>PCI0<span class="number">.</span>RP01<span class="number">.</span>PXSX, DeviceObj)</span><br><span class="line"></span><br><span class="line">    Scope (_SB<span class="number">.</span>PCI0<span class="number">.</span>RP01<span class="number">.</span>PXSX)</span><br><span class="line">    &#123;</span><br><span class="line">        Method (_DSM, <span class="number">4</span>, NotSerialized)  // _DSM: Device-Specific Method</span><br><span class="line">        &#123;</span><br><span class="line">            If ((Arg2 == <span class="meta">Zero</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                Return (Buffer (One)</span><br><span class="line">                &#123;</span><br><span class="line">                     <span class="number">0x03</span>                                           </span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            If (_OSI (<span class="string">&quot;Darw12&quot;</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                Return (Package (<span class="number">0x0C</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">&quot;device-id&quot;</span>, </span><br><span class="line">                    Buffer (<span class="number">0x04</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x00</span>, <span class="number">0x00</span>                           </span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">&quot;vendor-id&quot;</span>, </span><br><span class="line">                    Buffer (<span class="number">0x04</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x00</span>, <span class="number">0x00</span>                           </span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">&quot;class-code&quot;</span>, </span><br><span class="line">                    Buffer (<span class="number">0x04</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>                           </span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">&quot;compatible&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;pci14e4,ffff&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;name&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;pci14e4,ffff&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;model&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;94360 Disabled for 10.8&quot;</span></span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            Return (Package (<span class="number">0x02</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;model&quot;</span>, </span><br><span class="line">                <span class="string">&quot;BCM4360 802.11ac Wireless&quot;</span></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Scope (_SB<span class="number">.</span>PCI0<span class="number">.</span>PEG1)</span><br><span class="line">    &#123;</span><br><span class="line">        Method (_DSM, <span class="number">4</span>, NotSerialized)  // _DSM: Device-Specific Method</span><br><span class="line">        &#123;</span><br><span class="line">            If ((Arg2 == <span class="meta">Zero</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                Return (Buffer (One)</span><br><span class="line">                &#123;</span><br><span class="line">                     <span class="number">0x03</span>                                             </span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            If (_OSI (<span class="string">&quot;Darwin&quot;</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                Return (Package (<span class="number">0x0C</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">&quot;device-id&quot;</span>, </span><br><span class="line">                    Buffer (<span class="number">0x04</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x00</span>, <span class="number">0x00</span>                           </span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">&quot;vendor-id&quot;</span>, </span><br><span class="line">                    Buffer (<span class="number">0x04</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x00</span>, <span class="number">0x00</span>                           </span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">&quot;class-code&quot;</span>, </span><br><span class="line">                    Buffer (<span class="number">0x04</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>                           </span><br><span class="line">                    &#125;, </span><br><span class="line"></span><br><span class="line">                    <span class="string">&quot;compatible&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;pci14e4,ffff&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;name&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;pci14e4,ffff&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;model&quot;</span>, </span><br><span class="line">                    <span class="string">&quot;94331 Disabled for Modern OS&quot;</span></span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            Return (Package (<span class="number">0x02</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;model&quot;</span>, </span><br><span class="line">                <span class="string">&quot;BCM4331 802.11n Wireless&quot;</span></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>在config中启用以上SSDT。</p>
-</li>
-<li><p>在其他需要判断OS类型的SSDT中，将If (_OSI (“Darwin”))改成If ((_OSI (“Darwin”) || _OSI (“Darw12”)))</p>
-</li>
-</ul>
-<h3 id="至此，随便切换系统，wifi也不会失效了。"><a href="#至此，随便切换系统，wifi也不会失效了。" class="headerlink" title="至此，随便切换系统，wifi也不会失效了。"></a>至此，随便切换系统，wifi也不会失效了。</h3><h2 id="解决10-8-10-11关于本机不显示年份的问题"><a href="#解决10-8-10-11关于本机不显示年份的问题" class="headerlink" title="解决10.8-10.11关于本机不显示年份的问题"></a>解决10.8-10.11关于本机不显示年份的问题</h2><blockquote>
-<p>macOS关于本机的年份是通过API返回的，这些系统由于年代久远，已无法正常访问API网站，所以我们要手动编辑本地文件以添加年份。</p>
-</blockquote>
-<ul>
-<li><p>在正常工作的现代操作系统上运行如下命令以获取应该显示的内容(cc=xxxx，xxxx为所选机型序列号后四位，10.11以及更早系统访问的API有语言参数，10.12开始没有了，所以老OS X版本关于本机的年份是系统语言，新版是英文)</p>
-<figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">curl -s &quot;https://support-sp.apple.com/sp/product?cc=DNCW&amp;lang=zh-Hans_CN&quot; | sed -n &#x27;s/.*&lt;configCode&gt;<span class="symbol">\(</span>.*<span class="symbol">\)</span>&lt;<span class="symbol">\/</span>configCode&gt;.*/<span class="symbol">\1</span>/p&#x27;</span><br></pre></td></tr></table></figure></li>
-<li><p>记录返回值，如 iMac（27 英寸，2012 年末）</p>
-</li>
-<li><p>打开SMBIOS年份修复文件夹中的的plist文件，注意系统版本，修改序列号后四位，语言，机型三个信息。修改好的类似下图，两张图分别为10.8的和10.9-10.11的</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/10.8.jpg">  </p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/10.9-10.11.jpg"></p>
-</li>
-<li><p>将改好的plist文件覆盖到 ~/Library/Preferences并重启，你会发现OS X 10.8-10.11的关于本机年份恢复了</p>
-</li>
-</ul>
-<h2 id="解决csm中开启video-legacy以后，OC选择界面分辨率极低，macOS启动logo扁平，Windows启动logo偏移向左上角等问题"><a href="#解决csm中开启video-legacy以后，OC选择界面分辨率极低，macOS启动logo扁平，Windows启动logo偏移向左上角等问题" class="headerlink" title="解决csm中开启video legacy以后，OC选择界面分辨率极低，macOS启动logo扁平，Windows启动logo偏移向左上角等问题"></a>解决csm中开启video legacy以后，OC选择界面分辨率极低，macOS启动logo扁平，Windows启动logo偏移向左上角等问题</h2><blockquote>
-<p>众所周知，xp/vista/win7是不能在纯UEFI模式下启动的，需要设置csm下的video为legacy，这样做的代价是无法获得高清的主板logo，Windows启动logo，macOS启动logo以及引导器高清图标，并且Windows启动logo会偏移到左上角，macOS 启动logo会扁平。现在我们解决这个问题。</p>
-</blockquote>
-<blockquote>
-<p>前提：1 机器支持UEFI    2 显卡支持UEFI或者刷过vbios以支持UEFI</p>
-</blockquote>
-<blockquote>
-<p>核心思路：永远不要想着在纯UEFI下启动xp/vista/win7。我们使用OC引导win8-win11以及OS X 10.8-macOS 15，csm的video设置为UEFI。使用xorboot引导xp/vista/win7，csm的video设置为legacy，这样自然是完美的，传统操作系统和现代操作系统各得其所。但是需要修改bios设置和第一启动项，很麻烦，我们要做的就是把这个修改bios设置和第一启动项的动作自动化。</p>
-</blockquote>
-<ul>
-<li><p>升级显卡的GOP模块(如果你的显卡在纯UEFI下可以点亮并且可以全高清显示OC图标，Windows/macOS的启动logo也不会偏移，扁平，则跳过此步骤。笔者的GTX 770开纯UEFI点不亮)</p>
-<ul>
-<li><p>用GPU-Z导出显卡vbios</p>
-</li>
-<li><p>打开仓库中的GOP_Updater，将vbios文件拖拽到GOPupd.bat上，按照提示升级GOP模块，会生成一个新的vbios，把它重命名为1.rom以方便刷写</p>
-</li>
-<li><p>使用nvflash刷写新的vbios，Windows打开管理员模式的终端，输入如下命令</p>
-<blockquote>
-<p>nvflash.exe -6 1.rom</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>到主板官网下载bios，用set_dump GUI打开，搜索csm下面video的偏移量，笔者的是0x8CE，并且注意legacy only和UEFI only分别对应的数字如下图，UEFI only 0x1，legacy only 0x2</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/csm.jpg"></p>
-</li>
-<li><p>修改BIOS设置，将csm打开，启动设备控制选择UEFI and Legacy，这样可以保证mbr下的xp系统的启动。并且把第一第二启动项分别设置为OC和xorboot。</p>
-</li>
-<li><p>准备startup.nsh脚本，这个脚本做两件事</p>
-<ul>
-<li><p>用setup_var修改csm中的video选项，如</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">setup_var</span>.efi -r Setup:<span class="number">0</span>x<span class="number">8</span>CE=<span class="number">0</span>x<span class="number">02</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>利用重命名efi文件的方法，修改第一启动项为OC或xorboot，完整脚本如下</p>
-<figure class="highlight livescript"><table><tr><td class="code"><pre><span class="line">@echo -<span class="literal">off</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 寻找包含我们工具包的分区</span></span><br><span class="line"><span class="keyword">for</span> %i <span class="keyword">in</span> fs0 fs1 fs2 fs3 fs4 fs5</span><br><span class="line">    <span class="keyword">if</span> exist %i:<span class="string">\EFI\tools\setup_var.efi</span> <span class="keyword">then</span></span><br><span class="line">        <span class="comment"># 锁定当前分区</span></span><br><span class="line">        %i:</span><br><span class="line">        goto FOUND</span><br><span class="line">    endif</span><br><span class="line">endfor</span><br><span class="line"></span><br><span class="line">echo <span class="string">&quot;Error: Tools partition not found.&quot;</span></span><br><span class="line">goto END</span><br><span class="line"></span><br><span class="line">:FOUND</span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断当前模式</span></span><br><span class="line"><span class="keyword">if</span> exist EFI<span class="string">\OC\OpenCore.efi</span> <span class="keyword">then</span></span><br><span class="line">   <span class="comment"># csm video切legacy</span></span><br><span class="line">   <span class="comment"># 备份OC</span></span><br><span class="line">   mv EFI<span class="string">\OC\OpenCore.efi</span> EFI<span class="string">\OC\OpenCore.efi.bak</span> &gt; nul</span><br><span class="line">   <span class="comment"># 恢复 xorboot</span></span><br><span class="line">   <span class="keyword">if</span> exist EFI<span class="string">\xorboot\xorboot.efi.bak</span> <span class="keyword">then</span></span><br><span class="line">      mv EFI<span class="string">\xorboot\xorboot.efi.bak</span> EFI<span class="string">\xorboot\xorboot.efi</span> &gt; nul</span><br><span class="line">   endif</span><br><span class="line">   <span class="comment"># 修改 BIOS 变量 (Video -&gt; Legacy)</span></span><br><span class="line">   EFI<span class="string">\tools\setup_var.efi</span> -r Setup:<span class="number">0x8CE</span>=<span class="number">0x02</span> &gt; nul</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">   <span class="comment"># csm video切uefi</span></span><br><span class="line">   <span class="comment"># 恢复OC</span></span><br><span class="line">   <span class="keyword">if</span> exist EFI<span class="string">\OC\OpenCore.efi.bak</span> <span class="keyword">then</span></span><br><span class="line">      mv EFI<span class="string">\OC\OpenCore.efi.bak</span> EFI<span class="string">\OC\OpenCore.efi</span> &gt; nul</span><br><span class="line">   endif</span><br><span class="line">   <span class="comment"># 备份xorboot</span></span><br><span class="line">   <span class="keyword">if</span> exist EFI<span class="string">\xorboot\xorboot.efi</span> <span class="keyword">then</span></span><br><span class="line">      mv EFI<span class="string">\xorboot\xorboot.efi</span> EFI<span class="string">\xorboot\xorboot.efi.bak</span> &gt; nul</span><br><span class="line">   endif</span><br><span class="line">   <span class="comment"># 修改 BIOS 变量 (Legacy -&gt; UEFI)</span></span><br><span class="line">   EFI<span class="string">\tools\setup_var.efi</span> -r Setup:<span class="number">0x8CE</span>=<span class="number">0x01</span> &gt; nul</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line">:END</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>脚本简单解释</p>
-<ul>
-<li><p>搜索存在setup_var.efi的分区并锁定</p>
-</li>
-<li><p>判断当前模式，如果存在OpenCore.efi文件，则说明当前video是UEFI模式，反之则为legacy。</p>
-</li>
-<li><p>基于当前模式执行不同操作</p>
-<ul>
-<li><p>UEFI：将OpenCore.efi重命名为OpenCore.efi.bak，将xorboot的efi文件名称还原回xorboot.efi，相当于第一启动项改xorboot，用setup_var.efi将video设置成legacy，会自动重启，自然进入legacy模式的xorboot，进而启动xp/vista/7。</p>
-</li>
-<li><p>legacy：将OpenCore.efi.bak还原为OpenCore.efi，将xorboot.efi重命名为xorboot.efi.bak，相当于第一启动项改OC，用setup_var.efi将video设置成UEFI，会自动重启，自然进入UEFI模式的OC，进而启动现代系统。</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>将startup.nsh放到EFI分区(和OpenShell.efi文件同分区)根目录，和EFI文件夹同层级</p>
-</li>
-<li><p>在OC的Tools文件夹中加入OpenShell.efi文件并在config中添加此条目，参数为-nointerrupt -noconsolein -noconsoleout</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/OpenShell.jpg"></p>
-</li>
-<li><p>在xorboot中加入OpenShell条目，参数同上</p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/xorboot1.jpg"></p>
-</li>
-</ul>
-<h3 id="至此，已完成自动化设置bios的第一启动项并且控制csm中的video选项，OpenShell-efi会自动运行同分区根目录的startup-nsh脚本。"><a href="#至此，已完成自动化设置bios的第一启动项并且控制csm中的video选项，OpenShell-efi会自动运行同分区根目录的startup-nsh脚本。" class="headerlink" title="至此，已完成自动化设置bios的第一启动项并且控制csm中的video选项，OpenShell.efi会自动运行同分区根目录的startup.nsh脚本。"></a>至此，已完成自动化设置bios的第一启动项并且控制csm中的video选项，OpenShell.efi会自动运行同分区根目录的startup.nsh脚本。</h3><h1 id="2026-5-31更新"><a href="#2026-5-31更新" class="headerlink" title="2026.5.31更新"></a>2026.5.31更新</h1><h2 id="老系统浏览器"><a href="#老系统浏览器" class="headerlink" title="老系统浏览器"></a>老系统浏览器</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><ul>
-<li>supermium(Windows XP, 2003, Vista, 7, 8 and 8.1) <a href="https://github.com/win32ss/supermium">https://github.com/win32ss/supermium</a></li>
-</ul>
-<h3 id="Mac-OS-X-OS-X-macOS"><a href="#Mac-OS-X-OS-X-macOS" class="headerlink" title="Mac OS X/OS X/macOS"></a>Mac OS X/OS X/macOS</h3><ul>
-<li>chromium-legacy(Mac OS X 10.7，OS X 10.8-10.11，macOS 10.12-10.14) <a href="https://github.com/blueboxd/chromium-legacy">https://github.com/blueboxd/chromium-legacy</a></li>
-</ul>
-<h1 id="2026-6-3更新"><a href="#2026-6-3更新" class="headerlink" title="2026.6.3更新"></a>2026.6.3更新</h1><h2 id="解锁CFG-Lock"><a href="#解锁CFG-Lock" class="headerlink" title="解锁CFG Lock"></a>解锁CFG Lock</h2><blockquote>
-<p>笔者的主板是ASUS P8Z77M Pro，这款主板无法搜索出CFG Lock的偏移量，所以需要修改BIOS并刷入以解锁CFG Lock，笔者在仓库中提供了解锁后的BIOS，位于bios文件夹中。</p>
-</blockquote>
-<h3 id="所需设备"><a href="#所需设备" class="headerlink" title="所需设备"></a>所需设备</h3><ul>
-<li>U盘1个</li>
-</ul>
-<h3 id="所需工具-位于bios文件夹"><a href="#所需工具-位于bios文件夹" class="headerlink" title="所需工具(位于bios文件夹)"></a>所需工具(位于bios文件夹)</h3><ul>
-<li>UEFIPatch</li>
-<li>AMIBCP</li>
-<li>UEFITool</li>
-</ul>
-<h3 id="修改BIOS-解锁CFG-Lock并解锁部分隐藏选项"><a href="#修改BIOS-解锁CFG-Lock并解锁部分隐藏选项" class="headerlink" title="修改BIOS(解锁CFG Lock并解锁部分隐藏选项)"></a>修改BIOS(解锁CFG Lock并解锁部分隐藏选项)</h3><blockquote>
-<p>在Windows11下操作</p>
-</blockquote>
-<ul>
-<li>下载官方BIOS文件备用</li>
-<li>将官方BIOS重命名为bios.CAP并拷贝到UEFIPatch文件夹<br><img src= "/images/loading.gif" data-lazy-src="/images/bios1.png"></li>
-<li>在当前目录打开终端并输入如下命令以解锁CFG Lock，解锁后的文件位于同目录，名为bios.CAP.patched<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">.\<span class="selector-tag">UEFIPatch</span><span class="selector-class">.exe</span> .\<span class="selector-tag">bios</span><span class="selector-class">.CAP</span></span><br></pre></td></tr></table></figure>
-<img src= "/images/loading.gif" data-lazy-src="/images/bios2.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/bios3.png"></li>
-<li>将bios.CAP.patched重命名为P8Z77MP_UNLOCK.CAP</li>
-<li>用AMIBCP打开P8Z77MP_UNLOCK.CAP，将需要解锁的选项(如CSM下的video选项，intel vt-d等)的Access/Use设置为USER并保存<br><img src= "/images/loading.gif" data-lazy-src="/images/bios5.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/bios4.png"></li>
-<li>用UEFITool打开处理后的P8Z77MP_UNLOCK.CAP，导航到BIOS region，点击右键，选择Extract as is…，文件名填1，点击保存。得到文件1.rgn<br><img src= "/images/loading.gif" data-lazy-src="/images/bios6.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/bios7.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/bios8.png"></li>
-<li>用UEFITool打开官网下载的BIOS，导航到BIOS region，点击右键，选择Replace as is…,选择1.rgn，点击打开<br><img src= "/images/loading.gif" data-lazy-src="/images/bios9.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/bios10.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/bios11.png"></li>
-<li>点击File-&gt;Save image file,名称为P8Z77MP.CAP，点击保存<br><img src= "/images/loading.gif" data-lazy-src="/images/bios12.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/bios13.png"></li>
-</ul>
-<h4 id="至此，解锁了CFG-Lock、CSM下的video选项以及Intel-VT-d的修改版BIOS已制作完成"><a href="#至此，解锁了CFG-Lock、CSM下的video选项以及Intel-VT-d的修改版BIOS已制作完成" class="headerlink" title="至此，解锁了CFG Lock、CSM下的video选项以及Intel VT-d的修改版BIOS已制作完成"></a>至此，解锁了CFG Lock、CSM下的video选项以及Intel VT-d的修改版BIOS已制作完成</h4><h3 id="刷写修改版BIOS"><a href="#刷写修改版BIOS" class="headerlink" title="刷写修改版BIOS"></a>刷写修改版BIOS</h3><ul>
-<li>U盘格式化为FAT32格式，分区表类型为MBR，将处理好的P8Z77MP.CAP拷贝到U盘根目录(文件名必须正确)</li>
-<li>将U盘插入如下USB口(必须是这个口)<br><img src= "/images/loading.gif" data-lazy-src="/images/bios14.png"></li>
-<li>关机，打开机箱侧盖，按住下图中的BIOS_FLBK按键3s，黄灯开始闪烁，等待黄灯熄灭，BIOS刷写成功。<br><img src= "/images/loading.gif" data-lazy-src="/images/bios15.png"></li>
-</ul>
-<h3 id="至此，修改版BIOS已经刷写成功，CFG-Lock已经成功解锁，请在OC的config中禁用Kernel-gt-Quirks下的AppleCpuPmCfgLock以及AppleXcpmCfgLock两个选项"><a href="#至此，修改版BIOS已经刷写成功，CFG-Lock已经成功解锁，请在OC的config中禁用Kernel-gt-Quirks下的AppleCpuPmCfgLock以及AppleXcpmCfgLock两个选项" class="headerlink" title="至此，修改版BIOS已经刷写成功，CFG Lock已经成功解锁，请在OC的config中禁用Kernel-&gt;Quirks下的AppleCpuPmCfgLock以及AppleXcpmCfgLock两个选项"></a>至此，修改版BIOS已经刷写成功，CFG Lock已经成功解锁，请在OC的config中禁用Kernel-&gt;Quirks下的AppleCpuPmCfgLock以及AppleXcpmCfgLock两个选项</h3><h1 id="引导器截图"><a href="#引导器截图" class="headerlink" title="引导器截图"></a>引导器截图</h1><h2 id="OpenCore"><a href="#OpenCore" class="headerlink" title="OpenCore"></a>OpenCore</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/OC1.jpg"></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/OC2.jpg"></p>
-<h2 id="XorBoot"><a href="#XorBoot" class="headerlink" title="XorBoot"></a>XorBoot</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/xorboot2.jpg"></p>
-<h1 id="系统桌面截图"><a href="#系统桌面截图" class="headerlink" title="系统桌面截图"></a>系统桌面截图</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/xp.jpg"></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/vista.jpg"></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/win7.jpg"></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/win8.jpg"></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/win8.1.jpg"></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/win10.jpg"></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/win11.jpg"></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/osx%2010.8.jpg"></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/osx%2010.9.jpg"></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/osx%2010.10.jpg"></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/osx%2010.11.jpg"></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2010.12.jpg"></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2010.13.jpg"></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2010.14.jpg"></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2010.15.jpg"></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2011.jpg"></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2012.jpg"></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2013.jpg"></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2014.jpg"></p>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/macOS%2015.jpg"></p>
+<h1 id="是时候看看成果了！"><a href="#是时候看看成果了！" class="headerlink" title="是时候看看成果了！"></a>是时候看看成果了！</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-6.png"></p>
+<h1 id="最后别忘了将USB的引导移到硬盘中。"><a href="#最后别忘了将USB的引导移到硬盘中。" class="headerlink" title="最后别忘了将USB的引导移到硬盘中。"></a>最后别忘了将USB的引导移到硬盘中。</h1><h1 id="关于后续更新Clover的问题"><a href="#关于后续更新Clover的问题" class="headerlink" title="关于后续更新Clover的问题"></a>关于后续更新Clover的问题</h1><p>下载新版本的Clover，将cloverx64.efi重命名为grubx64_real.efi并覆盖EFI中Clover文件夹与BOOT文件夹中的同名文件。</p>
 ]]></content>
       <categories>
         <category>Hackintosh</category>
       </categories>
       <tags>
         <tag>Hackintosh</tag>
-        <tag>ivy bridge</tag>
+        <tag>Secure Boot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>修复OpenCore在较新主板上引导Linux失败</title>
+    <url>/2020/04/03/fix-boot-linux-with-opencore.html</url>
+    <content><![CDATA[<blockquote>
+<p>自从OpenCore推出以来，一直存在一个bug，在较新主板上引导Linux会失败，无法加载内核，现在已经可以解决。<a id="more"></a></p>
+</blockquote>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><ul>
+<li><p>编译最新OpenCore(建议使用HackintoshBuild工具)或从以下链接下载<br><a href="https://downloads.bugprogrammer.me/OpenCore/OpenCore-0.5.7-RELEASE.zip">OpenCore-0.5.7-RELEASE.zip</a></p>
+</li>
+<li><p>替换bootx64.efi OpenCore.efi OpenRuntime.efi</p>
+</li>
+<li><p>修改config.plist<br>Booter-&gt;Quirks-&gt;SyncRuntimePermissions-&gt;Yes<br><img src= "/images/loading.gif" data-lazy-src="/images/Linux.png"></p>
+</li>
+</ul>
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>最近有人提到新版本OC启动Windows会失败(集中在Skylake平台)，博主没有遇到，请小伙伴们注意下，博主会抽空跟进最新情况。相关issue如下:<br><a href="https://github.com/acidanthera/bugtracker/issues/491">https://github.com/acidanthera/bugtracker/issues/491</a></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>macOS Catalina 10.15</tag>
+        <tag>OpenCore</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>原版Whatevergreen实现核显最高频率(部分主板不支持),魔改版本停更</title>
+    <url>/2020/03/24/fix-igpu-with-vit9696-weg.html</url>
+    <content><![CDATA[<blockquote>
+<p>Whatevergreen原作者更新了1.3.8版本，开始支持GuC Firmware载入，实现核显满血运行(部分主板不支持),效果完全等同于魔改版本，故魔改停更。现发布原版Whatevergreen实现核显满血教程。<a id="more"></a></p>
+</blockquote>
+<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
+<li>下载并替换以下kexts<br><a href="https://downloads.bugprogrammer.me/Kexts/WhateverGreen-1.3.8-RELEASE.zip">WhateverGreen-1.3.8-RELEASE.zip</a><br><a href="https://downloads.bugprogrammer.me/Kexts/Lilu-1.4.3-RELEASE.zip">Lilu-1.4.3-RELEASE.zip</a></li>
+<li>boot-args下加入igfxfw=2参数</li>
+<li>重启生效</li>
+</ul>
+<h3 id="哪些主板不支持"><a href="#哪些主板不支持" class="headerlink" title="哪些主板不支持"></a>哪些主板不支持</h3><blockquote>
+<p>已知z370不支持</p>
+</blockquote>
+<h4 id="如何确定自己的主板是否支持加载GuC"><a href="#如何确定自己的主板是否支持加载GuC" class="headerlink" title="如何确定自己的主板是否支持加载GuC"></a>如何确定自己的主板是否支持加载GuC</h4><ul>
+<li>按照以上教程操作</li>
+<li>-v重启，如出现下图则不支持<br><img src= "/images/loading.gif" data-lazy-src="/images/guc.png"></li>
+</ul>
+<h3 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/weg.png"></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
+        <tag>macOS Catalina 10.15</tag>
+        <tag>OpenCore</tag>
+        <tag>weg</tag>
       </tags>
   </entry>
   <entry>
@@ -1420,160 +1533,6 @@
         <tag>macOS Catalina 10.15</tag>
         <tag>OpenCore</tag>
         <tag>BootCamp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>什么？这辣鸡BIOS竟然不能关闭Secure Boot？教你在开启Secure Boot的情况下安装macOS</title>
-    <url>/2019/07/06/clover-with-secure-boot.html</url>
-    <content><![CDATA[<h1 id="相关理论"><a href="#相关理论" class="headerlink" title="相关理论"></a>相关理论</h1><h2 id="BIOS"><a href="#BIOS" class="headerlink" title="BIOS"></a>BIOS</h2><p>BIOS是英文”Basic Input Output System”的缩略语，直译过来后中文名称就是”基本输入输出系统”。其实，它是一组固化到计算机内主板上一个ROM芯片上的程序，它保存着计算机最重要的基本输入输出的程序、系统设置信息、开机后自检程序和系统自启动程序。 其主要功能是为计算机提供最底层的、最直接的硬件设置和控制。<a id="more"></a></p>
-<h2 id="UEFI"><a href="#UEFI" class="headerlink" title="UEFI"></a>UEFI</h2><p>UEFI，全称“统一的可扩展固件接口”(Unified Extensible Firmware Interface)， 是一种详细描述全新类型接口的标准。这种接口用于操作系统自动从预启动的操作环境，加载到一种操作系统上，从而使开机程序化繁为简，节省时间。</p>
-<h2 id="Secure-Boot"><a href="#Secure-Boot" class="headerlink" title="Secure Boot"></a>Secure Boot</h2><p>Secure Boot只是UEFI的一个部分。两者的关系是局部与整体的关系。Secure Boot的目的，是防止恶意软件侵入。它的做法就是采用密钥。UEFI规定，主板出厂的时候，可以内置一些可靠的公钥。然后，任何想要在这块主板上加载的操作系统或者硬件驱动程序，都必须通过这些公钥的认证。也就是说，这些软件必须用对应的私钥签署过，否则主板拒绝加载。由于恶意软件不可能通过认证，因此就没有办法感染Boot。</p>
-<h1 id="在开启Secure-Boot的情况下使用Clover启动macOS以及其他操作系统-如Linux"><a href="#在开启Secure-Boot的情况下使用Clover启动macOS以及其他操作系统-如Linux" class="headerlink" title="在开启Secure Boot的情况下使用Clover启动macOS以及其他操作系统(如Linux)"></a>在开启Secure Boot的情况下使用Clover启动macOS以及其他操作系统(如Linux)</h1><h2 id="准备工作-Windows下操作"><a href="#准备工作-Windows下操作" class="headerlink" title="准备工作(Windows下操作)"></a>准备工作(Windows下操作)</h2><ul>
-<li><p>下载并解压Super-UEFIinSecureBoot-Disk(感谢ValdikSS开发工具)。<br><a href="https://github.com/ValdikSS/Super-UEFIinSecureBoot-Disk/releases/download/3/Super-UEFIinSecureBoot-Disk_minimal_v3.zip">https://github.com/ValdikSS/Super-UEFIinSecureBoot-Disk/releases/download/3/Super-UEFIinSecureBoot-Disk_minimal_v3.zip</a></p>
-</li>
-<li><p>下载etcher<br><a href="https://github.com/balena-io/etcher/releases/download/v1.5.51/balenaEtcher-Portable-1.5.51.exe">https://github.com/balena-io/etcher/releases/download/v1.5.51/balenaEtcher-Portable-1.5.51.exe</a></p>
-</li>
-<li><p>准备一个U盘并备份文件，用etcher将Super-UEFIinSecureBoot-Disk写入U盘。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-1.png"></p>
-</li>
-</ul>
-<h2 id="实现教程"><a href="#实现教程" class="headerlink" title="实现教程"></a>实现教程</h2><blockquote>
-<p>现在请在BIOS中开启Secure Boot选项并且重启进入Windows操作。</p>
-</blockquote>
-<h3 id="注册证书"><a href="#注册证书" class="headerlink" title="注册证书"></a>注册证书</h3><p>使用做好的U盘启动电脑，按照图示完成证书注册。(出现黑色的grub2界面表示注册成功)<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-2.png"></p>
-<h3 id="集成Clover"><a href="#集成Clover" class="headerlink" title="集成Clover"></a>集成Clover</h3><ul>
-<li><p>将CLOVER文件夹拷贝到U盘的EFI文件夹下，与BOOT以及grub文件夹同级。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-3.png"></p>
-</li>
-<li><p>打开Clover文件夹将Cloverx64.efi文件重命名为grubx64_real.efi。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-4.png"></p>
-</li>
-<li><p>打开BOOT文件夹备份grubx64_real.efi文件，并将Clover文件夹下的grubx64_real.efi文件拷贝到BOOT文件夹下。<br><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-5.png"></p>
-</li>
-<li><p>重启电脑，并用U盘引导。</p>
-</li>
-</ul>
-<h1 id="是时候看看成果了！"><a href="#是时候看看成果了！" class="headerlink" title="是时候看看成果了！"></a>是时候看看成果了！</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/secure-boot-6.png"></p>
-<h1 id="最后别忘了将USB的引导移到硬盘中。"><a href="#最后别忘了将USB的引导移到硬盘中。" class="headerlink" title="最后别忘了将USB的引导移到硬盘中。"></a>最后别忘了将USB的引导移到硬盘中。</h1><h1 id="关于后续更新Clover的问题"><a href="#关于后续更新Clover的问题" class="headerlink" title="关于后续更新Clover的问题"></a>关于后续更新Clover的问题</h1><p>下载新版本的Clover，将cloverx64.efi重命名为grubx64_real.efi并覆盖EFI中Clover文件夹与BOOT文件夹中的同名文件。</p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>Secure Boot</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>原版Whatevergreen实现核显最高频率(部分主板不支持),魔改版本停更</title>
-    <url>/2020/03/24/fix-igpu-with-vit9696-weg.html</url>
-    <content><![CDATA[<blockquote>
-<p>Whatevergreen原作者更新了1.3.8版本，开始支持GuC Firmware载入，实现核显满血运行(部分主板不支持),效果完全等同于魔改版本，故魔改停更。现发布原版Whatevergreen实现核显满血教程。<a id="more"></a></p>
-</blockquote>
-<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
-<li>下载并替换以下kexts<br><a href="https://downloads.bugprogrammer.me/Kexts/WhateverGreen-1.3.8-RELEASE.zip">WhateverGreen-1.3.8-RELEASE.zip</a><br><a href="https://downloads.bugprogrammer.me/Kexts/Lilu-1.4.3-RELEASE.zip">Lilu-1.4.3-RELEASE.zip</a></li>
-<li>boot-args下加入igfxfw=2参数</li>
-<li>重启生效</li>
-</ul>
-<h3 id="哪些主板不支持"><a href="#哪些主板不支持" class="headerlink" title="哪些主板不支持"></a>哪些主板不支持</h3><blockquote>
-<p>已知z370不支持</p>
-</blockquote>
-<h4 id="如何确定自己的主板是否支持加载GuC"><a href="#如何确定自己的主板是否支持加载GuC" class="headerlink" title="如何确定自己的主板是否支持加载GuC"></a>如何确定自己的主板是否支持加载GuC</h4><ul>
-<li>按照以上教程操作</li>
-<li>-v重启，如出现下图则不支持<br><img src= "/images/loading.gif" data-lazy-src="/images/guc.png"></li>
-</ul>
-<h3 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/weg.png"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>macOS Catalina 10.15</tag>
-        <tag>OpenCore</tag>
-        <tag>weg</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>修复OpenCore在较新主板上引导Linux失败</title>
-    <url>/2020/04/03/fix-boot-linux-with-opencore.html</url>
-    <content><![CDATA[<blockquote>
-<p>自从OpenCore推出以来，一直存在一个bug，在较新主板上引导Linux会失败，无法加载内核，现在已经可以解决。<a id="more"></a></p>
-</blockquote>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><ul>
-<li><p>编译最新OpenCore(建议使用HackintoshBuild工具)或从以下链接下载<br><a href="https://downloads.bugprogrammer.me/OpenCore/OpenCore-0.5.7-RELEASE.zip">OpenCore-0.5.7-RELEASE.zip</a></p>
-</li>
-<li><p>替换bootx64.efi OpenCore.efi OpenRuntime.efi</p>
-</li>
-<li><p>修改config.plist<br>Booter-&gt;Quirks-&gt;SyncRuntimePermissions-&gt;Yes<br><img src= "/images/loading.gif" data-lazy-src="/images/Linux.png"></p>
-</li>
-</ul>
-<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>最近有人提到新版本OC启动Windows会失败(集中在Skylake平台)，博主没有遇到，请小伙伴们注意下，博主会抽空跟进最新情况。相关issue如下:<br><a href="https://github.com/acidanthera/bugtracker/issues/491">https://github.com/acidanthera/bugtracker/issues/491</a></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>macOS Catalina 10.15</tag>
-        <tag>OpenCore</tag>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>修复OpenCore 0.5.3关于本机不显示内存教程</title>
-    <url>/2019/12/04/fix-showmemory.html</url>
-    <content><![CDATA[<blockquote>
-<p>最近的OpenCore版本出现了一个bug，关于本机处不显示内存，博主研究了一下，现在发布解决方案。<a id="more"></a></p>
-</blockquote>
-<h1 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h1><p>OpenCore config.plist文件中的SMBIOS部分填写完整，比较麻烦。博主并不推荐。</p>
-<h1 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li><p>注册GitHub账户。</p>
-</li>
-<li><p>AppStore安装Xcode。</p>
-</li>
-<li><p>终端运行如下命令并按提示安装命令行工具。</p>
-<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
-<h2 id="修复教程-以iMac-19-1机型为例讲解"><a href="#修复教程-以iMac-19-1机型为例讲解" class="headerlink" title="修复教程(以iMac 19,1机型为例讲解)"></a>修复教程(以iMac 19,1机型为例讲解)</h2></li>
-<li><p>fork如下项目到<font color=#A52A2A >自己</font>的仓库<br><a href="https://github.com/acidanthera/MacInfoPkg">https://github.com/acidanthera/MacInfoPkg</a><br><img src= "/images/loading.gif" data-lazy-src="/images/memory-1.png"></p>
-</li>
-<li><p>从<font color=#A52A2A >自己</font>的仓库(比如博主的仓库<a href="https://github.com/bugprogrammer/MacInfoPkg">https://github.com/bugprogrammer/MacInfoPkg</a>) 下载MacInfoPkg源码</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cd ~/Desktop</span><br><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/bugprogrammer/</span>MacInfoPkg</span><br></pre></td></tr></table></figure>
-<p>  <img src= "/images/loading.gif" data-lazy-src="/images/memory-2.png"></p>
-</li>
-<li><p>打开iMac 19,1的数据文件<font color=#A52A2A >IM191.yaml</font>，并按下图修改保存。</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cd ~<span class="regexp">/Desktop/</span>MacInfoPkg<span class="regexp">/DataBase/i</span>Mac</span><br><span class="line">open IM191.yaml</span><br></pre></td></tr></table></figure>
-<p>  <img src= "/images/loading.gif" data-lazy-src="/images/memory-3.png"></p>
-</li>
-<li><p>打开<font color=#A52A2A >AutoGenerated.c</font>文件，搜索iMac19,1，并按下图修改保存。</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cd ~<span class="regexp">/Desktop/</span>MacInfoPkg<span class="regexp">/Library/</span>MacInfoLib</span><br><span class="line">open AutoGenerated.c</span><br></pre></td></tr></table></figure>
-<p>  <img src= "/images/loading.gif" data-lazy-src="/images/memory-4.png"></p>
-</li>
-<li><p>将修改好的MacInfoPkg提交到GitHub</p>
-<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">cd ~<span class="regexp">/Desktop/M</span>acInfoPkg</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&#x27;test&#x27;</span></span><br><span class="line">git <span class="keyword">push</span> origin master</span><br></pre></td></tr></table></figure>
-<p>  <img src= "/images/loading.gif" data-lazy-src="/images/memory-5.png"></p>
-</li>
-<li><p>获取OpenCorePkg源码</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cd ~/Desktop</span><br><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/acidanthera/</span>OpenCorePkg.git</span><br></pre></td></tr></table></figure>
-<p>  <img src= "/images/loading.gif" data-lazy-src="/images/memory-6.png"></p>
-</li>
-<li><p>打开macbuild.tool，按下图替换MacInfoPkg的链接(替换成我们自己仓库的ManInfoPkg)</p>
-<figure class="highlight arcade"><table><tr><td class="code"><pre><span class="line">open -e ~<span class="regexp">/Desktop/</span>OpenCorePkg/macbuild.tool</span><br></pre></td></tr></table></figure>
-<p>  <img src= "/images/loading.gif" data-lazy-src="/images/memory-7.png"></p>
-</li>
-<li><p>编译OpenCore</p>
-<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~<span class="string">/Desktop/OpenCorePkg</span></span><br><span class="line"><span class="string">./macbuild.tool</span></span><br></pre></td></tr></table></figure>
-<p>  <img src= "/images/loading.gif" data-lazy-src="/images/memory-8.png"></p>
-</li>
-<li><p>打开<font color=#A52A2A >Desktop/OpenCorePkg/Binaries/RELEASE</font>路径，找到编译好的OpenCore，替换，重启</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">open ~<span class="regexp">/Desktop/</span>OpenCorePkg<span class="regexp">/Binaries/</span>RELEASE</span><br></pre></td></tr></table></figure>
-<p>  <img src= "/images/loading.gif" data-lazy-src="/images/memory-9.png"></p>
-</li>
-</ul>
-<h1 id="至此，关于本机内存不显示的bug已完美修复"><a href="#至此，关于本机内存不显示的bug已完美修复" class="headerlink" title="至此，关于本机内存不显示的bug已完美修复"></a>至此，关于本机内存不显示的bug已完美修复</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/memory-10.png"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -1640,6 +1599,65 @@
       <tags>
         <tag>Hackintosh</tag>
         <tag>sidecar</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>修复OpenCore 0.5.3关于本机不显示内存教程</title>
+    <url>/2019/12/04/fix-showmemory.html</url>
+    <content><![CDATA[<blockquote>
+<p>最近的OpenCore版本出现了一个bug，关于本机处不显示内存，博主研究了一下，现在发布解决方案。<a id="more"></a></p>
+</blockquote>
+<h1 id="解决方案一"><a href="#解决方案一" class="headerlink" title="解决方案一"></a>解决方案一</h1><p>OpenCore config.plist文件中的SMBIOS部分填写完整，比较麻烦。博主并不推荐。</p>
+<h1 id="解决方案二"><a href="#解决方案二" class="headerlink" title="解决方案二"></a>解决方案二</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li><p>注册GitHub账户。</p>
+</li>
+<li><p>AppStore安装Xcode。</p>
+</li>
+<li><p>终端运行如下命令并按提示安装命令行工具。</p>
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
+<h2 id="修复教程-以iMac-19-1机型为例讲解"><a href="#修复教程-以iMac-19-1机型为例讲解" class="headerlink" title="修复教程(以iMac 19,1机型为例讲解)"></a>修复教程(以iMac 19,1机型为例讲解)</h2></li>
+<li><p>fork如下项目到<font color=#A52A2A >自己</font>的仓库<br><a href="https://github.com/acidanthera/MacInfoPkg">https://github.com/acidanthera/MacInfoPkg</a><br><img src= "/images/loading.gif" data-lazy-src="/images/memory-1.png"></p>
+</li>
+<li><p>从<font color=#A52A2A >自己</font>的仓库(比如博主的仓库<a href="https://github.com/bugprogrammer/MacInfoPkg">https://github.com/bugprogrammer/MacInfoPkg</a>) 下载MacInfoPkg源码</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cd ~/Desktop</span><br><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/bugprogrammer/</span>MacInfoPkg</span><br></pre></td></tr></table></figure>
+<p>  <img src= "/images/loading.gif" data-lazy-src="/images/memory-2.png"></p>
+</li>
+<li><p>打开iMac 19,1的数据文件<font color=#A52A2A >IM191.yaml</font>，并按下图修改保存。</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cd ~<span class="regexp">/Desktop/</span>MacInfoPkg<span class="regexp">/DataBase/i</span>Mac</span><br><span class="line">open IM191.yaml</span><br></pre></td></tr></table></figure>
+<p>  <img src= "/images/loading.gif" data-lazy-src="/images/memory-3.png"></p>
+</li>
+<li><p>打开<font color=#A52A2A >AutoGenerated.c</font>文件，搜索iMac19,1，并按下图修改保存。</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cd ~<span class="regexp">/Desktop/</span>MacInfoPkg<span class="regexp">/Library/</span>MacInfoLib</span><br><span class="line">open AutoGenerated.c</span><br></pre></td></tr></table></figure>
+<p>  <img src= "/images/loading.gif" data-lazy-src="/images/memory-4.png"></p>
+</li>
+<li><p>将修改好的MacInfoPkg提交到GitHub</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">cd ~<span class="regexp">/Desktop/M</span>acInfoPkg</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&#x27;test&#x27;</span></span><br><span class="line">git <span class="keyword">push</span> origin master</span><br></pre></td></tr></table></figure>
+<p>  <img src= "/images/loading.gif" data-lazy-src="/images/memory-5.png"></p>
+</li>
+<li><p>获取OpenCorePkg源码</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cd ~/Desktop</span><br><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/acidanthera/</span>OpenCorePkg.git</span><br></pre></td></tr></table></figure>
+<p>  <img src= "/images/loading.gif" data-lazy-src="/images/memory-6.png"></p>
+</li>
+<li><p>打开macbuild.tool，按下图替换MacInfoPkg的链接(替换成我们自己仓库的ManInfoPkg)</p>
+<figure class="highlight arcade"><table><tr><td class="code"><pre><span class="line">open -e ~<span class="regexp">/Desktop/</span>OpenCorePkg/macbuild.tool</span><br></pre></td></tr></table></figure>
+<p>  <img src= "/images/loading.gif" data-lazy-src="/images/memory-7.png"></p>
+</li>
+<li><p>编译OpenCore</p>
+<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~<span class="string">/Desktop/OpenCorePkg</span></span><br><span class="line"><span class="string">./macbuild.tool</span></span><br></pre></td></tr></table></figure>
+<p>  <img src= "/images/loading.gif" data-lazy-src="/images/memory-8.png"></p>
+</li>
+<li><p>打开<font color=#A52A2A >Desktop/OpenCorePkg/Binaries/RELEASE</font>路径，找到编译好的OpenCore，替换，重启</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">open ~<span class="regexp">/Desktop/</span>OpenCorePkg<span class="regexp">/Binaries/</span>RELEASE</span><br></pre></td></tr></table></figure>
+<p>  <img src= "/images/loading.gif" data-lazy-src="/images/memory-9.png"></p>
+</li>
+</ul>
+<h1 id="至此，关于本机内存不显示的bug已完美修复"><a href="#至此，关于本机内存不显示的bug已完美修复" class="headerlink" title="至此，关于本机内存不显示的bug已完美修复"></a>至此，关于本机内存不显示的bug已完美修复</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/memory-10.png"></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -1717,41 +1735,6 @@
       </tags>
   </entry>
   <entry>
-    <title>美化你的shell,macOS下安装zsh和neofetch教程(Unix/Linux也适用)</title>
-    <url>/2018/05/11/install-zsh.html</url>
-    <content><![CDATA[<p>最近在使用Hackintosh，发现macOS自带的shell并不好用，所以安装了被誉为终极shell的zsh，方法整理如下：<a id="more"></a> </p>
-<h3 id="确认包管理器"><a href="#确认包管理器" class="headerlink" title="确认包管理器"></a>确认包管理器</h3><blockquote>
-<p>unix以及类unix(如Linux及其发行版)下都有对应的包管理器,常见的包管理器如下：macOS下为HomeBrew，Debian/Ubuntu为apt，Fedora为yum或dnf，Centos为yum，Archlinux为pacman等。</p>
-</blockquote>
-<h3 id="macOS安装HomeBrew以及wget-其他系统用户跳过此步骤"><a href="#macOS安装HomeBrew以及wget-其他系统用户跳过此步骤" class="headerlink" title="macOS安装HomeBrew以及wget(其他系统用户跳过此步骤)"></a>macOS安装HomeBrew以及wget(其他系统用户跳过此步骤)</h3><h4 id="HomeBrew"><a href="#HomeBrew" class="headerlink" title="HomeBrew"></a>HomeBrew</h4><p>由于macOS下没有自带HomeBrew，故需要手动安装。首先安装xcode，然后终端运行如下命令即可安装HomeBrew。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ruby -e <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><ul>
-<li>更新：brew update </li>
-<li>安装软件包：brew install “PackegeName” </li>
-<li>搜索软件包：brew search “PackegeName”</li>
-<li>卸载软件包：brew remove “PackegeName” </li>
-</ul>
-<h4 id="wget："><a href="#wget：" class="headerlink" title="wget："></a>wget：</h4><figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>wget</span><br></pre></td></tr></table></figure>
-<h3 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h3><h4 id="macOS："><a href="#macOS：" class="headerlink" title="macOS："></a>macOS：</h4><figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>zsh</span><br></pre></td></tr></table></figure>
-<h4 id="Debian-Ubuntu"><a href="#Debian-Ubuntu" class="headerlink" title="Debian/Ubuntu:"></a>Debian/Ubuntu:</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">apt <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure>
-<h4 id="Fedora"><a href="#Fedora" class="headerlink" title="Fedora:"></a>Fedora:</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">dnf <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure>
-<h4 id="Centos"><a href="#Centos" class="headerlink" title="Centos:"></a>Centos:</h4><figure class="highlight sas"><table><tr><td class="code"><pre><span class="line">yum <span class="meta">update</span> <span class="variable">&amp;&amp;</span> yum install zsh</span><br></pre></td></tr></table></figure>
-<h4 id="Archlinux"><a href="#Archlinux" class="headerlink" title="Archlinux:"></a>Archlinux:</h4><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">pacman -S zsh</span></span><br></pre></td></tr></table></figure>
-<h3 id="将系统默认shell更换为zsh"><a href="#将系统默认shell更换为zsh" class="headerlink" title="将系统默认shell更换为zsh"></a>将系统默认shell更换为zsh</h3><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">chsh -s <span class="regexp">/bin/</span>zsh</span><br></pre></td></tr></table></figure>
-<h3 id="安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。"><a href="#安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。" class="headerlink" title="安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。"></a>安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。</h3><h3 id="配置zsh"><a href="#配置zsh" class="headerlink" title="配置zsh"></a>配置zsh</h3><p>使用oh-my-zsh可以很方便的配置zsh,并生成.zshrc配置文件方便修改 输入以下命令安装oh-my-zsh</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>&quot;</span></span><br></pre></td></tr></table></figure>
-<p>安装成功后输入nano .zshrc打开.zshrc文件添加neofetch,修改ZSH_THEME=”random”，意为每次打开终端即启动neofetch，zsh主题随机，也就是每次打开终端都会改变一个主题，修改如图： <img src= "/images/loading.gif" data-lazy-src="/images/c7fd2a6d2692642c94a9a78c42f04ee4ef71b410.jpg"> 重启电脑就会看到效果。</p>
-<h3 id="用描述文件美化终端-不同系统，不同桌面环境会有所不同-需要自己摸索了，下面以macOS为例"><a href="#用描述文件美化终端-不同系统，不同桌面环境会有所不同-需要自己摸索了，下面以macOS为例" class="headerlink" title="用描述文件美化终端(不同系统，不同桌面环境会有所不同,需要自己摸索了，下面以macOS为例)"></a>用描述文件美化终端(不同系统，不同桌面环境会有所不同,需要自己摸索了，下面以macOS为例)</h3><p>打开终端，点击右键打开显示检查器，选择一个样式双击打开描述文件，按自己的喜好设置文字风格，样式，透明度，模糊程度，窗口大小等，成品图如下： <img src= "/images/loading.gif" data-lazy-src="/images/e7005ea1415345c95c83b5c0f1cbd21b124c8245.jpg"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>shell</tag>
-        <tag>zsh</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>macOS Catalina 10.15目前情况(持续更新)</title>
     <url>/2019/06/04/hackintosh-10.15.html</url>
     <content><![CDATA[<p>Apple的WWDC2019已经结束，为我们带来了macOS 10.15、MacPro等出色产品。博主连夜测试了10.15在PC机上的运行情况，现在梳理如下(持续更新)。<a id="more"></a></p>
@@ -1793,33 +1776,75 @@
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu下利用deepin-wine安装软件简要方案</title>
-    <url>/2019/03/17/install_soft_for_linux.html</url>
-    <content><![CDATA[<blockquote>
-<p>一直以来，Linux作为开发机比较给力，但是常用软件(如QQ、微信等)的缺乏使Linux在桌面端一直不火，用户量低于Windows以及macOS，今天分享一个Ubuntu下安装常用软件的方法。</p>
+    <title>美化你的shell,macOS下安装zsh和neofetch教程(Unix/Linux也适用)</title>
+    <url>/2018/05/11/install-zsh.html</url>
+    <content><![CDATA[<p>最近在使用Hackintosh，发现macOS自带的shell并不好用，所以安装了被誉为终极shell的zsh，方法整理如下：<a id="more"></a> </p>
+<h3 id="确认包管理器"><a href="#确认包管理器" class="headerlink" title="确认包管理器"></a>确认包管理器</h3><blockquote>
+<p>unix以及类unix(如Linux及其发行版)下都有对应的包管理器,常见的包管理器如下：macOS下为HomeBrew，Debian/Ubuntu为apt，Fedora为yum或dnf，Centos为yum，Archlinux为pacman等。</p>
 </blockquote>
-<a id="more"></a>
-
-<h3 id="博主电脑环境"><a href="#博主电脑环境" class="headerlink" title="博主电脑环境"></a>博主电脑环境</h3><ul>
-<li>Ubuntu 18.10 x64</li>
+<h3 id="macOS安装HomeBrew以及wget-其他系统用户跳过此步骤"><a href="#macOS安装HomeBrew以及wget-其他系统用户跳过此步骤" class="headerlink" title="macOS安装HomeBrew以及wget(其他系统用户跳过此步骤)"></a>macOS安装HomeBrew以及wget(其他系统用户跳过此步骤)</h3><h4 id="HomeBrew"><a href="#HomeBrew" class="headerlink" title="HomeBrew"></a>HomeBrew</h4><p>由于macOS下没有自带HomeBrew，故需要手动安装。首先安装xcode，然后终端运行如下命令即可安装HomeBrew。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ruby -e <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<h4 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h4><ul>
+<li>更新：brew update </li>
+<li>安装软件包：brew install “PackegeName” </li>
+<li>搜索软件包：brew search “PackegeName”</li>
+<li>卸载软件包：brew remove “PackegeName” </li>
 </ul>
-<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><h4 id="安装deepin-wine"><a href="#安装deepin-wine" class="headerlink" title="安装deepin-wine"></a>安装deepin-wine</h4><p>输入以下命令即可</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/wszqkzqk/</span>deepin-wine-ubuntu.git</span><br><span class="line">cd deepin-wine-ubuntu</span><br><span class="line">./install</span><br></pre></td></tr></table></figure>
-<h4 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h4><ul>
-<li>下载软件(GUI下载或wget等均可)<br><a href="http://mirrors.aliyun.com/deepin/pool/non-free/">http://mirrors.aliyun.com/deepin/pool/non-free/</a></li>
-<li>使用如下命令安装软件<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">sudo</span> <span class="selector-tag">dpkg</span> <span class="selector-tag">-i</span> <span class="selector-tag">xxx</span><span class="selector-class">.deb</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>目前博主已经成功安装Tim、微信、百度网盘、迅雷精简版、foobar2000等。</p>
-</blockquote>
-</li>
-</ul>
+<h4 id="wget："><a href="#wget：" class="headerlink" title="wget："></a>wget：</h4><figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>wget</span><br></pre></td></tr></table></figure>
+<h3 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h3><h4 id="macOS："><a href="#macOS：" class="headerlink" title="macOS："></a>macOS：</h4><figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">brew </span><span class="keyword">install </span>zsh</span><br></pre></td></tr></table></figure>
+<h4 id="Debian-Ubuntu"><a href="#Debian-Ubuntu" class="headerlink" title="Debian/Ubuntu:"></a>Debian/Ubuntu:</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">apt <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure>
+<h4 id="Fedora"><a href="#Fedora" class="headerlink" title="Fedora:"></a>Fedora:</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">dnf <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure>
+<h4 id="Centos"><a href="#Centos" class="headerlink" title="Centos:"></a>Centos:</h4><figure class="highlight sas"><table><tr><td class="code"><pre><span class="line">yum <span class="meta">update</span> <span class="variable">&amp;&amp;</span> yum install zsh</span><br></pre></td></tr></table></figure>
+<h4 id="Archlinux"><a href="#Archlinux" class="headerlink" title="Archlinux:"></a>Archlinux:</h4><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">pacman -S zsh</span></span><br></pre></td></tr></table></figure>
+<h3 id="将系统默认shell更换为zsh"><a href="#将系统默认shell更换为zsh" class="headerlink" title="将系统默认shell更换为zsh"></a>将系统默认shell更换为zsh</h3><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">chsh -s <span class="regexp">/bin/</span>zsh</span><br></pre></td></tr></table></figure>
+<h3 id="安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。"><a href="#安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。" class="headerlink" title="安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。"></a>安装neofetch同安装zsh，只需要更换软件包名名称为neofetch。</h3><h3 id="配置zsh"><a href="#配置zsh" class="headerlink" title="配置zsh"></a>配置zsh</h3><p>使用oh-my-zsh可以很方便的配置zsh,并生成.zshrc配置文件方便修改 输入以下命令安装oh-my-zsh</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">&quot;<span class="subst">$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<p>安装成功后输入nano .zshrc打开.zshrc文件添加neofetch,修改ZSH_THEME=”random”，意为每次打开终端即启动neofetch，zsh主题随机，也就是每次打开终端都会改变一个主题，修改如图： <img src= "/images/loading.gif" data-lazy-src="/images/c7fd2a6d2692642c94a9a78c42f04ee4ef71b410.jpg"> 重启电脑就会看到效果。</p>
+<h3 id="用描述文件美化终端-不同系统，不同桌面环境会有所不同-需要自己摸索了，下面以macOS为例"><a href="#用描述文件美化终端-不同系统，不同桌面环境会有所不同-需要自己摸索了，下面以macOS为例" class="headerlink" title="用描述文件美化终端(不同系统，不同桌面环境会有所不同,需要自己摸索了，下面以macOS为例)"></a>用描述文件美化终端(不同系统，不同桌面环境会有所不同,需要自己摸索了，下面以macOS为例)</h3><p>打开终端，点击右键打开显示检查器，选择一个样式双击打开描述文件，按自己的喜好设置文字风格，样式，透明度，模糊程度，窗口大小等，成品图如下： <img src= "/images/loading.gif" data-lazy-src="/images/e7005ea1415345c95c83b5c0f1cbd21b124c8245.jpg"></p>
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>Ubuntu</tag>
-        <tag>Linux</tag>
+        <tag>shell</tag>
+        <tag>zsh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>教你制作macOS+Ubuntu+WindowsPE超级启动盘(仅支持UEFI)</title>
+    <url>/2019/07/26/make-super-usb.html</url>
+    <content><![CDATA[<blockquote>
+<p>对于多系统用户，有没有觉得每一个系统一个U盘很麻烦而且浪费U盘，本文会教你如何制作macOS+Ubuntu+WindowsPE多系统启动盘。注意：建议使用博主分享的PE，其他PE文件结构或许不同，不确定能否成功。<a id="more"></a></p>
+</blockquote>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
+<li>USB 3.0U盘(不可小于16g，博主的是闪迪64gU盘)</li>
+<li>macOS 10.15 beta4原版镜像，进入如下网址，内有下载分享<br><a href="http://bbs.pcbeta.com/viewthread-1823322-1-1.html">http://bbs.pcbeta.com/viewthread-1823322-1-1.html</a></li>
+<li>Ubuntu 19.04镜像，下载地址如下，可直接粘贴到迅雷<br><a href="http://mirror.cogentco.com/pub/linux/ubuntu-releases/19.04/ubuntu-19.04-desktop-amd64.iso">http://mirror.cogentco.com/pub/linux/ubuntu-releases/19.04/ubuntu-19.04-desktop-amd64.iso</a></li>
+<li>Windows 10 1809 PE，百毒盘地址如下(注意，此PE为博主自制PE，兼容PC以及mbp2017，无任何流氓行为，可放心使用)<br>链接: <a href="https://pan.baidu.com/s/1Qb9ieHzwDATaU-FhFuDUJQ">https://pan.baidu.com/s/1Qb9ieHzwDATaU-FhFuDUJQ</a>  密码: 15ns</li>
+<li>一个配置好的可引导Hackintosh的Clover</li>
+</ul>
+<h1 id="写入macOS镜像并放入Clover"><a href="#写入macOS镜像并放入Clover" class="headerlink" title="写入macOS镜像并放入Clover"></a>写入macOS镜像并放入Clover</h1><h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><p>将U盘格式化成为Hfs格式，卷标为mac，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-1.png"></p>
+<h2 id="将Install-macOS-Catalina-Beta-app拷贝到Application下"><a href="#将Install-macOS-Catalina-Beta-app拷贝到Application下" class="headerlink" title="将Install macOS Catalina Beta.app拷贝到Application下"></a>将Install macOS Catalina Beta.app拷贝到Application下</h2><h2 id="终端输入如下命令写入镜像"><a href="#终端输入如下命令写入镜像" class="headerlink" title="终端输入如下命令写入镜像"></a>终端输入如下命令写入镜像</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/Applications/</span>Install\ macOS\ Catalina\ Beta.app<span class="regexp">/Contents/</span>Resources<span class="regexp">/createinstallmedia --volume /</span>Volumes<span class="regexp">/mac --applicationpath /</span>Applications/Install\ macOS\ Catalina\ Beta.app</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/superusb-2.png"></p>
+<h2 id="挂载U盘EFI分区，将Clover拷贝进去"><a href="#挂载U盘EFI分区，将Clover拷贝进去" class="headerlink" title="挂载U盘EFI分区，将Clover拷贝进去"></a>挂载U盘EFI分区，将Clover拷贝进去</h2><h1 id="为Ubuntu以及Windows-PE准备分区"><a href="#为Ubuntu以及Windows-PE准备分区" class="headerlink" title="为Ubuntu以及Windows PE准备分区"></a>为Ubuntu以及Windows PE准备分区</h1><ul>
+<li>打开磁盘工具，添加分区，格式为HFs，名称为other。将分区Install macOS Catalina Beta的大小修改为8G，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-3.png"></li>
+<li>进入Windows打开diskgenius，删掉那个最大的HFs分区。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-4.png"></li>
+<li>在空闲区域添加三个Fat32格式的分区，名称分别为Ubuntu，WinPE，Data。其中Ubuntu大小为4G，WinPE大小为3G，Data为剩余空间。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-5.png"></li>
+</ul>
+<h1 id="拷贝Ubuntu以及WinPE的文件"><a href="#拷贝Ubuntu以及WinPE的文件" class="headerlink" title="拷贝Ubuntu以及WinPE的文件"></a>拷贝Ubuntu以及WinPE的文件</h1><p>将Ubuntu以及WinPE的镜像解压，直接把镜像根目录所有文件拷贝到对应分区。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-6.png"></p>
+<h1 id="引导设置"><a href="#引导设置" class="headerlink" title="引导设置"></a>引导设置</h1><h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><ul>
+<li>在U盘EFI分区新建grub文件夹，和CLOVER文件夹同级。</li>
+<li>打开Ubuntu分区，将boot/grub文件夹下的grub.cfg文件以及EFI/BOOT文件夹下的Bootx64.efi和grubx64.efi两个文件拷贝到刚刚新建的grub文件夹下。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-7.png"></li>
+</ul>
+<h2 id="WinPE"><a href="#WinPE" class="headerlink" title="WinPE"></a>WinPE</h2><p>打开WinPE分区，将efi/microsoft/boot文件夹下的cdboot.efi文件重命名为cdboot-bak.efi，并将efi/boot文件夹下的bootx64.efi文件拷贝到efi/microsoft/boot文件夹下。并重命名为cdboot.efi。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-8.png"></p>
+<h1 id="至此，你的macOS-Ubuntu-WinPE超级启动盘制作完成。"><a href="#至此，你的macOS-Ubuntu-WinPE超级启动盘制作完成。" class="headerlink" title="至此，你的macOS+Ubuntu+WinPE超级启动盘制作完成。"></a>至此，你的macOS+Ubuntu+WinPE超级启动盘制作完成。</h1><h1 id="成品"><a href="#成品" class="headerlink" title="成品"></a>成品</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/superusb-9.png"></p>
+<h1 id="2019-7-30更新"><a href="#2019-7-30更新" class="headerlink" title="2019-7-30更新"></a>2019-7-30更新</h1><h2 id="重要注意事项"><a href="#重要注意事项" class="headerlink" title="重要注意事项"></a>重要注意事项</h2><p><strong><font color=#A52A2A >如果要把这个启动盘用于白苹果，记得挂载U盘EFI分区，将Boot-&gt;Bootx64.efi文件以及Clover-&gt;Cloverx64.efi文件的后缀(.efi)去掉，这样做的目的是干掉U盘的Clover启动项。以防止白苹果误进入Clover，这很重要，白苹果使用Clover会彻底黑屏变砖。白苹果可以按option键选择进入macOS安装盘、Ubuntu安装盘或WinPE启动盘，如果以后安装黑苹果，完全可以再把文件名改回来或者使用本地硬盘中的Clover引导启动盘。</font></strong></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>Hackintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -1895,40 +1920,33 @@
       </tags>
   </entry>
   <entry>
-    <title>教你制作macOS+Ubuntu+WindowsPE超级启动盘(仅支持UEFI)</title>
-    <url>/2019/07/26/make-super-usb.html</url>
+    <title>Ubuntu下利用deepin-wine安装软件简要方案</title>
+    <url>/2019/03/17/install_soft_for_linux.html</url>
     <content><![CDATA[<blockquote>
-<p>对于多系统用户，有没有觉得每一个系统一个U盘很麻烦而且浪费U盘，本文会教你如何制作macOS+Ubuntu+WindowsPE多系统启动盘。注意：建议使用博主分享的PE，其他PE文件结构或许不同，不确定能否成功。<a id="more"></a></p>
+<p>一直以来，Linux作为开发机比较给力，但是常用软件(如QQ、微信等)的缺乏使Linux在桌面端一直不火，用户量低于Windows以及macOS，今天分享一个Ubuntu下安装常用软件的方法。</p>
 </blockquote>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul>
-<li>USB 3.0U盘(不可小于16g，博主的是闪迪64gU盘)</li>
-<li>macOS 10.15 beta4原版镜像，进入如下网址，内有下载分享<br><a href="http://bbs.pcbeta.com/viewthread-1823322-1-1.html">http://bbs.pcbeta.com/viewthread-1823322-1-1.html</a></li>
-<li>Ubuntu 19.04镜像，下载地址如下，可直接粘贴到迅雷<br><a href="http://mirror.cogentco.com/pub/linux/ubuntu-releases/19.04/ubuntu-19.04-desktop-amd64.iso">http://mirror.cogentco.com/pub/linux/ubuntu-releases/19.04/ubuntu-19.04-desktop-amd64.iso</a></li>
-<li>Windows 10 1809 PE，百毒盘地址如下(注意，此PE为博主自制PE，兼容PC以及mbp2017，无任何流氓行为，可放心使用)<br>链接: <a href="https://pan.baidu.com/s/1Qb9ieHzwDATaU-FhFuDUJQ">https://pan.baidu.com/s/1Qb9ieHzwDATaU-FhFuDUJQ</a>  密码: 15ns</li>
-<li>一个配置好的可引导Hackintosh的Clover</li>
+<a id="more"></a>
+
+<h3 id="博主电脑环境"><a href="#博主电脑环境" class="headerlink" title="博主电脑环境"></a>博主电脑环境</h3><ul>
+<li>Ubuntu 18.10 x64</li>
 </ul>
-<h1 id="写入macOS镜像并放入Clover"><a href="#写入macOS镜像并放入Clover" class="headerlink" title="写入macOS镜像并放入Clover"></a>写入macOS镜像并放入Clover</h1><h2 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h2><p>将U盘格式化成为Hfs格式，卷标为mac，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-1.png"></p>
-<h2 id="将Install-macOS-Catalina-Beta-app拷贝到Application下"><a href="#将Install-macOS-Catalina-Beta-app拷贝到Application下" class="headerlink" title="将Install macOS Catalina Beta.app拷贝到Application下"></a>将Install macOS Catalina Beta.app拷贝到Application下</h2><h2 id="终端输入如下命令写入镜像"><a href="#终端输入如下命令写入镜像" class="headerlink" title="终端输入如下命令写入镜像"></a>终端输入如下命令写入镜像</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo <span class="regexp">/Applications/</span>Install\ macOS\ Catalina\ Beta.app<span class="regexp">/Contents/</span>Resources<span class="regexp">/createinstallmedia --volume /</span>Volumes<span class="regexp">/mac --applicationpath /</span>Applications/Install\ macOS\ Catalina\ Beta.app</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/superusb-2.png"></p>
-<h2 id="挂载U盘EFI分区，将Clover拷贝进去"><a href="#挂载U盘EFI分区，将Clover拷贝进去" class="headerlink" title="挂载U盘EFI分区，将Clover拷贝进去"></a>挂载U盘EFI分区，将Clover拷贝进去</h2><h1 id="为Ubuntu以及Windows-PE准备分区"><a href="#为Ubuntu以及Windows-PE准备分区" class="headerlink" title="为Ubuntu以及Windows PE准备分区"></a>为Ubuntu以及Windows PE准备分区</h1><ul>
-<li>打开磁盘工具，添加分区，格式为HFs，名称为other。将分区Install macOS Catalina Beta的大小修改为8G，如图。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-3.png"></li>
-<li>进入Windows打开diskgenius，删掉那个最大的HFs分区。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-4.png"></li>
-<li>在空闲区域添加三个Fat32格式的分区，名称分别为Ubuntu，WinPE，Data。其中Ubuntu大小为4G，WinPE大小为3G，Data为剩余空间。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-5.png"></li>
+<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><h4 id="安装deepin-wine"><a href="#安装deepin-wine" class="headerlink" title="安装deepin-wine"></a>安装deepin-wine</h4><p>输入以下命令即可</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/wszqkzqk/</span>deepin-wine-ubuntu.git</span><br><span class="line">cd deepin-wine-ubuntu</span><br><span class="line">./install</span><br></pre></td></tr></table></figure>
+<h4 id="安装软件"><a href="#安装软件" class="headerlink" title="安装软件"></a>安装软件</h4><ul>
+<li>下载软件(GUI下载或wget等均可)<br><a href="http://mirrors.aliyun.com/deepin/pool/non-free/">http://mirrors.aliyun.com/deepin/pool/non-free/</a></li>
+<li>使用如下命令安装软件<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">sudo</span> <span class="selector-tag">dpkg</span> <span class="selector-tag">-i</span> <span class="selector-tag">xxx</span><span class="selector-class">.deb</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>目前博主已经成功安装Tim、微信、百度网盘、迅雷精简版、foobar2000等。</p>
+</blockquote>
+</li>
 </ul>
-<h1 id="拷贝Ubuntu以及WinPE的文件"><a href="#拷贝Ubuntu以及WinPE的文件" class="headerlink" title="拷贝Ubuntu以及WinPE的文件"></a>拷贝Ubuntu以及WinPE的文件</h1><p>将Ubuntu以及WinPE的镜像解压，直接把镜像根目录所有文件拷贝到对应分区。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-6.png"></p>
-<h1 id="引导设置"><a href="#引导设置" class="headerlink" title="引导设置"></a>引导设置</h1><h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><ul>
-<li>在U盘EFI分区新建grub文件夹，和CLOVER文件夹同级。</li>
-<li>打开Ubuntu分区，将boot/grub文件夹下的grub.cfg文件以及EFI/BOOT文件夹下的Bootx64.efi和grubx64.efi两个文件拷贝到刚刚新建的grub文件夹下。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-7.png"></li>
-</ul>
-<h2 id="WinPE"><a href="#WinPE" class="headerlink" title="WinPE"></a>WinPE</h2><p>打开WinPE分区，将efi/microsoft/boot文件夹下的cdboot.efi文件重命名为cdboot-bak.efi，并将efi/boot文件夹下的bootx64.efi文件拷贝到efi/microsoft/boot文件夹下。并重命名为cdboot.efi。<br><img src= "/images/loading.gif" data-lazy-src="/images/superusb-8.png"></p>
-<h1 id="至此，你的macOS-Ubuntu-WinPE超级启动盘制作完成。"><a href="#至此，你的macOS-Ubuntu-WinPE超级启动盘制作完成。" class="headerlink" title="至此，你的macOS+Ubuntu+WinPE超级启动盘制作完成。"></a>至此，你的macOS+Ubuntu+WinPE超级启动盘制作完成。</h1><h1 id="成品"><a href="#成品" class="headerlink" title="成品"></a>成品</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/superusb-9.png"></p>
-<h1 id="2019-7-30更新"><a href="#2019-7-30更新" class="headerlink" title="2019-7-30更新"></a>2019-7-30更新</h1><h2 id="重要注意事项"><a href="#重要注意事项" class="headerlink" title="重要注意事项"></a>重要注意事项</h2><p><strong><font color=#A52A2A >如果要把这个启动盘用于白苹果，记得挂载U盘EFI分区，将Boot-&gt;Bootx64.efi文件以及Clover-&gt;Cloverx64.efi文件的后缀(.efi)去掉，这样做的目的是干掉U盘的Clover启动项。以防止白苹果误进入Clover，这很重要，白苹果使用Clover会彻底黑屏变砖。白苹果可以按option键选择进入macOS安装盘、Ubuntu安装盘或WinPE启动盘，如果以后安装黑苹果，完全可以再把文件名改回来或者使用本地硬盘中的Clover引导启动盘。</font></strong></p>
 ]]></content>
       <categories>
-        <category>Hackintosh</category>
+        <category>Linux</category>
       </categories>
       <tags>
-        <tag>Hackintosh</tag>
+        <tag>Ubuntu</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -2151,38 +2169,6 @@
       </tags>
   </entry>
   <entry>
-    <title>macOS 10.14.6 beta下填充PCI列表的简要教程</title>
-    <url>/2019/05/21/pci-list-for-hackintosh.html</url>
-    <content><![CDATA[<blockquote>
-<p>不知各位爱好者是否发现了一些朋友的黑苹果系统中,关于本机里的pci列表下有详细的设备信息。以前实现这个比较麻烦，需要ssdt。现在已经有简便方案。<a id="more"></a></p>
-</blockquote>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>目前白苹果上并没有显示PCI列表，所以，各位是否实现全靠自愿。</p>
-<h3 id="所需软件"><a href="#所需软件" class="headerlink" title="所需软件"></a>所需软件</h3><ul>
-<li><a href='http://headsoft.com.au/download/mac/Hackintool.zip'>Hackintool</a></li>
-<li>Clover Configurator</li>
-</ul>
-<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
-<li>打开Clover Configurator，依次点击<font color=#A52A2A ><strong><em>Boot.log-&gt;Generate log-&gt;Save boot.log to desktop</em></strong></font>，如图。生成在桌面的文件名称为bootlog.txt。<br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-1.png"></li>
-</ul>
-<h4 id="下面以NVME-SSD-SM961为例进行讲解"><a href="#下面以NVME-SSD-SM961为例进行讲解" class="headerlink" title="下面以NVME SSD SM961为例进行讲解"></a>下面以NVME SSD SM961为例进行讲解</h4><ul>
-<li>打开Hackintool，记住SM961的设备id，如图即为0xA804。<br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-2.png"></li>
-<li>打开之前保存的bootlog.txt文件，搜索A804，我们会发现这一行数据中有一个形如xx:xx.xx的字符串，这个就是pciaddr,记下它，稍后会用到。如图：pciaddr为<font color=#A52A2A ><strong><em>04:00.00</em></strong></font><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-3.png"></li>
-<li>使用Clover Configurator打开config.plist,依次点击Devices-&gt;Arbitrary,按图示填写数据即可显示PCI列表。<font color=#A52A2A ><strong><em>注意：PciAddr一栏填写刚才查询出来的pciaddr，即</em></strong>04:00.00*<strong>,Comment一栏随便填。右侧属性栏中的Key值至少有两个参数**<em>AAPL,slot-name</em></strong>以及*<strong>model**<em>，Value随便填，Value Type选STRING</em></strong>。</font><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-4.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-5.png"></li>
-</ul>
-<h3 id="一个特殊情况-声卡"><a href="#一个特殊情况-声卡" class="headerlink" title="一个特殊情况(声卡)"></a>一个特殊情况(声卡)</h3><p>由于我们在注入声卡属性时会覆盖layout-id，导致声卡无声。所以如果要注入声卡属性，要在clover下做如下设置。</p>
-<ul>
-<li><font color=#A52A2A ><strong><em>Devices-&gt;Audio-&gt;inject-&gt;No</em></strong><font></li>
-<li><font color=#A52A2A ><strong><em>Boot-&gt;alcid=layout-id</em></strong><font><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-6.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-7.png"></li>
-</ul>
-<h3 id="至此，您已经成功显示PCI列表"><a href="#至此，您已经成功显示PCI列表" class="headerlink" title="至此，您已经成功显示PCI列表"></a>至此，您已经成功显示PCI列表</h3>]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>PHP+Nginx+MySQL搭建网站简易教程(以Centos7为例)</title>
     <url>/2018/05/19/phpnginxmysql.html</url>
     <content><![CDATA[<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
@@ -2365,34 +2351,35 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows 10下忘记密码的解决方案(本地账户，微软账户通杀)</title>
-    <url>/2018/05/27/reset-password-for-windows-10.html</url>
-    <content><![CDATA[<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><blockquote>
-<p>我们知道Windows下连按5次shift会弹出粘滞键，他的程序名称是sethc.exe。经测试在Windows登录界面处输入密码之前按5次shift键也可以启动sethc.exe。所以只要把cmd.exe重命名为sethc.exe就可以在登录之前打开cmd以便我们为所欲为。<a id="more"></a></p>
+    <title>macOS 10.14.6 beta下填充PCI列表的简要教程</title>
+    <url>/2019/05/21/pci-list-for-hackintosh.html</url>
+    <content><![CDATA[<blockquote>
+<p>不知各位爱好者是否发现了一些朋友的黑苹果系统中,关于本机里的pci列表下有详细的设备信息。以前实现这个比较麻烦，需要ssdt。现在已经有简便方案。<a id="more"></a></p>
 </blockquote>
-<h3 id="PE破解密码的缺陷"><a href="#PE破解密码的缺陷" class="headerlink" title="PE破解密码的缺陷"></a>PE破解密码的缺陷</h3><p>如果电脑安装了双Windows系统，如win7+win10，pe破解可能失效。</p>
-<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
-<li>准备好windows 10安装U盘。</li>
-<li>U盘启动，点击下一步-&gt;修复计算机-&gt;疑难解答-&gt;命令提示符(一定要在安装盘下进入，系统下直接进入高级模式会要求输入密码)，如图<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raufjiqgj30sg0lcq30.jpg"><br>如出现下图则说明你不是通过安装盘进入的高级模式。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rauu65rxj30sg0lcwes.jpg"></li>
-<li>导航进入系统盘符，注意不一定是C盘，用dir命令查看盘符下的文件已确定是不是系统盘。如</span><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">C</span>:</span><br><span class="line"><span class="attribute">cd</span> Windows/System<span class="number">32</span></span><br></pre></td></tr></table></figure></li>
-<li>输入以下命令将cmd重命名，3、4步骤如图</span><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">ren</span> <span class="selector-tag">sethc</span><span class="selector-class">.exe</span> <span class="selector-tag">AAA</span><span class="selector-class">.exe</span></span><br><span class="line"><span class="selector-tag">ren</span> <span class="selector-tag">cmd</span><span class="selector-class">.exe</span> <span class="selector-tag">sethc</span><span class="selector-class">.exe</span></span><br></pre></td></tr></table></figure>
-<img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rav9bi0fj30sg0lcjrp.jpg"></li>
-<li>重启到登录界面按5次shift进入命令提示符(此时窗口名称为sethc.exe)</li>
-<li>输入如下命令启用Windows内置的Administrator用户，并重置Administrator的密码。如果之前用的是微软账户就可以不重置密码，默认无密码。<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> /active:yes </span><br><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> 新密码</span><br></pre></td></tr></table></figure>
-<img src= "/images/loading.gif" data-lazy-src="/images/Snipaste_2018-05-27_21-41-45.png"></li>
-<li>用Administrator登录系统，将之前忘记密码的用户修改密码，如果是微软账户就上官网重置密码。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ravn4bmhj30ia0h613m.jpg"></li>
-<li>进入原用户测试。</li>
-<li>进入文件资源管理器，将Windows/System32下的sethc.exe重命名为cmd.exe，AAA.exe重命名为sethc.exe。</li>
-<li>如果想禁用Administrator请执行以下命令。<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> /active:no</span><br></pre></td></tr></table></figure></li>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>目前白苹果上并没有显示PCI列表，所以，各位是否实现全靠自愿。</p>
+<h3 id="所需软件"><a href="#所需软件" class="headerlink" title="所需软件"></a>所需软件</h3><ul>
+<li><a href='http://headsoft.com.au/download/mac/Hackintool.zip'>Hackintool</a></li>
+<li>Clover Configurator</li>
 </ul>
-]]></content>
+<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
+<li>打开Clover Configurator，依次点击<font color=#A52A2A ><strong><em>Boot.log-&gt;Generate log-&gt;Save boot.log to desktop</em></strong></font>，如图。生成在桌面的文件名称为bootlog.txt。<br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-1.png"></li>
+</ul>
+<h4 id="下面以NVME-SSD-SM961为例进行讲解"><a href="#下面以NVME-SSD-SM961为例进行讲解" class="headerlink" title="下面以NVME SSD SM961为例进行讲解"></a>下面以NVME SSD SM961为例进行讲解</h4><ul>
+<li>打开Hackintool，记住SM961的设备id，如图即为0xA804。<br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-2.png"></li>
+<li>打开之前保存的bootlog.txt文件，搜索A804，我们会发现这一行数据中有一个形如xx:xx.xx的字符串，这个就是pciaddr,记下它，稍后会用到。如图：pciaddr为<font color=#A52A2A ><strong><em>04:00.00</em></strong></font><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-3.png"></li>
+<li>使用Clover Configurator打开config.plist,依次点击Devices-&gt;Arbitrary,按图示填写数据即可显示PCI列表。<font color=#A52A2A ><strong><em>注意：PciAddr一栏填写刚才查询出来的pciaddr，即</em></strong>04:00.00*<strong>,Comment一栏随便填。右侧属性栏中的Key值至少有两个参数**<em>AAPL,slot-name</em></strong>以及*<strong>model**<em>，Value随便填，Value Type选STRING</em></strong>。</font><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-4.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-5.png"></li>
+</ul>
+<h3 id="一个特殊情况-声卡"><a href="#一个特殊情况-声卡" class="headerlink" title="一个特殊情况(声卡)"></a>一个特殊情况(声卡)</h3><p>由于我们在注入声卡属性时会覆盖layout-id，导致声卡无声。所以如果要注入声卡属性，要在clover下做如下设置。</p>
+<ul>
+<li><font color=#A52A2A ><strong><em>Devices-&gt;Audio-&gt;inject-&gt;No</em></strong><font></li>
+<li><font color=#A52A2A ><strong><em>Boot-&gt;alcid=layout-id</em></strong><font><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-6.png"><br><img src= "/images/loading.gif" data-lazy-src="/images/pcilist-7.png"></li>
+</ul>
+<h3 id="至此，您已经成功显示PCI列表"><a href="#至此，您已经成功显示PCI列表" class="headerlink" title="至此，您已经成功显示PCI列表"></a>至此，您已经成功显示PCI列表</h3>]]></content>
       <categories>
-        <category>Windows Desktop</category>
+        <category>Hackintosh</category>
       </categories>
       <tags>
-        <tag>cmd</tag>
-        <tag>sethc</tag>
-        <tag>Windows10</tag>
+        <tag>Hackintosh</tag>
       </tags>
   </entry>
   <entry>
@@ -2529,6 +2516,83 @@
       </tags>
   </entry>
   <entry>
+    <title>Windows 10下忘记密码的解决方案(本地账户，微软账户通杀)</title>
+    <url>/2018/05/27/reset-password-for-windows-10.html</url>
+    <content><![CDATA[<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><blockquote>
+<p>我们知道Windows下连按5次shift会弹出粘滞键，他的程序名称是sethc.exe。经测试在Windows登录界面处输入密码之前按5次shift键也可以启动sethc.exe。所以只要把cmd.exe重命名为sethc.exe就可以在登录之前打开cmd以便我们为所欲为。<a id="more"></a></p>
+</blockquote>
+<h3 id="PE破解密码的缺陷"><a href="#PE破解密码的缺陷" class="headerlink" title="PE破解密码的缺陷"></a>PE破解密码的缺陷</h3><p>如果电脑安装了双Windows系统，如win7+win10，pe破解可能失效。</p>
+<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
+<li>准备好windows 10安装U盘。</li>
+<li>U盘启动，点击下一步-&gt;修复计算机-&gt;疑难解答-&gt;命令提示符(一定要在安装盘下进入，系统下直接进入高级模式会要求输入密码)，如图<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0raufjiqgj30sg0lcq30.jpg"><br>如出现下图则说明你不是通过安装盘进入的高级模式。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rauu65rxj30sg0lcwes.jpg"></li>
+<li>导航进入系统盘符，注意不一定是C盘，用dir命令查看盘符下的文件已确定是不是系统盘。如</span><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">C</span>:</span><br><span class="line"><span class="attribute">cd</span> Windows/System<span class="number">32</span></span><br></pre></td></tr></table></figure></li>
+<li>输入以下命令将cmd重命名，3、4步骤如图</span><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">ren</span> <span class="selector-tag">sethc</span><span class="selector-class">.exe</span> <span class="selector-tag">AAA</span><span class="selector-class">.exe</span></span><br><span class="line"><span class="selector-tag">ren</span> <span class="selector-tag">cmd</span><span class="selector-class">.exe</span> <span class="selector-tag">sethc</span><span class="selector-class">.exe</span></span><br></pre></td></tr></table></figure>
+<img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0rav9bi0fj30sg0lcjrp.jpg"></li>
+<li>重启到登录界面按5次shift进入命令提示符(此时窗口名称为sethc.exe)</li>
+<li>输入如下命令启用Windows内置的Administrator用户，并重置Administrator的密码。如果之前用的是微软账户就可以不重置密码，默认无密码。<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> /active:yes </span><br><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> 新密码</span><br></pre></td></tr></table></figure>
+<img src= "/images/loading.gif" data-lazy-src="/images/Snipaste_2018-05-27_21-41-45.png"></li>
+<li>用Administrator登录系统，将之前忘记密码的用户修改密码，如果是微软账户就上官网重置密码。<br><img src= "/images/loading.gif" data-lazy-src="/images/005YMNDBly1g0ravn4bmhj30ia0h613m.jpg"></li>
+<li>进入原用户测试。</li>
+<li>进入文件资源管理器，将Windows/System32下的sethc.exe重命名为cmd.exe，AAA.exe重命名为sethc.exe。</li>
+<li>如果想禁用Administrator请执行以下命令。<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">net <span class="keyword">user</span> <span class="title">Administrator</span> /active:no</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Windows Desktop</category>
+      </categories>
+      <tags>
+        <tag>cmd</tag>
+        <tag>sethc</tag>
+        <tag>Windows10</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用macserial获取iMac 2019机型信息</title>
+    <url>/2019/04/03/smbios-for-imac2019.html</url>
+    <content><![CDATA[<blockquote>
+<p>Apple在近期发布了iMac 2019版本，最高可配i9+vega48，无T2芯片(美滋滋)，目前Clover Configurator尚未更新关于iMac 2019的smbios信息，本教程教大家如何使用macserial获取iMac 2019机型信息。</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="获取macserial软件"><a href="#获取macserial软件" class="headerlink" title="获取macserial软件"></a>获取macserial软件</h3><blockquote>
+<p>macserial是github上的<font color=#A52A2A ><strong>acidanthera</strong></font>大佬开发，其release版本尚未添加iMac 2019信息，故需要编译安装。经过博主测试，需要修改build.tool脚本才能成功编译，故博主已将原项目<font color=#A52A2A ><strong>fork</strong></font>，并修改build.tool脚本，使其能正常编译。</p>
+</blockquote>
+<blockquote>
+<p>原项目地址:<a href="https://github.com/acidanthera/macserial">https://github.com/acidanthera/macserial</a></p>
+</blockquote>
+<blockquote>
+<p>博主fork地址:<a href="https://github.com/bugprogrammer/macserial">https://github.com/bugprogrammer/macserial</a></p>
+</blockquote>
+<h4 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h4><h5 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a>Xcode</h5><ul>
+<li>App Store下载Xcode</li>
+<li>终端输入如下命令并按提示安装<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
+<h4 id="获取macserial源码"><a href="#获取macserial源码" class="headerlink" title="获取macserial源码"></a>获取macserial源码</h4></li>
+</ul>
+<p>终端下输入如下命令即可</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cd ~/Desktop</span><br><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/bugprogrammer/m</span>acserial.git</span><br><span class="line">cd macserial</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/ce1c2f16f103e8ba764ec2c731370177bc99aab1.jpg"></p>
+<h4 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h4><p>终端下输入如下命令即可，成功后会打开生成文件目录。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">./<span class="selector-tag">build</span><span class="selector-class">.tool</span></span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/f2f100fad5fc616b32ea4c7a596379b3dbbcae9d.jpg"></p>
+<h3 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h3><h4 id="获取帮助"><a href="#获取帮助" class="headerlink" title="获取帮助"></a>获取帮助</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">bin</span>/macserial<span class="number">64</span> -h</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/4ee5818801c68268aa98ad5c21dd7b808124c2e7.jpg"></p>
+<h4 id="查看支持的所有机型"><a href="#查看支持的所有机型" class="headerlink" title="查看支持的所有机型"></a>查看支持的所有机型</h4><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">bin/macserial64 <span class="comment">--list</span></span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/2485bc9325d68c7209721bff27f35e0283549b27.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/dc354eafcda927a3095934b78989dd4128f04b1c.jpg"></p>
+<h3 id="获取iMac-2019机型信息-以iMac-19-1为例"><a href="#获取iMac-2019机型信息-以iMac-19-1为例" class="headerlink" title="获取iMac 2019机型信息(以iMac 19,1为例)"></a>获取iMac 2019机型信息(以iMac 19,1为例)</h3><h4 id="获取Serial-Number以及Board-Serial-Number"><a href="#获取Serial-Number以及Board-Serial-Number" class="headerlink" title="获取Serial Number以及Board Serial Number"></a>获取Serial Number以及Board Serial Number</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">bin</span>/macserial<span class="number">64</span> --model iMac<span class="number">19</span>,<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/ace46b89621b91d46e0236ca9547315eaae38e7b.jpg"></p>
+<h4 id="通过源码获取其他信息"><a href="#通过源码获取其他信息" class="headerlink" title="通过源码获取其他信息"></a>通过源码获取其他信息</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sed</span> -n &#x27;<span class="number">424</span>,<span class="number">429</span>p&#x27; src/modelinfo.h</span><br></pre></td></tr></table></figure>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/5c207d8538d1a6a7ee6f5000500dbf718b845aab.jpg"></p>
+<h3 id="最终成品"><a href="#最终成品" class="headerlink" title="最终成品"></a>最终成品</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/ce8b62d1cf5cc748a11a21b86cd234e48e5d5aa3.png"></p>
+]]></content>
+      <categories>
+        <category>Hackintosh</category>
+      </categories>
+      <tags>
+        <tag>macOS</tag>
+        <tag>Hackintosh</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>解锁macOS10.15的系统分区</title>
     <url>/2019/07/13/unlockSystem.html</url>
     <content><![CDATA[<blockquote>
@@ -2607,52 +2671,6 @@
         <tag>OpenSSL</tag>
         <tag>TLS 1.3</tag>
         <tag>HSTS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用macserial获取iMac 2019机型信息</title>
-    <url>/2019/04/03/smbios-for-imac2019.html</url>
-    <content><![CDATA[<blockquote>
-<p>Apple在近期发布了iMac 2019版本，最高可配i9+vega48，无T2芯片(美滋滋)，目前Clover Configurator尚未更新关于iMac 2019的smbios信息，本教程教大家如何使用macserial获取iMac 2019机型信息。</p>
-</blockquote>
-<a id="more"></a>
-
-<h3 id="获取macserial软件"><a href="#获取macserial软件" class="headerlink" title="获取macserial软件"></a>获取macserial软件</h3><blockquote>
-<p>macserial是github上的<font color=#A52A2A ><strong>acidanthera</strong></font>大佬开发，其release版本尚未添加iMac 2019信息，故需要编译安装。经过博主测试，需要修改build.tool脚本才能成功编译，故博主已将原项目<font color=#A52A2A ><strong>fork</strong></font>，并修改build.tool脚本，使其能正常编译。</p>
-</blockquote>
-<blockquote>
-<p>原项目地址:<a href="https://github.com/acidanthera/macserial">https://github.com/acidanthera/macserial</a></p>
-</blockquote>
-<blockquote>
-<p>博主fork地址:<a href="https://github.com/bugprogrammer/macserial">https://github.com/bugprogrammer/macserial</a></p>
-</blockquote>
-<h4 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h4><h5 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a>Xcode</h5><ul>
-<li>App Store下载Xcode</li>
-<li>终端输入如下命令并按提示安装<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">xcode-<span class="keyword">select</span> <span class="comment">--install</span></span><br></pre></td></tr></table></figure>
-<h4 id="获取macserial源码"><a href="#获取macserial源码" class="headerlink" title="获取macserial源码"></a>获取macserial源码</h4></li>
-</ul>
-<p>终端下输入如下命令即可</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cd ~/Desktop</span><br><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/bugprogrammer/m</span>acserial.git</span><br><span class="line">cd macserial</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/ce1c2f16f103e8ba764ec2c731370177bc99aab1.jpg"></p>
-<h4 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h4><p>终端下输入如下命令即可，成功后会打开生成文件目录。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">./<span class="selector-tag">build</span><span class="selector-class">.tool</span></span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/f2f100fad5fc616b32ea4c7a596379b3dbbcae9d.jpg"></p>
-<h3 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h3><h4 id="获取帮助"><a href="#获取帮助" class="headerlink" title="获取帮助"></a>获取帮助</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">bin</span>/macserial<span class="number">64</span> -h</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/4ee5818801c68268aa98ad5c21dd7b808124c2e7.jpg"></p>
-<h4 id="查看支持的所有机型"><a href="#查看支持的所有机型" class="headerlink" title="查看支持的所有机型"></a>查看支持的所有机型</h4><figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">bin/macserial64 <span class="comment">--list</span></span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/2485bc9325d68c7209721bff27f35e0283549b27.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/dc354eafcda927a3095934b78989dd4128f04b1c.jpg"></p>
-<h3 id="获取iMac-2019机型信息-以iMac-19-1为例"><a href="#获取iMac-2019机型信息-以iMac-19-1为例" class="headerlink" title="获取iMac 2019机型信息(以iMac 19,1为例)"></a>获取iMac 2019机型信息(以iMac 19,1为例)</h3><h4 id="获取Serial-Number以及Board-Serial-Number"><a href="#获取Serial-Number以及Board-Serial-Number" class="headerlink" title="获取Serial Number以及Board Serial Number"></a>获取Serial Number以及Board Serial Number</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">bin</span>/macserial<span class="number">64</span> --model iMac<span class="number">19</span>,<span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/ace46b89621b91d46e0236ca9547315eaae38e7b.jpg"></p>
-<h4 id="通过源码获取其他信息"><a href="#通过源码获取其他信息" class="headerlink" title="通过源码获取其他信息"></a>通过源码获取其他信息</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sed</span> -n &#x27;<span class="number">424</span>,<span class="number">429</span>p&#x27; src/modelinfo.h</span><br></pre></td></tr></table></figure>
-<p><img src= "/images/loading.gif" data-lazy-src="/images/5c207d8538d1a6a7ee6f5000500dbf718b845aab.jpg"></p>
-<h3 id="最终成品"><a href="#最终成品" class="headerlink" title="最终成品"></a>最终成品</h3><p><img src= "/images/loading.gif" data-lazy-src="/images/ce8b62d1cf5cc748a11a21b86cd234e48e5d5aa3.png"></p>
-]]></content>
-      <categories>
-        <category>Hackintosh</category>
-      </categories>
-      <tags>
-        <tag>Hackintosh</tag>
-        <tag>macOS</tag>
       </tags>
   </entry>
 </search>
