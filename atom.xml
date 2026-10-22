@@ -6,7 +6,7 @@
   <link href="https://bugprogrammer.github.io/atom.xml" rel="self"/>
   
   <link href="https://bugprogrammer.github.io/"/>
-  <updated>2026-10-21T12:21:00.000Z</updated>
+  <updated>2026-10-22T13:00:00.000Z</updated>
   <id>https://bugprogrammer.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>多系统博物馆的最后拼图 —— Mac OS X Tiger-Mac OS X Lion+Windows 2000</title>
+    <link href="https://bugprogrammer.github.io/2026/10/22/hackintosh-tiger-to-lion-2k.html"/>
+    <id>https://bugprogrammer.github.io/2026/10/22/hackintosh-tiger-to-lion-2k.html</id>
+    <published>2026-10-22T13:00:00.000Z</published>
+    <updated>2026-10-22T13:00:00.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;继 &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Hackintosh" scheme="https://bugprogrammer.github.io/categories/Hackintosh/"/>
+    
+    
+    <category term="Hackintosh" scheme="https://bugprogrammer.github.io/tags/Hackintosh/"/>
+    
+    <category term="EP45" scheme="https://bugprogrammer.github.io/tags/EP45/"/>
+    
+    <category term="Core 2 Dow" scheme="https://bugprogrammer.github.io/tags/Core-2-Dow/"/>
+    
+    <category term="LGA 775" scheme="https://bugprogrammer.github.io/tags/LGA-775/"/>
+    
+  </entry>
   
   <entry>
     <title>21个版本的Windows/macOS共存的系统博物馆</title>
@@ -444,26 +476,6 @@
     
     <summary type="html">&lt;blockquote&gt;
 &lt;p&gt;对于多系统用户，有没有觉得每一个系统一个U盘很麻烦而且浪费U盘，本文会教你如何制作macOS+Ubuntu+WindowsPE多系统启动盘。注意：建议使用博主分享的PE，其他PE文件结构或许不同，不确定能否成功。</summary>
-    
-    
-    
-    <category term="Hackintosh" scheme="https://bugprogrammer.github.io/categories/Hackintosh/"/>
-    
-    
-    <category term="Hackintosh" scheme="https://bugprogrammer.github.io/tags/Hackintosh/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解锁macOS10.15的系统分区</title>
-    <link href="https://bugprogrammer.github.io/2019/07/13/unlockSystem.html"/>
-    <id>https://bugprogrammer.github.io/2019/07/13/unlockSystem.html</id>
-    <published>2019-07-13T12:21:00.000Z</published>
-    <updated>2019-07-15T12:21:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;macOS 10.15的一个显著变化就是Apple锁定了系统分区，导致L/E以及S/L/E无法拷贝文件。Kext Utility无法重建缓存。也间接影响了HomeBrew的使用，下面教大家如何解锁系统分区。</summary>
     
     
     

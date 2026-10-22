@@ -1,0 +1,522 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>多系统博物馆的最后拼图 —— Mac OS X Tiger-Mac OS X Lion+Windows 2000 | Bugprogrammer的博客</title><meta name="keywords" content="Hackintosh,EP45,Core 2 Dow,LGA 775"><meta name="author" content="Bugprogrammer"><meta name="copyright" content="Bugprogrammer"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="继 https:&#x2F;&#x2F;github.com&#x2F;bugprogrammer&#x2F;ASUS-p8z77m-pro-Install-Hackintosh-OS-X-Mountain-Lion-to-macOS-Sequoia-and-WindowsXP-to-Windows11 项目之后，笔者在一台技嘉 EP45-UD3+Intel Core 2 Quad Q9550+Nvidia Quadra FX 450">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多系统博物馆的最后拼图 —— Mac OS X Tiger-Mac OS X Lion+Windows 2000">
+<meta property="og:url" content="https://bugprogrammer.github.io/2026/10/22/hackintosh-tiger-to-lion-2k.html">
+<meta property="og:site_name" content="Bugprogrammer的博客">
+<meta property="og:description" content="继 https:&#x2F;&#x2F;github.com&#x2F;bugprogrammer&#x2F;ASUS-p8z77m-pro-Install-Hackintosh-OS-X-Mountain-Lion-to-macOS-Sequoia-and-WindowsXP-to-Windows11 项目之后，笔者在一台技嘉 EP45-UD3+Intel Core 2 Quad Q9550+Nvidia Quadra FX 450">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://bugprogrammer.github.io/images/index.jpeg">
+<meta property="article:published_time" content="2026-10-22T13:00:00.000Z">
+<meta property="article:modified_time" content="2026-10-22T13:00:00.000Z">
+<meta property="article:author" content="Bugprogrammer">
+<meta property="article:tag" content="Hackintosh">
+<meta property="article:tag" content="EP45">
+<meta property="article:tag" content="Core 2 Dow">
+<meta property="article:tag" content="LGA 775">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bugprogrammer.github.io/images/index.jpeg"><link rel="shortcut icon" href="/images/my.jpg"><link rel="canonical" href="https://bugprogrammer.github.io/2026/10/22/hackintosh-tiger-to-lion-2k"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/fontawesome/css/all.min.css" media="print" onload="this.media='all'"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":300,"position":"top","messagePrev":"此文章发表于","messageNext":"天以前，其内容可能已不再适用"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Bugprogrammer","link":"链接: ","source":"来源: Bugprogrammer的博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: '/static/jquery.min.js',
+    justifiedGallery: {
+      js: '/static/jquery.justifiedGallery.min.js',
+      css: '/static/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: '/static/jquery.fancybox.min.js',
+      css: '/static/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-10-22 21:00:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = '1'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Bugprogrammer的博客" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="/images/my.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">50</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/images/index.jpeg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Bugprogrammer的博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友情链接</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">多系统博物馆的最后拼图 —— Mac OS X Tiger-Mac OS X Lion+Windows 2000</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-10-22T13:00:00.000Z" title="发表于 2026-10-22 21:00:00">2026-10-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-10-22T13:00:00.000Z" title="更新于 2026-10-22 21:00:00">2026-10-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Hackintosh/">Hackintosh</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>16分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>继 <a target="_blank" rel="noopener" href="https://github.com/bugprogrammer/ASUS-p8z77m-pro-Install-Hackintosh-OS-X-Mountain-Lion-to-macOS-Sequoia-and-WindowsXP-to-Windows11">https://github.com/bugprogrammer/ASUS-p8z77m-pro-Install-Hackintosh-OS-X-Mountain-Lion-to-macOS-Sequoia-and-WindowsXP-to-Windows11</a> 项目之后，笔者在一台技嘉 EP45-UD3+Intel Core 2 Quad Q9550+Nvidia Quadra FX 4500+8G DDR2 800mhz RAM 计算机上安装了 Mac OS X Tiger-Mac OS X Lion 以及 Windows 2000 操作系统，至此，笔者在 P45 以及 Z77 两台计算机上集齐了包括 Windows 2000-Windows 11 的所有 Windows 操作系统版本以及所有 Intel Mac OS X/OS X/macOS 操作系统版本。</p>
+</blockquote>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BD%91%E6%A0%BC%E5%9B%BE.jpg"></p>
+<h1 id="配置清单"><a href="#配置清单" class="headerlink" title="配置清单"></a>配置清单</h1><ul>
+<li><p>主板： 技嘉 EP45-UD3</p>
+</li>
+<li><p>CPU： Intel Core 2 Quad Q9550</p>
+</li>
+<li><p>内存： 8G DDR2 800mhz</p>
+</li>
+<li><p>显卡： Nvidia Quadra FX 4500</p>
+</li>
+<li><p>SSD1：阿斯加特 SATA 240g</p>
+</li>
+<li><p>SSD2：威刚 SP600 SATA 60g</p>
+</li>
+<li><p>无线网卡：BCM94321MC</p>
+</li>
+<li><p>蓝牙：CSR8510 USB 蓝牙</p>
+</li>
+<li><p>显示器：阿卓帕 13.3 寸 1080P 便携屏</p>
+</li>
+<li><p>机箱：乔思伯 D41</p>
+</li>
+<li><p>操作系统：Windows 2000</p>
+</li>
+<li><p>操作系统：Mac OS X Tiger-Mac OS X Lion</p>
+</li>
+</ul>
+<h1 id="为何选择这套配置"><a href="#为何选择这套配置" class="headerlink" title="为何选择这套配置"></a>为何选择这套配置</h1><h2 id="主板-CPU"><a href="#主板-CPU" class="headerlink" title="主板 + CPU"></a>主板 + CPU</h2><blockquote>
+<p>原生支持 Mac OS X Tiger-Mac OS X Lion 的平台是 Intel Core 2 时代的平台，笔者选择了 P45，而技嘉的 P45，拥有一个第三方的 SATA (JMicron JMB363，技嘉称之为 GSATA)，这个 GSATA 拥有原生的 Windows 2000 AHCI 驱动，所以笔者选择了技嘉 EP45-UD3+Intel Core 2 Quad Q9550。Intel AHCI 安装 Mac OS X，技嘉的 GSATA 安装 Windows 2000。如此一来 BIOS 里可以完美开启双 AHCI。</p>
+</blockquote>
+<h2 id="显卡"><a href="#显卡" class="headerlink" title="显卡"></a>显卡</h2><blockquote>
+<p>根据 Dortania 的 OpenCore 文档，以及 Mac Pro 初代的可选显卡列表可知，支持 Mac OS X Tiger-Mac OS X Lion 的旗舰卡是 Nvidia Quadra FX 4500 以及 ATI Radeon X1900 XT，后者笔者没有把握驱动成功，所以选择了 Nvidia Quadra FX 4500。注意，G80 核心的 Nvidia Quadra FX 5600 也可以支持 Mac OS X Tiger-Mac OS X Lion，但是 Tiger 下有个 bug。在使用 DVI-HDMI 线缆的情况下，进系统不亮屏，需要在 OC Menu 处拔掉 HDMI 线缆，等进系统以后再插上才能亮屏。用 DVI-DVI 则没有这个问题。详情如下：<a target="_blank" rel="noopener" href="https://www.insanelymac.com/forum/topic/65849-geforce-8800-g80-only-easy-installer-tutorial/">https://www.insanelymac.com/forum/topic/65849-geforce-8800-g80-only-easy-installer-tutorial/</a> 。 Nvidia Quadra FX 4500 也有完美的 Windows 2000 驱动。</p>
+</blockquote>
+<h2 id="无线网卡-蓝牙"><a href="#无线网卡-蓝牙" class="headerlink" title="无线网卡 + 蓝牙"></a>无线网卡 + 蓝牙</h2><blockquote>
+<p>根据网络资料得知，BCM94321MC 无线网卡 + CSR8510 USB 蓝牙，在 Mac OS X Tier-Mac OS X Lion 是原生免驱，无线网卡需要安装 PCIE 转接卡方可使用。</p>
+</blockquote>
+<h2 id="显示器"><a href="#显示器" class="headerlink" title="显示器"></a>显示器</h2><blockquote>
+<p>因为老系统没有 HIDPI 功能 (Lion 除外)，并且 DVI-HDMI 只能做到 1080P 分辨率，所以笔者放弃了大尺寸 1080P 显示器 (PPI 太低了)，按照老 Mac 的 PPI 去选择。最终笔者选择了阿卓帕 13.3 寸 1080P 便携屏。使用时开 1360x768 分辨率，相当于 117.43 ppi，显示效果远强于 27 寸 1080P/2K 显示器。</p>
+</blockquote>
+<h1 id="黑苹果完美程度"><a href="#黑苹果完美程度" class="headerlink" title="黑苹果完美程度"></a>黑苹果完美程度</h1><h2 id="正常工作"><a href="#正常工作" class="headerlink" title="正常工作"></a>正常工作</h2><ul>
+<li><p>声卡</p>
+</li>
+<li><p>独显</p>
+</li>
+<li><p>有线网卡</p>
+</li>
+<li><p>WiFi</p>
+</li>
+<li><p>蓝牙</p>
+</li>
+<li><p>睡眠</p>
+</li>
+<li><p>唤醒</p>
+</li>
+<li><p>USB</p>
+</li>
+<li><p>变频</p>
+</li>
+</ul>
+<h2 id="Bug"><a href="#Bug" class="headerlink" title="Bug"></a>Bug</h2><ul>
+<li>暂未发现</li>
+</ul>
+<h1 id="构建重点"><a href="#构建重点" class="headerlink" title="构建重点"></a>构建重点</h1><blockquote>
+<p>先说重点。首先此项目笔者用 SSDT Hotatch 始终有 bug，故选择传统方案使用完整 DSDT。笔者的 DSDT 参考了 AppleBreak1 的项目。<a target="_blank" rel="noopener" href="https://github.com/AppleBreak1/EP45-UD3P-Customac%EF%BC%8C">https://github.com/AppleBreak1/EP45-UD3P-Customac，</a> 在此感谢 AppleBreak1。其次，Nvidia Quadra FX 4500 没有 64 位驱动，故必须选择搭载 32 位 EFI 的 SMBIOS，并且所有的 Kexts 必须支持 32 位。可以用如下命令确定 Kexts 是否支持 32 位。</p>
+<p><em><strong>file xxx.kext/Contents/MacOS/xxx</strong></em></p>
+</blockquote>
+<h2 id="BIOS-设置"><a href="#BIOS-设置" class="headerlink" title="BIOS 设置"></a>BIOS 设置</h2><h3 id="Standard-CMOS-Features"><a href="#Standard-CMOS-Features" class="headerlink" title="Standard CMOS Features"></a>Standard CMOS Features</h3><ul>
+<li>Drive A-&gt;None</li>
+<li>Floppy 3 Mode Support-&gt;Disabled</li>
+</ul>
+<h3 id="Advanced-CMOS-Features"><a href="#Advanced-CMOS-Features" class="headerlink" title="Advanced CMOS Features"></a>Advanced CMOS Features</h3><ul>
+<li>Quick Boot-&gt;Disabled</li>
+<li>Init Display First-&gt;PEG</li>
+</ul>
+<h3 id="Integrated-Peripherals"><a href="#Integrated-Peripherals" class="headerlink" title="Integrated Peripherals"></a>Integrated Peripherals</h3><ul>
+<li>SATA AHCI Mode-&gt;AHCI</li>
+<li>Onboard H/W 1394-&gt;Disabled</li>
+<li>Onboard SATA/IDE Device-&gt;Enabled</li>
+<li>Onboard SATA/IDE Ctrl Mode-&gt;AHCI (先设置为 IDE，安装好 Windows 2000 并打好驱动再开 AHCI)</li>
+<li>Onboard Serial Port 1-&gt;Disabled</li>
+<li>Onboard Parallel Port-&gt;Disabled</li>
+<li>USB 相关选项-&gt;Enabled</li>
+</ul>
+<h3 id="Power-Management-Setup"><a href="#Power-Management-Setup" class="headerlink" title="Power Management Setup"></a>Power Management Setup</h3><ul>
+<li>ACPI Suspend Type-&gt;S3(STR)</li>
+<li>HPET Support-&gt;Enabled</li>
+<li>HPET Mode-&gt;64-bit mode</li>
+</ul>
+<h2 id="Bootloader-选择"><a href="#Bootloader-选择" class="headerlink" title="Bootloader 选择"></a>Bootloader 选择</h2><blockquote>
+<p>一个重点：OpenCore 自带的 OpenLegacyBoot.efi 用于启动 legacy+mbr 的操作系统，但是启动 NT5 有概率失败。因为这台计算机拥有两块硬盘。OpenDuet 的枚举顺序可能和 BIOS 不同，导致 NT5 系统因为 OpenDuet 传过来的 DL 号和 BIOS 枚举以及 boot.ini 的配置对不上而启动失败，借助 grub4dos 的 map 命令即可完美解决这个问题。</p>
+</blockquote>
+<h3 id="OpenCore-OpenDuet-用于引导-Mac-OS-X-Tiger-Mac-OS-X-Lion-以及-grub4dos"><a href="#OpenCore-OpenDuet-用于引导-Mac-OS-X-Tiger-Mac-OS-X-Lion-以及-grub4dos" class="headerlink" title="OpenCore+OpenDuet 用于引导 Mac OS X Tiger-Mac OS X Lion 以及 grub4dos"></a>OpenCore+OpenDuet 用于引导 Mac OS X Tiger-Mac OS X Lion 以及 grub4dos</h3><ul>
+<li>执行 OpenCore 中的 LegacyBoot 目录下的 BootInstall_X64.tool 脚本以安装 OpenDuet 环境</li>
+<li>在 OpenCore 下加入 OpenLegacyBoot.efi 文件并启用以识别 grub4dos 条目 (请使用 OpenCore 1.0.8 版本，里面有笔者的提交以支持 grub4dos 条目识别)</li>
+</ul>
+<h3 id="grub4dos-用于引导-Windows-2000"><a href="#grub4dos-用于引导-Windows-2000" class="headerlink" title="grub4dos 用于引导 Windows 2000"></a>grub4dos 用于引导 Windows 2000</h3><ul>
+<li>在 PE 下使用 bootice 工具将 grub4dos 的 pbr 写入 Windows 2000 分区 (bootice 自带 grub4dos 的 pbr) 以安装 grub4dos</li>
+<li>拷贝 grldr 文件以及 menu.lst 文件到 Windows 2000 根目录 (仓库中已提供所需文件)</li>
+<li>menu.lst 文件加入如下内容<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">default</span> <span class="number">0</span></span><br><span class="line">timeout <span class="number">0</span></span><br><span class="line"></span><br><span class="line">title Windows <span class="number">2000</span></span><br><span class="line"><span class="built_in">find</span> --<span class="built_in">set</span>-root /ntldr</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> <span class="string">&quot;%@root%&quot;</span>==<span class="string">&quot;(hd0,0)&quot;</span> <span class="built_in">map</span> () (hd0) &amp;&amp; <span class="built_in">map</span> --hook</span><br><span class="line">chainloader /ntldr</span><br></pre></td></tr></table></figure>
+<h2 id="NVRAM-模拟"><a href="#NVRAM-模拟" class="headerlink" title="NVRAM 模拟"></a>NVRAM 模拟</h2></li>
+</ul>
+<blockquote>
+<p>P45 是很老的平台，需要模拟 NVRAM，教程如下。</p>
+</blockquote>
+<ul>
+<li>在 OpenCore 中添加并启用 OpenRuntime.efi 文件</li>
+<li>在 OpenCore 中做如下设置<ul>
+<li>Booter -&gt; Quirks<ul>
+<li>DisableVariableWrite: NO<br><img src= "/images/loading.gif" data-lazy-src="images/nvram1.jpg"></li>
+</ul>
+</li>
+<li>Misc -&gt; Security<ul>
+<li>ExposeSensitiveData: 3<br><img src= "/images/loading.gif" data-lazy-src="images/nvram2.jpg"></li>
+</ul>
+</li>
+<li>NVRAM<ul>
+<li>LegacyOverwrite: YES<br><img src= "/images/loading.gif" data-lazy-src="images/nvram3.jpg"></li>
+<li>WriteFlash: YES<br><img src= "/images/loading.gif" data-lazy-src="images/nvram3.jpg"></li>
+<li>LegacySchema: 添加如图条目<br><img src= "/images/loading.gif" data-lazy-src="images/nvram4.jpg"><br><img src= "/images/loading.gif" data-lazy-src="images/nvram5.jpg"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>进入 OpenCore 的 LogoutHook 目录执行如下命令并重启<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./Launchd.<span class="keyword">command</span> <span class="keyword">install</span> </span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>至此，您已成功完成 NVRAM 模拟操作。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="SMBIOS-重中之重"><a href="#SMBIOS-重中之重" class="headerlink" title="SMBIOS (重中之重)"></a>SMBIOS (重中之重)</h2><h3 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h3><blockquote>
+<p>由于笔者的 Nvidia Quadra FX 4500 没有 64 位驱动，只支持在 32 位内核下运行，所以笔者选择的是搭载 32 位 EFI 的 SMBIOS，Mac Pro 2,1。</p>
+</blockquote>
+<h3 id="内存识别修复"><a href="#内存识别修复" class="headerlink" title="内存识别修复"></a>内存识别修复</h3><blockquote>
+<p>某些情况下，内存信息不识别或识别错误，需要我们手动注入内存信息并开启自定义内存。</p>
+</blockquote>
+<p><img src= "/images/loading.gif" data-lazy-src="/images/ram.jpg"></p>
+<h2 id="时间同步"><a href="#时间同步" class="headerlink" title="时间同步"></a>时间同步</h2><ul>
+<li>在 Windows 下导入仓库中的 WinUTCOn.reg 文件，重启即可解决 Windows 时间不对的问题。</li>
+</ul>
+<h2 id="独显驱动"><a href="#独显驱动" class="headerlink" title="独显驱动"></a>独显驱动</h2><ul>
+<li>在 dos 下用 nvflash 工具刷入仓库中提供的 vbios 文件，文件名为 FX4500.ROM<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\nvflash.exe <span class="string">-4</span> <span class="string">-5</span> <span class="string">-6</span> .\FX4500.ROM</span><br></pre></td></tr></table></figure></li>
+<li>在 OpenCore 下注入如下属性即可驱动显卡 (笔者屏蔽了一个 DVI 接口以避免出现幽灵屏，保留的贴近主板一侧的 DVI 接口，如需调整请修改 NVCAP)<br><img src= "/images/loading.gif" data-lazy-src="/images/gpu.jpg"></li>
+</ul>
+<h2 id="显示器被识别为电视"><a href="#显示器被识别为电视" class="headerlink" title="显示器被识别为电视"></a>显示器被识别为电视</h2><ul>
+<li>运行笔者仓库中 patch-edid.rb 脚本，会在当前目录生成一个文件夹，类似 DisplayVendorID-1ee4</li>
+<li>把生成的文件夹拷贝到 /Library/Displays/Contents/Resources/Overrides 目录</li>
+<li>重启即可修复显示器识别成电视问题</li>
+</ul>
+<h2 id="声卡驱动"><a href="#声卡驱动" class="headerlink" title="声卡驱动"></a>声卡驱动</h2><ul>
+<li>在 OpenCore 中加入并启用 Lilu.kext 以及 AppleALC.kext</li>
+<li>在 OpenCore 下注入如下属性即可驱动声卡<br><img src= "/images/loading.gif" data-lazy-src="/images/hda.jpg"></li>
+<li>10.4 以及 10.5 如果安装版本低于 10.4.11 以及 10.5.8，请在线更新到 10.4.11 以及 10.5.8 版本声卡即可正常 (没错，10.4-10.7 至今还可以在线更新，包括 PowerPC 芯片的 Mac 也可以更新到最新的支持版本)</li>
+</ul>
+<h2 id="以太网卡"><a href="#以太网卡" class="headerlink" title="以太网卡"></a>以太网卡</h2><h3 id="10-4"><a href="#10-4" class="headerlink" title="10.4"></a>10.4</h3><ul>
+<li>在 OpenCore 中加入并启用修改版本的 AppleRTL8169Ethernet.kext (笔者仓库已提供)，MaxKernel 设置为 8.99.99 以避免影响其他系统<br><img src= "/images/loading.gif" data-lazy-src="/images/lan1.jpg"></li>
+<li>在 OpenCore 中设置 block 内置的 AppleRTL8169Ethernet.kext，MaxKernel 设置为 8.99.99 以避免影响其他系统<br><img src= "/images/loading.gif" data-lazy-src="/images/lan2.jpg"></li>
+</ul>
+<h3 id="10-5-10-6"><a href="#10-5-10-6" class="headerlink" title="10.5/10.6"></a>10.5/10.6</h3><ul>
+<li>免驱</li>
+</ul>
+<h3 id="10-7"><a href="#10-7" class="headerlink" title="10.7"></a>10.7</h3><ul>
+<li>在 OpenCore 中加入并启用笔者编译的 RealtekRTL81xx.kext 并设置 MinKernel 为 11.0.0 (笔者仓库已提供，此驱动支持 1Gbps，同时支持 32 位 / 64 位，原项目链接如下：<a target="_blank" rel="noopener" href="https://github.com/SergeySlice/RealtekLANv3">https://github.com/SergeySlice/RealtekLANv3</a>)<br><img src= "/images/loading.gif" data-lazy-src="/images/lan3.jpg">  </li>
+</ul>
+<h2 id="WIFI"><a href="#WIFI" class="headerlink" title="WIFI"></a>WIFI</h2><h3 id="10-4-1"><a href="#10-4-1" class="headerlink" title="10.4"></a>10.4</h3><blockquote>
+<p>BCM94321MC 在 Tiger 下是免驱的，但是有一个枚举 bug，就是由于未知原因将 WIFI 识别成 en0，将以太网卡挤到 en1，具像化的表现就是 Tiger 下的系统信息里无线网卡是关闭状态，但是设置里，会显示两个以太网卡，通过查看 Mac 地址可知，无线网卡在 Tiger 下被识别成了以太网卡。下面是解决方案。</p>
+</blockquote>
+<ul>
+<li>打开 /Library/Preferences/SystemConfiguration/NetworkInterfaces.plist 文件，按照下图修改。以太网卡: en0，IOInterfaceUnit: 0，无线网卡: en1，IOInterfaceUnit: 1<br><img src= "/images/loading.gif" data-lazy-src="/images/wifi.jpg"></li>
+<li>删除 /Library/Preferences/preferences.plist 文件</li>
+<li>重启<blockquote>
+<p>至此，Tiger 下的 WIFI 以完美修复。</p>
+</blockquote>
+<h3 id="10-5-10-7"><a href="#10-5-10-7" class="headerlink" title="10.5-10.7"></a>10.5-10.7</h3></li>
+<li>免驱</li>
+</ul>
+<h2 id="蓝牙"><a href="#蓝牙" class="headerlink" title="蓝牙"></a>蓝牙</h2><ul>
+<li>Mac OS X Tiger-Mac OS X Lion 免驱</li>
+</ul>
+<h2 id="USB"><a href="#USB" class="headerlink" title="USB"></a>USB</h2><blockquote>
+<p>10.4 和 10.5-10.7 的 USB 修复方式完全不同，但是不会互相冲突，一个 EFI 完美兼容 4 个 Mac OS X 版本。</p>
+</blockquote>
+<h3 id="10-4-2"><a href="#10-4-2" class="headerlink" title="10.4"></a>10.4</h3><blockquote>
+<p>Tiger 上的 USB 有 Bug 并且影响唤醒，笔者查看了 Apple 早期开源的 EHCI 代码发现了问题，个人认为，Tiger 上的 EHCI 根本就不支持唤醒，如果把键鼠插在主板 USB 上，会挂载成 UHCI，所以唤醒没问题。但是笔者用的是 KVM 切换器，键鼠插在 KVM 上会强行挂载为 EHCI，导致无法用 KVM 上的键鼠唤醒。而且所有 USB 控制器被识别为扩展槽而非内建控制器。按电源键唤醒后 U 盘会被弹出。下面附上解决方案。</p>
+</blockquote>
+<h4 id="EHCI"><a href="#EHCI" class="headerlink" title="EHCI"></a>EHCI</h4><ul>
+<li>在 OpenCore 下 block 掉内置的 AppleUSBEHCI.kext 并添加笔者修改的 AppleUSBEHCI.kext，MaxKernel 设置为 8.99.99 以避免影响其他系统<br><img src= "/images/loading.gif" data-lazy-src="/images/EHCI1.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/EHCI2.jpg"></li>
+</ul>
+<h4 id="UHCI"><a href="#UHCI" class="headerlink" title="UHCI"></a>UHCI</h4><blockquote>
+<p>UHCI 睡眠唤醒正常，只需要修复控制器被识别为扩展槽的问题即可，根因是 Tiger 原生不支持 ICH10。在 DSDT 里加入 fake id 代码即可。</p>
+</blockquote>
+<ul>
+<li><p>在 OpenCore 的 Kernel Patch 下添加如下条目以实现 Mac OS X 版本区分 (10.4-&gt;Darw08，其他-&gt;Darwin)，MaxKernel 设置 8.99.99 以避免影响其他系统<br><img src= "/images/loading.gif" data-lazy-src="/images/UHCI.jpg"></p>
+</li>
+<li><p>在 DSDT 的 PCI0 下加入如下仿冒代码 (以 UHC1 为例，UHC2-UHC6 同理)</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">Device</span> <span class="punctuation">(</span><span class="variable">UHC1</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="variable">Name</span> <span class="punctuation">(</span><span class="type">_ADR</span><span class="operator">,</span> <span class="number">0</span><span class="variable">x001D0000</span><span class="punctuation">)</span></span><br><span class="line">    <span class="built_in">Method</span> <span class="punctuation">(</span><span class="type">_S3D</span><span class="operator">,</span> <span class="number">0</span><span class="operator">,</span> <span class="variable">NotSerialized</span><span class="punctuation">)</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="built_in">If</span> <span class="punctuation">(</span><span class="variable">LEqual</span> <span class="punctuation">(</span><span class="variable">OSFL</span><span class="operator">,</span> <span class="number">0</span><span class="variable">x02</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="built_in">Return</span> <span class="punctuation">(</span><span class="number">0</span><span class="variable">x02</span><span class="punctuation">)</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="built_in">Return</span> <span class="punctuation">(</span><span class="number">0</span><span class="variable">x03</span><span class="punctuation">)</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="variable">Name</span> <span class="punctuation">(</span><span class="type">_PRW</span><span class="operator">,</span> <span class="built_in">Package</span> <span class="punctuation">(</span><span class="number">0</span><span class="variable">x02</span><span class="punctuation">)</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="number">0</span><span class="variable">x03</span><span class="operator">,</span> </span><br><span class="line">        <span class="number">0</span><span class="variable">x03</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">)</span></span><br><span class="line">    <span class="built_in">Method</span> <span class="punctuation">(</span><span class="type">_DSM</span><span class="operator">,</span> <span class="number">4</span><span class="operator">,</span> <span class="variable">NotSerialized</span><span class="punctuation">)</span></span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="built_in">If</span> <span class="punctuation">(</span><span class="variable">LEqual</span> <span class="punctuation">(</span><span class="variable">Arg2</span><span class="operator">,</span> <span class="variable">Zero</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="built_in">Return</span> <span class="punctuation">(</span><span class="variable">Buffer</span> <span class="punctuation">(</span><span class="variable">One</span><span class="punctuation">)</span></span><br><span class="line">            <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="number">0</span><span class="variable">x03</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">)</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="built_in">If</span> <span class="punctuation">(</span><span class="type">_OSI</span> <span class="punctuation">(</span><span class="string">&quot;Darw08&quot;</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="built_in">Return</span> <span class="punctuation">(</span><span class="built_in">Package</span> <span class="punctuation">(</span><span class="number">0</span><span class="variable">x04</span><span class="punctuation">)</span></span><br><span class="line">            <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="string">&quot;device-id&quot;</span><span class="operator">,</span> </span><br><span class="line">                <span class="variable">Buffer</span> <span class="punctuation">(</span><span class="number">0</span><span class="variable">x04</span><span class="punctuation">)</span></span><br><span class="line">                <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="number">0</span><span class="variable">x30</span><span class="operator">,</span> <span class="number">0</span><span class="variable">x28</span><span class="operator">,</span> <span class="number">0</span><span class="variable">x00</span><span class="operator">,</span> <span class="number">0</span><span class="variable">x00</span></span><br><span class="line">                <span class="punctuation">&#125;</span><span class="operator">,</span> </span><br><span class="line"></span><br><span class="line">                <span class="string">&quot;built-in&quot;</span><span class="operator">,</span> </span><br><span class="line">                <span class="variable">Buffer</span> <span class="punctuation">(</span><span class="variable">One</span><span class="punctuation">)</span></span><br><span class="line">                <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="number">0</span><span class="variable">x00</span></span><br><span class="line">                <span class="punctuation">&#125;</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">)</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="built_in">Return</span> <span class="punctuation">(</span><span class="built_in">Package</span> <span class="punctuation">(</span><span class="number">0</span><span class="variable">x00</span><span class="punctuation">)</span> <span class="punctuation">&#123;</span><span class="punctuation">&#125;</span><span class="punctuation">)</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>至此，Tiger 下的 USB 已修复完成，KVM/HUB 下的键鼠唤醒已恢复正常。所有 USB 控制器均显示为内建控制器，唤醒后不会弹出U盘。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="10-5-10-7-1"><a href="#10-5-10-7-1" class="headerlink" title="10.5-10.7"></a>10.5-10.7</h3><ul>
+<li>在 DSDT 的 PCI0 下中加入如下代码以修复 KVM/HUB 下的键鼠唤醒以及唤醒后 U 盘弹出的问题 (以 EHC1 为例，EHC2 同理，且 10.5-10.7 不存在内建问题)<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">Device</span> (EHC1)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="selector-tag">Name</span> (_ADR, <span class="number">0</span>x001D0007)</span><br><span class="line">    <span class="selector-tag">Method</span> (_S3D, <span class="number">0</span>, NotSerialized)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">If</span> (LEqual (OSFL, <span class="number">0</span>x02))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="selector-tag">Return</span> (<span class="number">0</span>x02)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="selector-tag">Return</span> (<span class="number">0</span>x03)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">Name</span> (_PRW, Package (<span class="number">0</span>x02)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">0x0D</span>, </span><br><span class="line">        <span class="selector-tag">0x03</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="selector-tag">OperationRegion</span> (PWRC, PCI_Config, <span class="number">0</span>x52, <span class="number">0</span>x2F)</span><br><span class="line">    <span class="selector-tag">Field</span> (PWRC, ByteAcc, NoLock, Preserve)</span><br><span class="line">    &#123;</span><br><span class="line">            ,   <span class="selector-tag">11</span>, </span><br><span class="line">        <span class="selector-tag">PMES</span>,   <span class="selector-tag">5</span>, </span><br><span class="line">            <span class="selector-tag">Offset</span> (<span class="number">0</span>x2E), </span><br><span class="line">        <span class="selector-tag">WRTA</span>,   <span class="selector-tag">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>至此，10.4 以及 10.5-10.7 用完全不同的方法修复了 USB 相关问题且互相不冲突。切换系统不需要更换 EFI。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="睡眠唤醒"><a href="#睡眠唤醒" class="headerlink" title="睡眠唤醒"></a>睡眠唤醒</h2><blockquote>
+<p>10.4 和 10.5-10.7 的睡眠修复方式完全不同，但是不会互相冲突，一个 EFI 完美兼容 4 个 Mac OS X 版本。</p>
+</blockquote>
+<h3 id="10-4-3"><a href="#10-4-3" class="headerlink" title="10.4"></a>10.4</h3><h4 id="睡眠"><a href="#睡眠" class="headerlink" title="睡眠"></a>睡眠</h4><blockquote>
+<p>和显卡 VBIOS 高度相关。笔者测试得知 NVIDIA GeForce 7300 GT， Nvidia Quadra FX 4500 以及 Nvidia Quadra FX 5600 都能睡眠，但是 NVIDIA GeForce 7600 GT 却不行 (10.4 睡眠成功的前提是 BIOS 关闭火线接口)</p>
+</blockquote>
+<h4 id="唤醒"><a href="#唤醒" class="headerlink" title="唤醒"></a>唤醒</h4><blockquote>
+<p>按照 USB 章节操作即可</p>
+</blockquote>
+<h3 id="10-5-10-7-2"><a href="#10-5-10-7-2" class="headerlink" title="10.5-10.7"></a>10.5-10.7</h3><blockquote>
+<p>10.5-10.7 的睡眠唤醒在不修复的情况下问题比 10.4 严重得多，唤醒会变成重启，修复方案如下。</p>
+</blockquote>
+<ul>
+<li>在 DSDT 第一层的 Scope (\) 后面加上 PTS 方法<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Method <span class="comment">(_PTS, 1, NotSerialized)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">Or</span> <span class="comment">(Arg0, 0xF0, Local0)</span></span><br><span class="line">    Store <span class="comment">(Local0, DBG1)</span></span><br><span class="line">    OSTP <span class="comment">()</span></span><br><span class="line">    <span class="keyword">If</span> <span class="comment">(LEqual (Arg0, One)</span>) &#123;&#125;</span><br><span class="line">    <span class="keyword">If</span> <span class="comment">(LEqual (Arg0, 0x03)</span>) &#123;&#125;</span><br><span class="line">    <span class="keyword">If</span> <span class="comment">(LEqual (Arg0, 0x05)</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        Store <span class="comment">(One, \_SB.PCI0.LPCB.AG3E)</span></span><br><span class="line">        Store <span class="comment">(Zero, SLPE)</span></span><br><span class="line">        Sleep <span class="comment">(0x10)</span></span><br><span class="line">    &#125;</span><br><span class="line">    Else</span><br><span class="line">    &#123;</span><br><span class="line">        Store <span class="comment">(Zero, \_SB.PCI0.LPCB.AG3E)</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">If</span> <span class="comment">(LEqual (Arg0, 0x04)</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">If</span> <span class="comment">(LNot (PICF)</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            Sleep <span class="comment">(0x64)</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>在 LPCB 末尾加入如下代码<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">OperationRegion</span> (LPC0, PCI_Config, <span class="number">0</span>xA4, <span class="number">0</span>x02)</span><br><span class="line"><span class="selector-tag">Field</span> (LPC0, ByteAcc, NoLock, Preserve)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="selector-tag">AG3E</span>,   <span class="selector-tag">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>在整个 DSDT 第一层的末尾加入如下代码<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Field (PMRS, ByteAcc, NoLock, Preserve)</span><br><span class="line">&#123;</span><br><span class="line">        ,  <span class="number">4</span>, </span><br><span class="line"><span class="built_in">    SLPE,</span>  <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>至此，10.4-10.7 的睡眠唤醒完全修复，唤醒也不会变成重启了。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="EC-修复"><a href="#EC-修复" class="headerlink" title="EC 修复"></a>EC 修复</h2><ul>
+<li><p>在 DSDT 中的 LPCB 下加入如下代码即可修复 EC (别忘了 Darw08)</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">Device</span> (EC)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="selector-tag">Name</span> (_HID, <span class="string">&quot;ACID0001&quot;</span>)</span><br><span class="line">    <span class="selector-tag">Method</span> (_STA, <span class="number">0</span>, NotSerialized)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="selector-tag">If</span> (LOr (_OSI (<span class="string">&quot;Darwin&quot;</span>), _OSI (<span class="string">&quot;Darw08&quot;</span>)))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="selector-tag">Return</span> (<span class="number">0</span>x0F)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-tag">Else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="selector-tag">Return</span> (Zero)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="每次重启-关机时都会重置-BIOS"><a href="#每次重启-关机时都会重置-BIOS" class="headerlink" title="每次重启 / 关机时都会重置 BIOS"></a>每次重启 / 关机时都会重置 BIOS</h2></li>
+<li><p>在 OpenCore 下加入如下设置</p>
+<ul>
+<li>Kernel-&gt;Quirks-&gt;DisableRtcChecksum: YES<br><img src= "/images/loading.gif" data-lazy-src="/images/reset.jpg"></li>
+</ul>
+</li>
+</ul>
+<h2 id="内置硬盘显示为外置"><a href="#内置硬盘显示为外置" class="headerlink" title="内置硬盘显示为外置"></a>内置硬盘显示为外置</h2><ul>
+<li>在 OpenCore 下加入如下设置<ul>
+<li>Kernel-&gt;Quirks-&gt;ExternalDiskIcons: YES<br><img src= "/images/loading.gif" data-lazy-src="/images/disk.jpg"></li>
+</ul>
+</li>
+</ul>
+<h2 id="10-6-10-7-下开启-SSD-Trim"><a href="#10-6-10-7-下开启-SSD-Trim" class="headerlink" title="10.6/10.7 下开启 SSD Trim"></a>10.6/10.7 下开启 SSD Trim</h2><ul>
+<li>在 OpenCore 下加入如下设置<ul>
+<li>Kernel-&gt;Quirks-&gt;ThirdPartyDrives: YES<br><img src= "/images/loading.gif" data-lazy-src="/images/trim.jpg"></li>
+</ul>
+</li>
+</ul>
+<h2 id="重启不断电"><a href="#重启不断电" class="headerlink" title="重启不断电"></a>重启不断电</h2><blockquote>
+<p>10.4 和 10.5-10.7 的重启修复方式完全不同，但是不会互相冲突，一个 EFI 完美兼容 4 个 Mac OS X 版本。</p>
+</blockquote>
+<h3 id="10-4-4"><a href="#10-4-4" class="headerlink" title="10.4"></a>10.4</h3><ul>
+<li>在 OpenCore 的 Kernel Patch 下添加如图条目并设置 MaxKernel 为 8.99.99 以避免影响其他系统<br><img src= "/images/loading.gif" data-lazy-src="/images/reboot1.jpg"></li>
+</ul>
+<h3 id="10-5-10-7-3"><a href="#10-5-10-7-3" class="headerlink" title="10.5-10.7"></a>10.5-10.7</h3><ul>
+<li>在 OpenCore 下加入如下设置<ul>
+<li>ACPI-&gt;Quirks-&gt;FadtEnableReset: YES<br><img src= "/images/loading.gif" data-lazy-src="/images/reboot2.jpg"></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>至此 10.4-10.7 的重启卡住问题已修复完成。</p>
+</blockquote>
+<h3 id="AppleLPC-加载"><a href="#AppleLPC-加载" class="headerlink" title="AppleLPC 加载"></a>AppleLPC 加载</h3><blockquote>
+<p>对于笔者这台 P45 来说，10.5-10.7 原生加载了 AppleLPC，但是 10.4 不支持 ICH10，所以我们只需要在 DSDT 中给 10.4 仿冒支持的 device id 即可完成 10.4 下的 AppleLPC 加载 (依旧使用 Darw08 分流)。</p>
+</blockquote>
+<ul>
+<li>在 DSDT 中的 LPCB 结尾处加入 _DSM 方法如下<figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">Method (_DSM, <span class="number">4</span>, NotSerialized)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">If</span> (_OSI (<span class="string">&quot;Darw08&quot;</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">If</span> (LEqual (Arg2, Zero))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">Return</span> (<span class="keyword">Buffer</span> (One)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="number">0</span>x03</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">Return</span> (Package (<span class="number">0</span>x08)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">&quot;device-id&quot;</span>, </span><br><span class="line">            <span class="keyword">Buffer</span> (<span class="number">0</span>x04)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="number">0</span>xB9, <span class="number">0</span>x27, <span class="number">0</span>x00, <span class="number">0</span>x00</span><br><span class="line">            &#125;, </span><br><span class="line"></span><br><span class="line">            <span class="string">&quot;IOName&quot;</span>, </span><br><span class="line">            <span class="keyword">Buffer</span> (<span class="number">0</span>x0D)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;pci8086,27b9&quot;</span></span><br><span class="line">            &#125;, </span><br><span class="line"></span><br><span class="line">            <span class="string">&quot;name&quot;</span>, </span><br><span class="line">            <span class="keyword">Buffer</span> (<span class="number">0</span>x0D)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;pci8086,27b9&quot;</span></span><br><span class="line">            &#125;, </span><br><span class="line"></span><br><span class="line">            <span class="string">&quot;compatible&quot;</span>, </span><br><span class="line">            <span class="keyword">Buffer</span> (<span class="number">0</span>x0D)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">&quot;pci8086,27b9&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Return</span> (<span class="keyword">Buffer</span> (One)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="number">0</span>x00</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="SATA-控制器重命名"><a href="#SATA-控制器重命名" class="headerlink" title="SATA 控制器重命名"></a>SATA 控制器重命名</h2></li>
+</ul>
+<blockquote>
+<p>因为 Tiger 不支持 ICH10，所以系统信息的 SATA (串行 ATA) 处显示的是 Generic AHCI (null)，而 10.5-10.7 中也因为无法识别第三方 SATA (JMicron JMB363) 而显示 Unknown AHCI Standard Controller，我们有很简单的方法修正名称，方案如下。</p>
+</blockquote>
+<ul>
+<li>加入笔者提供的 AHCIPortNameInjector_10.4.kext (MaxKernel 8.99.99) 以及 AHCIPortNameInjector_10.5-10.7.kext (MinKernel 9.0.0)，如图<br><img src= "/images/loading.gif" data-lazy-src="/images/sata.jpg"></li>
+</ul>
+<blockquote>
+<p>至此，SATA 控制器名称已修复，Intel AHCI 名称设置为 Intel ICH10 AHCI，JMB363 AHCI 名称设置为 JMicron JMB363 AHCI。</p>
+</blockquote>
+<h2 id="Tiger-下不显示二级缓存信息"><a href="#Tiger-下不显示二级缓存信息" class="headerlink" title="Tiger 下不显示二级缓存信息"></a>Tiger 下不显示二级缓存信息</h2><ul>
+<li>在 OpenCore 下加入如下设置即可 (请使用 OpenCore 1.0.8 版本，里面有笔者的提交，修复了一个 bug)<ul>
+<li>Kernel-&gt;Quirks-&gt;ProvideCurrentCpuInfo: YES<br><img src= "/images/loading.gif" data-lazy-src="/images/cache.jpg"><blockquote>
+<p>简单说一下笔者修复的那个 bug 吧，挺可爱的一个 bug。就是源码中用一个数组来存储缓存信息，但是该数组没初始化。因为新 CPU 都有三缓，所以都会覆盖没问题。但是老 CPU，没有三缓，三缓值就无法被新值覆盖而代入初始垃圾值，于是笔者得到了一台 “拥有 16EB L3 Cache 的 Mac OS X Tiger 计算机😂”，很好修复但挺有趣的 bug😂。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Lion-下关于本机不显示年份信息"><a href="#Lion-下关于本机不显示年份信息" class="headerlink" title="Lion 下关于本机不显示年份信息"></a>Lion 下关于本机不显示年份信息</h2><blockquote>
+<p>macOS 关于本机的年份是通过 API 返回的，Mac OS X Lion 系统由于年代久远，已无法正常访问 API 网站，所以我们要手动编辑本地文件以添加年份。</p>
+</blockquote>
+<h3 id="确定原生年份信息"><a href="#确定原生年份信息" class="headerlink" title="确定原生年份信息"></a>确定原生年份信息</h3><h4 id="Mac-Pro-1-1-和-Mac-Pro-2-1"><a href="#Mac-Pro-1-1-和-Mac-Pro-2-1" class="headerlink" title="Mac Pro 1,1 和 Mac Pro 2,1"></a>Mac Pro 1,1 和 Mac Pro 2,1</h4><blockquote>
+<p>这两个机型的关于本机本身就是是没有年份信息的 (包括白苹果也没有)，但是笔者认为影响美观，所以笔者将其自定义为 Mac Pro（2007 年初）。</p>
+</blockquote>
+<h4 id="其他机型"><a href="#其他机型" class="headerlink" title="其他机型"></a>其他机型</h4><ul>
+<li><p>在正常工作的现代操作系统上运行如下命令以获取本应显示的年份信息 (cc=xxx，xxx 为所选机型序列号后三位，10.8 以前参数为序列号后三位，10.8 开始参数为序列号后四位。10.11 以及更早系统访问的 API 有语言参数，10.12 开始没有了，所以老 OS X 版本关于本机的年份是系统语言，新版是英文)</p>
+  <figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -s &quot;https://support-sp.apple.com/sp/product?cc=UPZ&amp;lang=zh-Hans_CN&quot; | sed -n &#x27;s/.*&lt;configCode&gt;<span class="symbol">\(</span>.*<span class="symbol">\)</span>&lt;<span class="symbol">\/</span>configCode&gt;.*/<span class="symbol">\1</span>/p&#x27;</span><br></pre></td></tr></table></figure></li>
+<li><p>记录返回值，如 Mac Pro (2007 年初) (这只是模拟结果，上文说了，笔者的 Mac Pro 2,1 机型没有年份信息，所以没有返回值，笔者只是介绍一下正常的获取方法)</p>
+</li>
+<li><p>打开 SMBIOS 年份修复文件夹中的的 plist 文件，修改序列号后三位，语言，机型三个信息。修改好的类似下图<br><img src= "/images/loading.gif" data-lazy-src="/images/smbios.jpg"></p>
+</li>
+<li><p>将改好的 plist 文件覆盖到 ~/Library/Preferences 并重启，你会发现 Mac OS X Lion 的关于本机年份恢复了</p>
+</li>
+</ul>
+<h2 id="10-4-10-5-启动无法绘制-Apple-Logo-而回退到类似-v-的模式"><a href="#10-4-10-5-启动无法绘制-Apple-Logo-而回退到类似-v-的模式" class="headerlink" title="10.4/10.5 启动无法绘制 Apple Logo 而回退到类似 -v 的模式"></a>10.4/10.5 启动无法绘制 Apple Logo 而回退到类似 -v 的模式</h2><ul>
+<li>在 OpenCore 下加入如下设置<ul>
+<li>UEFI-&gt;Output-&gt;UgaPassThrough: YES<br><img src= "/images/loading.gif" data-lazy-src="/images/output.jpg"></li>
+</ul>
+</li>
+</ul>
+<h1 id="引导器截图"><a href="#引导器截图" class="headerlink" title="引导器截图"></a>引导器截图</h1><h2 id="OpenCore-请允许我使用-AI-制作-4K-OC-Menu-图，OpenDuet-环境下-F10-截图，效果实在太差了"><a href="#OpenCore-请允许我使用-AI-制作-4K-OC-Menu-图，OpenDuet-环境下-F10-截图，效果实在太差了" class="headerlink" title="OpenCore (请允许我使用 AI 制作 4K OC Menu 图，OpenDuet 环境下 F10 截图，效果实在太差了)"></a>OpenCore (请允许我使用 AI 制作 4K OC Menu 图，OpenDuet 环境下 F10 截图，效果实在太差了)</h2><p><img src= "/images/loading.gif" data-lazy-src="/images/oc_menu.jpg"></p>
+<h1 id="系统桌面截图"><a href="#系统桌面截图" class="headerlink" title="系统桌面截图"></a>系统桌面截图</h1><p><img src= "/images/loading.gif" data-lazy-src="/images/10.4%20about.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/10.5%20about.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/10.6%20about.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/10.7%20about.jpg"><br><img src= "/images/loading.gif" data-lazy-src="/images/win2k%20about.jpg"></p>
+</article><div style="text-align:center;color: #ccc;font-size:14px;">-------------&#x672C;&#x6587;&#x7ED3;&#x675F;<i class="fa fa-paw"></i>&#x611F;&#x8C22;&#x60A8;&#x7684;&#x9605;&#x8BFB;-------------</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">博主QQ号: </span><span class="post-copyright-meta">951426440</span></div></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">QQ群列表: </span></div><div class="post-copyright__author"><span class="post-copyright-meta"><a target="_blank" rel="noopener" href="https://shang.qq.com/wpa/qunwpa?idkey=860990e11014839268b97278613c5b16d3569e4ef42561eeab25b5457064cd87">Hackintosh极客俱乐部</a></span><span class="post-copyright-meta">   414114950</span></div></div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Bugprogrammer</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://bugprogrammer.github.io/2026/10/22/hackintosh-tiger-to-lion-2k.html">https://bugprogrammer.github.io/2026/10/22/hackintosh-tiger-to-lion-2k.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://bugprogrammer.github.io" target="_blank">Bugprogrammer的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hackintosh/">Hackintosh</a><a class="post-meta__tags" href="/tags/EP45/">EP45</a><a class="post-meta__tags" href="/tags/Core-2-Dow/">Core 2 Dow</a><a class="post-meta__tags" href="/tags/LGA-775/">LGA 775</a></div><div class="post_share"><div class="social-share" data-image="/images/index.jpeg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="/static/share.min.css" media="print" onload="this.media='all'"><script src="/static/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2026/05/28/all-in-one-os.html"><img class="next-cover" data-lazy-src="/images/index.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">21个版本的Windows/macOS共存的系统博物馆</div></div></a></div></nav></div><div class="aside_content" id="aside_content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%B8%85%E5%8D%95"><span class="toc-number">1.</span> <span class="toc-text">配置清单</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BA%E4%BD%95%E9%80%89%E6%8B%A9%E8%BF%99%E5%A5%97%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">为何选择这套配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E6%9D%BF-CPU"><span class="toc-number">2.1.</span> <span class="toc-text">主板 + CPU</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%BE%E5%8D%A1"><span class="toc-number">2.2.</span> <span class="toc-text">显卡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A0%E7%BA%BF%E7%BD%91%E5%8D%A1-%E8%93%9D%E7%89%99"><span class="toc-number">2.3.</span> <span class="toc-text">无线网卡 + 蓝牙</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E5%99%A8"><span class="toc-number">2.4.</span> <span class="toc-text">显示器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%8C%E7%BE%8E%E7%A8%8B%E5%BA%A6"><span class="toc-number">3.</span> <span class="toc-text">黑苹果完美程度</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%B8%B8%E5%B7%A5%E4%BD%9C"><span class="toc-number">3.1.</span> <span class="toc-text">正常工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bug"><span class="toc-number">3.2.</span> <span class="toc-text">Bug</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA%E9%87%8D%E7%82%B9"><span class="toc-number">4.</span> <span class="toc-text">构建重点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#BIOS-%E8%AE%BE%E7%BD%AE"><span class="toc-number">4.1.</span> <span class="toc-text">BIOS 设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Standard-CMOS-Features"><span class="toc-number">4.1.1.</span> <span class="toc-text">Standard CMOS Features</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Advanced-CMOS-Features"><span class="toc-number">4.1.2.</span> <span class="toc-text">Advanced CMOS Features</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Integrated-Peripherals"><span class="toc-number">4.1.3.</span> <span class="toc-text">Integrated Peripherals</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Power-Management-Setup"><span class="toc-number">4.1.4.</span> <span class="toc-text">Power Management Setup</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bootloader-%E9%80%89%E6%8B%A9"><span class="toc-number">4.2.</span> <span class="toc-text">Bootloader 选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OpenCore-OpenDuet-%E7%94%A8%E4%BA%8E%E5%BC%95%E5%AF%BC-Mac-OS-X-Tiger-Mac-OS-X-Lion-%E4%BB%A5%E5%8F%8A-grub4dos"><span class="toc-number">4.2.1.</span> <span class="toc-text">OpenCore+OpenDuet 用于引导 Mac OS X Tiger-Mac OS X Lion 以及 grub4dos</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#grub4dos-%E7%94%A8%E4%BA%8E%E5%BC%95%E5%AF%BC-Windows-2000"><span class="toc-number">4.2.2.</span> <span class="toc-text">grub4dos 用于引导 Windows 2000</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NVRAM-%E6%A8%A1%E6%8B%9F"><span class="toc-number">4.3.</span> <span class="toc-text">NVRAM 模拟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SMBIOS-%E9%87%8D%E4%B8%AD%E4%B9%8B%E9%87%8D"><span class="toc-number">4.4.</span> <span class="toc-text">SMBIOS (重中之重)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E6%8B%A9"><span class="toc-number">4.4.1.</span> <span class="toc-text">选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E8%AF%86%E5%88%AB%E4%BF%AE%E5%A4%8D"><span class="toc-number">4.4.2.</span> <span class="toc-text">内存识别修复</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5"><span class="toc-number">4.5.</span> <span class="toc-text">时间同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8B%AC%E6%98%BE%E9%A9%B1%E5%8A%A8"><span class="toc-number">4.6.</span> <span class="toc-text">独显驱动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E5%99%A8%E8%A2%AB%E8%AF%86%E5%88%AB%E4%B8%BA%E7%94%B5%E8%A7%86"><span class="toc-number">4.7.</span> <span class="toc-text">显示器被识别为电视</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A3%B0%E5%8D%A1%E9%A9%B1%E5%8A%A8"><span class="toc-number">4.8.</span> <span class="toc-text">声卡驱动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91%E5%8D%A1"><span class="toc-number">4.9.</span> <span class="toc-text">以太网卡</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-4"><span class="toc-number">4.9.1.</span> <span class="toc-text">10.4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-5-10-6"><span class="toc-number">4.9.2.</span> <span class="toc-text">10.5&#x2F;10.6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-7"><span class="toc-number">4.9.3.</span> <span class="toc-text">10.7</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WIFI"><span class="toc-number">4.10.</span> <span class="toc-text">WIFI</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-4-1"><span class="toc-number">4.10.1.</span> <span class="toc-text">10.4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-5-10-7"><span class="toc-number">4.10.2.</span> <span class="toc-text">10.5-10.7</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%93%9D%E7%89%99"><span class="toc-number">4.11.</span> <span class="toc-text">蓝牙</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#USB"><span class="toc-number">4.12.</span> <span class="toc-text">USB</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-4-2"><span class="toc-number">4.12.1.</span> <span class="toc-text">10.4</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#EHCI"><span class="toc-number">4.12.1.1.</span> <span class="toc-text">EHCI</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UHCI"><span class="toc-number">4.12.1.2.</span> <span class="toc-text">UHCI</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-5-10-7-1"><span class="toc-number">4.12.2.</span> <span class="toc-text">10.5-10.7</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9D%A1%E7%9C%A0%E5%94%A4%E9%86%92"><span class="toc-number">4.13.</span> <span class="toc-text">睡眠唤醒</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-4-3"><span class="toc-number">4.13.1.</span> <span class="toc-text">10.4</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9D%A1%E7%9C%A0"><span class="toc-number">4.13.1.1.</span> <span class="toc-text">睡眠</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%94%A4%E9%86%92"><span class="toc-number">4.13.1.2.</span> <span class="toc-text">唤醒</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-5-10-7-2"><span class="toc-number">4.13.2.</span> <span class="toc-text">10.5-10.7</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EC-%E4%BF%AE%E5%A4%8D"><span class="toc-number">4.14.</span> <span class="toc-text">EC 修复</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%8F%E6%AC%A1%E9%87%8D%E5%90%AF-%E5%85%B3%E6%9C%BA%E6%97%B6%E9%83%BD%E4%BC%9A%E9%87%8D%E7%BD%AE-BIOS"><span class="toc-number">4.15.</span> <span class="toc-text">每次重启 &#x2F; 关机时都会重置 BIOS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E7%BD%AE%E7%A1%AC%E7%9B%98%E6%98%BE%E7%A4%BA%E4%B8%BA%E5%A4%96%E7%BD%AE"><span class="toc-number">4.16.</span> <span class="toc-text">内置硬盘显示为外置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-6-10-7-%E4%B8%8B%E5%BC%80%E5%90%AF-SSD-Trim"><span class="toc-number">4.17.</span> <span class="toc-text">10.6&#x2F;10.7 下开启 SSD Trim</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E5%90%AF%E4%B8%8D%E6%96%AD%E7%94%B5"><span class="toc-number">4.18.</span> <span class="toc-text">重启不断电</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-4-4"><span class="toc-number">4.18.1.</span> <span class="toc-text">10.4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-5-10-7-3"><span class="toc-number">4.18.2.</span> <span class="toc-text">10.5-10.7</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AppleLPC-%E5%8A%A0%E8%BD%BD"><span class="toc-number">4.18.3.</span> <span class="toc-text">AppleLPC 加载</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SATA-%E6%8E%A7%E5%88%B6%E5%99%A8%E9%87%8D%E5%91%BD%E5%90%8D"><span class="toc-number">4.19.</span> <span class="toc-text">SATA 控制器重命名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tiger-%E4%B8%8B%E4%B8%8D%E6%98%BE%E7%A4%BA%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98%E4%BF%A1%E6%81%AF"><span class="toc-number">4.20.</span> <span class="toc-text">Tiger 下不显示二级缓存信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Lion-%E4%B8%8B%E5%85%B3%E4%BA%8E%E6%9C%AC%E6%9C%BA%E4%B8%8D%E6%98%BE%E7%A4%BA%E5%B9%B4%E4%BB%BD%E4%BF%A1%E6%81%AF"><span class="toc-number">4.21.</span> <span class="toc-text">Lion 下关于本机不显示年份信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E5%8E%9F%E7%94%9F%E5%B9%B4%E4%BB%BD%E4%BF%A1%E6%81%AF"><span class="toc-number">4.21.1.</span> <span class="toc-text">确定原生年份信息</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Mac-Pro-1-1-%E5%92%8C-Mac-Pro-2-1"><span class="toc-number">4.21.1.1.</span> <span class="toc-text">Mac Pro 1,1 和 Mac Pro 2,1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%9C%BA%E5%9E%8B"><span class="toc-number">4.21.1.2.</span> <span class="toc-text">其他机型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-4-10-5-%E5%90%AF%E5%8A%A8%E6%97%A0%E6%B3%95%E7%BB%98%E5%88%B6-Apple-Logo-%E8%80%8C%E5%9B%9E%E9%80%80%E5%88%B0%E7%B1%BB%E4%BC%BC-v-%E7%9A%84%E6%A8%A1%E5%BC%8F"><span class="toc-number">4.22.</span> <span class="toc-text">10.4&#x2F;10.5 启动无法绘制 Apple Logo 而回退到类似 -v 的模式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E5%AF%BC%E5%99%A8%E6%88%AA%E5%9B%BE"><span class="toc-number">5.</span> <span class="toc-text">引导器截图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenCore-%E8%AF%B7%E5%85%81%E8%AE%B8%E6%88%91%E4%BD%BF%E7%94%A8-AI-%E5%88%B6%E4%BD%9C-4K-OC-Menu-%E5%9B%BE%EF%BC%8COpenDuet-%E7%8E%AF%E5%A2%83%E4%B8%8B-F10-%E6%88%AA%E5%9B%BE%EF%BC%8C%E6%95%88%E6%9E%9C%E5%AE%9E%E5%9C%A8%E5%A4%AA%E5%B7%AE%E4%BA%86"><span class="toc-number">5.1.</span> <span class="toc-text">OpenCore (请允许我使用 AI 制作 4K OC Menu 图，OpenDuet 环境下 F10 截图，效果实在太差了)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%A1%8C%E9%9D%A2%E6%88%AA%E5%9B%BE"><span class="toc-number">6.</span> <span class="toc-text">系统桌面截图</span></a></li></ol></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2018 - 2026 By Bugprogrammer</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/static/instantpage.min.js" type="module"></script><script src="/static/lazyload.iife.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.spacingElementById('content-inner')
+  else {
+    getScript('/static/pangu.min.js')
+      .then(() => {
+        pangu.spacingElementById('content-inner')
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="/static/canvas-fluttering-ribbon.min.js"></script><script src="/static/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="/static/click-heart.min.js" async="async" mobile="false"></script></div></body></html>
